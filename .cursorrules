@@ -56,5 +56,7 @@ git push
 - **Header Image**: `images/cosmic-neural-header.svg`
 
 ## SSH Configuration
-- Default GitHub: `git@github.com` (uses `~/.ssh/id_ed25519`)
-- Alternate: `git@github-dn` (uses `~/.ssh/id_ed25519_dn`, authenticates as `merlihson-dn`)
+- **Primary (merlihson)**: `git@github.com` (uses `~/.ssh/id_ed25519`, fingerprint: FwJyCB9peIfigt5U7gay8j9wzMLmQL5/eAEw3UgLyUE)
+- **Alternate (merlihson-dn)**: `git@github-dn` (uses `~/.ssh/id_ed25519_dn`, read-only access to this repo)
+
+Use `git@github.com` for push operations to merlihson/scientific-resources.
