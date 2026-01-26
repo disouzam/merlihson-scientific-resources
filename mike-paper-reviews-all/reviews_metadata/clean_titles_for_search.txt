@@ -564,3 +564,6 @@
 564. Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning
 565. The Free Transformer
 566. RAFT - Retrieval Augmented Time Series Forecasting
+567. Deep Delta Learning
+568. SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training
+569. Language Models with Context Re-Positioning (REPO)

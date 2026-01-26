@@ -1,13 +1,13 @@
 # Mike's Paper Reviews Collection (Complete)
 
 ## 📚 Complete Paper Review Collection
-**Total Reviews**: 566 individual DOCX files (Review_001 to Review_566)
+**Total Reviews**: 569 individual DOCX files (Review_001 to Review_569)
 **Coverage Period**: From early reviews to January 2026
-**Last Updated**: January 17, 2026
+**Last Updated**: January 26, 2026
 
 ## 🗂️ Collection Structure
 
-### `split-reviews-docx/` - Unified Review Collection (566 files)
+### `split-reviews-docx/` - Unified Review Collection (569 files)
 Complete collection of all paper reviews in sequential order:
 
 #### **Reviews 1-208**: Individual Paper Reviews
@@ -19,8 +19,8 @@ Complete collection of all paper reviews in sequential order:
   - Clean formatting with Hebrew links removed
   - Original review content preserved
 
-#### **Reviews 209-566**: Daily Reviews (358 files)
-- **Format**: Review_XXX.docx (e.g., Review_209.docx, Review_566.docx)
+#### **Reviews 209-569**: Daily Reviews (361 files)
+- **Format**: Review_XXX.docx (e.g., Review_209.docx, Review_569.docx)
 - **Content**: Daily paper reviews in chronological order
 - **Date Range**: May 30, 2024 to January 2026
 - **Features**:
@@ -42,15 +42,15 @@ Python tools and scripts used for splitting and processing the review files:
 - `requirements.txt` - Python dependencies
 
 ## 📊 Statistics
-- **Total Individual Files**: 566 reviews
+- **Total Individual Files**: 569 reviews
 - **Individual Reviews**: 208 files (Reviews 1-208)
-- **Daily Reviews**: 358 files (Reviews 209-566)  
+- **Daily Reviews**: 361 files (Reviews 209-569)  
 - **Date Coverage**: ~20 months of daily reviews (May 2024 - Jan 2026)
 - **File Format**: Microsoft Word DOCX
 - **Languages**: Hebrew and English content
 
 ## 🔍 Key Features
-- **Sequential Numbering**: 1-566 sequence
+- **Sequential Numbering**: 1-569 sequence
 - **Enhanced Links**: ArXiv links added to individual reviews
 - **Pure Content**: Daily reviews exactly as originally written
 - **Clean Structure**: Single unified directory for all reviews
@@ -60,7 +60,7 @@ Python tools and scripts used for splitting and processing the review files:
 ## 📁 Quick Access
 - **All Reviews**: `split-reviews-docx/` directory
 - **Individual Reviews**: `split-reviews-docx/Review_001.docx` to `split-reviews-docx/Review_208.docx`
-- **Daily Reviews**: `split-reviews-docx/Review_209.docx` to `split-reviews-docx/Review_566.docx`
+- **Daily Reviews**: `split-reviews-docx/Review_209.docx` to `split-reviews-docx/Review_569.docx`
 
 ## 🛠️ Processing History
 1. **Original Split**: Individual reviews extracted from batch DOCX files

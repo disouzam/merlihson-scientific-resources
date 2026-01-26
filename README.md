@@ -30,11 +30,11 @@ scientific-resources/
 │       ├── Reviews_31-60.docx     # Complete numbered series
 │       ├── ...                    # Professional naming
 │       └── README.md              # Comprehensive guide
-│   ├── split-reviews-docx/        # 🆕 Individual Review Files (561 files) ✅
+│   ├── split-reviews-docx/        # 🆕 Individual Review Files (569 files) ✅
 │   │   ├── Review_001.docx        # Individual review documents
 │   │   ├── Review_002.docx        # Extracted from source DOCX files
-│   │   ├── ...                    # Complete series 1-561
-│   │   ├── Review_561.docx       # Latest review
+│   │   ├── ...                    # Complete series 1-569
+│   │   ├── Review_569.docx       # Latest review
 │   │   └── README.md              # Usage guide
 ├── DL-papers-reviews-old/         # Legacy review collection
 ├── learning materials/            # Educational resources and tutorials
@@ -46,7 +46,7 @@ scientific-resources/
 
 ### 🆕 Complete Review Collection (split-reviews-docx/) ✅
 
-- **561 Individual Files**: Complete unified collection (Reviews 1-561)
+- **569 Individual Files**: Complete unified collection (Reviews 1-569)
 - **Individual Reviews**: Reviews 1-208 with enhanced ArXiv links
 - **Daily Reviews**: Reviews 209-561 in chronological order (May 2024 - Jan 2026)
 - **Professional Naming**: `Review_001.docx` through `Review_561.docx`

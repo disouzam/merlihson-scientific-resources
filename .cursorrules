@@ -1,0 +1,60 @@
+# Scientific Resources Repository - Cursor Rules
+
+## Repository Update Process
+
+When the user asks to "update the repo", "pull and update", or similar:
+
+### 1. Git Pull
+```bash
+git pull
+```
+Note: Use `github-dn` host alias if SSH authentication fails with default key.
+
+### 2. Check for New Review Files
+Count files in `mike-paper-reviews-all/split-reviews-docx/` and compare with metadata.
+
+### 3. Extract Info from New Reviews
+For each new Review_XXX.docx file:
+```bash
+textutil -stdout -convert txt "mike-paper-reviews-all/split-reviews-docx/Review_XXX.docx" | head -20
+```
+Extract:
+- Paper title (usually in first few lines, often after Hebrew header)
+- ArXiv link (grep for "arxiv" or "http")
+
+### 4. Update Metadata Files (REQUIRED)
+Update these 3 files in `mike-paper-reviews-all/reviews_metadata/`:
+
+1. **clean_titles_for_search.txt** - Add: `XXX. Paper Title`
+2. **all_paper_titles.txt** - Add: `XXX. Paper Title`
+3. **paper_with_links.csv** - Add: `Review_XXX,Paper Title,https://arxiv.org/abs/XXXX.XXXXX`
+
+### 5. Update README Files
+- `mike-paper-reviews-all/readme.md` - Update total count, date ranges
+- `readme.md` (main) - Update review counts in structure diagram
+- `images/cosmic-neural-header.svg` - Update paper count in subtitle
+
+### 6. Check for New Learning Materials
+If new PDFs added to `learning materials/`:
+- Update the corresponding subdirectory's `readme.md`
+- Add new file to the materials list
+- Update collection statistics
+
+### 7. Commit and Push
+```bash
+git add -A
+git commit -m "Update repo with reviews XXX-YYY and metadata"
+git push
+```
+
+## File Locations Reference
+
+- **Reviews**: `mike-paper-reviews-all/split-reviews-docx/Review_XXX.docx`
+- **Metadata**: `mike-paper-reviews-all/reviews_metadata/`
+- **Learning Materials**: `learning materials/[category]/`
+- **Main README**: `readme.md`
+- **Header Image**: `images/cosmic-neural-header.svg`
+
+## SSH Configuration
+- Default GitHub: `git@github.com` (uses `~/.ssh/id_ed25519`)
+- Alternate: `git@github-dn` (uses `~/.ssh/id_ed25519_dn`, authenticates as `merlihson-dn`)
