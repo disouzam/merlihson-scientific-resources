@@ -1,0 +1,4 @@
+# Repository Automation Tool Dependencies
+watchdog>=3.0.0      # File system monitoring
+PyYAML>=6.0          # Config file parsing
+python-docx>=0.8.11  # DOCX reading (for metadata extraction)

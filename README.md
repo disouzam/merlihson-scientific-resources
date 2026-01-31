@@ -26,12 +26,12 @@
 <sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
 </td>
 <td align="center" width="25%">
-<h3>📚 22</h3>
+<h3>📚 21</h3>
 <b>Learning Categories</b><br>
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 3.8 GB</h3>
+<h3>🎯 2.0 GB</h3>
 <b>Resources</b><br>
 <sub>PDFs, presentations,<br>cheat sheets & more</sub>
 </td>
@@ -67,7 +67,7 @@
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
 - **569 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
-- **22 learning categories** spanning machine learning, mathematics, algorithms, and more
+- **21 learning categories** spanning machine learning, mathematics, algorithms, and more
 - **9 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
@@ -268,9 +268,9 @@ pip install -r mike-paper-reviews-all/py_code/requirements.txt
 | **Total Paper Reviews** | 569 |
 | **Individual Reviews** | 208 (with ArXiv links) |
 | **Daily Reviews** | 361 (May 2024 - Jan 2026) |
-| **Learning Categories** | 22 |
+| **Learning Categories** | 21 |
 | **Presentations** | 9 |
-| **Total Repository Size** | 3.8 GB |
+| **Total Repository Size** | 2.0 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
 | **License** | CC0-1.0 (Public Domain) |
