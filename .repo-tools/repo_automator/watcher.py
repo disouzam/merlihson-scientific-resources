@@ -79,12 +79,9 @@ class RepoEventHandler(FileSystemEventHandler):
 
         # Debouncer to batch rapid changes
         self.debouncer = Debouncer(
-            delay=debounce_seconds,
-            callback=self._trigger_update
+            wait_seconds=debounce_seconds,
+            max_wait_seconds=debounce_seconds * 5
         )
-
-        # Track pending changes
-        self._pending_changes: Set[str] = set()
 
     def _should_process(self, path: str) -> bool:
         """Check if this path should trigger an update."""
@@ -112,20 +109,16 @@ class RepoEventHandler(FileSystemEventHandler):
             return
 
         self.logger.debug(f"📁 {event_type}: {Path(path).name}")
-        self._pending_changes.add(event_type)
 
         # Trigger debounced update
-        self.debouncer.call()
+        self.debouncer.call(self._trigger_update, path)
 
-    def _trigger_update(self) -> None:
+    def _trigger_update(self, paths: list) -> None:
         """Execute update after debounce period."""
-        if not self._pending_changes:
+        if not paths:
             return
 
-        changes = self._pending_changes.copy()
-        self._pending_changes.clear()
-
-        self.logger.info(f"🔄 Detected {len(changes)} change(s), updating...")
+        self.logger.info(f"🔄 Detected {len(paths)} change(s), updating...")
 
         try:
             # Run the full pipeline
@@ -225,10 +218,16 @@ class FileWatcher:
         self.logger.info(f"👀 Watching: {repo_root}")
 
         # Log watched paths
-        for name, rel_path in self.config.watched_paths.items():
-            path = self.config.repo_root / rel_path
-            if path.exists():
-                self.logger.info(f"   📂 {name}: {rel_path}")
+        for name, config_entry in self.config.watched_paths.items():
+            # Handle both simple paths and nested config dicts
+            if isinstance(config_entry, dict):
+                rel_path = config_entry.get("path", "")
+            else:
+                rel_path = config_entry
+            if rel_path:
+                path = self.config.repo_root / rel_path
+                if path.exists():
+                    self.logger.info(f"   📂 {name}: {rel_path}")
 
     def stop(self) -> None:
         """Stop watching for file changes."""
