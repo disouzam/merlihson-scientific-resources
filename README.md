@@ -2,18 +2,46 @@
 
 <img src="./images/cosmic-neural-header.svg" alt="Scientific Resources Hub" width="100%">
 
-# Scientific Resources Hub
-
-**A comprehensive repository of 569+ deep learning paper reviews, educational materials, and research presentations**
+<br>
 
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
-[![Papers Reviewed](https://img.shields.io/badge/Papers_Reviewed-569+-blue.svg)](#-collection-statistics)
-[![Learning Categories](https://img.shields.io/badge/Learning_Categories-22-green.svg)](#-learning-materials)
-[![Size](https://img.shields.io/badge/Size-3.8_GB-orange.svg)](#)
+[![Last Updated](https://img.shields.io/badge/Updated-January_2026-success.svg)](#)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](METADATA_UPDATE_PROCESS.md)
+
+**Your one-stop knowledge base for AI/ML research, learning, and reference**
 
 [Explore Reviews](#-paper-reviews) • [Learning Materials](#-learning-materials) • [Presentations](#-presentations) • [Quick Start](#-quick-start)
 
 </div>
+
+---
+
+## Highlights
+
+<table>
+<tr>
+<td align="center" width="25%">
+<h3>📄 569+</h3>
+<b>Paper Reviews</b><br>
+<sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
+</td>
+<td align="center" width="25%">
+<h3>📚 22</h3>
+<b>Learning Categories</b><br>
+<sub>From ML basics to<br>quantum computing</sub>
+</td>
+<td align="center" width="25%">
+<h3>🎯 3.8 GB</h3>
+<b>Resources</b><br>
+<sub>PDFs, presentations,<br>cheat sheets & more</sub>
+</td>
+<td align="center" width="25%">
+<h3>📅 2022-26</h3>
+<b>Coverage Period</b><br>
+<sub>Continuously updated<br>with latest research</sub>
+</td>
+</tr>
+</table>
 
 ---
 
