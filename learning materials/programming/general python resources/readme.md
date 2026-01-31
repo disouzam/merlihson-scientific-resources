@@ -28,7 +28,6 @@ Comprehensive Python programming resources from beginner tutorials to advanced t
 - `Python code for Artificial Intelligence- Foundations of Computational Agents.pdf` - AI with Python
 
 ### Cheat Sheets & References
-- `7 Python cheat sheets in one.pdf` - Comprehensive cheat sheet collection
 - `Python Basic Cheat Sheet.pdf` - Basic reference
 - `Python Cheat Sheet - Keywords, Interview Questions.pdf` - Interview prep
 - `Python Cheatsheet_2 July 2020.pdf` - Updated cheatsheet
@@ -38,7 +37,7 @@ Comprehensive Python programming resources from beginner tutorials to advanced t
 
 ## 📊 Collection Statistics
 
-- **Total Resources**: 23 PDF documents
+- **Total Resources**: 22 PDF documents
 - **Focus**: Python programming at all levels
 - **Coverage**: Beginner to advanced
 

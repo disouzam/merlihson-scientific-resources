@@ -8,7 +8,6 @@ Quick reference guides and cheat sheets for machine learning concepts, algorithm
 ### Comprehensive References
 - `Data Science Cheatsheet 2.0.pdf` - Updated data science reference
 - `Elite Data Science Cheat Sheet.pdf` - Elite-level DS concepts
-- `Grand Machine Learning Cheat Sheet.pdf` - Comprehensive ML reference
 - `Machine Learning Comprehensive Cheat Sheet.pdf` - Complete ML coverage
 
 ### Algorithm & Concept Guides
@@ -22,7 +21,7 @@ Quick reference guides and cheat sheets for machine learning concepts, algorithm
 
 ## 📊 Collection Statistics
 
-- **Total Resources**: 9 PDF documents
+- **Total Resources**: 8 PDF documents
 - **Focus**: Quick reference and interview prep
 - **Coverage**: Algorithms, metrics, and concepts
 

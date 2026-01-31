@@ -32,7 +32,6 @@ Comprehensive resources for data engineering, data cleaning, preprocessing, and 
 - `The Data Engineering Cookbook.pdf` - Comprehensive DE guide
 - `A Programmers Guide to Data Mining.pdf` - Data mining for programmers
 - `Google Data Engineering Cheatsheet.pdf` - Google DE reference
-- `Python for Data Analysis.pdf` - Python for DE
 
 ### Best Practices
 - `Machine_Learning_Quick_Ref_Best_Practic.pdf` - ML best practices
@@ -44,7 +43,7 @@ Comprehensive resources for data engineering, data cleaning, preprocessing, and 
 
 ## 📊 Collection Statistics
 
-- **Total Resources**: 20 files (17 PDFs + 3 PNGs)
+- **Total Resources**: 19 files (16 PDFs + 3 PNGs)
 - **Subdirectories**: 2 (analytics, reproducibility)
 - **Focus**: Data preparation and engineering
 

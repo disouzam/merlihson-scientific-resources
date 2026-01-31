@@ -46,7 +46,6 @@ Comprehensive collection of machine learning fundamentals, textbooks, and genera
 - `Machine Learning and Data Mining Notes.pdf` - ML/Data Mining notes
 - `Machine Learning Core Concepts.pdf` - Core concept coverage
 - `Machine Learning For Dummies Book.pdf` - Accessible introduction
-- `Machine Learning Model Performance Metrics.pdf` - Model evaluation metrics
 - `Machine Learning plus Intelligent Optimization, Part1.pdf` - ML + Optimization (Part 1)
 - `Machine Learning plus Intelligent Optimization, Part2.pdf` - ML + Optimization (Part 2)
 - `Machine Learning- A Review of Learning Types.pdf` - Learning type taxonomy
@@ -62,7 +61,7 @@ Comprehensive collection of machine learning fundamentals, textbooks, and genera
 
 ## 📊 Collection Statistics
 
-- **Total Resources**: 41 files (40 PDFs + 1 links file)
+- **Total Resources**: 40 files (39 PDFs + 1 links file)
 - **Format**: PDF documents and reference links
 - **Focus**: Comprehensive ML foundations and practice
 - **Coverage**: Introductory to advanced topics
