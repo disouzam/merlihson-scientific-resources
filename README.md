@@ -21,7 +21,7 @@
 <table>
 <tr>
 <td align="center" width="25%">
-<h3>📄 569+</h3>
+<h3>📄 572+</h3>
 <b>Paper Reviews</b><br>
 <sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
 </td>
@@ -66,7 +66,7 @@
 
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
-- **569 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
+- **572 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
 - **21 learning categories** spanning machine learning, mathematics, algorithms, and more
 - **9 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
@@ -265,7 +265,7 @@ pip install -r mike-paper-reviews-all/py_code/requirements.txt
 
 | Metric | Value |
 |--------|-------|
-| **Total Paper Reviews** | 569 |
+| **Total Paper Reviews** | 572 |
 | **Individual Reviews** | 208 (with ArXiv links) |
 | **Daily Reviews** | 361 (May 2024 - Jan 2026) |
 | **Learning Categories** | 21 |

@@ -10,7 +10,7 @@
 ### `split-reviews-docx/` - Unified Review Collection (569 files)
 Complete collection of all paper reviews in sequential order:
 
-#### **Reviews 1-569**: Individual Paper Reviews
+#### **Reviews 1-572**: Individual Paper Reviews
 - **Format**: Review_XXX.docx (e.g., Review_001.docx, Review_023.docx)
 - **Content**: Individual paper reviews with enhanced ArXiv links
 - **Features**: 
@@ -43,7 +43,7 @@ Python tools and scripts used for splitting and processing the review files:
 
 ## 📊 Statistics
 - **Total Individual Files**: 569 reviews
-- **Individual Reviews**: 208 files (Reviews 1-569)
+- **Individual Reviews**: 208 files (Reviews 1-572)
 - **Daily Reviews**: 361 files (Reviews 209-569)  
 - **Date Coverage**: ~20 months of daily reviews (May 2024 - Jan 2026)
 - **File Format**: Microsoft Word DOCX
