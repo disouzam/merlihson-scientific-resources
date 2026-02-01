@@ -15,7 +15,7 @@ A comprehensive collection of educational resources, tutorials, and reference ma
 
 ### 💻 Programming & Development
 - **programming/**: Programming languages, software development, and best practices
-- **python & math & ml together/**: Integrated Python resources for mathematical and ML applications
+- **python-ml-math/**: Integrated Python resources for mathematical and ML applications
 
 ### 📊 Data Science & Engineering
 - **data engineering/**: Data processing, cleaning, and pipeline development
@@ -57,7 +57,7 @@ A comprehensive collection of educational resources, tutorials, and reference ma
 
 ### Data Science Track
 1. **math/** → **algorithms/** → **data engineering/** → **data science applications/**
-2. **python & math & ml together/** → **machine learning/** → **MLOps/**
+2. **python-ml-math/** → **machine learning/** → **MLOps/**
 
 ### Machine Learning Track
 1. **math/** → **machine learning/broad ml materials/** → **machine learning/deep neural nets/**

@@ -68,7 +68,7 @@ class FileCounterScanner(BaseScanner):
 
     def _count_categories(self) -> Dict[str, Any]:
         """Count learning material categories."""
-        lm_path = self.repo_root / "learning materials"
+        lm_path = self.repo_root / "learning-materials"
 
         if not lm_path.exists():
             self.log(f"Learning materials path not found: {lm_path}", level=30)
@@ -132,7 +132,7 @@ class FileCounterScanner(BaseScanner):
         Returns:
             Dict mapping category name -> file count
         """
-        lm_path = self.repo_root / "learning materials"
+        lm_path = self.repo_root / "learning-materials"
         counts = {}
 
         if not lm_path.exists():

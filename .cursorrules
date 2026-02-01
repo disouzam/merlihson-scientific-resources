@@ -35,7 +35,7 @@ Update these 3 files in `mike-paper-reviews-all/reviews_metadata/`:
 - `images/cosmic-neural-header.svg` - Update paper count in subtitle
 
 ### 6. Check for New Learning Materials
-If new PDFs added to `learning materials/`:
+If new PDFs added to `learning-materials/`:
 - Update the corresponding subdirectory's `readme.md`
 - Add new file to the materials list
 - Update collection statistics
@@ -51,7 +51,7 @@ git push
 
 - **Reviews**: `mike-paper-reviews-all/split-reviews-docx/Review_XXX.docx`
 - **Metadata**: `mike-paper-reviews-all/reviews_metadata/`
-- **Learning Materials**: `learning materials/[category]/`
+- **Learning Materials**: `learning-materials/[category]/`
 - **Main README**: `readme.md`
 - **Header Image**: `images/cosmic-neural-header.svg`
 

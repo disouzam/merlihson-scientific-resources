@@ -8,7 +8,7 @@ on:
     paths:
       # Watch content directories
       - 'mike-paper-reviews-all/**'
-      - 'learning materials/**'
+      - 'learning-materials/**'
       - 'presentations/**'
       # But not the automation tool itself
       - '!.repo-tools/**'

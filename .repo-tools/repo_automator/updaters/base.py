@@ -37,7 +37,7 @@ class BaseUpdater(ABC):
         ".",  # Root README
         "mike-paper-reviews-all",
         "mike-paper-reviews-all/reviews_metadata",
-        "learning materials",
+        "learning-materials",
         "images",
     ]
 
@@ -116,8 +116,8 @@ class BaseUpdater(ABC):
             if parent == allowed_dir or parent.startswith(allowed_dir + "/"):
                 return True
 
-        # Also allow any learning materials subdirectory (for their READMEs)
-        if "learning materials" in parent:
+        # Also allow any learning-materials subdirectory (for their READMEs)
+        if "learning-materials" in parent:
             return True
 
         return False

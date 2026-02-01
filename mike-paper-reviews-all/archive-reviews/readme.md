@@ -28,7 +28,7 @@ Individual paper reviews covering various deep learning topics including:
 ## 🔗 Related Resources
 
 - **Current Reviews**: See `../mike-paper-reviews-500/` for the main, updated review collection
-- **Learning Materials**: See `../learning materials/` for educational resources
+- **Learning Materials**: See `../learning-materials/` for educational resources
 
 ## 📝 Note
 

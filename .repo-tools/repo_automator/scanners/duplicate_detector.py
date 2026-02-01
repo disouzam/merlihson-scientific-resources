@@ -37,11 +37,11 @@ class DuplicateDetectorScanner(BaseScanner):
             "scanned_directories": []
         }
 
-        # Scan learning materials directory
-        lm_path = self.repo_root / "learning materials"
+        # Scan learning-materials directory
+        lm_path = self.repo_root / "learning-materials"
         if lm_path.exists():
             lm_dupes = self._scan_directory(lm_path, "*.pdf")
-            results["scanned_directories"].append("learning materials")
+            results["scanned_directories"].append("learning-materials")
             self._add_duplicates(results, lm_dupes, lm_path)
 
         # Log summary

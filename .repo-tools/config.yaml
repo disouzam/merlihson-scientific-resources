@@ -17,7 +17,7 @@ watched_paths:
       - update_svg_stats
 
   learning_materials:
-    path: "learning materials"
+    path: "learning-materials"
     recursive: true
     triggers:
       - count_categories

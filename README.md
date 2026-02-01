@@ -126,7 +126,7 @@ The core collection containing **569 individual paper reviews** in multiple form
 
 ## Learning Materials
 
-### `learning materials/`
+### `learning-materials/`
 
 **22 specialized categories** with 1.7 GB of educational resources:
 
@@ -162,7 +162,7 @@ The core collection containing **569 individual paper reviews** in multiple form
 
 #### Programming & Tools
 - `programming/` - Languages & practices
-- `python & math & ml together/` - Integrated tutorials
+- `python-ml-math/` - Integrated tutorials
 - `data engineering/` - Pipelines & processing
 - `MLOps/` - ML operations
 - `kubernetes/` - Container orchestration
@@ -297,7 +297,7 @@ scientific-resources/
 │       ├── docx_splitter.py
 │       └── requirements.txt
 │
-├── learning materials/              # Educational resources (1.7 GB)
+├── learning-materials/              # Educational resources (1.7 GB)
 │   ├── machine learning/            # 15 ML subcategories
 │   ├── math/                        # Mathematical foundations
 │   ├── algorithms/                  # Data structures & algorithms
@@ -308,7 +308,7 @@ scientific-resources/
 ├── presentations/                   # Research presentations (32 MB)
 │   └── 9 PDF presentations
 │
-├── DL-papers-reviews-old/           # Legacy archive (31 MB)
+├── archive-reviews/           # Legacy archive (31 MB)
 │
 ├── METADATA_UPDATE_PROCESS.md       # Maintenance guide
 └── README.md                        # This file

@@ -19,7 +19,7 @@ class Config:
     DEFAULT_CONFIG = {
         "watched_paths": {
             "reviews": "mike-paper-reviews-all/split-reviews-docx",
-            "learning_materials": "learning materials",
+            "learning_materials": "learning-materials",
             "presentations": "presentations",
         },
         "file_extensions": {

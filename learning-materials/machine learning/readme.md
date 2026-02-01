@@ -55,7 +55,7 @@ Comprehensive collection of machine learning resources covering theory, algorith
 
 - **Mathematics**: See `../math/` for mathematical foundations
 - **Programming**: See `../programming/` for implementation
-- **Python + ML**: See `../python & math & ml together/` for integrated resources
+- **Python + ML**: See `../python-ml-math/` for integrated resources
 
 ---
 
