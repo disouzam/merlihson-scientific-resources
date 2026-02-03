@@ -265,7 +265,8 @@ class MetadataUpdater(BaseUpdater):
                             title = line
                             break
 
-            # Look for arxiv link (can appear anywhere in the file)
+            # Look for paper link (can appear anywhere in the file)
+            # Priority 1: arxiv links
             for line in lines:
                 if 'arxiv' in line.lower():
                     # Extract the arxiv URL - handle various typos and missing protocols
@@ -290,6 +291,33 @@ class MetadataUpdater(BaseUpdater):
                         # Fix single-slash typo: https:/arxiv -> https://arxiv
                         arxiv_link = re.sub(r'https?:/([^/])', r'https://\1', arxiv_link)
                         # Keep version in URL (it's informative)
+                        break
+
+            # Priority 2: If no arxiv link, look for other paper sources
+            if not arxiv_link:
+                paper_sources = [
+                    r'https?://(?:www\.)?(?:cdn\.)?openai\.com/(?:papers|index)/[^\s\)]+',  # OpenAI
+                    r'https?://(?:www\.)?aclanthology\.org/[^\s\)]+',  # ACL Anthology
+                    r'https?://(?:www\.)?nature\.com/articles/[^\s\)]+',  # Nature
+                    r'https?://(?:www\.)?dl\.acm\.org/doi/[^\s\)]+',  # ACM
+                    r'https?://(?:www\.)?doi\.org/[^\s\)]+',  # DOI
+                    r'https?://(?:www\.)?openreview\.net/forum\?id=[^\s\)]+',  # OpenReview
+                    r'https?://(?:www\.)?researchsquare\.com/article/[^\s\)]+',  # Research Square
+                    r'https?://(?:www\.)?research\.google/blog/[^\s\)]+',  # Google Research
+                    r'https?://(?:www\.)?sciencedirect\.com/science/article/[^\s\)]+',  # ScienceDirect
+                    r'https?://(?:www\.)?huggingface\.co/papers/[^\s\)]+',  # HuggingFace Papers
+                ]
+
+                for line in lines:
+                    for pattern in paper_sources:
+                        match = re.search(pattern, line, re.IGNORECASE)
+                        if match:
+                            arxiv_link = match.group(0)
+                            # Ensure proper protocol
+                            if not arxiv_link.startswith('http'):
+                                arxiv_link = 'https://' + arxiv_link
+                            break
+                    if arxiv_link:
                         break
 
             # Clean the title if found
