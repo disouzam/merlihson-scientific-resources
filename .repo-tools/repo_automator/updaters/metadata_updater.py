@@ -213,13 +213,13 @@ class MetadataUpdater(BaseUpdater):
                     if not line or len(line) < 10:
                         continue
 
-                    # Skip lines that start with known Hebrew/metadata patterns
+                    # Skip lines that start with known Hebrew/metadata patterns (but not ones with mixed content)
                     if re.match(r'^(Review|Paper:|v\d+$|תחום|מושגים)', line):
                         continue
 
-                    # First try to extract just English part if line has Hebrew header
+                    # If line has Hebrew header, try to extract just English part
                     if 'סקירה' in line or 'המאמר' in line or 'סקירת' in line:
-                        # Try pattern: "...סקירות עד XXX Title"
+                        # Pattern 1: "...סקירות עד XXX Title"
                         hebrew_match = re.search(r'סקירות עד \d+\s+(.+)$', line)
                         if hebrew_match:
                             potential_title = hebrew_match.group(1).strip()
@@ -228,7 +228,18 @@ class MetadataUpdater(BaseUpdater):
                                 if ascii_ratio > 0.7:
                                     title = potential_title
                                     break
-                        # Skip if no match - don't use the full line
+
+                        # Pattern 2: "סקירת...DD.MM.YY TITLE" - extract after date
+                        date_after_hebrew = re.search(r'\d{2}\.\d{2}\.\d{2}\s+([A-Z].+)$', line)
+                        if date_after_hebrew:
+                            potential_title = date_after_hebrew.group(1).strip()
+                            if re.search(r'[A-Za-z]', potential_title):
+                                ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
+                                if ascii_ratio > 0.95:  # Very strict for mixed lines
+                                    title = potential_title
+                                    break
+
+                        # If no good extraction, skip this line
                         continue
 
                     # Check if line has significant English content

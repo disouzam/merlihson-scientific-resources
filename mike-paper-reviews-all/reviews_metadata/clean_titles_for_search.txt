@@ -521,7 +521,7 @@ shaping explanations semantic reward modeling with encoder only transformers for
 deepseek ocr contexts optical compression
 emergence from learning dynamics of grokking
 language models are injective and hence invertible
-x y f ln x
+on surjectivity of neural networks can you elicit any behavior from your model
 agent learning via early experience
 statistical runtime verification for llms via robustness estimation
 from memorization to reasoning in the spectrum of loss curvature

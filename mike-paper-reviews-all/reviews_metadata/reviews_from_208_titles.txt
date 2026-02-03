@@ -317,7 +317,7 @@
 314. DeepSeek-OCR: Contexts Optical Compression
 315. EMERGENCE FROM LEARNING DYNAMICS OF GROKKING
 316. Language Models are Injective and Hence Invertible
-317. x* = y - f(LN(x*)).
+317. ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?
 318. Agent Learning via Early Experience
 319. Statistical Runtime Verification for LLMs via Robustness Estimation
 320. FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE
