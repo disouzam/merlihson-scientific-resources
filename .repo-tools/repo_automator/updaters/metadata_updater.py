@@ -197,9 +197,9 @@ class MetadataUpdater(BaseUpdater):
                             if ascii_ratio > 0.7:
                                 title = potential_title
 
-                    # Pattern 2: Date without separator: "DD.MM.YYTitle" (common in 376-425 range)
+                    # Pattern 2: Date without separator: "DD.MM.YYTitle" (uppercase or lowercase)
                     if not title:
-                        date_no_sep_match = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Z].+)$', first_line)
+                        date_no_sep_match = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Za-z].+)$', first_line)
                         if date_no_sep_match:
                             potential_title = date_no_sep_match.group(1).strip()
                             if re.search(r'[A-Za-z]', potential_title):
@@ -229,15 +229,28 @@ class MetadataUpdater(BaseUpdater):
                                     title = potential_title
                                     break
 
-                        # Pattern 2: "סקירת...DD.MM.YY TITLE" - extract after date
+                        # Pattern 2: "סקירת...DD.MM.YY TITLE" or "...DD.MM.YYTitle" - extract after date
+                        # Try with space first
                         date_after_hebrew = re.search(r'\d{2}\.\d{2}\.\d{2}\s+([A-Z].+)$', line)
+                        if not date_after_hebrew:
+                            # Try without space (uppercase or lowercase)
+                            date_after_hebrew = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Za-z].+)$', line)
+
                         if date_after_hebrew:
                             potential_title = date_after_hebrew.group(1).strip()
                             if re.search(r'[A-Za-z]', potential_title):
                                 ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                                if ascii_ratio > 0.95:  # Very strict for mixed lines
+                                if ascii_ratio > 0.85:  # Relaxed from 0.95
                                     title = potential_title
                                     break
+
+                        # Pattern 3: "...1024.TITLE" - title after period
+                        period_title_match = re.search(r'\d{4}\.([A-Z][A-Za-z\s:,-]+)', line)
+                        if period_title_match:
+                            potential_title = period_title_match.group(1).strip()
+                            if len(potential_title) > 10:
+                                title = potential_title
+                                break
 
                         # If no good extraction, skip this line
                         continue

@@ -421,7 +421,7 @@
 421. Generative Representational Instruction Tuning
 422. JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
 423. EFFICIENTLY LEARNING AT TEST-TIME: ACTIVE FINE-TUNING OF LLMS
-424. https://arxiv.org/abs/2410.01104
+424. softmax is not enough (for sharp out-of-distribution)
 425. LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
 426. Physics in Next-token Prediction
 427. STAR ATTENTION: EFFICIENT LLM INFERENCE OVER LONG SEQUENCES
@@ -455,6 +455,7 @@
 455. GROKKING AT THE EDGE OF NUMERICAL STABILITY
 456. ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
 457. Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
+458. rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
 459. Neuro-Symbolic AI i 2024: A Systematic Review
 460. Jasper and Stella: distillation of SOTA embedding models
 461. Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
@@ -510,15 +511,23 @@
 511. On the Theoretical Limitations of Embedding-Based Retrieval
 512. Bootstrapping Task Spaces for Self-Improvementֿ
 513. THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION
+514. Foundation Models for Time Series Analysis- A Tutorial and Survey
 515. Corrector Sampling in Language Models
+516. Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free
 517. EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING
 518. מאמר היומי של מייק: 02.10.25Optimizers Qualitatively Alter Solutions And We Should Leverage This
+519. Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs
+520. BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR
+521. Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING
+522. COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A
+523. Less is More: Recursive Reasoning with Tiny Networks
 524. Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
-525. https://arxiv.org/abs/2508.17821
+525. LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM
 526. Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs
 527. The Markovian Thinker
 528. Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO
 529. DeepSeek-OCR: Contexts Optical Compression
+530. Imbalanced Gradients in RL Post-Training of Multi-Task LLMs
 531. EMERGENCE FROM LEARNING DYNAMICS OF GROKKING
 532. Language Models are Injective and Hence Invertible
 533. ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?
@@ -545,6 +554,7 @@
 554. DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning
 555. Learning Dynamics of LLM Finetuning
 556. Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)
+557. SEAL: Self-Adapting Language Models
 558. Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning
 559. RECURSIVE LANGUAGE MODELS
 560. Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition

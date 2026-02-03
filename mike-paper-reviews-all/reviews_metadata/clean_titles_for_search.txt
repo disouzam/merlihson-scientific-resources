@@ -421,7 +421,7 @@ a survey on kolmogorov arnold network
 generative representational instruction tuning
 janusflow harmonizing autoregression and rectified flow for unified multimodal understanding and generation
 efficiently learning at test time active fine tuning of llms
-https arxiv org abs 2410 01104
+softmax is not enough for sharp out of distribution
 llms learn governing principles of dynamical systems revealing an in context neural scaling law
 physics in next token prediction
 star attention efficient llm inference over long sequences
@@ -455,6 +455,7 @@ iclr in context learning of representations
 grokking at the edge of numerical stability
 zerosearch incentivize the search capability of llms without searching
 don t do rag when cache augmented generation is all you need for knowledge tasks
+rstar math small llms can master math reasoning with self evolved deep thinking
 neuro symbolic ai i 2024 a systematic review
 jasper and stella distillation of sota embedding models
 learn beyond the answer training language models with reflection for mathematical reasoning
@@ -510,15 +511,23 @@ inducing state anxiety in llm agents reproduces human like biases in consumer de
 on the theoretical limitations of embedding based retrieval
 bootstrapping task spaces for self improvement
 the origin of self attention pairwise affinity matrices in feature selection and the emergence of self attention
+foundation models for time series analysis a tutorial and survey
 corrector sampling in language models
+gated attention for large language models non linearity sparsity and attention sink free
 evolution of concepts in language model pre training
 02 10 25optimizers qualitatively alter solutions and we should leverage this
+skip a layer or loop it test time depth adaptation of pretrained llms
+beyond the exploration exploitation trade off a hidden state approach for llm reasoning in rlvr
+evolution strategies at scale llm fine tuning beyond reinforcement learning
+compllm compression for long context q a
+less is more recursive reasoning with tiny networks
 inadequacies of large language model benchmarks in the era of generative artificial intelligence
-https arxiv org abs 2508 17821
+limitations of normalization in attention mechanism
 between underthinking and overthinking an empirical study of reasoning length and correctness in llms
 the markovian thinker
 shaping explanations semantic reward modeling with encoder only transformers for grpo
 deepseek ocr contexts optical compression
+imbalanced gradients in rl post training of multi task llms
 emergence from learning dynamics of grokking
 language models are injective and hence invertible
 on surjectivity of neural networks can you elicit any behavior from your model
@@ -545,6 +554,7 @@ let s not just put things in context test time training for long context llms
 deepseekmath v2 towards self verifiable mathematical reasoning
 learning dynamics of llm finetuning
 artificial hivemind the open ended homogeneity of language models and beyond
+seal self adapting language models
 agent r1 training powerful llm agents with end to end reinforcement learning
 recursive language models
 paraformer v2 an improved non autoregressive transformer for noise robust speech recognition

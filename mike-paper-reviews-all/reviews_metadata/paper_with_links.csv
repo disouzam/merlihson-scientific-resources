@@ -422,7 +422,7 @@ Review_420,A Survey on Kolmogorov-Arnold Network,https://arxiv.org/abs/2411.0607
 Review_421,Generative Representational Instruction Tuning,https://arxiv.org/abs/2402.09906
 Review_422,JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation,https://arxiv.org/abs/2411.07975
 Review_423,EFFICIENTLY LEARNING AT TEST-TIME: ACTIVE FINE-TUNING OF LLMS,https://arxiv.org/abs/2410.08020
-Review_424,https://arxiv.org/abs/2410.01104,https://arxiv.org/abs/2410.01104
+Review_424,softmax is not enough (for sharp out-of-distribution),https://arxiv.org/abs/2410.01104
 Review_425,"LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law",https://arxiv.org/abs/2402.00795
 Review_426,Physics in Next-token Prediction,https://arxiv.org/abs/2411.00660
 Review_427,STAR ATTENTION: EFFICIENT LLM INFERENCE OVER LONG SEQUENCES,https://arxiv.org/abs/2411.17116
@@ -456,6 +456,7 @@ Review_454,ICLR: In-Context Learning of Representations,https://arxiv.org/abs/25
 Review_455,GROKKING AT THE EDGE OF NUMERICAL STABILITY,https://arxiv.org/abs/2501.04697
 Review_456,ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching,https://arxiv.org/abs/2505.04588
 Review_457,Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks,https://arxiv.org/abs/2412.15605
+Review_458,rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking,https://arxiv.org/abs/2501.04519
 Review_459,Neuro-Symbolic AI i 2024: A Systematic Review,https://arxiv.org/abs/2501.05435
 Review_460,Jasper and Stella: distillation of SOTA embedding models,https://arxiv.org/abs/2412.19048
 Review_461,Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning,https://arxiv.org/abs/2406.12050
@@ -511,15 +512,23 @@ Review_510,Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in 
 Review_511,On the Theoretical Limitations of Embedding-Based Retrieval,https://arxiv.org/abs/2508.21038
 Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,
 Review_513,THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION,https://arxiv.org/abs/2507.14560
+Review_514,Foundation Models for Time Series Analysis- A Tutorial and Survey,https://arxiv.org/abs/2403.14735
 Review_515,Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215
+Review_516,"Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2505.06708
 Review_517,EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING,
 Review_518,מאמר היומי של מייק: 02.10.25Optimizers Qualitatively Alter Solutions And We Should Leverage This,https://arxiv.org/abs/2507.12224
+Review_519,Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs,https://arxiv.org/abs/2507.07996
+Review_520,BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR,https://arxiv.org/abs/2509.23808
+Review_521,Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING,https://arxiv.org/abs/2509.24372
+Review_522,COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A,https://arxiv.org/abs/2509.19228
+Review_523,Less is More: Recursive Reasoning with Tiny Networks,https://arxiv.org/abs/2510.04871
 Review_524,Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence,https://arxiv.org/abs/2402.09880
-Review_525,https://arxiv.org/abs/2508.17821,https://arxiv.org/abs/2508.17821
+Review_525,LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM,https://arxiv.org/abs/2508.17821
 Review_526,Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs,
 Review_527,The Markovian Thinker,https://arxiv.org/abs/2510.06557
 Review_528,Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO,https://arxiv.org/abs/2509.13081
 Review_529,DeepSeek-OCR: Contexts Optical Compression,https://arxiv.org/abs/2510.18234
+Review_530,Imbalanced Gradients in RL Post-Training of Multi-Task LLMs,https://arxiv.org/abs/2510.19178
 Review_531,EMERGENCE FROM LEARNING DYNAMICS OF GROKKING,https://arxiv.org/abs/2509.21519
 Review_532,Language Models are Injective and Hence Invertible,https://arxiv.org/abs/2510.15511
 Review_533,ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?,https://arxiv.org/abs/2508.19445
@@ -546,6 +555,7 @@ Review_553,Let's (not) just put things in Context: Test-Time Training for Long-C
 Review_554,DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning,https://arxiv.org/abs/2511.22570
 Review_555,Learning Dynamics of LLM Finetuning,https://arxiv.org/abs/2407.10490
 Review_556,Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond),https://arxiv.org/abs/2510.22954
+Review_557,SEAL: Self-Adapting Language Models,https://arxiv.org/abs/2506.10943
 Review_558,Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning,https://arxiv.org/abs/2511.14460
 Review_559,RECURSIVE LANGUAGE MODELS,https://arxiv.org/abs/2512.24601
 Review_560,Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition,https://arxiv.org/abs/2409.17746
