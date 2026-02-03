@@ -105,6 +105,42 @@ class MetadataUpdater(BaseUpdater):
 
         return reviews_data
 
+    def _clean_title(self, title: str) -> str:
+        """
+        Clean extracted title by removing unwanted elements.
+
+        - Remove emojis
+        - Remove "[Short]" or "[short]" markers
+        - Normalize whitespace
+
+        Args:
+            title: Raw extracted title
+
+        Returns:
+            Cleaned title string
+        """
+        # Remove [Short] or [short] markers
+        title = re.sub(r'\[[Ss]hort\]\s*:?\s*', '', title)
+
+        # Remove emojis (match emoji unicode ranges)
+        emoji_pattern = re.compile(
+            "["
+            "\U0001F600-\U0001F64F"  # emoticons
+            "\U0001F300-\U0001F5FF"  # symbols & pictographs
+            "\U0001F680-\U0001F6FF"  # transport & map symbols
+            "\U0001F1E0-\U0001F1FF"  # flags (iOS)
+            "\U00002702-\U000027B0"
+            "\U000024C2-\U0001F251"
+            "]+",
+            flags=re.UNICODE
+        )
+        title = emoji_pattern.sub('', title)
+
+        # Normalize whitespace
+        title = re.sub(r'\s+', ' ', title).strip()
+
+        return title
+
     def _extract_title_and_link(self, file_path: Path) -> Tuple[Optional[str], Optional[str]]:
         """
         Extract paper title and arxiv link from a review markdown file.
@@ -149,16 +185,27 @@ class MetadataUpdater(BaseUpdater):
                         if ascii_ratio > 0.7:  # Stricter check
                             title = potential_title
 
-                # Otherwise look for date followed by colon and English title
+                # Otherwise look for date followed by English title (with or without colon/space)
                 if not title:
+                    # Pattern 1: Date with colon/space: "DD.MM.YY: Title" or "DD.MM.YY Title"
                     date_title_match = re.search(r'\d{2}\.\d{2}\.\d{2}[:\s]+(.+)$', first_line)
                     if date_title_match:
                         potential_title = date_title_match.group(1).strip()
                         # Verify it's mostly English
                         if re.search(r'[A-Za-z]', potential_title):
                             ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                            if ascii_ratio > 0.7:  # Stricter check
+                            if ascii_ratio > 0.7:
                                 title = potential_title
+
+                    # Pattern 2: Date without separator: "DD.MM.YYTitle" (common in 376-425 range)
+                    if not title:
+                        date_no_sep_match = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Z].+)$', first_line)
+                        if date_no_sep_match:
+                            potential_title = date_no_sep_match.group(1).strip()
+                            if re.search(r'[A-Za-z]', potential_title):
+                                ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
+                                if ascii_ratio > 0.7:
+                                    title = potential_title
 
             # Strategy 2: If no title yet, look for English title in first 15 lines
             if not title:
@@ -209,6 +256,10 @@ class MetadataUpdater(BaseUpdater):
                         arxiv_link = arxiv_link.replace('/pdf/', '/abs/')
                         # Keep version in URL (it's informative)
                         break
+
+            # Clean the title if found
+            if title:
+                title = self._clean_title(title)
 
             return title, arxiv_link
 

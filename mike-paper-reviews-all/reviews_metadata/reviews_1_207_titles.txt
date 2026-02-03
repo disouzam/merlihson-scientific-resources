@@ -69,122 +69,122 @@
  66. VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
  67. Grokking: Generalization beyond Overfitting on small algorithmic datasets
  68. PATCHES ARE ALL YOU NEED?
- 69. [Short] SIMVLM: SIMPLE VISUAL LANGUAGE MODEL PRE-TRAINING WITH WEAK SUPERVISION
- 70. [Short] Typical Decoding for Natural Language Generation
+ 69. SIMVLM: SIMPLE VISUAL LANGUAGE MODEL PRE-TRAINING WITH WEAK SUPERVISION
+ 70. Typical Decoding for Natural Language Generation
  71. Deep Reinforcement Learning for Cyber System Defense under Dynamic Adversarial Uncertainties
- 72. [Short] Unifying Large Language Models and Knowledge Graphs: A Roadmap
- 73. [Short] Diffusion Models for Zero-Shot Open-Vocabulary Segmentation
- 74. [Short] Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
- 75. [Short] Recurrent Memory Decision Transformer
- 76. [Short] Gradient is All You Need?
- 77. [Short] Diffusion with Forward Models: Solving Stochastic Inverse Problems Without Direct Supervision
- 78. [Short] Fast Segment Anything
- 79. [Short] SqueezeLLM: Dense-and-Sparse Quantization
- 80. [Short] SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis
- 81. [Short] Segment Anything Meets Point Tracking
- 82. [Short] SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Task Planning
- 83. [Short] HyperDreamBooth: HyperNetworks for Fast Personalization of Text-to-Image Models
- 84. [Short] Learning to Retrieve In-Context Examples for Large Language Models
- 85. [Short] Anticorrelated Noise Injection for Improved Generalization
- 86. [Short] BuboGPT: Enabling Visual Grounding in Multi-Modal LLMs
- 87. [Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing
+ 72. Unifying Large Language Models and Knowledge Graphs: A Roadmap
+ 73. Diffusion Models for Zero-Shot Open-Vocabulary Segmentation
+ 74. Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
+ 75. Recurrent Memory Decision Transformer
+ 76. Gradient is All You Need?
+ 77. Diffusion with Forward Models: Solving Stochastic Inverse Problems Without Direct Supervision
+ 78. Fast Segment Anything
+ 79. SqueezeLLM: Dense-and-Sparse Quantization
+ 80. SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis
+ 81. Segment Anything Meets Point Tracking
+ 82. SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Task Planning
+ 83. HyperDreamBooth: HyperNetworks for Fast Personalization of Text-to-Image Models
+ 84. Learning to Retrieve In-Context Examples for Large Language Models
+ 85. Anticorrelated Noise Injection for Improved Generalization
+ 86. BuboGPT: Enabling Visual Grounding in Multi-Modal LLMs
+ 87. TokenFlow: Consistent Diffusion Features for Consistent Video Editing
  88. Secure Machine Learning in the Cloud Using One Way Scrambling by Deconvolution
  89. Faster Convergence for Transformer Fine-tuning with Line Search Methods
- 90. [Short] Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust.
+ 90. Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust.
  91. Gradients Are Not All You Need
  92. Revisiting Simple Neural Probabilistic Language Models
  93. Graphical Models for Processing Missing Data
- 94. [Short] In-context Autoencoder for Context Compression in a Large Language Model
- 95. [Short] StyleGAN-NADA: CLIP-Guided Domain Adaptation of Image Generators
- 96. [Short] Multiscale Vision Transformers (MViT): A hierarchical architecture for representing image and video information (Meta)
+ 94. In-context Autoencoder for Context Compression in a Large Language Model
+ 95. StyleGAN-NADA: CLIP-Guided Domain Adaptation of Image Generators
+ 96. Multiscale Vision Transformers (MViT): A hierarchical architecture for representing image and video information (Meta)
  97. Self-Attention Between Datapoints: Going Beyond Individual Input-Output Pairs in Deep Learning
- 98. [Short] Continuous Layout Editing of Single Images with Diffusion Models
- 99. [Short] Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning
+ 98. Continuous Layout Editing of Single Images with Diffusion Models
+ 99. Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning
 100. Fastformer: Additive attention is Can Be All you need
 101. GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models
-102. [Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing, 21.07.23https://arxiv.org/abs/2307.10373
-103. [Short] Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23
-104. [Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf
-105. [Short] Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23
+102. TokenFlow: Consistent Diffusion Features for Consistent Video Editing, 21.07.23https://arxiv.org/abs/2307.10373
+103. Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23
+104. Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf
+105. Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23
 106. Interpolating between Images with Diffusion Models, 25.07.23https://arxiv.org/abs/2307.12560.pdf
 107. LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition 26.07.23https://huggingface.co/papers/2307.13269
-108. [Short] Composite Diffusion | whole >= Σparts, 27.07.23
-109. [Short] Scaling TransNormer to 175 Billion Parameters, 28.07.23https://huggingface.co/papers/2307.14995
-110. [Short] RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950
-111. [Short] DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf
-112. [Short] Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding, 31.07.23https://huggingface.co/papers/2307.15337
-113. [Short] UnIVAL: Unified Model for Image, Video, Audio and Language Tasks, 01.08.23
-114. [Short] WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Modelshttps://huggingface.co/papers/2306.04744
-115. [Short] From Sparse to Soft Mixtures of Experts, 03.08.23https://huggingface.co/papers/2308.00951
-116. [Short] Multimodal Neurons in Pretrained Text-Only Transformers, 05.08.23https://huggingface.co/papers/2308.01544
+108. Composite Diffusion | whole >= Σparts, 27.07.23
+109. Scaling TransNormer to 175 Billion Parameters, 28.07.23https://huggingface.co/papers/2307.14995
+110. RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950
+111. DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf
+112. Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding, 31.07.23https://huggingface.co/papers/2307.15337
+113. UnIVAL: Unified Model for Image, Video, Audio and Language Tasks, 01.08.23
+114. WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Modelshttps://huggingface.co/papers/2306.04744
+115. From Sparse to Soft Mixtures of Experts, 03.08.23https://huggingface.co/papers/2308.00951
+116. Multimodal Neurons in Pretrained Text-Only Transformers, 05.08.23https://huggingface.co/papers/2308.01544
 117. ConceptLab: Creative Generation using Diffusion Prior Constraints, 06.08.23https://kfirgoldberg.github.io/ConceptLab/static/ConceptLab.pdf
-118. b: [Short] Predicting masked tokens in stochastic locations improves masked image modeling, 07.08.23https://arxiv.org/abs/2308.00566.pdf
-119. [Short] Seeing through the Brain: Image Reconstruction of Visual Perception from Human Brain Signals, 08.08.23https://huggingface.co/papers/2308.02510
-120. [Short] FLIRT: Feedback Loop In-context Red Teaming, 09.08.23https://huggingface.co/papers/2308.04265
-121. [Short] SIMPLE SYNTHETIC DATA REDUCES SYCOPHANCY IN LARGE LANGUAGE MODELS, 10.08.23https://arxiv.org/abs/2308.03958.pdf
-122. [Short] AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING, 11.08.23https://huggingface.co/papers/2308.05734
-123. [Short] DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING, 12.08.23https://huggingface.co/papers/2307.10864
-124. [Short] TextDiffuser: Diffusion Models as Text Painters, 13.08.23https://huggingface.co/papers/2305.10855
-125. [Short] Self-Alignment with Instruction Backtranslation, 14.08.23https://huggingface.co/papers/2308.06259
+118. b: Predicting masked tokens in stochastic locations improves masked image modeling, 07.08.23https://arxiv.org/abs/2308.00566.pdf
+119. Seeing through the Brain: Image Reconstruction of Visual Perception from Human Brain Signals, 08.08.23https://huggingface.co/papers/2308.02510
+120. FLIRT: Feedback Loop In-context Red Teaming, 09.08.23https://huggingface.co/papers/2308.04265
+121. SIMPLE SYNTHETIC DATA REDUCES SYCOPHANCY IN LARGE LANGUAGE MODELS, 10.08.23https://arxiv.org/abs/2308.03958.pdf
+122. AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING, 11.08.23https://huggingface.co/papers/2308.05734
+123. DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING, 12.08.23https://huggingface.co/papers/2307.10864
+124. TextDiffuser: Diffusion Models as Text Painters, 13.08.23https://huggingface.co/papers/2305.10855
+125. Self-Alignment with Instruction Backtranslation, 14.08.23https://huggingface.co/papers/2308.06259
 126. Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP, 15.08.23https://huggingface.co/papers/2308.02487
 127. Short : SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION, 16.08.23
-128. [Short] Dual-Stream Diffusion Net for Text-to-Video Generation, 17.08.23https://huggingface.co/papers/2308.08316
-129. [Short] 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)https://mdsoar.org/bitstream/handle/11603/25498/1117.pdf
-130. [Short] Watch Your Steps: Local Image and Scene Editing by Text Instructions, 26.08.23https://arxiv.org/abs/2211.09800.pdf
+128. Dual-Stream Diffusion Net for Text-to-Video Generation, 17.08.23https://huggingface.co/papers/2308.08316
+129. 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)https://mdsoar.org/bitstream/handle/11603/25498/1117.pdf
+130. Watch Your Steps: Local Image and Scene Editing by Text Instructions, 26.08.23https://arxiv.org/abs/2211.09800.pdf
 131. SeamlessM4T—Massively Multilingual & Multimodal Machine Translation, 27.08.23https://ai.meta.com/research/publications/seamless-m4t
-132. [Short] 28.08.23: Nougat: Neural Optical Understanding for Academic Documentshttps://arxiv.org/abs/2308.13418.pdf
+132. 28.08.23: Nougat: Neural Optical Understanding for Academic Documentshttps://arxiv.org/abs/2308.13418.pdf
 133. Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models, 29.08.23https://arxiv.org/abs/2305.16582.pdf
-134. [Short] OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models, 30.08.23https://arxiv.org/abs/2308.13137
+134. OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models, 30.08.23https://arxiv.org/abs/2308.13137
 135. LM-INFINITE: SIMPLE ON-THE-FLY LENGTH GENERALIZATION FOR LARGE LANGUAGE MODELS, 31.08.23https://arxiv.org/abs/2308.16137.pdf
-136. [Short] ORES: Open-vocabulary Responsible Visual Synthesis, 01.09.23https://arxiv.org/abs/2308.13785.pdf
-137. [Short] Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images, 03.09.2023
+136. ORES: Open-vocabulary Responsible Visual Synthesis, 01.09.23https://arxiv.org/abs/2308.13785.pdf
+137. Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images, 03.09.2023
 138. YaRN: Efficient Context Window Extension of Large Language Models, 04.09.2023
 139. G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment, 05.09.2023
 140. Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models, 06.09.2023
-141. [Short] One Wide Feedforward is All You Need, 07.09.2023
-142. [Short] DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS, 08.09.2023
+141. One Wide Feedforward is All You Need, 07.09.2023
+142. DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS, 08.09.2023
 143. LARGE LANGUAGE MODELS AS OPTIMIZERS, 09.09.2023
-144. [Short] Explaining grokking through circuit efficiency, 11.09.2023
+144. Explaining grokking through circuit efficiency, 11.09.2023
 145. Transformers as Support Vector Machines, 12.09.23https://arxiv.org/abs/2308.16898.pdf
 146. Textbooks Are All You Need II: phi-1.5 technical report, 13.09.23
 147. Reinforced Self-Training (ReST) for Language Modeling, 14.09.23https://arxiv.org/abs/2308.08998.pdf
 148. Generative Image Dynamicshttps://huggingface.co/papers/2309.07906
 149. Knowledge Graph Prompting for Multi-Document Question Answering, 17.09.23
-150. [Short] Ambiguity-Aware In-Context Learning with Large Language Models, 18.09.23
+150. Ambiguity-Aware In-Context Learning with Large Language Models, 18.09.23
 151. Language Modeling Is Compression, 21.09.2023
-152. [Short] FreeU: Free Lunch in Diffusion U-Net, 22.09.2023
+152. FreeU: Free Lunch in Diffusion U-Net, 22.09.2023
 153. CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transformers for Long Context Window Extending, 23.09.2023
-154. [Short] FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION, 24.09.2023
+154. FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION, 24.09.2023
 155. Context is Environment, 26.09.2023
-156. [Short] CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS, 27.09.2023
+156. CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS, 27.09.2023
 157. Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS, 28.09.2023
-158. [Short] End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
-159. [Short] Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
-160. [Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization, 02.10.2023
-161. [Short] Vision Transformers Need Registershttps://arxiv.org/abs/2309.16588
-162. [Short] PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis
-163. [Short] Think before you speak: Training Language Models With Pause Tokens
-164. [Short] Idea2Img: Iterative Self-Refinement with GPT-4V(ision) for Automatic Image Design and Generation
-165. [Short] Table-GPT: Table-tuned GPT for Diverse Table Tasks
-166. [Short] LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models
+158. End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
+159. Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
+160. Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization, 02.10.2023
+161. Vision Transformers Need Registershttps://arxiv.org/abs/2309.16588
+162. PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis
+163. Think before you speak: Training Language Models With Pause Tokens
+164. Idea2Img: Iterative Self-Refinement with GPT-4V(ision) for Automatic Image Design and Generation
+165. Table-GPT: Table-tuned GPT for Diverse Table Tasks
+166. LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models
 167. In-Context Pretraining: Language Modeling Beyond Document Boundaries
-168. [Short] Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model
-169. [Short] VERA: VECTOR-BASED RANDOM MATRIX ADAPTATION
+168. Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model
+169. VERA: VECTOR-BASED RANDOM MATRIX ADAPTATION
 170. Safe RLHF: Safe Reinforcement Learning from Human Feedback
 171. TOOLCHAIN* : EFFICIENT ACTION SPACE NAVIGATION IN LARGE LANGUAGE MODELS WITH A* SEARCH
 172. Matryoshka Diffusion Models
-173. [Short] Localizing and Editing Knowledge in Text-to-Image Generative Models
-174. [Short] Teaching Language Models to Self-Improve through Interactive Demonstrations
+173. Localizing and Editing Knowledge in Text-to-Image Generative Models
+174. Teaching Language Models to Self-Improve through Interactive Demonstrations
 175. In-Context Learning Creates Task Vectors
-176. [Short] A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation
+176. A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation
 177. Large Language Models as Generalizable Policies for Embodied Tasks
-178. [Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise
-179. [Short] CAPSFUSION: Rethinking Image-Text Data at Scale
-180. [Short] UNLEASHING THE POWER OF PRE-TRAINED LANGUAGE MODELS FOR OFFLINE REINFORCEMENT LEARNING
-181. [Short] Learning From Mistakes Makes LLM Better Reasoner
-182. [Short] Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models
+178. TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise
+179. CAPSFUSION: Rethinking Image-Text Data at Scale
+180. UNLEASHING THE POWER OF PRE-TRAINED LANGUAGE MODELS FOR OFFLINE REINFORCEMENT LEARNING
+181. Learning From Mistakes Makes LLM Better Reasoner
+182. Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models
 183. Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models
-184. [Short] WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION
+184. WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION
 185. Mamba Series, An Intro
 186. Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks
 187. HiPPO: Recurrent Memory with Optimal Polynomial Projections
@@ -198,7 +198,7 @@
 195. Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 196. Can Mamba Learn How to Learn? A Comparative Study on In-Context Learning Tasks
 197. VMamba: Visual State Space Model
-198. [Short] LLM4Decompile: Decompiling Binary Code with Large Language Models
+198. LLM4Decompile: Decompiling Binary Code with Large Language Models
 199. Improving Text Embeddings with Large Language Models
 200. LLM2Vec: Large Language Models Are Secretly Powerful Text Encoder
 201. SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series
