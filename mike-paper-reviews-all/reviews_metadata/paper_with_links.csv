@@ -220,7 +220,7 @@ Review_218,Transformers are SSMs: Generalized Models and Efficient Algorithms Th
 Review_219,What Do Language Models Learn in Context? The Structured Task Hypothesis.,https://arxiv.org/abs/2406.04216
 Review_220,Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks,https://arxiv.org/abs/2406.02550
 Review_221,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,https://arxiv.org/abs/2406.01506
-Review_222,Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving,
+Review_222,Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving,https://arxiv.org/abs/2002.03629
 Review_223,Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING,https://arxiv.org/abs/2402.02057
 Review_224,CLLMs: Consistency Large Language Models,https://arxiv.org/abs/2403.00835
 Review_225,MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads,https://arxiv.org/abs/2401.10774
@@ -258,7 +258,7 @@ Review_256,TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING,https://arxiv.o
 Review_257,Feedback Efficient Online Fine-Tuning of Diffusion Models,https://arxiv.org/abs/2402.16359
 Review_258,"The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof",https://arxiv.org/abs/2405.20231
 Review_259,AI models collapse when trained on recursively generated data,
-Review_260,Questionable practices in machine learning,
+Review_260,Questionable practices in machine learning,https://arxiv.org/abs/2407.12220
 Review_261,Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?,https://arxiv.org/abs/2407.16607
 Review_262,Large Scale Dataset Distillation with Domain Shift,
 Review_263,Denoising Vision Transformers,https://arxiv.org/abs/2401.02957
@@ -279,7 +279,7 @@ Review_277,Your Classifier Can Be Secretly a Likelihood-Based OOD Detect,https:/
 Review_278,On the Geometry of Deep Learning,https://arxiv.org/abs/2408.04809
 Review_279,Faster Machine Unlearning via Natural Gradient Descent,https://arxiv.org/abs/2407.08169
 Review_280,DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION,https://arxiv.org/abs/2209.14734
-Review_281,JPEG-LM: LLMs as Image Generators with Canonical Codec Representations,
+Review_281,JPEG-LM: LLMs as Image Generators with Canonical Codec Representations,https://arxiv.org/abs/2408.08459
 Review_282,Tree Attention: Topology-Aware Decoding for Long-Context Attention on GPU Clusters,https://arxiv.org/abs/2408.04093
 Review_283,Approaching Deep Learning through the Spectral Dynamics of Weights,https://arxiv.org/abs/2408.11804
 Review_284,Platypus: A Generalized Specialist Model for Reading Text in Various Forms,https://arxiv.org/abs/2408.14805
@@ -306,9 +306,9 @@ Review_304,Quiet-STaR: Language Models Can Teach Themselves to Think Before Spea
 Review_305,Training Language Models to Self-Correct via Reinforcement Learning,https://arxiv.org/abs/2409.12917
 Review_306,LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH,https://arxiv.org/abs/2409.13373
 Review_307,RRM: ROBUST REWARD MODEL TRAINING MITIGATES REWARD HACKING,https://arxiv.org/abs/2409.13156
-Review_308,REWARD-ROBUST RLHF IN LLMS,
+Review_308,REWARD-ROBUST RLHF IN LLMS,https://arxiv.org/abs/2409.15360
 Review_309,Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages,https://arxiv.org/abs/2409.10429
-Review_310,ASR Error Correction using Large Language Models,
+Review_310,ASR Error Correction using Large Language Models,https://arxiv.org/abs/2409.09554
 Review_311,SCHRODINGER’S MEMORY: LARGE LANGUAGE MODELS,https://arxiv.org/abs/2409.10482
 Review_312,Larger and more instructable language models become less reliable,
 Review_313,"Transformers are Expressive, But Are They Expressive Enough for Regression?",https://arxiv.org/abs/2402.15478
@@ -333,7 +333,7 @@ Review_331,Efficient Vision-Language Pre-training by Cluster Masking,https://arx
 Review_332,HEAVY-TAILED DIFFUSION MODELS,https://arxiv.org/abs/2410.14171
 Review_333,"Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers",https://arxiv.org/abs/2410.08304
 Review_334,Beyond Preferences in AI Alignment,https://arxiv.org/abs/2408.16984
-Review_335,Understanding Transformers via N-gram Statistics,
+Review_335,Understanding Transformers via N-gram Statistics,https://arxiv.org/abs/2407.12034
 Review_336,LLMs Are In-Context Reinforcement Learners,https://arxiv.org/abs/2410.05362
 Review_337,Learning to Compress: Local Rank and Information Compression in Deep Neural Networks,https://arxiv.org/abs/2410.07687
 Review_338,TOKENFORMER: RETHINKING TRANSFORMER SCALING WITH TOKENIZED MODEL PARAMETERS,https://arxiv.org/abs/2410.23168
@@ -481,7 +481,7 @@ Review_479,DINO-WM:World Models on Pre-trained Visual Features enable Zero-shot 
 Review_480,Investigating Tax Evasion Emergence Using Dual Large Language Model and Deep Reinforcement Learning Powered Agent-based Simulation,https://arxiv.org/abs/2501.18177
 Review_481,Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models,https://arxiv.org/abs/2411.12580
 Review_482,Frontier Models are Capable of In-context Scheming,https://arxiv.org/abs/2412.04984
-Review_483,s1: Simple test-time scaling,
+Review_483,s1: Simple test-time scaling,https://arxiv.org/abs/2501.19393
 Review_484,GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment,https://arxiv.org/abs/2410.0819
 Review_485,Reinforcement Pre-Training,https://arxiv.org/abs/2506.08007
 Review_486,"Building Bridges between Regression, Clustering, and Classification",https://arxiv.org/abs/2502.02996
@@ -505,17 +505,17 @@ Review_503,Memento: Fine-tuning LLM Agents without Fine-tuning LLMs,https://arxi
 Review_504,DEEP THINK WITH CONFIDENCE,https://arxiv.org/abs/2508.15260
 Review_505,Strategic Intelligence in Large Language Models: Evidence from evolutionary Game Theory,https://arxiv.org/abs/2507.02618
 Review_506,A Survey on Large Language Model Benchmarks,https://arxiv.org/abs/2508.15361
-Review_507,Group Sequence Policy Optimization,
+Review_507,Group Sequence Policy Optimization,https://arxiv.org/abs/2507.18071
 Review_508,Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation,https://arxiv.org/abs/2508.13144
 Review_509,Fantastic Pretraining Optimizers and Where to Find Them,https://arxiv.org/abs/2509.02046
 Review_510,Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making,
 Review_511,On the Theoretical Limitations of Embedding-Based Retrieval,https://arxiv.org/abs/2508.21038
-Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,
+Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,https://arxiv.org/abs/2509.04575
 Review_513,THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION,https://arxiv.org/abs/2507.14560
 Review_514,Foundation Models for Time Series Analysis- A Tutorial and Survey,https://arxiv.org/abs/2403.14735
 Review_515,Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215
 Review_516,"Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2505.06708
-Review_517,EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING,
+Review_517,EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING,https://arxiv.org/abs/2509.17196
 Review_518,מאמר היומי של מייק: 02.10.25Optimizers Qualitatively Alter Solutions And We Should Leverage This,https://arxiv.org/abs/2507.12224
 Review_519,Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs,https://arxiv.org/abs/2507.07996
 Review_520,BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR,https://arxiv.org/abs/2509.23808
@@ -524,7 +524,7 @@ Review_522,COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A,https://arxiv.org/abs/2509.
 Review_523,Less is More: Recursive Reasoning with Tiny Networks,https://arxiv.org/abs/2510.04871
 Review_524,Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence,https://arxiv.org/abs/2402.09880
 Review_525,LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM,https://arxiv.org/abs/2508.17821
-Review_526,Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs,
+Review_526,Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs,https://arxiv.org/abs/2505.00127
 Review_527,The Markovian Thinker,https://arxiv.org/abs/2510.06557
 Review_528,Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO,https://arxiv.org/abs/2509.13081
 Review_529,DeepSeek-OCR: Contexts Optical Compression,https://arxiv.org/abs/2510.18234
@@ -564,7 +564,7 @@ Review_562,From Entropy to Epiplexity: Rethinking Information for Computationall
 Review_563,"WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?",https://arxiv.org/abs/2512.12895
 Review_564,Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning,https://arxiv.org/abs/2505.12477
 Review_565,The Free Transformer,https://arxiv.org/abs/2510.17558
-Review_566,RAFT - Retrieval Augmented Time Series Forecasting,
+Review_566,RAFT - Retrieval Augmented Time Series Forecasting,https://arxiv.org/abs/2505.04163
 Review_567,Deep Delta Learning,https://arxiv.org/abs/2601.00417
 Review_568,"SFT Memorizes, RL Generalizes",https://arxiv.org/abs/2501.17161
 Review_569,REPO: Language Models with Context Re-Positioning,https://arxiv.org/abs/2512.14391

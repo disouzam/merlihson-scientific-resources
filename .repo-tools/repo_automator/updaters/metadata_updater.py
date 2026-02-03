@@ -267,17 +267,28 @@ class MetadataUpdater(BaseUpdater):
 
             # Look for arxiv link (can appear anywhere in the file)
             for line in lines:
-                if 'arxiv.org' in line.lower():
-                    # Extract the arxiv URL
+                if 'arxiv' in line.lower():
+                    # Extract the arxiv URL - handle various typos and missing protocols
+                    # Pattern handles:
+                    # - Missing protocol: arxiv.org/abs/...
+                    # - Single slash typo: https:/arxiv.org/abs/...
+                    # - www prefix: www.arxiv.org
+                    # - Path variants: /abs/, /pdf/, /absl/ (typo)
                     arxiv_match = re.search(
-                        r'https?://arxiv\.org/(?:abs|pdf)/[\d.]+(?:v\d+)?',
+                        r'(?:https?:?/+)?(?:www\.)?arxiv\.org/(?:abs|pdf|absl)/[\d.]+(?:v\d+)?',
                         line,
                         re.IGNORECASE
                     )
                     if arxiv_match:
                         arxiv_link = arxiv_match.group(0)
-                        # Normalize to abs format and remove version if in URL
+                        # Normalize: ensure https://, remove www., change /pdf/ to /abs/, fix /absl/ typo
+                        if not arxiv_link.startswith('http'):
+                            arxiv_link = 'https://' + arxiv_link
+                        arxiv_link = arxiv_link.replace('www.arxiv.org', 'arxiv.org')
                         arxiv_link = arxiv_link.replace('/pdf/', '/abs/')
+                        arxiv_link = arxiv_link.replace('/absl/', '/abs/')
+                        # Fix single-slash typo: https:/arxiv -> https://arxiv
+                        arxiv_link = re.sub(r'https?:/([^/])', r'https://\1', arxiv_link)
                         # Keep version in URL (it's informative)
                         break
 
