@@ -1,5 +1,5 @@
 # 📚 Paper Titles from Reviews 208+ (Auto-generated)
-# Successfully extracted: 366 titles
+# Successfully extracted: 365 titles
 
   1. b: Training LLMs over Neurally Compressed Text
   2. 2BP: 2-Stage Backpropagation
@@ -366,4 +366,3 @@
   363. DoPE: Denoising Rotary Position Embedding
   364. mHC: Manifold-Constrained Hyper-Connections
   365. Efficient Context Scaling with LongCat ZigZag Attention
-  366. This is a test review to verify that the git hook now updates both:

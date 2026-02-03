@@ -570,4 +570,3 @@
 570. DoPE: Denoising Rotary Position Embedding
 571. mHC: Manifold-Constrained Hyper-Connections
 572. Efficient Context Scaling with LongCat ZigZag Attention
-574. This is a test review to verify that the git hook now updates both:

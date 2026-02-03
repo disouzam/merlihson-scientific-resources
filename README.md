@@ -21,7 +21,7 @@
 <table>
 <tr>
 <td align="center" width="25%">
-<h3>📄 573+</h3>
+<h3>📄 572+</h3>
 <b>Paper Reviews</b><br>
 <sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
 </td>
@@ -106,7 +106,7 @@ The core collection containing **572 individual paper reviews** in multiple form
 | Type | Count | Description |
 |------|-------|-------------|
 | **Individual Reviews** | 1-208 | Deep-dive analyses with paper links |
-| **Daily Reviews** | 365-572 | Chronological reviews (May 2024 - Feb 2026) |
+| **Daily Reviews** | 364-572 | Chronological reviews (May 2024 - Feb 2026) |
 
 #### Formats Available
 - **`split-hebrew-reviews-md/`** - 572 Hebrew review markdown files (primary format)
@@ -333,11 +333,11 @@ pip install -r mike-paper-reviews-all/py_code/requirements.txt
 
 | Metric | Value |
 |--------|-------|
-| **Total Paper Reviews** | 573 |
-| **Hebrew Reviews (Markdown)** | 573 files |
+| **Total Paper Reviews** | 572 |
+| **Hebrew Reviews (Markdown)** | 572 files |
 | **English Reviews (Markdown)** | 205 files |
 | **Reviews with Paper Links** | 572 (100% coverage!) |
-| **Daily Reviews** | 365 (May 2024 - Feb 2026) |
+| **Daily Reviews** | 364 (May 2024 - Feb 2026) |
 | **Learning Categories** | 21 |
 | **Presentations** | 9 |
 | **Total Repository Size** | 3.7 GB |
