@@ -1,6 +1,7 @@
 הופכים את ה"מלא" לדליל עם LongCat
 
 סקירת המאמרים היומית של מייק: .31.01.26, סקירה 572, 452 סקירות עד 1024
+
 Efficient Context Scaling with LongCat ZigZag Attention
 
 הסיבוכית הריבועית של מנגנוני ה-attention נותרת צוואר הבקבוק העיקרי עבור חלונות הקשר ארוכים המופיעים למשל ביישומים אג'נטיים. בעוד ששינויים ארכיטקטוניים כמו attention לינארי או מודלי SSM כמו ממבה מנסים לעקוף זאת, המאמר הנסקר מציע התערבות מתודולוגית עבור מודלים קיימים של attention מלא. המחברים פיתחו LongCat ZigZag Attention (או LoZA), שיטת attention דלילה שתוכננה להפוך ארכיטקטורות (Multi-Head Latent Attention(MLA צפופות למודלים היברידיים דלילים במהלך אימון הביניים (mid-training).
@@ -32,4 +33,5 @@ Efficient Context Scaling with LongCat ZigZag Attention
 מודה שמאוד אהבתי את המאמר הזה: שילוב של אלגנטיות ורעיונות הגיוניים.
 
 https://arxiv.org/abs/2512.23966
+
 v2

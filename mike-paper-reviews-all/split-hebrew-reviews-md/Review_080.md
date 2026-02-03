@@ -1,6 +1,7 @@
 Review 80: [Short] SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis
 
 Paper: https://arxiv.org/abs/2307.01952
+
 v1
 
 זהו השדרוג של מודל SD2.0 המגנרט תמונות באיכות מטריפה מטקסט. המאמר הציע כמה שפצורים לארכיטקטורה של SD המקורי, שכלל את האימון והשתמש ב-SDEdit לשיפור איכות התמונות

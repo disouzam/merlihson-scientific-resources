@@ -1,6 +1,7 @@
 DoPE: השתקת זעקת התדר הנמוך של RoPE
 
 המאמר היומי של מייק 28.01.26, סקירה 570, 454 סקירות ל-1024
+
 DoPE: Denoising Rotary Position Embedding
 
 סקירה שניה ברציפות הקשורה לקידוד המיקומי (positional encoding) במודלי הטרנספורמרים.

@@ -1,6 +1,7 @@
 אפיפלקסיות: כשחישוב יוצר מידע
 
 סקירת המאמרים היומית של מייק: 09.01.26, סקירה 562, 462 סקירות עד 1024
+
 From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence
 
 זה המאמר המורכב ביותר שאני סוקר זמן מה (וה״מה״ הזה הוא די ארוך). עוד דבר דיסקליימר קטן: לפעמים אשתמש במילה ״סיבוכיות״ במקום ״מורכבות״ ולהיפך 
@@ -48,4 +49,5 @@ From Entropy to Epiplexity: Rethinking Information for Computationally Bounded I
 על ידי ניסוח פורמלי של "ערך" הנתונים כעבודה החישובית הנדרשת כדי לדחוס אותם, המאמר מספק שפה ריגורוזית למה ש"חוקי סקיילינג״ מודדים בפועל: ההמרה של FLOPs למידע מבני.
 
 https://arxiv.org/abs/2601.03220
+
 v1

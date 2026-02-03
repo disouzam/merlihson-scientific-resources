@@ -1,6 +1,7 @@
 Review 171: Matryoshka Diffusion Models
 
 Paper: https://arxiv.org/abs/2310.15111
+
 v2
 
 https://huggingface.co/papers/2310.15111

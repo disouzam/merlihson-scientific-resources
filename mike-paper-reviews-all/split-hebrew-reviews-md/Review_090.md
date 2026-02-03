@@ -1,6 +1,7 @@
 Review 90: [Short] Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust.
 
 Paper: https://arxiv.org/abs/2305.20030
+
 v3
 
 המאמר מציע שיטה לגילוי של תמונות נוצרות באמצעות מודלי דיפוזיה גנרטיביים.

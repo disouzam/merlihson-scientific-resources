@@ -1,6 +1,7 @@
 Review 161: [Short] PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis
 
 Paper: https://arxiv.org/abs/2310.00426
+
 v3
 
 https://arxiv.org/abs/2310.00426

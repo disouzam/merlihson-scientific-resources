@@ -1,6 +1,7 @@
 Review 23: Make-A-Video: Text-to-Video Generation without Text-Video Data
 
 Paper: https://arxiv.org/abs/2311.10982
+
 v1
 
 Make-A-Video: Text-to-Video Generation without Text-Video Data
@@ -92,8 +93,11 @@ DreamBooth
 שלב SRl: מבצעים דגימת יתר במרחב הפיקסלים ו/או במרחב הזמן (מעלים מספר פריימים לשניה).
 
 בשלב SRh מגדילים רק את רזולוציית הפריימים תוך שמירה על אותו fps (אחרת זה יוצא כבד מדי מבחינה חישובית לאמן את זה). בסוף התהליך מקבלים וידאו ברזולוציה 768
+
 x768 בכמה fps אפשריים (המחברים מבצעים downsampling ל-512
+
 x512 בטענה שזה מוריד רעשים של תדרים גבוהים שיצאו לא טוב ברזולוציה 768
+
 x768).
 
 איור 4: דיאגרמה כללית של Make-A-Video

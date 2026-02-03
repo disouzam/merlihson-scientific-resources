@@ -1,6 +1,7 @@
 Review 13: AVAE: Adversarial Variational AutoEncoder
 
 Paper: https://arxiv.org/abs/2012.11551
+
 v1
 
 תאריך פרסום: 21.12.2020

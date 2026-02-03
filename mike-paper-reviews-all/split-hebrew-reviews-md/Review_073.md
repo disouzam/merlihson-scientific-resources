@@ -1,6 +1,7 @@
 Review 73: [Short] Diffusion Models for Zero-Shot Open-Vocabulary Segmentation
 
 Paper: https://arxiv.org/abs/2301.05221
+
 v2
 
 המאמר מציע שיטת סגמנטציה zero-shot בעלת מילון פתוח, כלומר אין לנו מכלול סגור קטגוריות אלא כל תמונה מקבלת סגמנטציה עם הקטגוריות משלה. כמובן שהשיטה לא דורשת שום אימון מקדים (zero-shot). זה מתבצע באמצעות מודל Text2Image דיפוזיה (DDPM) גנרטיבי 

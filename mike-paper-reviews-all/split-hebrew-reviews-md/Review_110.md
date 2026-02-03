@@ -1,6 +1,7 @@
 Review 110: [Short] RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950
 
 Paper: https://arxiv.org/abs/2307.12950
+
 v3
 
 איך מאמנים את LLM לתת תשובות ענייניות ולא מזיקות? מאמנים מודל תגמול לתת ציון גבוה לתשובה רצויה וציון נמוך לתשובה פחות רצויה. אז מכיילים LLM תוך כדי מקסום של ציון מודל התגמול המאומן (+ קוהרנטיות). אבל איך יוצרים דאטה לאימון מודל התגמול. 

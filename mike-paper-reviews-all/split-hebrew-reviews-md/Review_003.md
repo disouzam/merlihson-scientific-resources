@@ -1,6 +1,7 @@
 Review 3: Are Deep Neural Architectures Losing Information? Invertibility Is Indispensable?
 
 Paper: https://arxiv.org/abs/2009.03173
+
 v2
 
 המאמר משך את עיניי כי שמו בתרגום לעברית "האם רשתות נוירונים מאבדים מידע? האם הפיכות נחוצה!" 

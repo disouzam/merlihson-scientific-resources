@@ -1,6 +1,7 @@
 Review 64b: TRAIN SHORT, TEST LONG: ATTENTION WITH LINEAR BIASES ENABLES INPUT LENGTH EXTRAPOLATION
 
 Paper: https://arxiv.org/abs/2108.12409
+
 v2
 
 כמו שאתם יודעים אחת החולשות העיקריות של הטרנספורמר היא הסיבוכיות הריבועית שלו ביחס לאורך סדרת הקלט. יצאו מאות מאמרים המציעים וריאנטים של הטרנספורמר עם סיבוכיות נמוכה יותר. 

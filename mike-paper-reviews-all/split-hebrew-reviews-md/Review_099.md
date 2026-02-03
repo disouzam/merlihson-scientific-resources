@@ -1,6 +1,7 @@
 Review 99: [Short] Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning
 
 Paper: https://arxiv.org/abs/2309.02591
+
 v1
 
 המאמר הפופולרי של השבוע נסקר היום ב- #shorthebrewpapereviews:

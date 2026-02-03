@@ -1,6 +1,7 @@
 Review 14: BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension
 
 Paper: https://arxiv.org/abs/1910.13461
+
 v1
 
 פינת הסוקר:        

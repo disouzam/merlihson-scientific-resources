@@ -1,6 +1,7 @@
 Review 82: [Short] SayPlan: Grounding Large Language Models using 3D Scene Graphs for Scalable Task Planning
 
 Paper: https://arxiv.org/abs/2307.06135
+
 v2
 
 המאמר ממנף את כוח של #llms כדי לעזור לרובוט לתכננן משימות ב-indoor.

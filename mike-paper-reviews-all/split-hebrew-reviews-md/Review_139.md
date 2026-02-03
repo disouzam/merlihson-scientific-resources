@@ -3,6 +3,7 @@ Review 138: G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment, 05.0
 https://github.com/nlpyang/geval/tree/main, https://arxiv.org/abs/2303.16634.pdfסקירה זו נכתבה על ידי עדן יבין
 
 Paper: https://arxiv.org/abs/2303.16634
+
 v3
 
 תהליך אבלואציה של מודל עוסק בהערכת הביצועים שלו. אבל איך נוכל להעריך טקסט שנוצר על ידי מודל גנרטיבי? מדדים שונים כגון BLEU, מאפשרים לבצע הערכה אך צורכים טקסט נוסף שנכתב על ידי אדם כרפרנס. בעיה, כי השגת טקסט שכזה הינו יקר, מה הפתרון אז?

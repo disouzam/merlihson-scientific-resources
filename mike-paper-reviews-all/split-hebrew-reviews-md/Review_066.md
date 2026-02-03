@@ -1,6 +1,7 @@
 Review 66: VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning
 
 Paper: https://arxiv.org/abs/2105.04906
+
 v3
 
 מאמר מעניין של Yann LeCunn et al המציע שיטה לבנייה של ייצוג דאטה לא מתויג (self-supervised). המחברים עצמם קוראים לשיטה המוצעת ״ridiculously simple" והיא בהחלט עונה על ההגדרה הזו. 

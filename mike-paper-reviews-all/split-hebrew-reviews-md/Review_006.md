@@ -1,6 +1,7 @@
 Review 6: A Metric Learning Reality Check
 
 Paper: https://arxiv.org/abs/2003.08505
+
 v3
 
 תחום: המאמר שייך לתחום של למידת מטריקה (Metric Learning) ובוחן התקדמויות האחרונות בתחום הזה ב 4-5 השנים האחרונות.

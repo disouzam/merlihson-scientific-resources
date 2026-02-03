@@ -1,6 +1,7 @@
 Review 152: CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transformers for Long Context Window Extending, 23.09.2023
 
 Paper: https://arxiv.org/abs/2309.08646
+
 v3
 
 https://arxiv.org/abs/2309.08646.pdf

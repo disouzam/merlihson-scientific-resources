@@ -1,6 +1,7 @@
 Review 121: [Short] AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING,  11.08.23https://huggingface.co/papers/2308.05734
 
 Paper: https://arxiv.org/abs/2308.05734
+
 v3
 
 רוצים לגנרט/לערוך אות אודיו ממגוון סוגים של דאטה? מתברר שניתן ליצור אות אודיו מתמונה, וידאו, טקסט ואפילו אות IMU (המתאר אופייני תנועה של אובייקט כמו מהירות כיוונית ותאוצה). 

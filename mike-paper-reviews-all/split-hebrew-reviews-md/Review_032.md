@@ -1,6 +1,7 @@
 Review 32: GAN-Control: Explicitly Controllable GANs
 
 Paper: https://arxiv.org/abs/2101.02477
+
 v2
 
 פינת הסוקר: 

@@ -1,6 +1,7 @@
 Review 69: [Short] SIMVLM: SIMPLE VISUAL LANGUAGE MODEL PRE-TRAINING WITH WEAK SUPERVISION
 
 Paper: https://arxiv.org/abs/2108.10904
+
 v3
 
 בהתחלה רציתי לכתוב סקירה קצרה בסגנון #shortdeepnightlearners אבל למעשה ניתן לתקצר את המאמר הזה בכמה משפטים בודדים.

@@ -1,6 +1,7 @@
 Review 108: [Short] Composite Diffusion | whole >= Σparts, 27.07.23
 
 Paper: https://arxiv.org/abs/2307.13720
+
 v1
 
 https://arxiv.org/abs/2307.13720

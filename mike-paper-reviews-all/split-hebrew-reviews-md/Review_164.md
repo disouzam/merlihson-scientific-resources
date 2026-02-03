@@ -1,6 +1,7 @@
 Review 163: [Short] Idea2Img: Iterative Self-Refinement with GPT-4V(ision) for Automatic Image Design and Generation
 
 Paper: https://arxiv.org/abs/2310.08541
+
 v2
 
 https://huggingface.co/papers/2310.08541

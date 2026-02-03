@@ -1,6 +1,7 @@
 Review 176: Large Language Models as Generalizable Policies for Embodied Tasks
 
 Paper: https://arxiv.org/abs/2310.17722
+
 v2
 
  https://huggingface.co/papers/2310.17722

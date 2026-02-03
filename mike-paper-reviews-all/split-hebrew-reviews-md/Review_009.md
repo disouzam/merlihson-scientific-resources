@@ -1,6 +1,7 @@
 Review 9: Benchmarking Neural Network Training Algorithms
 
 Paper: https://arxiv.org/abs/2110.12773
+
 v1
 
 המאמר מציע שיטה למדידת ביצועים של אלגוריתמים לאימון רשתות נוירונים..

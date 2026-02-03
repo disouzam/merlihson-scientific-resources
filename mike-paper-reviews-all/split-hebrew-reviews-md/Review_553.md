@@ -55,4 +55,5 @@ Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs
 שיטת qTTT שימושית עבור משימות הדורשות הקשר ארוך, צוואר הבקבוק אינו יכולת הנמקרה אלא דיוק באחזור הטוקנים הנכונים. על ידי הקפאת KV cache ואדפטציה נזילה של וקטורי Q, באמצעות GD בזמן אינפרנס, השיטה מבטיחה מתמטית היפוך של מריחת ציוני ה-attention שממנו סובלים LLMs סטטיים.
 
 https://arxiv.org/abs/2512.13898
+
 v1

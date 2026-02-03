@@ -1,6 +1,7 @@
 Review 18: Contrastive Learning Of Medical Visual Representations From Paired Images And Text
 
 Paper: https://arxiv.org/abs/2310.08884
+
 v1
 
 פינת הסוקר:        
