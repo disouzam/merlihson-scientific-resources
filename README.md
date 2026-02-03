@@ -53,6 +53,7 @@
 - [Learning Materials](#-learning-materials)
 - [Presentations](#-presentations)
 - [Metadata & Search](#-metadata--search)
+- [Automated Metadata Updates](#-automated-metadata-updates)
 - [Python Tools](#-python-tools)
 - [Collection Statistics](#-collection-statistics)
 - [Repository Structure](#-repository-structure)
@@ -230,6 +231,70 @@ grep -in "attention" mike-paper-reviews-all/reviews_metadata/all_paper_titles.tx
 
 ---
 
+## 🤖 Automated Metadata Updates
+
+### Git Pre-Commit Hook
+
+This repository includes **automated metadata synchronization** via a git pre-commit hook. When you commit review files, all metadata indices are automatically updated and included in your commit.
+
+#### What Gets Auto-Updated
+
+Every time you commit a `Review_*.md` file, the hook automatically:
+
+1. ✅ Extracts paper title and link from the review
+2. ✅ Updates `paper_with_links.csv` with the new entry
+3. ✅ Updates `all_paper_titles.txt` with numbered title
+4. ✅ Updates `clean_titles_for_search.txt` for search indexing
+5. ✅ Updates `reviews_from_208_titles.txt` (for reviews 208+)
+6. ✅ Stages all updated metadata files
+7. ✅ Includes them in your commit automatically
+
+#### How It Works
+
+```bash
+# 1. Add a new review file
+git add mike-paper-reviews-all/split-hebrew-reviews-md/Review_574.md
+
+# 2. Commit (hook runs automatically!)
+git commit -m "Add Review_574: Paper Title"
+
+# Output you'll see:
+# 📝 Detected review markdown changes, updating metadata...
+# Extracting metadata from Hebrew review files...
+# Extracted 573 reviews
+# ✓ Metadata updated successfully
+# ✓ Metadata files staged for commit
+
+# 3. Push to remote
+git push
+```
+
+#### Supported Paper Sources
+
+The hook extracts links from multiple sources:
+- **ArXiv** - Primary source for ML/AI papers
+- **Nature** - High-impact journal articles
+- **ACM Digital Library** - Computer science publications
+- **OpenAI** - Direct paper releases and blog posts
+- **Google Research** - Research blog publications
+- **OpenReview** - Conference submissions
+- **HuggingFace Papers** - Community papers
+- **DOI Links** - Universal paper identifiers
+- And more...
+
+#### Coverage Statistics
+
+| Metric | Value |
+|--------|-------|
+| **Total Reviews** | 572 |
+| **With Paper Links** | 572 (100% coverage!) |
+| **Auto-Extracted** | 571 |
+| **Manually Added** | 1 |
+
+No manual CSV editing needed! 🎉
+
+---
+
 ## Python Tools
 
 ### `mike-paper-reviews-all/py_code/`
@@ -340,17 +405,26 @@ scientific-resources/
 
 ## Contributing
 
-See [`METADATA_UPDATE_PROCESS.md`](METADATA_UPDATE_PROCESS.md) for the comprehensive guide on:
-- Adding new reviews
-- Updating metadata indices
-- Maintaining consistency
-- Quality standards
+### Adding New Reviews
 
-### Quick Guidelines
-- Follow the `Review_NNN.docx` naming convention
-- Update `all_paper_titles.txt` when adding reviews
-- Maintain searchable CSV mappings
-- Preserve formatting standards
+Thanks to the **automated git hook**, adding reviews is simple:
+
+1. Create your review file: `mike-paper-reviews-all/split-hebrew-reviews-md/Review_XXX.md`
+2. Include the paper link in the review (ArXiv, DOI, or other sources)
+3. Commit the file: `git commit -m "Add Review_XXX: Paper Title"`
+4. **Metadata updates automatically!** No manual CSV editing needed.
+
+### Guidelines
+- Follow the `Review_NNN.md` naming convention
+- Include paper link (ArXiv, DOI, etc.) in the review text
+- The git hook will extract title and link automatically
+- All metadata files are auto-updated on commit
+
+See [`METADATA_UPDATE_PROCESS.md`](METADATA_UPDATE_PROCESS.md) for detailed documentation on:
+- Review formatting standards
+- Manual metadata updates (if needed)
+- Quality standards
+- Repository maintenance
 
 ---
 
