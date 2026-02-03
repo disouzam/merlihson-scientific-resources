@@ -35,12 +35,6 @@ Contains the original DOCX files used to generate the individual reviews:
 - `all_reviews_from_30_05_24.docx` (daily reviews source)
 - Additional daily review source files
 
-### `py_code/` - Processing Tools
-Python tools and scripts used for splitting and processing the review files:
-- `docx_splitter.py` - Main CLI tool for splitting DOCX files
-- Various cleaning and enhancement scripts
-- `requirements.txt` - Python dependencies
-
 ## 📊 Statistics
 - **Total Individual Files**: 569 reviews
 - **Individual Reviews**: 208 files (Reviews 1-572)

@@ -54,7 +54,6 @@
 - [Presentations](#presentations)
 - [Metadata & Search](#metadata--search)
 - [Automated Metadata Updates](#automated-metadata-updates)
-- [Python Tools](#python-tools)
 - [Collection Statistics](#collection-statistics)
 - [Repository Structure](#repository-structure)
 - [For Researchers & Students](#for-researchers--students)
@@ -298,37 +297,6 @@ No manual CSV editing needed! 🎉
 
 ---
 
-## Python Tools
-
-### `mike-paper-reviews-all/py_code/`
-
-Automation tools for document processing:
-
-#### `docx_splitter.py`
-A CLI tool for splitting batch DOCX files into individual reviews.
-
-```bash
-# Split a single batch file
-python docx_splitter.py Reviews_1-30.docx --output ./split-reviews-docx/
-
-# Process all batch files
-python docx_splitter.py --all --output ./split-reviews-docx/
-```
-
-**Features:**
-- Detects review boundaries using regex patterns
-- Handles duplicate review numbers with suffix naming
-- Preserves formatting and styles
-- 100% extraction success rate
-
-**Dependencies:** `python-docx`, `lxml`, `Pillow`
-
-```bash
-pip install -r mike-paper-reviews-all/py_code/requirements.txt
-```
-
----
-
 ## Collection Statistics
 
 | Metric | Value |
@@ -365,9 +333,6 @@ scientific-resources/
 │   │   ├── all_paper_titles.txt     # Numbered title list
 │   │   ├── clean_titles_for_search.txt
 │   │   └── reviews_from_208_titles.txt
-│   ├── py_code/                     # Python automation tools
-│   │   ├── docx_splitter.py
-│   │   └── requirements.txt
 │   └── archive/                     # Historical files
 │       ├── old-pdf/                 # Old PDF compilations
 │       ├── old-docx/                # Old batch DOCX files
