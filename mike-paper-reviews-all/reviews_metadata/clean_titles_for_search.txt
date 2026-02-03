@@ -382,9 +382,7 @@ https arxiv org abs 2409 16280
 https arxiv org abs 2409 17141
 random design d r vs fixed design d f
 https arxiv org abs 2409 20370
-1 dgm manifold aware and manifold unaware
 https arxiv org abs 2409 17439
-spectral bias
 https arxiv org abs 2410 07170
 https arxiv org abs 2410 06940
 https arxiv org abs 2410 10630
@@ -420,7 +418,6 @@ https arxiv org abs 2407 11062
 https arxiv org abs 2505 04588
 https arxiv org pdf 2412 15605
 https arxiv org abs 2412 19048
-group relative policy optimization grpo
 https arxiv org abs 2412 00081
 https arxiv org abs 2412 07169
 https arxiv org abs 2501 06252
@@ -451,46 +448,39 @@ fantastic pretraining optimizers and where to find them
 inducing state anxiety in llm agents reproduces human like biases in consumer decision making
 on the theoretical limitations of embedding based retrieval
 bootstrapping task spaces for self improvement
-attention self attention 512
-flow matching 24 09 25corrector sampling in language models
+the origin of self attention pairwise affinity matrices in feature selection and the emergence of self attention
 evolution of concepts in language model pre training
 02 10 25optimizers qualitatively alter solutions and we should leverage this
-04 10 25skip a layer or loop it test time depth adaptation of pretrained llms
-06 10 25beyond the exploration exploitation trade off a hidden state approach for llm reasoning in rlvr
-08 10 25evolution strategies at scale llm fine tuning beyond reinforcement learning
-10 10 25compllm compression for long context q a
-11 10 25less is more recursive reasoning with tiny networks
 inadequacies of large language model benchmarks in the era of generative artificial intelligence
-13 10 25limitations of normalization in attention mechanism
+https arxiv org abs 2508 17821
 between underthinking and overthinking an empirical study of reasoning length and correctness in llms
 the markovian thinker
 shaping explanations semantic reward modeling with encoder only transformers for grpo
 deepseek ocr contexts optical compression
-26 10 25imbalanced gradients in rl post training of multi task llms
 emergence from learning dynamics of grokking
 language models are injective and hence invertible
-01 11 25 on surjectivity of neural networks can you elicit any behavior from your model
+x y f ln x
 agent learning via early experience
 statistical runtime verification for llms via robustness estimation
 from memorization to reasoning in the spectrum of loss curvature
 forget bit it is all about token towards semantic information theory for llms
-12 11 25 538 486 1024 nested learning is deep learning just a stack of optimizers
+nested learning is deep learning just a stack of optimizers
 extracting alignment data in open models
 physics informed neural networks a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations
 liteattention a temporal sparse attention for diffusion transformers
 attention and compression is all you need for controllably efficient
 tiny model big logic diversity driven optimization elicits large model reasoning ability in vibethinker 1 5b
-24 11 25 544 480 1024 lejepa provable and scalable self supervised learning without the heuristics
-26 11 25 545 479 1024 whisper leak a side channel attack on large language models
+lejepa provable and scalable self supervised learning without the heuristics
+whisper leak a side channel attack on large language models
 how to correctly report llm as a judge evaluations
 gated attention for large language models non linearity sparsity and attention sink free
-14 11 25 548 476 1024 solving a million step llm task with zero errors
-14 11 25 549 475 1024 heavywater and simplexwater watermarking low entropy text distributions
+solving a million step llm task with zero errors
+heavywater and simplexwater watermarking low entropy text distributions
 toolorchestra elevating intelligence via efficient model and tool orchestration
 moetuner optimized mixture of expert serving with balanced expert placement and token routing
 hybridep scaling expert parallelism to cross datacenter scenario via hybrid expert data transmission
 let s not just put things in context test time training for long context llms
-self verification deepseek
+deepseekmath v2 towards self verifiable mathematical reasoning
 learning dynamics of llm finetuning
 artificial hivemind the open ended homogeneity of language models and beyond
 agent r1 training powerful llm agents with end to end reinforcement learning

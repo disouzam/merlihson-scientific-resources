@@ -12,7 +12,7 @@ Review_010,Meta-Learning with Implicit Gradients,https://arxiv.org/abs/1909.0463
 Review_011,A causal view of compositional zero-shot recognition,https://arxiv.org/abs/2006.14610
 Review_012,Alias-Free Generative Adversarial Networks,https://arxiv.org/abs/2106.12423
 Review_013,AVAE: Adversarial Variational AutoEncoder,https://arxiv.org/abs/2012.11551
-Review_014,BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation  Translation  and Comprehension,https://arxiv.org/abs/1910.13461
+Review_014,"BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",https://arxiv.org/abs/1910.13461
 Review_015,Bringing a GAN to a Knife-Fight: Adapting Malware Communication to Avoid Detection,https://arxiv.org/abs/2109.04344
 Review_016,COCO-LM: Correcting and Contrasting Text Sequences for Language Model Pretraining,https://arxiv.org/abs/2212.10341
 Review_017,CoMatch: Semi-supervised Learning with Contrastive Graph Regularization,https://arxiv.org/abs/2011.11183
@@ -47,7 +47,7 @@ Review_045,Rethinking Attention With Performers,https://arxiv.org/abs/2009.14794
 Review_046,Discriminator Rejection Sampling,https://arxiv.org/abs/1810.06758
 Review_047,Perceiver: General Perception with Iterative Attention,https://arxiv.org/abs/2202.10890
 Review_048,VAEBM: A symbiosis between autoencoders and energy-based models,https://arxiv.org/abs/2010.00654
-Review_049,Exemplar VAE: Linking Generative Models  Nearest Neighbor Retrieval  and Data Augmentation,https://arxiv.org/abs/2004.04795
+Review_049,"Exemplar VAE: Linking Generative Models, Nearest Neighbor Retrieval, and Data Augmentation",https://arxiv.org/abs/2004.04795
 Review_050,Language Through a Prism: A Spectral Approach for Multiscale Language Representation,https://arxiv.org/abs/2011.04823
 Review_051,Explaining in Style: Training a GAN to explain a classifier in StyleSpace,https://arxiv.org/abs/2104.13369
 Review_052,Neuron Shapley: Discovering the Responsible Neurons,https://arxiv.org/abs/2002.09815
@@ -63,7 +63,7 @@ Review_061,PonderNet: Learning to Ponder,https://arxiv.org/abs/2107.05407
 Review_062,Taming Transformers for High-Resolution Image Synthesis,https://arxiv.org/abs/2012.09841
 Review_063,Soft-IntroVAE: Analyzing and Improving the Introspective Variational Autoencoder,https://arxiv.org/abs/2012.13253
 Review_064,PDE-GCN: Novel Architectures for Graph Neural Networks Motivated by Partial Differential Equations,https://arxiv.org/abs/2210.05495
-Review_065,TRAIN SHORT  TEST LONG: ATTENTION WITH LINEAR BIASES ENABLES INPUT LENGTH EXTRAPOLATION,https://arxiv.org/abs/2108.12409
+Review_065,"TRAIN SHORT, TEST LONG: ATTENTION WITH LINEAR BIASES ENABLES INPUT LENGTH EXTRAPOLATION",https://arxiv.org/abs/2108.12409
 Review_066,VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning,https://arxiv.org/abs/2105.04906
 Review_067,Grokking: Generalization beyond Overfitting on small algorithmic datasets,https://arxiv.org/abs/2210.01117
 Review_068,PATCHES ARE ALL YOU NEED?,https://arxiv.org/abs/2201.09792
@@ -100,65 +100,65 @@ Review_098,[Short] Continuous Layout Editing of Single Images with Diffusion Mod
 Review_099,[Short] Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning,https://arxiv.org/abs/2309.02591
 Review_100,Fastformer: Additive attention is Can Be All you need,https://arxiv.org/abs/2108.09084
 Review_101,GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models,https://arxiv.org/abs/2112.10741
-Review_102,[Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing  21.07.23https://arxiv.org/abs/2307.10373,https://arxiv.org/abs/2307.10373
-Review_103,[Short] Meta-Transformer: A Unified Framework for Multimodal Learning  22.07.23,https://arxiv.org/abs/1902.03356
-Review_104,[Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction  23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf,https://arxiv.org/abs/2312.03035
-Review_105,[Short] Diffusion Sampling with Momentum for Mitigating Divergence Artifacts  24.07.23,https://arxiv.org/abs/2307.11118
-Review_106,Interpolating between Images with Diffusion Models  25.07.23https://arxiv.org/abs/2307.12560.pdf,https://arxiv.org/abs/2307.12560.
+Review_102,"[Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing, 21.07.23https://arxiv.org/abs/2307.10373",https://arxiv.org/abs/2307.10373
+Review_103,"[Short] Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23",https://arxiv.org/abs/1902.03356
+Review_104,"[Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf",https://arxiv.org/abs/2312.03035
+Review_105,"[Short] Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23",https://arxiv.org/abs/2307.11118
+Review_106,"Interpolating between Images with Diffusion Models, 25.07.23https://arxiv.org/abs/2307.12560.pdf",https://arxiv.org/abs/2307.12560.
 Review_107,LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition 26.07.23https://huggingface.co/papers/2307.13269,https://arxiv.org/abs/2307.13269
-Review_108,[Short] Composite Diffusion | whole >= Σparts  27.07.23,https://arxiv.org/abs/2307.13720
-Review_109,[Short] Scaling TransNormer to 175 Billion Parameters  28.07.23https://huggingface.co/papers/2307.14995,https://arxiv.org/abs/2410.21016
-Review_110,[Short] RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT  29.07.23https://huggingface.co/papers/2307.12950,https://arxiv.org/abs/2307.12950
-Review_111,[Short] DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule  30.07.23https://arxiv.org/abs/2302.12022.pdf,https://arxiv.org/abs/2302.12022.
-Review_112,[Short] Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding  31.07.23https://huggingface.co/papers/2307.15337,https://arxiv.org/abs/2307.15337
-Review_113,[Short] UnIVAL: Unified Model for Image  Video  Audio and Language Tasks  01.08.23,https://arxiv.org/abs/2307.16184
+Review_108,"[Short] Composite Diffusion | whole >= Σparts, 27.07.23",https://arxiv.org/abs/2307.13720
+Review_109,"[Short] Scaling TransNormer to 175 Billion Parameters, 28.07.23https://huggingface.co/papers/2307.14995",https://arxiv.org/abs/2410.21016
+Review_110,"[Short] RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950",https://arxiv.org/abs/2307.12950
+Review_111,"[Short] DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf",https://arxiv.org/abs/2302.12022.
+Review_112,"[Short] Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding, 31.07.23https://huggingface.co/papers/2307.15337",https://arxiv.org/abs/2307.15337
+Review_113,"[Short] UnIVAL: Unified Model for Image, Video, Audio and Language Tasks, 01.08.23",https://arxiv.org/abs/2307.16184
 Review_114,[Short] WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Modelshttps://huggingface.co/papers/2306.04744,https://arxiv.org/abs/2306.04744
-Review_115,[Short] From Sparse to Soft Mixtures of Experts  03.08.23https://huggingface.co/papers/2308.00951,https://arxiv.org/abs/2308.00951
-Review_116,[Short] Multimodal Neurons in Pretrained Text-Only Transformers  05.08.23https://huggingface.co/papers/2308.01544,https://arxiv.org/abs/2308.01544
-Review_117,ConceptLab: Creative Generation using Diffusion Prior Constraints  06.08.23https://kfirgoldberg.github.io/ConceptLab/static/ConceptLab.pdf,https://arxiv.org/abs/2308.02669
-Review_118,b: [Short] Predicting masked tokens in stochastic locations improves masked image modeling  07.08.23https://arxiv.org/abs/2308.00566.pdf,https://arxiv.org/abs/2308.00566.
-Review_119,[Short] Seeing through the Brain: Image Reconstruction of Visual Perception from Human Brain Signals  08.08.23https://huggingface.co/papers/2308.02510,https://arxiv.org/abs/2208.03666
-Review_120,[Short] FLIRT: Feedback Loop In-context Red Teaming  09.08.23https://huggingface.co/papers/2308.04265,https://arxiv.org/abs/2308.04265
-Review_121,[Short] SIMPLE SYNTHETIC DATA REDUCES SYCOPHANCY IN LARGE LANGUAGE MODELS  10.08.23https://arxiv.org/abs/2308.03958.pdf,https://arxiv.org/abs/2308.03958.
-Review_122,[Short] AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING   11.08.23https://huggingface.co/papers/2308.05734,https://arxiv.org/abs/2308.05734
-Review_123,[Short] DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING  12.08.23https://huggingface.co/papers/2307.10864,https://arxiv.org/abs/2307.10864
-Review_124,[Short] TextDiffuser: Diffusion Models as Text Painters  13.08.23https://huggingface.co/papers/2305.10855,https://arxiv.org/abs/2305.10855
-Review_125,[Short] Self-Alignment with Instruction Backtranslation  14.08.23https://huggingface.co/papers/2308.06259,https://arxiv.org/abs/2308.06259
-Review_126,Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP  15.08.23https://huggingface.co/papers/2308.02487,https://arxiv.org/abs/2308.02487
-Review_127,Short : SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION  16.08.23,https://arxiv.org/abs/2308.07921
-Review_128,[Short] Dual-Stream Diffusion Net for Text-to-Video Generation  17.08.23https://huggingface.co/papers/2308.08316,https://arxiv.org/abs/2308.08316
+Review_115,"[Short] From Sparse to Soft Mixtures of Experts, 03.08.23https://huggingface.co/papers/2308.00951",https://arxiv.org/abs/2308.00951
+Review_116,"[Short] Multimodal Neurons in Pretrained Text-Only Transformers, 05.08.23https://huggingface.co/papers/2308.01544",https://arxiv.org/abs/2308.01544
+Review_117,"ConceptLab: Creative Generation using Diffusion Prior Constraints, 06.08.23https://kfirgoldberg.github.io/ConceptLab/static/ConceptLab.pdf",https://arxiv.org/abs/2308.02669
+Review_118,"b: [Short] Predicting masked tokens in stochastic locations improves masked image modeling, 07.08.23https://arxiv.org/abs/2308.00566.pdf",https://arxiv.org/abs/2308.00566.
+Review_119,"[Short] Seeing through the Brain: Image Reconstruction of Visual Perception from Human Brain Signals, 08.08.23https://huggingface.co/papers/2308.02510",https://arxiv.org/abs/2208.03666
+Review_120,"[Short] FLIRT: Feedback Loop In-context Red Teaming, 09.08.23https://huggingface.co/papers/2308.04265",https://arxiv.org/abs/2308.04265
+Review_121,"[Short] SIMPLE SYNTHETIC DATA REDUCES SYCOPHANCY IN LARGE LANGUAGE MODELS, 10.08.23https://arxiv.org/abs/2308.03958.pdf",https://arxiv.org/abs/2308.03958.
+Review_122,"[Short] AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING, 11.08.23https://huggingface.co/papers/2308.05734",https://arxiv.org/abs/2308.05734
+Review_123,"[Short] DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING, 12.08.23https://huggingface.co/papers/2307.10864",https://arxiv.org/abs/2307.10864
+Review_124,"[Short] TextDiffuser: Diffusion Models as Text Painters, 13.08.23https://huggingface.co/papers/2305.10855",https://arxiv.org/abs/2305.10855
+Review_125,"[Short] Self-Alignment with Instruction Backtranslation, 14.08.23https://huggingface.co/papers/2308.06259",https://arxiv.org/abs/2308.06259
+Review_126,"Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP, 15.08.23https://huggingface.co/papers/2308.02487",https://arxiv.org/abs/2308.02487
+Review_127,"Short : SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION, 16.08.23",https://arxiv.org/abs/2308.07921
+Review_128,"[Short] Dual-Stream Diffusion Net for Text-to-Video Generation, 17.08.23https://huggingface.co/papers/2308.08316",https://arxiv.org/abs/2308.08316
 Review_129,[Short] 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)https://mdsoar.org/bitstream/handle/11603/25498/1117.pdf,https://arxiv.org/abs/2210.08218
-Review_130,[Short] Watch Your Steps: Local Image and Scene Editing by Text Instructions   26.08.23https://arxiv.org/abs/2211.09800.pdf,https://arxiv.org/abs/2211.09800.
-Review_131,SeamlessM4T—Massively Multilingual & Multimodal Machine Translation  27.08.23https://ai.meta.com/research/publications/seamless-m4t,https://arxiv.org/abs/2308.11596
-Review_132,[Short] 28.08.23:  Nougat: Neural Optical Understanding for Academic Documentshttps://arxiv.org/abs/2308.13418.pdf,https://arxiv.org/abs/2308.13418.
-Review_133,Beyond Chain-of-Thought  Effective Graph-of-Thought Reasoning in Large Language Models  29.08.23https://arxiv.org/abs/2305.16582.pdf,https://arxiv.org/abs/2305.16582.
-Review_134,[Short] OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models  30.08.23https://arxiv.org/abs/2308.13137,https://arxiv.org/abs/2308.13137
-Review_135,LM-INFINITE: SIMPLE ON-THE-FLY LENGTH GENERALIZATION FOR LARGE LANGUAGE MODELS  31.08.23https://arxiv.org/abs/2308.16137.pdf,https://arxiv.org/abs/2308.16137.
-Review_136,[Short] ORES: Open-vocabulary Responsible Visual Synthesis  01.09.23https://arxiv.org/abs/2308.13785.pdf,https://arxiv.org/abs/2308.13785.
-Review_137,[Short] Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images  03.09.2023,https://arxiv.org/abs/2308.16582.
-Review_138,YaRN: Efficient Context Window Extension of Large Language Models  04.09.2023,https://arxiv.org/abs/2309.00071
-Review_139,G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment  05.09.2023,https://arxiv.org/abs/2303.16634.
-Review_140,Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models  06.09.2023,https://arxiv.org/abs/2306.05357.
-Review_141,[Short] One Wide Feedforward is All You Need  07.09.2023,https://arxiv.org/abs/2309.01826
-Review_142,[Short] DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS  08.09.2023,https://arxiv.org/abs/2309.03883
-Review_143,LARGE LANGUAGE MODELS AS OPTIMIZERS  09.09.2023,https://arxiv.org/abs/2311.15249
-Review_144,[Short] Explaining grokking through circuit efficiency   11.09.2023,https://arxiv.org/abs/2309.02390
-Review_145,Transformers as Support Vector Machines  12.09.23https://arxiv.org/abs/2308.16898.pdf,https://arxiv.org/abs/2308.16898.
-Review_146,Textbooks Are All You Need II: phi-1.5 technical report  13.09.23,https://arxiv.org/abs/2309.05463.
-Review_147,Reinforced Self-Training (ReST) for Language Modeling  14.09.23https://arxiv.org/abs/2308.08998.pdf,https://arxiv.org/abs/2308.08998.
+Review_130,"[Short] Watch Your Steps: Local Image and Scene Editing by Text Instructions, 26.08.23https://arxiv.org/abs/2211.09800.pdf",https://arxiv.org/abs/2211.09800.
+Review_131,"SeamlessM4T—Massively Multilingual & Multimodal Machine Translation, 27.08.23https://ai.meta.com/research/publications/seamless-m4t",https://arxiv.org/abs/2308.11596
+Review_132,[Short] 28.08.23: Nougat: Neural Optical Understanding for Academic Documentshttps://arxiv.org/abs/2308.13418.pdf,https://arxiv.org/abs/2308.13418.
+Review_133,"Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models, 29.08.23https://arxiv.org/abs/2305.16582.pdf",https://arxiv.org/abs/2305.16582.
+Review_134,"[Short] OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models, 30.08.23https://arxiv.org/abs/2308.13137",https://arxiv.org/abs/2308.13137
+Review_135,"LM-INFINITE: SIMPLE ON-THE-FLY LENGTH GENERALIZATION FOR LARGE LANGUAGE MODELS, 31.08.23https://arxiv.org/abs/2308.16137.pdf",https://arxiv.org/abs/2308.16137.
+Review_136,"[Short] ORES: Open-vocabulary Responsible Visual Synthesis, 01.09.23https://arxiv.org/abs/2308.13785.pdf",https://arxiv.org/abs/2308.13785.
+Review_137,"[Short] Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images, 03.09.2023",https://arxiv.org/abs/2308.16582.
+Review_138,"YaRN: Efficient Context Window Extension of Large Language Models, 04.09.2023",https://arxiv.org/abs/2309.00071
+Review_139,"G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment, 05.09.2023",https://arxiv.org/abs/2303.16634.
+Review_140,"Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models, 06.09.2023",https://arxiv.org/abs/2306.05357.
+Review_141,"[Short] One Wide Feedforward is All You Need, 07.09.2023",https://arxiv.org/abs/2309.01826
+Review_142,"[Short] DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS, 08.09.2023",https://arxiv.org/abs/2309.03883
+Review_143,"LARGE LANGUAGE MODELS AS OPTIMIZERS, 09.09.2023",https://arxiv.org/abs/2311.15249
+Review_144,"[Short] Explaining grokking through circuit efficiency, 11.09.2023",https://arxiv.org/abs/2309.02390
+Review_145,"Transformers as Support Vector Machines, 12.09.23https://arxiv.org/abs/2308.16898.pdf",https://arxiv.org/abs/2308.16898.
+Review_146,"Textbooks Are All You Need II: phi-1.5 technical report, 13.09.23",https://arxiv.org/abs/2309.05463.
+Review_147,"Reinforced Self-Training (ReST) for Language Modeling, 14.09.23https://arxiv.org/abs/2308.08998.pdf",https://arxiv.org/abs/2308.08998.
 Review_148,Generative Image Dynamicshttps://huggingface.co/papers/2309.07906,https://arxiv.org/abs/2309.07906
-Review_149,Knowledge Graph Prompting for Multi-Document Question Answering  17.09.23,https://arxiv.org/abs/2308.11730
-Review_150,[Short] Ambiguity-Aware In-Context Learning with Large Language Models  18.09.23,https://arxiv.org/abs/2205.01825
-Review_151,Language Modeling Is Compression  21.09.2023,https://arxiv.org/abs/2309.10668
-Review_152,[Short] FreeU: Free Lunch in Diffusion U-Net  22.09.2023,https://arxiv.org/abs/2309.11497
-Review_153,CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transformers for Long Context Window Extending  23.09.2023,https://arxiv.org/abs/2309.08646
-Review_154,[Short] FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION  24.09.2023,https://arxiv.org/abs/2309.10537
-Review_155,Context is Environment  26.09.2023,https://arxiv.org/abs/2309.09888
-Review_156,[Short] CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS  27.09.2023,https://arxiv.org/abs/2309.11495
-Review_157,Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS  28.09.2023,https://arxiv.org/abs/2309.12307
-Review_158,[Short] End-to-End Speech Recognition Contextualization with Large Language Models  30.09.23,https://arxiv.org/abs/2309.10917
+Review_149,"Knowledge Graph Prompting for Multi-Document Question Answering, 17.09.23",https://arxiv.org/abs/2308.11730
+Review_150,"[Short] Ambiguity-Aware In-Context Learning with Large Language Models, 18.09.23",https://arxiv.org/abs/2205.01825
+Review_151,"Language Modeling Is Compression, 21.09.2023",https://arxiv.org/abs/2309.10668
+Review_152,"[Short] FreeU: Free Lunch in Diffusion U-Net, 22.09.2023",https://arxiv.org/abs/2309.11497
+Review_153,"CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transformers for Long Context Window Extending, 23.09.2023",https://arxiv.org/abs/2309.08646
+Review_154,"[Short] FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION, 24.09.2023",https://arxiv.org/abs/2309.10537
+Review_155,"Context is Environment, 26.09.2023",https://arxiv.org/abs/2309.09888
+Review_156,"[Short] CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS, 27.09.2023",https://arxiv.org/abs/2309.11495
+Review_157,"Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS, 28.09.2023",https://arxiv.org/abs/2309.12307
+Review_158,"[Short] End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23",https://arxiv.org/abs/2309.10917
 Review_159,[Short] Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment,https://arxiv.org/abs/2306.08877
-Review_160,[Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization  02.10.2023,https://arxiv.org/abs/2306.09222
+Review_160,"[Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization, 02.10.2023",https://arxiv.org/abs/2306.09222
 Review_161,[Short] Vision Transformers Need Registershttps://arxiv.org/abs/2309.16588,https://arxiv.org/abs/2309.16588
 Review_162,[Short] PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis,https://arxiv.org/abs/2310.00426
 Review_163,[Short] Think before you speak: Training Language Models With Pause Tokens,https://arxiv.org/abs/2310.02226
@@ -176,14 +176,14 @@ Review_174,[Short] Teaching Language Models to Self-Improve through Interactive 
 Review_175,In-Context Learning Creates Task Vectors,https://arxiv.org/abs/2311.06668
 Review_176,[Short] A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation,https://arxiv.org/abs/2310.16656
 Review_177,Large Language Models as Generalizable Policies for Embodied Tasks,https://arxiv.org/abs/2310.17722
-Review_178,[Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish  Language Modeling Likewise,https://arxiv.org/abs/2310.19019
+Review_178,"[Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise",https://arxiv.org/abs/2310.19019
 Review_179,[Short] CAPSFUSION: Rethinking Image-Text Data at Scale,https://arxiv.org/abs/2310.20550
 Review_180,[Short] UNLEASHING THE POWER OF PRE-TRAINED LANGUAGE MODELS FOR OFFLINE REINFORCEMENT LEARNING,https://arxiv.org/abs/2310.20587
 Review_181,[Short] Learning From Mistakes Makes LLM Better Reasoner,https://arxiv.org/abs/2310.20689
 Review_182,[Short] Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models,https://arxiv.org/abs/2312.04410
 Review_183,Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models,https://arxiv.org/abs/2312.06585
 Review_184,[Short] WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION,https://arxiv.org/abs/2312.09390
-Review_185,Mamba Series  An Intro,https://arxiv.org/abs/2408.11451
+Review_185,"Mamba Series, An Intro",https://arxiv.org/abs/2408.11451
 Review_186,Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks,https://arxiv.org/abs/2102.11417
 Review_187,HiPPO: Recurrent Memory with Optimal Polynomial Projections,https://arxiv.org/abs/2008.07669
 Review_188,Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention,https://arxiv.org/abs/2006.16236
@@ -256,7 +256,7 @@ Review_254,DataDream: Few-shot Guided Dataset Generation,https://arxiv.org/abs/2
 Review_255,Consistency Models,https://arxiv.org/abs/2303.01469
 Review_256,TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING,https://arxiv.org/abs/2305.13301
 Review_257,Feedback Efficient Online Fine-Tuning of Diffusion Models,https://arxiv.org/abs/2402.16359
-Review_258,The Empirical Impact of Neural Parameter Symmetries  or Lack Thereof,https://arxiv.org/abs/2405.20231
+Review_258,"The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof",https://arxiv.org/abs/2405.20231
 Review_259,AI models collapse when trained on recursively generated data,
 Review_260,Questionable practices in machine learning,
 Review_261,Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?,https://arxiv.org/abs/2407.16607
@@ -286,7 +286,7 @@ Review_284,Platypus: A Generalized Specialist Model for Reading Text in Various 
 Review_285,Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review,https://arxiv.org/abs/2010.10596
 Review_286,DIFFUSION MODELS ARE REAL-TIME GAME ENGINES,https://arxiv.org/abs/2408.14837
 Review_287,Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode,https://arxiv.org/abs/2408.11039
-Review_288,Smaller  Weaker  Yet Better: Training LLM Reasoners via Compute-Optimal Sampling,https://arxiv.org/abs/2408.16737
+Review_288,"Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling",https://arxiv.org/abs/2408.16737
 Review_289,Flexora: Flexible Low Rank Adaptation for Large Language Models,https://arxiv.org/abs/2408.10774
 Review_290,EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty,https://arxiv.org/abs/2401.15077
 Review_291,ReMamba: Equip Mamba with Effective Long-Sequence Modeling,https://arxiv.org/abs/2408.15496
@@ -294,7 +294,7 @@ Review_292,DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?,https://arx
 Review_293,MemLong: Memory-Augmented Retrieval for Long Text Modeling,https://arxiv.org/abs/2408.16967
 Review_294,Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers,https://arxiv.org/abs/2409.04109
 Review_295,Learning to reason with LLMs,
-Review_296,LLMs Will Always Hallucinate  We Need to Live With This,https://arxiv.org/abs/2409.05746
+Review_296,"LLMs Will Always Hallucinate, We Need to Live With This",https://arxiv.org/abs/2409.05746
 Review_297,⚡️🚀Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning,https://arxiv.org/abs/2206.14486
 Review_298,⚡️🚀Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning,https://arxiv.org/abs/2406.14283
 Review_299,⚡️🚀Rethinking Benchmark and Contamination for Language Models with Rephrased Samples,https://arxiv.org/abs/2311.04850
@@ -311,7 +311,7 @@ Review_309,⚡️🚀Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource
 Review_310,⚡️🚀ASR Error Correction using Large Language Models,
 Review_311,⚡️🚀SCHRODINGER’S MEMORY: LARGE LANGUAGE MODELS,https://arxiv.org/abs/2409.10482
 Review_312,⚡️🚀Larger and more instructable language models become less reliable,
-Review_313,⚡️🚀Transformers are Expressive  But Are They Expressive Enough for Regression?,https://arxiv.org/abs/2402.15478
+Review_313,"⚡️🚀Transformers are Expressive, But Are They Expressive Enough for Regression?",https://arxiv.org/abs/2402.15478
 Review_314,⚡️🚀Were RNNs All We Needed?,https://arxiv.org/abs/2410.01201
 Review_315,⚡️🚀CONTRASTIVE LOCALIZED LANGUAGE-IMAGE PRE-TRAINING,https://arxiv.org/abs/2410.02746
 Review_316,⚡️🚀CONTEXTUAL DOCUMENT EMBEDDINGS,https://arxiv.org/abs/2410.02525
@@ -324,14 +324,14 @@ Review_322,⚡️🚀EFFICIENT REINFORCEMENT LEARNING WITH LARGE LANGUAGE MODEL 
 Review_323,⚡️🚀EQUIVARIANT CONTRASTIVE LEARNING,https://arxiv.org/abs/2111.00899
 Review_324,⚡️🚀SimCSE: Simple Contrastive Learning of Sentence Embeddings,https://arxiv.org/abs/2104.08821
 Review_325,⚡️🚀DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings,https://arxiv.org/abs/2204.10298
-Review_326,⚡️🚀RL  BUT DON’T DO ANYTHING I WOULDN’T DO,https://arxiv.org/abs/2410.06213
+Review_326,"⚡️🚀RL, BUT DON’T DO ANYTHING I WOULDN’T DO",https://arxiv.org/abs/2410.06213
 Review_327,⚡️🚀Sample what you can’t compress,https://arxiv.org/abs/2409.02529
 Review_328,⚡️🚀Predicting from Strings: Language Model Embeddings for Bayesian Optimization,https://arxiv.org/abs/2410.10190
 Review_329,⚡️🚀HOW MANY VAN GOGHS DOES IT TAKE TO VAN GOGH? FINDING THE IMITATION THRESHOLD,https://arxiv.org/abs/2410.15002
 Review_330,⚡️🚀Amortized Planning with Large-Scale Transformers: A Case Study on Chess,https://arxiv.org/abs/2402.04494
 Review_331,⚡️🚀Efficient Vision-Language Pre-training by Cluster Masking,https://arxiv.org/abs/2405.08815
 Review_332,⚡️🚀HEAVY-TAILED DIFFUSION MODELS,https://arxiv.org/abs/2410.14171
-Review_333,⚡️🚀Global Lyapunov functions: a long-standing open problem in mathematics  with symbolic transformers,https://arxiv.org/abs/2410.08304
+Review_333,"⚡️🚀Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers",https://arxiv.org/abs/2410.08304
 Review_334,⚡️🚀Beyond Preferences in AI Alignment,https://arxiv.org/abs/2408.16984
 Review_335,⚡️🚀Understanding Transformers via N-gram Statistics,
 Review_336,⚡️🚀LLMs Are In-Context Reinforcement Learners,https://arxiv.org/abs/2410.05362
@@ -360,7 +360,7 @@ Review_358,⚡️🚀Autoregressive Model Beats Diffusion: Llama for Scalable Im
 Review_359,⚡️🚀KAN: Kolmogorov–Arnold Networks,https://arxiv.org/abs/2404.19756
 Review_360,⚡️🚀Memory3: Language Modeling with Explicit Memory,https://arxiv.org/abs/2407.01178
 Review_361,⚡️🚀Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering,https://arxiv.org/abs/2404.17723
-Review_362,Scaling Synthetic Data Creation with 1 000 000 000 Personas,https://arxiv.org/abs/2406.20094
+Review_362,"Scaling Synthetic Data Creation with 1,000,000,000 Personas",https://arxiv.org/abs/2406.20094
 Review_363,LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement,https://arxiv.org/abs/2403.15042
 Review_364,Byte Latent Transformer: Patches Scale Better Than Tokens,https://arxiv.org/abs/2412.09871
 Review_365,Large Concept Models: Language Modeling in a Sentence Representation Space,https://arxiv.org/abs/2412.08821
@@ -383,9 +383,7 @@ Review_387,https://arxiv.org/abs/2409.16280,https://arxiv.org/abs/2409.16280
 Review_389,https://arxiv.org/abs/2409.17141,https://arxiv.org/abs/2409.17141
 Review_392,הגדרת הבעיה: משטרי random design - D_r vs fixed design D_f,https://arxiv.org/abs/2409.18842
 Review_393,https://arxiv.org/abs/2409.20370,https://arxiv.org/abs/2409.20370
-Review_394,1. סקירה של מודלים DGM מודעי-יריעה ולא-מודעי-יריעה (manifold-aware and manifold unaware),https://arxiv.org/abs/2404.02954
 Review_396,https://arxiv.org/abs/2409.17439,https://arxiv.org/abs/2409.17439
-Review_398,ניתוח הטיית ספקטרלית (spectral bias):,https://arxiv.org/abs/2410.01803
 Review_400,https://arxiv.org/abs/2410.07170,https://arxiv.org/abs/2410.07170
 Review_402,https://arxiv.org/abs/2410.06940,https://arxiv.org/abs/2410.06940
 Review_403,https://arxiv.org/abs/2410.10630,https://arxiv.org/abs/2410.10630
@@ -421,7 +419,6 @@ Review_453,https://arxiv.org/abs/2407.11062,https://arxiv.org/abs/2407.11062
 Review_456,https://arxiv.org/abs/2505.04588,https://arxiv.org/abs/2505.04588
 Review_457,https://arxiv.org/pdf/2412.15605,https://arxiv.org/abs/2412.15605
 Review_460,https://arxiv.org/abs/2412.19048,https://arxiv.org/abs/2412.19048
-Review_463,השיטה: Group Relative Policy Optimization (GRPO) על דאטה באיכות גבוהה,
 Review_464,https://arxiv.org/abs/2412.00081,https://arxiv.org/abs/2412.00081
 Review_465,https://arxiv.org/abs/2412.07169,https://arxiv.org/abs/2412.07169
 Review_467,https://arxiv.org/abs/2501.06252,https://arxiv.org/abs/2501.06252
@@ -433,7 +430,7 @@ Review_480,Investigating Tax Evasion Emergence Using Dual Large Language Model a
 Review_482,Frontier Models are Capable of In-context Scheming,https://arxiv.org/abs/2412.04984
 Review_483,s1: Simple test-time scaling,
 Review_485,Reinforcement Pre-Training,https://arxiv.org/abs/2506.08007
-Review_486,Building Bridges between Regression  Clustering  and Classification,https://arxiv.org/abs/2502.02996
+Review_486,"Building Bridges between Regression, Clustering, and Classification",https://arxiv.org/abs/2502.02996
 Review_488,Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon,https://arxiv.org/abs/2502.07445
 Review_489,Empirical evidence of Large Language Model's influence on human spoken communication,https://arxiv.org/abs/2409.01754
 Review_490,Hierarchical Reasoning Model,https://arxiv.org/abs/2506.21734
@@ -452,46 +449,39 @@ Review_509,Fantastic Pretraining Optimizers and Where to Find Them,https://arxiv
 Review_510,Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making,
 Review_511,On the Theoretical Limitations of Embedding-Based Retrieval,https://arxiv.org/abs/2508.21038
 Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,
-Review_513,מנגנון attention לא צץ יש מאין: סקירה של המאמר 'מקורו של self-attention  סקירה 512,https://arxiv.org/abs/2507.14560
-Review_515,הקלות הבלתי נסבלת של המחיקה: מאמר כחול-לבן מהממציא של flow matchingהמאמר היומי של מייק: 24.09.25Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215
+Review_513,THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION,https://arxiv.org/abs/2507.14560
 Review_517,EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING,
 Review_518,מאמר היומי של מייק: 02.10.25Optimizers Qualitatively Alter Solutions And We Should Leverage This,https://arxiv.org/abs/2507.12224
-Review_519,סקירת המאמר היומית של מייק: 04.10.25Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs,https://arxiv.org/abs/2507.07996
-Review_520,סקירת המאמר היומית של מייק: 06.10.25BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR,https://arxiv.org/abs/2509.23808
-Review_521,הסקירה היומית של מייק: 08.10.25Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING,https://arxiv.org/abs/2509.24372
-Review_522,סקירת המאמר היומית של מייק: 10.10.25COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A,https://arxiv.org/abs/2509.19228
-Review_523,סקירת המאמר היומית של מייק: 11.10.25Less is More: Recursive Reasoning with Tiny Networks,https://arxiv.org/abs/2510.04871
 Review_524,Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence,https://arxiv.org/abs/2402.09880
-Review_525,סקירת המאמר היומית של מייק: 13.10.25LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM,https://arxiv.org/abs/2508.17821
+Review_525,https://arxiv.org/abs/2508.17821,https://arxiv.org/abs/2508.17821
 Review_526,Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs,
 Review_527,The Markovian Thinker,https://arxiv.org/abs/2510.06557
 Review_528,Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO,https://arxiv.org/abs/2509.13081
 Review_529,DeepSeek-OCR: Contexts Optical Compression,https://arxiv.org/abs/2510.18234
-Review_530,סקירת המאמר היומית של מייק: 26.10.25Imbalanced Gradients in RL Post-Training of Multi-Task LLMs,https://arxiv.org/abs/2510.19178
 Review_531,EMERGENCE FROM LEARNING DYNAMICS OF GROKKING,https://arxiv.org/abs/2509.21519
 Review_532,Language Models are Injective and Hence Invertible,https://arxiv.org/abs/2510.15511
-Review_533,סקירת המאמר היומית של מייק: 01.11.25 ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?,https://arxiv.org/abs/2508.19445
+Review_533,x* = y - f(LN(x*)).,https://arxiv.org/abs/2508.19445
 Review_534,Agent Learning via Early Experience,https://arxiv.org/abs/2510.08558
 Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,https://arxiv.org/abs/2504.17723
 Review_536,FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE,https://arxiv.org/abs/2510.24256
-Review_537,Forget BIT  It is All about TOKEN: Towards Semantic Information Theory for LLMs,https://arxiv.org/abs/2511.01202
-Review_538,סקירת המאמר היומית של מייק: 12.11.25  סקירה 538. 486 סקירות עד 1024 Nested Learning: Is Deep Learning Just a Stack of Optimizers?,
+Review_537,"Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs",https://arxiv.org/abs/2511.01202
+Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers?,
 Review_539,Extracting alignment data in open models,https://arxiv.org/abs/2510.18554
 Review_540,Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,
 Review_541,LiteAttention: A Temporal Sparse Attention for Diffusion Transformers,
 Review_542,ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT,https://arxiv.org/abs/2511.05313
-Review_543,Tiny Model  Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B,https://arxiv.org/abs/2511.06221
-Review_544,סקירת המאמר היומית של יניב ומייק: 24.11.25  סקירה 544  480 סקירות עד 1024 LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics,https://arxiv.org/abs/2511.08544
-Review_545,סקירת המאמר היומית של יונתן ומייק: 26.11.25  סקירה 545  479 סקירות עד 1024 Whisper Leak: a side-channel attack on Large Language Models,https://arxiv.org/abs/2511.03675
+Review_543,"Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B",https://arxiv.org/abs/2511.06221
+Review_544,LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics,https://arxiv.org/abs/2511.08544
+Review_545,Whisper Leak: a side-channel attack on Large Language Models,https://arxiv.org/abs/2511.03675
 Review_546,How to Correctly Report LLM-as-a-Judge Evaluations,https://arxiv.org/abs/2511.21140
-Review_547,Gated Attention for Large Language Models: Non-linearity  Sparsity  and Attention-Sink-Free,https://arxiv.org/abs/2412.15115
-Review_548,סקירת המאמר היומית של רועי ומייק: 14.11.25  סקירה 548  476 סקירות עד 1024 Solving a Million-Step LLM Task with Zero Errors,https://arxiv.org/abs/1206.5538
-Review_549,סקירת המאמר היומית של דור ומייק: 14.11.25  סקירה 549  475 סקירות עד 1024 HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions,https://arxiv.org/abs/2506.06409
+Review_547,"Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2412.15115
+Review_548,Solving a Million-Step LLM Task with Zero Errors,https://arxiv.org/abs/1206.5538
+Review_549,HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions,https://arxiv.org/abs/2506.06409
 Review_550,ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration,https://arxiv.org/abs/2511.21689
 Review_551,MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing,https://arxiv.org/abs/2502.06643
 Review_552,HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission,https://arxiv.org/abs/2510.19470
 Review_553,Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs,https://arxiv.org/abs/2512.13898
-Review_554,לא עוד תשובה נכונה בטעות: מהפכת ה-Self Verification של DeepSeek,https://arxiv.org/abs/2511.22570
+Review_554,DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning,https://arxiv.org/abs/2511.22570
 Review_555,Learning Dynamics of LLM Finetuning,https://arxiv.org/abs/2407.10490
 Review_556,Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond),https://arxiv.org/abs/2510.22954
 Review_558,Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning,https://arxiv.org/abs/2511.14460
@@ -499,12 +489,12 @@ Review_559,RECURSIVE LANGUAGE MODELS,https://arxiv.org/abs/2512.24601
 Review_560,Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition,https://arxiv.org/abs/2409.17746
 Review_561,Small Language Models are the Future of Agentic AI,https://arxiv.org/abs/2506.02153
 Review_562,From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence,https://arxiv.org/abs/2601.03220
-Review_563,WAIT  WAIT  WAIT... WHY DO REASONING MODELS LOOP?,https://arxiv.org/abs/2512.12895
+Review_563,"WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?",https://arxiv.org/abs/2512.12895
 Review_564,Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning,https://arxiv.org/abs/2505.12477
 Review_565,The Free Transformer,https://arxiv.org/abs/2510.17558
 Review_566,RAFT - Retrieval Augmented Time Series Forecasting,
 Review_567,Deep Delta Learning,https://arxiv.org/abs/2601.00417
-Review_568,SFT Memorizes  RL Generalizes,https://arxiv.org/abs/2501.17161
+Review_568,"SFT Memorizes, RL Generalizes",https://arxiv.org/abs/2501.17161
 Review_569,REPO: Language Models with Context Re-Positioning,https://arxiv.org/abs/2512.14391
 Review_570,DoPE: Denoising Rotary Position Embedding,https://arxiv.org/abs/2511.09146
 Review_571,mHC: Manifold-Constrained Hyper-Connections,https://arxiv.org/abs/2512.24880

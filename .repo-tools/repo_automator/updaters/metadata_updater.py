@@ -134,18 +134,31 @@ class MetadataUpdater(BaseUpdater):
                     title = review_match.group(1).strip()
 
             # Strategy 1b: Check if first line has Hebrew date format with English title concatenated
-            # Format: "המאמר היומי של מייק - DD.MM.YY:Title" or similar
+            # Format: "סקירת המאמר היומית של מייק: DD.MM.YY סקירה XXX YYY סקירות עד 1024 Title"
+            # or "המאמר היומי של מייק - DD.MM.YY:Title"
             if not title and lines and lines[0]:
                 first_line = lines[0]
-                # Look for date followed by colon and English title
-                date_title_match = re.search(r'\d{2}\.\d{2}\.\d{2}[:\s]+(.+)$', first_line)
-                if date_title_match:
-                    potential_title = date_title_match.group(1).strip()
-                    # Verify it's mostly English
+
+                # First check if there's Hebrew header followed by English title
+                # Look for pattern like "סקירה XXX YYY סקירות עד 1024" followed by English
+                hebrew_pattern = re.search(r'סקירות עד \d+\s+(.+)$', first_line)
+                if hebrew_pattern:
+                    potential_title = hebrew_pattern.group(1).strip()
                     if re.search(r'[A-Za-z]', potential_title):
                         ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                        if ascii_ratio > 0.5:
+                        if ascii_ratio > 0.7:  # Stricter check
                             title = potential_title
+
+                # Otherwise look for date followed by colon and English title
+                if not title:
+                    date_title_match = re.search(r'\d{2}\.\d{2}\.\d{2}[:\s]+(.+)$', first_line)
+                    if date_title_match:
+                        potential_title = date_title_match.group(1).strip()
+                        # Verify it's mostly English
+                        if re.search(r'[A-Za-z]', potential_title):
+                            ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
+                            if ascii_ratio > 0.7:  # Stricter check
+                                title = potential_title
 
             # Strategy 2: If no title yet, look for English title in first 15 lines
             if not title:
@@ -154,7 +167,21 @@ class MetadataUpdater(BaseUpdater):
                         continue
 
                     # Skip lines that start with known Hebrew/metadata patterns
-                    if re.match(r'^(Review|Paper:|v\d+$|סקירה|המאמר|תחום|מושגים)', line):
+                    if re.match(r'^(Review|Paper:|v\d+$|תחום|מושגים)', line):
+                        continue
+
+                    # First try to extract just English part if line has Hebrew header
+                    if 'סקירה' in line or 'המאמר' in line or 'סקירת' in line:
+                        # Try pattern: "...סקירות עד XXX Title"
+                        hebrew_match = re.search(r'סקירות עד \d+\s+(.+)$', line)
+                        if hebrew_match:
+                            potential_title = hebrew_match.group(1).strip()
+                            if re.search(r'[A-Za-z]', potential_title):
+                                ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
+                                if ascii_ratio > 0.7:
+                                    title = potential_title
+                                    break
+                        # Skip if no match - don't use the full line
                         continue
 
                     # Check if line has significant English content
@@ -163,7 +190,7 @@ class MetadataUpdater(BaseUpdater):
                         ascii_ratio = ascii_count / len(line)
 
                         # If mostly ASCII/English, it's likely the paper title
-                        if ascii_ratio > 0.5 and len(line) > 10:
+                        if ascii_ratio > 0.7 and len(line) > 10:
                             title = line
                             break
 
@@ -202,17 +229,20 @@ class MetadataUpdater(BaseUpdater):
             return
 
         try:
-            lines = ["review_number,title,link"]
-
-            for review in reviews_data:
-                # Format: Review_XXX,Title,Link
-                review_id = f"Review_{review['review_num']:03d}"
-                title = review['title'].replace(',', ' ')  # Remove commas for CSV
-                link = review['link']
-                lines.append(f"{review_id},{title},{link}")
+            import csv as csv_module
 
             csv_path.parent.mkdir(parents=True, exist_ok=True)
-            csv_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+            with open(csv_path, 'w', encoding='utf-8', newline='') as f:
+                writer = csv_module.writer(f)
+                writer.writerow(['review_number', 'title', 'link'])
+
+                for review in reviews_data:
+                    review_id = f"Review_{review['review_num']:03d}"
+                    # Clean title: normalize whitespace, keep commas
+                    title = re.sub(r'\s+', ' ', review['title']).strip()
+                    link = review['link']
+                    writer.writerow([review_id, title, link])
 
             results["files_updated"].append(str(csv_path.relative_to(self.repo_root)))
             results["changes"].append(f"Updated {csv_path.name} with {len(reviews_data)} entries")
@@ -239,9 +269,9 @@ class MetadataUpdater(BaseUpdater):
             lines = []
 
             for review in reviews_data:
-                # Format: XXX. Title
+                # Format: XXX. Title (clean whitespace)
                 num = review['review_num']
-                title = review['title']
+                title = re.sub(r'\s+', ' ', review['title']).strip()
                 lines.append(f"{num:03d}. {title}")
 
             txt_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
@@ -312,7 +342,7 @@ class MetadataUpdater(BaseUpdater):
             ]
 
             for i, review in enumerate(reviews_1_207, start=1):
-                title = review['title']
+                title = re.sub(r'\s+', ' ', review['title']).strip()
                 lines.append(f"{i:3d}. {title}")
 
             txt_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
@@ -349,7 +379,7 @@ class MetadataUpdater(BaseUpdater):
             ]
 
             for i, review in enumerate(reviews_208_plus, start=1):
-                title = review['title']
+                title = re.sub(r'\s+', ' ', review['title']).strip()
                 lines.append(f"{i:3d}. {title}")
 
             txt_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
