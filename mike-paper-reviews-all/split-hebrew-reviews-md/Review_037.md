@@ -1,6 +1,7 @@
 Review 37: Teaching with Commentaries
 
-Paper: https://arxiv.org/abs/2011.03037v2
+Paper: https://arxiv.org/abs/2011.03037
+v2
 
 פינת הסוקר:  
 

@@ -1,6 +1,7 @@
 Review 193: Retentive Network: A Successor to Transformer for Large Language Models
 
-Paper: https://arxiv.org/abs/2307.08621v4
+Paper: https://arxiv.org/abs/2307.08621
+v4
 
 https://arxiv.org/abs/2307.08621
 

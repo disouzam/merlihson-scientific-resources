@@ -1,6 +1,7 @@
 Review 43: Sharpness-Aware Minimization for Efficiently Improving Generalization
 
-Paper: https://arxiv.org/abs/2211.05729v2
+Paper: https://arxiv.org/abs/2211.05729
+v2
 
 פינת הסוקר:  
 

@@ -1,6 +1,7 @@
 Review 54: Robust Optimal Transport with Applications in Generative Modeling and Domain Adaptation
 
-Paper: https://arxiv.org/abs/2210.16894v1
+Paper: https://arxiv.org/abs/2210.16894
+v1
 
 פינת הסוקר:
 

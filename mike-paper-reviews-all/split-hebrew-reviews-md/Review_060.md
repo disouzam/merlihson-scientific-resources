@@ -1,6 +1,7 @@
 Review 60: Diffusion Models Beat GANs on Image Synthesis
 
-Paper: https://arxiv.org/abs/2301.03396v2
+Paper: https://arxiv.org/abs/2301.03396
+v2
 
 פינת הסוקר:  
 

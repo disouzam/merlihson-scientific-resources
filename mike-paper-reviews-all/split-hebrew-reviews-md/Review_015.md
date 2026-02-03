@@ -1,6 +1,7 @@
 Review 15: Bringing a GAN to a Knife-Fight: Adapting Malware Communication to Avoid Detection
 
-Paper: https://arxiv.org/abs/2109.04344v3
+Paper: https://arxiv.org/abs/2109.04344
+v3
 
 פינת הסוקר:  
 

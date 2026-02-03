@@ -1,6 +1,7 @@
 Review 5: Single Headed Attention RNN: Stop Thinking With Your Head
 
-Paper: https://arxiv.org/abs/1911.11423v2
+Paper: https://arxiv.org/abs/1911.11423
+v2
 
 תחום מאמר: טרנספורמרים, multi-head attention
 

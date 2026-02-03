@@ -1,6 +1,7 @@
 Review 87: [Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing
 
-Paper: https://arxiv.org/abs/2307.10373v3
+Paper: https://arxiv.org/abs/2307.10373
+v3
 
 סוקרים המאמר כחול-לבן היום קצרות ב #shorthebrewpapereviews
 

@@ -31,4 +31,5 @@ Efficient Context Scaling with LongCat ZigZag Attention
 
 מודה שמאוד אהבתי את המאמר הזה: שילוב של אלגנטיות ורעיונות הגיוניים.
 
-https://arxiv.org/abs/2512.23966v2
+https://arxiv.org/abs/2512.23966
+v2

@@ -1,6 +1,7 @@
 Review 169: Safe RLHF: Safe Reinforcement Learning from Human Feedback
 
-Paper: https://arxiv.org/abs/2310.12773v1
+Paper: https://arxiv.org/abs/2310.12773
+v1
 
 https://huggingface.co/papers/2310.12773
 

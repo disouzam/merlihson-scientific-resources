@@ -1,6 +1,7 @@
 Review 71: Deep Reinforcement Learning for Cyber System Defense under Dynamic Adversarial Uncertainties
 
-Paper: https://arxiv.org/abs/2302.01595v1
+Paper: https://arxiv.org/abs/2302.01595
+v1
 
 פינת הסוקר:  
 

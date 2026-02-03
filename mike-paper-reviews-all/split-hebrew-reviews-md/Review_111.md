@@ -1,6 +1,7 @@
 Review 111: [Short] DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf
 
-Paper: https://arxiv.org/abs/2302.12022v3
+Paper: https://arxiv.org/abs/2302.12022
+v3
 
 נכון שכל פעם שאתם מאמנים רשתות אחד הפרמטרים שאתם צריכים להחליט עליו הוא קצב למידה (learning rate)? גם כאשר אתם משתמשים ב-adam אתם צריכים לבחור אותו. נכון שיש ערכים דיפולטים ש״אמורים לעבוד טוב עבור כל בעיה״ אבל עדיין בחירה לא טובה של קצב למידה עלולה להוביל לאימון ליעיל. 
 

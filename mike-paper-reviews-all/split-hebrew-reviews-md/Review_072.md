@@ -1,6 +1,7 @@
 Review 72: [Short] Unifying Large Language Models and Knowledge Graphs: A Roadmap
 
-Paper: https://arxiv.org/abs/2306.08302v3
+Paper: https://arxiv.org/abs/2306.08302
+v3
 
 מה יקרה אם נשלב מודלי שפה גדולים (LLMs), כגון ChatGPT ו-GPT4 עם גרפי ידע (Knowledge Graphs)?
 

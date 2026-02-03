@@ -1,6 +1,7 @@
 Review 106: Interpolating between Images with Diffusion Models, 25.07.23https://arxiv.org/abs/2307.12560.pdf
 
-Paper: https://arxiv.org/abs/2307.12560v1
+Paper: https://arxiv.org/abs/2307.12560
+v1
 
 האם אתם יודעים שניתן להפוך תמונה אחת לתמונה אחרת הצורה רציפה וחלקה באמצעות מודלי דיפוזיה. כלומר לוקחים תמונה של רוק ועל ידי שינויים קטנים והדרגתיים הופכים אותו לתמונה של שרק. היום ב- #shorthebrewpapereviews מדברים על איך עושים זאת באמצעות מודלי דיפוזיה. 
 

@@ -1,6 +1,7 @@
 Review 48: VAEBM: A symbiosis between autoencoders and energy-based models
 
-Paper: https://arxiv.org/abs/2010.00654v3
+Paper: https://arxiv.org/abs/2010.00654
+v3
 
 פינת הסוקר:  
 

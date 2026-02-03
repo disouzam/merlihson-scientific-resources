@@ -1,6 +1,7 @@
 Review 201: ZigMa: A DiT-style Zigzag Mamba Diffusion Modelhttps://arxiv.org/abs/2403.13802
 
-Paper: https://arxiv.org/abs/2403.13802v3
+Paper: https://arxiv.org/abs/2403.13802
+v3
 
 המאמר הזה משך את תשומת ליבי מכמה סיבות:
 

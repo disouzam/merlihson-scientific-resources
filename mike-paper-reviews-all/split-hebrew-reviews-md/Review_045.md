@@ -1,6 +1,7 @@
 Review 45: Rethinking Attention With Performers
 
-Paper: https://arxiv.org/abs/2009.14794v4
+Paper: https://arxiv.org/abs/2009.14794
+v4
 
 פינת הסוקר:  
 

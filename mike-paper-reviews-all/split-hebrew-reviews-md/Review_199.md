@@ -1,6 +1,7 @@
 Review 198: Improving Text Embeddings with Large Language Models
 
-Paper: https://arxiv.org/abs/2402.15449v2
+Paper: https://arxiv.org/abs/2402.15449
+v2
 
 https://arxiv.org/abs/2401.00368
 

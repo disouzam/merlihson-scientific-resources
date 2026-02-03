@@ -1,6 +1,7 @@
 Review 81: [Short] Segment Anything Meets Point Tracking
 
-Paper: https://arxiv.org/abs/2307.01197v2
+Paper: https://arxiv.org/abs/2307.01197
+v2
 
 המאמר מציע שיטת SAM-PT לביצוע סגמנטציה ומעקב של אובייקטים בוידאו (VOS). המודל ממנף את מודל הסגמנטציה SAM עוצמתי שעלה לאוויר לא מזמן. 
 

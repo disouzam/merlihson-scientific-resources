@@ -1,6 +1,7 @@
 Review 146: Reinforced Self-Training (ReST) for Language Modeling, 14.09.23https://arxiv.org/abs/2308.08998.pdf
 
-Paper: https://arxiv.org/abs/2308.08998v2
+Paper: https://arxiv.org/abs/2308.08998
+v2
 
 שמעתם על RLHF? ראשי תיבות אלו הפכו להיות מאוד פופולריים לאור הצלחתו של ChatGPT שאומן בשיטה הזו. מאז לא מעט מודלי שפה מאומנים עם השיטה הזו למרות שיש טוענים שניתן להשיג את אותו הדבר עם SFT (self-supervised fine-tuning). אבל היום ב-#shorthebrewpapereviews נסקור מאמר שמציע שיטה לשיפור של RLHF. שיפור הביצועים המיוחל מושג על ידי שיפור איכות הדאטה on-the-fly. אבל קודם כל בואו נבין מה זה בעצם RLHF לאימון מודל שפה יסודי (foundational). הוא תהליך המורכב מ- 4 שלבים:
 

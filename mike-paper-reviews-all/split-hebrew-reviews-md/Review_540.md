@@ -41,7 +41,8 @@ https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125
 
 References
 
-Lagaris, I. E., Likas, A., & Fotiadis, D. I. (1997). Artificial Neural Networks for Solving Ordinary and Partial Differential Equations. arXiv:Physics/9705023v1.
+Lagaris, I. E., Likas, A., & Fotiadis, D. I. (1997). Artificial Neural Networks for Solving Ordinary and Partial Differential Equations. arXiv:Physics/9705023
+v1.
 
 Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2018). Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations. Journal of Computational Physics.
 

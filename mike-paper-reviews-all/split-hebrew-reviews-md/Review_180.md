@@ -1,6 +1,7 @@
 Review 179: [Short] UNLEASHING THE POWER OF PRE-TRAINED LANGUAGE MODELS FOR OFFLINE REINFORCEMENT LEARNING
 
-Paper: https://arxiv.org/abs/2310.20587v5
+Paper: https://arxiv.org/abs/2310.20587
+v5
 
 https://huggingface.co/papers/2310.20587
 

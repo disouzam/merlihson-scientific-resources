@@ -1,6 +1,7 @@
 Review 68: PATCHES ARE ALL YOU NEED?
 
-Paper: https://arxiv.org/abs/2201.09792v1
+Paper: https://arxiv.org/abs/2201.09792
+v1
 
 אתם אולי מכירים את חולשתי למאמרים מכילים ביטוי ״all you need". מרגיש מחובתי לסקור קצרות כל מאמר כזה שעיני נתקלת בו. אציין שלא הייתי סוקר את המאמר הזה אחרת 
 

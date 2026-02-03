@@ -1,6 +1,7 @@
 Review 153: [Short] FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION, 24.09.2023
 
-Paper: https://arxiv.org/abs/2309.10537v1
+Paper: https://arxiv.org/abs/2309.10537
+v1
 
 https://huggingface.co/papers/2309.10537
 

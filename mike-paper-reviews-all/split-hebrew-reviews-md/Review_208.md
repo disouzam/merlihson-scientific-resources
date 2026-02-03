@@ -1,6 +1,8 @@
-Review 206b: [Short] Training LLMs over Neurally Compressed Text
+Review 206
+b: [Short] Training LLMs over Neurally Compressed Text
 
-Paper: https://arxiv.org/abs/2404.03626v3
+Paper: https://arxiv.org/abs/2404.03626
+v3
 
 https://arxiv.org/pdf/2404.03626.pdf
 

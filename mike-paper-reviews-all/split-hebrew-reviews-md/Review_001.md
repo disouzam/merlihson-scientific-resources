@@ -1,6 +1,7 @@
 Review 1: Curriculum by Smoothing
 
-Paper: https://arxiv.org/abs/2003.01367v5
+Paper: https://arxiv.org/abs/2003.01367
+v5
 
 תחום מאמר: ארכיטקטורות CNN, למידת curriculum
 

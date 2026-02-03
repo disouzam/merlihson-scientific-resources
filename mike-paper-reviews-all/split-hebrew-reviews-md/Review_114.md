@@ -1,6 +1,7 @@
 Review 114: [Short] WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Modelshttps://huggingface.co/papers/2306.04744
 
-Paper: https://arxiv.org/abs/2306.04744v3
+Paper: https://arxiv.org/abs/2306.04744
+v3
 
 נניח שהצלחתם להנדס פרומפט מאוד מוצלח ל-MidJourney והוא צייר לכם תמונה מדהימה.אם אתם לא רוצים שאף אחד ישתמש בתמונה הזו בלי לתת לכם קרדיט. אבל איך אתם מוכיחים שאתם בעצם יצרתם את התמונה הזו? אתם צריכים להחביא בתמונה איזה סימן מים משלכם (watermark) כדי שתוכלו להוכיח את בעלותכם. 
 

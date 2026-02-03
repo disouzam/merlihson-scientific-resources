@@ -1,6 +1,7 @@
 Review 8: Adversarial Concurrent Training: Optimizing Robustness and Accuracy Trade-off of Deep Neural Networks
 
-Paper: https://arxiv.org/abs/2104.00322v4
+Paper: https://arxiv.org/abs/2104.00322
+v4
 
 תחום: adversary training (אימון עם יריב או אימון לעומתני בעברית)
 

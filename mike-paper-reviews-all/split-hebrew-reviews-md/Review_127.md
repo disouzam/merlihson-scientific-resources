@@ -1,6 +1,7 @@
 Review 126: Short : SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION, 16.08.23
 
-Paper: https://arxiv.org/abs/2308.07921v1
+Paper: https://arxiv.org/abs/2308.07921
+v1
 
 https://huggingface.co/papers/2308.07921
 

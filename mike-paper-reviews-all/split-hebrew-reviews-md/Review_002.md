@@ -1,6 +1,7 @@
 Review 2: Contrastive Representation Distillation
 
-Paper: https://arxiv.org/abs/2103.16367v1
+Paper: https://arxiv.org/abs/2103.16367
+v1
 
 תחומי מאמר: המאמר מהשתמש בשיטה הנקראות (Noise contrastive estimation (NCE המבוססת על מידע הדדי (mutual information) השייכת לתחום למידת הייצוג  (representation learning) בשביל הפקת ידע (knowledge distillation - KD) .
 

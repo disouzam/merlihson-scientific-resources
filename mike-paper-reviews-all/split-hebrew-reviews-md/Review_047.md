@@ -1,6 +1,7 @@
 Review 47: Perceiver: General Perception with Iterative Attention
 
-Paper: https://arxiv.org/abs/2202.10890v2
+Paper: https://arxiv.org/abs/2202.10890
+v2
 
 פינת הסוקר:  
 

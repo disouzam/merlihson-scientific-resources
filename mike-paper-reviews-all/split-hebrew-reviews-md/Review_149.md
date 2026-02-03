@@ -1,6 +1,7 @@
 Review 148: Knowledge Graph Prompting for Multi-Document Question Answering, 17.09.23
 
-Paper: https://arxiv.org/abs/2308.11730v3
+Paper: https://arxiv.org/abs/2308.11730
+v3
 
 https://arxiv.org/abs/2308.11730סקירה זו נכתבה על ידי עדן יבין
 

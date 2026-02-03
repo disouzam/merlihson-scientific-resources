@@ -1,6 +1,7 @@
 Review 40: Unsupervised Learning of Visual Features by Contrasting Cluster Assignments
 
-Paper: https://arxiv.org/abs/2006.09882v5
+Paper: https://arxiv.org/abs/2006.09882
+v5
 
 פינת הסוקר:  
 

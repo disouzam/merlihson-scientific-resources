@@ -1,6 +1,7 @@
 Review 70: [Short] Typical Decoding for Natural Language Generation
 
-Paper: https://arxiv.org/abs/2202.00666v6
+Paper: https://arxiv.org/abs/2202.00666
+v6
 
 מאמר מסקרן המציע שיטת דגימה חדשה ממודלי שפה מאומנים. כמו שאתם בטח יודעים מקובל לדגום מילים (טוקנים) עם הסתברויות הגבוהות ביותר (בהינתן המילים הקודמות). ככה עובדים למשל nucleus ו- top-k. המחברים טוענים שפרדיגמת דגימה זו מובילה לטקסטים ״משמעמים מדי״ ויותר מדי דומים לדאטהסטים שהמודל אומן עליהם.
 
@@ -10,4 +11,5 @@ Paper: https://arxiv.org/abs/2202.00666v6
 
 יש במאמר דיון מעניין על אספקטים לינגוויסטיים של הגישה המוצעת.
 
-סרטון של יאניק: https://www.youtube.com/watch?v=_EDr3ryrT_Y&t=2484s 
+סרטון של יאניק: https://www.youtube.com/watch?v=_EDr3ryrT_Y&t=2484
+s 

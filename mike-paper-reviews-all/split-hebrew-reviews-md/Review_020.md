@@ -1,6 +1,7 @@
 Review 20: DETReg: Unsupervised Pretraining with Region Priors for Object Detection
 
-Paper: https://arxiv.org/abs/2106.04550v5
+Paper: https://arxiv.org/abs/2106.04550
+v5
 
 פינת הסוקר:  
 

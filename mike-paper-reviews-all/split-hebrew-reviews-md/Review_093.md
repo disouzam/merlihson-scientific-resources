@@ -1,6 +1,7 @@
 Review 93: Graphical Models for Processing Missing Data
 
-Paper: https://arxiv.org/abs/2304.01953v1
+Paper: https://arxiv.org/abs/2304.01953
+v1
 
 מאמר מעניין המתאר איך גרפי סיבתיות (causality graphs) יכולים לעזור לטפל בדאטה חסר. אני בשום צורה לא מומחה לסיבתיות (למרות שסקרתי 2 או 3 מאמרים שהשתמשו בכלים סיבתיים בסיסיים) אבל המאמר הזה נראה לי חדשני ומגניב. 
 

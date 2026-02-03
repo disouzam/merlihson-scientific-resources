@@ -1,6 +1,7 @@
 Review 50: Language Through a Prism: A Spectral Approach for Multiscale Language Representation
 
-Paper: https://arxiv.org/abs/2011.04823v1
+Paper: https://arxiv.org/abs/2011.04823
+v1
 
 פינת הסוקר:  
 

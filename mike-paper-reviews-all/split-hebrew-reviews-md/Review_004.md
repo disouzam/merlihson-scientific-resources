@@ -1,6 +1,7 @@
 Review 4: Deep Double Descent: Where Bigger Models and More Data Hurts
 
-Paper: https://arxiv.org/abs/1912.02292v1
+Paper: https://arxiv.org/abs/1912.02292
+v1
 
 בין המחברים של המאמר נמנה Ilya Sutskever שהוציא מאמרים בעלי השפעה רבה בתחום.
 

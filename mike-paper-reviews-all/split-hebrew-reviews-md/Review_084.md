@@ -1,6 +1,7 @@
 Review 84: [Short] Learning to Retrieve In-Context Examples for Large Language Models
 
-Paper: https://arxiv.org/abs/2405.05116v3
+Paper: https://arxiv.org/abs/2405.05116
+v3
 
 הידעתם ש-llms יודעים להתאים את עצמם למשימות חדשות ללא שום כיול (=שינוי המשקלים) אחרי כמה דוגמאות? לפעמים זה עובד ללא דוגמאות. זה נקרא למידה in-context או ICL
 

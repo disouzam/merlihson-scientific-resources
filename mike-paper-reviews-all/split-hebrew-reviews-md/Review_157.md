@@ -1,6 +1,7 @@
 Review 156: Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS, 28.09.2023
 
-Paper: https://arxiv.org/abs/2309.12307v3
+Paper: https://arxiv.org/abs/2309.12307
+v3
 
 https://arxiv.org/abs/2309.12307.pdf
 

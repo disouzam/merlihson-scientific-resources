@@ -1,6 +1,7 @@
 Review 103: [Short] Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23
 
-Paper: https://arxiv.org/abs/1902.03356v3
+Paper: https://arxiv.org/abs/1902.03356
+v3
 
 https://huggingface.co/papers/2307.10802
 

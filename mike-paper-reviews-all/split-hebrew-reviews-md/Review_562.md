@@ -47,4 +47,5 @@ From Entropy to Epiplexity: Rethinking Information for Computationally Bounded I
 
 על ידי ניסוח פורמלי של "ערך" הנתונים כעבודה החישובית הנדרשת כדי לדחוס אותם, המאמר מספק שפה ריגורוזית למה ש"חוקי סקיילינג״ מודדים בפועל: ההמרה של FLOPs למידע מבני.
 
-https://arxiv.org/abs/2601.03220v1
+https://arxiv.org/abs/2601.03220
+v1
