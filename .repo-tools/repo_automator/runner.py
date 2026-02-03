@@ -20,6 +20,7 @@ from .scanners.duplicate_detector import DuplicateDetectorScanner
 from .updaters.base import BaseUpdater
 from .updaters.readme_updater import ReadmeUpdater
 from .updaters.svg_updater import SvgUpdater
+from .updaters.metadata_updater import MetadataUpdater
 from .utils.logging import get_logger, log_scan, log_update, log_success
 
 
@@ -43,6 +44,7 @@ class Runner:
     UPDATER_CLASSES: List[Type[BaseUpdater]] = [
         ReadmeUpdater,
         SvgUpdater,
+        MetadataUpdater,
     ]
 
     def __init__(
