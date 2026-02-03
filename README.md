@@ -89,10 +89,11 @@ cat mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
 ### Access Reviews
 | What you want | Where to find it |
 |---------------|------------------|
-| Individual review files | `mike-paper-reviews-all/split-reviews-docx/Review_001.docx` - `Review_569.docx` |
+| Individual review files (DOCX) | `mike-paper-reviews-all/split-reviews-docx/Review_001.docx` - `Review_572.docx` |
+| Individual reviews (Markdown) | `mike-paper-reviews-all/split-hebrew-reviews-md/Review_001.md` - `Review_572.md` |
 | All paper titles | `mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt` |
-| Papers with ArXiv links | `mike-paper-reviews-all/reviews_metadata/paper_with_links.csv` |
-| Merged PDF (447 pages) | `mike-paper-reviews-all/pdf/all_reviews_until_30_11_24.pdf` |
+| Papers with links (100% coverage) | `mike-paper-reviews-all/reviews_metadata/paper_with_links.csv` |
+| Archived PDFs and old formats | `mike-paper-reviews-all/archive/` |
 
 ---
 
@@ -100,17 +101,19 @@ cat mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
 
 ### `mike-paper-reviews-all/`
 
-The core collection containing **569 individual paper reviews** in multiple formats.
+The core collection containing **572 individual paper reviews** in multiple formats.
 
 | Type | Count | Description |
 |------|-------|-------------|
-| **Individual Reviews** | 1-208 | Deep-dive analyses with enhanced ArXiv links |
-| **Daily Reviews** | 209-569 | Chronological reviews (May 2024 - Jan 2026) |
+| **Individual Reviews** | 1-208 | Deep-dive analyses with paper links |
+| **Daily Reviews** | 209-572 | Chronological reviews (May 2024 - Feb 2026) |
 
 #### Formats Available
-- **`split-reviews-docx/`** - 569 individual DOCX files (`Review_001.docx` → `Review_569.docx`)
-- **`pdf/`** - PDF collections including merged 447-page compilation
-- **`docx/`** - Original batch source documents
+- **`split-hebrew-reviews-md/`** - 572 Hebrew review markdown files (primary format)
+- **`split-english-reviews-md/`** - 205 English review markdown files
+- **`split-reviews-docx/`** - 572 DOCX source files (`Review_001.docx` → `Review_572.docx`)
+- **`reviews_metadata/`** - Auto-updated metadata (100% link coverage)
+- **`archive/`** - Historical PDFs and old batch documents
 
 #### Research Domains Covered
 | Domain | Topics |
@@ -331,8 +334,10 @@ pip install -r mike-paper-reviews-all/py_code/requirements.txt
 | Metric | Value |
 |--------|-------|
 | **Total Paper Reviews** | 572 |
-| **Individual Reviews** | 208 (with ArXiv links) |
-| **Daily Reviews** | 361 (May 2024 - Jan 2026) |
+| **Hebrew Reviews (Markdown)** | 572 files |
+| **English Reviews (Markdown)** | 205 files |
+| **Reviews with Paper Links** | 572 (100% coverage!) |
+| **Daily Reviews** | 364 (May 2024 - Feb 2026) |
 | **Learning Categories** | 21 |
 | **Presentations** | 9 |
 | **Total Repository Size** | 2.0 GB |
@@ -346,21 +351,27 @@ pip install -r mike-paper-reviews-all/py_code/requirements.txt
 
 ```
 scientific-resources/
-├── mike-paper-reviews-all/          # Main review collection (311 MB)
-│   ├── split-reviews-docx/          # 569 individual DOCX reviews
+├── mike-paper-reviews-all/          # Main review collection
+│   ├── split-hebrew-reviews-md/     # 572 Hebrew review markdown files ⭐
+│   │   ├── Review_001.md
+│   │   ├── Review_002.md
+│   │   └── ... → Review_572.md
+│   ├── split-english-reviews-md/    # 205 English review markdown files
+│   ├── split-reviews-docx/          # 572 DOCX source files
 │   │   ├── Review_001.docx
-│   │   ├── Review_002.docx
-│   │   └── ... → Review_569.docx
-│   ├── pdf/                         # PDF format reviews
-│   │   └── all_reviews_until_30_11_24.pdf  # Merged (447 pages)
-│   ├── docx/                        # Original batch documents
-│   ├── reviews_metadata/            # Searchable indices
-│   │   ├── all_paper_titles.txt
-│   │   ├── paper_with_links.csv
-│   │   └── clean_titles_for_search.txt
-│   └── py_code/                     # Python automation tools
-│       ├── docx_splitter.py
-│       └── requirements.txt
+│   │   └── ... → Review_572.docx
+│   ├── reviews_metadata/            # Auto-updated metadata (100% coverage) 🤖
+│   │   ├── paper_with_links.csv     # 572 reviews with links
+│   │   ├── all_paper_titles.txt     # Numbered title list
+│   │   ├── clean_titles_for_search.txt
+│   │   └── reviews_from_208_titles.txt
+│   ├── py_code/                     # Python automation tools
+│   │   ├── docx_splitter.py
+│   │   └── requirements.txt
+│   └── archive/                     # Historical files
+│       ├── old-pdf/                 # Old PDF compilations
+│       ├── old-docx/                # Old batch DOCX files
+│       └── archive-reviews/         # Legacy individual PDFs
 │
 ├── learning-materials/              # Educational resources (1.7 GB)
 │   ├── machine learning/            # 15 ML subcategories
@@ -368,14 +379,17 @@ scientific-resources/
 │   ├── algorithms/                  # Data structures & algorithms
 │   ├── programming/                 # Languages & practices
 │   ├── interview preparation/       # Career resources
-│   └── ... (22 categories total)
+│   └── ... (21 categories total)
 │
 ├── presentations/                   # Research presentations (32 MB)
 │   └── 9 PDF presentations
 │
-├── archive-reviews/           # Legacy archive (31 MB)
+├── .repo-tools/                     # Automation framework
+│   └── repo_automator/              # Metadata updater
 │
-├── METADATA_UPDATE_PROCESS.md       # Maintenance guide
+├── .git/hooks/pre-commit            # Auto-update git hook 🤖
+├── .gitignore                       # Ignore system files
+├── METADATA_UPDATE_PROCESS.md       # Automation guide
 └── README.md                        # This file
 ```
 
