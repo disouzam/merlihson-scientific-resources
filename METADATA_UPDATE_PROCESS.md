@@ -1,279 +1,334 @@
 # 📋 Metadata Update Process Guide
 
 ## 🎯 Purpose
-This document provides a step-by-step guide for updating all metadata files and documentation after new paper reviews are added to the repository. Follow this process after each batch of new reviews to maintain consistency across all files.
-
-## 📅 When to Use This Guide
-- After new review DOCX files are added to `split-reviews-docx/`
-- When the total review count increases (e.g., from 520 to 526+)
-- Monthly or periodic repository updates
-- After pulling changes that include new reviews
-
-## 🔍 Pre-Update Assessment
-
-### Step 1: Identify New Reviews
-```bash
-# Navigate to the reviews directory
-cd scientific-resources/mike-paper-reviews-500/split-reviews-docx
-
-# Check current highest review number
-ls Review_*.docx | tail -5
-
-# Count total reviews
-ls Review_*.docx | wc -l
-```
-
-### Step 2: Determine Update Scope
-Check which files need updating by examining current counts:
-- `metadata_22_09_2025/all_paper_titles.txt` (header shows total count)
-- `metadata_22_09_2025/reviews_from_208_titles.txt` (last entry number)
-- `README.md` (collection statistics)
-- `mike-paper-reviews-500/readme.md` (total reviews count)
-
-## 📝 Metadata Files Update Process
-
-### Step 3: Update `reviews_from_208_titles.txt`
-
-**Location:** `metadata_22_09_2025/reviews_from_208_titles.txt`
-
-1. **Extract titles from new reviews:**
-```python
-# Use Python with docx library to extract titles
-import docx
-import re
-
-def extract_english_title(file_path):
-    doc = docx.Document(file_path)
-    # Look for English titles in document content
-    # (See detailed extraction code in previous session)
-
-# Extract for each new review: Review_XXX.docx
-```
-
-2. **Add new entries:**
-- Format: `XXX. [Paper Title]`
-- Continue numbering from last entry
-- Update header metadata count
-
-### Step 4: Update `all_paper_titles.txt`
-
-**Location:** `metadata_22_09_2025/all_paper_titles.txt`
-
-1. **Update header:**
-```markdown
-# 📚 Complete Paper Titles from All Mike's Reviews (1-XXX)
-# Total: XXX paper titles
-```
-
-2. **Add new entries:**
-- Format: `XXX. [Paper Title]`
-- Sequential numbering from last entry
-
-### Step 5: Update `clean_titles_for_search.txt`
-
-**Location:** `metadata_22_09_2025/clean_titles_for_search.txt`
-
-1. **Clean new titles:**
-- Remove special characters (colons, hyphens)
-- Normalize spaces
-- Format: `XXX. [Cleaned Title]`
-
-### Step 6: Update `paper_with_links.csv`
-
-**Location:** `metadata_22_09_2025/paper_with_links.csv`
-
-1. **Extract ArXiv links:**
-```python
-# Extract links from DOCX files
-def extract_arxiv_link(file_path):
-    # Look for patterns: https://arxiv.org/abs/XXXX.XXXXX
-    # (See detailed extraction code in previous session)
-```
-
-2. **Add CSV entries:**
-```csv
-Review_XXX,Title,https://arxiv.org/abs/XXXX.XXXXX
-```
-
-## 📚 Documentation Updates
-
-### Step 7: Update Main README
-
-**Location:** `README.md`
-
-**Key sections to update:**
-```markdown
-- **Total Paper Reviews**: XXX comprehensive analyses ✅ (UPDATED)
-- **XXX Individual Files**: Complete unified collection (Reviews 1-XXX)
-- **Daily Reviews**: Reviews 209-XXX in chronological order (May 2024 - [Current Month] 2025)
-- **Professional Naming**: `Review_001.docx` through `Review_XXX.docx`
-- **Daily Reviews**: XXX DOCX files (May 2024 - [Current Month] 2025)
-- **Organization**: Sequential Review_001 to Review_XXX naming
-```
-
-### Step 8: Update Collection README
-
-**Location:** `mike-paper-reviews-500/readme.md`
-
-**Key sections to update:**
-```markdown
-**Total Reviews**: XXX individual DOCX files (Review_001 to Review_XXX)
-**Coverage Period**: From early reviews to [Current Date]
-**Last Updated**: [Current Date]
-
-### `split-reviews-docx/` - Unified Review Collection (XXX files)
-#### **Reviews 208-XXX**: Daily Reviews (XXX files)
-- **Date Range**: May 30, 2024 to [Current Date]
-
-## 📊 Statistics
-- **Total Individual Files**: XXX reviews
-- **Daily Reviews**: XXX files (Reviews 208-XXX)
-- **Date Coverage**: ~XX months of daily reviews (May 2024 - [Current Month] 2025)
-```
-
-## 🔧 Automation Scripts
-
-### Title Extraction Script
-```python
-#!/usr/bin/env python3
-"""
-Extract titles from new review DOCX files
-Usage: python extract_new_titles.py START_REVIEW END_REVIEW
-"""
-
-import docx
-import sys
-import re
-
-def extract_title_from_review(file_path):
-    try:
-        doc = docx.Document(file_path)
-        # Implementation details from previous session
-        pass
-    except Exception as e:
-        return f"Error: {e}"
-
-if __name__ == "__main__":
-    start_review = int(sys.argv[1])
-    end_review = int(sys.argv[2])
-    
-    for i in range(start_review, end_review + 1):
-        file_path = f"split-reviews-docx/Review_{i:03d}.docx"
-        title = extract_title_from_review(file_path)
-        print(f"{i}. {title}")
-```
-
-### Link Extraction Script
-```python
-#!/usr/bin/env python3
-"""
-Extract ArXiv links from new review DOCX files
-Usage: python extract_new_links.py START_REVIEW END_REVIEW
-"""
-
-import docx
-import re
-import sys
-
-def extract_arxiv_link(file_path):
-    # Implementation from previous session
-    pass
-
-# Similar structure to title extraction
-```
-
-## ✅ Verification Checklist
-
-### File Consistency Check
-- [ ] All metadata files have same total count
-- [ ] Sequential numbering with no gaps
-- [ ] All new reviews have corresponding entries
-- [ ] ArXiv links are working and properly formatted
-- [ ] README files reflect updated counts and dates
-
-### Quality Assurance
-```bash
-# Verify file counts match
-wc -l metadata_22_09_2025/*.txt metadata_22_09_2025/*.csv
-
-# Check for sequential numbering
-tail -10 metadata_22_09_2025/all_paper_titles.txt
-
-# Verify no duplicate entries
-sort metadata_22_09_2025/all_paper_titles.txt | uniq -d
-```
-
-## 🚀 Git Operations
-
-### Commit and Push Changes
-```bash
-# Stage all changes
-git add .
-
-# Commit with descriptive message
-git commit -m "Update metadata and documentation for Reviews XXX-YYY
-
-- Add X new paper reviews (XXX-YYY) to all metadata files
-- Update all_paper_titles.txt: OLD → NEW total reviews
-- Update clean_titles_for_search.txt: Add cleaned titles
-- Update paper_with_links.csv: Add ArXiv links
-- Update reviews_from_208_titles.txt: Add entries XXX-YYY
-- Update README files: Reflect NEW total reviews, [Month] 2025 coverage
-
-New papers added:
-- Review XXX: [Title]
-- Review YYY: [Title]
-[... list all new papers ...]"
-
-# Push to remote
-git push origin main
-```
-
-## 📊 Example Update Session
-
-### Recent Update (October 8, 2025)
-**Reviews Added:** 515-520 (6 new reviews)
-**Previous Count:** 514 → **New Count:** 520
-
-**Files Updated:**
-1. `all_paper_titles.txt`: Added entries 515-520, updated header
-2. `clean_titles_for_search.txt`: Added cleaned titles 515-520
-3. `paper_with_links.csv`: Added CSV rows with ArXiv links
-4. `reviews_from_208_titles.txt`: Added entries 307-312
-5. `README.md`: Updated all counts from 514 to 520
-6. `mike-paper-reviews-500/readme.md`: Updated collection stats
-
-**Time Required:** ~30 minutes for 6 reviews
-**Success Rate:** 100% (all titles and links extracted successfully)
-
-## 🔄 Monthly Update Workflow
-
-1. **Pull latest changes** from repository
-2. **Identify new reviews** (count files in split-reviews-docx/)
-3. **Extract titles and links** using Python scripts
-4. **Update all metadata files** following this guide
-5. **Update documentation** (README files)
-6. **Verify consistency** using checklist
-7. **Commit and push** changes
-8. **Update this guide** if process changes
-
-## 📝 Notes and Tips
-
-### Common Issues
-- **Hebrew vs English titles:** Always extract English titles for metadata
-- **Missing ArXiv links:** Some papers may use different link formats
-- **Duplicate handling:** Check for existing entries before adding
-- **Date formatting:** Use consistent date format (Month DD, YYYY)
-
-### Best Practices
-- **Backup before changes:** Create branch or backup before major updates
-- **Test extraction scripts:** Verify on small sample before batch processing
-- **Double-check counts:** Ensure all files have consistent totals
-- **Descriptive commits:** Use detailed commit messages for tracking
+This document explains how metadata is automatically maintained in this repository and provides fallback instructions for manual updates if needed.
 
 ---
 
-**Last Updated:** October 8, 2025  
-**Next Scheduled Update:** November 2025  
-**Maintainer:** AI Assistant + Mike  
+## ✨ Automated Process (Recommended)
+
+### 🤖 Git Pre-Commit Hook
+
+**The repository now includes automated metadata synchronization!** All metadata files are automatically updated when you commit review files.
+
+### How It Works
+
+1. **Add a new review file:**
+```bash
+# Create your review (Hebrew or English)
+vim mike-paper-reviews-all/split-hebrew-reviews-md/Review_XXX.md
+```
+
+2. **Include paper link in the review:**
+```markdown
+המאמר היומי של מייק: DD.MM.YY
+Review XXX: Paper Title
+
+Review content here...
+
+https://arxiv.org/abs/XXXX.XXXXX
+```
+
+3. **Commit (hook runs automatically):**
+```bash
+git add mike-paper-reviews-all/split-hebrew-reviews-md/Review_XXX.md
+git commit -m "Add Review_XXX: Paper Title"
+
+# Output:
+# 📝 Detected review markdown changes, updating metadata...
+# Extracting metadata from Hebrew review files...
+# Extracted 573 reviews
+# Reviews with missing links: 0
+# ✓ Metadata updated successfully
+# ✓ Metadata files staged for commit
+```
+
+4. **Push to remote:**
+```bash
+git push
+```
+
+### What Gets Auto-Updated
+
+The pre-commit hook automatically updates:
+
+| File | Purpose | Location |
+|------|---------|----------|
+| `paper_with_links.csv` | Review number → Paper title → Link | `reviews_metadata/` |
+| `all_paper_titles.txt` | Numbered list of all titles | `reviews_metadata/` |
+| `clean_titles_for_search.txt` | Sanitized titles for search | `reviews_metadata/` |
+| `reviews_from_208_titles.txt` | Titles for reviews 208+ | `reviews_metadata/` |
+
+### Supported Paper Sources
+
+The hook extracts links from multiple sources:
+- **ArXiv** - `https://arxiv.org/abs/XXXX.XXXXX`
+- **Nature** - `https://nature.com/articles/...`
+- **ACM Digital Library** - `https://dl.acm.org/doi/...`
+- **OpenAI** - `https://openai.com/...` or `https://cdn.openai.com/papers/...`
+- **Google Research** - `https://research.google/blog/...`
+- **OpenReview** - `https://openreview.net/forum?id=...`
+- **HuggingFace Papers** - `https://huggingface.co/papers/...`
+- **DOI Links** - `https://doi.org/...`
+- **ScienceDirect** - `https://sciencedirect.com/...`
+- **Research Square** - `https://researchsquare.com/...`
+
+### Title Extraction Patterns
+
+The hook recognizes multiple review formats:
+
+```markdown
+# Pattern 1: Standard header
+Review XXX: Paper Title
+
+# Pattern 2: Hebrew date format
+המאמר היומי של מייק: DD.MM.YYPaper Title
+
+# Pattern 3: Mixed Hebrew/English
+סקירה XXX סקירות עד 1024 Paper Title
+```
+
+### Link Extraction
+
+The hook handles various link formats:
+- Missing protocol: `arxiv.org/abs/...` → `https://arxiv.org/abs/...`
+- Single slash typo: `https:/arxiv.org` → `https://arxiv.org`
+- PDF to abs: `https://arxiv.org/pdf/...` → `https://arxiv.org/abs/...`
+- Normalizes all links to standard format
+
+---
+
+## 📊 Current Statistics
+
+| Metric | Value |
+|--------|-------|
+| **Total Reviews** | 572 |
+| **With Paper Links** | 572 (100% coverage!) |
+| **Hebrew Reviews** | 572 markdown files |
+| **English Reviews** | 205 markdown files |
+| **DOCX Source Files** | 572 files |
+
+---
+
+## 🔧 Manual Process (Fallback)
+
+### When to Use Manual Updates
+
+Use manual updates only if:
+- The git hook is not installed or malfunctioning
+- You need to fix a specific metadata entry
+- You're batch-updating historical reviews
+
+### Manual Update Steps
+
+#### Step 1: Run the Standalone Updater
+
+```bash
+cd /Users/michaelerlihson/Personal/Projects/scientific_repo
+python3 /private/tmp/claude-502/-Users-michaelerlihson/69d58795-5665-474b-8024-995d33399c52/scratchpad/update_metadata_standalone.py
+```
+
+This script:
+- Scans all review markdown files
+- Extracts titles and paper links
+- Updates all 4 metadata files
+- Reports any missing links
+
+#### Step 2: Verify Updates
+
+```bash
+# Check total count
+wc -l mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
+# Should show: 573 (1 header + 572 reviews)
+
+# Check for missing links
+grep ",,$" mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
+# Should return nothing if all reviews have links
+
+# Verify last entry
+tail -5 mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt
+```
+
+#### Step 3: Commit Changes
+
+```bash
+git add mike-paper-reviews-all/reviews_metadata/*.{csv,txt}
+git commit -m "Manual metadata update: Reviews X-Y"
+git push
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Hook Not Running
+
+If the hook doesn't run automatically:
+
+```bash
+# Check if hook exists and is executable
+ls -la .git/hooks/pre-commit
+
+# Make it executable if needed
+chmod +x .git/hooks/pre-commit
+
+# Test the hook manually
+.git/hooks/pre-commit
+```
+
+### Missing Paper Link
+
+If a review doesn't have a paper link:
+
+1. **Add link to the review markdown file** (recommended):
+```bash
+vim mike-paper-reviews-all/split-hebrew-reviews-md/Review_XXX.md
+# Add the arxiv/doi link at the end
+```
+
+2. **Or manually edit CSV** (not recommended):
+```bash
+vim mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
+# Add: Review_XXX,Paper Title,https://arxiv.org/abs/...
+```
+
+Then commit:
+```bash
+git add mike-paper-reviews-all/split-hebrew-reviews-md/Review_XXX.md
+git commit -m "Add missing link for Review_XXX"
+# Hook will re-extract and update metadata
+```
+
+### Title Extraction Failed
+
+If the hook can't extract a title:
+
+1. Check the review file format
+2. Ensure the title is in English (or mostly ASCII)
+3. The title should appear in the first 15 lines
+4. Use one of the supported format patterns (see above)
+
+### Duplicate Entries
+
+If you see duplicate entries in metadata:
+
+```bash
+# Check for duplicates
+sort mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt | uniq -d
+
+# Re-run the standalone updater to fix
+python3 /path/to/update_metadata_standalone.py
+```
+
+---
+
+## 📝 Quality Assurance
+
+### Verification Checklist
+
+After updates (automatic or manual), verify:
+
+- [ ] All metadata files updated: `paper_with_links.csv`, `all_paper_titles.txt`, `clean_titles_for_search.txt`, `reviews_from_208_titles.txt`
+- [ ] Total count matches in all files (572 reviews)
+- [ ] No duplicate entries
+- [ ] All links are working and properly formatted
+- [ ] Sequential numbering with no gaps (Review_001 to Review_572)
+- [ ] No empty link fields (100% coverage)
+
+### Quick Verification Commands
+
+```bash
+# Count reviews in each file
+echo "CSV entries:" && tail -n +2 mike-paper-reviews-all/reviews_metadata/paper_with_links.csv | wc -l
+echo "All titles:" && wc -l mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt
+echo "Clean titles:" && wc -l mike-paper-reviews-all/reviews_metadata/clean_titles_for_search.txt
+
+# Check for missing links
+echo "Missing links:" && grep ",,$" mike-paper-reviews-all/reviews_metadata/paper_with_links.csv | wc -l
+
+# Verify markdown files
+echo "Hebrew reviews:" && ls mike-paper-reviews-all/split-hebrew-reviews-md/Review_*.md | wc -l
+echo "DOCX files:" && ls mike-paper-reviews-all/split-reviews-docx/Review_*.docx | wc -l
+```
+
+---
+
+## 🚀 Best Practices
+
+### For Adding Reviews
+
+1. ✅ **Use the automated workflow** (git hook)
+2. ✅ **Include paper link in the review text** (not just in commit message)
+3. ✅ **Follow naming convention**: `Review_XXX.md` (zero-padded, e.g., `Review_073.md`)
+4. ✅ **Use standard link format** (https:// prefix, standard domain)
+5. ✅ **Commit with descriptive message**: `"Add Review_XXX: Paper Title"`
+
+### For Maintaining Metadata
+
+1. ✅ **Trust the automation** - Don't manually edit CSV files
+2. ✅ **Fix source files** - If metadata is wrong, fix the review markdown file
+3. ✅ **Let the hook re-extract** - Commit the fixed review file
+4. ✅ **Verify after commits** - Check that metadata updated correctly
+5. ✅ **Keep paper links in reviews** - Ensures long-term maintainability
+
+### For Edge Cases
+
+1. ⚠️ **Non-arxiv papers** - Hook supports 10+ sources, just include the link
+2. ⚠️ **No paper link available** - Leave link field empty, hook will note it
+3. ⚠️ **Multiple links** - Hook extracts first valid paper link found
+4. ⚠️ **Historical reviews** - Can be batch-processed with standalone script
+
+---
+
+## 📅 Maintenance Schedule
+
+| Task | Frequency | Description |
+|------|-----------|-------------|
+| **Add new reviews** | As needed | Automated via git hook |
+| **Verify metadata** | Monthly | Run verification commands |
+| **Update README** | Quarterly | Update statistics and coverage dates |
+| **Audit links** | Annually | Check for broken links |
+
+---
+
+## 🔄 Migration Notes
+
+### From Manual to Automated (February 2026)
+
+The repository migrated from manual metadata updates to automated git hooks:
+
+**Before (Manual):**
+- Extract titles with Python scripts
+- Manually edit 4 metadata files
+- Verify consistency manually
+- 30+ minutes per batch
+
+**After (Automated):**
+- Just commit review files
+- Hook auto-extracts and updates
+- 100% consistency guaranteed
+- < 1 minute per review
+
+**Migration Actions Taken:**
+1. ✅ Created git pre-commit hook
+2. ✅ Created standalone Python updater
+3. ✅ Updated all metadata to 100% coverage
+4. ✅ Fixed all arxiv link typos
+5. ✅ Added support for non-arxiv sources
+6. ✅ Documented automation in README
+
+---
+
+## 📚 Additional Resources
+
+- **Git Hook Location**: `.git/hooks/pre-commit`
+- **Standalone Updater**: `/private/tmp/claude-502/.../update_metadata_standalone.py`
+- **Main Updater Class**: `.repo-tools/repo_automator/updaters/metadata_updater.py`
+- **README Documentation**: See "🤖 Automated Metadata Updates" section
+
+---
+
+**Last Updated:** February 3, 2026
+**Automation Status:** ✅ Fully Automated via Git Hook
+**Coverage:** 572/572 reviews (100%)
 **Repository:** https://github.com/merlihson/scientific-resources
