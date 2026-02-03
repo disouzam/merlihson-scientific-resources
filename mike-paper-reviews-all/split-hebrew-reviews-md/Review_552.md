@@ -1,6 +1,7 @@
 HybridEP: מתי כדאי להזיז טוקנים ומתי להזיז מומחים?
 
-סקירת המאמר היומית של מייק: 17.12.25, סקירה 552, 472 סקירות ל 1024HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission
+סקירת המאמר היומית של מייק: 17.12.25, סקירה 552, 472 סקירות ל 1024
+HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission
 
 ארכיטקטורת Mixture-of-Experts (או MoE) מאפשרת הגדלת מודלי שפה על ידי החלפת חלק משכבות ה-FFN בהרבה "מומחים" (FFNs ייעודיים), כאשר רשת הניתוב(router) בוחרת כמה מומחים בודדים לכל טוקן כדי להקל על החישוב (יש לכך מחיר בביצועים אבל לא נכנס לזה). שיטה זו שומרת על עלות חישובית קבועה בעוד גודל המודל מתנפח לטריליוני פרמטרים.
 

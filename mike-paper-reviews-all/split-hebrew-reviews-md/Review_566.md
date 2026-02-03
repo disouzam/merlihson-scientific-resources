@@ -1,6 +1,7 @@
 ה-RAG של הסדרות העתיות
 
-המאמר היומי של אנדרי ומייק 16.01.26, סקירה 566, 458 סקירות ל-1024RAFT - Retrieval Augmented Time Series Forecasting
+המאמר היומי של אנדרי ומייק 16.01.26, סקירה 566, 458 סקירות ל-1024
+RAFT - Retrieval Augmented Time Series Forecasting
 
 מבוא: 
 

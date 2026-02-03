@@ -1,6 +1,7 @@
 מלחמות ה-SSL: יתרונות מוכחים לגישת הייצוג המשותף
 
-המאמר היומי של ניב ומייק 12.01.26, סקירה 564, 460 סקירות ל-1024Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning
+המאמר היומי של ניב ומייק 12.01.26, סקירה 564, 460 סקירות ל-1024
+Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning
 
 המאמר המסוקר משווה בין 2 הפרדיגמות המרכזיות בתחום למידת Self-Supervised (או SSL בקצרה) בשנים האחרונות: מודל שחזור (Reconstruction), וייצוג לטנטי משותף (Joint Embedding).
 

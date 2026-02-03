@@ -1,6 +1,7 @@
 לא כל “חשיבה ארוכה” היא חשיבה טובה.
 
-המאמר היומי של נורית ומייק: 14.10.25, סקירה 526Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs
+המאמר היומי של נורית ומייק: 14.10.25, סקירה 526
+Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs
 
 במודלי שפה אנחנו נוטים לשלם בטוקנים מתוך אמונה שיותר חשיבה תוביל לדיוק גבוה יותר. בפועל, במאמר שנסקור הפעם, מתגלה תבנית עקבית: יש אורך חשיבה אופטימלי (טוקנים). קצר מדי - המודל מפספס. ארוך מדי - המודל מתחיל להסתבך בעצמו. התוצאה נראית כמו גבעה: דיוק עולה… ואז יורד.
 

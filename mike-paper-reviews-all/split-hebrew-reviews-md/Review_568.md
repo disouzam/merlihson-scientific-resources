@@ -1,6 +1,7 @@
 SFT Memorizes, RL Generalizes 
 
-המאמר היומי של אסף אחי-מרדכי ומייק 23.01.26, סקירה 568, 456 סקירות ל-1024SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training
+המאמר היומי של אסף אחי-מרדכי ומייק 23.01.26, סקירה 568, 456 סקירות ל-1024
+SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training
 
 רקע
 

@@ -1,6 +1,7 @@
 אפיפלקסיות: כשחישוב יוצר מידע
 
-סקירת המאמרים היומית של מייק: 09.01.26, סקירה 562, 462 סקירות עד 1024From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence
+סקירת המאמרים היומית של מייק: 09.01.26, סקירה 562, 462 סקירות עד 1024
+From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence
 
 זה המאמר המורכב ביותר שאני סוקר זמן מה (וה״מה״ הזה הוא די ארוך). עוד דבר דיסקליימר קטן: לפעמים אשתמש במילה ״סיבוכיות״ במקום ״מורכבות״ ולהיפך 
 
