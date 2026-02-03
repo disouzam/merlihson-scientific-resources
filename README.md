@@ -47,19 +47,19 @@
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Quick Start](#-quick-start)
-- [Paper Reviews](#-paper-reviews)
-- [Learning Materials](#-learning-materials)
-- [Presentations](#-presentations)
-- [Metadata & Search](#-metadata--search)
-- [Automated Metadata Updates](#-automated-metadata-updates)
-- [Python Tools](#-python-tools)
-- [Collection Statistics](#-collection-statistics)
-- [Repository Structure](#-repository-structure)
-- [For Researchers & Students](#-for-researchers--students)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+- [Paper Reviews](#paper-reviews)
+- [Learning Materials](#learning-materials)
+- [Presentations](#presentations)
+- [Metadata & Search](#metadata--search)
+- [Automated Metadata Updates](#automated-metadata-updates)
+- [Python Tools](#python-tools)
+- [Collection Statistics](#collection-statistics)
+- [Repository Structure](#repository-structure)
+- [For Researchers & Students](#for-researchers--students)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
