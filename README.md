@@ -54,6 +54,7 @@
 - [Presentations](#presentations)
 - [Metadata & Search](#metadata--search)
 - [Automated Metadata Updates](#automated-metadata-updates)
+- [Daily Review Automation](#daily-review-automation)
 - [Collection Statistics](#collection-statistics)
 - [Repository Structure](#repository-structure)
 - [For Researchers & Students](#for-researchers--students)
@@ -294,6 +295,75 @@ The hook extracts links from multiple sources:
 | **Manually Added** | 1 |
 
 No manual CSV editing needed! 🎉
+
+---
+
+## 🤖 Daily Review Automation
+
+This repository includes **automated daily processing** of paper reviews. Every day at 5:00 AM, the system automatically checks for new review files and processes them end-to-end.
+
+### What It Does
+
+The daily automation:
+
+1. ✅ **Scans** `~/Downloads/` for new `Review_XXX.docx` files
+2. ✅ **Checks for duplicates** - skips reviews already in repo
+3. ✅ **Copies** Hebrew DOCX to `split-reviews-docx/`
+4. ✅ **Converts** Hebrew DOCX to markdown with title formatting
+5. ✅ **Converts** English DOCX if present
+6. ✅ **Commits** changes with descriptive message
+7. ✅ **Updates metadata** automatically via pre-commit hook
+8. ✅ **Pushes** to GitHub
+9. ✅ **Logs** all actions for monitoring
+
+### Setup
+
+The automation is set up via launchd (macOS native scheduler):
+
+```bash
+# Install daily job (runs at 5:00 AM)
+cd .repo-tools/scripts
+./schedule_daily_job.sh
+```
+
+### Manual Processing
+
+You can also run the processor manually:
+
+```bash
+# Test without making changes
+python3 .repo-tools/scripts/daily_review_processor.py --dry-run
+
+# Process new reviews now
+python3 .repo-tools/scripts/daily_review_processor.py
+```
+
+### Monitoring
+
+View automation logs:
+
+```bash
+# View recent activity
+tail -f .repo-tools/logs/daily_processor.log
+
+# View errors
+cat .repo-tools/logs/daily_processor_error.log
+```
+
+### Management
+
+```bash
+# Check if job is running
+launchctl list | grep daily-review
+
+# Run immediately (don't wait for 5 AM)
+launchctl start com.user.daily-review-processor
+
+# Uninstall
+launchctl unload ~/Library/LaunchAgents/com.user.daily-review-processor.plist
+```
+
+For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scripts/README.md)
 
 ---
 

@@ -103,3 +103,22 @@ echo
 echo -e "${YELLOW}SAFETY: This tool NEVER deletes files.${NC}"
 echo -e "${YELLOW}It only updates READMEs and metadata.${NC}"
 echo
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}   🤖 Optional: Daily Review Automation${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo
+echo -e "Would you like to set up automated daily review processing?"
+echo -e "This will check ~/Downloads every day at 5:00 AM for new Review_XXX.docx files"
+echo -e "and automatically process, commit, and push them to GitHub."
+echo
+read -p "Set up daily automation? (y/n): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo -e "${YELLOW}🤖 Setting up daily review automation...${NC}"
+    "$SCRIPT_DIR/scripts/schedule_daily_job.sh"
+else
+    echo -e "${YELLOW}⏭️  Skipping daily automation setup${NC}"
+    echo -e "   You can set it up later by running:"
+    echo -e "   ${BLUE}cd .repo-tools/scripts && ./schedule_daily_job.sh${NC}"
+fi
+echo
