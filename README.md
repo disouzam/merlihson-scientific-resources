@@ -21,7 +21,7 @@
 <table>
 <tr>
 <td align="center" width="25%">
-<h3>📄 572+</h3>
+<h3>📄 573+</h3>
 <b>Paper Reviews</b><br>
 <sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
 </td>
@@ -31,7 +31,7 @@
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 2.0 GB</h3>
+<h3>🎯 3.7 GB</h3>
 <b>Resources</b><br>
 <sub>PDFs, presentations,<br>cheat sheets & more</sub>
 </td>
@@ -105,7 +105,7 @@ The core collection containing **572 individual paper reviews** in multiple form
 | Type | Count | Description |
 |------|-------|-------------|
 | **Individual Reviews** | 1-208 | Deep-dive analyses with paper links |
-| **Daily Reviews** | 364-572 | Chronological reviews (May 2024 - Feb 2026) |
+| **Daily Reviews** | 365-572 | Chronological reviews (May 2024 - Feb 2026) |
 
 #### Formats Available
 - **`split-hebrew-reviews-md/`** - 572 Hebrew review markdown files (primary format)
@@ -301,14 +301,14 @@ No manual CSV editing needed! 🎉
 
 | Metric | Value |
 |--------|-------|
-| **Total Paper Reviews** | 572 |
-| **Hebrew Reviews (Markdown)** | 572 files |
+| **Total Paper Reviews** | 573 |
+| **Hebrew Reviews (Markdown)** | 573 files |
 | **English Reviews (Markdown)** | 205 files |
 | **Reviews with Paper Links** | 572 (100% coverage!) |
-| **Daily Reviews** | 364 (May 2024 - Feb 2026) |
+| **Daily Reviews** | 365 (May 2024 - Feb 2026) |
 | **Learning Categories** | 21 |
 | **Presentations** | 9 |
-| **Total Repository Size** | 2.0 GB |
+| **Total Repository Size** | 3.7 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
 | **License** | CC0-1.0 (Public Domain) |
