@@ -570,3 +570,4 @@ REPO: Language Models with Context Re-Positioning
 DoPE: Denoising Rotary Position Embedding
 mHC: Manifold-Constrained Hyper-Connections
 Efficient Context Scaling with LongCat ZigZag Attention
+TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE
