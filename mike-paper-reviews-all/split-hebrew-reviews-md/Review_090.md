@@ -8,6 +8,4 @@ Paper: https://arxiv.org/abs/2305.20030v3
 
 וקטור watermark ניתן לזיהוי דרך הפעלת מודל ״ההופך״ מודל דיפוזיה מאומן כדי לקבל דגימה של רעש שממנו נוצרה התמונה (diffusion model inversion). וקטור watermark חסין (ניתן לזיהוי) גם אם התמונה הנוצרת סובבה, או כל הפקסלים מטושטשים או מוזזים בגורם/שיפט קבוע.
 
-HuggingFace: https://huggingface.co/papers/2305.20030
-
 Paper: https://arxiv.org/abs/2305.20030

@@ -9,5 +9,3 @@ Scaling and evaluating sparse autoencoders?
 הוקטורים הדלילים המתאימים לקונספטים ניתן להפיק באמצעות אימון של sparse autoencoder של שכבה אחת לכל כיוון כאשר הייצוג באמצע (אחרי האנקודר) הוא וקטור דליל: במהלך האימון לוקחים ממנו את k הרכיבים הגדולים ביותר - אחרי ReLu
 
 ויש כמובן חוקי Scaling מעניינים לגבי הייצוגים האלו. מאמר מעניין. 
-
-מאמר: https://cdn.openai.com/papers/sparse-autoencoders.pdf

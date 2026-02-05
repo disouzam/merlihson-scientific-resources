@@ -7,5 +7,3 @@
 טלגרם: https://t.me/MathyAIwithMike/60
 
 טוויטר: https://x.com/MikeE_3_14/status/1796823310459666491
-
-מאמר: https://arxiv.org/abs/2405.17927

@@ -6,6 +6,4 @@ LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models
 
 ֿ
 
-מאמר: https://arxiv.org/abs/2405.18377
-
 טלגרם: https://t.me/MathyAIwithMike/69

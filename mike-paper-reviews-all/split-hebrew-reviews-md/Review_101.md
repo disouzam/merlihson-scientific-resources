@@ -26,8 +26,6 @@ Paper: https://arxiv.org/abs/2112.10741v3
 
 פרטי המאמר:
 
-מאמר: https://arxiv.org/abs/2112.10741
-
 קוד: https://github.com/openai/glide-text2im
 
 פורסם בתאריך: 08.03.2022
