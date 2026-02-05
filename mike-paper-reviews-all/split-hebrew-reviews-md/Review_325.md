@@ -11,4 +11,4 @@ Review 325: DiffCSE: Difference-based Contrastive Learning for Sentence Embeddin
 
 דרך אגב פונקציית הלוס למודל הסיווג דומה לזו של GAN אבל אין באמת קשר בין שני הדברים (זה טיפה בלבל אותי בהתחלה)....
 
-https://arxiv.org/pdf/2204.10298
+https://arxiv.org/abs/2204.10298

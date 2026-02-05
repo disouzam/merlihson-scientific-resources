@@ -1,9 +1,8 @@
-Review 254: 🚀
+Review 254: DataDream: Few-shot Guided Dataset Generation
 
 ⚡️🚀המאמר היומי של מייק 19.07.24: ⚡️
 
 
-DataDream: Few-shot Guided Dataset Generation
 
 מזמן לא סקרתי מאמר בנושא של מודלי דיפוזיה גנרטיביים - הנושא האהוב עליי לפני שנה - שנתיים. המאמרים בנושא הזה השתנו מאז ובד״כ לוקח לי קצת זמן לצלול לעומק. המאמר הזה היווה יוצא מן הכלל והיה די קל עקב האינטואיטיביות שלו ובנוסף שימוש בטכניקות דומות בתחום מודלי שפה.
 
@@ -19,4 +18,4 @@ DataDream: Few-shot Guided Dataset Generation
 
 מאמר נחמד וקל לקריאה.
 
-https://arxiv.org/pdf/2407.10910
+https://arxiv.org/abs/2407.10910

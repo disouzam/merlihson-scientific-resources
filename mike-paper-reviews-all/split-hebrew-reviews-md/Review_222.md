@@ -1,9 +1,8 @@
-Review 222: 🚀
+Review 222: Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving
 
 ⚡️🚀המאמר היומי של מייק 12.06.24:⚡️
 
 
-Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving
 
 היום סוקרים קצרות מאמר עתיק (מלפני 3 שנים) אבל יש למאמר הזה אימפקט גדול (רק תמשיכו לעקוב אחרי הסקירות היומיות). כשמסתכלים על שם המאמר הזה לא קל לקשר אותו ללמידה עמוקה. הרי מה לפתרון משוואות לא לינאריות וללמידה עמוקה? אולי מילה Parallel עשויה לרמוז לנו קלות על איזשהו קשר ללמידה עמוקה כי אנחנו מאוד אוהבים לחשב דברים במקביל במהלך אימון ואינפרנס של המודלים העמוקים שלנו.
 

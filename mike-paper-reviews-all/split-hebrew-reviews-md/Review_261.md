@@ -1,9 +1,8 @@
-Review 261: 🚀
+Review 261: Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?
 
 ⚡️🚀המאמר היומי של מייק 27.07.24: ⚡️
 
 
-Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?
 
 אחרי שבוע שלא סקרתי עבודות על LLMs חוזר לנושא הזה היום עם סקירה של המאמר המציע התקפה מציע תקיפה על מודלי שפה מבוססת טוקנייזרים. ההתקפה מיועדת לגלות מה המשקל היחסי של דאטה מסוג מסוים (שפה, שפת תכנות וכדומה) בדאטהסט שעליו אומן מודל שפה. לא יודע עד כמה ההתקפה הזו חמורה אבל עושים זאת על סמך הטוקנייזר. 
 

@@ -1,9 +1,8 @@
-Review 236: 🚀
+Review 236: Probing the Decision Boundaries of In-context Learning in Large Language Models
 
 ⚡️🚀המאמר היומי של מייק 27.06.24:⚡️
 
 
-Probing the Decision Boundaries of In-context Learning in Large Language Models
 
  המאמר הזה מדגים בפעם מי יודע מה שיש משימות שמודלי שפה מתקשים בהם מאוד אבל אם נסביר לו את המשימה ב״שפתו״ הוא די מצליח להסתדר איתה. הפעם המשימה היא סיווג מולטיקלאס - כלומר אנו מספקים למודל כמה זוגות של וקטורי x והלייבל שלו y. הווקטורים ניתנים להפרדה בצורה לינארית על ידי ישר מסוים כלומר נמצאים בשני צידיו (של הישר). זה ה-context שלנו. לאחר מכן המודל מקבל נקודה x ומתבקש לחזות את הלייבל שלו y.
 

@@ -17,6 +17,6 @@ Review 330: Amortized Planning with Large-Scale Transformers: A Case Study on Ch
 
 האם זה מצביע על כך שהמודלים יודעים לעשות ריזונינג - לא יודע, מבטיח לחשוב על זה לעומק….
 
-https://arxiv.org/pdf/2402.04494
+https://arxiv.org/abs/2402.04494
 
 v2

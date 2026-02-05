@@ -1,9 +1,8 @@
-Review 276: 🚀
+Review 276: Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders
 
 ⚡️🚀המאמר היומי של מייק 14.08.24: ⚡️
 
 
-Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders
 
 אתמול סקרנו מאמר שהשתמש בגישת SAE או Sparse AutoEncoders כדי לחדור ל״מחשובותיו״ של מודל שפה גדול דרך האקטיבציות של הנוירונים שלהם. הנחת היסוד במאמר היתה כי נוירונים ״מגיבים״ לכמה קונספטים שונים וניתן לאמן SAE רדוד מאוד (שכבה אחת בדקודר ושכבה אחת באנדוקר) כדי להגיע לוקטור דליל המקודד (נדלק) קונספט אחד בלבד כלומר disentanglement של הפיצ'רים לנוירונים ייעודיים.
 
@@ -15,4 +14,4 @@ Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencode
 
 מאמר נחמד בנושא די חשוב שאמשיך לסקור כנראה גם בעתיד…
 
-https://arxiv.org/pdf/2407.14435
+https://arxiv.org/abs/2407.14435

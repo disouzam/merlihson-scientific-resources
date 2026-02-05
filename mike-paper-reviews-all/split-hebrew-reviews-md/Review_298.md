@@ -21,4 +21,4 @@ Review 298: Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planni
 
 אז למה יש כן כוכבית בשם. האלגוריתם שהתקבל מאוד מזכיר את A* המפורסם אך זה כבר נושא לסקירה אחרת…
 
-https://arxiv.org/pdf/2406.14283
+https://arxiv.org/abs/2406.14283

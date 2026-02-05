@@ -13,4 +13,4 @@ Review 328: Predicting from Strings: Language Model Embeddings for Bayesian Opti
 
 מעניין שהמאמר מניח כי את באינפרנס ערכי ה- x-ים לבדיקה מתקבלים דרך איזה אלגוריתם אבולוציוני נתון.
 
-https://arxiv.org/pdf/2410.10190
+https://arxiv.org/abs/2410.10190

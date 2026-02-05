@@ -1,9 +1,8 @@
-Review 269: 🚀
+Review 269: TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models
 
 ⚡️🚀המאמר היומי של מייק 06.08.24: ⚡️
 
 
-TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models
 
 חוזרים לסקור מאמרים על מודלי דיפוזיה עם מאמר כחול לבן של קבוצת חוקרים מאוניברסיטת תל אביב. הם מציעים שיטה מעניינת לעריכה מהירה של תמונה. כלומר בהינתן תמונה עם פרומפט נתון c אנו רוצים ליצור תמונה עם פרומפט אחר c1.
 

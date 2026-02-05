@@ -1,9 +1,8 @@
-Review 218: 🚀
+Review 218: Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality
 
 ⚡🚀המאמר היומי של מייק 08.06.24:⚡
 
 
-Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality
 
 למאמר הזה יש עוד שם והוא 🤔mamba-2. המאמר הזה מתמקד בשכלול הארכיטקטורה של ממבה המקורית שעשתה הרבה כותרות בחצי השנה האחרונה ואני הצטרפתי לחגיגה וסקרתי בערך 20 מאמרים בנושא המרתק הזה.
 

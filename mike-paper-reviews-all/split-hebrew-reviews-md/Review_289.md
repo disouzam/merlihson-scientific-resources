@@ -1,9 +1,8 @@
-Review 289: 🚀
+Review 289: Flexora: Flexible Low Rank Adaptation for Large Language Models
 
 ⚡️🚀המאמר היומי של מייק 04.09.24: ⚡️
 
 
-Flexora: Flexible Low Rank Adaptation for Large Language Models
 
 המאמר הזה נסקר קודם כל בגלל שהוא למעשה מימוש של רעיון שחשבתי עליו והוא גם רשום לי בבקלוג (שהוא באורך די אינסופי). הרעיון הוא למעשה שיטה לבחירה (לפעמים קוראים לזה אופטימיזציה) של ההייפרפרמטרים של LoRA (סוג של).
 

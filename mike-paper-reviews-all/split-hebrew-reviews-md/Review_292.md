@@ -1,9 +1,8 @@
-Review 292: 🚀
+Review 292: DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?
 
 ⚡️🚀המאמר היומי של מייק 08.09.24: ⚡️
 
 
-DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?
 
 לא הייתי אמור לכתוב סקירה היום אך הקלטת הפודקאסט שלנו התבטלה והתפנה לי קצת זמן אז אסקור מאמר שכבר נמצא כמה זמן אצלי במגירה. המאמר בנושא למידה עם חיזוקים (RL) וטרנספורמרים אז לכאורה זה נשמע מאמר די נחמד.
 

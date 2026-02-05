@@ -1,9 +1,8 @@
-Review 230: 🚀
+Review 230: WARM: On the Benefits of Weight Averaged Reward Models
 
 ⚡️🚀המאמר היומי של מייק 20.06.24:⚡️
 
 
-WARM: On the Benefits of Weight Averaged Reward Models
 
 הסקירה הזו ממשיכה את קו הסקירות בנושא שיפור ביצועי RLHF לטיוב מודלי שפה. כבר דיברנו בסקירות הקודמות על כך שבמהלך RLHF המודל יכול לבצע reward hacking כלומר להתכנס לפוליסי (משקלי המודל) שממקסם את ה-reward ובאותו הזמן יוצר תשובות באיכות ירודה לפרומפטים. 
 

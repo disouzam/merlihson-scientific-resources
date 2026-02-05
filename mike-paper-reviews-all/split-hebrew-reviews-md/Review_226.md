@@ -1,9 +1,8 @@
-Review 226: 🚀
+Review 226: STATISTICAL REJECTION SAMPLING IMPROVES PREFERENCE OPTIMIZATION
 
 ⚡️🚀המאמר היומי של מייק 16.06.24:⚡️
 
 
-STATISTICAL REJECTION SAMPLING IMPROVES PREFERENCE OPTIMIZATION
 
 המאמר הזה וכמה הבאים שאסקור בימים הקרובים מציעים שכלולים שונים לשיטה Direct Preference Optimization או בקיצור DPO. למעשה DPO בעצמה היא שדרוג של Proximal Policy Optimization או PPO שהפכה להיות מאוד פופולרית אחרי שמכמה חברות השתמשו בה ליישור מודלי שפה (alignment   או instruction tuning) בתור השלב האחרון של אימון מודל שפה foundational. השיטה שייכת למשפחת RLHF כי היא דורשת דאטה (שאלות ותשובות) המדורגות על ידי בני אדם - עבור כל שאלה הם (המתייגים) בוחרים מה התשובה איזה תשובה טובה יותר.
 

@@ -1,9 +1,8 @@
-Review 343: 🚀
+Review 343: CROSS-ENTROPY IS ALL YOU NEED TO INVERT THE DATA GENERATING PROCESS
 
 ⚡️🚀המאמר היומי של מייק -09.11.24: ⚡️
 
 
-CROSS-ENTROPY IS ALL YOU NEED TO INVERT THE DATA GENERATING PROCESS
 
 מאמר המשך של המאמר שסקרתי אתמול שהציע שיטה חדשה ל-SSL או Self-Supervised Learning באריכות. מטרת SSL היא לבנות מודל המפיק ייצוג דאטה עוצמתי שיהיה קל לבנות ממנו מודלים downstream לביצוע משימות שונות על הדאטה הזה בתור backbone (למשל על ידי הוספת שכבות, LoRA, אדפטרים או שיטות פיין טיון אחרות הבנויות על ה-backbone הזה). כלומר הייצוג הזה צריך להיות מסוגל לזקק את כל התכונות המהותיות של הדאטה הזה כלומר לדחוסו בצורה יעילה.
 

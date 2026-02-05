@@ -1,9 +1,8 @@
-Review 296: 🚀
+Review 296: LLMs Will Always Hallucinate, We Need to Live With This
 
 ⚡️🚀המאמר היומי של מייק 13.09.24: ⚡️
 
 
-LLMs Will Always Hallucinate, We Need to Live With This
 
 טוב, המאמר הזה הוא פשוט קליקבייט לדעתי ואז גיליתי שם משפט גדל אז בכלל. הוא מציג ניתוח מעמיק של הזיות (hallucinations) ב-LLMs וטוען כי הזיות אלו הן תכונה אינהרנטית בלתי נמנעת של המבנה המתמטי/ארכיטקטוני ואופן החישובי שלהם (אולי o1 החדש יאתגר את זה טיפה). 
 

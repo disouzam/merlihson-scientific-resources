@@ -1,9 +1,8 @@
-Review 237: 🚀
+Review 237: On-Policy Distillation OF LANGUAGE MODELS: LEARNING FROM SELF-GENERATED MISTAKES
 
 ⚡️🚀המאמר היומי של מייק 28.06.24:⚡️
 
 
-On-Policy Distillation OF LANGUAGE MODELS: LEARNING FROM SELF-GENERATED MISTAKES
 
 מזמן לא סקרתי מאמר על שיטות זיקוק של ידע(knowledge distillation) - לא נתקלתי במאמרים מגניבים בנושא המעניין הזה. מה זה זיקוק ידע ממודל גדול למודל קטן יותר? למעשה זה ניסיון להעתיק למודל הקטן את הידע שיש למודל הגדול כלומר לגרום לו להפגין ביצועים הדומים למודל הגדול.
 

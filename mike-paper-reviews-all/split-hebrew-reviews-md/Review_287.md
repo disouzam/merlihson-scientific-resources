@@ -1,9 +1,8 @@
-Review 287: 🚀
+Review 287: Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode
 
 ⚡️🚀המאמר היומי של מייק 02.09.24: ⚡️
 
 
-Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode
 
 היום נסקור מאמר על מודל מולטימודלי בצורה די מעניינת. המודל שאימנו במאמר יודע לגנרט גם תמונות וגם דאטה טקסטואלי ומהווה שילוב של מודל דיפוזיה ומודל שפה. 
 
@@ -19,4 +18,4 @@ Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode
 
 מאמר מעניין ומומלץ לקריאה!
 
-https://arxiv.org/pdf/2408.11039
+https://arxiv.org/abs/2408.11039

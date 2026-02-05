@@ -19,4 +19,4 @@ Review 301: Training Chain-of-Thought via Latent-Variable Inference
 
 וכל זה כדי לשפר את הריזונינג של המודל  - מקווה שהצלחתם להבין את העיקר🙂
 
-https://arxiv.org/pdf/2312.02179
+https://arxiv.org/abs/2312.02179

@@ -1,9 +1,8 @@
-Review 272: 🚀
+Review 272: Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
 
 ⚡️🚀המאמר היומי של מייק 09.08.24: ⚡️
 
 
-Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
 
 בטח שמעתם על חוקי הסקיילינג של מודלי שפה. חוקים אלו מיועדים למציאת ״קונפיגורציה״ אופטימלית לאימון מודלי שפה.  חוקי סקליינג מקשרים ערך של פונקציית לוס (ניתן להגדיר אותו בכמה אופנים) שניתן להשיגו עבור גודל מודל, גודל סט האימון וכמות משאבי החישוב (FLOps) המוקצית לאימון. 
 

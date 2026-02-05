@@ -1,9 +1,8 @@
-Review 220: 🚀
+Review 220: Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks
 
 ⚡️🚀 המאמר היומי של מייק 10.06.24:⚡️
 
 
-Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks
 
 אחד התופעות המרתקות בלמידה עמוקה היא גרוקינג - שהיא מעבר ״פתאומי״ של רשתות עמוקות למצב של הכללה מהמצב של overfitting למשל אחרי אימון מאוד ארוך. הרי ידוע שאם עבור דאטהסט נתון ורשת עמוקה בעלת יכולת ייצוג גבוהה מספיק (representativeness) אחרי שלב מסוים באימון אנו נגיע ל-overfitting כלומר למצב שבו ביצועי המודל יילכו וישתפרו עבור סט האימון אולם הביצועים על סט הולידציה יספגו ירידה בביצועים. 
 

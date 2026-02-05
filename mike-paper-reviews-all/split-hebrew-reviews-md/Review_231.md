@@ -1,9 +1,8 @@
-Review 231: 🚀
+Review 231: Named Entity Recognition as Structured Span Prediction
 
 ⚡️🚀המאמר היומי של מייק 21.06.24:⚡️
 
 
-Named Entity Recognition as Structured Span Prediction
 
 היום נסקור מאמר בנושא שלא סקרתי הרבה מאוד זמן והוא Named Entity Recognition או NER. מטרת משימה זו היא לזהות בטקסט עצמים(מילים וקבוצות מילים רצופות) מסוגים מסוימים כמו שמות פרטיים, כתובות מגורים, מספרי ת״ז וכדומה. קיימים מודלי NER המתמחים בזיהוי שמות חברות, רשומות רפואיות וכדומה. 
 

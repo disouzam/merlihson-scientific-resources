@@ -1,9 +1,8 @@
-Review 253: 🚀
+Review 253: Trainable Highly-expressive Activation Functions
 
 ⚡️🚀המאמר היומי של מייק 18.07.24: ⚡️
 
 
-Trainable Highly-expressive Activation Functions
 
  ממשיכים את קו הגיוון וסוקרים מאמר לא קשור ישירות למודלי שפה. היום נסקור מאמר של כמה חוקרים ישראלים המציע דרך חדשה לבנות פונקציות אקטיבציה ברשת נוירונים. היום פונקציות אקטיבציה הן לא נלמדות לרוב (ReLU, GeLU, tanh וכדומה). לפעמים פונקציות אקטיבציה מכילות hyperparameter שלא נלמד במהלך האימון אלא נקבע מראש (Leaky ReLU, Swish וכדומה).
 

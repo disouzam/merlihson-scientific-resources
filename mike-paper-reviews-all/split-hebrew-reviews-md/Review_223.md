@@ -1,9 +1,8 @@
-Review 223: 🚀
+Review 223: Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING
 
 ⚡️🚀המאמר היומי של מייק 13.06.24:⚡️
 
 
-Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING
 
 זוכרים את המאמר שסקרנו קצרות אתמול שהציע גישה איטרטיבית לפתרון מקבילי של מערכות משוואות לא לינאריות. אחת הדוגמאות של פתרון מערכות משוואות כאלו היא גנרוט טקסט ממודלי שפה כאשר כל טוקן נבחר בתור argmax של התפלגות הטוקן בהינתן הטוקנים הקודמים (המופק באמצעות השכבה האחרונה של מודל השפה).
 
@@ -15,4 +14,4 @@ Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING
 
 זה מאפשר להקטין את כמות האיטרציות עוד טיפה
 
-https://arxiv.org/pdf/2402.02057
+https://arxiv.org/abs/2402.02057

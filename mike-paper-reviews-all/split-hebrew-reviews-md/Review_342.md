@@ -13,4 +13,4 @@ Review 342: Occam’s Razor for Self Supervised Learning: What is Sufficient to 
 
 אז המאמר מוכיח שהשיטה עובדת לא רע לדאטהסטים יחסית לא גדולים (מעניין איך זה יעבוד לדאטהסט בגודל 10 מיליון). כמובן יש כמה טריקים באימון כמו soft labels אבל בגדול הרעיון די נחמד. 
 
-https://arxiv.org/pdf/2406.10743
+https://arxiv.org/abs/2406.10743

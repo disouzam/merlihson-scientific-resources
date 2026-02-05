@@ -1,9 +1,8 @@
-Review 246: 🚀
+Review 246: Learning to (Learn at Test Time): RNNs with Expressive Hidden States
 
 ⚡️🚀המאמר היומי של מייק 09.07.24: ⚡️
 
 
-Learning to (Learn at Test Time): RNNs with Expressive Hidden States
 
 המאמר הזה המצהיר שהוא לומד ב״זמן טסט״ משך את עיניי היום. המאמר מציע ארכיטקטורה חדשה ומעניינת לעיבוד דאטה סדרתי. בעיקרון הרשת די דומה ל-RNN מבחינת המהות אבל יש כמה הבדלים מהותיים.
 
@@ -15,4 +14,4 @@ Learning to (Learn at Test Time): RNNs with Expressive Hidden States
 
 הארכיטקטורה קיבלה שם ttt וניתן לשלב אותם על שכבות אחרות (כמו טרנספורמרים או SSM). רעיון מגניב שבינתיים לא הפנמתי אותו עד הסוף…
 
-https://arxiv.org/pdf/2407.04620
+https://arxiv.org/abs/2407.04620

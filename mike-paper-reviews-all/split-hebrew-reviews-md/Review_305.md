@@ -17,4 +17,4 @@ Review 305: Training Language Models to Self-Correct via Reinforcement Learning
 
 מקווה שהסברתי פחות או יותר מובן…
 
-https://arxiv.org/pdf/2409.12917
+https://arxiv.org/abs/2409.12917

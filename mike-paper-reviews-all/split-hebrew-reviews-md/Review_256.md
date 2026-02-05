@@ -1,9 +1,8 @@
-Review 256: 🚀
+Review 256: TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING
 
 ⚡️🚀המאמר היומי של מייק 22.07.24: ⚡️
 
 
-TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING
 
 אוקיי, בסקירה הקודמת סקרתי מאמר בנושא מודלי דיפוזיה גנרטיביים וקיבלתי תיאבון בלסקור עוד כמה כאלו. אז בחרתי במאמר המגניב הזה שאחד ממחבריו הוא סרגיי לווין האגדי (בנוסף למאמרים הרבים יש לו קורס די מטורף מבחינת העומק בנושא deep reinforcement learning). באופן לא מפתיע המאמר שנסקור קשור ללמידה עם חיזוקים (או RL בקצרה) אבל יחד עם זאת מופיע בשמו גם מודלי דיפוזיה.
 
@@ -29,4 +28,4 @@ TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING
 
 מאמר מעניין ויחסית לא קשה לקריאה.
 
-https://arxiv.org/pdf/2305.13301
+https://arxiv.org/abs/2305.13301

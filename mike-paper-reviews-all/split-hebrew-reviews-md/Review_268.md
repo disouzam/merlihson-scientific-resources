@@ -1,9 +1,8 @@
-Review 268: 🚀
+Review 268: Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning
 
 ⚡️🚀המאמר היומי של מייק 05.08.24: ⚡️
 
 
-Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning
 
 חוזרים לסקור מאמרים קלילים על מודלי שפה והיום בפוקוס מודלי שפה קטנים. המאמר שנסקור קצרות היום מציע שיטה לשיפור ייצוג של טקסט המופק על ידי מודל שפה קטן. ידוע שמודל שפה קטן (במאמר שיפרו את הייצוגים של הדקודרים) לא תמיד מצטיין ביצירה של ייצוג (אמבדינג) עוצמתי של טקסט - פשוט בגלל הגודל ו-expressiveness נמוכה יחסית.
 

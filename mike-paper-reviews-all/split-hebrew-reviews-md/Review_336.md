@@ -15,4 +15,4 @@ Review 336: LLMs Are In-Context Reinforcement Learners
 
 מאמר חמוד למרות שמשום מה לקח לי קצת זמן להבין אותו…
 
-https://arxiv.org/pdf/2410.05362
+https://arxiv.org/abs/2410.05362

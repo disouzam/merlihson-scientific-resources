@@ -31,4 +31,4 @@ Review 313: Transformers are Expressive, But Are They Expressive Enough for Regr
 
 הגדלת מספר השכבות, ראשי מנגנון ה-attention, או ממדי  אמבדינג אינה משפרת באופן משמעותי את הביצועים על פונקציות חלקות. לעומת הטרנספורמרים מצליחים לקרב באופן הולם פונקציות קבועות למקוטעין עם רזולוציה δ לא קטנה במיוחד.
 
-https://arxiv.org/pdf/2402.15478
+https://arxiv.org/abs/2402.15478

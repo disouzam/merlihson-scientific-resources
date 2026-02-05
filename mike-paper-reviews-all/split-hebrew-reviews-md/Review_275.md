@@ -1,9 +1,8 @@
-Review 275: 🚀
+Review 275: Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2
 
 ⚡️🚀המאמר היומי של מייק 13.08.24: ⚡️
 
 
-Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2
 
 בזמן האחרון התחלתי להתעניין בשיטות interpretability של מודלי שפה גדולים בעקבות כמה בלוגים מאוד מעניינים של אנטרופיק, OpenAI ולאחר מכן גוגל בנושא הזה. המטרה כאן היא לשפוך קצת אור על הקופסא השחורה שנקראת LLM - הרי אנחנו לא באמת מבינים איך הם עובדים ומה גורם להם לפלוט תשובה כזו אור אחרת לפרומפט שלנו.
 

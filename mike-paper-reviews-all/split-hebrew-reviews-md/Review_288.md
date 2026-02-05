@@ -1,9 +1,8 @@
-Review 288: 🚀
+Review 288: Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling
 
 ⚡️🚀המאמר היומי של מייק 03.09.24: ⚡️
 
 
-Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling
 
 אחת הדרכים הדי מפתיעות לשיפור יכולות reasoning של מודלי שפה היא שיפור עצמי או self-improvement. בגדול עבור דאטהסט של שאלות ותשובות אנו מבקשים ממודל שפה לענות על התשובה ולספק הסבר. לאחר מכן מפלטרים את השרשראות reasoning שלא התכנסו לתשובה הרצויה. לאחר הפלטור מבצעים פיינטיון של המודל על הדאטהסט המפולטר. וכאמור באופן די מפתיע (לפחות אותי) הדבר אכן מוביל לשיפור יכולות reasoning של מודל שפה.
 
@@ -17,4 +16,4 @@ Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling
 
 .
 
-https://arxiv.org/pdf/2408.16737
+https://arxiv.org/abs/2408.16737

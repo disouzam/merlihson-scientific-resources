@@ -15,4 +15,4 @@ Review 299: Rethinking Benchmark and Contamination for Language Models with Reph
 
 מאמר ללא יותר מדי חדשנות אך מעלה נושא מאד מעניין
 
-https://arxiv.org/pdf/2311.04850
+https://arxiv.org/abs/2311.04850

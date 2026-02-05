@@ -1,9 +1,8 @@
-Review 281: 🚀
+Review 281: JPEG-LM: LLMs as Image Generators with Canonical Codec Representations
 
 ⚡️🚀המאמר היומי של מייק 20.08.24: ⚡️
 
 
-JPEG-LM: LLMs as Image Generators with Canonical Codec Representations
 
 המאמר הזה תפס את עיניי כי מילה "jpeg" הופיע בשמו. למרות שלא יצא לי לעבוד בתחום של דחיסת דאטה אני מאוד אוהב את הנושא המרתק הזה. בנוסף המאמר הזה מדבר על מודל VQ-VAE שהיה די פופולרי לפני שמודלי דיפוזיה השתלטו לנו לחלוטין על GenAI בראייה הממוחשבת. 
 

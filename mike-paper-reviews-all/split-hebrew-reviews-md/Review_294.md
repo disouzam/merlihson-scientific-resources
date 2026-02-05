@@ -1,9 +1,8 @@
-Review 294: 🚀
+Review 294: Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers
 
 ⚡️🚀המאמר היומי של מייק 10.09.24: ⚡️
 
 
-Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers
 
 האם מודלי שפה  יכולים לייצר רעיונות מחקר חדשניים? 🤔 מחקר חדש מעורר גלים. ראינו לאחרונה התלהבות רבה סביב השימוש ב-LLMs לגילויים מדעיים. אך האם הם באמת מסוגלים להגיע לרעיונות חדשניים ברמת ראויה לחוקר במוסד אקדמי או בתעשיה?
 

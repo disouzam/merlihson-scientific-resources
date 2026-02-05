@@ -1,9 +1,8 @@
-Review 214: 🚀
+Review 214: Are Emergent Abilities of Large Language Models a Mirage?
 
 ⚡🚀המאמר היומי של מייק 04.06.24: ⚡
 
 
-Are Emergent Abilities of Large Language Models a Mirage?
 
 היום המאמר שנסקור הוא מלפני שנה בערך והוא משך את תשומת ליבי בגלל שהוא חוקר מה שנקרא emergent capabilities של מודלי שפה - כלומר יכולתם ללמוד משימות חדשות. המאמר בוחן האם למודלי שפה אכן יש יכולת ללמוד משימות שהם אומנו עליהם בצורה מפורשת (פחות או יותר) או שזו אשליה הנובעת מאיך שאנו מודדים את היכולות האלו.
 

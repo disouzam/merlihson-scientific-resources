@@ -15,4 +15,4 @@ Review 329: HOW MANY VAN GOGHS DOES IT TAKE TO VAN GOGH? FINDING THE IMITATION T
 
 אהבתי - המאמר גם כתוב יפה וברור.
 
-https://arxiv.org/pdf/2410.15002
+https://arxiv.org/abs/2410.15002

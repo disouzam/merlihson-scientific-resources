@@ -1,9 +1,8 @@
-Review 258: 🚀
+Review 258: The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof
 
 ⚡️🚀המאמר היומי של מייק 24.07.24: ⚡️
 
 
-The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof
 
 הסקירה היום תהיה קצרה וקלילה לעומת הסקירות האחרונות על מודלי דיפוזיה למיניהם. המאמר של היום חוקר סימטריות ברשתות נוירונים עמוקות. ניתן לראות די בקלות כי קיימות לא מעט פרמוטציות של המטרצות המשקלים בשכבות השונות של רשת שלמעשה לא משנות את המודל. כלומר אם תפעילו את המודל אחרי פרמוטציה על כל קלט תקבלו את אותה התוצאה כמו עם המודל המקורי.
 
@@ -11,4 +10,4 @@ The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof
 
 המאמר חוקר איזה אפקטים מתרחשים אחרי שהורסים את הסימטריה במודל ומגלה כמה דברים די מעניינים….
 
-https://arxiv.org/pdf/2405.20231
+https://arxiv.org/abs/2405.20231

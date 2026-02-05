@@ -1,9 +1,8 @@
-Review 274: 🚀
+Review 274: Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models
 
 ⚡️🚀המאמר היומי של מייק 12.08.24: ⚡️
 
 
-Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models
 
 מודלי דיפוזיה גנרטיביים הגיעו לתוצאות מרשימות לאחרונה והפגינו יכולת לגנרט תמונות באיכות מרהיבה. למרות זאת מודלים אלו מתקשים לפעמים במשימות של עריכת תמונות ולא מצליחים להחליף אובייקטים לא גדולים בתמונה תוך שמירה של כל המאפיינים האחרים של התמונה.
 

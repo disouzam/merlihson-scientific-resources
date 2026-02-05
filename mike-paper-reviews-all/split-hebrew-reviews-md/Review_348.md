@@ -1,9 +1,8 @@
-Review 348: 🚀
+Review 348: Knowledge Editing in Language Models via Adapted Direct Preference Optimization
 
 ⚡️🚀המאמר היומי של מייק -18.11.24: ⚡️
 
 
-Knowledge Editing in Language Models via Adapted Direct Preference Optimization
 
  היום סוקרים מאמר כחול לבן בנושא פיינטיון(=טיוב, ככה אמרו לי) של מודלי שפה באמצעות טכניקות מבוססות על למידה עם חיזוקים או בקצרה RLHF. למיטב ידיעתי השימוש הראשון ב-RLHF היה במאמר במאמר שפיתח מודל הנקרא InstructGPT שמשמו כבר ברור כי אומן לעקוב אחרי הוראות המשתמשים. זה נעשה באמצעות טכניקת RL הנקראת Proximal Preference Optimization או PPO. מעניין ש-PPO הומצאה על ידי לא אחר אלא ג'ו שולמן שהיה תקופה די ארוכה CTO של OpenAI. בגדול מאמנים את המודל למקסם את פונקצית התגמול של תשובותיו תוך שמירתו (התפלגות הטוקנים) קרוב יחסית להתפלגות ההתחלתית (דרך KL divergence).
 

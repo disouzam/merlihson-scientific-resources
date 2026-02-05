@@ -15,4 +15,4 @@ Review 311: SCHRODINGER’S MEMORY: LARGE LANGUAGE MODELS
 
 ולבסוף נעשות הקבלות בין ארכיטקטורת LLM למבנה המודולרי של המוח האנושי (את זה פחות אהבתי אבל זרמתי).
 
-https://arxiv.org/pdf/2409.10482
+https://arxiv.org/abs/2409.10482

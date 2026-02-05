@@ -1,9 +1,8 @@
-Review 291: 🚀
+Review 291: ReMamba: Equip Mamba with Effective Long-Sequence Modeling
 
 ⚡️🚀המאמר היומי של מייק 07.09.24: ⚡️
 
 
-ReMamba: Equip Mamba with Effective Long-Sequence Modeling
 
  סוקר את המאמר הזה משתי סיבות. קודם כל הוא קשור לממבה. הסיבה השני היא זה שהתבקשתי לסקור אותו. ואוקיי, המאמר לצערי לא חידש לי הרבה ולדעתי לא נזכור אותו בעוד כמה חודשים. 
 

@@ -1,9 +1,8 @@
-Review 225: 🚀
+Review 225: MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads
 
 ⚡️🚀המאמר היומי של מייק 15.06.24:⚡️
 
 
-MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads
 
 ב 3 הסקירות האחרונות ראינו כמה שיטות איטרטיביות מקבילות, מבוססות על שיטות יאקובי ו- Gauss-Seidel, המנסות להאיץ את מהירות גנרוט הטקסט (decoding) של מודלי שפה. היום נסקור קצרות מאמר המציע גישה אחרת לאותה הבעיה, שגם מבצעת גנרוט מקבילי של טקסט אבל בשיטה 'טיפה' אחרת.
 
@@ -15,4 +14,4 @@ MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads
 
 אז מה הרווח כאן אתם שואלים? שהראשים מופעלים באופן מקבילי ולפעמים בהפעלה אחת שלהם אנו חוזים כמה טוקנים ולא אחד כמו בגנרוט אוטורגרסיבי רגיל.
 
-https://arxiv.org/pdf/2401.10774 
+https://arxiv.org/abs/2401.10774 

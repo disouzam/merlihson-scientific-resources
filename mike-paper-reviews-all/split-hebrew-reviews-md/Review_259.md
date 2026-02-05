@@ -1,9 +1,8 @@
-Review 259: 🚀
+Review 259: AI models collapse when trained on recursively generated data
 
 ⚡️🚀המאמר היומי של מייק 25.07.24: ⚡️
 
 
-AI models collapse when trained on recursively generated data
 
 מאמר די חמוד שחוקר מה קורה שמאמנים מודלי AI על הדאטה הנוצר על ידי מודלי AI. בשתי מילים - לא הכל ורוד שם ויש כמה סיבות למה הדברים עלולים להשתבש:
 

@@ -1,9 +1,8 @@
-Review 217: 🚀
+Review 217: Scaling and evaluating sparse autoencoders?
 
 ⚡🚀המאמר היומי של מייק 07.06.24: ⚡
 
 
-Scaling and evaluating sparse autoencoders?
 
 המאמר הזה של openai ממשיך את הקו המחקרי של antropic (https://www.anthropic.com/news/mapping-mind-language-model) המנסה לראות איך ניתן למצוא של קונספטים (מסלולים וויזואלים) בתוך נוירונים של מודלי שפה מאומנים. המאמר של אנטרופיק בגדול טוען שיש נוירונים הנדלקים על קונספטים (נגיד גשר הזהב( מסוימים ויש כאלו שמהווים ערבוב של קונספטים. 
 

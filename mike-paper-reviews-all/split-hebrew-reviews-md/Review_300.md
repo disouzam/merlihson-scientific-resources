@@ -11,4 +11,4 @@ Review 300: STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning
 
 זהו זה, שיטה אינטואיטיבית ופשוטה שקיבלה כמה מאמרי השמך די כבדים שבתקווה אסקור אותם גם כן 
 
-https://arxiv.org/pdf/2203.14465
+https://arxiv.org/abs/2203.14465

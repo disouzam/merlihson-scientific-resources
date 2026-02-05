@@ -1,9 +1,8 @@
-Review 286: 🚀
+Review 286: DIFFUSION MODELS ARE REAL-TIME GAME ENGINES
 
 ⚡️🚀המאמר היומי של מייק 01.09.24: ⚡️
 
 
-DIFFUSION MODELS ARE REAL-TIME GAME ENGINES
 
 טוב, על המאמר הזה פשוט לא היה לדלג מכמה סיבות. הסיבה הראשונה שאני מספיק עתיק ועוד שיחקתי במשחק הנקרא דום (doom) במו ידיי כאשר הייתי נער. דבר שני לא כל יום מחליפים לך מנוע משחק במודל למידת מכונת או בשמו המוכר AI. כמובן שזה כיוון מחקר מאוד מעניין עם פוטנציאל להתפתח לכלים מבוססי AI לבניית משחקי מחשב חדשים.
 
@@ -15,4 +14,4 @@ DIFFUSION MODELS ARE REAL-TIME GAME ENGINES
 
 מאמר מאוד מגניב…
 
-https://arxiv.org/pdf/2408.14837 
+https://arxiv.org/abs/2408.14837 

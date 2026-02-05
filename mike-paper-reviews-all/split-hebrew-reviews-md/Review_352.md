@@ -1,9 +1,8 @@
-Review 352: 🚀
+Review 352: Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study
 
 ⚡️🚀המאמר היומי של מייק -23.11.24: ⚡️
 
 
-Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study
 
 היום אני סוקר מאמר בנושא שמזמן לא נגעת בו(בסקירות) והוא דאטה טבלאי. המאמר בוחן שאלה מרתקת - האם מודלי שפה גדולים (LLMs) כמו GPT באמת מבינים מידע מובנה בטבלאות?
 

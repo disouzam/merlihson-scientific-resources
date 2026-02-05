@@ -1,9 +1,8 @@
-Review 293: 🚀
+Review 293: MemLong: Memory-Augmented Retrieval for Long Text Modeling
 
 ⚡️🚀המאמר היומי של מייק 09.09.24: ⚡️
 
 
-MemLong: Memory-Augmented Retrieval for Long Text Modeling
 
 אחד המאמרים ראשוניים בנושא Retrieval Augmented Generation או RAG שאני סוקר. הנושא צובר תאוצה רצינית בזמן האחרון והגיע הזמן להשלים את הפערים (גם בידע וגם בסקירות). 
 

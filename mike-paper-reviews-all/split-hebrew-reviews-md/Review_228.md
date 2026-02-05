@@ -1,9 +1,8 @@
-Review 228: 🚀
+Review 228: Helping or Herding? Reward Model Ensembles Mitigate but do not Eliminate REWARD HACKING
 
 ⚡️🚀המאמר היומי של מייק 18.06.24:⚡️
 
 
-Helping or Herding? Reward Model Ensembles Mitigate but do not Eliminate REWARD HACKING
 
  הסקירה הזו ממשיכה את קו הסקירות האחרונות שכתבתי בנושא RLHF. כמו שאתם זוכרים פונקציית לוס ב-RLHF מכילה שני איברים: האיבר שמנסה למקסם את פונקציית התגמול (reward) והאיבר השני מנסה לשמור את מודל השפה אחרי טיוב (פוליסי סופי) קרוב למודל שמתחילים את ה-RLHF ממנו. בעבר יצאו מאמרים שהציעו לאמן כמה מודלי reward ואז למצע (או לקחת מקסימום) של כל ה-rewards של מודלים אלו עבור שאלה ותשובה נתונות של מודל שפה. זה לטענתם מקטין את הסיכוי שהמודל שפה ב-RLHF יבצע reward hacking כלומר יתכנס לפוליסי הממקסם תגמול אך בפעול מגנרט תשובות באיכות גרועה.
 

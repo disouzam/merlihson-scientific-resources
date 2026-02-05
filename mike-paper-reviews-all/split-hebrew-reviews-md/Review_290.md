@@ -1,9 +1,8 @@
-Review 290: 🚀
+Review 290: EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty
 
 ⚡️🚀המאמר היומי של מייק 05-06.09.24: ⚡️
 
 
-EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty
 
 EAGLE-2: Faster Inference of Language Models with Dynamic Draft Trees
 
@@ -31,6 +30,6 @@ EAGLE-2: Faster Inference of Language Models with Dynamic Draft Trees
 
 היה ארוך - מקווה שלא איבדתי אותכם….
 
-https://arxiv.org/pdf/2401.15077
+https://arxiv.org/abs/2401.15077
 
-https://arxiv.org/pdf/2406.16858
+https://arxiv.org/abs/2406.16858

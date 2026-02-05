@@ -1,9 +1,8 @@
-Review 232: 🚀
+Review 232: GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer
 
 ⚡️🚀המאמר היומי של מייק 22.06.24:⚡️
 
 
-GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer
 
  המאמר הזה הוא שפצור קל של המאמר שסקרנו אתמול 21.06.24. המאמר מציע גישה לאימון והיסק של מודל לזיהוי NER המורכב משלבים הבאים:
 

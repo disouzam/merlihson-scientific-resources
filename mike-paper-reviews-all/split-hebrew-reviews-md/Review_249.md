@@ -1,9 +1,8 @@
-Review 249: 🚀
+Review 249: SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales
 
 ⚡️🚀המאמר היומי של מייק 13.07.24: ⚡️
 
 
-SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales
 
 בהמשך לסקירה של אתמול, מאמר קליל יותר שמציע שיטה ללמד מודלי שפה לשערך אי וודאות בתשובתם. המחברים מציעים שיטה מאוד אינטואיטיבית המורכבת משני שלבים עיקריים: יצירת דאטהסט למשימה זו (כימות אי וודאות) וטיוב (fine-tuning) של המודל על הדאטהסט הזה. בשלב השני ממשיכים לאמן את המודל עם שיטת PPO מעולם למידה באמצעות חיזוקים כדי לשיפור נוסף של ביצועיו.
 

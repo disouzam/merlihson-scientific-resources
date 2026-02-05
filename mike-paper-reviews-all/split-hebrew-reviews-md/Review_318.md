@@ -19,4 +19,4 @@ Review 318: SELECTIVE ATTENTION IMPROVES TRANSFORMER
 
 יש לי תחושה שהמאמר הזה הוא התחלה של משהו מעניין…
 
-https://arxiv.org/pdf/2410.02703
+https://arxiv.org/abs/2410.02703

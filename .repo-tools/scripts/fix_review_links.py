@@ -162,6 +162,45 @@ def add_space_after_review_colon(content: str) -> str:
     return content
 
 
+def fix_emoji_only_title(content: str, correct_number: int) -> str:
+    """Replace emoji-only titles with actual English title from content."""
+    lines = content.split('\n')
+    if not lines:
+        return content
+
+    first_line = lines[0]
+
+    # Check if line 1 has "Review X:" pattern
+    match = re.match(r'^Review (\d+):\s*(.+)$', first_line)
+    if not match:
+        return content
+
+    current_title = match.group(2).strip()
+
+    # Check if title contains only emojis/symbols (no letters)
+    if re.search(r'[a-zA-Z]', current_title):
+        # Title has letters, it's probably fine
+        return content
+
+    # Title is emoji-only, find the real English title
+    for i in range(1, min(15, len(lines))):
+        line = lines[i].strip()
+        # Skip empty lines
+        if not line:
+            continue
+        # Skip Hebrew-only lines
+        if re.match(r'^[\u0590-\u05FF\s:,.0-9-⚡🚀🔥💡✨🎯]+$', line):
+            continue
+        # Found a line with English letters
+        if re.search(r'[a-zA-Z]', line):
+            # This should be the title
+            english_title = line.strip()
+            lines[0] = f"Review {correct_number}: {english_title}"
+            return '\n'.join(lines)
+
+    return content
+
+
 def fix_missing_review_header(content: str, correct_number: int) -> str:
     """Add missing 'Review X:' header if first line doesn't have it."""
     lines = content.split('\n')
@@ -789,6 +828,12 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
             changes.append("Added missing header")
             content = new_content
 
+        # Fix emoji-only titles
+        new_content = fix_emoji_only_title(content, correct_number)
+        if new_content != content:
+            changes.append("Replaced emoji-only title with real title")
+            content = new_content
+
         # Fix Hebrew title in header (replace with English title)
         new_content = fix_hebrew_title_in_header(content, correct_number)
         if new_content != content:
@@ -896,6 +941,12 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         new_content = fix_missing_review_header(content, correct_number)
         if new_content != content:
             changes.append("Added missing header")
+            content = new_content
+
+        # Fix emoji-only titles
+        new_content = fix_emoji_only_title(content, correct_number)
+        if new_content != content:
+            changes.append("Replaced emoji-only title with real title")
             content = new_content
 
         # Fix Hebrew title in header (replace with English title)

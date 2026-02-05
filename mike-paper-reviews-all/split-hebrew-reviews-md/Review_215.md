@@ -1,9 +1,8 @@
-Review 215: 🚀
+Review 215: GraphAny: A Foundation Model for Node Classification on Any Graph
 
 ⚡🚀המאמר היומי של מייק 05.06.24: ⚡
 
 
-GraphAny: A Foundation Model for Node Classification on Any Graph
 
 כיצד לפתח מודלים foundational בתחום הגרפים?  
 

@@ -15,4 +15,4 @@ Review 331: Efficient Vision-Language Pre-training by Cluster Masking
 
 מאמר פשוט - לקח לי איזה דקה להבין ו 10 דקות לכתוב סקירה. אוהב כאלו…
 
-https://arxiv.org/pdf/2405.08815
+https://arxiv.org/abs/2405.08815

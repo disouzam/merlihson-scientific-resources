@@ -1,9 +1,8 @@
-Review 229: 🚀
+Review 229: INTRINSIC DIMENSIONALITY EXPLAINS THE EFFECTIVENESS OF LANGUAGE MODEL FINE-TUNING
 
 ⚡️🚀המאמר היומי של מייק 19.06.24:⚡️
 
 
-INTRINSIC DIMENSIONALITY EXPLAINS THE EFFECTIVENESS OF LANGUAGE MODEL FINE-TUNING
 
 כולכם מכירים את LoRa נכון? בטח גם שמעתם על עשרות השכלולים השונים שלה כמו DoRa, MoRa, GaloRe וכדומה. מתברר כי היה מאמר שבצורה מסוימת הניח יסודות של משפחת הגישות הזו.
 

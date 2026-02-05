@@ -1,9 +1,8 @@
-Review 285: 🚀
+Review 285: Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review
 
 ⚡️🚀המאמר היומי של מייק 31.08.24: ⚡️
 
 
-Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review
 
 היום סוקרים מאמר לא רגיל - קודם כל זה מאמר סקירה בעצמו והוא לא מאוד טרי (מלפני כמעט שנתיים). המאמר בנושא של explainability של מודלי למידת מכונה. רוב מודלי ML היום הם רשתות נוירונים מאוד עמוקות ולרוב הם נשארים בתור קופסא שחורה עבורנו - מחקרי explainability מנסים לשפוך אור על ״מה שקורה בתוך הקופסא השחורה הזו״.
 

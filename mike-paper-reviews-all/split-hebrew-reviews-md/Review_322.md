@@ -15,4 +15,4 @@ Review 322: EFFICIENT REINFORCEMENT LEARNING WITH LARGE LANGUAGE MODEL PRIORS
 
 מאמר מעניין בקיצור…
 
-https://arxiv.org/pdf/2410.07927
+https://arxiv.org/abs/2410.07927

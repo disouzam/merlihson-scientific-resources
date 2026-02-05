@@ -1,9 +1,8 @@
-Review 344: 🚀
+Review 344: WHAT MATTERS IN TRANSFORMERS? NOT ALL ATTENTION IS NEEDED
 
 ⚡️🚀המאמר היומי של מייק -10.11.24: ⚡️
 
 
-WHAT MATTERS IN TRANSFORMERS? NOT ALL ATTENTION IS NEEDED
 
 סקירה קצרה של מאמר די נחמד החוקר איזה חלקים במודלי טרנספורמרים (או שנאים) שלנו פחות נחוצים מהחלקים האחרים (או בכלל מיותרים). כמו שאתם זוכרים בכל בלוק של שנאי יש לנו מנגנון ה-attention, כמה שכבות MLP (שזה שכבה וחצי של fully-connected) וכמה שכבות נרמול (אותם לא בודקים). 
 

@@ -11,4 +11,4 @@ Review 324: SimCSE: Simple Contrastive Learning of Sentence Embeddings
 
 בנוסף המשפט הזכיר לי לייצוג דאטה טוב יש 2 תכונות מהותיות: קרבה בין ייצוגי הדאטה הדומה והתפלגות יוניפורמית של כלל הייצוגים של הדאטה - זה חשוב.
 
- https://arxiv.org/pdf/2104.08821
+ https://arxiv.org/abs/2104.08821

@@ -208,9 +208,93 @@ Review_206,PanGu-π: Enhancing Language Model Architectures via Nonlinearity Com
 Review_207,SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL,https://arxiv.org/abs/2405.11831v2
 Review_208,Training LLMs over Neurally Compressed Text,https://arxiv.org/abs/2404.03626v3
 Review_209,2BP: 2-Stage Backpropagation,
+Review_210,Transformers Can Do Arithmetic with the Right Embeddings,
+Review_211,The Evolution of Multimodal Model Architectures,
+Review_212,LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models,
+Review_213,Better & Faster Large Language Models via Multi-token Prediction,
+Review_214,Are Emergent Abilities of Large Language Models a Mirage?,
+Review_215,GraphAny: A Foundation Model for Node Classification on Any Graph,https://arxiv.org/abs/2405.2044
 Review_216,Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts,https://arxiv.org/abs/2405.19893
+Review_217,Scaling and evaluating sparse autoencoders?,
+Review_218,Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality,https://arxiv.org/abs/2405.21060
 Review_219,What Do Language Models Learn in Context? The Structured Task Hypothesis.,https://arxiv.org/abs/2406.04216
+Review_220,Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks,https://arxiv.org/abs/2406.02550
+Review_221,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,https://arxiv.org/abs/2406.01506
+Review_222,Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving,https://arxiv.org/abs/2002.03629
+Review_223,Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING,https://arxiv.org/abs/2402.02057
+Review_224,CLLMs: Consistency Large Language Models,https://arxiv.org/abs/2403.00835
+Review_225,MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads,https://arxiv.org/abs/2401.10774
+Review_226,STATISTICAL REJECTION SAMPLING IMPROVES PREFERENCE OPTIMIZATION,https://arxiv.org/abs/2309.06657
+Review_227,SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL,https://arxiv.org/abs/2405.11831
+Review_228,Helping or Herding? Reward Model Ensembles Mitigate but do not Eliminate REWARD HACKING,https://arxiv.org/abs/2312.09244
+Review_229,INTRINSIC DIMENSIONALITY EXPLAINS THE EFFECTIVENESS OF LANGUAGE MODEL FINE-TUNING,https://arxiv.org/abs/2012.13255
+Review_230,WARM: On the Benefits of Weight Averaged Reward Models,https://arxiv.org/abs/2401.12187
+Review_231,Named Entity Recognition as Structured Span Prediction,https://aclanthology.org/2022.umios-1.1/
+Review_232,GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer,https://arxiv.org/abs/2311.08526
+Review_233,TextGrad: Automatic “Differentiation” via Text,https://arxiv.org/abs/2406.07496
+Review_234,Are you still on track!? Catching LLM Task Drift with Activations,https://arxiv.org/abs/2406.00799
+Review_235,Improving Reinforcement Learning from Human Feedback with Efficient Reward Model Ensemble,https://arxiv.org/abs/2401.16635
+Review_236,Probing the Decision Boundaries of In-context Learning in Large Language Models,https://arxiv.org/abs/2406.11233
+Review_237,On-Policy Distillation OF LANGUAGE MODELS: LEARNING FROM SELF-GENERATED MISTAKES,https://arxiv.org/abs/2306.13649
+Review_238,What Are the Odds? Language Models Are Capable of Probabilistic Reasoning,https://arxiv.org/abs/2406.12830
+Review_239,Grokfast: Accelerated Grokking by Amplifying Slow Gradients,https://arxiv.org/abs/2405.20233
+Review_240,From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data,https://arxiv.org/abs/2406.19292
+Review_241,The Remarkable Robustness of LLMs: Stages of Inference?,https://arxiv.org/abs/2406.19384
+Review_242,How Do Large Language Models Acquire Factual Knowledge During Pretraining?,https://arxiv.org/abs/2406.11813
+Review_243,A Survey of Large Language Models for Graphs,https://arxiv.org/abs/2405.08011
+Review_244,The Road Less Scheduled,https://arxiv.org/abs/2405.15682
+Review_245,Mixture of A Million Experts,https://arxiv.org/abs/2407.04153
+Review_246,Learning to (Learn at Test Time): RNNs with Expressive Hidden States,https://arxiv.org/abs/2407.04620
+Review_247,DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS,https://arxiv.org/abs/2309.03883
+Review_248,To Believe or Not to Believe Your LLM,https://arxiv.org/abs/2406.02543
+Review_249,SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales,https://arxiv.org/abs/2405.20974
 Review_250,Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps,https://arxiv.org/abs/2407.07071
+Review_251,How Does Quantization Affect Multilingual LLMs?,https://arxiv.org/abs/2407.03211
+Review_252,Learning Rate Curriculum,https://arxiv.org/abs/2205.09180
+Review_253,Trainable Highly-expressive Activation Functions,https://arxiv.org/abs/2407.07564
+Review_254,DataDream: Few-shot Guided Dataset Generation,https://arxiv.org/abs/2407.10910
+Review_255,Consistency Models,https://arxiv.org/abs/2303.01469
+Review_256,TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING,https://arxiv.org/abs/2305.13301
+Review_257,Feedback Efficient Online Fine-Tuning of Diffusion Models,https://arxiv.org/abs/2402.16359
+Review_258,"The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof",https://arxiv.org/abs/2405.20231
+Review_259,AI models collapse when trained on recursively generated data,https://www.nature.com/articles/s41586-024-07566-y
+Review_260,Questionable practices in machine learning,https://arxiv.org/abs/2407.12220
+Review_261,Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?,https://arxiv.org/abs/2407.16607
+Review_262,Large Scale Dataset Distillation with Domain Shift,https://dl.acm.org/doi/10.5555/3692070.3693400
+Review_263,Denoising Vision Transformers,https://arxiv.org/abs/2401.02957
+Review_264,DENOISING DIFFUSION IMPLICIT MODELS,https://arxiv.org/abs/2010.02502
+Review_265,IMPROVED TECHNIQUES FOR TRAINING CONSISTENCY MODELS,https://arxiv.org/abs/2310.14189
+Review_266,NEFTUNE: NOISY EMBEDDINGS IMPROVE INSTRUCTION FINETUNING,https://arxiv.org/abs/2310.05914
+Review_267,Consistency Models Made Easy,https://arxiv.org/abs/2406.14548
+Review_268,Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning,https://arxiv.org/abs/2408.00690
+Review_269,TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models,https://arxiv.org/abs/2408.00735
+Review_270,Language Model Can Listen While Speaking,https://arxiv.org/abs/2408.02622
+Review_271,Masked Attention is All You Need for Graphs,https://arxiv.org/abs/2402.10793
+Review_272,Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters,https://arxiv.org/abs/2408.03314
+Review_273,Synthesizing Text-to-SQL Data fromWeak and Strong LLMs,https://arxiv.org/abs/2408.03256
+Review_274,Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models,https://arxiv.org/abs/2408.04594
+Review_275,Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2,https://arxiv.org/abs/2408.05147
+Review_276,Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders,https://arxiv.org/abs/2407.14435
+Review_277,Your Classifier Can Be Secretly a Likelihood-Based OOD Detect,https://arxiv.org/abs/2408.04851
+Review_278,On the Geometry of Deep Learning,https://arxiv.org/abs/2408.04809
+Review_279,Faster Machine Unlearning via Natural Gradient Descent,https://arxiv.org/abs/2407.08169
+Review_280,DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION,https://arxiv.org/abs/2209.14734
+Review_281,JPEG-LM: LLMs as Image Generators with Canonical Codec Representations,https://arxiv.org/abs/2408.08459
+Review_282,Tree Attention: Topology-Aware Decoding for Long-Context Attention on GPU Clusters,https://arxiv.org/abs/2408.04093
+Review_283,Approaching Deep Learning through the Spectral Dynamics of Weights,https://arxiv.org/abs/2408.11804
+Review_284,Platypus: A Generalized Specialist Model for Reading Text in Various Forms,https://arxiv.org/abs/2408.14805
+Review_285,Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review,https://arxiv.org/abs/2010.10596
+Review_286,DIFFUSION MODELS ARE REAL-TIME GAME ENGINES,https://arxiv.org/abs/2408.14837
+Review_287,Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode,https://arxiv.org/abs/2408.11039
+Review_288,"Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling",https://arxiv.org/abs/2408.16737
+Review_289,Flexora: Flexible Low Rank Adaptation for Large Language Models,https://arxiv.org/abs/2408.10774
+Review_290,EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty,https://arxiv.org/abs/2401.15077
+Review_291,ReMamba: Equip Mamba with Effective Long-Sequence Modeling,https://arxiv.org/abs/2408.15496
+Review_292,DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?,https://arxiv.org/abs/2402.05290
+Review_293,MemLong: Memory-Augmented Retrieval for Long Text Modeling,https://arxiv.org/abs/2408.16967
+Review_294,Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers,https://arxiv.org/abs/2409.04109
+Review_295,Learning to reason with LLMs,https://openai.com/index/learning-to-reason-with-llms/
+Review_296,"LLMs Will Always Hallucinate, We Need to Live With This",https://arxiv.org/abs/2409.05746
 Review_297,Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning,https://arxiv.org/abs/2206.14486
 Review_298,Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning,https://arxiv.org/abs/2406.14283
 Review_299,Rethinking Benchmark and Contamination for Language Models with Rephrased Samples,https://arxiv.org/abs/2311.04850
@@ -253,8 +337,20 @@ Review_335,Understanding Transformers via N-gram Statistics,https://arxiv.org/ab
 Review_336,LLMs Are In-Context Reinforcement Learners,https://arxiv.org/abs/2410.05362
 Review_337,Learning to Compress: Local Rank and Information Compression in Deep Neural Networks,https://arxiv.org/abs/2410.07687
 Review_338,TOKENFORMER: RETHINKING TRANSFORMER SCALING WITH TOKENIZED MODEL PARAMETERS,https://arxiv.org/abs/2410.23168
+Review_339,Refusal in Language Models Is Mediated by a Single Direction,https://arxiv.org/abs/2406.11717
+Review_340,RETHINKING SOFTMAX: SELF-ATTENTION WITH POLYNOMIAL ACTIVATIONS,https://arxiv.org/abs/2410.18613
+Review_341,Cross-layer Attention Sharing for Large Language Models,https://arxiv.org/abs/2408.01890
 Review_342,Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?,https://arxiv.org/abs/2406.10743
+Review_343,CROSS-ENTROPY IS ALL YOU NEED TO INVERT THE DATA GENERATING PROCESS,https://arxiv.org/abs/2410.21869
+Review_344,WHAT MATTERS IN TRANSFORMERS? NOT ALL ATTENTION IS NEEDED,https://arxiv.org/abs/2406.15786
+Review_345,Stealing Part of a Production Language Model,https://arxiv.org/abs/2403.06634
+Review_346,OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step,https://arxiv.org/abs/2406.06576
+Review_347,NON-NEGATIVE CONTRASTIVE LEARNING,https://arxiv.org/abs/2403.12459
+Review_348,Knowledge Editing in Language Models via Adapted Direct Preference Optimization,https://arxiv.org/abs/2406.09920v1
+Review_349,Adaptive Decoding via Latent Preference Optimization,https://arxiv.org/abs/2411.09661
 Review_350,Unfamiliar Finetuning Examples Control How Language Models Hallucinate,https://arxiv.org/abs/2403.05612
+Review_351,The Unreasonable Ineffectiveness of the Deeper Layers,https://arxiv.org/abs/2403.17887
+Review_352,Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study,https://arxiv.org/abs/2305.13062
 Review_353,Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study,https://arxiv.org/abs/2404.10719
 Review_354,The Illusion of State in State-Space Models,https://arxiv.org/abs/2404.08819
 Review_355,Parameter-Efficient Fine-Tuning with Discrete Fourier Transform,https://arxiv.org/abs/2405.03003

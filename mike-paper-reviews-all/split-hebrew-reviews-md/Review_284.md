@@ -1,9 +1,8 @@
-Review 284: 🚀
+Review 284: Platypus: A Generalized Specialist Model for Reading Text in Various Forms
 
 ⚡️🚀המאמר היומי של מייק 30.08.24: ⚡️
 
 
-Platypus: A Generalized Specialist Model for Reading Text in Various Forms
 
 חוזרים לסקירות אחרי שבוע של חופשה עם מאמר בנושא שלא סקרתי די הרבה זמן והוא Optical Character Recognition או OCR בקצרה. מטרת OCR היא לזהות טקסט בתמונה או במסמך כאשר הטקסט יכול להופיע בצורות ומגוונות. מודלי OCR הקודמים בדרך כלל התמקדו בזיהוי של סוג של טקסט  (נגיד נוסחה, טקסט מודפס או כתב יד). המחברים מציעים גישה שמאחדת את מומחי ה-OCR ה״צרים״ לזיהוי סוג ספציפי של טקסט - כלומר מסוגלת לזהות כל סוג של טקסט בתמונה כולל המקרים שיש כמה סוגים של טקסט בתמונה.
 

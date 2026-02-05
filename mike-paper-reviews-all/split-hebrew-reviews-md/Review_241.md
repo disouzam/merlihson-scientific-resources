@@ -1,9 +1,8 @@
-Review 241: 🚀
+Review 241: The Remarkable Robustness of LLMs: Stages of Inference?
 
 ⚡️🚀המאמר היומי של מייק 03.07.24:⚡️
 
 
-The Remarkable Robustness of LLMs: Stages of Inference?
 
 מאמר מעניין החוקר איזה שכבות ניתן לזרוק ממודל השפה ועדיין לשמור על ביצועים נאותים. אתם אולי מכירים lottery ticket hypothesis הטוען כי ברשתות עתירות פרמטרים (overparameterized) בד:כ ניתן למצוא קטנה הרבה יותר עם ביצועים מאוד קרובים אך הבעיה שאנו לא יודעים לאתר אותה.
 

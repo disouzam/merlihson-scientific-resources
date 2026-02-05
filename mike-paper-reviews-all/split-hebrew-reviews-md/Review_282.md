@@ -1,9 +1,8 @@
-Review 282: 🚀
+Review 282: Tree Attention: Topology-Aware Decoding for Long-Context Attention on GPU Clusters
 
 ⚡️🚀המאמר היומי של מייק 21.08.24: ⚡️
 
 
-Tree Attention: Topology-Aware Decoding for Long-Context Attention on GPU Clusters
 
 היום נסקור מאמר בנושאה שכבר סקרתי כמה מאמרים לפני כחודש. הנושא הזה נקרא אופטימיזציה והאצה decoding של מודלי שפה כלומר התהליך שגנרוט טוקן חדש בתלות בכל הטוקנים בתוך חלון ההקשר שכבר גונרטו. ואם חלון ההקשר הוא ארוך (מאות אלפי טוקנים) זה יכול לקחת די הרבה זמן בעיקר בגלל מנגנון ה-attention של הטרנספורמרים שמהווים backbone של כל מודלי השפה החזקים.
 

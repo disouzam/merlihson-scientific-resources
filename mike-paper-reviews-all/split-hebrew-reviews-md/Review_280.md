@@ -1,9 +1,8 @@
-Review 280: 🚀
+Review 280: DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION
 
 ⚡️🚀המאמר היומי של מייק 19.08.24: ⚡️
 
 
-DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION
 
 היום סוקרים קצרות מאמר לא רגיל על מודלי דיפוזיה. אתם בטח זוכרים (וסקרתי לא מעט לאחרונה) מודלי דיפוזיה עבור תמונות, וידאו, אודיו וכדומה. במאמר שנסקור אותו היום מודל דיפוזיה נבנה על גרף. אציין כי המאמר מלפני שנה וחצי ולמיטב ידיעתי יצאו כמה מאמרי המשך. 
 

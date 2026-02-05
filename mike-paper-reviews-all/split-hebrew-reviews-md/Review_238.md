@@ -1,9 +1,8 @@
-Review 238: 🚀
+Review 238: What Are the Odds? Language Models Are Capable of Probabilistic Reasoning
 
 ⚡️🚀המאמר היומי של מייק 29.06.24:⚡️
 
 
-What Are the Odds? Language Models Are Capable of Probabilistic Reasoning
 
 הסקירה הזו הולכת להיות ממש קצרה. לפני ימיים (27.06) סקרתי מאמר שבדק האם מודלי שפה ענקיים מסוגלים לבצע רגרסיה לוגיסטית והגיע למסקנה שבלי עזרה ורמזים מאוד משמעתיים הם לא מצליחים לפתור אותה. 
 
