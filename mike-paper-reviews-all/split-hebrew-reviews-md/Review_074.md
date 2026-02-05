@@ -1,6 +1,6 @@
 Review 74: [Short] Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
 
-Paper: https://arxiv.org/abs/2410.19560v1
+Paper: https://arxiv.org/abs/2301.08243
 
 המאמר של יאן לקון (Yann LeCun) מציג גישה חדשה ומעניינת  I-JEPA לבניית ייצוג (representation or embedding) של דאטה ויזואלי (תמונות) לא מתויג כלומר  )SSL) self-supervised. שיטות SSL הקודמות אימנו מודל האוכף דמיון גבוה בין ייצוגי אותה פיסת דאטה אחרי אוגמנטציות שונות, השומרות על התוכן. 
 
