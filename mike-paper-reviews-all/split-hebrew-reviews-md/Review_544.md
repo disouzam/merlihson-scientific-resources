@@ -1,4 +1,4 @@
-Review 544: האם אפשר לנצח את DINOv3 בעזרת אימון על 11 אלף תמונות ו… גאוסיאן?
+Review 544: , סקירה 544, 480 סקירות עד 1024 LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics
 
 
 סקירת המאמר היומית של יניב ומייק: 24.11.25, סקירה 544, 480 סקירות עד 1024 LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics

@@ -1,4 +1,4 @@
-Review 545: האם ניתן לגנוב דאטה ממודל השפה דרך ערוץ צדדי?
+Review 545: , סקירה 545, 479 סקירות עד 1024 Whisper Leak: a side-channel attack on Large Language Models
 
 
 סקירת המאמר היומית של יונתן ומייק: 26.11.25, סקירה 545, 479 סקירות עד 1024 Whisper Leak: a side-channel attack on Large Language Models

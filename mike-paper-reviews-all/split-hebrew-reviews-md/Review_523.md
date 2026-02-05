@@ -1,4 +1,4 @@
-Review 523: חשיבה רקורסיבית ללא התוספות המיותרות (לכאורה), סקירה 523
+Review 523: Less is More: Recursive Reasoning with Tiny Networks
 
 
 סקירת המאמר היומית של מייק: 11.10.25Less is More: Recursive Reasoning with Tiny Networks

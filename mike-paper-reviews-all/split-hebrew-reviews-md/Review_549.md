@@ -1,4 +1,4 @@
-Review 549: איך אותם העקרונות שמניעים תקשורת סלולרית יכולים להוביל לחותמות מים חזקות במודלים שפה?
+Review 549: , סקירה 549, 475 סקירות עד 1024 HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions
 
 
 סקירת המאמר היומית של דור ומייק: 14.11.25, סקירה 549, 475 סקירות עד 1024 HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions 
