@@ -1,7 +1,7 @@
 Review 520: BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR
 
 
-סקירת המאמר היומית של מייק: 06.10.25BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR
+סקירת המאמר היומית של מייק: 06.10.25
 
 הסיפור של למיד חיזוק עבור תגמולים ודאיים (RLVR) מוסגר כאקט של איזון הרואי. המודל חייב לנווט על חבל דק בין חיפוש (exploration) – איתור נתיבי הסקה חדשים ומגוונים, לבין ניצול (exploitation), התבססות על אסטרטגיות מוכרות ואמינות. נרטיב זה בנוי כמעט כולו על מדדים מרמת הטוקן, שם חיפוש מזוהה עם חיזוי טוקנים בעלות אנטרופיה גבוהה, וניצול עם חיזויים בעלי אנטרופיה נמוכה וביטחון גבוה. ההנחה הנובעת מכך היא אינטואיטיבית: מודל אינו יכול להיות ודאי ולא ודאי בו-זמנית, ולכן ה-trade-off הוא בלתי נמנע.
 

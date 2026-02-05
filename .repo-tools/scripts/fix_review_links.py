@@ -275,6 +275,41 @@ def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
     return content
 
 
+def remove_duplicate_title_from_daily_marker(content: str) -> str:
+    """Remove duplicate English title from daily marker line if it matches header title."""
+    lines = content.split('\n')
+    if len(lines) < 4:
+        return content
+
+    # Extract title from line 1
+    first_line = lines[0]
+    match = re.match(r'^Review \d+:\s*(.+)$', first_line)
+    if not match:
+        return content
+
+    header_title = match.group(1).strip()
+
+    # Check lines 2-6 for daily marker with duplicate title
+    for i in range(1, min(7, len(lines))):
+        line = lines[i]
+        # Skip empty lines
+        if not line.strip():
+            continue
+        # Look for Hebrew daily marker
+        if re.search(r'[\u0590-\u05FF]', line):
+            # Check if the line contains the header title
+            if header_title in line:
+                # Remove the duplicate title from the line
+                # The title usually appears after the date
+                # Pattern: Hebrew text + date + duplicate English title
+                cleaned = re.sub(r'(\d{2}\.\d{2}\.\d{2})' + re.escape(header_title) + r'\s*', r'\1', line)
+                if cleaned != line:
+                    lines[i] = cleaned
+                    return '\n'.join(lines)
+
+    return content
+
+
 def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None) -> str:
     """Remove duplicate paper links, keeping only the Paper: line."""
     lines = content.split('\n')
@@ -674,6 +709,12 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
             changes.append("Replaced Hebrew title with English")
             content = new_content
 
+        # Remove duplicate title from daily marker line
+        new_content = remove_duplicate_title_from_daily_marker(content)
+        if new_content != content:
+            changes.append("Removed duplicate title from daily marker")
+            content = new_content
+
         # Move title from line 5 to line 1 if needed
         new_content = move_title_from_line5_to_line1(content, correct_number)
         if new_content != content:
@@ -769,6 +810,12 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         new_content = fix_hebrew_title_in_header(content, correct_number)
         if new_content != content:
             changes.append("Replaced Hebrew title with English")
+            content = new_content
+
+        # Remove duplicate title from daily marker line
+        new_content = remove_duplicate_title_from_daily_marker(content)
+        if new_content != content:
+            changes.append("Removed duplicate title from daily marker")
             content = new_content
 
         # Move title from line 5 to line 1 if needed
