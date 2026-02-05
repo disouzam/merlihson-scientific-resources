@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 10.08.24: ⚡️🚀
+Review 273:🚀
+
+⚡️🚀המאמר היומי של מייק 10.08.24: ⚡️
+
 
 Synthesizing Text-to-SQL Data fromWeak and Strong LLMs
 

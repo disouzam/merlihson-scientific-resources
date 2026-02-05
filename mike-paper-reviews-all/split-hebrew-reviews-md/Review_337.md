@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -02.11.24: ⚡️🚀Learning to Compress: Local Rank and Information Compression in Deep Neural Networks
+Review 337:Learning to Compress: Local Rank and Information Compression in Deep Neural Networks
+
+⚡️🚀המאמר היומי של מייק -02.11.24: ⚡️🚀
+
 
 היום סוקרים מאמר כחול לבן למחצה (אחד המחברים משניים הוא ישראלי רביד שוורץ זיו) והם חוקרים נושא שמעניין אותי מאוד באופן אישי. הנושא הוא דחיסה של דאטה באמצעות רשתות נוירונים והוא גם מאוד קשור לעבודות של נפתלי תשבי האגדי בנושא צוואר בקבוק מידעי (information bottleneck או IB) וגם השערת יריעה (manifold hypothesis או MH) בנוגע לרשתות נוירונים עמוקות.
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 15.04.25Classifier-Free Guidance inside the Attraction Basin May Cause Memorization
+Review 440:15.04.25Classifier-Free Guidance inside the Attraction Basin May Cause Memorization
+
+המאמר היומי של מייק
+
 
 חוזרים לסקור מאמרי דיפוזיה - הפעם מאמר קליל (יחסית למאמר ממוצע בנושא מודלי דיפוזיה). המאמר מציע שיטה למניעת זיכרון או memorization באנגלית על ידי מודלי דיפוזיה. ניתן לראות בזיכרון סוג של mode collapse (הזכורה לנו מתקופת הגאנים) כאשר המודל מגנרט תמונות דומות מאוד (וגם דומות לתמונות מסט האימון) לקלטים שונים (בד״כ נדגמים מהתפלגות פשוטה לדגימה כמו גאוסית סטנדרטית). 
 

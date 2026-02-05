@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 08.02.25Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis
+Review 396:Designing Priors for Better Few-Shot Image Synthesis
+
+המאמר היומי של מייק - 08.02.25Rejection Sampling IMLE
+
 
 היום עושים הפסקה קלה עם LLMs וסוקרים מאמר המציע שיטה מעניינת לאימון מודלי גנרטיביים במקרה שיש לכם מעט דאטה לאימון. כידוע מודלים גנרטיביים מודרניים כמו מודלי דיפוזיה, גאנים, VAEs מצריכים כמות עצומה של דאטה אבל לפעמים אין לנו את הלוקסוס הזה ואנו צריכים לאמן על כמות קטנה של דאטה. האם זה אפשרי בכלל?
 

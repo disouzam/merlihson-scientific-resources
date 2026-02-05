@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 25.07.24: ⚡️🚀
+Review 259:🚀
+
+⚡️🚀המאמר היומי של מייק 25.07.24: ⚡️
+
 
 AI models collapse when trained on recursively generated data
 

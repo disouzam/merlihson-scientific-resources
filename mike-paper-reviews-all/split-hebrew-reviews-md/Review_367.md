@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 22.12.24:Reasoning in Large Language Models: A Geometric Perspective
+Review 367:Reasoning in Large Language Models: A Geometric Perspective
+
+המאמר היומי של מייק - 22.12.24
+
 
 מאמר זה חוקר את יכולות החשיבה של LLMs מנקודת מבט גיאומטרית, תוך התמקדות בקשר בין הממד הפנימי(intrinsic dimension או ID) של ייצוגי הקלט לבין עוצמת expressiveness של מודלים אלה. החוקרים בוחנים כיצד ארכיטקטורות טרנספורמר מחלקות את מרחבי הקלט וכיצד חלוקה זו קשורה ליכולות ההנמקה שלהן (reasoning). העבודה מציעה תובנות חשובות לגבי האופן שבו ארכיטקטורת המודל ואורך ההקשר משפיעים על ביצועי LLM במשימות הנמקה.
 

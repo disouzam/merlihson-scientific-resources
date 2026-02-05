@@ -1,4 +1,7 @@
-⚡️🚀 המאמר היומי של מייק 10.06.24:⚡️🚀
+Review 220:🚀
+
+⚡️🚀 המאמר היומי של מייק 10.06.24:⚡️
+
 
 Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks
 

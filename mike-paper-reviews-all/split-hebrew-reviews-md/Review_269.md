@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 06.08.24: ⚡️🚀
+Review 269:🚀
+
+⚡️🚀המאמר היומי של מייק 06.08.24: ⚡️
+
 
 TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models
 

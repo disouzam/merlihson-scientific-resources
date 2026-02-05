@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 17.08.24: ⚡️🚀
+Review 279:🚀
+
+⚡️🚀המאמר היומי של מייק 17.08.24: ⚡️
+
 
 Faster Machine Unlearning via Natural Gradient Descent
 

@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 22.08.24: ⚡️🚀
+Review 283:🚀
+
+⚡️🚀המאמר היומי של מייק 22.08.24: ⚡️
+
 
 Approaching Deep Learning through the Spectral Dynamics of Weights
 

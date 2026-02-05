@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק -06.10.24: ⚡️🚀CONTRASTIVE LOCALIZED LANGUAGE-IMAGE PRE-TRAINING
+Review 315:CONTRASTIVE LOCALIZED LANGUAGE-IMAGE PRE-TRAINING
+
+🚀המאמר היומי של מייק -06.10.24: ⚡️🚀
+
 
 ממשיכים הפסקה בסקירות על מודלי שפה ועוברים לסקירות על מודלים מולטימודליים (שפה ותמונות). טוב, הפסקה למחצה. אתם בטח זוכרים את המודל שנקרא CLIP שעשה הרבה רעש לפני כמה שנים. 
 

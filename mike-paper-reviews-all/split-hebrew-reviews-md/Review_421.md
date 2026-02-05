@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 15.03.25Generative Representational Instruction Tuning
+Review 421:Generative Representational Instruction Tuning
+
+המאמר היומי של מייק - 15.03.25
+
 
 נתקלתי במאמר הזה די במקרה - תוך כדי איזה שיחה עם LLM מצוי על נושא של אמבדינגס הקשריים (contextualized embeddings) ואופן בנייתם. המאמר די קליל וחשבתי שאם כבר השקעתי 5 דקות בקריאתו אז אשקיע עוד 10 דקות בסקירתו. המאמר מציע שיטה המאחדת instruction tuning (נקרא לזה InTn) למטרת גנרוט ו-InTn למטרות בניית ייצוג דאטה הקשרי. 
 

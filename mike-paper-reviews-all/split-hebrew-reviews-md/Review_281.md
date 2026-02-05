@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 20.08.24: ⚡️🚀
+Review 281:🚀
+
+⚡️🚀המאמר היומי של מייק 20.08.24: ⚡️
+
 
 JPEG-LM: LLMs as Image Generators with Canonical Codec Representations
 

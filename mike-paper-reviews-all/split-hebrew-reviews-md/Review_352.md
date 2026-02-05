@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -23.11.24: ⚡️🚀
+Review 352:🚀
+
+⚡️🚀המאמר היומי של מייק -23.11.24: ⚡️
+
 
 Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study
 

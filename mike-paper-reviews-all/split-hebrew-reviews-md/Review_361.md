@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -07.12.24: ⚡️🚀Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering
+Review 361:Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering
+
+⚡️🚀המאמר היומי של מייק -07.12.24: ⚡️🚀
+
 
 1. תמצית המאמר
 

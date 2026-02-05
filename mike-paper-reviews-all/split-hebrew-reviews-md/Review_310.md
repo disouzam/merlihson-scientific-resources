@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק 29.09.24: ⚡️🚀ASR Error Correction using Large Language Models
+Review 310:ASR Error Correction using Large Language Models
+
+🚀המאמר היומי של מייק 29.09.24: ⚡️🚀
+
 
 ממשיך לסקור מאמרים בדומיין אודיו. הפעם נדבר על מאמר המציע שיטה לשיפור איכות של פענוח אות דיבור ניתן להשתמש בה במערכות ל-Automatic Speech Recognition או בקצרה ASR. המטרה בכל הסיפור הזה היא לתמלל אות קולי או במילים פשוטות להבין מה נאמר שם.
 

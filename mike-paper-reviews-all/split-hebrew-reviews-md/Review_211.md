@@ -1,4 +1,7 @@
-⚡🚀המאמר היומי של מייק 01.06.24: ⚡🚀
+Review 211:🚀
+
+⚡🚀המאמר היומי של מייק 01.06.24: ⚡
+
 
  The Evolution of Multimodal Model Architectures
 

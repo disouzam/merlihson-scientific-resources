@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
+Review 458:24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
+
+המאמר היומי של מייק
+
 
 כמה ימים לא סקרתי מאמר אבל ביום הולדתי לא יכולתי לא לכתוב סקירה למרות העומס המטורף. היום אסקור מאמר די מעניין שיצא לפני 4 חודשים והוא משלב פיין טיון של מודל שפה למשימות מתמטיות באמצעות MCTS שזה קיצור של Monte Carlo Tree Search. רובכם כנראה מכירים את MCTS מהפרויקטים המפורסמים AlphaGo ו- AlphaZero של דיפמיינד של אימנו מודלים המשחק Go. אציין AlphaZero למד לשחק רק דרך המשחקים עם עצמו ללא שום ידע מוקדם על Go. המודלים שפותחו היו כה חזקים שאלוף העולם ב-Go פרש בעקבות אחד מהם (לא זוכר איזה). הרעיון המתמטי מאחורי פיתוח מודלים אלו היה MCTS.
 

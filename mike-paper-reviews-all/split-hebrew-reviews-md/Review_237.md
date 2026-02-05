@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 28.06.24:⚡️🚀
+Review 237:🚀
+
+⚡️🚀המאמר היומי של מייק 28.06.24:⚡️
+
 
 On-Policy Distillation OF LANGUAGE MODELS: LEARNING FROM SELF-GENERATED MISTAKES
 

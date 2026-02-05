@@ -1,4 +1,7 @@
-⚡🚀המאמר היומי של מייק 05.06.24: ⚡🚀
+Review 215:🚀
+
+⚡🚀המאמר היומי של מייק 05.06.24: ⚡
+
 
 GraphAny: A Foundation Model for Node Classification on Any Graph
 

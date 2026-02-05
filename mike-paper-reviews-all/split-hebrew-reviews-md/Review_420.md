@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 14.03.25A Survey on Kolmogorov-Arnold Network
+Review 420:A Survey on Kolmogorov-Arnold Network
+
+המאמר היומי של מייק - 14.03.25
+
 
 מבוא:
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 30.07.25
+Review 488:30.07.25
+
+המאמר היומי של מייק
+
 
 Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon
 

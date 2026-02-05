@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 12.08.24: ⚡️🚀
+Review 274:🚀
+
+⚡️🚀המאמר היומי של מייק 12.08.24: ⚡️
+
 
 Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models
 

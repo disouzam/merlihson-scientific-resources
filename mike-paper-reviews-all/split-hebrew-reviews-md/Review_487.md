@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 27.07.25Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory
+Review 487:27.07.25Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory
+
+המאמר היומי של מייק
+
 
 עצי החלטה הם אבן יסוד בלמידת מכונה. הם אינטואיטיביים, חזקים, והכי חשוב, ניתנים לפירוש (interpretable). אפשר בקלות לעקוב אחר הלוגיקה של "אם-אז", ולהבין בדיוק כיצד הוא הגיע להחלטה. אבל יש להם חולשה בולטת: הם חסרי מצב (stateless). הם מתייחסים לכל דגימה כהתחלה חדשה, תוך התעלמות מוחלטת מהעבר. זה הופך אותם ללא כשירים לדאטה סדרתי, כמו סדרות עתיות, שפה, אודיו שבהם להיסטוריה יש חשיבות מכרעת.
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 09.12.24:Scaling Synthetic Data Creation with 1,000,000,000 Personas
+Review 362:Scaling Synthetic Data Creation with 1,000,000,000 Personas
+
+המאמר היומי של מייק - 09.12.24
+
 
 תמצית המאמר ותרומות מרכזיות:
 

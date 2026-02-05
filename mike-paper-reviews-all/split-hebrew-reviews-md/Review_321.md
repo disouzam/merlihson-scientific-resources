@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -15.10.24: ⚡️🚀EFFICIENT DICTIONARY LEARNING WITH SWITCH SPARSE AUTOENCODERS
+Review 321:EFFICIENT DICTIONARY LEARNING WITH SWITCH SPARSE AUTOENCODERS
+
+⚡️🚀המאמר היומי של מייק -15.10.24: ⚡️🚀
+
 
 היום סוקרים מאמר קליל המשלב שני רעיונות די נחמדים שמשמים LLMs (במיוחד לאחרונה) והאמת השילוב שלהם נראה די טבעי. הרעיון הראשון הינו Mixture of Experts או MoE בקצרה.
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 08.09.25
+Review 508:08.09.25
+
+המאמר היומי של מייק
+
 
 Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 23.02.25Addition Is All You Need: For Energy-Efficient Language Models
+Review 406:For Energy-Efficient Language Models
+
+המאמר היומי של מייק - 23.02.25Addition Is All You Need
+
 
 מבוא:המאמר מציג גישה אלגנטית אך רדיקלית לשיפור היעילות של רשתות נוירונים, רלוונטית במיוחד לשיפור ביצועים של LLMs. המחברים מציעים חלופה למכפלות נקודה צפה(floating point) מסורתיות (Linear-Complexity Multiplication(L-Mul, אשר מקרב פעולות עם נקודה צפה על ידי חיבורי מספרים שלמים. הטענה המרכזית היא ש-L-Mul מפחית משמעותית את המורכבות החישובית ואת צריכת האנרגיה, תוך שמירה על ביצועי מודל כמעט זהים.
 

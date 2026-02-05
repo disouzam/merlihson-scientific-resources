@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 09.02.25Why Is Anything Conscious?
+Review 397:Why Is Anything Conscious?
+
+המאמר היומי של מייק - 09.02.25
+
 
 מבוא:
 

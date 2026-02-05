@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 19.08.24: ⚡️🚀
+Review 280:🚀
+
+⚡️🚀המאמר היומי של מייק 19.08.24: ⚡️
+
 
 DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION
 

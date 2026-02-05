@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 02.09.24: ⚡️🚀
+Review 287:🚀
+
+⚡️🚀המאמר היומי של מייק 02.09.24: ⚡️
+
 
 Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode
 

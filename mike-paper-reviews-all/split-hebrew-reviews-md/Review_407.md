@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 25.02.25Understanding Visual Feature Reliance through the Lens of Complexity
+Review 407:Understanding Visual Feature Reliance through the Lens of Complexity
+
+המאמר היומי של מייק - 25.02.25
+
 
 המאמר שאני סוקר היום מציג מחקר יוצא דופן, נדיר ומעניין על מורכבות פיצ'רים המופקים על ידי מודלים דיפ (אין RAG, סוכנים ו-LLMs שם :). מאמר זה קשור הדוקות לרעיון של צוואר הבקבוק של המידע ברשתות עצביות עמוקות, שטבע נפתלי תשבי.
 

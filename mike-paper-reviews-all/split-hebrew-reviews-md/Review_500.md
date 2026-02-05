@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 21.08.25
+Review 500:21.08.25
+
+המאמר היומי של מייק
+
 
 Scaling Laws for Forgetting When Fine-Tuning Large Language Models
 

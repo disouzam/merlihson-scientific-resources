@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 09.08.24: ⚡️🚀
+Review 272:🚀
+
+⚡️🚀המאמר היומי של מייק 09.08.24: ⚡️
+
 
 Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
 

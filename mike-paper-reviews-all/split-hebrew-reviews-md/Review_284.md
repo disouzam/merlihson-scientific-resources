@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 30.08.24: ⚡️🚀
+Review 284:🚀
+
+⚡️🚀המאמר היומי של מייק 30.08.24: ⚡️
+
 
 Platypus: A Generalized Specialist Model for Reading Text in Various Forms
 

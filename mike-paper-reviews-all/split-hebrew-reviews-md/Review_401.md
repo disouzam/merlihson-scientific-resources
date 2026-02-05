@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 15.02.25A Spectral Condition for Feature Learning
+Review 401:A Spectral Condition for Feature Learning
+
+המאמר היומי של מייק - 15.02.25
+
 
 1. מבוא
 

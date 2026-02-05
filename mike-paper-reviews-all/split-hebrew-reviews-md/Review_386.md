@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 21.01.25Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts
+Review 386:Billion-Scale Time Series Foundation Models with Mixture of Experts
+
+המאמר היומי של מייק - 21.01.25Time-MoE
+
 
 המאמר משך את תשומת ליבי למרות הידע הרדוד שאני מחזיק לגבי תחום הסדרות העתיות (time-series). בגדול הסיבה העיקרית לכך שבשמו מופיע צמד מילים "Foundational Models" שזה חיה די נדירה בתחום הסדרות העתיות להבדיל מתחום מודלי שפה. הסיבה לכך (כנראה) היא מגוון עשיר הרבה יותר של סדרות עתיות השונות יחסית לשפה טבעית.
 

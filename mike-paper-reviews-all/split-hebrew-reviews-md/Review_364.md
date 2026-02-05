@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 18.12.24:Byte Latent Transformer: Patches Scale Better Than Tokens
+Review 364:Byte Latent Transformer: Patches Scale Better Than Tokens
+
+המאמר היומי של מייק - 18.12.24
+
 
 כמובן לא יכולתי לפספס את המאמר הזה שהתפרסם לפני כמה ימים וגרם ללא מעט תהודה בקהילת AI. המאמר מציע להחליף את הטוקנייזר הסטטי שיש בכל מודל השפה במנגנון דינאמי שבונה את הטוקנים החדשים (שקיבלו שם פאצ'ים) כלומר כזה שבונה אותם בתלות בהקשר (contextualized). 
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 03.02.25The Perfect Blend: Redefining RLHF with Mixture of Judges
+Review 393:Redefining RLHF with Mixture of Judges
+
+המאמר היומי של מייק - 03.02.25The Perfect Blend
+
 
 אחרי יציאת המודל האחרון של DeepSeek העניין ל-RLHF או שיטת טיוב (fine-tuning) של מודלי שפה באמצעות שיטת Reinforcement Learning with Human Feedback. חוקרי DeepSeek הראה שניתן לאמן מודל שפה חזק לעשות הנמקה(reasoning) בעיקר עם RLHF (יש קצת SFT אבל עדיין הרוב). המאמר שנסקור היום יצא כמעט 4 חודשים לפני R1 של DeepSeek והוא מציע שיטה שמשפרת ביצועים של RLHF.
 

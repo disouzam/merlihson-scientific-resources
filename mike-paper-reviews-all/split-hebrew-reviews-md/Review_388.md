@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 24.01.25Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs
+Review 388:Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs
+
+המאמר היומי של מייק - 24.01.25Back to Basics
+
 
 תמצית המאמר:
 

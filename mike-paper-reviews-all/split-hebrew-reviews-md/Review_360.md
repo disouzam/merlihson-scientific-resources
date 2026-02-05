@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -05.12.24: ⚡️🚀Memory3: Language Modeling with Explicit Memory
+Review 360:Memory3: Language Modeling with Explicit Memory
+
+⚡️🚀המאמר היומי של מייק -05.12.24: ⚡️🚀
+
 
 א. רעיון כללי:
 

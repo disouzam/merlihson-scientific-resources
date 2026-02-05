@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 21.03.25LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
+Review 425:LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
+
+המאמר היומי של מייק - 21.03.25
+
 
 המאמר משך את תשומת ליבי כי מופיעים בשמו מודלי שפה ומערכות דינמיות שאני מחבב מהזמנים העליזים של ממבה (state-space models). המאמר טוען שמודלי שפה מפגינים ביצועים טובים בהבנת מערכות דינמיות ממגוון סוגים כולל מערכות סטוכסטיות, כאוטיות, רציפות וכדומה. וכל זה קורה ללא שום טיוב (fine-tune) - כלומר קצת הנדסת פרומפטים ומודל השפה שלכם מבין במערכות דינמיות.
 

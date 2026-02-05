@@ -1,4 +1,7 @@
- המאמר היומי של מייק: 17.04.25Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
+Review 441:17.04.25Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
+
+המאמר היומי של מייק
+
 
 אוקיי, ממשיכים עם מאמר תאורטי עמוק בנושא מודלי דיפוזיה גנרטיביים. בסקירה הזו ניסיתי למקסם את אחוז המושגים של ML שתרגמתי לשפת הקודש. תגידו לי איך יצא. 
 

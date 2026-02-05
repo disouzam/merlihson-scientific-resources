@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 15.07.24: ⚡️🚀
+Review 250:🚀
+
+⚡️🚀המאמר היומי של מייק 15.07.24: ⚡️
+
 
 Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps
 

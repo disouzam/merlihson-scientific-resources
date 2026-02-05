@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק -01.10.24: ⚡️🚀Larger and more instructable language models become less reliable
+Review 312:Larger and more instructable language models become less reliable
+
+🚀המאמר היומי של מייק -01.10.24: ⚡️🚀
+
 
 שנה טובה, מתוקה ושקטה לעוקביי היקרים! אני חושד שהמאזן הקלורי של רובכם הופר בבוקר אז אני מביא לכם סקירה קלילה (פורמלית של אתמול). ודרך אגב הסקירה של היום תהיה אוסף של כל הסקירות עד עכשיו ואני אפרסם את זה מחר בבוקר.
 

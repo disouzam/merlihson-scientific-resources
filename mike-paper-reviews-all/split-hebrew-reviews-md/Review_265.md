@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 01.08.24: ⚡️🚀
+Review 265:🚀
+
+⚡️🚀המאמר היומי של מייק 01.08.24: ⚡️
+
 
 IMPROVED TECHNIQUES FOR TRAINING CONSISTENCY MODELS
 

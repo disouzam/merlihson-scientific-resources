@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 12.06.24:⚡️🚀
+Review 222:🚀
+
+⚡️🚀המאמר היומי של מייק 12.06.24:⚡️
+
 
 Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving
 

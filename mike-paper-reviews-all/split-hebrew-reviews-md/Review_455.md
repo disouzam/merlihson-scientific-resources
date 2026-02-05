@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 16.05.25GROKKING AT THE EDGE OF NUMERICAL STABILITY
+Review 455:16.05.25GROKKING AT THE EDGE OF NUMERICAL STABILITY
+
+המאמר היומי של מייק
+
 
 לא יכולתי לפספס את המאמר הזה - לא היה שום סיכוי. הרי מילה grokking מופיעה בשם המאמר וזה משהו שאני לא מפספס בגלל שזו אחת התופעות הכי מרתקות ובלתי מוסברות כרגע (כמו in-context learning) בלמידה עמוקה. אבל מה זה בעצם גרוקינג?
 

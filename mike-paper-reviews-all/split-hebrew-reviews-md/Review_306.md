@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק 24.09.24: ⚡️🚀LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH
+Review 306:LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH
+
+🚀המאמר היומי של מייק 24.09.24: ⚡️🚀
+
 
 סקירה של מאמר שלא מכיל מתמטיקה בצורה מפורשת…מאמר זה בוחן את יכולות התכנון של מודלי שפה גדולים (LLMs) ומודלי חשיבה גדולים (LRMs) כמו משפחת o1  באמצעות סדרת מבחנים הנקראת PlanBench. 
 

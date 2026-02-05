@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 26.07.24: ⚡️🚀
+Review 260:🚀
+
+⚡️🚀המאמר היומי של מייק 26.07.24: ⚡️
+
 
 Questionable practices in machine learning
 

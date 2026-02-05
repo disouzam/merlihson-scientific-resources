@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 05.09.25
+Review 507:05.09.25
+
+המאמר היומי של מייק
+
 
 Group Sequence Policy Optimization
 

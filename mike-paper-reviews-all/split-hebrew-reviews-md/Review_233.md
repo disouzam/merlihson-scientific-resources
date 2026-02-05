@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 23.06.24:⚡️🚀
+Review 233:🚀
+
+⚡️🚀המאמר היומי של מייק 23.06.24:⚡️
+
 
 TextGrad: Automatic “Differentiation” via Text
 

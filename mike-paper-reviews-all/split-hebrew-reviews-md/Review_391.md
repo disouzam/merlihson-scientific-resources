@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 31.01.25Law of the Weakest Link: Cross Capabilities of Large Language Models
+Review 391:Cross Capabilities of Large Language Models
+
+המאמר היומי של מייק - 31.01.25Law of the Weakest Link
+
 
 מבוא והגדרת הבעיה:
 

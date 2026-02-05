@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 06.01.25A Survey on Efficient Inference for Large Language Models
+Review 376:A Survey on Efficient Inference for Large Language Models
+
+המאמר היומי של מייק - 06.01.25
+
 
 המאמר מספק סקירה מקיפה של שיטות לייעול היסק (אינפרנס) ב-LLMs. אז יאללה בואו נסקור את הסקירה.
 

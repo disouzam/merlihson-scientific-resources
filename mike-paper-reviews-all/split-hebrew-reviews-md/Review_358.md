@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -02.12.24: ⚡️🚀Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation
+Review 358:Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation
+
+⚡️🚀המאמר היומי של מייק -02.12.24: ⚡️🚀
+
 
 היסטוריה:
 

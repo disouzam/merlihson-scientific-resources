@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 01.07.24:⚡️🚀
+Review 239:🚀
+
+⚡️🚀המאמר היומי של מייק 01.07.24:⚡️
+
 
 Grokfast: Accelerated Grokking by Amplifying Slow Gradients
 

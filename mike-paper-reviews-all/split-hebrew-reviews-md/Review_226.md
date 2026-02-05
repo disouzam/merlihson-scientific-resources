@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 16.06.24:⚡️🚀
+Review 226:🚀
+
+⚡️🚀המאמר היומי של מייק 16.06.24:⚡️
+
 
 STATISTICAL REJECTION SAMPLING IMPROVES PREFERENCE OPTIMIZATION
 

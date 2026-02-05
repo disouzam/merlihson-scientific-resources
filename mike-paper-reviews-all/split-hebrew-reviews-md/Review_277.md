@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 15.08.24: ⚡️🚀
+Review 277:🚀
+
+⚡️🚀המאמר היומי של מייק 15.08.24: ⚡️
+
 
 Your Classifier Can Be Secretly a Likelihood-Based OOD Detect
 

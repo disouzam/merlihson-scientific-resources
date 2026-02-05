@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 19.08.25
+Review 499:19.08.25
+
+המאמר היומי של מייק
+
 
 Training Transformers with Enforced Lipschitz Bounds
 

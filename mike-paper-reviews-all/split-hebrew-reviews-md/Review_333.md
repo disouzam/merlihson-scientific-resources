@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -29.10.24: ⚡️🚀Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers
+Review 333:Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers
+
+⚡️🚀המאמר היומי של מייק -29.10.24: ⚡️🚀
+
 
 אתם אולי שמתם לב שיש לי נטייה לא להתלהב יותר מדי מיכולות של מודלי שפה בטח בתחומים של ריזונינג ופתרון בעיות מתמטיות קשות. אז היום אני מודה שאני קצת (ממש טיפה) מתלהב מהמאמר שאני הולך לסקור. המחברים אימנו מודל המסוגל למצוא פתרונות של בעיה מתמטית קשה שאין דרך כללית למציאת פתרונה.
 

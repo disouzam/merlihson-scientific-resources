@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 16.02.25Representation Alignment for Generation: Training Diffusion Transformers is Easier than you Think
+Review 402:Training Diffusion Transformers is Easier than you Think
+
+המאמר היומי של מייק - 16.02.25Representation Alignment for Generation
+
 
 לוקחים פסק זמן קטן מ-LLMs וסוקרים מאמר על מודלי דיפוזיה גנרטיביים. המאמר מציע שיטה די אינטואיטיבית לשיפור  ביצועים של מודלים אלו על ידי הוספת איבר רגולריזציה ה״מיישר״ את הייצוגים הפנימיים של המודל עם אלו של אנקודרים חזקים כמו DiNOV2. יישור זה משפר את איכות התמונות שהמודל מגנרט.
 

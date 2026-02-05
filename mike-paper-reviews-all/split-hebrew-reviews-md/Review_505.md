@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 31.08.25
+Review 505:31.08.25
+
+המאמר היומי של מייק
+
 
 Strategic Intelligence in Large Language Models: Evidence from evolutionary Game Theory
 

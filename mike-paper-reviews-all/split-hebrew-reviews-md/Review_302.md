@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק 20.09.24: ⚡️🚀 Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning
+Review 302:Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning
+
+🚀המאמר היומי של מייק 20.09.24: ⚡️🚀
+
 
 ממשיכים בסקירות מאמרים ״החשודים״ בסלילת נתיב למודל o1 (שרבים כבר התאכזבו ממנו אמנם אך אותי הוא מסקרן מבחינת חידוש הפרדיגמה). המאמר שנסקור היום פחות מתמטי מזה של אתמול (הכל פורסם בערוץ הטלגרם שלי) ובתקווה הסקירה תהיה יחסית קצרה וקולעת. 
 

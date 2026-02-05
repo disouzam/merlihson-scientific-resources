@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 02.07.24:⚡️🚀
+Review 240:🚀
+
+⚡️🚀המאמר היומי של מייק 02.07.24:⚡️
+
 
 From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data
 

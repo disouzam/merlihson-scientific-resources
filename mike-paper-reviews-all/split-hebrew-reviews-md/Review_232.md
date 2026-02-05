@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 22.06.24:⚡️🚀
+Review 232:🚀
+
+⚡️🚀המאמר היומי של מייק 22.06.24:⚡️
+
 
 GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer
 

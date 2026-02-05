@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק -08.10.24: ⚡️🚀CONTEXTUAL DOCUMENT EMBEDDINGS
+Review 316:CONTEXTUAL DOCUMENT EMBEDDINGS
+
+🚀המאמר היומי של מייק -08.10.24: ⚡️🚀
+
 
 מזמן לא סקרתי מאמר בנושא של Document Retrieval או DG. למעשה DG מהווה שלב של Retrieval Augmented Generated או RAG שמטרתו היא לאתר את המסמכים הרלוונטיים מסט המסמכים D. בדרך כלל זה נעשה על סמך קירוב של האמבדינגס(הנמדד על ידי מרחק קוסיין) של המסמכים ושל השאלה המופקים על מודל שפה כלשהו.
 

@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 05.08.24: ⚡️🚀
+Review 268:🚀
+
+⚡️🚀המאמר היומי של מייק 05.08.24: ⚡️
+
 
 Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning
 

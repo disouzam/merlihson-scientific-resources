@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 07.08.24: ⚡️🚀
+Review 270:🚀
+
+⚡️🚀המאמר היומי של מייק 07.08.24: ⚡️
+
 
 Language Model Can Listen While Speaking
 

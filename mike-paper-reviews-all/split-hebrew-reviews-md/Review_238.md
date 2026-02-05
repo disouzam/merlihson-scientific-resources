@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 29.06.24:⚡️🚀
+Review 238:🚀
+
+⚡️🚀המאמר היומי של מייק 29.06.24:⚡️
+
 
 What Are the Odds? Language Models Are Capable of Probabilistic Reasoning
 

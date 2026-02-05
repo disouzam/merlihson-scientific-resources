@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 04.04.25Amortizing intractable inference in diffusion models for vision, language, and control
+Review 433:Amortizing intractable inference in diffusion models for vision, language, and control
+
+המאמר היומי של מייק - 04.04.25
+
 
 המאמר קצת כבד מתמטית ואני מנסה להסביר את הרעיון הכללי שלו ללא צלילה עמוקה למעמקי מתמטיקה.
 

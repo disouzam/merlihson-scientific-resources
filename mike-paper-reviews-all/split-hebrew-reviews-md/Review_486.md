@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 26.07.25
+Review 486:26.07.25
+
+המאמר היומי של מייק
+
 
 Building Bridges between Regression, Clustering, and Classification
 

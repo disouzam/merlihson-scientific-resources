@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 03.09.24: ⚡️🚀
+Review 288:🚀
+
+⚡️🚀המאמר היומי של מייק 03.09.24: ⚡️
+
 
 Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling
 

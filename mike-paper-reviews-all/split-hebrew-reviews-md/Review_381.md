@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 13.01.25Improve Mathematical Reasoning in Language Models by Automated Process Supervision
+Review 381:Improve Mathematical Reasoning in Language Models by Automated Process Supervision
+
+המאמר היומי של מייק - 13.01.25
+
 
 מזמן רציתי לכתוב סקירה על MCTS שזה Markov Chain Tree Search ולגמרי במקרה נתקלתי במאמר הזה המציע ליישם את השיטה המגניבה הזו עבור אימון LLMs. הפעם המטרה לאמן מודל שפה לפתור בעיות מתמטיות (לוגיות) מורכבת שפתרונם מכיל שלבים רבים. 
 

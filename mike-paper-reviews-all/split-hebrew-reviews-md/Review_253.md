@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 18.07.24: ⚡️🚀
+Review 253:🚀
+
+⚡️🚀המאמר היומי של מייק 18.07.24: ⚡️
+
 
 Trainable Highly-expressive Activation Functions
 

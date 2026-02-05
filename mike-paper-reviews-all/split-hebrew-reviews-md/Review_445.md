@@ -1,4 +1,7 @@
- המאמר היומי של מייק: 23.04.25 The Broader Spectrum of In-Context Learning 
+Review 445:23.04.25 The Broader Spectrum of In-Context Learning
+
+המאמר היומי של מייק
+
 
 למידת In-Context או ל ICL היא יכולת של מודלים לבצע משימות שלא אומנו עליהם במפורש כאשר הם מקבלים כמה דוגמאות לביצוע משימה זו בפרומפט. 
 

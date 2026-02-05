@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 11.03.25Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation
+Review 417:Revisiting Sparse Coding for Adaptive Representation
+
+המאמר היומי של מייק - 11.03.25Beyond Matryoshka
+
 
 סקירה קצרה של מאמר המכליל שיטה להפקת ייצוג במימד נמוך של דאטה הנקראת Matryoshka embeddings. מה מיוחד בשיטה זו - היא מאפשרת לאמן את הייצוג הזה בכמה מימדים בו זמנים. כלומר במהלך האימון ייצוגים מכמה גדלים (נגיד 8ֿ, 16, 32, 64 ו-128) מאומנים באותו הזמן. השיטה מניחה דאטהסט מתויג של זוגות (x, y) כאשר x הוא פיסת דאטה ו-y הוא התיוג שלו. 
 

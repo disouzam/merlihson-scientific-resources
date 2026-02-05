@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק 28.09.24: ⚡️🚀Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages
+Review 309:Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages
+
+🚀המאמר היומי של מייק 28.09.24: ⚡️🚀
+
 
 מזמן לא סקרתי מאמר על אודיו ומשלים את הפער היום עם סקירה קצרה וקלילה. בדיוק כמו במודלי שפה גם במודלי אודיו כמו whisper למשל יש יכולת למידה in-context או ICL בקצרה. ICL היא יכולת של מודל לבצע משימה שלא אומן עליה באופן מפורש אחרי ש״מראים לו״ כמה דוגמאות המדגימות את המשימה (נגיד, כמה זוגות של שאלות ותשובות רצויות).
 

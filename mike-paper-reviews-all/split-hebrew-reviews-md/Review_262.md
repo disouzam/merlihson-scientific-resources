@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 29.07.24: ⚡️🚀
+Review 262:🚀
+
+⚡️🚀המאמר היומי של מייק 29.07.24: ⚡️
+
 
 Large Scale Dataset Distillation with Domain Shift
 

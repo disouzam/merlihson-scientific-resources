@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 17.09.25
+Review 512:17.09.25
+
+המאמר היומי של מייק
+
 
 Bootstrapping Task Spaces for Self-Improvementֿ
 

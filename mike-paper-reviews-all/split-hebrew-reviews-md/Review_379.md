@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 10.01.25Chain of Thought Empowers Transformers to Solve Inherently Serial Problems
+Review 379:Chain of Thought Empowers Transformers to Solve Inherently Serial Problems
+
+המאמר היומי של מייק - 10.01.25
+
 
 המאמר מציג ניתוח תיאורטי של כיצד (Chain of Thought (CoT מאפשר למודלי טרנספורמר להתמודד עם חישובים סדרתיים(לא מקביליים). המחברים הוכיחו חסמי expressiveness פורמליים ומציגים מחלקת complexity חדשה (איך ניתן לתרגם complexity class? חוץ ממחלקת סיבוכיות) המאפיינת את יכולות החישוב של טרנספורמרים עם CoT.
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 02.04.25SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization
+Review 432:Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization
+
+המאמר היומי של מייק - 02.04.25SymDPO
+
 
 היום אני עושה מעבר חד בנושא הסקירה וסוקר מאמר על אימון מודלים מולטימודליים (בפרט MLLMs). המאמר מציע שיטה לאימון מודלים למשימת למידה in-context שבא המודל מקבל כמה דוגמאות (הדגמות) שכל הדגמה מכילה תמונה, שאלה ותשובה עליה. המודל מתבקש, בהתבסס על הדאטה שקיבל (הדגמות) לענות על שאלה לגבי תמונה נוספת (עם אותם הדמויות למשל). הסקירה הולכת להיות קלילה וקצרה.
 

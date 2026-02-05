@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 25.08.25
+Review 502:25.08.25
+
+המאמר היומי של מייק
+
 
 Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks
 

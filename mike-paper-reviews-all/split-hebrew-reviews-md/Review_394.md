@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 05.02.25Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections
+Review 394:A Survey and New Connections
+
+המאמר היומי של מייק - 05.02.25Deep Generative Models through the Lens of the Manifold Hypothesis
+
 
 תמצית המאמר: 
 

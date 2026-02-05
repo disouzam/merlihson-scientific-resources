@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 16.09.24: ⚡️🚀Rethinking Benchmark and Contamination for Language Models with Rephrased Samples
+Review 299:Rethinking Benchmark and Contamination for Language Models with Rephrased Samples
+
+⚡️🚀המאמר היומי של מייק 16.09.24: ⚡️🚀
+
 
 חתיכת נושא זה. לאחרונה אני ניהלתי מספר שיחות עם אנשי NLP לא מעטים על הנושא הזה. מי שעוקב אחריי ברשתות החברתיות אולי שם לב כי אני בד״כ לא מתלהב ממודל שפה שניצח את כל המודלים הקיימים בכל הבנצ'מרקים. הסיבה לכך היא די טבעית ונובעת מכך שבלא מעט מקרים לא מפרסמים באופן גלוי את כל הדאטה שעליה המודל אומן. 
 

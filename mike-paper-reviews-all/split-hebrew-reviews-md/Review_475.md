@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 25.06.25The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs
+Review 475:25.06.25The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs
+
+המאמר היומי של מייק
+
 
 מאמר 🇮🇱
 

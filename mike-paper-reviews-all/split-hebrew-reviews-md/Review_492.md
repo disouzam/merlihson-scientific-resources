@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 04.08.25Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models
+Review 492:04.08.25Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models
+
+המאמר היומי של מייק
+
 
 פיזיקה פוגשת AI: כך מודל חדש לומד שפה בלי לחזות אפילו טוקן אחד
 

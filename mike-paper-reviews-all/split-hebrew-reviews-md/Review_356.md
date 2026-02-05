@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -29.11.24: ⚡️🚀In-Context Learning with Long-Context Models: An In-Depth Exploration
+Review 356:In-Context Learning with Long-Context Models: An In-Depth Exploration
+
+⚡️🚀המאמר היומי של מייק -29.11.24: ⚡️🚀
+
 
 המאמר מציג מחקר אמפירי מקיף של למידה in-context או ICL עם מודלי שפה בעלי חלון הקשר ארוך. אזכיר שעם ICL המודל מקבל כמה דוגמאות המדגימות פעולות מסוימות ולאחר מכן המודל מתבקש לבצע פעולה זו על דוגמאות חדשות.
 

@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 08.09.24: ⚡️🚀
+Review 292:🚀
+
+⚡️🚀המאמר היומי של מייק 08.09.24: ⚡️
+
 
 DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?
 

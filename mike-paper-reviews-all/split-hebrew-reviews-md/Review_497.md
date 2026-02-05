@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 14.08.25FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming
+Review 497:14.08.25FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming
+
+המאמר היומי של מייק
+
 
 מאמר 🇮🇱 לבן של כמה מחברים שאני מכיר באופן אישי….
 

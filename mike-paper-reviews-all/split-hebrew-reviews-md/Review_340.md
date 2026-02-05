@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -05.11.24: ⚡️🚀
+Review 340:🚀
+
+⚡️🚀המאמר היומי של מייק -05.11.24: ⚡️
+
 
 RETHINKING SOFTMAX: SELF-ATTENTION WITH POLYNOMIAL ACTIVATIONS
 

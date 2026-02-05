@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 13.09.25
+Review 511:13.09.25
+
+המאמר היומי של מייק
+
 
 On the Theoretical Limitations of Embedding-Based Retrieval
 

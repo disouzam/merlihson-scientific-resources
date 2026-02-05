@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 01.09.24: ⚡️🚀
+Review 286:🚀
+
+⚡️🚀המאמר היומי של מייק 01.09.24: ⚡️
+
 
 DIFFUSION MODELS ARE REAL-TIME GAME ENGINES
 

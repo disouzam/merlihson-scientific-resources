@@ -1,4 +1,7 @@
-⚡🚀המאמר היומי של מייק 06.06.24: ⚡🚀Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts
+Review 216:Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts
+
+⚡🚀המאמר היומי של מייק 06.06.24: ⚡🚀
+
 
 בזמן האחרון גישות המשלבות מודלי שפה עם בסיסי נתונים חיצוניים הפכו למאוד פופולריים. גישות אלו לרוב שייכות למשפחת Retrieval Augmented Generation או RAG בקצרה. בגדול בהינתן מודל שפה ומסמכים העשויים להכיל תשובה על שאלת משתמש, RAG קודם מחפש כמה מסמכים הרלוונטיים ביותר לשאלה ואז מזינה אותם יחד עם השאלה למודל שפה. המודל מרכיב את תשובתו על השאלה בהתבסס על המסמכים שהוזנו אליו.
 

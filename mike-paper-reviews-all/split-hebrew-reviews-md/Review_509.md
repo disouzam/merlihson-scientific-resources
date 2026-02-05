@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 11.09.25
+Review 509:11.09.25
+
+המאמר היומי של מייק
+
 
 Fantastic Pretraining Optimizers and Where to Find Them
 

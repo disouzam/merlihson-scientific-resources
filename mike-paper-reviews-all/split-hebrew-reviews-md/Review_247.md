@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 11.07.24: ⚡️🚀
+Review 247:🚀
+
+⚡️🚀המאמר היומי של מייק 11.07.24: ⚡️
+
 
 DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS
 

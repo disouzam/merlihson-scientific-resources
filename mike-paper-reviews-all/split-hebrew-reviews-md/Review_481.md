@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 07.07.25Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models
+Review 481:07.07.25Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models
+
+המאמר היומי של מייק
+
 
 מודלי שפה גדולים ממשיכים להדהים אותנו ביכולותיהם האדירות, אך שאלה מטרידה נותרה בעינה: האם הם באמת "מבינים", או שהם פשוט תוכים מתוחכמים המשננים את דאטה האימון שלהם? המאמר המסוקר מציע פרספקטיבה חדשה, החורגת ממגבלות ההפרדה המסורתיות של דאטהסטי אימון וטסט כדי לחקור כיצד LLMs לומדים ״להסיק מסקנות״ מדאטה של האימון המקדים שלהם. (pretraining).
 

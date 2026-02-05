@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -12.10.24: ⚡️🚀GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
+Review 319:GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
+
+⚡️🚀המאמר היומי של מייק -12.10.24: ⚡️🚀
+
 
 האם מודלי שפה גדולים מסוגלים לעשות ריזונינג? השאלה הזו מעסיקה חוקרים רבים לאור יכולות די מרשימות שמודלי שפה מפגינים בפתרון שאלות לא פשוטות (אבל רק בתנאים מסוימים 🙂). המאמר בוחן את יכולות החשיבה המתמטית(שזה תת-יכולת של ריזונינג כללי) של LLMs ומציג את GSM-Symbolic, בנצ'מרק חדש לבחינת יכולות אלו שהם פיתחו.
 

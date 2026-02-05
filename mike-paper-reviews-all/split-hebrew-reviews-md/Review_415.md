@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 07.03.25Number Cookbook: Number Understanding of Language Models and How to Improve It
+Review 415:Number Understanding of Language Models and How to Improve It
+
+המאמר היומי של מייק - 07.03.25Number Cookbook
+
 
 מבוא:
 

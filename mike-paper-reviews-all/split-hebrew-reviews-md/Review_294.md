@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק 10.09.24: ⚡️🚀
+Review 294:🚀
+
+⚡️🚀המאמר היומי של מייק 10.09.24: ⚡️
+
 
 Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers
 

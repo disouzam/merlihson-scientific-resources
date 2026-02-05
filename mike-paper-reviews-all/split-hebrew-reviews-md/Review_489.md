@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 31.07.25
+Review 489:31.07.25
+
+המאמר היומי של מייק
+
 
 Empirical evidence of Large Language Model's influence on human spoken communication
 

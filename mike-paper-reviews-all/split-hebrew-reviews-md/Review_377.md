@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 07.01.25Anchored Preference Optimization and Contrastive Revisions Addressing Underspecification in Alignment
+Review 377:Anchored Preference Optimization and Contrastive Revisions Addressing Underspecification in Alignment
+
+המאמר היומי של מייק - 07.01.25
+
 
 המאמר שנסקור היום מציע שיפור לשיטת יישור (alignment) למודלי שפה, DPO, השייכת למשפחת טכניקות RLHF או Reinforcement Learning with Human Feedback. כמו שאתם זוכרים  RLHF הינו אחד השלבים(האחרון בד״כ) לאימון LLM יחד עם אימון מקדים (pretraining) ו-Supervised Fine Tuning או SFT בקצרה. 
 

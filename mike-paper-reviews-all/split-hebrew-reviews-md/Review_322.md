@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -16.10.24: ⚡️🚀EFFICIENT REINFORCEMENT LEARNING WITH LARGE LANGUAGE MODEL PRIORS
+Review 322:EFFICIENT REINFORCEMENT LEARNING WITH LARGE LANGUAGE MODEL PRIORS
+
+⚡️🚀המאמר היומי של מייק -16.10.24: ⚡️🚀
+
 
 היום נסקור מאמר שהוא נראה די כבד מתמטית (הרבה נוסחאות ומלל שנראה מתמטי) אבל הרעיון מאחוריו הוא די פשוט וקל להסבר. אנחנו אוהבים למנף  את עוצמתם של מודלי שפה למשימות רבות (ולא תמיד לכאלו שהם מסוגלים לבצע כמו שצריך לפחות כרגע).
 

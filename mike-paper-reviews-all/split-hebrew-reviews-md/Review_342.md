@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -08.11.24: ⚡️🚀Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?
+Review 342:Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?
+
+⚡️🚀המאמר היומי של מייק -08.11.24: ⚡️🚀
+
 
 סקירה קצרה של מאמר המציע גישה חדשה ללמידה self-supervised או SSL בקצרה. אזכיר כי שיטת SSL מניחה שיש לנו דאטה לא מתויג ומתרטנו לאמן מודל מסוגל להפיק ייצוג חזק של דאטה. מה זה ייצוג חזק של דאטה, אתם שואלים? בד״כ הכוונה לכזה שניתן למנף אותו בצורה קלה (נגיד רק עם תוספת של שכבה לינארית) לבניית מסווג בעל ביצועים טובים. 
 

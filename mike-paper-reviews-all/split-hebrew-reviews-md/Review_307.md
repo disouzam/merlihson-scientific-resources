@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק 26.09.24: ⚡️🚀RRM: ROBUST REWARD MODEL TRAINING MITIGATES REWARD HACKING
+Review 307:RRM: ROBUST REWARD MODEL TRAINING MITIGATES REWARD HACKING
+
+🚀המאמר היומי של מייק 26.09.24: ⚡️🚀
+
 
 מאמר נחמד שמשך את עיניי עקב העובדה שהוא דן בנושא פונקציית תגמול (reward model או RM) של מודלי שפה. RM הנחוץ בתהליך היישור (alignment) של מודלי השפה המבוססים על RLHF שמטרתו מאוד בגדול לאמן מודל שפה להבחין בין תשובה טובה לתשובה רעה. 
 

@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 19.12.24:Large Concept Models: Language Modeling in a Sentence Representation Space
+Review 365:Large Concept Models: Language Modeling in a Sentence Representation Space
+
+המאמר היומי של מייק - 19.12.24
+
 
 מאמר שני (גם הוצג ב-NeurIPS 2024) של מטה המציע קונספט די מהפכני למודלי שפה. במאמר שסקרתי אתמול הם הציע לוותר על הטוקנייזר הסטנדרטי במודלי שפה ובמאמר שנסקור היום הם הציע לוותר על חיזוי של טוקן הבא שהתרגלנו אליו כל כך ב-LLMs.
 

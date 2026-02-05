@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 26.12.24:RL for Consistency Models: Faster Reward Guided Text-to-Image Generation
+Review 370:RL for Consistency Models: Faster Reward Guided Text-to-Image Generation
+
+המאמר היומי של מייק - 26.12.24
+
 
  מזמן לא סקרתי מאמרים על מודלי דיפוזיה אז אחרי שנתקלתי במאמר הנחמד המשלב מודלי דיפוזיה גנרטיביים עם למידה עם חיזוקים (Reinforcement Learning או RL בקצרה), לא היו לי ספקות שזה הולך להיות המאמר המסוקר. כאמור המאמר פיתח שיטת אימון מודל של דיפוזיה גנרטיבי מסוג Consistency Model או CM.
 

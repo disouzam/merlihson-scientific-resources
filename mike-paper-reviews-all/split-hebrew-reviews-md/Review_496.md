@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 13.08.25Checklists Are Better Than Reward Models For Aligning Language Model
+Review 496:13.08.25Checklists Are Better Than Reward Models For Aligning Language Model
+
+המאמר היומי של מייק
+
 
 תשכחו מכל מה שידעתם על מודלי תגמול: האם צ'קליסט פשוט הוא העתיד של עולם ה-AI?
 

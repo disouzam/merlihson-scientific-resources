@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -28.11.24: ⚡️🚀Parameter-Efficient Fine-Tuning with Discrete Fourier Transform
+Review 355:Parameter-Efficient Fine-Tuning with Discrete Fourier Transform
+
+⚡️🚀המאמר היומי של מייק -28.11.24: ⚡️🚀
+
 
 רקע: PeFT:
 

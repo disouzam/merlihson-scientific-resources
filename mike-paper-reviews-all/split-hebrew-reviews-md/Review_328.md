@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -23.10.24: ⚡️🚀Predicting from Strings: Language Model Embeddings for Bayesian Optimization
+Review 328:Predicting from Strings: Language Model Embeddings for Bayesian Optimization
+
+⚡️🚀המאמר היומי של מייק -23.10.24: ⚡️🚀
+
 
 המאמר מהסוג שנסקור היום אני לא סוקר בדר״כ - אולי מתוך 300 מאמרים שסקרתי יש 1-2 כאלו (לא בטוח). לא בגלל שהנושא לא מעניין אלא שיש פחות מאמרים בו והוא נחשב פחות ״באזזי״ למרות חשיבותי. כמו שמשתמע משם המאמר הנושא הוא אופטימיזציה בייסיאנית.
 

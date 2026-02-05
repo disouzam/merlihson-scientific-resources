@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -26.11.24: ⚡️🚀Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study
+Review 353:Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study
+
+⚡️🚀המאמר היומי של מייק -26.11.24: ⚡️🚀
+
 
 המאמר מציג ניתוח מעמיק של 2 שיטות מרכזיות ליישור מודלי שפה גדולים עם העדפות אנושיות: (Direct Preference Optimization (DPO) ו- (Proximal Policy Optimization (PPO.
 

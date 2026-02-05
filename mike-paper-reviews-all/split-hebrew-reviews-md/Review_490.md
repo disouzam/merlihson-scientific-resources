@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 01.08.25
+Review 490:01.08.25
+
+המאמר היומי של מייק
+
 
 Hierarchical Reasoning Model
 

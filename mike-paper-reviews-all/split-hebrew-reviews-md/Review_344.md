@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -10.11.24: ⚡️🚀
+Review 344:🚀
+
+⚡️🚀המאמר היומי של מייק -10.11.24: ⚡️
+
 
 WHAT MATTERS IN TRANSFORMERS? NOT ALL ATTENTION IS NEEDED
 

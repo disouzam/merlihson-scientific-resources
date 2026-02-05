@@ -1,4 +1,7 @@
-🚀המאמר היומי של מייק 22.09.24: ⚡️🚀 Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
+Review 304:Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
+
+🚀המאמר היומי של מייק 22.09.24: ⚡️🚀
+
 
 סקירה זה ממשיכה את קו הסקירות ״בדרך ל-o1" והפעם המאמר לפחות לפי השם התקרב די מהר למה קורה לכאורה ב-o1. כלומר ״המודל חושב״ לפני שהוא מחזיר את תשובתו למשתמש. כמובן שגם המטרה כאן גם שיפור ריזונינג של המודל.
 

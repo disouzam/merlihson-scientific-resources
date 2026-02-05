@@ -1,4 +1,7 @@
-המאמר היומי של מייק - 27.02.25Unity by Diversity: Improved Representation Learning for Multimodal VAEs
+Review 408:Improved Representation Learning for Multimodal VAEs
+
+המאמר היומי של מייק - 27.02.25Unity by Diversity
+
 
 היום אני חוזר למאמר על (Variational Autoencoder (VAE אחרי תקופה ארוכה מאוד, יותר משנה, אני מניח.
 

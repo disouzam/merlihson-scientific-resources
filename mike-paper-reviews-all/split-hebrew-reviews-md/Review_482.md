@@ -1,4 +1,7 @@
-המאמר היומי של מייק: 09.07.25
+Review 482:09.07.25
+
+המאמר היומי של מייק
+
 
 Frontier Models are Capable of In-context Scheming
 

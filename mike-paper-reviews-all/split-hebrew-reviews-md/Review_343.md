@@ -1,4 +1,7 @@
-⚡️🚀המאמר היומי של מייק -09.11.24: ⚡️🚀
+Review 343:🚀
+
+⚡️🚀המאמר היומי של מייק -09.11.24: ⚡️
+
 
 CROSS-ENTROPY IS ALL YOU NEED TO INVERT THE DATA GENERATING PROCESS
 
