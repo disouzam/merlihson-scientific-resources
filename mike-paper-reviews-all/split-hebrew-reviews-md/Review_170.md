@@ -1,8 +1,6 @@
-Review 169: Safe RLHF: Safe Reinforcement Learning from Human Feedback
+Review 170:Safe RLHF: Safe Reinforcement Learning from Human Feedback
 
 Paper: https://arxiv.org/abs/2310.12773v1
-
-https://huggingface.co/papers/2310.12773
 
 אחד הדברים שקידמו מודלי שפה ענקיים (LLMs) בתקופה האחרונה הוא טכניקה הלקוחה מ-RL (למידה עם חיזוקים) הנקראת RLHF (למידת RL עם משוב אנושי). טכניקה זו שימשה את לטיוב(finetune) של LLMs וגרמה להם לעקוב להוראות בצורה מדויקת יותר. 
 

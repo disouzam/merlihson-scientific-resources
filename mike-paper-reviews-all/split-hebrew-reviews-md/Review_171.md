@@ -1,8 +1,6 @@
-Review 170: TOOLCHAIN* : EFFICIENT ACTION SPACE NAVIGATION IN LARGE LANGUAGE MODELS WITH A* SEARCH
+Review 171:TOOLCHAIN* : EFFICIENT ACTION SPACE NAVIGATION IN LARGE LANGUAGE MODELS WITH A* SEARCH
 
 Paper: https://arxiv.org/abs/2310.13227v1
-
-https://huggingface.co/papers/2310.13227
 
 היום מודלי שפה ענקיים נהיו מספיק מפותחים כדי לבצע פעולות מורכבות, למשל לתכנן משימות תוך כדי תכנון של תת-משימות שכל אחת מהן מבוצעות על ידי API מסוים. במאמר היום ב-#shorthebrewpapereviews נסקור מאמר המציע שיטה לבנייה של שרשרת של APIs לביצוע משימה (למשל בחירת בית לקנייה, תכנון נסיעה וכדומה). בשנה האחרונה יצאו כמה מאמרים המציעים שיטות שונות לפתרון בעיה זו. אחת מהן היא Chain-of-Thoughts שבונה את תכנית שלב שלב בלי לחזור אחורה עם משהו משתבש . שיטות יותר מתקדמת מתארת את משימת התכנון על ידי עץ של תת-משימות (API) שכל קודקוד הוא למעשה זוג של תת-משימה והמצב (state) לאחר ביצוע תת-משימה זו.
 
