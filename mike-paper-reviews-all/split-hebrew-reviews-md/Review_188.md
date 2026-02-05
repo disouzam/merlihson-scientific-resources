@@ -1,4 +1,4 @@
-Review 187: Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention
+Review 188:Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention
 
 Paper: https://arxiv.org/abs/2006.16236v3
 

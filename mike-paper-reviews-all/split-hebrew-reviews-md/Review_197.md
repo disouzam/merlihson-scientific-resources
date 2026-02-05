@@ -1,4 +1,4 @@
-Review 196: VMamba: Visual State Space Model
+Review 197:VMamba: Visual State Space Model
 
 Paper: https://arxiv.org/abs/2401.10166v4
 מתחילים את הסקירה האחרונה בסדרת מאמרי ממבה. באופן די טבעי המאמר הזה מדבר על שילוב של ארכיטקטורה זה למודלי הראייה הממוחשבת (או ויז'ן בקצרה). הסקירה הולכת להיות די קצרה וקלילה. 

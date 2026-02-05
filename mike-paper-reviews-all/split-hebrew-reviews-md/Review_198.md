@@ -1,4 +1,4 @@
-Review 197: [Short] LLM4Decompile: Decompiling Binary Code with Large Language Models
+Review 198:[Short] LLM4Decompile: Decompiling Binary Code with Large Language Models
 
 Paper: https://arxiv.org/abs/2403.05286v3
 המאמר מציע LLM4Decompile, משפחה של מודלי LLM לדיקומפילציה בגישה פתוחה שנעים מ-1B עד 33B פרמטרים. מודלים אלו מאומנים על 4 מיליארד טוקנים של קוד מקור בשפת C וקוד אסמבלי מתאים. המחברים גם מציגים את Decompile-Eval, הדאטהסט להערכת דיוק הדקומפילציה המבוצעת על ידי מודל (מקמפלים מחדש ובודקים את הפונקציונליות של הקוד). 

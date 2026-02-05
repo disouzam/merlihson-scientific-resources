@@ -1,4 +1,4 @@
-Review 200: SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series
+Review 201:SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series
 
 Paper: https://arxiv.org/abs/2403.15360v2
 המאמר הזה משך את תשומת ליבי כי מצד אחד יש בו שימוש נרחב בהתמרת פורייה ובייצוגים של דאטה בתחום התדר. החולשה שלי לתחום התדר נובעת מכך שביליתי כמה מהשנים הראשונות של הקריירה בתחום עיבוד של אותות אלחוטיות. מצד שני המאמר גם משתמש בארכיטקטורת ממבה שסקרתי בהרחבה בחודשים האחרונים (וכנראה אמשיך עם זה כי מאמרים מעניינים בנושא מרתק זה לא מפסיקים להגיע).

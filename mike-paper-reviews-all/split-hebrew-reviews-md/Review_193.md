@@ -1,4 +1,4 @@
-Review 192: RWKV: Reinventing RNNs for the Transformer Era
+Review 193:RWKV: Reinventing RNNs for the Transformer Era
 
 Paper: https://arxiv.org/abs/2305.13048v2
 אוקיי, אחרי כמה מאמרים כבדים הפעם יש לנו מאמר קליל יחסית. אתם אולי זוכרים שהמאמר השלישי שסקרנו בסדרה (״Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention״) הראה שטרנספורמר עם attention לינארי ניתן לייצג בתור RNN מצד אחד (כלומר ניתן להפעלה באופן איטרטיבי כאשר הוא דוחס את הטוקנים הקודמים בוקטור זיכרון אחד) ומצד שני ניתן להפעלה באופן כמו הטרנספורמר מן המניין. כלומר יש בו את הדואליות שרצינו: חיזוי מקבילי של טוקנים ממוסכים במהלך האימון וחיזוי טוקנים בעל סיבוכיות לינארית במהלך ההיסק (inference).

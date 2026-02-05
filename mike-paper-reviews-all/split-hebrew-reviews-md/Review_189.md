@@ -1,4 +1,4 @@
-Review 188: Efficiently Modeling Long Sequences with Structured State Spaces
+Review 189:Efficiently Modeling Long Sequences with Structured State Spaces
 
 Paper: https://arxiv.org/abs/2111.00396v3
 לאט לאט הגענו למאמר הרביעי בסדרת סקירות בדרך לממבה. הפעם נסקור מאמר מ-2022 שיצא שנתיים אחרי 3 המאמרים הראשוניים שסקרנו בנושא המעניין הזה. כמובן במהלך תקופה זו יצאו כמה מאמרים מעניינים שפיתחו ארכיטקטורות מבוססות מערכות דינמיות לינאריות (ובשם כללי יותר Space-State Models- SSMs).

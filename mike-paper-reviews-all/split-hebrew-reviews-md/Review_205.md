@@ -1,4 +1,4 @@
-Review 204: Simple linear attention language models balance the recall-throughput tradeoff
+Review 205:Simple linear attention language models balance the recall-throughput tradeoff
 
 Paper: https://arxiv.org/abs/2402.18668v2
 מודלי שפה ענקיים של היום מפגינים יכולת מרשימה של למידת in-context כלומר יכולת לבצע משימות חדשות (שלא אומן עליהם באופן מפורש) בהתבסס על כמה דוגמאות המדגימות (ממחישות) את את המשימה. כמובן דוגמאות אלו מוזנות למודל שפה כפרומפט. המאמר שנסקור היום מדבר על משימת in-context ספציפית הנקראת recall. המטרה של משימה זו היא לזהות חוקיות מסומיות בפרומפט ולענות על שאלות בנוגע אליו. למשל אם פרומפט המוזן הוא "A 4 B 3 C 6 F 1 G 2". אם לאחר מכן אני מכניסים למודל שפה "?B ? F ? C " המודל צריך לענות 3 1 6 כלומר המספר בא מיד אחרי כל אות בפורמפט השאלה.

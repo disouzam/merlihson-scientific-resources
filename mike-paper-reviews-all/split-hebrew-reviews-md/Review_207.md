@@ -1,4 +1,4 @@
-Review 206: SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL
+Review 207:SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL
 
 Paper: https://arxiv.org/abs/2405.11831v2
 המאמר הזה משך את תשומת ליבנו כי שמו דומה לממבה, ארכיטקטורה מעניינת שפרצה לתודעתנו לפני כחצי שנה וכבר יצאו עשרות מאמרים המשלבים אותה עבור מגוון דומיינים ומגוון משימות. והפעם התחום הוא אודיו והמחברים משתמשים בארכיטקטורת ממבה למטרת בניית ייצוג חזק של אות אודיו. 

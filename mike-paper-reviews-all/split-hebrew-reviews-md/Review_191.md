@@ -1,4 +1,4 @@
-Review 190: Hungry Hungry Hippos: Towards Language Modeling with State Space Models(H3)
+Review 191:Hungry Hungry Hippos: Towards Language Modeling with State Space Models(H3)
 
 Paper: https://arxiv.org/abs/2212.14052v3
 עד עכשיו ראינו מאמרים שמימשו את ארכיטקטורת SSM בתור רכיב הזכרון של המערכת. אף אחת מהמאמרים שסקרנו לא ניסה לשלב גישה זו(SSM) יחד עם מנגוננים אחרים שמוכרים לנו מעולם של עיבוד סדרות דאטה עם רשתות נוירונים. המאמר המסוקר משלב את גישת SSM, המיושמת באמצעות מערכות דינמיות לינאריות, עם מנגנון תשומת הלב הלינארי. 

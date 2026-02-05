@@ -1,4 +1,4 @@
-Review 193: Retentive Network: A Successor to Transformer for Large Language Models
+Review 194:Retentive Network: A Successor to Transformer for Large Language Models
 
 Paper: https://arxiv.org/abs/2307.08621v4
 זה הולכת להיות הסקירה הקלה ביותר (אך קצת ארוכה). המאמר משתמש באופן די אלגנטי ברעיונות שהוצע ב 8 המאמרים שכבר סקרנו. אזכיר שהמכנה המשותף במאמרים שסקרנו היתה מטרה למצוא ארכיטקטורה בעלת דואליות הבאה:

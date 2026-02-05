@@ -404,6 +404,27 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
         return False, f"Error: {str(e)}"
 
 
+def fix_review_number_only(filepath: Path) -> Tuple[bool, str]:
+    """Fix only the review number in a file (for reviews with just 1 link)."""
+    try:
+        content = filepath.read_text(encoding='utf-8')
+        original_content = content
+
+        correct_number = extract_review_number(filepath.name)
+        if correct_number == 0:
+            return False, "Could not extract review number"
+
+        new_content = fix_review_header(content, correct_number)
+        if new_content != content:
+            filepath.write_text(new_content, encoding='utf-8')
+            return True, "Fixed review number"
+
+        return False, "No changes needed"
+
+    except Exception as e:
+        return False, f"Error: {str(e)}"
+
+
 def find_problematic_reviews(start_num: int, count: int, reviews_dir: Path) -> List[Path]:
     """Find reviews with multiple links."""
     problematic = []
@@ -422,17 +443,72 @@ def find_problematic_reviews(start_num: int, count: int, reviews_dir: Path) -> L
     return problematic
 
 
+def find_numbering_mismatches(start_num: int, end_num: int, reviews_dir: Path) -> List[Path]:
+    """Find reviews where filename number doesn't match content number."""
+    mismatches = []
+    for i in range(start_num, end_num + 1):
+        filepath = reviews_dir / f"Review_{i:03d}.md"
+        if not filepath.exists():
+            continue
+        try:
+            content = filepath.read_text(encoding='utf-8')
+            lines = content.split('\n')
+            if not lines:
+                continue
+
+            # Extract review number from first line
+            match = re.match(r'^Review (\d+):', lines[0])
+            if match:
+                content_number = int(match.group(1))
+                if content_number != i:
+                    mismatches.append(filepath)
+        except Exception:
+            continue
+    return mismatches
+
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: fix_review_links.py <start> [count]")
+        print("       fix_review_links.py --fix-numbers <start> <end>")
         sys.exit(1)
-
-    start_num = int(sys.argv[1])
-    count = int(sys.argv[2]) if len(sys.argv) > 2 else 5
 
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent.parent
     reviews_dir = repo_root / "mike-paper-reviews-all" / "split-hebrew-reviews-md"
+
+    # Mode: Fix numbering mismatches
+    if sys.argv[1] == '--fix-numbers':
+        if len(sys.argv) < 4:
+            print("Usage: fix_review_links.py --fix-numbers <start> <end>")
+            sys.exit(1)
+
+        start_num = int(sys.argv[2])
+        end_num = int(sys.argv[3])
+
+        print(f"🔍 Checking for numbering mismatches in reviews {start_num}-{end_num}...")
+        mismatches = find_numbering_mismatches(start_num, end_num, reviews_dir)
+
+        if not mismatches:
+            print("✓ No numbering mismatches found")
+            return
+
+        print(f"Found {len(mismatches)} reviews with wrong numbers")
+        print("\n🔧 Fixing...")
+
+        fixed = 0
+        for filepath in mismatches:
+            was_modified, desc = fix_review_number_only(filepath)
+            if was_modified:
+                print(f"✓ {filepath.name}: {desc}")
+                fixed += 1
+
+        print(f"\n✅ Fixed {fixed}/{len(mismatches)}")
+        return
+
+    # Mode: Fix links (original functionality)
+    start_num = int(sys.argv[1])
+    count = int(sys.argv[2]) if len(sys.argv) > 2 else 5
 
     print(f"🔍 Finding {count} reviews from {start_num}...")
     problematic = find_problematic_reviews(start_num, count, reviews_dir)

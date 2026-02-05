@@ -1,4 +1,4 @@
-Review 186: HiPPO: Recurrent Memory with Optimal Polynomial Projections
+Review 187:HiPPO: Recurrent Memory with Optimal Polynomial Projections
 
 Paper: https://arxiv.org/abs/2008.07669v2
 הגענו למאמר השני בסדרה - המאמר הזה חשוב מאוד כי הוא מפתח בסיס מתמטי מוצק המשמש כל המודלים מבוססים על מערכות דינמיות לינאריות כולל כמובן ממבה. המאמר הזה קצת (די הרבה) כבד מתמטית אך אנסה לעשות כמיטב יכולתי כדי להעביר לכם את המסר העיקרי שהוא מביא איתו. 
