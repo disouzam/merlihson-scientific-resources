@@ -125,9 +125,9 @@
 122. AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING
 123. DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING
 124. TextDiffuser: Diffusion Models as Text Painters
-125. Self-Alignment with Instruction Backtranslation, 14.08.23https://huggingface.co/papers/2308.06259
-126. Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP, 15.08.23https://huggingface.co/papers/2308.02487
-127. Short : SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION, 16.08.23
+125. Self-Alignment with Instruction Backtranslation
+126. Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP
+127. SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION
 128. Dual-Stream Diffusion Net for Text-to-Video Generation, 17.08.23https://huggingface.co/papers/2308.08316
 129. 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)https://mdsoar.org/bitstream/handle/11603/25498/1117.pdf
 130. Watch Your Steps: Local Image and Scene Editing by Text Instructions, 26.08.23https://arxiv.org/abs/2211.09800.pdf
