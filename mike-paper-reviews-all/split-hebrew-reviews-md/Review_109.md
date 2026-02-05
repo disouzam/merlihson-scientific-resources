@@ -1,6 +1,6 @@
 Review 109: [Short] Scaling TransNormer to 175 Billion Parameters
 
-Paper: https://arxiv.org/abs/2307.14995
+Paper: https://huggingface.co/papers/2307.14995
 
 אתם יודעים שחישוב ה-attention בתוך הטרנספורמר הוא ריבועי במונחי אורך של הטקסט? יש כמה טריקים כמו FlashAttention שמנצלים את האופיינים של gpu ומצליחות להקטין משמעותית את מס' הפעולות אבל החישוב עדיין נותר די כבד. אבל לא עוד!!
 

@@ -1,4 +1,4 @@
-Review 110: [Short] RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950
+Review 110: [Short] RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT
 
 Paper: https://arxiv.org/abs/2307.12950v3
 
@@ -6,4 +6,4 @@ Paper: https://arxiv.org/abs/2307.12950v3
 
 היום ב-#shorthebrewpapereviews נסביר לכם איך לעשות זאת ללא צורך במתייגים האנושיים. הגישה שהמאמר הנסקר מציע היא די פשוטה: קודם כל מבקשים ממודל לתת שתי תשובות לשאלה הנתונה – אחת עניינית והשניה לא קשורה או אחת לא מזיקה והשנייה ממש מעליבה. אז התשובה הראשונה (והרצויה) מקבלת ציון 1 ושנייה מקבלת ציון 0.לאחר מכן מאמנים מודל התגמול על הציונים האלה וכך נחסך הצורך במתייגים האנושיים. 
 
-השלב השני הוא די סטנדרטי: מכיילים מודל שפה עם אחת השיטות של למידה עם חיזוקים (RL) המחברים של המאמר בחרו ב-PPO (Proximal Policy Optimization) כאשר בניית פונקציה התגמול עבורה מתבצעת בצורה דומה לשיטות כיול #LLM הקודמות שהשתמשו ב-RLHF.השלב השני הוא די סטנדרטי: מכיילים מודל שפה עם אחת השיטות של למידה עם חיזוקים (RL) המחברים של המאמר בחרו ב-PPO (Proximal Policy Optimization) כאשר בניית פונקציה התגמול עבורה מתבצעת בצורה דומה לשיטות כיול #LLM הקודמות שהשתמשו ב-RLHF.
+השלב השני הוא די סטנדרטי: מכיילים מודל שפה עם אחת השיטות של למידה עם חיזוקים (RL) המחברים של המאמר בחרו ב-PPO (Proximal Policy Optimization) כאשר בניית פונקציה התגמול עבורה מתבצעת בצורה דומה לשיטות כיול #LLM הקודמות שהשתמשו ב-RLHF.
