@@ -1,6 +1,7 @@
-Review 161: [Short] PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis
+Review 162:[Short] PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis
 
 Paper: https://arxiv.org/abs/2310.00426v3
+
 מאמר חמוד שמציע זירוז תהליכי האימון של מודלי דיפוזיה שידועים כמאוד יקרים ויוצרים כמויות גדולות של פליטת CO2. בגדול המאמר מציע לשלב כמה גישות לאימון שהוצעו בזמן האחרון. אז היום ב-#shorthebrewpapereviews סוקרים מאמר עם השם שמכיל מילה ״אומנות״ (משך את תשומת ליבי ללא ספק והיווה אחת הסיבות לכך שעיני נתפסה על המאמר הזה).
 
 אוקיי, אז מה הם בעצם עשו? קודם כל הם לקחו דאטהסט של תמונות (כמו LAION) ויצרו כותרות של התמונות בו באמצעות מודל חזק הנקרא LLAVA הטענה במאמר שכך נוצרות כותרות עשירות (סמנטית) הרבה יותר מהדאטהסט המקורי דבר שני, הם השתמשו בארכיטקטורת הטרנספורמרים כמודל לשערוך הרעש במודל דיפוזיה (במקום UNet).

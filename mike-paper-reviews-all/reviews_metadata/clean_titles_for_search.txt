@@ -152,7 +152,7 @@ Language Modeling Is Compression
 FreeU: Free Lunch in Diffusion U-Net
 CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transformers for Long Context Window Extending
 FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION
-Context is Environment, 26.09.2023
+Context is Environment
 CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS
 Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS
 End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23

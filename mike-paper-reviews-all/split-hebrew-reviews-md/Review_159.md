@@ -1,6 +1,7 @@
-Review 158: [Short] Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
+Review 159:[Short] Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
 
 Paper: https://arxiv.org/abs/2306.08877v3
+
 מודלי דיפוזיה מודרניים מצטיינים ביצירת תמונות באיכות מרהיבה מתיאור טקסטואלי (ובטח DALLe3) וברוב המקרים התמונה ממש מתאימה לתיאור. אולם עדיין יש מקרים שמודל מתבלבל למשל בין הצבעים של האובייקטים המופיעים בתיאור. היום ב-#shorthebrewpapereviews סוקרים מאמר 🇮🇱 המציע שיטה למניעת בלבול סמנטי בין תכונות האובייקטים בתמונה. 
 
 הגישה המוצעת הינה פשוטה ואלגנטית. בשלב הראשון המחברים בונים את גרף התלויות הסינטקטית של הפרופמט כלומר מפיקים את כל קבוצות המילים (נגיד שם עצם ושם תואר) המתאימים אחד לשני (כמו (ארנב, צהוב) או (כורסא, בסגנון, מלון). לאחר מכן המחברים מכיילים מודל שפה עם פונקציה לוס ש״מפקחת״ על הדיוק הסמנטי של האובייקטים בתמונה. 

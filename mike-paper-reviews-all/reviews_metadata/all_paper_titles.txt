@@ -152,7 +152,7 @@
 152. FreeU: Free Lunch in Diffusion U-Net
 153. CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transformers for Long Context Window Extending
 154. FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION
-155. Context is Environment, 26.09.2023
+155. Context is Environment
 156. CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS
 157. Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS
 158. End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
