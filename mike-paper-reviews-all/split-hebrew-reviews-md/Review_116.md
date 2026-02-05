@@ -1,4 +1,4 @@
-Review 116: [Short] Multimodal Neurons in Pretrained Text-Only Transformers, 05.08.23https://huggingface.co/papers/2308.01544
+Review 116: [Short] Multimodal Neurons in Pretrained Text-Only Transformers
 
 Paper: https://arxiv.org/abs/2308.01544v2
 

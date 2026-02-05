@@ -1,4 +1,4 @@
-Review 115: [Short] From Sparse to Soft Mixtures of Experts, 03.08.23https://huggingface.co/papers/2308.00951
+Review 115: [Short] From Sparse to Soft Mixtures of Experts
 
 Paper: https://arxiv.org/abs/2308.00951v2
 

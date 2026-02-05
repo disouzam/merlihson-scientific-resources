@@ -1,4 +1,4 @@
-Review 114: [Short] WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Modelshttps://huggingface.co/papers/2306.04744
+Review 114: [Short] WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Models
 
 Paper: https://arxiv.org/abs/2306.04744v3
 
