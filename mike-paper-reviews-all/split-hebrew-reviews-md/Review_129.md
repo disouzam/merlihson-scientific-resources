@@ -1,4 +1,4 @@
-Review 128: [Short] 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)https://mdsoar.org/bitstream/handle/11603/25498/1117.pdf
+Review 129:[Short] 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)
 
 Paper: https://arxiv.org/abs/2210.08218v1
 

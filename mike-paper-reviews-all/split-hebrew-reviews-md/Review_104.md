@@ -1,4 +1,4 @@
-Review 104: [Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf
+Review 104:[Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction
 
 Paper: https://arxiv.org/abs/2312.03035v1
 

@@ -102,7 +102,7 @@ Review_100,Fastformer: Additive attention is Can Be All you need,https://arxiv.o
 Review_101,GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models,https://arxiv.org/abs/2112.10741v3
 Review_102,TokenFlow: Consistent Diffusion Features for Consistent Video Editing,https://arxiv.org/abs/2307.10373v3
 Review_103,"Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23",https://arxiv.org/abs/2307.10802
-Review_104,"Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf",https://arxiv.org/abs/2312.03035v1
+Review_104,Evaluating machine comprehension of sketch meaning at different levels of abstraction,https://arxiv.org/abs/2312.03035v1
 Review_105,"Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23",https://arxiv.org/abs/2307.11118v1
 Review_106,Interpolating between Images with Diffusion Models,https://arxiv.org/abs/2307.12560v1
 Review_107,LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition,https://arxiv.org/abs/2307.13269v3
@@ -127,9 +127,9 @@ Review_125,Self-Alignment with Instruction Backtranslation,https://arxiv.org/abs
 Review_126,Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP,https://arxiv.org/abs/2308.02487v2
 Review_127,SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION,https://arxiv.org/abs/2308.07921v1
 Review_128,Dual-Stream Diffusion Net for Text-to-Video Generation,https://arxiv.org/abs/2308.08316v3
-Review_129,18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)https://mdsoar.org/bitstream/handle/11603/25498/1117.pdf,https://arxiv.org/abs/2210.08218v1
+Review_129,18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין),https://arxiv.org/abs/2210.08218v1
 Review_130,Watch Your Steps: Local Image and Scene Editing by Text Instructions,https://arxiv.org/abs/2308.08947v1
-Review_131,"SeamlessM4T—Massively Multilingual & Multimodal Machine Translation, 27.08.23https://ai.meta.com/research/publications/seamless-m4t",https://arxiv.org/abs/2308.11596v3
+Review_131,SeamlessM4T—Massively Multilingual & Multimodal Machine Translation,https://arxiv.org/abs/2308.11596v3
 Review_132,28.08.23: Nougat: Neural Optical Understanding for Academic Documents,https://arxiv.org/abs/2308.13418v1
 Review_133,"Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models",https://arxiv.org/abs/2305.16582v2
 Review_134,OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models,https://arxiv.org/abs/2308.13137v3
@@ -142,7 +142,7 @@ Review_140,Unsupervised Compositional Concepts Discovery with Text-to-Image Gene
 Review_141,One Wide Feedforward is All You Need,https://arxiv.org/abs/2309.01826v2
 Review_142,DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS,https://arxiv.org/abs/2309.03883v2
 Review_143,LARGE LANGUAGE MODELS AS OPTIMIZERS,https://arxiv.org/abs/2309.03409
-Review_144,"Explaining grokking through circuit efficiency, 11.09.2023",https://arxiv.org/abs/2309.02390v1
+Review_144,Explaining grokking through circuit efficiency,https://arxiv.org/abs/2309.02390v1
 Review_145,Transformers as Support Vector Machines,https://arxiv.org/abs/2308.16898
 Review_146,Textbooks Are All You Need II: phi-1.5 technical report,https://arxiv.org/abs/2309.05463v1
 Review_147,Reinforced Self-Training (ReST) for Language Modeling,https://arxiv.org/abs/2308.08998v2

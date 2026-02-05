@@ -1,4 +1,4 @@
-Review 130: SeamlessM4T—Massively Multilingual & Multimodal Machine Translation, 27.08.23https://ai.meta.com/research/publications/seamless-m4t
+Review 131:SeamlessM4T—Massively Multilingual & Multimodal Machine Translation
 
 Paper: https://arxiv.org/abs/2308.11596v3
 
