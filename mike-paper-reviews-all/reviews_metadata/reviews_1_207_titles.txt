@@ -160,8 +160,8 @@
 157. Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS
 158. End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
 159. Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
-160. Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization, 02.10.2023
-161. Vision Transformers Need Registershttps://arxiv.org/abs/2309.16588
+160. Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization
+161. Vision Transformers Need Registers
 162. PixArt-α: Fast Training of Diffusion Transformer for Photorealistic Text-to-Image Synthesis
 163. Think before you speak: Training Language Models With Pause Tokens
 164. Idea2Img: Iterative Self-Refinement with GPT-4V(ision) for Automatic Image Design and Generation
