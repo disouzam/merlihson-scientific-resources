@@ -122,3 +122,35 @@ else
     echo -e "   ${BLUE}cd .repo-tools/scripts && ./schedule_daily_job.sh${NC}"
 fi
 echo
+
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}   📱 Optional: Telegram Channel Automation${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo
+echo -e "Would you like to set up automated Telegram uploads?"
+echo -e "This will upload reviews to your Telegram channels at 11:00 AM daily."
+echo -e "${YELLOW}Note: You need Telegram bots and channel IDs first.${NC}"
+echo
+read -p "Set up Telegram automation? (y/n): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo -e "${YELLOW}📱 Setting up Telegram automation...${NC}"
+    echo ""
+    echo -e "${YELLOW}First, you need to:${NC}"
+    echo "  1. Create Telegram bots via @BotFather"
+    echo "  2. Add bots to your channels as admins"
+    echo "  3. Get channel IDs"
+    echo ""
+    echo -e "See detailed instructions: ${BLUE}.repo-tools/docs/TELEGRAM_SETUP.md${NC}"
+    echo ""
+    echo "After setting up bots, run:"
+    echo -e "  ${BLUE}cd .repo-tools/scripts${NC}"
+    echo -e "  ${BLUE}cp telegram_config.yaml.template telegram_config.yaml${NC}"
+    echo -e "  ${BLUE}nano telegram_config.yaml${NC}  # Fill in your credentials"
+    echo -e "  ${BLUE}./schedule_telegram_job.sh${NC}"
+else
+    echo -e "${YELLOW}⏭️  Skipping Telegram automation setup${NC}"
+    echo -e "   You can set it up later by following:"
+    echo -e "   ${BLUE}.repo-tools/docs/TELEGRAM_SETUP.md${NC}"
+fi
+echo

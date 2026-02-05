@@ -82,6 +82,41 @@ The system is now set up and will automatically:
 
 ---
 
+## 📱 Optional: Telegram Channel Automation
+
+Want reviews automatically uploaded to your Telegram channels at 11:00 AM?
+
+### Quick Setup (20 minutes):
+
+1. **Create Telegram bots** via @BotFather (2 bots: Hebrew + English)
+2. **Add bots** to your channels as admins
+3. **Get channel IDs** using Bot API
+4. **Configure script:**
+   ```bash
+   cd .repo-tools/scripts
+   cp telegram_config.yaml.template telegram_config.yaml
+   nano telegram_config.yaml  # Fill in bot tokens and channel IDs
+   ```
+5. **Install automation:**
+   ```bash
+   ./schedule_telegram_job.sh
+   ```
+
+**Full instructions:** [.repo-tools/docs/TELEGRAM_SETUP.md](.repo-tools/docs/TELEGRAM_SETUP.md)
+
+**What it does:**
+- Checks git log for reviews added in last 24 hours
+- Uploads Hebrew reviews → Hebrew channel
+- Uploads English reviews → English channel
+- Automatically splits long messages
+- Prevents duplicates
+
+**Timeline:**
+- 5:00 AM → Reviews processed and pushed to GitHub
+- 11:00 AM → Reviews uploaded to Telegram channels
+
+---
+
 ## 📖 Daily Workflow
 
 ### Option 1: Fully Automatic (Recommended)
@@ -325,6 +360,19 @@ When you push to main branch:
 - ✅ Updates README statistics
 - ✅ Updates cosmic-neural-header.svg
 - ✅ Commits and pushes changes
+
+### Telegram Upload Job (11:00 AM) - Optional
+If configured, uploads reviews to Telegram channels:
+- ✅ Checks git log for reviews added in last 24 hours
+- ✅ Reads markdown from repo
+- ✅ Checks for duplicates (local log + channel history)
+- ✅ Splits long messages at paragraph boundaries
+- ✅ Uploads Hebrew reviews → Hebrew channel
+- ✅ Uploads English reviews → English channel
+- ✅ Supports Telegram markdown formatting
+- ✅ Logs all uploads
+
+**Setup:** See [.repo-tools/docs/TELEGRAM_SETUP.md](.repo-tools/docs/TELEGRAM_SETUP.md)
 
 ---
 

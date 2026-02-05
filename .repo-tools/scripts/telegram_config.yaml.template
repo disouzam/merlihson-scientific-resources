@@ -1,0 +1,48 @@
+# Telegram Bot Configuration Template
+#
+# SETUP INSTRUCTIONS:
+# 1. Copy this file: cp telegram_config.yaml.template telegram_config.yaml
+# 2. Fill in your bot tokens and channel IDs below
+# 3. Keep telegram_config.yaml private (it's in .gitignore)
+#
+# HOW TO GET BOT TOKENS:
+# 1. Open Telegram and message @BotFather
+# 2. Send /newbot and follow instructions
+# 3. You'll receive a token like: 123456789:ABCdefGHIjklMNOpqrsTUVwxyz
+#
+# HOW TO GET CHANNEL IDs:
+# 1. Add your bot as admin to your channel
+# 2. Send a test message to the channel
+# 3. Visit: https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+# 4. Find "chat":{"id":-1001234567890} - that's your channel ID
+#
+# See .repo-tools/docs/TELEGRAM_SETUP.md for detailed instructions
+
+# Hebrew Channel Configuration
+hebrew_channel:
+  # Bot token from @BotFather
+  bot_token: "YOUR_HEBREW_BOT_TOKEN_HERE"
+
+  # Channel ID (usually negative number like -1001234567890)
+  channel_id: "YOUR_HEBREW_CHANNEL_ID_HERE"
+
+# English Channel Configuration
+english_channel:
+  # Bot token from @BotFather
+  bot_token: "YOUR_ENGLISH_BOT_TOKEN_HERE"
+
+  # Channel ID (usually negative number like -1001234567890)
+  channel_id: "YOUR_ENGLISH_CHANNEL_ID_HERE"
+
+# Optional Settings (defaults shown)
+settings:
+  # Telegram message length limit
+  max_message_length: 4096
+
+  # How many recent messages to check for duplicates
+  check_history_depth: 100
+
+  # Retry failed uploads
+  retry_on_failure: true
+  retry_count: 2
+  retry_delay_seconds: 5

@@ -31,6 +31,9 @@ env/
 # Logs
 *.log
 
+# Telegram credentials (DO NOT COMMIT)
+.repo-tools/scripts/telegram_config.yaml
+
 # Temporary files
 *.tmp
 *.temp
