@@ -1,6 +1,6 @@
-⚡🚀:המאמר היומי של מייק 09.06.24⚡🚀
+Review 219: What Do Language Models Learn in Context? The Structured Task Hypothesis.
 
-What Do Language Models Learn in Context? The Structured Task Hypothesis.
+⚡🚀המאמר היומי של מייק 09.06.24⚡🚀
 
 המאמר הזה תפס את עיניי כי הוא מנסה לפתור את תעלומת in context Learning או ICL. היכולת של מודלי שפה לבצע משימות שלא אומנו עליהם באופן מפורש על לאחר הצגה של כמה דוגמאות(שאלה, תשובה) היא לא פחות ממדהימה ועדיין אין תשובה חד משמעות המסבירה מה אכן קורה שם.
 

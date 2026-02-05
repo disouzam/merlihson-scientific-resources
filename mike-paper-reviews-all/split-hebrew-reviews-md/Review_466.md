@@ -1,4 +1,6 @@
-המאמר היומי של יניב ומייק: 09.06.25Spurious Rewards: Rethinking Training Signals in RLVR – Fast Overview
+Review 466:Spurious Rewards: Rethinking Training Signals in RLVR – Fast Overview
+
+המאמר היומי של יניב ומייק: 09.06.25
 
 המסר המרכזי במשפט אחד גם תגמולים אקראיים או שגויים יכולים להביא לשיפור דרמטי ביכולות פתרון בעיות מתמטיות – אבל רק אם המודל כבר "מכיר" את הדרך מהפרה-טריינינג.
 

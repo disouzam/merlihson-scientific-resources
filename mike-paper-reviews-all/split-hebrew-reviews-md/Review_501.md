@@ -1,4 +1,6 @@
-המאמר היומי של עדן ומייק 23.08.25MemOS: An Operating System for Memory-Augmented Generation (MAG) in Large Language Models
+Review 501:MemOS: An Operating System for Memory-Augmented Generation (MAG) in Large Language Models
+
+המאמר היומי של עדן ומייק 23.08.25
 
 מבוא: 
 

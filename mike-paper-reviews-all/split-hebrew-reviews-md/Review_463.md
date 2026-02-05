@@ -1,4 +1,6 @@
-המאמר היומי של יניב ומייק: 03.06.25Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn’t
+Review 463:Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn’t
+
+המאמר היומי של יניב ומייק: 03.06.25
 
 מודלי Reasoning כמו GPT-o1 של OpenAI חוללו מהפכה ביכולת ההסקה לטובת פתרון בעיות מתמטיות מורכבות ועד כתיבת קוד אלגנטי הודות למשאבי חישוב עצומים ומאגרי נתונים עצומים שאומנו באמצעות למידה מחיזוקים לבצע חשיבה לוגית. אך האם מודלים קטנים וזולים יותר יכולים להגיע להישגים דומים? מאמר חדש מאת עוסק בדיוק בשאלה הזו.
 

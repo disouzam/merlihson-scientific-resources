@@ -1,3 +1,5 @@
+Review 510:
+
 המאמר היומי של טדי ומייק: 12.09.25
 
 Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making

@@ -1,3 +1,5 @@
+Review 479:
+
 המאמר היומי של טדי מייק 01.07.2025
 
 DINO-WM:World Models on Pre-trained Visual Features enable Zero-shot Planning
