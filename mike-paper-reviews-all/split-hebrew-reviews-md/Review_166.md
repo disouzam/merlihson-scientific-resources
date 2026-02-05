@@ -1,8 +1,7 @@
-Review 165: [Short] LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models
+Review 166:[Short] LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models
 
 Paper: https://arxiv.org/abs/2310.08659v4
 
-https://huggingface.co/papers/2310.08659
 
 כולכם מכירים את LoRA (Low Rank Adaptation) – שיטה מאוד פופולרית לטיוב מודל שפה. יצאו כבר כמה מאמרים שמשכללים את השיטה הזו והיום ב-#shorthebrewpapereviews נסקור את אחד השכלולים האלו. קודם כל נרענן מה זה LoRA. 
 

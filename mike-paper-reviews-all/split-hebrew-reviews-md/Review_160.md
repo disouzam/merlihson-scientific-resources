@@ -1,8 +1,7 @@
-Review 159: [Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization, 02.10.2023
+Review 160:[Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization
 
 Paper: https://arxiv.org/abs/2306.09222v5
 
-https://openreview.net/forum?id=EhK6wBBJNS
 
 האם כל הדוגמאות בדאטהסט שלכם שווים? כשאתם מאמנים מודל שלכם (נגיד רשת נוירונים) אתם עושים זאת עם באצ'ים כאשר כל דוגמא בבאץ' תורמת לעדכון המשקלים באותה מידה (לפי ערך הגרדיאנט בה).  אבל האם זה אופטימלי? היום ב-#shorthebrewpapereviews אנו סוקרים מאמר שמציע שיטה למשקול של תרומת הדוגמאות לעדכון משקלי המודל פרופורציאונלית לאקספוננט של ערך של פונקציית בה.
 
