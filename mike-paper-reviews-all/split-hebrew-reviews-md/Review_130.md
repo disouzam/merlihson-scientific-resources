@@ -1,4 +1,4 @@
-Review 129: [Short] Watch Your Steps: Local Image and Scene Editing by Text Instructions,  26.08.23https://arxiv.org/abs/2211.09800.pdf
+Review 130:[Short] Watch Your Steps: Local Image and Scene Editing by Text Instructions
 
 Paper: https://arxiv.org/abs/2308.08947v1
 

@@ -1,4 +1,4 @@
-Review 131: [Short] 28.08.23:  Nougat: Neural Optical Understanding for Academic Documentshttps://arxiv.org/abs/2308.13418.pdf
+Review 132:[Short] 28.08.23:  Nougat: Neural Optical Understanding for Academic Documents
 
 Paper: https://arxiv.org/abs/2308.13418v1
 

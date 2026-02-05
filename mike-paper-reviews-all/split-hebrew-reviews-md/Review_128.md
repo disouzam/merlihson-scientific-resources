@@ -1,4 +1,4 @@
-Review 127: [Short] Dual-Stream Diffusion Net for Text-to-Video Generation, 17.08.23https://huggingface.co/papers/2308.08316
+Review 128:[Short] Dual-Stream Diffusion Net for Text-to-Video Generation
 
 Paper: https://arxiv.org/abs/2308.08316v3
 
