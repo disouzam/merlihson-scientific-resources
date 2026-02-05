@@ -202,7 +202,7 @@
 199. Improving Text Embeddings with Large Language Models
 200. LLM2Vec: Large Language Models Are Secretly Powerful Text Encoder
 201. SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series
-202. ZigMa: A DiT-style Zigzag Mamba Diffusion Modelhttps://arxiv.org/abs/2403.13802
+202. ZigMa: A DiT-style Zigzag Mamba Diffusion Model
 203. SimPO: Simple Preference Optimization with a Reference-Free Reward
 204. Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts
 205. Simple linear attention language models balance the recall-throughput tradeoff
