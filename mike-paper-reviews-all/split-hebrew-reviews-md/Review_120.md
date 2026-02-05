@@ -1,4 +1,4 @@
-Review 119: [Short] FLIRT: Feedback Loop In-context Red Teaming, 09.08.23https://huggingface.co/papers/2308.04265
+Review 120: [Short] FLIRT: Feedback Loop In-context Red Teaming
 
 Paper: https://arxiv.org/abs/2308.04265v2
 
