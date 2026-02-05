@@ -30,7 +30,9 @@ def count_paper_links(content: str) -> int:
     patterns = [
         r'arxiv\.org/abs/',
         r'huggingface\.co/papers/',
-        r'openreview\.net'
+        r'openreview\.net',
+        r'openai\.com/research/',
+        r'cdn\.openai\.com/papers/'
     ]
     count = 0
     for pattern in patterns:
@@ -116,10 +118,15 @@ def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None)
     for i, line in enumerate(lines):
         if i != paper_line_idx:
             stripped = line.strip()
-            # Remove any standalone arxiv, HuggingFace, OpenReview, or Hebrew paper links
+            # Remove any standalone paper links (arxiv, HuggingFace, OpenReview, OpenAI, Hebrew)
+            # Also handle lines with multiple URLs separated by commas
             if (stripped.startswith('https://arxiv.org/abs/') or
                 stripped.startswith('https://huggingface.co/papers/') or
                 stripped.startswith('https://openreview.net/') or
+                stripped.startswith('https://openai.com/') or
+                stripped.startswith('https://cdn.openai.com/') or
+                stripped.startswith('http://openai.com/') or
+                stripped.startswith('http://cdn.openai.com/') or
                 stripped.startswith('למאמר:')):
                 continue
         cleaned_lines.append(line)
