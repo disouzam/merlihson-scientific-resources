@@ -1,4 +1,4 @@
-Review 147: Generative Image Dynamicshttps://huggingface.co/papers/2309.07906
+Review 148:Generative Image Dynamics
 
 Paper: https://arxiv.org/abs/2309.07906v3
 

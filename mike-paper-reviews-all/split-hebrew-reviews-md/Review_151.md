@@ -1,8 +1,7 @@
-Review 150: Language Modeling Is Compression, 21.09.2023
+Review 151:Language Modeling Is Compression
 
 Paper: https://arxiv.org/abs/2309.10668v2
 
-https://huggingface.co/papers/2309.10668
 
 מאמר זה משך את ליבי מיד כשראיתי את הכותרת. הרי יש לא מעט קשרים בין מודלי חיזוי לבין מודלי כניסה. מאוד מאוד בגדול מודל חיזוי חזק אמור להפיק את פיצ'רים המהותיים ביותר של הדאטה הנחוצים לחיזוי ואותם הפיצ'רים ניתן לנצל לדחיסת הדאטה. 
 

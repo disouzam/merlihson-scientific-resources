@@ -1,8 +1,7 @@
-Review 148: Knowledge Graph Prompting for Multi-Document Question Answering, 17.09.23
+Review 149:Knowledge Graph Prompting for Multi-Document Question Answering, 17.09.23
 
 Paper: https://arxiv.org/abs/2308.11730v3
 
-https://arxiv.org/abs/2308.11730סקירה זו נכתבה על ידי עדן יבין
 
 אנחנו יודעים שמודלי שפה יודעים לענות על שאלות על גבי מסמכים אם בצורת zero shot או בצורת few shot אבל מה עם המקרה שבו צריך להסתכל על מסמכים שונים כדי לקבל תשובה? או להשוות בין שני מסמכים בעלי מבנה שונה (טבלה וטקסט חופשי)? ספוילר, לא טוב. היום ב-#shorthebrewpapereviews קבלו את הסקירה הבאה:
 
