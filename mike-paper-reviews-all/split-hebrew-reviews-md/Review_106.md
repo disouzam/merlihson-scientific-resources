@@ -1,4 +1,4 @@
-Review 106: Interpolating between Images with Diffusion Models, 25.07.23https://arxiv.org/abs/2307.12560.pdf
+Review 106: Interpolating between Images with Diffusion Models
 
 Paper: https://arxiv.org/abs/2307.12560v1
 
