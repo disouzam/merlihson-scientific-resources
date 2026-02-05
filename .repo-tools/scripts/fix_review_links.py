@@ -2,14 +2,38 @@
 """
 Skill: Fix Review Links
 Automatically fixes common issues in review markdown files:
+
+LINK FIXES:
 - Corrects wrong review numbers
 - Removes duplicate links (arxiv/HuggingFace/OpenReview)
-- Removes dates from titles
+- Converts PDF links to abs links (arxiv.org/pdf/ → arxiv.org/abs/)
+- Verifies paper link matches review title
+- Auto-corrects wrong paper links by searching arXiv
+
+HEADER FIXES:
+- Adds missing "Review X:" headers
+- Replaces Hebrew titles with English paper titles
+- Extracts English titles from mixed Hebrew/English line 1
+- Completes truncated titles by finding full version
+- Adds proper spacing after "Review X:" colon
+- Moves misplaced titles from line 5 to line 1
+
+DUPLICATE REMOVAL:
+- Removes standalone duplicate title lines
+- Removes duplicate titles stuck to daily markers
+- Handles partial title matches and variations
+
+FORMATTING:
 - Separates embedded links from titles
 - Separates daily markers from paper titles
 - Fixes attached text on daily marker lines
-- Verifies paper link matches review title
-- Auto-corrects wrong paper links by searching arXiv
+- Removes dates from titles
+- Normalizes spacing after Paper: line
+
+Usage:
+  python3 fix_review_links.py <start> [count]           # Fix reviews with multiple links
+  python3 fix_review_links.py --fix-all <start> <end>   # Fix all formatting issues
+  python3 fix_review_links.py ... --push                # Auto-commit and push to GitHub
 """
 
 import re
