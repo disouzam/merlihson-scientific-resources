@@ -1,4 +1,4 @@
-Review 112: [Short] Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding, 31.07.23https://huggingface.co/papers/2307.15337
+Review 112: [Short] Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding
 
 Paper: https://arxiv.org/abs/2307.15337v3
 
