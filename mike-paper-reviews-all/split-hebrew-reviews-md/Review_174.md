@@ -1,8 +1,6 @@
-Review 173: [Short] Teaching Language Models to Self-Improve through Interactive Demonstrations
+Review 174:[Short] Teaching Language Models to Self-Improve through Interactive Demonstrations
 
-Paper: https://arxiv.org/abs/1909.04157v1
-
-https://huggingface.co/papers/2310.13522
+Paper: https://arxiv.org/abs/2310.13522
 
 ממודלי דיפוזיה שסקרנו אתמול עוברים לאייטם פופולרי אפילו אפילו מהם כלומר מודלי שפה ענקיים (LLMs). המאמר שנסקור היום מציע שיטה לאימון LLMs קטנים יחסית (מיליארדי פרמטרים בודדים) לפתרון בעיות מתמטיות מורכבות (נניח כאלו שמכילות הרבה פעולות).
 

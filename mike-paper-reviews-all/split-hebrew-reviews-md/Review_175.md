@@ -1,8 +1,6 @@
-Review 174: In-Context Learning Creates Task Vectors
+Review 175:In-Context Learning Creates Task Vectors
 
-Paper: https://arxiv.org/abs/2311.06668v3
-
-https://huggingface.co/papers/2310.15916
+Paper: https://arxiv.org/abs/2310.15916
 
 אחד היכולות המדהימות של מודלי שפה ענקיים היא יכולת למידת in-context או ICL בקצרה. ICL היא יכולת של LLM ללמוד מכמה דוגמאות בלי לשנות בכלל את המשקלים שלו. כלומר אנו מעבירים למודל שפה כמה דוגמאות בסגנון (מלון -> צהוב, מלפפון -> ירוק,..) ולאחר המכן אם תזינו למודל ״בננה -> …״, הוא יבין שמדובר בצבע ויענה צהוב. 
 

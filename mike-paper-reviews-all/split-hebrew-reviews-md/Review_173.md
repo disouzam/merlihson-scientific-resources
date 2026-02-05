@@ -1,8 +1,6 @@
-Review 172: [Short] Localizing and Editing Knowledge in Text-to-Image Generative Models
+Review 173:[Short] Localizing and Editing Knowledge in Text-to-Image Generative Models
 
-Paper: https://arxiv.org/abs/2405.01008v2
-
-https://huggingface.co/papers/2310.13730
+Paper: https://arxiv.org/abs/2310.13730
 
 מודלי דיפוזיה ממשיכים לשלוט ב AI גנרטיבי כבר זמן מה ואחד נושאי המחקר החמים ביותר בנושא הזה הוא עריכת תמונות המגונרטות עם מודלים אלו. לאחרונה יצאו לא מעט שיטות שמצליחות למשל להוריד אובייקט מתמונה, להחליף אותו לאובייקט אחר או לשנות את סגנון התמונה. המאמר שנסקור היום מציע שיטה לעריכת תמונות המגונרטות עם מודלי דיפוזיה בצורה מאוד אלגנטית המתבסס על ההבנה של מה שקורה בתוך מודל הדיפוזיה (שזה אנקודר של טקסט ומודל המסיר רעש מתמונה UNet בכל איטרציה). 
 

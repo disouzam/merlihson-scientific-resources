@@ -1,8 +1,6 @@
-Review 175: [Short] A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation
+Review 176:[Short] A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation
 
 Paper: https://arxiv.org/abs/2310.16656v1
-
-https://huggingface.co/papers/2310.16656
 
 אוקיי, מכיוון שהסקירה הזו היא סקירה של שבת, אז היא (הסקירה) הולכת להיות יותר קלילה ויותר קצרה מהרגיל. אחרי שאתמול סקרנו מאמר על מודלי שפה היום חוזרים למודלי דיפוזיה. המאמר המסוקר מציע שיטה די פשוטה לשיפור של מודל דיפוזיה טקסטואלי ההופך תיאור טקסטואלי לתמונה. המודל המשופר מצליח לייצר תמונות מתאימות יותר לתיאור הטקסטואלי בצורה מדויקת יותר. השיטה המוצעת מכילה 3 שלבים:
 

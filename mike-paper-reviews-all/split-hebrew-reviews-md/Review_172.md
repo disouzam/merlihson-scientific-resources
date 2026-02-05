@@ -1,8 +1,6 @@
-Review 171: Matryoshka Diffusion Models
+Review 172:Matryoshka Diffusion Models
 
 Paper: https://arxiv.org/abs/2310.15111v2
-
-https://huggingface.co/papers/2310.15111
 
 סקירה של היום היא על שילוב של מילה ברוסית (מטריושקה או בבושקה בעברית) ומודלי דיפוזיה. משתמע מכך נדבר על הרבה מודלי דיפוזיה אחת בתוך השנייה כמו שמקובל במטריושקה. אז היום ב-#shorthebrewpapereviews סוקרים מאמר שלקח רעיון של ProGAN והטיל אותו על מודלי דיפוזיה.
 
