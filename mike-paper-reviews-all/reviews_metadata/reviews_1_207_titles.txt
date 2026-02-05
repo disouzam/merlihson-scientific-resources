@@ -137,13 +137,13 @@
 134. OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models
 135. LM-INFINITE: SIMPLE ON-THE-FLY LENGTH GENERALIZATION FOR LARGE LANGUAGE MODELS
 136. ORES: Open-vocabulary Responsible Visual Synthesis
-137. Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images, 03.09.2023
-138. YaRN: Efficient Context Window Extension of Large Language Models, 04.09.2023
-139. G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment, 05.09.2023
-140. Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models, 06.09.2023
-141. One Wide Feedforward is All You Need, 07.09.2023
-142. DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS, 08.09.2023
-143. LARGE LANGUAGE MODELS AS OPTIMIZERS, 09.09.2023
+137. Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images
+138. YaRN: Efficient Context Window Extension of Large Language Models
+139. G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment
+140. Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models
+141. One Wide Feedforward is All You Need
+142. DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS
+143. LARGE LANGUAGE MODELS AS OPTIMIZERS
 144. Explaining grokking through circuit efficiency, 11.09.2023
 145. Transformers as Support Vector Machines
 146. Textbooks Are All You Need II: phi-1.5 technical report
