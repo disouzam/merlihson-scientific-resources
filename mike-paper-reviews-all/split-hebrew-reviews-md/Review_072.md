@@ -14,8 +14,6 @@ Paper: https://arxiv.org/abs/2306.08302v3
 
 דרכים לבנות מודלים המשלבים LLM ו-KG?
 
-המחברים גם דנים בכיווני מחקר עתידיים ומשרטטים ״מפת דרכים״ עבורם. 
-
-Paper: https://arxiv.org/abs/2306.08302
+המחברים גם דנים בכיווני מחקר עתידיים ומשרטטים ״מפת דרכים״ עבורם.
 
 Github: https://github.com/RManLuo/Awesome-LLM-KG
