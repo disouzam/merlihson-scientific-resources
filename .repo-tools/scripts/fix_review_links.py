@@ -404,20 +404,32 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
         return False, f"Error: {str(e)}"
 
 
-def fix_review_number_only(filepath: Path) -> Tuple[bool, str]:
-    """Fix only the review number in a file (for reviews with just 1 link)."""
+def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
+    """Fix review number and spacing in a file (for reviews with just 1 link)."""
     try:
         content = filepath.read_text(encoding='utf-8')
         original_content = content
+        changes = []
 
         correct_number = extract_review_number(filepath.name)
         if correct_number == 0:
             return False, "Could not extract review number"
 
+        # Fix review number
         new_content = fix_review_header(content, correct_number)
         if new_content != content:
-            filepath.write_text(new_content, encoding='utf-8')
-            return True, "Fixed review number"
+            changes.append("Fixed review number")
+            content = new_content
+
+        # Normalize spacing after Paper: line
+        new_content = normalize_paper_link_spacing(content)
+        if new_content != content:
+            changes.append("Normalized spacing")
+            content = new_content
+
+        if content != original_content:
+            filepath.write_text(content, encoding='utf-8')
+            return True, "; ".join(changes)
 
         return False, "No changes needed"
 
@@ -470,40 +482,38 @@ def find_numbering_mismatches(start_num: int, end_num: int, reviews_dir: Path) -
 def main():
     if len(sys.argv) < 2:
         print("Usage: fix_review_links.py <start> [count]")
-        print("       fix_review_links.py --fix-numbers <start> <end>")
+        print("       fix_review_links.py --fix-all <start> <end>")
         sys.exit(1)
 
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent.parent
     reviews_dir = repo_root / "mike-paper-reviews-all" / "split-hebrew-reviews-md"
 
-    # Mode: Fix numbering mismatches
-    if sys.argv[1] == '--fix-numbers':
+    # Mode: Fix all formatting (numbers + spacing) for ALL reviews
+    if sys.argv[1] == '--fix-all':
         if len(sys.argv) < 4:
-            print("Usage: fix_review_links.py --fix-numbers <start> <end>")
+            print("Usage: fix_review_links.py --fix-all <start> <end>")
             sys.exit(1)
 
         start_num = int(sys.argv[2])
         end_num = int(sys.argv[3])
 
-        print(f"🔍 Checking for numbering mismatches in reviews {start_num}-{end_num}...")
-        mismatches = find_numbering_mismatches(start_num, end_num, reviews_dir)
-
-        if not mismatches:
-            print("✓ No numbering mismatches found")
-            return
-
-        print(f"Found {len(mismatches)} reviews with wrong numbers")
-        print("\n🔧 Fixing...")
+        print(f"🔍 Checking reviews {start_num}-{end_num} for formatting issues...")
 
         fixed = 0
-        for filepath in mismatches:
-            was_modified, desc = fix_review_number_only(filepath)
+        checked = 0
+        for i in range(start_num, end_num + 1):
+            filepath = reviews_dir / f"Review_{i:03d}.md"
+            if not filepath.exists():
+                continue
+
+            checked += 1
+            was_modified, desc = fix_review_number_and_spacing(filepath)
             if was_modified:
                 print(f"✓ {filepath.name}: {desc}")
                 fixed += 1
 
-        print(f"\n✅ Fixed {fixed}/{len(mismatches)}")
+        print(f"\n✅ Checked {checked} reviews, fixed {fixed}")
         return
 
     # Mode: Fix links (original functionality)
