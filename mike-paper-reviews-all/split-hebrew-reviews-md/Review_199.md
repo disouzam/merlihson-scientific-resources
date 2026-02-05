@@ -1,8 +1,6 @@
-Review 198: Improving Text Embeddings with Large Language Models
+Review 199:Improving Text Embeddings with Large Language Models
 
-Paper: https://arxiv.org/abs/2402.15449v2
-
-https://arxiv.org/abs/2401.00368
+Paper: https://arxiv.org/abs/2401.00368
 
 הסקירה הזו תהיה לא סטנדרטית ואתחיל אותה משאלה: למה בחרתי לסקור את המאמר הזה? 
 

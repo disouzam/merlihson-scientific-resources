@@ -1,8 +1,6 @@
-Review 181: [Short] Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models
+Review 182:[Short] Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models
 
 Paper: https://arxiv.org/abs/2312.04410v1
-
-https://huggingface.co/papers/2312.04410
 
 בסקירתנו היום נדבר איך אנחנו יכולים ״לסדר״ את המרחב הלטנטי של מודלי דיפוזיה גנרטיביים. המאמר מנסה ״לסדר״ את המרחב הלטנטי של מודלי דיפוזיה. בשביל להבין מה זה המרחב הלטנטי של מודלי דיפוזיה הוא למעשה מרחב של וקטורים גאוסיים סטנדרטים שהמימד שלהם שווה למימד שאנקודר מקודד כל תמונה אליו. למי שכח על מה אני מדבר כאן אזכיר כי מודלי דיפוזיה לטנטיים מייצרים ייצוג לטנטי של תמונה על ידי ניקוי הדרגתי (באיטרציות) של הרעש מוקטור גאוסי סטנדרטי (backward process). 
 

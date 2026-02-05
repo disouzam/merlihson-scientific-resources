@@ -193,18 +193,18 @@ Review_191,Hungry Hungry Hippos: Towards Language Modeling with State Space Mode
 Review_192,Hyena Hierarchy: Towards Larger Convolutional Language Models,https://arxiv.org/abs/2302.10866v3
 Review_193,RWKV: Reinventing RNNs for the Transformer Era,https://arxiv.org/abs/2305.13048v2
 Review_194,Retentive Network: A Successor to Transformer for Large Language Models,https://arxiv.org/abs/2307.08621v4
-Review_195,Mamba: Linear-Time Sequence Modeling with Selective State Spaces,https://arxiv.org/abs/2507.06204v1
+Review_195,Mamba: Linear-Time Sequence Modeling with Selective State Spaces,https://arxiv.org/abs/2312.00752
 Review_196,Can Mamba Learn How to Learn? A Comparative Study on In-Context Learning Tasks,https://arxiv.org/abs/2402.04248v2
 Review_197,VMamba: Visual State Space Model,https://arxiv.org/abs/2401.10166v4
 Review_198,LLM4Decompile: Decompiling Binary Code with Large Language Models,https://arxiv.org/abs/2403.05286v3
-Review_199,Improving Text Embeddings with Large Language Models,https://arxiv.org/abs/2402.15449v2
+Review_199,Improving Text Embeddings with Large Language Models,https://arxiv.org/abs/2401.00368
 Review_200,LLM2Vec: Large Language Models Are Secretly Powerful Text Encoder,https://arxiv.org/abs/2404.05961v2
 Review_201,SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series,https://arxiv.org/abs/2403.15360v2
-Review_202,ZigMa: A DiT-style Zigzag Mamba Diffusion Modelhttps://arxiv.org/abs/2403.13802,https://arxiv.org/abs/2403.13802
+Review_202,ZigMa: A DiT-style Zigzag Mamba Diffusion Model,https://arxiv.org/abs/2403.13802v3
 Review_203,SimPO: Simple Preference Optimization with a Reference-Free Reward,https://arxiv.org/abs/2405.14734v3
 Review_204,Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts,https://arxiv.org/abs/2405.19893v1
 Review_205,Simple linear attention language models balance the recall-throughput tradeoff,https://arxiv.org/abs/2402.18668v2
-Review_206,PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation,https://arxiv.org/abs/2505.21411v2
+Review_206,PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation,https://arxiv.org/abs/2312.17276
 Review_207,SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL,https://arxiv.org/abs/2405.11831v2
 Review_208,b: Training LLMs over Neurally Compressed Text,https://arxiv.org/abs/2404.03626v3
 Review_209,2BP: 2-Stage Backpropagation,

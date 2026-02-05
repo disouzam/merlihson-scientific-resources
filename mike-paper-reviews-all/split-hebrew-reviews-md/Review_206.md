@@ -1,8 +1,6 @@
-Review 205: PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation
+Review 206:PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation
 
-Paper: https://arxiv.org/abs/2505.21411v2
-
-https://arxiv.org/abs/2312.17276
+Paper: https://arxiv.org/abs/2312.17276
 
 היום סוקרים מאמר המציע שדרוג לארכיטקטורת הטרנספורמר. כמו שאתם בטח יודעים בלוק של טרנספורמר מורכב משני החלקים העיקריים (פרט לשכבות נרמול): 
 

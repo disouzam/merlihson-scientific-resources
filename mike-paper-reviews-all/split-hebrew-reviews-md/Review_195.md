@@ -1,8 +1,6 @@
-Review 194: Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+Review 195:Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
-Paper: https://arxiv.org/abs/2507.06204v1
-
-https://arxiv.org/abs/2312.00752
+Paper: https://arxiv.org/abs/2312.00752
 
 זה קורה עכשיו, אחרי 9 סקירות שחלקם היו די לא פשוטות הגענו למטרתנו הקדושה שזה Mamba. מכיוון שאני מפרסם סקירות בשלשות (באתר MDLI) אני אוציא עוד 2 סקירות נוספות של שכלולי ממבה (אחד מהם Mamba MoE והשני עוד הוחלט).
 
