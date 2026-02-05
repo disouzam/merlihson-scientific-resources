@@ -1,9 +1,6 @@
 Review 202: SimPO: Simple Preference Optimization with a Reference-Free Reward
 
 Paper: https://arxiv.org/abs/2405.14734v3
-
-https://arxiv.org/abs/2405.14734
-
 המאמר שנסקור דן בנושא אימון של מודלי שפה. אתם בטח יודעים שאימון מודל שפה foundational מורכב מ- 3 שלבים עיקריים:
 
 אימון מודל self-supervised על דאטהסט ענק 
