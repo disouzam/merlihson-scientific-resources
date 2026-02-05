@@ -297,13 +297,14 @@ def remove_duplicate_title_from_daily_marker(content: str) -> str:
     if len(lines) < 4:
         return content
 
-    # Extract title from line 1
+    # Extract title and review number from line 1
     first_line = lines[0]
-    match = re.match(r'^Review \d+:\s*(.+)$', first_line)
+    match = re.match(r'^Review (\d+):\s*(.+)$', first_line)
     if not match:
         return content
 
-    header_title = match.group(1).strip()
+    review_num = int(match.group(1))
+    header_title = match.group(2).strip()
 
     # Check lines 2-6 for daily marker with duplicate title
     for i in range(1, min(7, len(lines))):
@@ -313,15 +314,24 @@ def remove_duplicate_title_from_daily_marker(content: str) -> str:
             continue
         # Look for Hebrew daily marker
         if re.search(r'[\u0590-\u05FF]', line):
-            # Check if the line contains the header title
-            if header_title in line:
-                # Remove the duplicate title from the line
-                # The title usually appears after the date
-                # Pattern: Hebrew text + date + duplicate English title
-                cleaned = re.sub(r'(\d{2}\.\d{2}\.\d{2})' + re.escape(header_title) + r'\s*', r'\1', line)
-                if cleaned != line:
-                    lines[i] = cleaned
-                    return '\n'.join(lines)
+            # Extract title after the date if present
+            date_match = re.search(r'\d{2}\.\d{2}\.\d{2}(.+)$', line)
+            if date_match:
+                after_date = date_match.group(1).strip()
+                # Extract English title (skip Hebrew text like "סקירה 544,")
+                english_match = re.search(r'([A-Z].+)$', after_date)
+                if english_match:
+                    full_title = re.sub(r'[\u0590-\u05FF].*$', '', english_match.group(1)).strip()
+                    # Check if this matches or extends the header title
+                    if full_title.startswith(header_title) or header_title in full_title:
+                        # Update line 1 with the full title if header was truncated
+                        if full_title != header_title and len(full_title) > len(header_title):
+                            lines[0] = f"Review {review_num}: {full_title}"
+                        # Remove the duplicate title from daily marker line
+                        cleaned = re.sub(r'(\d{2}\.\d{2}\.\d{2}).*?(' + re.escape(full_title) + r')\s*', r'\1', line)
+                        if cleaned != line:
+                            lines[i] = cleaned.rstrip()
+                            return '\n'.join(lines)
 
     return content
 

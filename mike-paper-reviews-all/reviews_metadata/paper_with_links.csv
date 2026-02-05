@@ -451,7 +451,7 @@ Review_545,Whisper Leak: a side-channel attack on Large Language Models,https://
 Review_546,How to Correctly Report LLM-as-a-Judge Evaluations,https://arxiv.org/abs/2511.21140
 Review_547,"Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2412.15115
 Review_548,Solving a Million-Step LLM Task with Zero Errors,https://arxiv.org/abs/1206.5538
-Review_549,HeavyWater and SimplexWater: Watermarking Low,https://arxiv.org/abs/2506.06409
+Review_549,HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions,https://arxiv.org/abs/2506.06409
 Review_550,ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration,https://arxiv.org/abs/2511.21689
 Review_551,MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing,https://arxiv.org/abs/2502.06643
 Review_552,HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission,https://arxiv.org/abs/2510.19470

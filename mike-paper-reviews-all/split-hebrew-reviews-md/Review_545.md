@@ -1,7 +1,7 @@
 Review 545: Whisper Leak: a side-channel attack on Large Language Models
 
 
-סקירת המאמר היומית של יונתן ומייק: 26.11.25, סקירה 545, 479 סקירות עד 1024 Whisper Leak: a side-channel attack on Large Language Models
+סקירת המאמר היומית של יונתן ומייק: 26.11.25
 
 במאמר זה, זוג חוקרים ממיקרוסופט (Jonathan Bar Or הישראלי ו- Geoff McDonald הקנדי) מתארים מתקפת ערוץ-צד (side-channel) נגד מערכות של מודלי שפה גדולים (LLMs).
 
