@@ -1,4 +1,4 @@
-Review 472:Harnessing the Universal Geometry of Embeddings
+Review 472: Harnessing the Universal Geometry of Embeddings
 
 המאמר היומי של אביב ומייק: 18.06.25
 

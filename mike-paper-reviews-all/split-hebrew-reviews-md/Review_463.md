@@ -1,4 +1,4 @@
-Review 463:Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn’t
+Review 463: Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn’t
 
 המאמר היומי של יניב ומייק: 03.06.25
 

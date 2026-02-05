@@ -1,4 +1,4 @@
-Review 473:Evolving Deeper LLM Thinking
+Review 473: Evolving Deeper LLM Thinking
 
 המאמר היומי של אביב ומייק: 20.06.25
 

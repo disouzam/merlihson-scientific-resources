@@ -22,4 +22,4 @@ In-Context Symbolic Regression: Leveraging Large Language Models for Function Di
 
 למי שמתעניין בלייצר משוואות בעזרת תיאור וקצת דאטא, שווה קריאה:
 
-https://arxiv.org/pdf/2404.19094
+https://arxiv.org/abs/2404.19094

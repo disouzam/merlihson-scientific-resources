@@ -16,4 +16,4 @@ Review 486: Building Bridges between Regression, Clustering, and Classification
 
 וזה וזה - מאמר נחמד ולא רגיל, מומלץ בחום
 
-https://arxiv.org/pdf/2502.02996
+https://arxiv.org/abs/2502.02996

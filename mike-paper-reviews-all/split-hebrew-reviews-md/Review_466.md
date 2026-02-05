@@ -1,4 +1,4 @@
-Review 466:Spurious Rewards: Rethinking Training Signals in RLVR – Fast Overview
+Review 466: Spurious Rewards: Rethinking Training Signals in RLVR – Fast Overview
 
 המאמר היומי של יניב ומייק: 09.06.25
 
