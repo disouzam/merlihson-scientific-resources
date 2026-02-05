@@ -145,9 +145,9 @@
 142. DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS, 08.09.2023
 143. LARGE LANGUAGE MODELS AS OPTIMIZERS, 09.09.2023
 144. Explaining grokking through circuit efficiency, 11.09.2023
-145. Transformers as Support Vector Machines, 12.09.23https://arxiv.org/abs/2308.16898.pdf
+145. Transformers as Support Vector Machines
 146. Textbooks Are All You Need II: phi-1.5 technical report, 13.09.23
-147. Reinforced Self-Training (ReST) for Language Modeling, 14.09.23https://arxiv.org/abs/2308.08998.pdf
+147. Reinforced Self-Training (ReST) for Language Modeling
 148. Generative Image Dynamicshttps://huggingface.co/papers/2309.07906
 149. Knowledge Graph Prompting for Multi-Document Question Answering, 17.09.23
 150. Ambiguity-Aware In-Context Learning with Large Language Models, 18.09.23
