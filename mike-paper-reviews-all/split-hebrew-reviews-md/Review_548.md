@@ -1,4 +1,5 @@
- האם LLM יכול לפתור בעיה מרובת שלבים בלי טעויות?
+Review 548: האם LLM יכול לפתור בעיה מרובת שלבים בלי טעויות?
+
 
 סקירת המאמר היומית של רועי ומייק: 14.11.25, סקירה 548, 476 סקירות עד 1024 Solving a Million-Step LLM Task with Zero Errors
 
@@ -68,4 +69,4 @@
 
 [4] https://www.anthropic.com/engineering/multi-agent-research-system
 
-[5] https://arxiv.org/pdf/2509.25370 
+[5] https://arxiv.org/abs/2509.25370 

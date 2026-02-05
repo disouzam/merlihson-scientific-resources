@@ -1,8 +1,9 @@
+Review 563: WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?
+
 לופ בתוך לופ: מדוע מודלי ריזונינג נתקעים וכיצד שגיאות למידה מניעות זאת
 
 המאמר היומי של מייק 10.01.26, סקירה 563, 461 סקירות ל-1024
 
-WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?
 
 מאמר עם
 

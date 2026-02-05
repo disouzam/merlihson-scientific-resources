@@ -1,4 +1,5 @@
-הגיאומטריה של המיקוד: פירוק מגבלות ה-attention, סקירה 525
+Review 525: הגיאומטריה של המיקוד: פירוק מגבלות ה-attention, סקירה 525
+
 
 סקירת המאמר היומית של מייק: 13.10.25LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM
 

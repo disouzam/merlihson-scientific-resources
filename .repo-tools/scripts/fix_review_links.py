@@ -138,6 +138,86 @@ def add_space_after_review_colon(content: str) -> str:
     return content
 
 
+def fix_missing_review_header(content: str, correct_number: int) -> str:
+    """Add missing 'Review X:' header if first line doesn't have it."""
+    lines = content.split('\n')
+    if not lines:
+        return content
+
+    first_line = lines[0]
+
+    # Check if first line already has "Review X:" pattern
+    if re.match(r'^Review \d+:', first_line):
+        return content
+
+    # Find title on first few lines
+    # Look for English titles (starting with capital letter or all caps)
+    title = None
+    title_line_idx = None
+
+    for i in range(min(6, len(lines))):
+        line = lines[i].strip()
+        # Skip empty lines and Hebrew-only lines (daily markers)
+        if not line or re.match(r'^[\u0590-\u05FF\s:,.0-9-]+$', line):
+            continue
+        # Found a line with English text - assume it's the title
+        title = line
+        title_line_idx = i
+        break
+
+    if title and title_line_idx is not None:
+        # Remove the title from its current position
+        new_lines = [f"Review {correct_number}: {title}", ""]
+        # Add all other lines except the one with the title
+        for i, line in enumerate(lines):
+            if i != title_line_idx:
+                new_lines.append(line)
+
+        return '\n'.join(new_lines)
+
+    # No title found - just add empty header
+    return f"Review {correct_number}:\n\n" + content
+
+
+def move_title_from_line5_to_line1(content: str, correct_number: int) -> str:
+    """Move title from line 5 (or nearby) to line 1 if it's missing there."""
+    lines = content.split('\n')
+    if len(lines) < 3:
+        return content
+
+    first_line = lines[0]
+
+    # Check if line 1 has "Review X:" but no title after colon
+    match = re.match(r'^Review \d+:\s*$', first_line)
+    if not match:
+        return content
+
+    # Find title in next few lines (usually line 5, index 4)
+    title = None
+    title_line_idx = None
+
+    for i in range(1, min(10, len(lines))):
+        line = lines[i].strip()
+        # Skip empty lines and Hebrew-only lines
+        if not line or re.match(r'^[\u0590-\u05FF\s:,.0-9-]+$', line):
+            continue
+        # Found a line with English text - assume it's the title
+        title = line
+        title_line_idx = i
+        break
+
+    if title and title_line_idx is not None:
+        # Put title on line 1, remove from its current position
+        new_lines = [f"Review {correct_number}: {title}"]
+        for i, line in enumerate(lines[1:], start=1):
+            if i != title_line_idx:
+                new_lines.append(line)
+
+        return '\n'.join(new_lines)
+
+    return content
+
+
 def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None) -> str:
     """Remove duplicate paper links, keeping only the Paper: line."""
     lines = content.split('\n')
@@ -525,6 +605,18 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
 
         changes = []
 
+        # Fix missing "Review X:" header
+        new_content = fix_missing_review_header(content, correct_number)
+        if new_content != content:
+            changes.append("Added missing header")
+            content = new_content
+
+        # Move title from line 5 to line 1 if needed
+        new_content = move_title_from_line5_to_line1(content, correct_number)
+        if new_content != content:
+            changes.append("Moved title to line 1")
+            content = new_content
+
         # Separate daily marker from title (if present)
         new_content = separate_daily_marker_from_title(content, correct_number)
         if new_content != content:
@@ -603,6 +695,18 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         correct_number = extract_review_number(filepath.name)
         if correct_number == 0:
             return False, "Could not extract review number"
+
+        # Fix missing "Review X:" header
+        new_content = fix_missing_review_header(content, correct_number)
+        if new_content != content:
+            changes.append("Added missing header")
+            content = new_content
+
+        # Move title from line 5 to line 1 if needed
+        new_content = move_title_from_line5_to_line1(content, correct_number)
+        if new_content != content:
+            changes.append("Moved title to line 1")
+            content = new_content
 
         # Separate daily marker from title (if present)
         new_content = separate_daily_marker_from_title(content, correct_number)

@@ -1,4 +1,5 @@
-SFT Memorizes, RL Generalizes 
+Review 568: SFT Memorizes, RL Generalizes
+
 
 המאמר היומי של אסף אחי-מרדכי ומייק 23.01.26, סקירה 568, 456 סקירות ל-1024
 

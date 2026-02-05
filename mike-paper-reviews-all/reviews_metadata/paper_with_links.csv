@@ -415,64 +415,64 @@ Review_509,Fantastic Pretraining Optimizers and Where to Find Them,https://arxiv
 Review_510,Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making,https://www.researchsquare.com/article/rs-7587964/v1
 Review_511,On the Theoretical Limitations of Embedding-Based Retrieval,https://arxiv.org/abs/2508.21038
 Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,https://arxiv.org/abs/2509.04575
-Review_513,THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION,https://arxiv.org/abs/2507.14560
+Review_513,"מנגנון attention לא צץ יש מאין: סקירה של המאמר 'מקורו של self-attention, סקירה 512",https://arxiv.org/abs/2507.14560
 Review_514,Foundation Models for Time Series Analysis- A Tutorial and Survey,https://arxiv.org/abs/2403.14735
-Review_515,Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215
-Review_516,"Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2505.06708
-Review_517,EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING,https://arxiv.org/abs/2509.17196
+Review_515,הקלות הבלתי נסבלת של המחיקה: מאמר כחול-לבן מהממציא של flow matchingהמאמר היומי של מייק: 24.09.25Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215
+Review_516,שומרי הסף של ה-attention: תיקון פשוט להפליא לבעיה יסודית ב-LLMs: סקירה 516,https://arxiv.org/abs/2505.06708
+Review_517,"מצילומי רנטגן סטטיים לסריקות MRI חיות: שיטה חדשה לצפות באיך LLMs לומדים, סקירה 517",https://arxiv.org/abs/2509.17196
 Review_518,מאמר היומי של מייק: 02.10.25Optimizers Qualitatively Alter Solutions And We Should Leverage This,https://arxiv.org/abs/2507.12224
-Review_519,Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs,https://arxiv.org/abs/2507.07996
-Review_520,BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR,https://arxiv.org/abs/2509.23808
-Review_521,Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING,https://arxiv.org/abs/2509.24372
-Review_522,COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A,https://arxiv.org/abs/2509.19228
-Review_523,Less is More: Recursive Reasoning with Tiny Networks,https://arxiv.org/abs/2510.04871
-Review_524,Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence,https://arxiv.org/abs/2402.09880
-Review_525,LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM,https://arxiv.org/abs/2508.17821
-Review_526,Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs,https://arxiv.org/abs/2505.00127
+Review_519,סקירת המאמר היומית של מייק: 04.10.25Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs,https://arxiv.org/abs/2507.07996
+Review_520,"האם ה-""Trade-Off"" בין חיפוש לניצול הוא רק בעיית מדידה?, סקירה 520",https://arxiv.org/abs/2509.23808
+Review_521,"פיין טיון של LLM ללא גרדיאנט: פריצת דרך אלגוריתמית, סקירה 521",https://arxiv.org/abs/2509.24372
+Review_522,סקירת המאמר היומית של מייק: 10.10.25COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A,https://arxiv.org/abs/2509.19228
+Review_523,"חשיבה רקורסיבית ללא התוספות המיותרות (לכאורה), סקירה 523",https://arxiv.org/abs/2510.04871
+Review_524,המודל הכי טוב בבנצ'מארקים - האם זו הסיבה להתלהבות?,https://arxiv.org/abs/2402.09880
+Review_525,"הגיאומטריה של המיקוד: פירוק מגבלות ה-attention, סקירה 525",https://arxiv.org/abs/2508.17821
+Review_526,לא כל “חשיבה ארוכה” היא חשיבה טובה.,https://arxiv.org/abs/2505.00127
 Review_527,The Markovian Thinker,https://arxiv.org/abs/2510.06557
 Review_528,Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO,https://arxiv.org/abs/2509.13081
-Review_529,DeepSeek-OCR: Contexts Optical Compression,https://arxiv.org/abs/2510.18234
-Review_530,Imbalanced Gradients in RL Post-Training of Multi-Task LLMs,https://arxiv.org/abs/2510.19178
+Review_529,האם דחיסה אופטית היא העתיד של הקשר ארוך?,https://arxiv.org/abs/2510.18234
+Review_530,אשליית הגרדיאנט: מדוע אימון-המשך (post-training) רב-משימתי ב-RL הוא מוטה,https://arxiv.org/abs/2510.19178
 Review_531,EMERGENCE FROM LEARNING DYNAMICS OF GROKKING,https://arxiv.org/abs/2509.21519
-Review_532,Language Models are Injective and Hence Invertible,https://arxiv.org/abs/2510.15511
-Review_533,ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?,https://arxiv.org/abs/2508.19445
-Review_534,Agent Learning via Early Experience,https://arxiv.org/abs/2510.08558
-Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,
+Review_532,אינג'קטיביות: האם הטרנספורמרים לא מאבדים מידע ?,https://arxiv.org/abs/2510.15511
+Review_533,האם הרשת שלך יכולה לייצר כל דבר? מדוע רשתות הן סורייקטיביות כמעט תמיד,https://arxiv.org/abs/2508.19445
+Review_534,"מעט ידע מומחים, הרבה מאוד ערך!",https://arxiv.org/abs/2510.08558
+Review_535,רומא לא נהרסה ביום אחד: על החוסן של LLMs לשינויים קטנים,
 Review_536,FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE,https://arxiv.org/abs/2510.24256
 Review_537,"Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs",https://arxiv.org/abs/2511.01202
-Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers?,https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
+Review_538,למידה מקוננת: האם למידה עמוקה היא רק מחסנית של אופטימייזרים?,https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
 Review_539,Extracting alignment data in open models,https://arxiv.org/abs/2510.18554
 Review_540,Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125
-Review_541,LiteAttention: A Temporal Sparse Attention for Diffusion Transformers,https://huggingface.co/papers/2511.11062
-Review_542,ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT,https://arxiv.org/abs/2511.05313
-Review_543,"Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B",https://arxiv.org/abs/2511.06221
-Review_544,LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics,https://arxiv.org/abs/2511.08544
-Review_545,Whisper Leak: a side-channel attack on Large Language Models,https://arxiv.org/abs/2511.03675
-Review_546,How to Correctly Report LLM-as-a-Judge Evaluations,https://arxiv.org/abs/2511.21140
-Review_547,"Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2412.15115
-Review_548,Solving a Million-Step LLM Task with Zero Errors,https://arxiv.org/abs/1206.5538
-Review_549,HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions,https://arxiv.org/abs/2506.06409
+Review_541,רוצים לג'נרט את הסרטון יותר מהר? הנה טרנספורמר דיפוזיוני דליל יכול לעשות את העבודה!,https://huggingface.co/papers/2511.11062
+Review_542,CAT: טרנספורמר אדפטיבי בזמן אינפרנס,https://arxiv.org/abs/2511.05313
+Review_543,איך מודל של 1.5B פרמטרים “מנצח” מודלים ענקיים (ואם זה בכלל אמיתי?),https://arxiv.org/abs/2511.06221
+Review_544,האם אפשר לנצח את DINOv3 בעזרת אימון על 11 אלף תמונות ו… גאוסיאן?,https://arxiv.org/abs/2511.08544
+Review_545,האם ניתן לגנוב דאטה ממודל השפה דרך ערוץ צדדי?,https://arxiv.org/abs/2511.03675
+Review_546,צדק עיוור: מדוע בנצ'מארק ה-LLM שלכם פסול סטטיסטית (ואיך לתקן את זה),https://arxiv.org/abs/2511.21140
+Review_547,"לחבר שערים למנגנון ה-attention: אוממ, זה כנראה רעיון לא רע….",https://arxiv.org/abs/2412.15115
+Review_548,האם LLM יכול לפתור בעיה מרובת שלבים בלי טעויות?,https://arxiv.org/abs/1206.5538
+Review_549,איך אותם העקרונות שמניעים תקשורת סלולרית יכולים להוביל לחותמות מים חזקות במודלים שפה?,https://arxiv.org/abs/2506.06409
 Review_550,ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration,https://arxiv.org/abs/2511.21689
-Review_551,MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing,https://arxiv.org/abs/2502.06643
-Review_552,HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission,https://arxiv.org/abs/2510.19470
-Review_553,Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs,https://arxiv.org/abs/2512.13898v1
-Review_554,DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning,https://arxiv.org/abs/2511.22570
-Review_555,Learning Dynamics of LLM Finetuning,https://arxiv.org/abs/2407.10490
+Review_551,שיטת MOETUNER: לתזמר את הכאוס של מקביליות מומחים (experts),https://arxiv.org/abs/2502.06643
+Review_552,HybridEP: מתי כדאי להזיז טוקנים ומתי להזיז מומחים?,https://arxiv.org/abs/2510.19470
+Review_553,איך מצילים ציוני attention מהדילול (=מריחה) במשימות הנמקה מורכבות,https://arxiv.org/abs/2512.13898v1
+Review_554,לא עוד תשובה נכונה בטעות: מהפכת ה-Self Verification של DeepSeek,https://arxiv.org/abs/2511.22570
+Review_555,"""אפקט המריחה"" (Squeezing Effect) בפיינטיון של מודלי שפה: יש חיה כזו!",https://arxiv.org/abs/2407.10490
 Review_556,Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond),https://arxiv.org/abs/2510.22954
-Review_557,SEAL: Self-Adapting Language Models,https://arxiv.org/abs/2506.10943
+Review_557,האם מודלי שפה יכולים ללמוד כיצד ללמד את עצמם?,https://arxiv.org/abs/2506.10943
 Review_558,Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning,https://arxiv.org/abs/2511.14460
 Review_559,RECURSIVE LANGUAGE MODELS,https://arxiv.org/abs/2512.24601
-Review_560,Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition,https://arxiv.org/abs/2409.17746
-Review_561,Small Language Models are the Future of Agentic AI,https://arxiv.org/abs/2506.02153
+Review_560,פרדוקס המהירות נפתר: המהפכה המקבילית של Paraformer,https://arxiv.org/abs/2409.17746
+Review_561,מודלי שפה קטנים הם העתיד של בינה מלאכותית אג'נטית: האמנם?,https://arxiv.org/abs/2506.02153
 Review_562,From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence,https://arxiv.org/abs/2601.03220v1
 Review_563,"WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?",https://arxiv.org/abs/2512.12895
-Review_564,Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning,https://arxiv.org/abs/2505.12477
-Review_565,The Free Transformer,https://arxiv.org/abs/2510.17558
-Review_566,RAFT - Retrieval Augmented Time Series Forecasting,https://arxiv.org/abs/2505.04163
-Review_567,Deep Delta Learning,https://arxiv.org/abs/2601.00417v1
+Review_564,מלחמות ה-SSL: יתרונות מוכחים לגישת הייצוג המשותף,https://arxiv.org/abs/2505.12477
+Review_565,הטרנספורמר יוצא לחופש (לטנטי),https://arxiv.org/abs/2510.17558
+Review_566,ה-RAG של הסדרות העתיות,https://arxiv.org/abs/2505.04163
+Review_567,שאריות גיאומטריות: מכלילים את החיבור בחיבורי residual,https://arxiv.org/abs/2601.00417v1
 Review_568,"SFT Memorizes, RL Generalizes",https://arxiv.org/abs/2501.17161
-Review_569,REPO: Language Models with Context Re-Positioning,https://arxiv.org/abs/2512.14391
-Review_570,DoPE: Denoising Rotary Position Embedding,https://arxiv.org/abs/2511.09146
+Review_569,attention לשבור את כבלי הזמן הליניארי במנגנוני,https://arxiv.org/abs/2512.14391
+Review_570,DoPE: השתקת זעקת התדר הנמוך של RoPE,https://arxiv.org/abs/2511.09146
 Review_571,mHC: Manifold-Constrained Hyper-Connections,https://arxiv.org/abs/2512.24880
-Review_572,Efficient Context Scaling with LongCat ZigZag Attention,https://arxiv.org/abs/2512.23966v2
+Review_572,"הופכים את ה""מלא"" לדליל עם LongCat",https://arxiv.org/abs/2512.23966v2
 Review_573,TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE,https://arxiv.org/abs/2601.05106

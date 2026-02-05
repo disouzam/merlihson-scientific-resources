@@ -1,6 +1,7 @@
+Review 540: Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations
+
 רשתות נוירונים המשלבות חוקים פיזיקלייםסקירה יומית של רותי ומייק, סקירה 540, 484 עד 1024
 
-Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations
 
 למידה עמוקה היא השיטה הרווחת כיום לניתוח של סוגים שונים של דאטה, בהם טקסט, קול, תמונה ואודיו. למידה עמוקה שינתה מהותית תחומים כמו עיבוד תמונה ועיבוד שפה. למרות זאת, נראה שהקהילה המדעית נשארה מעט על הגדר באימוץ ההתפתחות של למידה עמוקה באופן נרחב ועמוק.
 

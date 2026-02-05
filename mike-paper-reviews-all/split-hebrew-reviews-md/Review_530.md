@@ -1,4 +1,5 @@
-אשליית הגרדיאנט: מדוע אימון-המשך (post-training) רב-משימתי ב-RL הוא מוטה
+Review 530: אשליית הגרדיאנט: מדוע אימון-המשך (post-training) רב-משימתי ב-RL הוא מוטה
+
 
 סקירת המאמר היומית של מייק: 26.10.25Imbalanced Gradients in RL Post-Training of Multi-Task LLMs
 
