@@ -106,7 +106,7 @@ Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23
 Interpolating between Images with Diffusion Models
 LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
 Composite Diffusion | whole >= Σparts, 27.07.23
-Scaling TransNormer to 175 Billion Parameters, 28.07.23https://huggingface.co/papers/2307.14995
+Scaling TransNormer to 175 Billion Parameters
 RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950
 DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf
 Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding, 31.07.23https://huggingface.co/papers/2307.15337
