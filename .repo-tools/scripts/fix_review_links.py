@@ -6,6 +6,8 @@ Automatically fixes common issues in review markdown files:
 - Removes duplicate links (arxiv/HuggingFace/OpenReview)
 - Removes dates from titles
 - Separates embedded links from titles
+- Separates daily markers from paper titles
+- Fixes attached text on daily marker lines
 - Verifies paper link matches review title
 - Auto-corrects wrong paper links by searching arXiv
 """
@@ -307,6 +309,110 @@ def normalize_paper_link_spacing(content: str) -> str:
     return '\n'.join(new_lines)
 
 
+def separate_daily_marker_from_title(content: str, correct_number: int) -> str:
+    """Separate daily marker (המאמר היומי של מייק) from paper title.
+
+    Handles patterns like:
+    - ⚡️🚀המאמר היומי של מייק 14.09.24: ⚡️🚀Beyond Neural Scaling Laws...
+    - המאמר היומי של מייק - 13.02.25One Initialization to Rule them All...
+    """
+    lines = content.split('\n')
+    if not lines:
+        return content
+
+    first_line = lines[0]
+
+    # Pattern 1: Emojis + "המאמר היומי של מייק" + date + emojis + Paper Title (all on one line)
+    # Example: ⚡️🚀המאמר היומי של מייק 14.09.24: ⚡️🚀Beyond Neural Scaling Laws...
+    pattern1 = r'^[⚡️🚀\s]*המאמר היומי של מייק[^:]*:\s*[⚡️🚀\s]*(.+)$'
+    match1 = re.match(pattern1, first_line)
+
+    if match1:
+        # Extract paper title
+        paper_title = match1.group(1).strip()
+
+        # Extract the daily marker part (everything before the paper title)
+        daily_marker = first_line[:first_line.rfind(paper_title)].rstrip()
+        # Remove trailing colon and whitespace
+        daily_marker = re.sub(r':\s*$', '', daily_marker).strip()
+
+        # Build new content
+        new_lines = [
+            f"Review {correct_number}:{paper_title}",
+            "",
+            daily_marker,
+            ""
+        ] + lines[1:]
+
+        return '\n'.join(new_lines)
+
+    # Pattern 2: "המאמר היומי של מייק" + date + Paper Title (no space between date and title)
+    # Example: המאמר היומי של מייק - 13.02.25One Initialization to Rule them All...
+    pattern2 = r'^המאמר היומי של מייק[^a-zA-Z]*([A-Z].+)$'
+    match2 = re.match(pattern2, first_line)
+
+    if match2:
+        # Extract paper title (starts with capital letter)
+        paper_title = match2.group(1).strip()
+
+        # Extract the daily marker part
+        daily_marker = first_line[:first_line.find(paper_title)].strip()
+
+        # Build new content
+        new_lines = [
+            f"Review {correct_number}:{paper_title}",
+            "",
+            daily_marker,
+            ""
+        ] + lines[1:]
+
+        return '\n'.join(new_lines)
+
+    return content
+
+
+def fix_attached_text_on_daily_marker(content: str) -> str:
+    """Fix reviews where title text is still attached to daily marker line.
+
+    Handles cases where the daily marker separation happened but text remained attached.
+    Example line 3: המאמר היומי של מייק - 13.02.25One Initialization to Rule them All
+    Should become:
+    - Line 1: Review XXX:One Initialization to Rule them All: [original title]
+    - Line 3: המאמר היומי של מייק - 13.02.25
+    """
+    lines = content.split('\n')
+
+    if len(lines) < 3:
+        return content
+
+    # Check if line 3 (index 2) has the pattern: "המאמר היומי של מייק" + date + English text
+    pattern = r'^(המאמר היומי של מייק[^A-Z]*)([A-Z].+)$'
+    match = re.match(pattern, lines[2])
+
+    if match:
+        daily_marker = match.group(1).strip()
+        attached_title = match.group(2).strip()
+
+        # Get current title from line 1
+        current_title_match = re.match(r'^Review (\d+):(.+)$', lines[0])
+        if not current_title_match:
+            return content
+
+        review_num = current_title_match.group(1)
+        current_title = current_title_match.group(2).strip()
+
+        # Combine titles: attached_title + current_title
+        full_title = f"{attached_title}: {current_title}"
+
+        # Update the lines
+        lines[0] = f"Review {review_num}:{full_title}"
+        lines[2] = daily_marker
+
+        return '\n'.join(lines)
+
+    return content
+
+
 def verify_paper_link(content: str, filepath: Path) -> Tuple[bool, str, Optional[str]]:
     """Verify that the paper link matches the review title."""
     review_title = extract_title_from_review(content)
@@ -367,6 +473,18 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
 
         changes = []
 
+        # Separate daily marker from title (if present)
+        new_content = separate_daily_marker_from_title(content, correct_number)
+        if new_content != content:
+            changes.append("Separated daily marker")
+            content = new_content
+
+        # Fix attached text on daily marker line
+        new_content = fix_attached_text_on_daily_marker(content)
+        if new_content != content:
+            changes.append("Fixed attached text")
+            content = new_content
+
         new_content = fix_review_header(content, correct_number)
         if new_content != content:
             changes.append("Fixed header")
@@ -421,6 +539,18 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         correct_number = extract_review_number(filepath.name)
         if correct_number == 0:
             return False, "Could not extract review number"
+
+        # Separate daily marker from title (if present)
+        new_content = separate_daily_marker_from_title(content, correct_number)
+        if new_content != content:
+            changes.append("Separated daily marker")
+            content = new_content
+
+        # Fix attached text on daily marker line
+        new_content = fix_attached_text_on_daily_marker(content)
+        if new_content != content:
+            changes.append("Fixed attached text")
+            content = new_content
 
         # Fix review number
         new_content = fix_review_header(content, correct_number)
