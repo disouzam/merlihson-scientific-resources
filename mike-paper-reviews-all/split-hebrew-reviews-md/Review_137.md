@@ -1,6 +1,5 @@
-Review 137:[Short] Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images, 03.09.2023
+Review 137:[Short] Any-Size-Diffusion: Toward Efficient Text-Driven Synthesis for Any-Size HD Images
 
-https://arxiv.org/abs/2308.16582.pdf
 
 Paper: https://arxiv.org/abs/2308.16582v2
 

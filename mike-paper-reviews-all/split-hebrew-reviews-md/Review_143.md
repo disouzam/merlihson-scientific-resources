@@ -1,6 +1,5 @@
-Review 143:LARGE LANGUAGE MODELS AS OPTIMIZERS, 09.09.2023
+Review 143:LARGE LANGUAGE MODELS AS OPTIMIZERS
 
-https://huggingface.co/papers/2309.03409
 
 Paper: https://arxiv.org/abs/2309.03409
 

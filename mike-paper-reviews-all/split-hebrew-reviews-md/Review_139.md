@@ -1,4 +1,4 @@
-Review 139:G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment, 05.09.2023
+Review 139:G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment
 
 https://github.com/nlpyang/geval/tree/main, https://arxiv.org/abs/2303.16634.pdfסקירה זו נכתבה על ידי עדן יבין
 

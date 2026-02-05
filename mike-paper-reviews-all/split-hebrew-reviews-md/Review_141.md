@@ -1,6 +1,5 @@
-Review 141:[Short] One Wide Feedforward is All You Need, 07.09.2023
+Review 141:[Short] One Wide Feedforward is All You Need
 
-https://huggingface.co/papers/2309.01826
 
 Paper: https://arxiv.org/abs/2309.01826v2
 
