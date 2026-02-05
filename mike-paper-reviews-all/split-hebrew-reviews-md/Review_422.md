@@ -1,6 +1,6 @@
-Review 422:Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
+Review 422:JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
 
-המאמר היומי של מייק - 17.03.25JanusFlow
+המאמר היומי של מייק - 17.03.25
 
 
 מזמן לא סקרתי מאמר על מודלים גנרטיביים מולטימודליים. מודלים אלו מאומנים לא רק לגנרט דאטה מכמה סוגים (במקרה של JanusFlow של שפה טבעית ותמונות) אלא גם לבצע משימות הכרוכות בהבנה של הקשרים ביו המודליות האלו. למשל מודל מולטימודלי בתחום שפה ותמונות צריך להיות לענות על שאלות על תמונה. המודל מורכב ממודל עיקרי (הנקרא LLM) וכמה אנקודרים ודקורדרים המיועדים לייצוג דאטה ממודליות שונות והפיכתו של ייצוגו לפיסת דאטה (דקודרים). כל המודלים במאמר מבוססים על הטרנספורמרים באופן מאוד לא מפתיע.

@@ -1,6 +1,6 @@
-Review 400:Fine-tuning via Explained Variance Adaptation
+Review 400:One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation
 
-המאמר היומי של מייק - 13.02.25One Initialization to Rule them All
+המאמר היומי של מייק - 13.02.25
 
 
 היום נסקור קצרות מאמר המציע שיטת LoRa לשיפור של טכניקת טיוב (fine-tuning) של LLMS. כמו שאתם בטח זוכרים LoRA מוסיפה למשקלי המודל (בשכבות מסוימות) מטריצה נלמדת בעלת ראנק משמעותית נמוך יותר מהמימד של מטריצת המשקולות. משקולות המודל נשארות קבועות (לא מאומנות) במהלך הטיוב. 

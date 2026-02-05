@@ -1,6 +1,6 @@
-Review 403:GENERAL INSTRUCTION FOLLOWING WITH THOUGHT GENERATION
+Review 403:THINKING LLMS: GENERAL INSTRUCTION FOLLOWING WITH THOUGHT GENERATION
 
-המאמר היומי של מייק - 18.02.25THINKING LLMS
+המאמר היומי של מייק - 18.02.25
 
 
 סקירה מספר 400 - כדי לא להכביד עליכם יותר מדי בחרתי מאמר קליל יחסית והסקירה הולכת להיות בלי נוסחאות ודי קצרה. המאמר מציע שיטה קצת במהות דומה Group Relative Preference Optimization או GRPO בקצרה שעשתה הרבה כותרות לאחרונה. ותיכף אני הולך להסביר למה אני מתכוון כאן. רק אציין שהמאמר מציע שיטה להגברת יכולת הנמקה כללית של מודל ולא מתמקד רק בשאלות תכנות ובעיות מתמטיות.

@@ -1,6 +1,6 @@
-Review 419:Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture
+Review 419:SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture
 
-המאמר היומי של מייק - 13.03.25SLIM
+המאמר היומי של מייק - 13.03.25
 
 
 האם לפעמים קורה לכם שאתם מתחילים לקרוא את המאמר וככל שאתם מתקדמים ומתעמקים בו הוא מתחיל להיראות פחות ופחות טוב. לי זה לפעמים קורה עם אוכל אבל שם יותר קל לי להפסיק לאכול מאשר לקרוא מאמר. אז יאללה, אסקור אותו קצרות אך אל תצפו רבות…

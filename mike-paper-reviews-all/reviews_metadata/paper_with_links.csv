@@ -282,62 +282,62 @@ Review_378,When Can Transformers Count to n?,https://arxiv.org/abs/2407.15160
 Review_379,Chain of Thought Empowers Transformers to Solve Inherently Serial Problems,https://arxiv.org/abs/2402.12875
 Review_380,Evaluating the Design Space of Diffusion-Based Generative Models,https://arxiv.org/abs/2406.12839
 Review_381,Improve Mathematical Reasoning in Language Models by Automated Process Supervision,https://arxiv.org/abs/2406.06592
-Review_382,A Survey,https://arxiv.org/abs/2303.06574
-Review_383,A Survey,https://arxiv.org/abs/2409.02795
+Review_382,Diffusion Models for Non-autoregressive Text Generation: A Survey,https://arxiv.org/abs/2303.06574
+Review_383,Towards a Unified View of Preference Learning for Large Language Models: A Survey,https://arxiv.org/abs/2409.02795
 Review_384,MAKING TEXT EMBEDDERS FEW-SHOT LEARNERS,https://arxiv.org/abs/2409.15700
 Review_385,"19.01.25The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks",https://arxiv.org/abs/1803.03635
-Review_386,Billion-Scale Time Series Foundation Models with Mixture of Experts,https://arxiv.org/abs/2409.16040
-Review_387,ONE TRANSFORMER FOR BOTH DIFFUSION AND AUTOREGRESSION,https://arxiv.org/abs/2409.16280
-Review_388,Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs,https://arxiv.org/abs/2402.14740
-Review_389,Pushing the Limits of Large Language Models for Practical Lossless Text Compression,https://arxiv.org/abs/2409.17141
+Review_386,Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts,https://arxiv.org/abs/2409.16040
+Review_387,MONOFORMER: ONE TRANSFORMER FOR BOTH DIFFUSION AND AUTOREGRESSION,https://arxiv.org/abs/2409.16280
+Review_388,Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs,https://arxiv.org/abs/2402.14740
+Review_389,FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression,https://arxiv.org/abs/2409.17141
 Review_390,A Survey on Diffusion Models for Inverse Problems,https://arxiv.org/abs/2410.00083
-Review_391,Cross Capabilities of Large Language Models,https://arxiv.org/abs/2409.19951
-Review_392,"A Note on Bias-Variance Tradeoffs, Overfitting and Moving from Fixed to Random Designs",https://arxiv.org/abs/2409.18842
-Review_393,Redefining RLHF with Mixture of Judges,https://arxiv.org/abs/2409.20370
-Review_394,A Survey and New Connections,https://arxiv.org/abs/2404.02954
-Review_395,"SURVEY, MEASUREMENTS, AND INSIGHTS",https://arxiv.org/abs/2409.15790
-Review_396,Designing Priors for Better Few-Shot Image Synthesis,https://arxiv.org/abs/2409.17439
+Review_391,Law of the Weakest Link: Cross Capabilities of Large Language Models,https://arxiv.org/abs/2409.19951
+Review_392,"Classical Statistical (In-Sample) Intuitions Don’t GeneralizeWell: A Note on Bias-Variance Tradeoffs, Overfitting and Moving from Fixed to Random Designs",https://arxiv.org/abs/2409.18842
+Review_393,The Perfect Blend: Redefining RLHF with Mixture of Judges,https://arxiv.org/abs/2409.20370
+Review_394,Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections,https://arxiv.org/abs/2404.02954
+Review_395,"SMALL LANGUAGE MODELS: SURVEY, MEASUREMENTS, AND INSIGHTS",https://arxiv.org/abs/2409.15790
+Review_396,Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis,https://arxiv.org/abs/2409.17439
 Review_397,Why Is Anything Conscious?,https://arxiv.org/abs/2409.14545
 Review_398,On the expressiveness and spectral bias of KANs,https://arxiv.org/abs/2410.01803
-Review_399,State Collapse and State Capacity of RNN-Based Long-Context Modeling,https://arxiv.org/abs/2410.07145
-Review_400,Fine-tuning via Explained Variance Adaptation,https://arxiv.org/abs/2410.07170
+Review_399,STUFFED MAMBA: State Collapse and State Capacity of RNN-Based Long-Context Modeling,https://arxiv.org/abs/2410.07145
+Review_400,One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation,https://arxiv.org/abs/2410.07170
 Review_401,A Spectral Condition for Feature Learning,https://arxiv.org/abs/2310.17813
-Review_402,Training Diffusion Transformers is Easier than you Think,https://arxiv.org/abs/2410.06940
-Review_403,GENERAL INSTRUCTION FOLLOWING WITH THOUGHT GENERATION,https://arxiv.org/abs/2410.10630
-Review_404,Geometric memorization in generative diffusion,https://arxiv.org/abs/2410.08727
+Review_402,Representation Alignment for Generation: Training Diffusion Transformers is Easier than you Think,https://arxiv.org/abs/2410.06940
+Review_403,THINKING LLMS: GENERAL INSTRUCTION FOLLOWING WITH THOUGHT GENERATION,https://arxiv.org/abs/2410.10630
+Review_404,Losing dimensions: Geometric memorization in generative diffusion,https://arxiv.org/abs/2410.08727
 Review_405,When Does Perceptual Alignment Benefit Vision Representations?,https://arxiv.org/abs/2410.10817
-Review_406,For Energy-Efficient Language Models,https://arxiv.org/abs/2410.00907
+Review_406,Addition Is All You Need: For Energy-Efficient Language Models,https://arxiv.org/abs/2410.00907
 Review_407,Understanding Visual Feature Reliance through the Lens of Complexity,https://arxiv.org/abs/2407.06076
-Review_408,Improved Representation Learning for Multimodal VAEs,https://arxiv.org/abs/2403.05300
-Review_409,An Efficient Alternative to Self-Attention,https://arxiv.org/abs/2502.18394
-Review_410,AN ILLUSION OF EQUIVALENCE,https://arxiv.org/abs/2410.21228
+Review_408,Unity by Diversity: Improved Representation Learning for Multimodal VAEs,https://arxiv.org/abs/2403.05300
+Review_409,The FFT Strikes Back: An Efficient Alternative to Self-Attention,https://arxiv.org/abs/2502.18394
+Review_410,LORA VS FULL FINE-TUNING: AN ILLUSION OF EQUIVALENCE,https://arxiv.org/abs/2410.21228
 Review_411,An Empirical Model of Large-Batch Training,https://arxiv.org/abs/1812.06162
-Review_412,Sparse Autoencoder Feature Structure,https://arxiv.org/abs/2410.19750
+Review_412,The Geometry of Concepts: Sparse Autoencoder Feature Structure,https://arxiv.org/abs/2410.19750
 Review_413,Mixtures of in-context learners,https://arxiv.org/abs/2411.02830
-Review_414,ENABLING EFFICIENT MOE INFERENCE THROUGH DYNAMIC BATCH-AWARE EXPERT SELECTION,https://arxiv.org/abs/2411.08982
-Review_415,Number Understanding of Language Models and How to Improve It,https://arxiv.org/abs/2411.03766
+Review_414,LYNX: ENABLING EFFICIENT MOE INFERENCE THROUGH DYNAMIC BATCH-AWARE EXPERT SELECTION,https://arxiv.org/abs/2411.08982
+Review_415,Number Cookbook: Number Understanding of Language Models and How to Improve It,https://arxiv.org/abs/2411.03766
 Review_416,THE SUPER WEIGHT IN LARGE LANGUAGE MODELS,https://arxiv.org/abs/2411.07191
-Review_417,Revisiting Sparse Coding for Adaptive Representation,https://arxiv.org/abs/2503.01776
+Review_417,Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation,https://arxiv.org/abs/2503.01776
 Review_418,Transformers are Universal In-context Learner,https://arxiv.org/abs/2408.01367
-Review_419,Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture,https://arxiv.org/abs/2410.07739
+Review_419,SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture,https://arxiv.org/abs/2410.07739
 Review_420,A Survey on Kolmogorov-Arnold Network,https://arxiv.org/abs/2411.06078
 Review_421,Generative Representational Instruction Tuning,https://arxiv.org/abs/2402.09906
-Review_422,Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation,https://arxiv.org/abs/2411.07975
-Review_423,ACTIVE FINE-TUNING OF LLMS,https://arxiv.org/abs/2410.08020
+Review_422,JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation,https://arxiv.org/abs/2411.07975
+Review_423,EFFICIENTLY LEARNING AT TEST-TIME: ACTIVE FINE-TUNING OF LLMS,https://arxiv.org/abs/2410.08020
 Review_424,softmax is not enough (for sharp out-of-distribution),https://arxiv.org/abs/2410.01104
 Review_425,"LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law",https://arxiv.org/abs/2402.00795
 Review_426,Physics in Next-token Prediction,https://arxiv.org/abs/2411.00660
-Review_427,EFFICIENT LLM INFERENCE OVER LONG SEQUENCES,https://arxiv.org/abs/2411.17116
-Review_428,Optimizing Data Mixtures Speeds Up Language Model Pretraining,https://arxiv.org/abs/2305.10429
-Review_429,Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining,https://arxiv.org/abs/2304.09151
+Review_427,STAR ATTENTION: EFFICIENT LLM INFERENCE OVER LONG SEQUENCES,https://arxiv.org/abs/2411.17116
+Review_428,DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining,https://arxiv.org/abs/2305.10429
+Review_429,UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining,https://arxiv.org/abs/2304.09151
 Review_430,Efficient Online Data Mixing For Language Model Pre-Training,https://arxiv.org/abs/2312.02406
 Review_431,OPTIMIZING PRETRAINING DATA MIXTURES WITH LLM-ESTIMATED UTILITY,https://arxiv.org/abs/2501.11747
-Review_432,Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization,https://arxiv.org/abs/2411.11909
+Review_432,SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization,https://arxiv.org/abs/2411.11909
 Review_433,"Amortizing intractable inference in diffusion models for vision, language, and control",https://arxiv.org/abs/2405.20971
-Review_434,Generative Infinite-Vocabulary Transformers,https://arxiv.org/abs/2312.02116
-Review_435,AN AUTOREGRESSIVE GENERATIVE MODEL OF RAW IMAGES AND TEXT,https://arxiv.org/abs/2411.19722
-Review_436,AN O1 REPLICATION FOR CODING,https://arxiv.org/abs/2412.00154
-Review_437,Language Models Solve Math with a Bag of Heuristics,https://arxiv.org/abs/2410.21272
+Review_434,GIVT: Generative Infinite-Vocabulary Transformers,https://arxiv.org/abs/2312.02116
+Review_435,JETFORMER: AN AUTOREGRESSIVE GENERATIVE MODEL OF RAW IMAGES AND TEXT,https://arxiv.org/abs/2411.19722
+Review_436,O1-CODER: AN O1 REPLICATION FOR CODING,https://arxiv.org/abs/2412.00154
+Review_437,Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics,https://arxiv.org/abs/2410.21272
 Review_438,ONE STEP DIFFUSION VIA SHORTCUT MODELS,https://arxiv.org/abs/2410.12557
 Review_439,14.04.25Draft Model Knows When to Stop: A Self-Verification Length Policy for Speculative Decoding,https://arxiv.org/abs/2411.18462
 Review_440,15.04.25Classifier-Free Guidance inside the Attraction Basin May Cause Memorization,https://arxiv.org/abs/2411.16738

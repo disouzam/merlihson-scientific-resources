@@ -1,6 +1,6 @@
-Review 392:A Note on Bias-Variance Tradeoffs, Overfitting and Moving from Fixed to Random Designs
+Review 392:Classical Statistical (In-Sample) Intuitions Don’t GeneralizeWell: A Note on Bias-Variance Tradeoffs, Overfitting and Moving from Fixed to Random Designs
 
-המאמר היומי של מייק - 01.02.25Classical Statistical (In-Sample) Intuitions Don’t GeneralizeWell
+המאמר היומי של מייק - 01.02.25
 
 
 מבוא:

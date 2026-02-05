@@ -1,6 +1,6 @@
-Review 412:Sparse Autoencoder Feature Structure
+Review 412:The Geometry of Concepts: Sparse Autoencoder Feature Structure
 
-המאמר היומי של מייק - 03.03.25 The Geometry of Concepts
+המאמר היומי של מייק - 03.03.25
 
 
 המאמר חוקר את האופן שבו מקודדים אוטומטיים דלילים(SAE) מייצגים ומבנים מושגים ב-LLMs. החוקרים מנתחים את המבנה הזה בשלושה קני מידה היררכיים: אטומי, מוחי וגלקטי. המחקר מנסה לעשות לא מעט הקבלות בין מרחב האמבדינג של מודלי שפה למבנה המוח אבל כמובן זה לא אוצר ש-LLMs חושבים בדומה לנו.
