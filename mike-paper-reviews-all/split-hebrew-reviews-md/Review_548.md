@@ -1,4 +1,4 @@
-Review 548: , סקירה 548, 476 סקירות עד 1024 Solving a Million-Step LLM Task with Zero Errors
+Review 548: Solving a Million-Step LLM Task with Zero Errors
 
 
 סקירת המאמר היומית של רועי ומייק: 14.11.25, סקירה 548, 476 סקירות עד 1024 Solving a Million-Step LLM Task with Zero Errors

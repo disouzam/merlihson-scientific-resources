@@ -1,4 +1,4 @@
-Review 557: , סקירה 557, 467 סקירות ל-1024.SEAL: Self-Adapting Language Models
+Review 557: SEAL: Self-Adapting Language Models
 
 
 המאמר היומי של עדן ומייק 28.12.25, סקירה 557, 467 סקירות ל-1024.SEAL: Self-Adapting Language Models

@@ -249,14 +249,17 @@ def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
         # If line has Hebrew, try to extract English title from it
         if re.search(r'[\u0590-\u05FF]', line):
             # Look for English text after Hebrew daily marker and date
-            # Pattern: Hebrew text + date + English title
+            # Pattern: Hebrew text + date + possible more Hebrew + English title
             match = re.search(r'[\u0590-\u05FF].*?\d{2}\.\d{2}\.\d{2}(.+)$', line)
             if match:
-                potential_title = match.group(1).strip()
-                # Make sure it has English letters
-                if re.search(r'[a-zA-Z]', potential_title):
-                    english_title = potential_title
-                    break
+                after_date = match.group(1)
+                # Extract only the English part (starts with capital letter)
+                english_match = re.search(r'([A-Z][A-Za-z\s:,-]+(?:LLM|AI|ML|[A-Z]{2,})?[A-Za-z\s]*)', after_date)
+                if english_match:
+                    potential_title = english_match.group(1).strip()
+                    if potential_title:
+                        english_title = potential_title
+                        break
             continue
         # Must contain at least some English letters
         if not re.search(r'[a-zA-Z]', line):

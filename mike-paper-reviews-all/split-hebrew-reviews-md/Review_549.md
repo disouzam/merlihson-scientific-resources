@@ -1,4 +1,4 @@
-Review 549: , סקירה 549, 475 סקירות עד 1024 HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions
+Review 549: HeavyWater and SimplexWater: Watermarking Low
 
 
 סקירת המאמר היומית של דור ומייק: 14.11.25, סקירה 549, 475 סקירות עד 1024 HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions 

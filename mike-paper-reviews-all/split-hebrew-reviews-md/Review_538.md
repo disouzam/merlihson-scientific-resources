@@ -1,4 +1,4 @@
-Review 538: , סקירה 538. 486 סקירות עד 1024 Nested Learning: Is Deep Learning Just a Stack of Optimizers?
+Review 538: Nested Learning: Is Deep Learning Just a Stack of Optimizers
 
 
 סקירת המאמר היומית של מייק: 12.11.25, סקירה 538. 486 סקירות עד 1024 Nested Learning: Is Deep Learning Just a Stack of Optimizers?

@@ -440,18 +440,18 @@ Review_534,Agent Learning via Early Experience,https://arxiv.org/abs/2510.08558
 Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,
 Review_536,FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE,https://arxiv.org/abs/2510.24256
 Review_537,"Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs",https://arxiv.org/abs/2511.01202
-Review_538,", סקירה 538. 486 סקירות עד 1024 Nested Learning: Is Deep Learning Just a Stack of Optimizers?",https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
+Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers,https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
 Review_539,Extracting alignment data in open models,https://arxiv.org/abs/2510.18554
 Review_540,Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125
 Review_541,LiteAttention: A Temporal Sparse Attention for Diffusion Transformers,https://huggingface.co/papers/2511.11062
 Review_542,ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT,https://arxiv.org/abs/2511.05313
 Review_543,"Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B",https://arxiv.org/abs/2511.06221
-Review_544,", סקירה 544, 480 סקירות עד 1024 LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics",https://arxiv.org/abs/2511.08544
-Review_545,", סקירה 545, 479 סקירות עד 1024 Whisper Leak: a side-channel attack on Large Language Models",https://arxiv.org/abs/2511.03675
+Review_544,LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics,https://arxiv.org/abs/2511.08544
+Review_545,Whisper Leak: a side-channel attack on Large Language Models,https://arxiv.org/abs/2511.03675
 Review_546,How to Correctly Report LLM-as-a-Judge Evaluations,https://arxiv.org/abs/2511.21140
 Review_547,"Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2412.15115
-Review_548,", סקירה 548, 476 סקירות עד 1024 Solving a Million-Step LLM Task with Zero Errors",https://arxiv.org/abs/1206.5538
-Review_549,", סקירה 549, 475 סקירות עד 1024 HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions",https://arxiv.org/abs/2506.06409
+Review_548,Solving a Million-Step LLM Task with Zero Errors,https://arxiv.org/abs/1206.5538
+Review_549,HeavyWater and SimplexWater: Watermarking Low,https://arxiv.org/abs/2506.06409
 Review_550,ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration,https://arxiv.org/abs/2511.21689
 Review_551,MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing,https://arxiv.org/abs/2502.06643
 Review_552,HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission,https://arxiv.org/abs/2510.19470
@@ -459,7 +459,7 @@ Review_553,Let's (not) just put things in Context: Test-Time Training for Long-C
 Review_554,DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning,https://arxiv.org/abs/2511.22570
 Review_555,Learning Dynamics of LLM Finetuning,https://arxiv.org/abs/2407.10490
 Review_556,Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond),https://arxiv.org/abs/2510.22954
-Review_557,", סקירה 557, 467 סקירות ל-1024.SEAL: Self-Adapting Language Models",https://arxiv.org/abs/2506.10943
+Review_557,SEAL: Self-Adapting Language Models,https://arxiv.org/abs/2506.10943
 Review_558,Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning,https://arxiv.org/abs/2511.14460
 Review_559,RECURSIVE LANGUAGE MODELS,https://arxiv.org/abs/2512.24601
 Review_560,Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition,https://arxiv.org/abs/2409.17746
