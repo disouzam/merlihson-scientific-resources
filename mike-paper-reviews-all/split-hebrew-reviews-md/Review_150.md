@@ -1,8 +1,7 @@
-Review 150:[Short] Ambiguity-Aware In-Context Learning with Large Language Models, 18.09.23
+Review 150:[Short] Ambiguity-Aware In-Context Learning with Large Language Models
 
-Paper: https://arxiv.org/abs/2205.01825v1
+Paper: https://arxiv.org/abs/2309.07900
 
-https://arxiv.org/abs/2309.07900.pdf
 
 למידת in-context: מתברר שמודלי שפה גדולים מסוגלים ללמוד מההקשר (לפעמים אפילו לא צריך הקשר שנקרא zero-shot). למשל עבור משימת ניתוח סנטימנט אתם נותנים דוגמא אחת של (משפט, סנטימנט) ואז המודל מסתדר בעצמו. 
 

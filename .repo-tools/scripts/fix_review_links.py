@@ -154,9 +154,11 @@ def extract_paper_link(content: str) -> Optional[str]:
 def extract_all_arxiv_ids(content: str) -> List[str]:
     """Extract all arXiv IDs from the content."""
     arxiv_ids = []
-    arxiv_matches = re.findall(r'arxiv\.org/abs/([\d.]+)', content, re.IGNORECASE)
+    # Match arxiv IDs: YYYY.NNNNN optionally followed by vN
+    # Don't capture trailing dots (from .pdf extensions)
+    arxiv_matches = re.findall(r'arxiv\.org/abs/(\d{4}\.\d{4,5})(?:v\d+)?', content, re.IGNORECASE)
     arxiv_ids.extend(arxiv_matches)
-    hf_matches = re.findall(r'huggingface\.co/papers/([\d.]+)', content, re.IGNORECASE)
+    hf_matches = re.findall(r'huggingface\.co/papers/(\d{4}\.\d{4,5})(?:v\d+)?', content, re.IGNORECASE)
     arxiv_ids.extend(hf_matches)
 
     seen = set()
