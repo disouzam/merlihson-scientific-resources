@@ -212,7 +212,7 @@
   209. Bootstrapping Task Spaces for Self-Improvementֿ
   210. THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION
   211. Foundation Models for Time Series Analysis- A Tutorial and Survey
-  212. הקלות הבלתי נסבלת של המחיקה: מאמר כחול-לבן מהממציא של flow matchingהמאמר היומי של מייק: 24.09.25Corrector Sampling in Language Models
+  212. Corrector Sampling in Language Models
   213. Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free
   214. EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING
   215. Optimizers Qualitatively Alter Solutions And We Should Leverage This
