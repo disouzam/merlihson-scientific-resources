@@ -3,7 +3,6 @@ Review 547: Gated Attention for Large Language Models: Non-linearity, Sparsity, 
 
 סקירת המאמר היומית של מייק: 07.12.25, סקירה 547ֿ, 477 סקירות עד 1024
 
-Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free
 
 מנגנון ה-attention בעל ראשים מרובים (multihead) הסטנדרטי בטרנספורמר הוא, בליבתו, "סנדוויץ' כמעט ליניארי" עטוף בהתפלגות הסתברות. זה נשמע קצת לא מובן אבל בואו נראה מה ישי בפנים: קודם כל מבצעים הטלה ל-V, מערבבים אותם בצורה קמורה (עם וקטור מנורמל באמצעות סופטמקס), ומטילים אותם פעם נוספת עם מטריצה W_O (אחרי משרשרים את הפלטים של כל הראשים).
 

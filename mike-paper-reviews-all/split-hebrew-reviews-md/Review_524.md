@@ -3,7 +3,6 @@ Review 524: Inadequacies of Large Language Model Benchmarks in the Era of Genera
 
 המאמר היומי של שמוליק ומייק: 12.10.25, סקירה 524
 
-Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
 
 בשנים האחרונות, עם העלייה הדרמטית בשימוש ב-LLMs, התפתח דור חדש של בנצ'מרקים: מבחנים שנועדו להעריך ולהשוות בין מודלים במגוון משימות. בניגוד לבנצ'מרקים הקלאסיים מעולם החומרה והתוכנה, שהיו לרוב סטנדרטיים וחד־ממדיים, המבחנים לעולם ה־GenAI מתאפיינים בגיוון רב מבחינת גישות ומתודולוגיות. חלקם מתמקדים בדיוק (accuracy) או יעילות (efficiency), אחרים ביצירתיות (creativity), בריזונינג או אפילו בהיבטים אתיים כמו הטיה ו־fairness. 
 

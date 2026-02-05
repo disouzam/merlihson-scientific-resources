@@ -3,7 +3,6 @@ Review 542: ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT
 
 סקירת המאמר היומית של מייק: 22.11.25, סקירה 542, 482 עד 1024
 
-ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT
 
 הבעיה המרכזית ביעילות הטרנספורמרים אינה רק העלות הריבועית של מנגנון ה-attention הבעיה היא האופי הלא אדפטיבי של כל הפתרונות המתיימרים להקטין את הסיבוכיות שלו. ארכיטקטורות המבוססות על attention דליל (sparse), חלון סליידינג (sliding), או ליניארי, "נועלות" את הטרייד-אוף בין איכות לחישוב כבר בשלב האימון. מאמר זה מציג (Compress & Attend Transformer (CAT, ארכיטקטורה חדשנית שהחידוש העיקרי בה הוא יכולת שליטה בזמן אינפרנס (test-time controllability). היא מאפשרת למודל מאומן אחד להתאים דינמית את יעילותו, ולבצע אינטרפולציה בין איכות הקרובה ל-dense attention לבין הפעלה מהירה שמצריכה יחסית זיכרון/חישובים.
 

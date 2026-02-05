@@ -3,7 +3,6 @@ Review 553: Let's (not) just put things in Context: Test-Time Training for Long-
 
 המאמר היומי של עמרי ומייק, סקירה 553, 471 סקירות עד 1024
 
-Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs
 
 הורגלנו להאמין שהפתרון למשימות הנמקה (reasoning) מורכבות בעלי הקשר ארוך הוא ארכיטקטוני: אמבדינגס סיבוביים (rope) טובים יותר, חלונות קונטקסט גדולים יותר, או attention לינארי. אנחנו גם מניחים שאם מודל מתקשה, עלינו לתת לו "לחשוב" יותר זמן על ידי יצירת טוקנים של Chain-of-Thought או CoT בקצרה. 
 

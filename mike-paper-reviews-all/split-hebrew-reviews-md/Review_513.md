@@ -3,7 +3,6 @@ Review 513: THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE 
 
 המאמר היומי של מייק: 19.09.25
 
-THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION
 
 המאמר של היום הוא פחות תגלית ויותר סוג של ״ארכאולוגיה אינטלקטואלית״. הוא טוען שמנגנון ה-Self-Attention, שבלב ארכיטקטורת הטרנספורמר, לא היה המצאה שהופיעה כרעם ביום בהיר בשנת 2017. במקום זאת, הוא מייצג את השכלול של עיקרון חישובי עמוק וכללי יותר שהתפתח במשך שנים: מינוף של pairwise affinity matrices כדי לווסת את זרימת המידע. המאמר ממסגר מחדש את מנגנון ה-attention כמקרה ספציפי, ונלמד של מסגרת רחבה יותר, כאשר אב קדמון רעיוני מרכזי שלו הוא שיטה לבחירת פ'יצרים (feature selection) משנת 2015, הידועה בשם בחירת תכונות אינסופית (Infinite Feature Selection או Inf-FS).
 

@@ -3,7 +3,6 @@ Review 543: Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-M
 
 המאמר היומי של עמרי ומייק, סקירה 543, 481 סקירות עד 1024
 
-Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B
 
 בשנים האחרונות הנמקה (reasoning בלועזית) הפכה לחזית מרכזית של שיפור יכולות LLM, במיוחד אחרי הפריצה של ה־Chain-of-Thought או CoT, מודלים כמו o1, R1 ו- o3 מתמקדים בלנסות לבנות מודלים שיודעים ״לחשוב״.  לאחרונה אנחנו רואים יותר ויותר קבוצות מחקר שמנסות לשפר את יכולות ה־reasoning באמצעות שיטות שמעודדות גיוון גדול יותר בפתרונות, או רמת יצירתיות גבוהה יותר בתהליכי החשיבה של המודל, בתקווה שזה יתורגם בסוף ליותר פתרונות נכונים. 
 

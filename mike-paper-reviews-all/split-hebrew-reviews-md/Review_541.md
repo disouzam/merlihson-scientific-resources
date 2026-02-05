@@ -3,7 +3,6 @@ Review 541: LiteAttention: A Temporal Sparse Attention for Diffusion Transformer
 
 המאמר היומי של אביעד ומייק, סקירה 541, 483 סקירות עד 1024
 
-LiteAttention: A Temporal Sparse Attention for Diffusion Transformers
 
 מאמר זה מתמודד עם צוואר בקבוק קריטי בתחום יצירת הווידאו: מודלי טרנספורמרים (DiT) דיפוזיאוניים מייצרים סרטונים מרהיבים, אך הם איטיים להחריד. מנגנוני ה-attention צורכים עד 80% מזמן ההסקה (Inference) במודלים מסוימים. יצירת סרטון בודד באורך 5 שניות עשויה לארוך כ-30 דקות, אפילו על מעבדי ה-GPU החזקים ביותר.
 

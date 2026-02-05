@@ -310,6 +310,42 @@ def remove_duplicate_title_from_daily_marker(content: str) -> str:
     return content
 
 
+def remove_standalone_duplicate_title(content: str) -> str:
+    """Remove standalone lines that duplicate the header title."""
+    lines = content.split('\n')
+    if len(lines) < 4:
+        return content
+
+    # Extract title from line 1
+    first_line = lines[0]
+    match = re.match(r'^Review \d+:\s*(.+)$', first_line)
+    if not match:
+        return content
+
+    header_title = match.group(1).strip()
+
+    # Check lines 2-15 for standalone duplicate titles
+    modified = False
+    new_lines = []
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        # Skip line 1 (the header itself)
+        if i == 0:
+            new_lines.append(line)
+            continue
+        # If line exactly matches the header title, skip it
+        if stripped == header_title:
+            modified = True
+            continue
+        # Add the line to output
+        new_lines.append(line)
+
+    if modified:
+        return '\n'.join(new_lines)
+
+    return content
+
+
 def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None) -> str:
     """Remove duplicate paper links, keeping only the Paper: line."""
     lines = content.split('\n')
@@ -715,6 +751,12 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
             changes.append("Removed duplicate title from daily marker")
             content = new_content
 
+        # Remove standalone duplicate title lines
+        new_content = remove_standalone_duplicate_title(content)
+        if new_content != content:
+            changes.append("Removed standalone duplicate title")
+            content = new_content
+
         # Move title from line 5 to line 1 if needed
         new_content = move_title_from_line5_to_line1(content, correct_number)
         if new_content != content:
@@ -816,6 +858,12 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         new_content = remove_duplicate_title_from_daily_marker(content)
         if new_content != content:
             changes.append("Removed duplicate title from daily marker")
+            content = new_content
+
+        # Remove standalone duplicate title lines
+        new_content = remove_standalone_duplicate_title(content)
+        if new_content != content:
+            changes.append("Removed standalone duplicate title")
             content = new_content
 
         # Move title from line 5 to line 1 if needed

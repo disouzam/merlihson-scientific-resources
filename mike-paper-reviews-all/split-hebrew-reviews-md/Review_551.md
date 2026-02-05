@@ -3,7 +3,6 @@ Review 551: MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert P
 
 סקירת המאמר היומית של מייק: 15.12.25, סקירה 551, 473 סקירות עד 1024
 
-MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing
 
 היום נסקור מאמר בנושא אופטימיזציית של אינפרנס עבור LLMs במערכות מרובות GPUs. בטח שמעתם שמודלים אלו נהיה כאלו גדולים שהם לא נכנסים לזכרון של GPU בודד ואז מתחילים לפצל מטריצות משקולות בין GPUs שונים. זה נקרא parallelism או מקביליות ובסקירה זו נדון איך לעשות זאת בצורה אופטימלית (סוג של).
 

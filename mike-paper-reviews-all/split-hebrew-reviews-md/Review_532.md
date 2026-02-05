@@ -3,7 +3,6 @@ Review 532: Language Models are Injective and Hence Invertible
 
 סקירת המאמר היומית של מייק: 31.10.25, סקירה 532, 492 עד 1024
 
-Language Models are Injective and Hence Invertible
 
 סוף סוף סקירה שמופיעות בה מילים מקורס חדוו״א2, תורת המידה (לבג!!) וגם קורס להסתברות (almost surely).
 
