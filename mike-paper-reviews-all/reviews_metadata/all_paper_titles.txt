@@ -99,7 +99,7 @@
 99. Scaling Autoregressive Multi-Modal Models: Pretraining and Instruction Tuning
 100. Fastformer: Additive attention is Can Be All you need
 101. GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models
-102. TokenFlow: Consistent Diffusion Features for Consistent Video Editing, 21.07.23https://arxiv.org/abs/2307.10373
+102. TokenFlow: Consistent Diffusion Features for Consistent Video Editing
 103. Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23
 104. Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf
 105. Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23

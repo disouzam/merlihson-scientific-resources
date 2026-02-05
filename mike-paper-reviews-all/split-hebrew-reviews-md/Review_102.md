@@ -1,4 +1,4 @@
-Review 102: [Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing, 21.07.23https://arxiv.org/abs/2307.10373
+Review 102: [Short] TokenFlow: Consistent Diffusion Features for Consistent Video Editing
 
 Paper: https://arxiv.org/abs/2307.10373v3
 
