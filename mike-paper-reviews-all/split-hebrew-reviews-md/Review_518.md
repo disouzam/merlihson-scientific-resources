@@ -1,4 +1,4 @@
-Review 518: מאמר היומי של מייק: 02.10.25Optimizers Qualitatively Alter Solutions And We Should Leverage This
+Review 518: Optimizers Qualitatively Alter Solutions And We Should Leverage This
 
 הפסל שבתוך מכונה: מדוע האופטימייזר שלכם אינו רק מכונית מרוץ, סקירה 518
 

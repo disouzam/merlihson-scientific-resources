@@ -1,4 +1,4 @@
-Review 522: סקירת המאמר היומית של מייק: 10.10.25COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A
+Review 522: COMPLLM: COMPRESSION FOR LONG CONTEXT Q
 
   להכניע את הדרקון הריבועי באמצעות פילוח ליניארי, סקירה 522
 

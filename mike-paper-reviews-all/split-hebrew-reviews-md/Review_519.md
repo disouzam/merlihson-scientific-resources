@@ -1,4 +1,4 @@
-Review 519: סקירת המאמר היומית של מייק: 04.10.25Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs
+Review 519: Skip a Layer or Loop it
 
 חשיבה מחדש על המעבר קדימה: מבט קומפוזיציוני על מודלי שפה גדולים, סקירה 519
 

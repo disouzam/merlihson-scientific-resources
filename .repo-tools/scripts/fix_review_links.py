@@ -238,9 +238,23 @@ def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
         # Title is already in English, nothing to do
         return content
 
-    # Find the proper English title in the content
-    # Look for lines with ONLY English text (no Hebrew at all)
+    # First try to extract English title from the current_title itself
+    # This handles cases where line 1 has: "Review X: Hebrew text + date + English title"
     english_title = None
+    date_match = re.search(r'\d{2}\.\d{2}\.\d{2}(.+)$', current_title)
+    if date_match:
+        after_date = date_match.group(1)
+        # Extract only the English part (starts with capital letter)
+        english_match = re.search(r'([A-Z][A-Za-z\s:,-]+(?:LLM|AI|ML|[A-Z]{2,})?[A-Za-z\s]*)', after_date)
+        if english_match:
+            potential_title = english_match.group(1).strip()
+            if potential_title:
+                english_title = potential_title
+                lines[0] = f"Review {correct_number}: {english_title}"
+                return '\n'.join(lines)
+
+    # If not found on line 1, look for English title in the content
+    # Look for lines with ONLY English text (no Hebrew at all)
     for i in range(1, min(15, len(lines))):
         line = lines[i].strip()
         # Skip empty lines
