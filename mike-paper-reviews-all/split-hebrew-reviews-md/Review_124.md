@@ -1,4 +1,4 @@
-Review 123: [Short] TextDiffuser: Diffusion Models as Text Painters, 13.08.23https://huggingface.co/papers/2305.10855
+Review 124: [Short] TextDiffuser: Diffusion Models as Text Painters
 
 Paper: https://arxiv.org/abs/2305.10855v5
 

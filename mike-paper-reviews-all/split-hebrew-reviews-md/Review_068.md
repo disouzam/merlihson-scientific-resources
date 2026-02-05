@@ -17,5 +17,3 @@ Paper: https://arxiv.org/abs/2201.09792v1
 בקיצור מאמר די מאכזב, השם מאוד באזזי אך לצערי לא הולם את התוכן…
 
 אשמח לדעת מה דעתכם….
-
-למאמר: https://openreview.net/forum?id=TVHS5Y4dNvM

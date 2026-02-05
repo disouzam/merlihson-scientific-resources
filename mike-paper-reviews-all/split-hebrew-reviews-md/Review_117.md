@@ -1,4 +1,4 @@
-Review 117: ConceptLab: Creative Generation using Diffusion Prior Constraints, 06.08.23https://kfirgoldberg.github.io/ConceptLab/static/ConceptLab.pdf
+Review 117: ConceptLab: Creative Generation using Diffusion Prior Constraints
 
 Paper: https://arxiv.org/abs/2308.02669v2
 
