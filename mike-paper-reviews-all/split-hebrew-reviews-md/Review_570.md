@@ -1,4 +1,4 @@
-Review 570: DoPE: השתקת זעקת התדר הנמוך של RoPE
+Review 570: DoPE: Denoising Rotary Position Embedding
 
 
 המאמר היומי של מייק 28.01.26, סקירה 570, 454 סקירות ל-1024

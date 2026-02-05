@@ -1,4 +1,4 @@
-Review 560: פרדוקס המהירות נפתר: המהפכה המקבילית של Paraformer
+Review 560: Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition
 
 
 המאמר היומי של נתנאל ומייק 05.01.26, סקירה 560, 464 סקירות ל-1024

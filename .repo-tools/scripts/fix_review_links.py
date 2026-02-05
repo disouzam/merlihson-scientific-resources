@@ -218,6 +218,52 @@ def move_title_from_line5_to_line1(content: str, correct_number: int) -> str:
     return content
 
 
+def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
+    """Replace Hebrew title in header with proper English title from content."""
+    lines = content.split('\n')
+    if not lines:
+        return content
+
+    first_line = lines[0]
+
+    # Check if line 1 has "Review X:" pattern
+    match = re.match(r'^Review (\d+):\s*(.+)$', first_line)
+    if not match:
+        return content
+
+    current_title = match.group(2).strip()
+
+    # Check if current title contains Hebrew characters
+    if not re.search(r'[\u0590-\u05FF]', current_title):
+        # Title is already in English, nothing to do
+        return content
+
+    # Find the proper English title in the content
+    english_title = None
+    for i in range(1, min(15, len(lines))):
+        line = lines[i].strip()
+        # Skip empty lines
+        if not line:
+            continue
+        # Skip Hebrew-only lines
+        if re.match(r'^[\u0590-\u05FF\s:,.0-9-]+$', line):
+            continue
+        # Skip lines with significant Hebrew content (>30%)
+        hebrew_chars = len(re.findall(r'[\u0590-\u05FF]', line))
+        total_letters = len(re.findall(r'[a-zA-Z\u0590-\u05FF]', line))
+        if total_letters > 0 and hebrew_chars / total_letters > 0.3:
+            continue
+        # Found a line with mostly English text - assume it's the title
+        english_title = line
+        break
+
+    if english_title:
+        lines[0] = f"Review {correct_number}: {english_title}"
+        return '\n'.join(lines)
+
+    return content
+
+
 def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None) -> str:
     """Remove duplicate paper links, keeping only the Paper: line."""
     lines = content.split('\n')
@@ -611,6 +657,12 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
             changes.append("Added missing header")
             content = new_content
 
+        # Fix Hebrew title in header (replace with English title)
+        new_content = fix_hebrew_title_in_header(content, correct_number)
+        if new_content != content:
+            changes.append("Replaced Hebrew title with English")
+            content = new_content
+
         # Move title from line 5 to line 1 if needed
         new_content = move_title_from_line5_to_line1(content, correct_number)
         if new_content != content:
@@ -700,6 +752,12 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         new_content = fix_missing_review_header(content, correct_number)
         if new_content != content:
             changes.append("Added missing header")
+            content = new_content
+
+        # Fix Hebrew title in header (replace with English title)
+        new_content = fix_hebrew_title_in_header(content, correct_number)
+        if new_content != content:
+            changes.append("Replaced Hebrew title with English")
             content = new_content
 
         # Move title from line 5 to line 1 if needed

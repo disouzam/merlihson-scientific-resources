@@ -1,4 +1,4 @@
-Review 542: CAT: טרנספורמר אדפטיבי בזמן אינפרנס
+Review 542: ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT
 
 
 סקירת המאמר היומית של מייק: 22.11.25, סקירה 542, 482 עד 1024

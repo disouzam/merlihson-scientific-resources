@@ -1,4 +1,4 @@
-Review 569: attention לשבור את כבלי הזמן הליניארי במנגנוני
+Review 569: REPO: Language Models with Context Re-Positioning
 
 
 המאמר היומי של מייק 25.01.26, סקירה 569, 455 סקירות ל-1024

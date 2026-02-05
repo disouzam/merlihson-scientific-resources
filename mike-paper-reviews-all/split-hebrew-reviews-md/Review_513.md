@@ -1,4 +1,4 @@
-Review 513: מנגנון attention לא צץ יש מאין: סקירה של המאמר 'מקורו של self-attention, סקירה 512
+Review 513: THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION
 
 
 המאמר היומי של מייק: 19.09.25

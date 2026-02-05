@@ -1,4 +1,4 @@
-Review 516: שומרי הסף של ה-attention: תיקון פשוט להפליא לבעיה יסודית ב-LLMs:  סקירה 516
+Review 516: המאמר היומי של מייק: 26.09.25Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free
 
 
 המאמר היומי של מייק: 26.09.25Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free 

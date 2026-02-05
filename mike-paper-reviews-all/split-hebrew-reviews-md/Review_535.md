@@ -1,4 +1,4 @@
-Review 535: רומא לא נהרסה ביום אחד: על החוסן של LLMs לשינויים קטנים
+Review 535: Statistical Runtime Verification for LLMs via Robustness Estimation
 
 
 סקירת המאמר היומית של עדיאל, נתן ומייק: סקירה 535, 489 סקירות עד 1024

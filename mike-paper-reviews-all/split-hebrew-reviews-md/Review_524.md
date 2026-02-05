@@ -1,4 +1,4 @@
-Review 524: המודל הכי טוב בבנצ'מארקים - האם זו הסיבה להתלהבות?
+Review 524: Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
 
 
 המאמר היומי של שמוליק ומייק: 12.10.25, סקירה 524

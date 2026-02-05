@@ -1,4 +1,4 @@
-Review 517: מצילומי רנטגן סטטיים לסריקות MRI חיות: שיטה חדשה לצפות באיך LLMs לומדים, סקירה 517
+Review 517: EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING
 
 
 מאמר היומי של מייק: 30.09.25

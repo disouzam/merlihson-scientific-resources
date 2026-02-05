@@ -1,4 +1,4 @@
-Review 554: לא עוד תשובה נכונה בטעות: מהפכת ה-Self Verification של DeepSeek
+Review 554: DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning
 
 
 המאמר היומי של עמרי ומייק, סקירה 554, 470 סקירות עד 1024

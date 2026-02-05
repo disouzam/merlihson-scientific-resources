@@ -1,4 +1,4 @@
-Review 566: ה-RAG של הסדרות העתיות
+Review 566: RAFT - Retrieval Augmented Time Series Forecasting
 
 
 המאמר היומי של אנדרי ומייק 16.01.26, סקירה 566, 458 סקירות ל-1024

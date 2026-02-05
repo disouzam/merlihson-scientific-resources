@@ -1,4 +1,4 @@
-Review 526: לא כל “חשיבה ארוכה” היא חשיבה טובה.
+Review 526: Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs
 
 
 המאמר היומי של נורית ומייק: 14.10.25, סקירה 526

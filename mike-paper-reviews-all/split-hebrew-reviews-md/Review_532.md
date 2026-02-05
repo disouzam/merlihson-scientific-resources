@@ -1,4 +1,4 @@
-Review 532: אינג'קטיביות: האם הטרנספורמרים לא מאבדים מידע ?
+Review 532: Language Models are Injective and Hence Invertible
 
 
 סקירת המאמר היומית של מייק: 31.10.25, סקירה 532, 492 עד 1024

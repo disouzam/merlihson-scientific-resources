@@ -1,4 +1,4 @@
-Review 534: מעט ידע מומחים, הרבה מאוד ערך!
+Review 534: Agent Learning via Early Experience
 
 
 סקירת המאמר היומית של שגיב ומייק, סקירה 534, 490 סקירות עד 1024

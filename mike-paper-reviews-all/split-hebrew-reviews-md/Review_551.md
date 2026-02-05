@@ -1,4 +1,4 @@
-Review 551: שיטת MOETUNER: לתזמר את הכאוס של מקביליות מומחים (experts)
+Review 551: MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing
 
 
 סקירת המאמר היומית של מייק: 15.12.25, סקירה 551, 473 סקירות עד 1024

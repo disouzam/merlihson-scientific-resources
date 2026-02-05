@@ -1,4 +1,4 @@
-Review 533: האם הרשת שלך יכולה לייצר כל דבר?  מדוע רשתות הן סורייקטיביות כמעט תמיד
+Review 533: סקירת המאמר היומית של מייק: 01.11.25 ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?
 
 
 סקירת המאמר היומית של מייק: 01.11.25 ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?

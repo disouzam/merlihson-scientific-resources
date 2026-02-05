@@ -1,4 +1,4 @@
-Review 552: HybridEP: מתי כדאי להזיז טוקנים ומתי להזיז מומחים?
+Review 552: HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission
 
 
 סקירת המאמר היומית של מייק: 17.12.25, סקירה 552, 472 סקירות ל 1024

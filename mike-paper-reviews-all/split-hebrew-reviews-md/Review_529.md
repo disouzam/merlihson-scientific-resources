@@ -1,4 +1,4 @@
-Review 529: האם דחיסה אופטית היא העתיד של הקשר ארוך?
+Review 529: DeepSeek-OCR: Contexts Optical Compression
 
 
 סקירת המאמר היומית של מייק: 25.10.25, סקירה 529

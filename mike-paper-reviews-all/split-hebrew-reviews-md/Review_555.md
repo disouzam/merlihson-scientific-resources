@@ -1,4 +1,4 @@
-Review 555: "אפקט המריחה" (Squeezing Effect) בפיינטיון של מודלי שפה: יש חיה כזו!
+Review 555: Learning Dynamics of LLM Finetuning
 
 
 המאמר היומי של מייק: 25.12.25, סקירה 555, 469 סקירות עד 1024

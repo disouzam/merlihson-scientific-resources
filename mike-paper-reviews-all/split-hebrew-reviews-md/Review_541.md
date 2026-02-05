@@ -1,4 +1,4 @@
-Review 541: רוצים לג'נרט את הסרטון יותר מהר? הנה טרנספורמר דיפוזיוני דליל יכול לעשות את העבודה!
+Review 541: LiteAttention: A Temporal Sparse Attention for Diffusion Transformers
 
 
 המאמר היומי של אביעד ומייק, סקירה 541, 483 סקירות עד 1024

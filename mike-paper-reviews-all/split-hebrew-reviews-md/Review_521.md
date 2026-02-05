@@ -1,4 +1,4 @@
-Review 521: פיין טיון של LLM ללא גרדיאנט: פריצת דרך אלגוריתמית, סקירה 521
+Review 521: הסקירה היומית של מייק: 08.10.25Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING
 
 
 הסקירה היומית של מייק: 08.10.25Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING

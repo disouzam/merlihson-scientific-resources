@@ -1,4 +1,4 @@
-Review 543: איך מודל של 1.5B פרמטרים “מנצח” מודלים ענקיים (ואם זה בכלל אמיתי?)
+Review 543: Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B
 
 
 המאמר היומי של עמרי ומייק, סקירה 543, 481 סקירות עד 1024

@@ -1,4 +1,4 @@
-Review 553: איך מצילים ציוני attention מהדילול (=מריחה) במשימות הנמקה מורכבות
+Review 553: Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs
 
 
 המאמר היומי של עמרי ומייק, סקירה 553, 471 סקירות עד 1024

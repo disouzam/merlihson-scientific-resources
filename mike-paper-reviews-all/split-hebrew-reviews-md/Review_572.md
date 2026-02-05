@@ -1,4 +1,4 @@
-Review 572: הופכים את ה"מלא" לדליל עם LongCat
+Review 572: Efficient Context Scaling with LongCat ZigZag Attention
 
 
 סקירת המאמרים היומית של מייק: .31.01.26, סקירה 572, 452 סקירות עד 1024

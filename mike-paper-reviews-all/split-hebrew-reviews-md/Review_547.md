@@ -1,4 +1,4 @@
-Review 547: לחבר שערים למנגנון ה-attention: אוממ, זה כנראה רעיון לא רע….
+Review 547: Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free
 
 
 סקירת המאמר היומית של מייק: 07.12.25, סקירה 547ֿ, 477 סקירות עד 1024
