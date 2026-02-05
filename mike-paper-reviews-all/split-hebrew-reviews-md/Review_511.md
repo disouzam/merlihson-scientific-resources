@@ -1,9 +1,8 @@
-Review 511: 13.09.25
+Review 511: On the Theoretical Limitations of Embedding-Based Retrieval
 
-המאמר היומי של מייק
+המאמר היומי של מייק 13.09.25
 
 
-On the Theoretical Limitations of Embedding-Based Retrieval
 
 סקירה 504:
 

@@ -1,9 +1,8 @@
-Review 512: 17.09.25
+Review 512: Bootstrapping Task Spaces for Self-Improvementֿ
 
-המאמר היומי של מייק
+המאמר היומי של מייק 17.09.25
 
 
-Bootstrapping Task Spaces for Self-Improvementֿ
 
 מצאתי עוד כמה סקירות שפספסתי לפני אז היום זה סקירה 511…
 

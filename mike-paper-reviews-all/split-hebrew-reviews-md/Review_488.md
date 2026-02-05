@@ -1,9 +1,8 @@
-Review 488: 30.07.25
+Review 488: Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon
 
-המאמר היומי של מייק
+המאמר היומי של מייק 30.07.25
 
 
-Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon
 
 שכחו כל מה שחשבתם על הערכת LLMs –מודלי שפה גדולים הם כמו זיקית (לפחות נכון ללפני 5 חודשים על ידי חוקרים ישראלים).
 

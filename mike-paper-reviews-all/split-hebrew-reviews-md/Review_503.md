@@ -1,9 +1,8 @@
-Review 503: 28.08.25
+Review 503: Memento: Fine-tuning LLM Agents without Fine-tuning LLMs
 
-המאמר היומי של מייק
+המאמר היומי של מייק 28.08.25
 
 
-Memento: Fine-tuning LLM Agents without Fine-tuning LLMs
 
 המאמר מציע פרדיגמה חדשה לבניית סוכנים שיכולים ללמוד ולהסתגל מניסיון, כל זאת ללא העלות המשתקת של פיינטיון של ה-LLM עצמו. זהו שילוב מעניין של AI קלאסי ולמידה עם חיזוקים מודרנית שמרגיש כמו צעד אמיתי קדימה.
 

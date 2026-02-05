@@ -1,9 +1,8 @@
-Review 489: 31.07.25
+Review 489: Empirical evidence of Large Language Model's influence on human spoken communication
 
-המאמר היומי של מייק
+המאמר היומי של מייק 31.07.25
 
 
-Empirical evidence of Large Language Model's influence on human spoken communication
 
 ההיפוך הלשוני: כשבני אדם מתחילים לחקות את המכונות שהם אימנו
 

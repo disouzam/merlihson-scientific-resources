@@ -1,9 +1,8 @@
-Review 480: 04.07.25
+Review 480: Investigating Tax Evasion Emergence Using Dual Large Language Model and Deep Reinforcement Learning Powered Agent-based Simulation
 
-המאמר היומי של מייק
+המאמר היומי של מייק 04.07.25
 
 
-Investigating Tax Evasion Emergence Using Dual Large Language Model and Deep Reinforcement Learning Powered Agent-based Simulation
 
 תפנית מפתיעה מתרחשת בשימוש ב-LLMs בתחומים "רכים" יותר כמו פסיכולוגיה, סוציולוגיה ואפילו כלכלה. אומנם LLMs לא "חושבים" כמו בני אדם ברמת האינדיבידואל, אבל מסתבר שהם כבר מחכים את איך שאנחנו מקבלים החלטות כאוכלוסיה. 
 

@@ -1,9 +1,8 @@
-Review 509: 11.09.25
+Review 509: Fantastic Pretraining Optimizers and Where to Find Them
 
-המאמר היומי של מייק
+המאמר היומי של מייק 11.09.25
 
 
-Fantastic Pretraining Optimizers and Where to Find Them
 
 סקירה 502
 

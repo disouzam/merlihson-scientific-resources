@@ -1,9 +1,8 @@
-Review 490: 01.08.25
+Review 490: Hierarchical Reasoning Model
 
-המאמר היומי של מייק
+המאמר היומי של מייק 01.08.25
 
 
-Hierarchical Reasoning Model
 
 האם מודל ההיגיון ההיררכי הוא הצעד הראשון לקראת AI שהיא לא רק סימולציה של תבונה (אני חושד שלא)?
 

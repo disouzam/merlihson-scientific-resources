@@ -1,9 +1,8 @@
-Review 486: 26.07.25
+Review 486: Building Bridges between Regression, Clustering, and Classification
 
-המאמר היומי של מייק
+המאמר היומי של מייק 26.07.25
 
 
-Building Bridges between Regression, Clustering, and Classification
 
 מזמן לא סקרתי מאמר שלא מופיעה בו גם מילה LLM וגם diffusion models - תתפלאו אבל יש עדיין כאלו ואני חייב להודות שזה היווה אחת הסיבות לבחירתו. המאמר דן בבעיה די מעניינת היא המרה של בעיות רגרסיה לבעיות סיווג (בתחום למידה עמוקה). 
 

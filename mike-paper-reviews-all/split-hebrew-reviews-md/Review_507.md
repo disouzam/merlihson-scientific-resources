@@ -1,9 +1,8 @@
-Review 507: 05.09.25
+Review 507: Group Sequence Policy Optimization
 
-המאמר היומי של מייק
+המאמר היומי של מייק 05.09.25
 
 
-Group Sequence Policy Optimization
 
 סקירה מס' 500:
 

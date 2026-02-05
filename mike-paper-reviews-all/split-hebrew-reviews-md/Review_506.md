@@ -1,9 +1,8 @@
-Review 506: 02.09.25
+Review 506: A Survey on Large Language Model Benchmarks
 
-המאמר היומי של מייק
+המאמר היומי של מייק 02.09.25
 
 
-A Survey on Large Language Model Benchmarks
 
 סקירה מס' 499:
 

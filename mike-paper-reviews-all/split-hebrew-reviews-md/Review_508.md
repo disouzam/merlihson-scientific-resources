@@ -1,9 +1,8 @@
-Review 508: 08.09.25
+Review 508: Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation
 
-המאמר היומי של מייק
+המאמר היומי של מייק 08.09.25
 
 
-Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation
 
 מתחילים את המאה השישית :  סקירה 501
 

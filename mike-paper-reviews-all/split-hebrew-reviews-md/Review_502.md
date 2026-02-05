@@ -1,9 +1,8 @@
-Review 502: 25.08.25
+Review 502: Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks
 
-המאמר היומי של מייק
+המאמר היומי של מייק 25.08.25
 
 
-Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks
 
 מודלים של למידה עמוקה הם המנועים של הבינה המלאכותית המודרנית, אך יש להם פגיעות קריטית: התקפות אדברסריאליות (adversarial attacks). התקפות אלו מנצלות חולשה זו על ידי החדרת הפרעות זעירות, כמעט בלתי נראות, לקלטים, הגורמות למודלים לבצע תחזיות שגויות לחלוטין, עם השלכות שעלולות להיות קטסטרופליות. במשך שנים, קהילת הבינה המלאכותית לכודה במרוץ חימוש, כאשר הגנות רבות הן יקרות חישובית ולעיתים קרובות מוגבלות בהיקפן.
 

@@ -353,7 +353,7 @@ Review_447,28.04.25Around the World in 80 Timesteps: A Generative Approach to Gl
 Review_448,30.04.25THE COMPLEXITY DYNAMICS OF GROKKING,https://arxiv.org/abs/2412.09810
 Review_449,02.05.25ON SPEEDING UP LANGUAGE MODEL EVALUATION,https://arxiv.org/abs/2407.06172
 Review_450,Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs,https://arxiv.org/abs/2412.21187
-Review_451,06.05.25,https://arxiv.org/abs/2501.01073
+Review_451,Graph Generative Pre-trained Transformer,https://arxiv.org/abs/2501.01073
 Review_452,08.05.25Memory Layers at Scale,https://arxiv.org/abs/2412.09764
 Review_453,10.05.25EfficientQAT: Efficient Quantization-Aware Training for Large Language Models,https://arxiv.org/abs/2407.11062
 Review_454,14.05.25ICLR: In-Context Learning of Representations,https://arxiv.org/abs/2501.00070
@@ -382,18 +382,18 @@ Review_476,26.06.25Open Problems in Mechanistic Interpretability,https://arxiv.o
 Review_477,Agent-as-a-Judge: Evaluate Agents with Agents,https://arxiv.org/abs/2410.10934
 Review_478,In-Context Symbolic Regression: Leveraging Large Language Models for Function Discovery,https://arxiv.org/abs/2404.19094
 Review_479,DINO-WM:World Models on Pre-trained Visual Features enable Zero-shot Planning,https://arxiv.org/abs/2411.04983
-Review_480,04.07.25,https://arxiv.org/abs/2501.18177
+Review_480,Investigating Tax Evasion Emergence Using Dual Large Language Model and Deep Reinforcement Learning Powered Agent-based Simulation,https://arxiv.org/abs/2501.18177
 Review_481,07.07.25Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models,https://arxiv.org/abs/2411.12580
-Review_482,09.07.25,https://arxiv.org/abs/2412.04984
-Review_483,11.07.25,https://arxiv.org/abs/2501.19393
+Review_482,Frontier Models are Capable of In-context Scheming,https://arxiv.org/abs/2412.04984
+Review_483,s1: Simple test-time scaling,https://arxiv.org/abs/2501.19393
 Review_484,19.07.25GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment,https://arxiv.org/abs/2410.0819
-Review_485,23.07.25,https://arxiv.org/abs/2506.08007
-Review_486,26.07.25,https://arxiv.org/abs/2502.02996
+Review_485,Reinforcement Pre-Training,https://arxiv.org/abs/2506.08007
+Review_486,"Building Bridges between Regression, Clustering, and Classification",https://arxiv.org/abs/2502.02996
 Review_487,27.07.25Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory,https://arxiv.org/abs/2502.04052
-Review_488,30.07.25,https://arxiv.org/abs/2502.07445
-Review_489,31.07.25,https://arxiv.org/abs/2409.01754
-Review_490,01.08.25,https://arxiv.org/abs/2506.21734
-Review_491,02.08.25,https://arxiv.org/abs/2507.10524
+Review_488,Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon,https://arxiv.org/abs/2502.07445
+Review_489,Empirical evidence of Large Language Model's influence on human spoken communication,https://arxiv.org/abs/2409.01754
+Review_490,Hierarchical Reasoning Model,https://arxiv.org/abs/2506.21734
+Review_491,Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation,https://arxiv.org/abs/2507.10524
 Review_492,04.08.25Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models,https://arxiv.org/abs/2507.02092
 Review_493,06.08.25Where to show Demos in Your Prompt: A Positional Bias of In-Context Learning,https://arxiv.org/abs/2507.22887
 Review_494,08.08.25Efficient Attention Mechanisms for Large Language Models: A Survey,https://arxiv.org/abs/2507.19595
@@ -401,20 +401,20 @@ Review_495,12.08.25Your LLM Knows the Future: Uncovering Its Multi-Token Predict
 Review_496,13.08.25Checklists Are Better Than Reward Models For Aligning Language Model,https://arxiv.org/abs/2507.18624
 Review_497,14.08.25FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming,https://arxiv.org/abs/2507.13337
 Review_498,Large Action Models: From Inception to Implementation,https://arxiv.org/abs/2412.10047
-Review_499,19.08.25,https://arxiv.org/abs/2507.13338
+Review_499,Training Transformers with Enforced Lipschitz Bounds,https://arxiv.org/abs/2507.13338
 Review_500,Scaling Laws for Forgetting When Fine-Tuning Large Language Models,https://arxiv.org/abs/2401.05605
 Review_501,MemOS: An Operating System for Memory-Augmented Generation (MAG) in Large Language Models,https://arxiv.org/abs/2505.22101
-Review_502,25.08.25,https://arxiv.org/abs/2502.09110
-Review_503,28.08.25,https://arxiv.org/abs/2508.16153
-Review_504,29.08.25,https://arxiv.org/abs/2508.15260
-Review_505,31.08.25,https://arxiv.org/abs/2507.02618
-Review_506,02.09.25,https://arxiv.org/abs/2508.15361
-Review_507,05.09.25,https://arxiv.org/abs/2507.18071
-Review_508,08.09.25,https://arxiv.org/abs/2508.13144
-Review_509,11.09.25,https://arxiv.org/abs/2509.02046
+Review_502,Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks,https://arxiv.org/abs/2502.09110
+Review_503,Memento: Fine-tuning LLM Agents without Fine-tuning LLMs,https://arxiv.org/abs/2508.16153
+Review_504,DEEP THINK WITH CONFIDENCE,https://arxiv.org/abs/2508.15260
+Review_505,Strategic Intelligence in Large Language Models: Evidence from evolutionary Game Theory,https://arxiv.org/abs/2507.02618
+Review_506,A Survey on Large Language Model Benchmarks,https://arxiv.org/abs/2508.15361
+Review_507,Group Sequence Policy Optimization,https://arxiv.org/abs/2507.18071
+Review_508,Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation,https://arxiv.org/abs/2508.13144
+Review_509,Fantastic Pretraining Optimizers and Where to Find Them,https://arxiv.org/abs/2509.02046
 Review_510,Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making,https://www.researchsquare.com/article/rs-7587964/v1
-Review_511,13.09.25,https://arxiv.org/abs/2508.21038
-Review_512,17.09.25,https://arxiv.org/abs/2509.04575
+Review_511,On the Theoretical Limitations of Embedding-Based Retrieval,https://arxiv.org/abs/2508.21038
+Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,https://arxiv.org/abs/2509.04575
 Review_513,THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION,https://arxiv.org/abs/2507.14560
 Review_514,Foundation Models for Time Series Analysis- A Tutorial and Survey,https://arxiv.org/abs/2403.14735
 Review_515,Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215

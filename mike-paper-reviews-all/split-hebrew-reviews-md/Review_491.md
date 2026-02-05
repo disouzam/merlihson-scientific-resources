@@ -1,9 +1,8 @@
-Review 491: 02.08.25
+Review 491: Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation
 
-המאמר היומי של מייק
+המאמר היומי של מייק 02.08.25
 
 
-Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation
 
 האם כל הטוקנים צריכים את אותה כמות של "חשיבה"? Mixture-of-Recursions אומר שלא - מאמר מתחרה לזה של אתמול
 
