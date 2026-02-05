@@ -1,8 +1,6 @@
-Review 479:
+Review 479: DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning
 
 המאמר היומי של טדי מייק 01.07.2025
-
-DINO-WM:World Models on Pre-trained Visual Features enable Zero-shot Planning
 
 חוזר לסקור מאמרים בראייה ממוחשבת משולבת עם למידה באמצעות חיזוקים או RL. המאמר מציע גישה לאימון של מודל עולם(world model) לשימושים בעולם הרובוטיקה. כלומר המחברים מציעים גישה המאפשרת ללמוד איך לגרום לרובוט לבצע פעולות מסוימות בהתבסס על התיאור הויזואלי של הסביבה (קרי תמונות).
 

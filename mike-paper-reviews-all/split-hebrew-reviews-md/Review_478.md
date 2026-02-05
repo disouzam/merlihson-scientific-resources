@@ -1,8 +1,6 @@
-Review 478:
+Review 478: In-Context Symbolic Regression: Leveraging Large Language Models for Function Discovery
 
 המאמר היומי של טדי מייק 29.06.2025
-
-In-Context Symbolic Regression: Leveraging Large Language Models for Function Discovery
 
 היום יש לנו מאמר טיפה ישן (בן שנה) אבל שהזדקן ממש טוב בינתיים.
 

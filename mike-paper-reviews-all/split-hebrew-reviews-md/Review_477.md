@@ -1,8 +1,6 @@
-Review 477:
+Review 477: Agent-as-a-Judge: Evaluate Agents with Agents
 
 המאמר היומי של עמרי ומייק 27.06.2025
-
-Agent-as-a-Judge: Evaluate Agents with Agents
 
 כולנו כבר מכירים את הקונספט LLM-as-a-Judge שזה אומר להיעזר במודלי שפה גדולים כדי לבחון מודלי שפה אחרים. צוות מ-Meta מציג כאן חלופה שאפתנית יותר: (Agent-as-a-Judge (AAJ, תפיסה שבה סוכן מבצע אבלואציה לסוכנים אחרים ומספק משוב עשיר ברמת הצעד, לא רק פסק דין סופי.
 
