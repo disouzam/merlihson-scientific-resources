@@ -1,4 +1,4 @@
-Review 107: LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition 26.07.23https://huggingface.co/papers/2307.13269
+Review 107: LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
 
 Paper: https://arxiv.org/abs/2307.13269v3
 

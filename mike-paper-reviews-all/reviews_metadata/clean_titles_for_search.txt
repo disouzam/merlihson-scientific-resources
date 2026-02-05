@@ -104,7 +104,7 @@ Meta-Transformer: A Unified Framework for Multimodal Learning, 22.07.23
 Evaluating machine comprehension of sketch meaning at different levels of abstraction, 23.07.23https://cogtoolslab.github.io/pdf/mukherjee_cogsci_2023.pdf
 Diffusion Sampling with Momentum for Mitigating Divergence Artifacts, 24.07.23
 Interpolating between Images with Diffusion Models
-LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition 26.07.23https://huggingface.co/papers/2307.13269
+LoraHub: Efficient Cross-Task Generalization via Dynamic LoRA Composition
 Composite Diffusion | whole >= Σparts, 27.07.23
 Scaling TransNormer to 175 Billion Parameters, 28.07.23https://huggingface.co/papers/2307.14995
 RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT, 29.07.23https://huggingface.co/papers/2307.12950
