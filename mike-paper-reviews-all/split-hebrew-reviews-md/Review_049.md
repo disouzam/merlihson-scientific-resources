@@ -1,8 +1,6 @@
 Review 49: Exemplar VAE: Linking Generative Models, Nearest Neighbor Retrieval, and Data Augmentation
 
-Paper: https://arxiv.org/abs/2004.04795
-
-v3
+Paper: https://arxiv.org/abs/2004.04795v3
 
 פינת הסוקר:  
 

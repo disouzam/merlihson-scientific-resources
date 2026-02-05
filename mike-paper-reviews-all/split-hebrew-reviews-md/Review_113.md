@@ -1,8 +1,6 @@
 Review 113: [Short] UnIVAL: Unified Model for Image, Video, Audio and Language Tasks, 01.08.23
 
-Paper: https://arxiv.org/abs/2307.16184
-
-v2
+Paper: https://arxiv.org/abs/2307.16184v2
 
 https://huggingface.co/papers/2307.16184
 

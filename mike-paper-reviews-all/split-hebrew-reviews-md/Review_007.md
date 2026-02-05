@@ -1,8 +1,6 @@
 Review 7: PeerNets: Exploiting Peer Wisdom Against Adversarial Attacks
 
-Paper: https://arxiv.org/abs/1806.00088
-
-v1
+Paper: https://arxiv.org/abs/1806.00088v1
 
 תחום מאמר: adversary training, graph attention network 
 

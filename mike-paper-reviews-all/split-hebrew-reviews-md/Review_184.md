@@ -1,8 +1,6 @@
 Review 183: [Short] WEAK-TO-STRONG GENERALIZATION: ELICITING STRONG CAPABILITIES WITH WEAK SUPERVISION
 
-Paper: https://arxiv.org/abs/2312.09390
-
-v1
+Paper: https://arxiv.org/abs/2312.09390v1
 
 https://openai.com/research/weak-to-strong-generalization, https://cdn.openai.com/papers/weak-to-strong-generalization.pdf
 

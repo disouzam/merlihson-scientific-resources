@@ -1,8 +1,6 @@
 Review 28: Kitsune: An Ensemble of AutoEncoders for Online Network Intrusion Detection
 
-Paper: https://arxiv.org/abs/1802.09089
-
-v2
+Paper: https://arxiv.org/abs/1802.09089v2
 
 פינת הסוקר:  
 

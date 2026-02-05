@@ -1,8 +1,6 @@
 Review 63: Soft-IntroVAE: Analyzing and Improving the Introspective Variational Autoencoder
 
-Paper: https://arxiv.org/abs/2012.13253
-
-v2
+Paper: https://arxiv.org/abs/2012.13253v2
 
 פינת הסוקר:  
 

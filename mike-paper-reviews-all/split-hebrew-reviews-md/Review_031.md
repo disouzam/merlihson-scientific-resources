@@ -1,8 +1,6 @@
 Review 31: Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere
 
-Paper: https://arxiv.org/abs/2005.10242
-
-v10
+Paper: https://arxiv.org/abs/2005.10242v10
 
 פינת הסוקרים:
 

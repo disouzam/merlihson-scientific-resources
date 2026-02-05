@@ -1,8 +1,6 @@
 Review 101: GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models
 
-Paper: https://arxiv.org/abs/2112.10741
-
-v3
+Paper: https://arxiv.org/abs/2112.10741v3
 
 המלצת קריאה:
 

@@ -1,8 +1,6 @@
 Review 181: [Short] Smooth Diffusion: Crafting Smooth Latent Spaces in Diffusion Models
 
-Paper: https://arxiv.org/abs/2312.04410
-
-v1
+Paper: https://arxiv.org/abs/2312.04410v1
 
 https://huggingface.co/papers/2312.04410
 

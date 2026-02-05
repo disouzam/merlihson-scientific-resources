@@ -1,8 +1,6 @@
 Review 180: [Short] Learning From Mistakes Makes LLM Better Reasoner
 
-Paper: https://arxiv.org/abs/2310.20689
-
-v4
+Paper: https://arxiv.org/abs/2310.20689v4
 
 https://huggingface.co/papers/2310.20689
 

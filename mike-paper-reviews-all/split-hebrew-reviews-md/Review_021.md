@@ -1,8 +1,6 @@
 Review 21: SafeDiffuser: Safe Planning with Diffusion Probabilistic Models
 
-Paper: https://arxiv.org/abs/2306.00148
-
-v1
+Paper: https://arxiv.org/abs/2306.00148v1
 
 פינת הסוקר:  
 

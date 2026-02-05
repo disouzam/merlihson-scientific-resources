@@ -1,8 +1,6 @@
 Review 27: Meta-AAD: Active Anomaly Detection with Deep Reinforcement Learning
 
-Paper: https://arxiv.org/abs/2009.07415
-
-v1
+Paper: https://arxiv.org/abs/2009.07415v1
 
 פינת הסוקר:  
 

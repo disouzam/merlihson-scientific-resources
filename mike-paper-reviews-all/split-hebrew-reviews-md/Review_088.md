@@ -1,8 +1,6 @@
 Review 88: Secure Machine Learning in the Cloud Using One Way Scrambling by Deconvolution
 
-Paper: https://arxiv.org/abs/2111.03125
-
-v1
+Paper: https://arxiv.org/abs/2111.03125v1
 
 פינת הסוקר:  
 

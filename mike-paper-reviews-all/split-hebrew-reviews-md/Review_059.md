@@ -1,8 +1,6 @@
 Review 59: Unsupervised Discovery of Interpretable Directions in the GAN Latent Space
 
-Paper: https://arxiv.org/abs/2307.08012
-
-v1
+Paper: https://arxiv.org/abs/2307.08012v1
 
 פינת הסוקר:        
 

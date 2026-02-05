@@ -1,8 +1,6 @@
 Review 36: Sequence-to-Sequence Contrastive Learning for Text Recognition
 
-Paper: https://arxiv.org/abs/2012.10873
-
-v1
+Paper: https://arxiv.org/abs/2012.10873v1
 
 פינת הסוקר:  
 

@@ -1,8 +1,6 @@
 Review 186: HiPPO: Recurrent Memory with Optimal Polynomial Projections
 
-Paper: https://arxiv.org/abs/2008.07669
-
-v2
+Paper: https://arxiv.org/abs/2008.07669v2
 
 https://arxiv.org/abs/2008.07669
 

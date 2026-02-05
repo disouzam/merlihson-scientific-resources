@@ -1,8 +1,6 @@
 Review 33: PreTrained Image Processing Transformer
 
-Paper: https://arxiv.org/abs/2307.05222
-
-v2
+Paper: https://arxiv.org/abs/2307.05222v2
 
 פינת הסוקר:
 

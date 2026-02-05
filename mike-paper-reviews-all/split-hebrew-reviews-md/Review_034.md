@@ -1,8 +1,6 @@
 Review 34: Identifying Mislabeled Data using the Area Under the Margin Ranking
 
-Paper: https://arxiv.org/abs/2001.10528
-
-v4
+Paper: https://arxiv.org/abs/2001.10528v4
 
 פינת הסוקר:
 

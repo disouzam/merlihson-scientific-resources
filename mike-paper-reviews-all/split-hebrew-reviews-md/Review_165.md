@@ -1,8 +1,6 @@
 Review 164: [Short] Table-GPT: Table-tuned GPT for Diverse Table Tasks
 
-Paper: https://arxiv.org/abs/2310.09263
-
-v1
+Paper: https://arxiv.org/abs/2310.09263v1
 
 https://huggingface.co/papers/2310.09263
 

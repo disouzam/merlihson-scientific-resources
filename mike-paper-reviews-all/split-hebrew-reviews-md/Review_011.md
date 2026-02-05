@@ -1,8 +1,6 @@
 Review 11: A causal view of compositional zero-shot recognition
 
-Paper: https://arxiv.org/abs/2006.14610
-
-v2
+Paper: https://arxiv.org/abs/2006.14610v2
 
 פינת הסוקר:  
 

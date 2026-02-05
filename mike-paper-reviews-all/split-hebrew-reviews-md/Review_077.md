@@ -1,8 +1,6 @@
 Review 77: [Short] Diffusion with Forward Models: Solving Stochastic Inverse Problems Without Direct Supervision
 
-Paper: https://arxiv.org/abs/2306.11719
-
-v2
+Paper: https://arxiv.org/abs/2306.11719v2
 
 המאמר מציע מודל דיפוזיה גנרטיבי (DDPM)למקרה שבו הדאטה לאימון לא זמין בצורה ישירה אלא רק אחרי טרנספורמציה שאחריה חלק מהמידע על הדאטה הולך לאיבוד.  בדרך כלל אנחנו מאמנים מודל דיפוזיה על דאטהסט המכיל , נגיד, תמונות בעלי תיאור מילולי, והמודל לומד ליצור תמונה מתיאור כאשר יש לנה תמונה אמיתית עם התיאור הזה  - אז די ברור איך לאמן את המודל. 
 

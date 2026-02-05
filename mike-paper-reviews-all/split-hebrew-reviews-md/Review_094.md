@@ -1,8 +1,6 @@
 Review 94: [Short] In-context Autoencoder for Context Compression in a Large Language Model
 
-Paper: https://arxiv.org/abs/2307.06945
-
-v4
+Paper: https://arxiv.org/abs/2307.06945v4
 
 #llm שלכם לא מבין את טקסטים ארוכים כי אורך הקשרו קצר מדי?
 

@@ -1,8 +1,6 @@
 Review 160: [Short] Vision Transformers Need Registershttps://arxiv.org/abs/2309.16588
 
-Paper: https://arxiv.org/abs/2309.16588
-
-v2
+Paper: https://arxiv.org/abs/2309.16588v2
 
 ממש אהבתי את המאמר זה אבל לא בגלל שהוא הציע איזה רעיון מהפכני (הרעיון די נחמד אבל לא איזו פצצה). הסיבה לכך היא שהמאמר הזה הדגיש שוב את העובדה כמה מעט אנחנו מבינים מודלי ענק בעל ביליוני פרמטרים
 

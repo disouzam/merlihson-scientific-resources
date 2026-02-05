@@ -1,8 +1,6 @@
 Review 17: CoMatch: Semi-supervised Learning with Contrastive Graph Regularization
 
-Paper: https://arxiv.org/abs/2011.11183
-
-v2
+Paper: https://arxiv.org/abs/2011.11183v2
 
 פינת הסוקר:  
 

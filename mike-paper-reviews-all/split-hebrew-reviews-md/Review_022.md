@@ -1,8 +1,6 @@
 Review 22: PIX2SEQ: A LANGUAGE MODELING FRAMEWORK FOR OBJECT DETECTION
 
-Paper: https://arxiv.org/abs/2109.10852
-
-v2
+Paper: https://arxiv.org/abs/2109.10852v2
 
 פינת הסוקרים:
 

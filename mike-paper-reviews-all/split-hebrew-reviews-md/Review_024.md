@@ -1,8 +1,6 @@
 Review 24: RLPrompt: Optimizing Discrete Text Prompts with Reinforcement Learning
 
-Paper: https://arxiv.org/abs/2205.12548
-
-v3
+Paper: https://arxiv.org/abs/2205.12548v3
 
 פינת הסוקר:  
 

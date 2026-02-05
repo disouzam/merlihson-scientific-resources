@@ -1,8 +1,6 @@
 Review 173: [Short] Teaching Language Models to Self-Improve through Interactive Demonstrations
 
-Paper: https://arxiv.org/abs/1909.04157
-
-v1
+Paper: https://arxiv.org/abs/1909.04157v1
 
 https://huggingface.co/papers/2310.13522
 

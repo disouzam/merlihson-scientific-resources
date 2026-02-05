@@ -1,8 +1,6 @@
 Review 41: Improving GAN Training with Probability Ratio Clipping and Sample Reweighting
 
-Paper: https://arxiv.org/abs/2006.06900
-
-v4
+Paper: https://arxiv.org/abs/2006.06900v4
 
 פינת הסוקר:
 

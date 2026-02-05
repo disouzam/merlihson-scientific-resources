@@ -1,8 +1,6 @@
 Review 16: COCO-LM: Correcting and Contrasting Text Sequences for Language Model Pretraining
 
-Paper: https://arxiv.org/abs/2212.10341
-
-v2
+Paper: https://arxiv.org/abs/2212.10341v2
 
 פינת הסוקר:  
 

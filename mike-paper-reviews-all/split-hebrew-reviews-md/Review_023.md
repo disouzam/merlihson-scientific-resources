@@ -1,8 +1,6 @@
 Review 23: Make-A-Video: Text-to-Video Generation without Text-Video Data
 
-Paper: https://arxiv.org/abs/2311.10982
-
-v1
+Paper: https://arxiv.org/abs/2311.10982v1
 
 Make-A-Video: Text-to-Video Generation without Text-Video Data
 

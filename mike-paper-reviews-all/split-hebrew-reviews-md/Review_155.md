@@ -1,8 +1,6 @@
 Review 154: Context is Environment, 26.09.2023
 
-Paper: https://arxiv.org/abs/2309.09888
-
-v2
+Paper: https://arxiv.org/abs/2309.09888v2
 
 https://arxiv.org/abs/2309.09888
 

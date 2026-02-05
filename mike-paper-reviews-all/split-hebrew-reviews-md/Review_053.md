@@ -1,8 +1,6 @@
 Review 53: Learning to summarize from human feedback
 
-Paper: https://arxiv.org/abs/2410.13116
-
-v2
+Paper: https://arxiv.org/abs/2410.13116v2
 
 פינת הסוקר:  
 

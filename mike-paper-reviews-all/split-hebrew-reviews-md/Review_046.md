@@ -1,8 +1,6 @@
 Review 46: Discriminator Rejection Sampling
 
-Paper: https://arxiv.org/abs/1810.06758
-
-v3
+Paper: https://arxiv.org/abs/1810.06758v3
 
 פינת הסוקר:  
 

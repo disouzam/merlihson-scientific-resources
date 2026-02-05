@@ -1,8 +1,6 @@
 Review 25: Improving Self-supervised Learning with Automated Unsupervised Outlier Arbitration
 
-Paper: https://arxiv.org/abs/2112.08132
-
-v1
+Paper: https://arxiv.org/abs/2112.08132v1
 
 פינת הסוקר:  
 

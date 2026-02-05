@@ -1,8 +1,6 @@
 Review 172: [Short] Localizing and Editing Knowledge in Text-to-Image Generative Models
 
-Paper: https://arxiv.org/abs/2405.01008
-
-v2
+Paper: https://arxiv.org/abs/2405.01008v2
 
 https://huggingface.co/papers/2310.13730
 

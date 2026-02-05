@@ -1,8 +1,6 @@
 Review 39: Supermasks in Superposition
 
-Paper: https://arxiv.org/abs/2006.14769
-
-v3
+Paper: https://arxiv.org/abs/2006.14769v3
 
 פינת הסוקר: 
 

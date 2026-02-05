@@ -1,8 +1,6 @@
 Review 55: InfoBERT: Improving Robustness of Language Models from an Information Theoretic Perspective
 
-Paper: https://arxiv.org/abs/2010.02329
-
-v4
+Paper: https://arxiv.org/abs/2010.02329v4
 
 פינת הסוקר:
 

@@ -1,8 +1,6 @@
 Review 83: [Short] HyperDreamBooth: HyperNetworks for Fast Personalization of Text-to-Image Models
 
-Paper: https://arxiv.org/abs/2307.06949
-
-v2
+Paper: https://arxiv.org/abs/2307.06949v2
 
 זה למעשה שילוב של DreamBooth ו- (Low Rank Adaptation (LoRA
 

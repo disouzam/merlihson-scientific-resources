@@ -1,8 +1,6 @@
 Review 185: Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks
 
-Paper: https://arxiv.org/abs/2102.11417
-
-v2
+Paper: https://arxiv.org/abs/2102.11417v2
 
 https://proceedings.neurips.cc/paper_files/paper/2019/file/952285
 

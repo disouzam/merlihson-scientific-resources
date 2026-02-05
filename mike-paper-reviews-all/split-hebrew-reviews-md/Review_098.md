@@ -1,8 +1,6 @@
 Review 98: [Short] Continuous Layout Editing of Single Images with Diffusion Models
 
-Paper: https://arxiv.org/abs/2306.13078
-
-v1
+Paper: https://arxiv.org/abs/2306.13078v1
 
  
 

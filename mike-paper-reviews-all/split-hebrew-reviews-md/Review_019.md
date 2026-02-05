@@ -1,8 +1,6 @@
 Review 19: Deep VULMAN: A Deep Reinforcement Learning-Enabled Cyber Vulnerability Management Framework
 
-Paper: https://arxiv.org/abs/2208.02369
-
-v2
+Paper: https://arxiv.org/abs/2208.02369v2
 
 פינת הסוקר:  
 

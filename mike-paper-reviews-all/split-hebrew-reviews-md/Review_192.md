@@ -1,8 +1,6 @@
 Review 191: Hyena Hierarchy: Towards Larger Convolutional Language Models
 
-Paper: https://arxiv.org/abs/2302.10866
-
-v3
+Paper: https://arxiv.org/abs/2302.10866v3
 
 https://arxiv.org/abs/2302.10866
 

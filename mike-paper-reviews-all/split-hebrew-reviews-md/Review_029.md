@@ -1,8 +1,6 @@
 Review 29: Language Modeling via Stochastic Processes
 
-Paper: https://arxiv.org/abs/2203.11370
-
-v2
+Paper: https://arxiv.org/abs/2203.11370v2
 
 פינת הסוקר:  
 

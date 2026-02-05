@@ -1,8 +1,6 @@
 Review 196: VMamba: Visual State Space Model
 
-Paper: https://arxiv.org/abs/2401.10166
-
-v4
+Paper: https://arxiv.org/abs/2401.10166v4
 
 https://arxiv.org/abs/2401.10166
 

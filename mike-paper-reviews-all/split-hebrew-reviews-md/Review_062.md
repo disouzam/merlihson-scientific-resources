@@ -1,8 +1,6 @@
 Review 62: Taming Transformers for High-Resolution Image Synthesis
 
-Paper: https://arxiv.org/abs/2012.09841
-
-v3
+Paper: https://arxiv.org/abs/2012.09841v3
 
 פינת הסוקר:  
 

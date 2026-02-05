@@ -1,8 +1,6 @@
 Review 151: [Short] FreeU: Free Lunch in Diffusion U-Net, 22.09.2023
 
-Paper: https://arxiv.org/abs/2309.11497
-
-v2
+Paper: https://arxiv.org/abs/2309.11497v2
 
 https://huggingface.co/papers/2309.11497
 

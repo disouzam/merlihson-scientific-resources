@@ -1,8 +1,6 @@
 Review 35: Regularizing Towards Permutation Invariance in Recurrent Models
 
-Paper: https://arxiv.org/abs/2010.13055
-
-v1
+Paper: https://arxiv.org/abs/2010.13055v1
 
 פינת הסוקר:  
 

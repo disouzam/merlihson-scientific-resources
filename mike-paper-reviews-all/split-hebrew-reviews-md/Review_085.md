@@ -1,8 +1,6 @@
 Review 85: [Short] Anticorrelated Noise Injection for Improved Generalization
 
-Paper: https://arxiv.org/abs/2202.02831
-
-v3
+Paper: https://arxiv.org/abs/2202.02831v3
 
 עבודה מעניינת המציע שיטה מאוד פשוטה לשיפור ביצועים של (stochastic gradient descent (SGD
 

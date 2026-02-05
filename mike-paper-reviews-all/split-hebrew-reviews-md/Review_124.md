@@ -1,8 +1,6 @@
 Review 123: [Short] TextDiffuser: Diffusion Models as Text Painters, 13.08.23https://huggingface.co/papers/2305.10855
 
-Paper: https://arxiv.org/abs/2305.10855
-
-v5
+Paper: https://arxiv.org/abs/2305.10855v5
 
 מודלי דיפוזיה מצטיינים ביצירת תמונות מרשימות מתיאור טקסטואלי אך עדיין מתקשות ביצירה תמונות המכילות טקסט כחלק מהתמונה. למשל יצירת תמונה של כלב המחזיק שלט שכתוב עליו ״ברוך הבא הביתה״ עלולה ליצור תמונה עם טקסט שונה ולא ברור על השלט. 
 

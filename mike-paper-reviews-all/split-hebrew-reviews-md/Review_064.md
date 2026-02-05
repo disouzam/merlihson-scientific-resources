@@ -1,8 +1,6 @@
 Review 64: PDE-GCN: Novel Architectures for Graph Neural Networks Motivated by Partial Differential Equations
 
-Paper: https://arxiv.org/abs/2210.05495
-
-v1
+Paper: https://arxiv.org/abs/2210.05495v1
 
 פינת הסוקר:  
 

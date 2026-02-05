@@ -1,8 +1,6 @@
 Review 115: [Short] From Sparse to Soft Mixtures of Experts, 03.08.23https://huggingface.co/papers/2308.00951
 
-Paper: https://arxiv.org/abs/2308.00951
-
-v2
+Paper: https://arxiv.org/abs/2308.00951v2
 
 ערבוב של מומחים (mixture of experts) – שמעתם על זה? כשיש לכם משימה מורכבת ביד אחת הגישות לפתור אותם היא לחלק אותה לכמה תת-משימות בעלות אופי שונה ואז מאמנים מודל לכל אחד מהמשימות אלו. בסוף משלבים את התוצאות של כל מודלים לבניית הפתרון לבעיה המורכבת שלנו. 
 

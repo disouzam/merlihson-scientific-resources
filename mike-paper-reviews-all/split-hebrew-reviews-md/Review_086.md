@@ -1,8 +1,6 @@
 Review 86: [Short] BuboGPT: Enabling Visual Grounding in Multi-Modal LLMs
 
-Paper: https://arxiv.org/abs/2307.08581
-
-v1
+Paper: https://arxiv.org/abs/2307.08581v1
 
 רוצים מודל העונה על השאלות לגבי האובייקטים בתמונה וגם מראה לכם איפה האובייקט נמצא בתמונה ולתת הסבר לגביו? בנוסף לאודיו נתון אתו המודל יותר לסמן אותכם מי בתמונה שלכם הוא מקור האודיו. וכל זה מלווה בהסברים
 

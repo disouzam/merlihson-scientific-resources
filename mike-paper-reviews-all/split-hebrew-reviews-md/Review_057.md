@@ -1,8 +1,6 @@
 Review 57: Geometric Dataset Distances via Optimal Transport
 
-Paper: https://arxiv.org/abs/2002.02923
-
-v1
+Paper: https://arxiv.org/abs/2002.02923v1
 
 פינת הסוקר:        
 

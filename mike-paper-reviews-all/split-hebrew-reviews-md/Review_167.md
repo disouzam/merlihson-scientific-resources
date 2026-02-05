@@ -1,8 +1,6 @@
 Review 166: In-Context Pretraining: Language Modeling Beyond Document Boundaries
 
-Paper: https://arxiv.org/abs/2310.10638
-
-v6
+Paper: https://arxiv.org/abs/2310.10638v6
 
 https://huggingface.co/papers/2310.10638
 

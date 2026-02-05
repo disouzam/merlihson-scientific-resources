@@ -1,8 +1,6 @@
 Review 26: What does a platypus look like? Generating customized prompts for zero-shot image classification
 
-Paper: https://arxiv.org/abs/2209.03320
-
-v3
+Paper: https://arxiv.org/abs/2209.03320v3
 
 פינת הסוקר:  
 

@@ -1,8 +1,6 @@
 Review 100: Fastformer: Additive attention is Can Be All you need
 
-Paper: https://arxiv.org/abs/2108.09084
-
-v6
+Paper: https://arxiv.org/abs/2108.09084v6
 
 אתם אולי שמתם לב שיש לי חולשה למאמרים ששמם ניתן באמצעות הטמפלייט "X is not ("") is you need". הפעם המאמר שאני הולך לסקור (קצרות או #shortdeepnightlearners") לא מקיים את הטפלייט הזה במדויק אבל עדיין נמצא בסביבת אפסילון ממנו לאפסילון די קטן. 
 

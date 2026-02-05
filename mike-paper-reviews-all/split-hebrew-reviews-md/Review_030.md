@@ -1,8 +1,6 @@
 Review 30: Diffusion-LM Improves Controllable Text Generation
 
-Paper: https://arxiv.org/abs/2205.14217
-
-v1
+Paper: https://arxiv.org/abs/2205.14217v1
 
 פינת הסוקר:  
 

@@ -1,8 +1,6 @@
 Review 206: SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL
 
-Paper: https://arxiv.org/abs/2405.11831
-
-v2
+Paper: https://arxiv.org/abs/2405.11831v2
 
 https://arxiv.org/abs/2405.11831
 

@@ -1,8 +1,6 @@
 Review 61: PonderNet: Learning to Ponder
 
-Paper: https://arxiv.org/abs/2107.05407
-
-v2
+Paper: https://arxiv.org/abs/2107.05407v2
 
 פינת הסוקר:  
 

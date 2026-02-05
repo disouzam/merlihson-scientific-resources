@@ -1,8 +1,6 @@
 Review 38: Removing Bias in Multi-modal Classifiers: Regularization by Maximizing Functional Entropies
 
-Paper: https://arxiv.org/abs/2010.10802
-
-v1
+Paper: https://arxiv.org/abs/2010.10802v1
 
 פינת הסוקר:  
 

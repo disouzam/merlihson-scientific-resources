@@ -1,8 +1,6 @@
 Review 178: [Short] CAPSFUSION: Rethinking Image-Text Data at Scale
 
-Paper: https://arxiv.org/abs/2310.20550
-
-v3
+Paper: https://arxiv.org/abs/2310.20550v3
 
 https://huggingface.co/papers/2310.19019
 

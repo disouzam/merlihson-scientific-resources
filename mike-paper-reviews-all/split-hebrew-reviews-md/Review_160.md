@@ -1,8 +1,6 @@
 Review 159: [Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization, 02.10.2023
 
-Paper: https://arxiv.org/abs/2306.09222
-
-v5
+Paper: https://arxiv.org/abs/2306.09222v5
 
 https://openreview.net/forum?id=EhK6wBBJNS
 

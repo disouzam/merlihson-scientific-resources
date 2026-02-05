@@ -1,8 +1,6 @@
 Review 58: Gradient Descent with Early Stopping is Provably Robust to Label Noise for Overparameterized Neural Networks
 
-Paper: https://arxiv.org/abs/1903.11680
-
-v3
+Paper: https://arxiv.org/abs/1903.11680v3
 
 פינת הסוקר:        
 

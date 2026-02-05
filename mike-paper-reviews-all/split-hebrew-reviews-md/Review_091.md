@@ -1,8 +1,6 @@
 Review 91: Gradients Are Not All You Need
 
-Paper: https://arxiv.org/abs/2111.05803
-
-v2
+Paper: https://arxiv.org/abs/2111.05803v2
 
 עוד מאמר אחד מהסדרה של ""X is/are .../not all you need" שכמובן לא יכולתי לפספס. זה המאמר הכי עמוק  מהמאמרים נושאים את השם הזה לפחות בשנה האחרונה (למרות שבחירת השם לא אידיאלית ולא משקפת את מסקנות המאמר).
 

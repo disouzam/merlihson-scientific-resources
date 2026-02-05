@@ -1,8 +1,6 @@
 Review 44: TransGAN: Two Transformers Can Make One Strong GAN
 
-Paper: https://arxiv.org/abs/2102.07074
-
-v4
+Paper: https://arxiv.org/abs/2102.07074v4
 
 פינת הסוקר:  
 

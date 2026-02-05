@@ -1,8 +1,6 @@
 Review 192: RWKV: Reinventing RNNs for the Transformer Era
 
-Paper: https://arxiv.org/abs/2305.13048
-
-v2
+Paper: https://arxiv.org/abs/2305.13048v2
 
 https://arxiv.org/abs/2305.13048
 

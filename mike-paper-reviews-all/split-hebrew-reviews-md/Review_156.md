@@ -1,8 +1,6 @@
 Review 155: [Short] CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS, 27.09.2023
 
-Paper: https://arxiv.org/abs/2309.11495
-
-v2
+Paper: https://arxiv.org/abs/2309.11495v2
 
 https://arxiv.org/abs/2309.09888.pdf
 
