@@ -1,8 +1,6 @@
-Review 176: Large Language Models as Generalizable Policies for Embodied Tasks
+Review 177:Large Language Models as Generalizable Policies for Embodied Tasks
 
 Paper: https://arxiv.org/abs/2310.17722v2
-
- https://huggingface.co/papers/2310.17722
 
 על למידה עם חיזוקים (reinforcement learning) שמעתם כבר? על מודלי שפה בטח שמעתם, נכון? אז היום אנחנו נדבר על השידוך ביניהם.  אזכיר ש-RL היא למעשה משפחת שיטות המאפשרות לאמן מודל on-the-fly. כלומר תוך כדי אימון המודל ניתן ליצור דאטה כל פעם שהמודל מתאמן ולהמשיך לאמן עליו (יש גם offline RL שמאמן על דאטה סטטי).
 

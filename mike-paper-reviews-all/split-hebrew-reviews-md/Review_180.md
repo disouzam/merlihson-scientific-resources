@@ -1,8 +1,6 @@
-Review 179: [Short] UNLEASHING THE POWER OF PRE-TRAINED LANGUAGE MODELS FOR OFFLINE REINFORCEMENT LEARNING
+Review 180:[Short] UNLEASHING THE POWER OF PRE-TRAINED LANGUAGE MODELS FOR OFFLINE REINFORCEMENT LEARNING
 
 Paper: https://arxiv.org/abs/2310.20587v5
-
-https://huggingface.co/papers/2310.20587
 
 המאמר הזה משך את עיני כי אני מאוד אוהב שילובים של מודלי שפה (וגם מודלי דיפוזיה) למשימות מהעולם של למידה עם חיזוקים (Reinforcement Learning). המאמר הזה עשה את זה בצורה מאוד אלגנטית כל כך אחרי שרפרפתי בו 5 דקות לא הבנתי חשבתי שזה די בלתי אפשרי. אבל אחרי הקצת צללתי לעומק הבנתי שכדאי לתת לזה צ'אנס ולסקור אותו במדורנו.
 

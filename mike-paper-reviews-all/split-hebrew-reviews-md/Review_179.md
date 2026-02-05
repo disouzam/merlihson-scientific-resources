@@ -1,8 +1,6 @@
-Review 178: [Short] CAPSFUSION: Rethinking Image-Text Data at Scale
+Review 179:[Short] CAPSFUSION: Rethinking Image-Text Data at Scale
 
 Paper: https://arxiv.org/abs/2310.20550v3
-
-https://huggingface.co/papers/2310.19019
 
 הרבה דובר לאחרונה על איך ניתן לשפר מודלים מולטימודליים (אלו שיודעים לעבוד עם כמה סוגים של דאטה, נגיד שפה ותמונות). רוב מודלים אלו אומנו על שדאטהסטים גדולים מהאינטרנט המכילים תמונות והכותרת שלהם. המודל הראשון המפורסם שאימן מודל כזה היה כמובן CLIP. 
 

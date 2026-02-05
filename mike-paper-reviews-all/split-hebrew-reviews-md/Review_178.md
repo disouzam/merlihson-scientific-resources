@@ -1,8 +1,6 @@
-Review 177: [Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise
+Review 178:[Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise
 
 Paper: https://arxiv.org/abs/2310.19019v3
-
-https://huggingface.co/papers/2310.19019
 
 היום שום מדברים על מודלי שפה ענקיים שהולכים ונהיים משוכללים יותר ויותר. היום אנחנו משתמשים בהם בשביל משימות הדורשות יכולות reasoning משוכללות. לא כל מודל שפה אפילו הגדולים והחזקים יודעים לבצע reasoning המורכב מכמה שלבים בצורה חלקה. גם למידת few shot כלומר כשנותנים למודל שפה מספר מצומצם של שאלות הכוללת reasoning מתוכחם והתשובה לא תמיד מספיק כדי ״לכוונן אותם״ בצורה מספיק טובה.  
 
