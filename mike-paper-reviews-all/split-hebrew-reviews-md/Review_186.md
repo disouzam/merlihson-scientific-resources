@@ -1,12 +1,6 @@
 Review 186:Legendre Memory Units: Continuous-Time Representation in Recurrent Neural Networks
 
-Paper: https://arxiv.org/abs/2102.11417v2
-
-https://proceedings.neurips.cc/paper_files/paper/2019/file/952285
-
-b9b7e7a1be5aa7849
-
-f32ffff05-Paper.pdf
+Paper: https://arxiv.org/pdf/2102.11417
 
 המאמר הראשון בסדרה שלנו מנסה לטפל בעיה הראשונה של RNNs כלומר באי יכולת של רשתות אלו לדחוס את הזיכרון (קלט בחלון ההקשר) בצורה מספיק טובה. המאמר מציע גישה מקורית ומעניינת שמקורה במערכות דינמיות (Dynamic Systems) לבניית ייצוג הזיכרון. נניח שיש לנו פונקציית קלט רציפה (u(t ואנו רוצים לבנות מערכת ש״זוכרת את הפונקציה זו״ כלומר בונה ייצוג כך שיהיה אפשר לשחזרה באופן מדויק. תזכרו שכדי לתאר קלט דיסקרטי כמו טקסט אנו צריכים רק לעשות דיסקרטיזציה או לדגום את הפונקציה הזו.
 
