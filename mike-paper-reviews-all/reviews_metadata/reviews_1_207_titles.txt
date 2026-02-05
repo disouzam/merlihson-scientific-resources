@@ -117,14 +117,14 @@
 114. WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Models
 115. From Sparse to Soft Mixtures of Experts
 116. Multimodal Neurons in Pretrained Text-Only Transformers
-117. ConceptLab: Creative Generation using Diffusion Prior Constraints, 06.08.23https://kfirgoldberg.github.io/ConceptLab/static/ConceptLab.pdf
+117. ConceptLab: Creative Generation using Diffusion Prior Constraints
 118. Predicting masked tokens in stochastic locations improves masked image modeling
 119. Seeing through the Brain: Image Reconstruction of Visual Perception from Human Brain Signals
 120. FLIRT: Feedback Loop In-context Red Teaming
 121. SIMPLE SYNTHETIC DATA REDUCES SYCOPHANCY IN LARGE LANGUAGE MODELS
 122. AUDIOLDM 2: LEARNING HOLISTIC AUDIO GENERATION WITH SELF-SUPERVISED PRETRAINING
-123. DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING, 12.08.23https://huggingface.co/papers/2307.10864
-124. TextDiffuser: Diffusion Models as Text Painters, 13.08.23https://huggingface.co/papers/2305.10855
+123. DIVIDE & BIND YOUR ATTENTION FOR IMPROVED GENERATIVE SEMANTIC NURSING
+124. TextDiffuser: Diffusion Models as Text Painters
 125. Self-Alignment with Instruction Backtranslation, 14.08.23https://huggingface.co/papers/2308.06259
 126. Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP, 15.08.23https://huggingface.co/papers/2308.02487
 127. Short : SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION, 16.08.23
