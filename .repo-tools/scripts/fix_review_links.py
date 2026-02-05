@@ -110,13 +110,15 @@ def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None)
 
     paper_id = paper_id_match.group(1)
 
-    # Remove duplicate links (both before and after the Paper: line)
+    # Remove ALL standalone paper links (both before and after the Paper: line)
+    # This includes duplicates AND wrong links with different IDs
     cleaned_lines = []
     for i, line in enumerate(lines):
         if i != paper_line_idx:
             stripped = line.strip()
-            if (stripped.startswith('https://arxiv.org/abs/' + paper_id) or
-                stripped.startswith('https://huggingface.co/papers/' + paper_id) or
+            # Remove any standalone arxiv, HuggingFace, OpenReview, or Hebrew paper links
+            if (stripped.startswith('https://arxiv.org/abs/') or
+                stripped.startswith('https://huggingface.co/papers/') or
                 stripped.startswith('https://openreview.net/') or
                 stripped.startswith('למאמר:')):
                 continue

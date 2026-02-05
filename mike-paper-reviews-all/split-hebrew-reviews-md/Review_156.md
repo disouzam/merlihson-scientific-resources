@@ -2,7 +2,6 @@ Review 156:[Short] CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE
 
 Paper: https://arxiv.org/abs/2309.11495v2
 
-https://arxiv.org/abs/2309.09888.pdf
 
 מכירים את בעיית ההזיות (hallucinations)במודלי שפה? בגדול זה קורה כאשר מודל שפה מספק לנו תשובות לא נכונות לשאלות לפעמים יחסית פשוטות. סוגיה זו קיבלה התייחסות רבה לאחרונה במספר עבודות ומאמר שנסקור היום ב-#shorthebrewpapereviews מציע גישה נוספת לפתרונה. 
 
