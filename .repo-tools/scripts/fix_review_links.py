@@ -102,9 +102,9 @@ def convert_pdf_to_abs_links(content: str) -> str:
 
     for i, line in enumerate(lines):
         # Match PDF links and convert to abs links
-        # Pattern: https://arxiv.org/pdf/2301.12345.pdf or /pdf/2301.12345v2.pdf
+        # Handles both: arxiv.org/pdf/2301.12345.pdf and arxiv.org/pdf/2301.12345
         new_line = re.sub(
-            r'https://arxiv\.org/pdf/(\d+\.\d+)(v\d+)?\.pdf',
+            r'https://arxiv\.org/pdf/(\d+\.\d+)(v\d+)?(\.pdf)?',
             r'https://arxiv.org/abs/\1\2',
             line
         )
