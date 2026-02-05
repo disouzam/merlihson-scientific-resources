@@ -6,12 +6,15 @@ Automatically fixes common issues in review markdown files:
 - Removes duplicate links (arxiv/HuggingFace/OpenReview)
 - Removes dates from titles
 - Separates embedded links from titles
+- Verifies paper link matches review title
 """
 
 import re
 import sys
+import urllib.request
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Optional
+from difflib import SequenceMatcher
 
 
 def extract_review_number(filename: str) -> int:
@@ -115,6 +118,95 @@ def remove_duplicate_links(content: str) -> str:
     return '\n'.join(cleaned_lines)
 
 
+def extract_title_from_review(content: str) -> Optional[str]:
+    """Extract the title from the review header."""
+    lines = content.split('\n')
+    if not lines:
+        return None
+
+    first_line = lines[0]
+    # Pattern: Review 123: [Short] Title or Review 123: Title
+    match = re.match(r'^Review \d+:\s*(?:\[Short\]\s*)?(.*?)$', first_line, re.IGNORECASE)
+    if match:
+        title = match.group(1).strip()
+        # Clean up any trailing punctuation or dates
+        title = re.sub(r',?\s*\d{2}\.\d{2}\.\d{2}.*$', '', title)
+        return title
+    return None
+
+
+def extract_paper_link(content: str) -> Optional[str]:
+    """Extract the Paper: link from the review."""
+    lines = content.split('\n')
+    for line in lines:
+        if line.strip().startswith('Paper:'):
+            # Extract URL from the line
+            url_match = re.search(r'https?://[^\s]+', line)
+            if url_match:
+                return url_match.group(0)
+    return None
+
+
+def fetch_arxiv_title(arxiv_id: str) -> Optional[str]:
+    """Fetch paper title from arXiv API."""
+    try:
+        # Remove version number if present
+        arxiv_id = re.sub(r'v\d+$', '', arxiv_id)
+        url = f'http://export.arxiv.org/api/query?id_list={arxiv_id}'
+
+        with urllib.request.urlopen(url, timeout=10) as response:
+            content = response.read().decode('utf-8')
+            # Parse XML to extract title from <entry> section (not the feed title)
+            entry_match = re.search(r'<entry>(.*?)</entry>', content, re.DOTALL)
+            if entry_match:
+                entry_content = entry_match.group(1)
+                title_match = re.search(r'<title>(.*?)</title>', entry_content, re.DOTALL)
+                if title_match:
+                    title = title_match.group(1).strip()
+                    # Clean up whitespace and newlines
+                    title = re.sub(r'\s+', ' ', title)
+                    return title
+    except Exception as e:
+        print(f"  ⚠️  Error fetching arXiv title: {e}")
+    return None
+
+
+def similarity_ratio(str1: str, str2: str) -> float:
+    """Calculate similarity ratio between two strings (0.0 to 1.0)."""
+    # Normalize: lowercase, remove extra whitespace
+    s1 = re.sub(r'\s+', ' ', str1.lower().strip())
+    s2 = re.sub(r'\s+', ' ', str2.lower().strip())
+    return SequenceMatcher(None, s1, s2).ratio()
+
+
+def verify_paper_link(content: str, filepath: Path) -> Tuple[bool, str]:
+    """Verify that the paper link matches the review title."""
+    review_title = extract_title_from_review(content)
+    paper_link = extract_paper_link(content)
+
+    if not review_title or not paper_link:
+        return True, "No title or link to verify"
+
+    # Extract arXiv ID
+    arxiv_match = re.search(r'arxiv\.org/abs/([\d.]+(?:v\d+)?)', paper_link)
+    if not arxiv_match:
+        return True, "Not an arXiv link, skipping verification"
+
+    arxiv_id = arxiv_match.group(1)
+    paper_title = fetch_arxiv_title(arxiv_id)
+
+    if not paper_title:
+        return True, "Could not fetch paper title"
+
+    # Calculate similarity
+    similarity = similarity_ratio(review_title, paper_title)
+
+    if similarity < 0.6:  # Less than 60% similarity is suspicious
+        return False, f"Title mismatch (similarity: {similarity:.1%})\n  Review: {review_title}\n  Paper:  {paper_title}"
+
+    return True, f"Link verified (similarity: {similarity:.1%})"
+
+
 def fix_review_file(filepath: Path) -> Tuple[bool, str]:
     """Fix a single review file."""
     try:
@@ -141,9 +233,19 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
             changes.append("Removed duplicates")
             content = new_content
 
+        # Verify paper link matches the title
+        link_valid, verify_msg = verify_paper_link(content, filepath)
+        if not link_valid:
+            # Report the mismatch but don't fail the operation
+            print(f"\n⚠️  {filepath.name}: {verify_msg}")
+            changes.append("⚠️ Link verification failed")
+
         if content != original_content:
             filepath.write_text(content, encoding='utf-8')
-            return True, "; ".join(changes)
+            result_msg = "; ".join(changes)
+            if link_valid and "verified" in verify_msg.lower():
+                result_msg += f" [{verify_msg}]"
+            return True, result_msg
 
         return False, "No changes"
 
