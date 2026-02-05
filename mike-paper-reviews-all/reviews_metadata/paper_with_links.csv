@@ -210,6 +210,7 @@ Review_208,b: Training LLMs over Neurally Compressed Text,https://arxiv.org/abs/
 Review_209,2BP: 2-Stage Backpropagation,
 Review_216,Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts,https://arxiv.org/abs/2405.19893
 Review_219,What Do Language Models Learn in Context? The Structured Task Hypothesis.,https://arxiv.org/abs/2406.04216
+Review_250,Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps,https://arxiv.org/abs/2407.07071
 Review_297,Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning,https://arxiv.org/abs/2206.14486
 Review_298,Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning,https://arxiv.org/abs/2406.14283
 Review_299,Rethinking Benchmark and Contamination for Language Models with Rephrased Samples,https://arxiv.org/abs/2311.04850
@@ -351,7 +352,7 @@ Review_446,26.04.25Multimodal Latent Language Modeling with Next-Token Diffusion
 Review_447,28.04.25Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation,https://arxiv.org/abs/2412.06781
 Review_448,30.04.25THE COMPLEXITY DYNAMICS OF GROKKING,https://arxiv.org/abs/2412.09810
 Review_449,02.05.25ON SPEEDING UP LANGUAGE MODEL EVALUATION,https://arxiv.org/abs/2407.06172
-Review_450,04.05.25,https://arxiv.org/abs/2412.21187
+Review_450,Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs,https://arxiv.org/abs/2412.21187
 Review_451,06.05.25,https://arxiv.org/abs/2501.01073
 Review_452,08.05.25Memory Layers at Scale,https://arxiv.org/abs/2412.09764
 Review_453,10.05.25EfficientQAT: Efficient Quantization-Aware Training for Large Language Models,https://arxiv.org/abs/2407.11062
@@ -401,7 +402,7 @@ Review_496,13.08.25Checklists Are Better Than Reward Models For Aligning Languag
 Review_497,14.08.25FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming,https://arxiv.org/abs/2507.13337
 Review_498,Large Action Models: From Inception to Implementation,https://arxiv.org/abs/2412.10047
 Review_499,19.08.25,https://arxiv.org/abs/2507.13338
-Review_500,21.08.25,https://arxiv.org/abs/2401.05605
+Review_500,Scaling Laws for Forgetting When Fine-Tuning Large Language Models,https://arxiv.org/abs/2401.05605
 Review_501,MemOS: An Operating System for Memory-Augmented Generation (MAG) in Large Language Models,https://arxiv.org/abs/2505.22101
 Review_502,25.08.25,https://arxiv.org/abs/2502.09110
 Review_503,28.08.25,https://arxiv.org/abs/2508.16153
