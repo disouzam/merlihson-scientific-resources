@@ -1,9 +1,6 @@
-Review 350:🚀
+Review 350:Unfamiliar Finetuning Examples Control How Language Models Hallucinate
 
-⚡️🚀המאמר היומי של מייק -21.11.24: ⚡️
-
-
-Unfamiliar Finetuning Examples Control How Language Models Hallucinate
+⚡️🚀המאמר היומי של מייק -21.11.24: ⚡️🚀
 
 מאמר של סרגיי לווין האגדי מאוניברסיטת טורונטו שידוע יותר בתרומתו האדירה לפיתוח שיטות מבוססות למידה עם חיזוקים (RL) ליישומי רובוטיקה. הפעם הוא עם קבוצתו חוקר את תופעת הזיות (hallucinations) של מודלי שפה. הזיה זה מושג מאוד רחב בהקשר מודלי שפה ובגדול (מאוד) ניתן להגדירו בתור מתן תשובה לא נכונה (בעיקר עובדתית) על ידי מודל שפה. 
 
