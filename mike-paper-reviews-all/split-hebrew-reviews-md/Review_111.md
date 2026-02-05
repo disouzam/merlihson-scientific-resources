@@ -1,4 +1,4 @@
-Review 111: [Short] DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf
+Review 111: [Short] DoG is SGD's Best Friend: A Parameter-Free Dynamic Step Size Schedule
 
 Paper: https://arxiv.org/abs/2302.12022v3
 

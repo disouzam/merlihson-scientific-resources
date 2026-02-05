@@ -108,7 +108,7 @@
 108. Composite Diffusion | whole >= Σparts, 27.07.23
 109. Scaling TransNormer to 175 Billion Parameters
 110. RLCD: REINFORCEMENT LEARNING FROM CONTRAST DISTILLATION FOR LANGUAGE MODEL ALIGNMENT
-111. DoG is SGD’s Best Friend: A Parameter-Free Dynamic Step Size Schedule, 30.07.23https://arxiv.org/abs/2302.12022.pdf
+111. DoG is SGD's Best Friend: A Parameter-Free Dynamic Step Size Schedule
 112. Skeleton-of-Thought: Large Language Models Can Do Parallel Decoding, 31.07.23https://huggingface.co/papers/2307.15337
 113. UnIVAL: Unified Model for Image, Video, Audio and Language Tasks, 01.08.23
 114. WOUAF: Weight Modulation for User Attribution and Fingerprinting in Text-to-Image Diffusion Modelshttps://huggingface.co/papers/2306.04744
