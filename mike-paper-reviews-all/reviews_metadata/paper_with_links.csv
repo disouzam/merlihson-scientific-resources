@@ -421,10 +421,10 @@ Review_515,הקלות הבלתי נסבלת של המחיקה: מאמר כחול
 Review_516,"Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free",https://arxiv.org/abs/2505.06708
 Review_517,EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING,https://arxiv.org/abs/2509.17196
 Review_518,Optimizers Qualitatively Alter Solutions And We Should Leverage This,https://arxiv.org/abs/2507.12224
-Review_519,Skip a Layer or Loop it,https://arxiv.org/abs/2507.07996
+Review_519,Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs,https://arxiv.org/abs/2507.07996
 Review_520,BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR,https://arxiv.org/abs/2509.23808
 Review_521,Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING,https://arxiv.org/abs/2509.24372
-Review_522,COMPLLM: COMPRESSION FOR LONG CONTEXT Q,https://arxiv.org/abs/2509.19228
+Review_522,COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A,https://arxiv.org/abs/2509.19228
 Review_523,Less is More: Recursive Reasoning with Tiny Networks,https://arxiv.org/abs/2510.04871
 Review_524,Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence,https://arxiv.org/abs/2402.09880
 Review_525,LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM,https://arxiv.org/abs/2508.17821

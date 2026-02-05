@@ -244,10 +244,11 @@ def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
     date_match = re.search(r'\d{2}\.\d{2}\.\d{2}(.+)$', current_title)
     if date_match:
         after_date = date_match.group(1)
-        # Extract only the English part (starts with capital letter)
-        english_match = re.search(r'([A-Z][A-Za-z\s:,-]+(?:LLM|AI|ML|[A-Z]{2,})?[A-Za-z\s]*)', after_date)
+        # Extract everything after date that starts with capital letter
+        english_match = re.search(r'([A-Z].+)$', after_date)
         if english_match:
-            potential_title = english_match.group(1).strip()
+            # Remove any trailing Hebrew text
+            potential_title = re.sub(r'[\u0590-\u05FF].*$', '', english_match.group(1)).strip()
             if potential_title:
                 english_title = potential_title
                 lines[0] = f"Review {correct_number}: {english_title}"
@@ -267,10 +268,11 @@ def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
             match = re.search(r'[\u0590-\u05FF].*?\d{2}\.\d{2}\.\d{2}(.+)$', line)
             if match:
                 after_date = match.group(1)
-                # Extract only the English part (starts with capital letter)
-                english_match = re.search(r'([A-Z][A-Za-z\s:,-]+(?:LLM|AI|ML|[A-Z]{2,})?[A-Za-z\s]*)', after_date)
+                # Extract everything after date that starts with capital letter
+                english_match = re.search(r'([A-Z].+)$', after_date)
                 if english_match:
-                    potential_title = english_match.group(1).strip()
+                    # Remove any trailing Hebrew text
+                    potential_title = re.sub(r'[\u0590-\u05FF].*$', '', english_match.group(1)).strip()
                     if potential_title:
                         english_title = potential_title
                         break

@@ -1,4 +1,4 @@
-Review 522: COMPLLM: COMPRESSION FOR LONG CONTEXT Q
+Review 522: COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A
 
   להכניע את הדרקון הריבועי באמצעות פילוח ליניארי, סקירה 522
 
