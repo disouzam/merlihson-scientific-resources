@@ -1,8 +1,7 @@
-Review 157: [Short] End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
+Review 158:[Short] End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
 
 Paper: https://arxiv.org/abs/2309.10917v1
 
-https://huggingface.co/papers/2309.10917
 
 אודיו וטקסט? נכון ששני סוגי דאטה אלו הם די שונים ולא הגיוני להניח שמודל שאומן על טקסט יכול להביא תוצאות טובות גם על אודיו לאחר כיול קל. אך התברר שזה אפשרי. במאמר שנסקור היום ב-#shorthebrewpapereviews למעשה לקחו מודל שפה מאומן והשתמשו בו בשביל לבצע משימה audio2text. כלומר להפיק את מה שנאמר בקטע אודיו. 
 

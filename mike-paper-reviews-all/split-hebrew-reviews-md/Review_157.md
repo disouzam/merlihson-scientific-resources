@@ -1,8 +1,7 @@
-Review 156: Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS, 28.09.2023
+Review 157:Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS
 
 Paper: https://arxiv.org/abs/2309.12307v3
 
-https://arxiv.org/abs/2309.12307.pdf
 
 כל מי שעוסק במודלי שפה בטח שמע על סוגיית אורך ההקשר (context length). אנו רוצים שהמודלים שלנו יהיו מסוגלים ״להחזיק בבטן״ כמות כמה שיותר גדולה של טקסט. אולם הקשר ארוך דורש כמות עצומה של משאבים לאימון ולאינפרנס. אז היום ב-#shorthebrewpapereviews אנו סוקרים מאמר שמציע גישת טיוב(fine-tuning) שמגדילה את אורך הקשר של מודל שפה. כלומר אם מודל שפה היה מאומן באימון מקדים (pretraining) עם אורך הקשר של 2048, השיטה המוצעת מאפשרת להאריכו פי 4 ל-8192. כמו שאתם רואים השם של השיטה מכיל את המילה LoRA שהיא שיטה מאוד פופולרית לפיין-טיון של מודלי שפה. 
 
