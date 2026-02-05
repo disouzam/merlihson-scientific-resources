@@ -434,7 +434,7 @@ DeepSeek-OCR: Contexts Optical Compression
 אשליית הגרדיאנט: מדוע אימון-המשך (post-training) רב-משימתי ב-RL הוא מוטה
 EMERGENCE FROM LEARNING DYNAMICS OF GROKKING
 Language Models are Injective and Hence Invertible
-סקירת המאמר היומית של מייק: 01.11.25 ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?
+x* = y - f(LN(x*)).
 Agent Learning via Early Experience
 Statistical Runtime Verification for LLMs via Robustness Estimation
 FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE

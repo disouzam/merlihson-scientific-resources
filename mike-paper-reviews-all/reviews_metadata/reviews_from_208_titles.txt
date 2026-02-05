@@ -230,7 +230,7 @@
   227. אשליית הגרדיאנט: מדוע אימון-המשך (post-training) רב-משימתי ב-RL הוא מוטה
   228. EMERGENCE FROM LEARNING DYNAMICS OF GROKKING
   229. Language Models are Injective and Hence Invertible
-  230. סקירת המאמר היומית של מייק: 01.11.25 ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?
+  230. x* = y - f(LN(x*)).
   231. Agent Learning via Early Experience
   232. Statistical Runtime Verification for LLMs via Robustness Estimation
   233. FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE

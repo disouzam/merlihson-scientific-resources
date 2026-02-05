@@ -239,21 +239,20 @@ def fix_hebrew_title_in_header(content: str, correct_number: int) -> str:
         return content
 
     # Find the proper English title in the content
+    # Look for lines with ONLY English text (no Hebrew at all)
     english_title = None
     for i in range(1, min(15, len(lines))):
         line = lines[i].strip()
         # Skip empty lines
         if not line:
             continue
-        # Skip Hebrew-only lines
-        if re.match(r'^[\u0590-\u05FF\s:,.0-9-]+$', line):
+        # Skip any line with Hebrew characters
+        if re.search(r'[\u0590-\u05FF]', line):
             continue
-        # Skip lines with significant Hebrew content (>30%)
-        hebrew_chars = len(re.findall(r'[\u0590-\u05FF]', line))
-        total_letters = len(re.findall(r'[a-zA-Z\u0590-\u05FF]', line))
-        if total_letters > 0 and hebrew_chars / total_letters > 0.3:
+        # Must contain at least some English letters
+        if not re.search(r'[a-zA-Z]', line):
             continue
-        # Found a line with mostly English text - assume it's the title
+        # Found a line with only English text - this is the title
         english_title = line
         break
 
