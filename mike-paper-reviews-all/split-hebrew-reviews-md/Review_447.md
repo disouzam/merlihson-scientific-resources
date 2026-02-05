@@ -1,6 +1,7 @@
-Review 447: 28.04.25Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
+Review 447: Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
 
-המאמר היומי של מייק
+המאמר היומי של מייק 28.04.25
+
 
 
 היום נסקור מאמר לא רגיל וקצת מרענן האמת- הרי לא כל יום (ואפילו לא כל חודש ואולי בכלל) יוצא לי לסקור מאמר שמדבר על מודלי למידת מכונה ביישומים גיאוגרפיים. אכן שמעתם נכון - הרי ניתן למנף את הכלים העוצמתיים של למידת דיפ (deep learning) שפותחו בשנים האחרונות גם שם.

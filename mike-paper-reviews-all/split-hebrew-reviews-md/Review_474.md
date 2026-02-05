@@ -1,6 +1,7 @@
-Review 474: 21.06.25Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation
+Review 474: Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation
 
-המאמר היומי של מייק
+המאמר היומי של מייק 21.06.25
+
 
 
 המאמר הזה לא חדש אבל פתאום גיליתי שהתחלתי לסקור אותו בקובץ דוקס נידח ונתקלתי בו בצורה די אקראית. תוך כדי חיפוש בערוץ הטלגרם שלי גיליתי שעשיתי סקר(בסוף ינואר) ורוב המנוים (יותר מ 85%) רצו שאסקור אותו. מקיים את ההבטחה הפעם בדליי של 5 חודשים.

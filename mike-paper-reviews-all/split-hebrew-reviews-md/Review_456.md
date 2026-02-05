@@ -1,6 +1,7 @@
-Review 456: 17.05.25ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
+Review 456: ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
 
-המאמר היומי של מייק
+המאמר היומי של מייק 17.05.25
+
 
 
 במאמר ZEROSEARCH מוצגת שיטה חדשה לאימון יכולות חיפוש של מודלי שפה גדולים בעזרת שיטת מלמידה עם חיזוקים (RL), מבלי להשתמש כלל במנועי חיפוש אמיתיים. במקום לגשת ל-Google או ל-API חיצוני, הם מאמנים מודל שפה קטן יותר לשמש כסימולציית מנוע חיפוש, שמספק מסמכים רלוונטיים או רועשים לפי צורך. 

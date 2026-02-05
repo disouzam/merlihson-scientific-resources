@@ -1,6 +1,7 @@
-Review 462: 01.06.25Common Sense Is All You Need
+Review 462: Common Sense Is All You Need
 
-המאמר היומי של מייק
+המאמר היומי של מייק 01.06.25
+
 
 
 דיסקליימר: זו סקירה של מאמר דעה ולאו דווקא מייצג את עמדת הסוקר

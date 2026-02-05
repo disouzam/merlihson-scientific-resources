@@ -1,6 +1,7 @@
-Review 464: 05.06.25Task Singular Vectors: Reducing Task Interference in Model Merging
+Review 464: Task Singular Vectors: Reducing Task Interference in Model Merging
 
-המאמר היומי של מייק
+המאמר היומי של מייק 05.06.25
+
 
 
 היום הסקירה הולכת להיות מאוד קלילה וקצרה. המאמר מדבר על שילוב של מודלים שאומנו (כלומר עברו fine-tuning) מאותו מודל הבסיס למשימות שונות לבניית מודל שיפגין ביצועים טובים בכל המשימות האלו. כלומר כל מודל כזה עבר שינוי מסוים במשקליו משלו יחסית למודל הבסיס בעקבות תהליך פיין טיון (למשל זה יכול להיות LoRa אך לא חייב). 

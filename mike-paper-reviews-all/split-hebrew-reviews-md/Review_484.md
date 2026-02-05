@@ -1,6 +1,7 @@
-Review 484: 19.07.25GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment
+Review 484: GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment
 
-המאמר היומי של מייק
+המאמר היומי של מייק 19.07.25
+
 
 
 עבר כבר שבוע מהסקירה האחרונה והרגשתי צורך דחוף לסקור איזה מאמר. האמת די הרבה זמן לא היתה לי הפסקה כזו גדולה לצערי גם רוחב הפס שלי אינו אינסופי. טוב, יאללה מתחילים לסקור.

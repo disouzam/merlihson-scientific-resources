@@ -1,6 +1,7 @@
-Review 465: 07.06.25Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation
+Review 465: Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation
 
-המאמר היומי של מייק
+המאמר היומי של מייק 07.06.25
+
 
 
 היום אני סוקר מאמר מיוחד בכמה רבדים. הרובד הראשון אחד ממחבריו של מאמר זה הוא לא אחר אלא יאן לקון, אחד האבות של למידה עמוקה. הרובד השני מכיל את החוקר הישראלי הידוע (אך לא מספיק) רביד זיו שוורץ שהוא גם פרופסור באוניברסיטת ניו יורק. הרובד השלישי הוא נושא המאמר והוא שערוך אי ודאות עבור חיזוים של רשתות נוירונים - נושא שמאוד מעניין אותי אך לא מעט זמן לא סקרתי כזה.

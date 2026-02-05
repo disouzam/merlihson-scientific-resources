@@ -1,6 +1,7 @@
-Review 461: 30.05.25Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
+Review 461: Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
 
-המאמר היומי של מייק
+המאמר היומי של מייק 30.05.25
+
 
 
 בדיוק לפני שנה (30.05.24) התחלתי את הסקירה היומית ופתחתי ערוץ טלגרם Science and AI with Mike בשבילם. מאז כתבתי 253 סקירות שזה עושה סקירה ל 1.44 יום למרות שלאחרונה קצת האטתי את הקצב.

@@ -1,6 +1,7 @@
-Review 385: 19.01.25The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks
+Review 385: The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks
 
-המאמר היומי של מייק ואוראל
+המאמר היומי של מייק ואוראל 19.01.25
+
 
 
 היפותזת כרטיס הלוטו (Lottery Ticket Hypothesis) אומרת שבתוך רשת נוירונים  צפופה (dense neural nets) המאותחלת בצורה רנדומלית, יש תת-רשת (או "כרטיס מנצח") שמאמנים אותה בנפרד, היא יכולה להגיע לביצועים כמו של הרשת המקורית.

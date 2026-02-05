@@ -1,6 +1,7 @@
-Review 442: 18.04.25Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
+Review 442: Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
 
-המאמר היומי של מייק
+המאמר היומי של מייק 18.04.25
+
 
 
 מאמר די מעניין העוסק בשיפור יכולות הנמקה של מודלי שפה בשאלות שיש להם תשובות חד משמעיות (כגון שאלות מתמטיות ושאלות קוד שניתן לבחון את נכונות הפתרון באמצעות סט מקיף של טסטים). המאמר מגדיר מושג טוקן קריטי (critical token) שהוא למעשה מהווה סוג של סימן האם המודל הולך לתת תשובה נכונה או לא נכונה לשאלה. 
