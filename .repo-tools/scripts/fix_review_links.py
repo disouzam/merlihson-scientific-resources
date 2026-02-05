@@ -265,6 +265,41 @@ def search_arxiv_by_title(title: str) -> Optional[str]:
     return None
 
 
+def normalize_paper_link_spacing(content: str) -> str:
+    """Ensure exactly one blank line after the Paper: line."""
+    lines = content.split('\n')
+
+    # Find the Paper: line
+    paper_line_idx = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith('Paper:'):
+            paper_line_idx = i
+            break
+
+    if paper_line_idx is None:
+        return content
+
+    # Remove any blank lines immediately after Paper: line
+    new_lines = []
+    i = 0
+    while i < len(lines):
+        new_lines.append(lines[i])
+
+        # If this is the Paper: line, ensure exactly one blank line follows
+        if i == paper_line_idx:
+            # Skip any existing blank lines
+            i += 1
+            while i < len(lines) and not lines[i].strip():
+                i += 1
+            # Add exactly one blank line
+            new_lines.append('')
+            continue
+
+        i += 1
+
+    return '\n'.join(new_lines)
+
+
 def verify_paper_link(content: str, filepath: Path) -> Tuple[bool, str, Optional[str]]:
     """Verify that the paper link matches the review title."""
     review_title = extract_title_from_review(content)
@@ -338,6 +373,12 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
         new_content = remove_duplicate_links(content, correct_arxiv_id)
         if new_content != content:
             changes.append("Removed duplicates")
+            content = new_content
+
+        # Normalize spacing after Paper: line (ensure exactly one blank line)
+        new_content = normalize_paper_link_spacing(content)
+        if new_content != content:
+            changes.append("Normalized spacing")
             content = new_content
 
         link_valid, verify_msg, corrected_content = verify_paper_link(content, filepath)

@@ -1,8 +1,6 @@
-Review 166: In-Context Pretraining: Language Modeling Beyond Document Boundaries
+Review 167:In-Context Pretraining: Language Modeling Beyond Document Boundaries
 
 Paper: https://arxiv.org/abs/2310.10638v6
-
-https://huggingface.co/papers/2310.10638
 
 כשאתם מאמנים מודל שפה (אימון מקדים) המשימה היא חיזוי הטוקן הבא. כאשר מאמנים מודל שפה בעל חלון הקשר (context) ארוך משרשרים כמה מסמכים שנבחרו באקראי ומאמנים תוך כדי חיזוי הטוקן הבא. 
 

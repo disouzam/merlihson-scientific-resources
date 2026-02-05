@@ -1,8 +1,6 @@
-Review 167: [Short] Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model
+Review 168:[Short] Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model
 
 Paper: https://arxiv.org/abs/2310.09520v4
-
-https://huggingface.co/papers/2310.09520
 
 מי שעקב אחרי המהפכות שהתרחשו בעולם של מודלי שפה ענקיים (LLMs) בטח שמעו על RLHF שזה ראשי תיבות של Reinforcement Learning with Human Feedback (או בקצרה RLHF) בהקשר של אימון מודלי שפה. 
 

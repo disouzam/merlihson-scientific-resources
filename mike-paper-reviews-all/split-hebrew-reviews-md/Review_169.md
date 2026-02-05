@@ -1,8 +1,6 @@
-Review 168: [Short] VERA: VECTOR-BASED RANDOM MATRIX ADAPTATION
+Review 169:[Short] VERA: VECTOR-BASED RANDOM MATRIX ADAPTATION
 
 Paper: https://arxiv.org/abs/2310.11454v2
-
-https://huggingface.co/papers/2310.11454
 
 כבר סקרנו השבוע מאמר שמציע שיפור ל-LoRA שיטת טיוב(finetune) מודלי שפה חסכונית מבחינת משאבי חישוב הנדרשים. היום ב-#shorthebrewpapereviews נסקור שיפור נוסף ל-LoRA המאפשר להקטין את כמות המשאבים הנדרשים לטיוב עוד יותר. 
 
