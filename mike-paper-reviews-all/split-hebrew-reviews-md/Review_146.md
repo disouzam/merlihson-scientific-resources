@@ -1,4 +1,4 @@
-Review 145: Textbooks Are All You Need II: phi-1.5 technical report, 13.09.23
+Review 146:Textbooks Are All You Need II: phi-1.5 technical report, 13.09.23
 
 https://arxiv.org/abs/2309.05463.pdfסקירה זו נכתבה על ידי עדן יביןֿ
 

@@ -1,4 +1,4 @@
-Review 146: Reinforced Self-Training (ReST) for Language Modeling, 14.09.23https://arxiv.org/abs/2308.08998.pdf
+Review 147:Reinforced Self-Training (ReST) for Language Modeling
 
 Paper: https://arxiv.org/abs/2308.08998v2
 
