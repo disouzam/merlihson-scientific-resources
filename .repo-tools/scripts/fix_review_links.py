@@ -20,6 +20,15 @@ from pathlib import Path
 from typing import List, Tuple, Optional
 from difflib import SequenceMatcher
 
+# Import git push helper
+try:
+    from git_push_helper import git_commit_and_push
+except ImportError:
+    # Fallback if not found
+    def git_commit_and_push(*args, **kwargs):
+        print("⚠️  git_push_helper not found, skipping push")
+        return False
+
 
 def extract_review_number(filename: str) -> int:
     """Extract review number from filename."""
@@ -618,13 +627,23 @@ def find_numbering_mismatches(start_num: int, end_num: int, reviews_dir: Path) -
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: fix_review_links.py <start> [count]")
-        print("       fix_review_links.py --fix-all <start> <end>")
+        print("Usage: fix_review_links.py <start> [count] [--push]")
+        print("       fix_review_links.py --fix-all <start> <end> [--push]")
+        print("\nOptions:")
+        print("  --push    Automatically commit and push changes to GitHub")
         sys.exit(1)
+
+    # Check for --push flag
+    auto_push = '--push' in sys.argv
+    if auto_push:
+        sys.argv.remove('--push')
 
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent.parent
     reviews_dir = repo_root / "mike-paper-reviews-all" / "split-hebrew-reviews-md"
+
+    # Track modified files for pushing
+    modified_files = []
 
     # Mode: Fix all formatting (numbers + spacing) for ALL reviews
     if sys.argv[1] == '--fix-all':
@@ -649,8 +668,27 @@ def main():
             if was_modified:
                 print(f"✓ {filepath.name}: {desc}")
                 fixed += 1
+                # Track modified file (relative to repo root)
+                rel_path = str(filepath.relative_to(repo_root))
+                modified_files.append(rel_path)
 
         print(f"\n✅ Checked {checked} reviews, fixed {fixed}")
+
+        # Push if requested and files were modified
+        if auto_push and modified_files:
+            print(f"\n🚀 Pushing {len(modified_files)} modified files...")
+            # Also include the skill itself
+            skill_path = str(Path(__file__).relative_to(repo_root))
+            if skill_path not in modified_files:
+                modified_files.append(skill_path)
+
+            commit_msg = f"Fix {fixed} reviews (Review_{start_num:03d}-{end_num:03d})\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+            success = git_commit_and_push(modified_files, commit_msg, repo_root)
+            if success:
+                print("✓ Pushed to GitHub successfully")
+            else:
+                print("✗ Push failed (see errors above)")
+
         return
 
     # Mode: Fix links (original functionality)
@@ -673,8 +711,30 @@ def main():
         if was_modified:
             print(f"✓ {filepath.name}: {desc}")
             fixed += 1
+            # Track modified file (relative to repo root)
+            rel_path = str(filepath.relative_to(repo_root))
+            modified_files.append(rel_path)
 
     print(f"\n✅ Fixed {fixed}/{len(problematic)}")
+
+    # Push if requested and files were modified
+    if auto_push and modified_files:
+        print(f"\n🚀 Pushing {len(modified_files)} modified files...")
+        # Also include the skill itself
+        skill_path = str(Path(__file__).relative_to(repo_root))
+        if skill_path not in modified_files:
+            modified_files.append(skill_path)
+
+        review_names = ", ".join([p.name for p in problematic[:3]])
+        if len(problematic) > 3:
+            review_names += f" and {len(problematic) - 3} more"
+
+        commit_msg = f"Fix review links: {review_names}\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+        success = git_commit_and_push(modified_files, commit_msg, repo_root)
+        if success:
+            print("✓ Pushed to GitHub successfully")
+        else:
+            print("✗ Push failed (see errors above)")
 
 
 if __name__ == "__main__":
