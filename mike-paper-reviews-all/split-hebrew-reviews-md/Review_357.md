@@ -1,4 +1,4 @@
-Review 357:Fishing for Magikarp: Automatically detecting under-trained tokens in large language models
+Review 357: Fishing for Magikarp: Automatically detecting under-trained tokens in large language models
 
 ⚡️🚀המאמר היומי של מייק -30.11.24: ⚡️🚀
 

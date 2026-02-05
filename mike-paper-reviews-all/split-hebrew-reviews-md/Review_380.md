@@ -1,4 +1,4 @@
-Review 380:Evaluating the Design Space of Diffusion-Based Generative Models
+Review 380: Evaluating the Design Space of Diffusion-Based Generative Models
 
 המאמר היומי של מייק - 11.01.25
 

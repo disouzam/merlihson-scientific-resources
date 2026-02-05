@@ -1,4 +1,4 @@
-Review 163:[Short] Think before you speak: Training Language Models With Pause Tokens
+Review 163: [Short] Think before you speak: Training Language Models With Pause Tokens
 
 Paper: https://arxiv.org/abs/2310.02226v3
 

@@ -1,4 +1,4 @@
-Review 432:SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization
+Review 432: SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization
 
 המאמר היומי של מייק - 02.04.25
 

@@ -1,4 +1,4 @@
-Review 469:14.06.25Is Stochastic Gradient Descent Effective? A PDE Perspective on Machine Learning Processes
+Review 469: 14.06.25Is Stochastic Gradient Descent Effective? A PDE Perspective on Machine Learning Processes
 
 המאמר היומי של מייק
 

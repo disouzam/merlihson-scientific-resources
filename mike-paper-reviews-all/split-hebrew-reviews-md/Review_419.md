@@ -1,4 +1,4 @@
-Review 419:SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture
+Review 419: SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture
 
 המאמר היומי של מייק - 13.03.25
 

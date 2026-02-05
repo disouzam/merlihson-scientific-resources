@@ -1,4 +1,4 @@
-Review 376:A Survey on Efficient Inference for Large Language Models
+Review 376: A Survey on Efficient Inference for Large Language Models
 
 המאמר היומי של מייק - 06.01.25
 

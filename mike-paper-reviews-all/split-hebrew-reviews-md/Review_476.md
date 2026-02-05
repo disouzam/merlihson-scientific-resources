@@ -1,4 +1,4 @@
-Review 476:26.06.25Open Problems in Mechanistic Interpretability
+Review 476: 26.06.25Open Problems in Mechanistic Interpretability
 
 המאמר היומי של מייק
 

@@ -1,4 +1,4 @@
-Review 492:04.08.25Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models
+Review 492: 04.08.25Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models
 
 המאמר היומי של מייק
 

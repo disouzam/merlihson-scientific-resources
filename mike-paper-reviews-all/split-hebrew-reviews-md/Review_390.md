@@ -1,4 +1,4 @@
-Review 390:A Survey on Diffusion Models for Inverse Problems
+Review 390: A Survey on Diffusion Models for Inverse Problems
 
 המאמר היומי של מייק - 29.01.25
 

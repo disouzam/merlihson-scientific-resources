@@ -1,4 +1,4 @@
-Review 368:T-FREE: Tokenizer-Free Generative LLMs via Sparse Representations for Memory-Efficient Embeddings
+Review 368: T-FREE: Tokenizer-Free Generative LLMs via Sparse Representations for Memory-Efficient Embeddings
 
 המאמר היומי של מייק - 23.12.24
 

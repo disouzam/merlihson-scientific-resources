@@ -1,4 +1,4 @@
-Review 468:13.06.25Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps
+Review 468: 13.06.25Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps
 
 המאמר היומי של מייק
 

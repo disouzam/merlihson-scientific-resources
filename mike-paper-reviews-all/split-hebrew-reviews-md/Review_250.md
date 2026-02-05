@@ -1,4 +1,4 @@
-Review 250:Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps
+Review 250: Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps
 
 ⚡️🚀המאמר היומי של מייק 15.07.24: ⚡️🚀
 

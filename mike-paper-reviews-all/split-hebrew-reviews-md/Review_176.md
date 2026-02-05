@@ -1,4 +1,4 @@
-Review 176:[Short] A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation
+Review 176: [Short] A Picture is Worth a Thousand Words: Principled Recaptioning Improves Image Generation
 
 Paper: https://arxiv.org/abs/2310.16656v1
 

@@ -1,4 +1,4 @@
-Review 421:Generative Representational Instruction Tuning
+Review 421: Generative Representational Instruction Tuning
 
 המאמר היומי של מייק - 15.03.25
 

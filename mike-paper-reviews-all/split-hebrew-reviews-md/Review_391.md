@@ -1,4 +1,4 @@
-Review 391:Law of the Weakest Link: Cross Capabilities of Large Language Models
+Review 391: Law of the Weakest Link: Cross Capabilities of Large Language Models
 
 המאמר היומי של מייק - 31.01.25
 

@@ -1,4 +1,4 @@
-Review 571:mHC: Manifold-Constrained Hyper-Connections
+Review 571: mHC: Manifold-Constrained Hyper-Connections
 
 סקירה יומית של נימרוד ומייק, 30.01.26, סקירה 571, 453 סקירות עד 1024
 

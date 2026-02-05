@@ -1,4 +1,4 @@
-Review 433:Amortizing intractable inference in diffusion models for vision, language, and control
+Review 433: Amortizing intractable inference in diffusion models for vision, language, and control
 
 המאמר היומי של מייק - 04.04.25
 

@@ -1,4 +1,4 @@
-Review 319:GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
+Review 319: GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
 
 ⚡️🚀המאמר היומי של מייק -12.10.24: ⚡️🚀
 

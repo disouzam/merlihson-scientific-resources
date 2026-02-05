@@ -1,4 +1,4 @@
-Review 441:17.04.25Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
+Review 441: 17.04.25Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
 
 המאמר היומי של מייק
 

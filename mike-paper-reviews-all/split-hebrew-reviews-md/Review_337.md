@@ -1,4 +1,4 @@
-Review 337:Learning to Compress: Local Rank and Information Compression in Deep Neural Networks
+Review 337: Learning to Compress: Local Rank and Information Compression in Deep Neural Networks
 
 ⚡️🚀המאמר היומי של מייק -02.11.24: ⚡️🚀
 

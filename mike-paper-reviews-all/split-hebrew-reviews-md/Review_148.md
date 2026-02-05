@@ -1,4 +1,4 @@
-Review 148:Generative Image Dynamics
+Review 148: Generative Image Dynamics
 
 Paper: https://arxiv.org/abs/2309.07906v3
 

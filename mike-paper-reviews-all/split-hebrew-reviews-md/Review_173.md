@@ -1,4 +1,4 @@
-Review 173:[Short] Localizing and Editing Knowledge in Text-to-Image Generative Models
+Review 173: [Short] Localizing and Editing Knowledge in Text-to-Image Generative Models
 
 Paper: https://arxiv.org/abs/2310.13730
 

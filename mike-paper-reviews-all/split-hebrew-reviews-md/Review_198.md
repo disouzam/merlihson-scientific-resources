@@ -1,4 +1,4 @@
-Review 198:[Short] LLM4Decompile: Decompiling Binary Code with Large Language Models
+Review 198: [Short] LLM4Decompile: Decompiling Binary Code with Large Language Models
 
 Paper: https://arxiv.org/abs/2403.05286v3
 

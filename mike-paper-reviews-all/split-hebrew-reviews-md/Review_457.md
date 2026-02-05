@@ -1,4 +1,4 @@
-Review 457:20.05.25Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
+Review 457: 20.05.25Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
 
 המאמר היומי של מייק
 

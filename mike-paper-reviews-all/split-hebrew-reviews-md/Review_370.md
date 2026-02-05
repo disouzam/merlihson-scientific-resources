@@ -1,4 +1,4 @@
-Review 370:RL for Consistency Models: Faster Reward Guided Text-to-Image Generation
+Review 370: RL for Consistency Models: Faster Reward Guided Text-to-Image Generation
 
 המאמר היומי של מייק - 26.12.24
 

@@ -1,4 +1,4 @@
-Review 434:GIVT: Generative Infinite-Vocabulary Transformers
+Review 434: GIVT: Generative Infinite-Vocabulary Transformers
 
 המאמר היומי של מייק - 05.04.25
 

@@ -1,4 +1,4 @@
-Review 379:Chain of Thought Empowers Transformers to Solve Inherently Serial Problems
+Review 379: Chain of Thought Empowers Transformers to Solve Inherently Serial Problems
 
 המאמר היומי של מייק - 10.01.25
 

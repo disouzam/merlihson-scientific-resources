@@ -1,4 +1,4 @@
-Review 304:Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
+Review 304: Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
 
 🚀המאמר היומי של מייק 22.09.24: ⚡️🚀
 

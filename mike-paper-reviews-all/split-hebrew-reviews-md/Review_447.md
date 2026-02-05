@@ -1,4 +1,4 @@
-Review 447:28.04.25Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
+Review 447: 28.04.25Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
 
 המאמר היומי של מייק
 

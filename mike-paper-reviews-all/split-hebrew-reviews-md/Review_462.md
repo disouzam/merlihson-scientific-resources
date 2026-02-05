@@ -1,4 +1,4 @@
-Review 462:01.06.25Common Sense Is All You Need
+Review 462: 01.06.25Common Sense Is All You Need
 
 המאמר היומי של מייק
 

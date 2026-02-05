@@ -1,4 +1,4 @@
-Review 412:The Geometry of Concepts: Sparse Autoencoder Feature Structure
+Review 412: The Geometry of Concepts: Sparse Autoencoder Feature Structure
 
 המאמר היומי של מייק - 03.03.25
 

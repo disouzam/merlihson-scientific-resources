@@ -1,4 +1,4 @@
-Review 190:Simplified State Space Layers For Sequence Modeling(S5)
+Review 190: Simplified State Space Layers For Sequence Modeling(S5)
 
 Paper: https://arxiv.org/abs/2208.04933v3
 

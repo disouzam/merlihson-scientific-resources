@@ -1,4 +1,4 @@
-Review 159:[Short] Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
+Review 159: [Short] Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
 
 Paper: https://arxiv.org/abs/2306.08877v3
 

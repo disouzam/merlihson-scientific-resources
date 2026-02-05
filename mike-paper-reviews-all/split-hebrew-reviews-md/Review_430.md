@@ -1,4 +1,4 @@
-Review 430:Efficient Online Data Mixing For Language Model Pre-Training
+Review 430: Efficient Online Data Mixing For Language Model Pre-Training
 
 המאמר היומי של מייק - 30.03.25
 

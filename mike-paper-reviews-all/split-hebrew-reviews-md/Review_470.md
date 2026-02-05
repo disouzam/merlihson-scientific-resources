@@ -1,4 +1,4 @@
-Review 470:15.06.25Random Teachers are Good Teachers
+Review 470: 15.06.25Random Teachers are Good Teachers
 
 המאמר היומי של מייק
 

@@ -1,4 +1,4 @@
-Review 450:Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs
+Review 450: Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs
 
 המאמר היומי של מייק 04.05.25
 

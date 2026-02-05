@@ -1,4 +1,4 @@
-Review 408:Unity by Diversity: Improved Representation Learning for Multimodal VAEs
+Review 408: Unity by Diversity: Improved Representation Learning for Multimodal VAEs
 
 המאמר היומי של מייק - 27.02.25
 

@@ -1,4 +1,4 @@
-Review 202:ZigMa: A DiT-style Zigzag Mamba Diffusion Model
+Review 202: ZigMa: A DiT-style Zigzag Mamba Diffusion Model
 
 Paper: https://arxiv.org/abs/2403.13802v3
 

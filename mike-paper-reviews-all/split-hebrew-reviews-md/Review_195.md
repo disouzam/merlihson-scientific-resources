@@ -1,4 +1,4 @@
-Review 195:Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+Review 195: Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
 Paper: https://arxiv.org/abs/2312.00752
 

@@ -1,4 +1,4 @@
-Review 298:Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning
+Review 298: Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning
 
 ⚡️🚀המאמר היומי של מייק 15.09.24: ⚡️🚀
 

@@ -1,4 +1,4 @@
-Review 174:[Short] Teaching Language Models to Self-Improve through Interactive Demonstrations
+Review 174: [Short] Teaching Language Models to Self-Improve through Interactive Demonstrations
 
 Paper: https://arxiv.org/abs/2310.13522
 

@@ -1,4 +1,4 @@
-Review 425:LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
+Review 425: LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
 
 המאמר היומי של מייק - 21.03.25
 

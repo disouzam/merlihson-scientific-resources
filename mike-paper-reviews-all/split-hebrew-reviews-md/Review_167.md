@@ -1,4 +1,4 @@
-Review 167:In-Context Pretraining: Language Modeling Beyond Document Boundaries
+Review 167: In-Context Pretraining: Language Modeling Beyond Document Boundaries
 
 Paper: https://arxiv.org/abs/2310.10638v6
 

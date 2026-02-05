@@ -1,4 +1,4 @@
-Review 306:LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH
+Review 306: LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH
 
 🚀המאמר היומי של מייק 24.09.24: ⚡️🚀
 

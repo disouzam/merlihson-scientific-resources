@@ -1,4 +1,4 @@
-Review 168:[Short] Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model
+Review 168: [Short] Reward-Augmented Decoding: Efficient Controlled Text Generation With a Unidirectional Reward Model
 
 Paper: https://arxiv.org/abs/2310.09520v4
 

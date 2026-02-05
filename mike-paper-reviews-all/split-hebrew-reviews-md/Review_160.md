@@ -1,4 +1,4 @@
-Review 160:[Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization
+Review 160: [Short] Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization
 
 Paper: https://arxiv.org/abs/2306.09222v5
 

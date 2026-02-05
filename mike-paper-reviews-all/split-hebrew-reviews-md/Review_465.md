@@ -1,4 +1,4 @@
-Review 465:07.06.25Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation
+Review 465: 07.06.25Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation
 
 המאמר היומי של מייק
 

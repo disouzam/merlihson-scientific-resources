@@ -1,4 +1,4 @@
-Review 445:23.04.25 The Broader Spectrum of In-Context Learning
+Review 445: 23.04.25 The Broader Spectrum of In-Context Learning
 
 המאמר היומי של מייק
 

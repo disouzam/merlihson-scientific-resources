@@ -1,4 +1,4 @@
-Review 194:Retentive Network: A Successor to Transformer for Large Language Models
+Review 194: Retentive Network: A Successor to Transformer for Large Language Models
 
 Paper: https://arxiv.org/abs/2307.08621v4
 

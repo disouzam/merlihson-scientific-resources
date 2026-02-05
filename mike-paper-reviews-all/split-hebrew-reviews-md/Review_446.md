@@ -1,4 +1,4 @@
-Review 446:26.04.25Multimodal Latent Language Modeling with Next-Token Diffusion
+Review 446: 26.04.25Multimodal Latent Language Modeling with Next-Token Diffusion
 
 המאמר היומי של מייק
 

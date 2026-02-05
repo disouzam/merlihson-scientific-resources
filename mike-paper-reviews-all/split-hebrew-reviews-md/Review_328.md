@@ -1,4 +1,4 @@
-Review 328:Predicting from Strings: Language Model Embeddings for Bayesian Optimization
+Review 328: Predicting from Strings: Language Model Embeddings for Bayesian Optimization
 
 ⚡️🚀המאמר היומי של מייק -23.10.24: ⚡️🚀
 

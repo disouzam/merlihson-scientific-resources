@@ -1,4 +1,4 @@
-Review 442:18.04.25Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
+Review 442: 18.04.25Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
 
 המאמר היומי של מייק
 

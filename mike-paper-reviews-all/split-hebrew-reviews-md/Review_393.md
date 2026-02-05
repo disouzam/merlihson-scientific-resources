@@ -1,4 +1,4 @@
-Review 393:The Perfect Blend: Redefining RLHF with Mixture of Judges
+Review 393: The Perfect Blend: Redefining RLHF with Mixture of Judges
 
 המאמר היומי של מייק - 03.02.25
 

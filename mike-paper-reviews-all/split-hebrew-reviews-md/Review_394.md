@@ -1,4 +1,4 @@
-Review 394:Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections
+Review 394: Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections
 
 המאמר היומי של מייק - 05.02.25
 

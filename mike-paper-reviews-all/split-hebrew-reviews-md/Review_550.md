@@ -1,4 +1,4 @@
-Review 550:ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration
+Review 550: ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration
 
 תזמורת כלים ואיך לגרום לזה לא להתכנס לקקופוניה?
 

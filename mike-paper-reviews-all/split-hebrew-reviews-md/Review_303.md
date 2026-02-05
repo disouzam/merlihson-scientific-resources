@@ -1,4 +1,4 @@
-Review 303:REFT: Reasoning with REinforced Fine-Tuning
+Review 303: REFT: Reasoning with REinforced Fine-Tuning
 
 🚀המאמר היומי של מייק 21.09.24: ⚡️🚀
 

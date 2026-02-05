@@ -1,4 +1,4 @@
-Review 481:07.07.25Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models
+Review 481: 07.07.25Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models
 
 המאמר היומי של מייק
 

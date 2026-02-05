@@ -1,4 +1,4 @@
-Review 333:Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers
+Review 333: Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers
 
 ⚡️🚀המאמר היומי של מייק -29.10.24: ⚡️🚀
 

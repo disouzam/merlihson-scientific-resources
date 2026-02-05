@@ -1,4 +1,4 @@
-Review 386:Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts
+Review 386: Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts
 
 המאמר היומי של מייק - 21.01.25
 

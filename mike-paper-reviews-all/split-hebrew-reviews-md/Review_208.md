@@ -1,4 +1,4 @@
-Review 208:Training LLMs over Neurally Compressed Text
+Review 208: Training LLMs over Neurally Compressed Text
 
 Paper: https://arxiv.org/abs/2404.03626v3
 

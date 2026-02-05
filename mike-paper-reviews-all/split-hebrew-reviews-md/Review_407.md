@@ -1,4 +1,4 @@
-Review 407:Understanding Visual Feature Reliance through the Lens of Complexity
+Review 407: Understanding Visual Feature Reliance through the Lens of Complexity
 
 המאמר היומי של מייק - 25.02.25
 

@@ -1,4 +1,4 @@
-Review 458:24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
+Review 458: 24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
 
 המאמר היומי של מייק
 

@@ -1,4 +1,4 @@
-Review 325:DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
+Review 325: DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
 
 ⚡️🚀המאמר היומי של מייק -19.10.24: ⚡️🚀
 

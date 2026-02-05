@@ -1,4 +1,4 @@
-Review 402:Representation Alignment for Generation: Training Diffusion Transformers is Easier than you Think
+Review 402: Representation Alignment for Generation: Training Diffusion Transformers is Easier than you Think
 
 המאמר היומי של מייק - 16.02.25
 

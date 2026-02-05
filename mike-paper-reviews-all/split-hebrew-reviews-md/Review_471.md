@@ -1,4 +1,4 @@
-Review 471:16.06.25Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap
+Review 471: 16.06.25Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap
 
 המאמר היומי של מייק
 

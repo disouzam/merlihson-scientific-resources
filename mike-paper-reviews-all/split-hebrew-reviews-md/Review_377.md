@@ -1,4 +1,4 @@
-Review 377:Anchored Preference Optimization and Contrastive Revisions Addressing Underspecification in Alignment
+Review 377: Anchored Preference Optimization and Contrastive Revisions Addressing Underspecification in Alignment
 
 המאמר היומי של מייק - 07.01.25
 

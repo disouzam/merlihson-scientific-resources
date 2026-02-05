@@ -1,4 +1,4 @@
-Review 197:VMamba: Visual State Space Model
+Review 197: VMamba: Visual State Space Model
 
 Paper: https://arxiv.org/abs/2401.10166v4
 

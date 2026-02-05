@@ -1,4 +1,4 @@
-Review 183:Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models
+Review 183: Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models
 
 Paper: https://arxiv.org/abs/2312.06585v4
 

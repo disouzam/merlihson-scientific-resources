@@ -1,4 +1,4 @@
-Review 324:SimCSE: Simple Contrastive Learning of Sentence Embeddings
+Review 324: SimCSE: Simple Contrastive Learning of Sentence Embeddings
 
 ⚡️🚀המאמר היומי של מייק -18.10.24: ⚡️🚀
 

@@ -1,4 +1,4 @@
-Review 309:Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages
+Review 309: Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages
 
 🚀המאמר היומי של מייק 28.09.24: ⚡️🚀
 

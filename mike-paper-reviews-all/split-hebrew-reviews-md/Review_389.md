@@ -1,4 +1,4 @@
-Review 389:FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression
+Review 389: FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression
 
 המאמר היומי של מייק - 27.01.25
 

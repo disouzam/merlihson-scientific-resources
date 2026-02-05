@@ -1,4 +1,4 @@
-Review 514:Foundation Models for Time Series Analysis- A Tutorial and Survey
+Review 514: Foundation Models for Time Series Analysis- A Tutorial and Survey
 
 מעבר לרצף: סדרות עתיות, מודלי foundational, והפשטה של דינמיקה
 

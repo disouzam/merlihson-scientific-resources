@@ -1,4 +1,4 @@
-Review 297:Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning
+Review 297: Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning
 
 ⚡️🚀המאמר היומי של מייק 14.09.24: ⚡️🚀
 

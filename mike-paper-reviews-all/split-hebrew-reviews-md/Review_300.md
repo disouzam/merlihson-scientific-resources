@@ -1,4 +1,4 @@
-Review 300:STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning
+Review 300: STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning
 
 🚀המאמר היומי של מייק 17.09.24: ⚡️🚀
 

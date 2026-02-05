@@ -1,4 +1,4 @@
-Review 429:UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining
+Review 429: UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining
 
 המאמר היומי של מייק - 28.03.25
 

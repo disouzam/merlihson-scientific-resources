@@ -1,4 +1,4 @@
-Review 365:Large Concept Models: Language Modeling in a Sentence Representation Space
+Review 365: Large Concept Models: Language Modeling in a Sentence Representation Space
 
 המאמר היומי של מייק - 19.12.24
 

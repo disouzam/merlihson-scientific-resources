@@ -1,4 +1,4 @@
-Review 145:Transformers as Support Vector Machines
+Review 145: Transformers as Support Vector Machines
 
 Paper: https://arxiv.org/abs/2308.16898
 

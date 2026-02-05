@@ -1,4 +1,4 @@
-Review 440:15.04.25Classifier-Free Guidance inside the Attraction Basin May Cause Memorization
+Review 440: 15.04.25Classifier-Free Guidance inside the Attraction Basin May Cause Memorization
 
 המאמר היומי של מייק
 

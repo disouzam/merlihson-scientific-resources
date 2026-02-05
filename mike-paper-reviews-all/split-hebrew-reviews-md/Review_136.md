@@ -1,4 +1,4 @@
-Review 136:[Short] ORES: Open-vocabulary Responsible Visual Synthesis
+Review 136: [Short] ORES: Open-vocabulary Responsible Visual Synthesis
 
 Paper: https://arxiv.org/abs/2308.13785v1
 

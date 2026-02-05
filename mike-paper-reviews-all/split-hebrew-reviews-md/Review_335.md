@@ -1,4 +1,4 @@
-Review 335:Understanding Transformers via N-gram Statistics
+Review 335: Understanding Transformers via N-gram Statistics
 
 ⚡️🚀המאמר היומי של מייק -31.10.24: ⚡️🚀
 

@@ -1,4 +1,4 @@
-Review 314:Were RNNs All We Needed?
+Review 314: Were RNNs All We Needed?
 
 🚀המאמר היומי של מייק -04.10.24: ⚡️🚀
 

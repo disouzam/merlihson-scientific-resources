@@ -1,4 +1,4 @@
-Review 426:Physics in Next-token Prediction
+Review 426: Physics in Next-token Prediction
 
 המאמר היומי של מייק - 22.03.25
 

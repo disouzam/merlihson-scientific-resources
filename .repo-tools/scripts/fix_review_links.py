@@ -95,6 +95,49 @@ def fix_review_header(content: str, correct_number: int) -> str:
     return '\n'.join(lines)
 
 
+def convert_pdf_to_abs_links(content: str) -> str:
+    """Convert arxiv.org/pdf/ links to arxiv.org/abs/ links."""
+    lines = content.split('\n')
+    modified = False
+
+    for i, line in enumerate(lines):
+        # Match PDF links and convert to abs links
+        # Pattern: https://arxiv.org/pdf/2301.12345.pdf or /pdf/2301.12345v2.pdf
+        new_line = re.sub(
+            r'https://arxiv\.org/pdf/(\d+\.\d+)(v\d+)?\.pdf',
+            r'https://arxiv.org/abs/\1\2',
+            line
+        )
+        if new_line != line:
+            lines[i] = new_line
+            modified = True
+
+    return '\n'.join(lines) if modified else content
+
+
+def add_space_after_review_colon(content: str) -> str:
+    """Ensure there's a space after 'Review X:' before the title."""
+    lines = content.split('\n')
+    if not lines:
+        return content
+
+    first_line = lines[0]
+
+    # Pattern: "Review 123:Title" -> "Review 123: Title"
+    # Only add space if there isn't one already
+    pattern = r'^(Review \d+):([^\s])'
+    match = re.match(pattern, first_line)
+
+    if match:
+        lines[0] = f'{match.group(1)}: {match.group(2)}'
+        lines[0] = lines[0][:match.end(1) + 2] + first_line[match.end(1) + 1:]
+        # Simpler approach:
+        lines[0] = re.sub(r'^(Review \d+):([^\s])', r'\1: \2', first_line)
+        return '\n'.join(lines)
+
+    return content
+
+
 def remove_duplicate_links(content: str, correct_arxiv_id: Optional[str] = None) -> str:
     """Remove duplicate paper links, keeping only the Paper: line."""
     lines = content.split('\n')
@@ -499,6 +542,18 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
             changes.append("Fixed header")
             content = new_content
 
+        # Add space after colon in "Review X:Title"
+        new_content = add_space_after_review_colon(content)
+        if new_content != content:
+            changes.append("Added space after colon")
+            content = new_content
+
+        # Convert PDF links to abs links
+        new_content = convert_pdf_to_abs_links(content)
+        if new_content != content:
+            changes.append("Converted PDF to abs links")
+            content = new_content
+
         review_title = extract_title_from_review(content)
         correct_arxiv_id = None
         if review_title:
@@ -565,6 +620,18 @@ def fix_review_number_and_spacing(filepath: Path) -> Tuple[bool, str]:
         new_content = fix_review_header(content, correct_number)
         if new_content != content:
             changes.append("Fixed review number")
+            content = new_content
+
+        # Add space after colon in "Review X:Title"
+        new_content = add_space_after_review_colon(content)
+        if new_content != content:
+            changes.append("Added space after colon")
+            content = new_content
+
+        # Convert PDF links to abs links
+        new_content = convert_pdf_to_abs_links(content)
+        if new_content != content:
+            changes.append("Converted PDF to abs links")
             content = new_content
 
         # Normalize spacing after Paper: line

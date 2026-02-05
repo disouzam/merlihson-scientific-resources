@@ -1,4 +1,4 @@
-Review 187:HiPPO: Recurrent Memory with Optimal Polynomial Projections
+Review 187: HiPPO: Recurrent Memory with Optimal Polynomial Projections
 
 Paper: https://arxiv.org/abs/2008.07669v2
 

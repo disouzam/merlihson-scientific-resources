@@ -1,4 +1,4 @@
-Review 396:Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis
+Review 396: Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis
 
 המאמר היומי של מייק - 08.02.25
 

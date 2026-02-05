@@ -1,4 +1,4 @@
-Review 371:Position: Future Directions in the Theory of Graph Machine Learning
+Review 371: Position: Future Directions in the Theory of Graph Machine Learning
 
 המאמר היומי של מייק - 27.12.24
 

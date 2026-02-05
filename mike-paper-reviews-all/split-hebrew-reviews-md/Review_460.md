@@ -1,4 +1,4 @@
-Review 460:28.05.25Jasper and Stella: distillation of SOTA embedding models
+Review 460: 28.05.25Jasper and Stella: distillation of SOTA embedding models
 
 המאמר היומי של מייק
 

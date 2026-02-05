@@ -1,4 +1,4 @@
-Review 193:RWKV: Reinventing RNNs for the Transformer Era
+Review 193: RWKV: Reinventing RNNs for the Transformer Era
 
 Paper: https://arxiv.org/abs/2305.13048v2
 

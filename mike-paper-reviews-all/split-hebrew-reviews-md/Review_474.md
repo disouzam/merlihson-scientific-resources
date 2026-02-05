@@ -1,4 +1,4 @@
-Review 474:21.06.25Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation
+Review 474: 21.06.25Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation
 
 המאמר היומי של מייק
 

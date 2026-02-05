@@ -1,4 +1,4 @@
-Review 334:Beyond Preferences in AI Alignment
+Review 334: Beyond Preferences in AI Alignment
 
 ⚡️🚀המאמר היומי של מייק -30.10.24: ⚡️🚀
 

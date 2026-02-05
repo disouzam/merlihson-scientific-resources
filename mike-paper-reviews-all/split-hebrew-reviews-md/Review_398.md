@@ -1,4 +1,4 @@
-Review 398:On the expressiveness and spectral bias of KANs
+Review 398: On the expressiveness and spectral bias of KANs
 
 המאמר היומי של מייק - 10.02.25
 

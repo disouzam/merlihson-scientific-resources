@@ -1,4 +1,4 @@
-Review 133:Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models
+Review 133: Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models
 
 הסקירה נכתבה על ידי עדן יבין
 

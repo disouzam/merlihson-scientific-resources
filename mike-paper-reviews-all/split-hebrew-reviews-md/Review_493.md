@@ -1,4 +1,4 @@
-Review 493:06.08.25Where to show Demos in Your Prompt: A Positional Bias of In-Context Learning
+Review 493: 06.08.25Where to show Demos in Your Prompt: A Positional Bias of In-Context Learning
 
 המאמר היומי של מייק
 

@@ -1,4 +1,4 @@
-Review 487:27.07.25Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory
+Review 487: 27.07.25Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory
 
 המאמר היומי של מייק
 

@@ -1,4 +1,4 @@
-Review 128:[Short] Dual-Stream Diffusion Net for Text-to-Video Generation
+Review 128: [Short] Dual-Stream Diffusion Net for Text-to-Video Generation
 
 Paper: https://arxiv.org/abs/2308.08316v3
 

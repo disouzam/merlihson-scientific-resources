@@ -1,4 +1,4 @@
-Review 497:14.08.25FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming
+Review 497: 14.08.25FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming
 
 המאמר היומי של מייק
 

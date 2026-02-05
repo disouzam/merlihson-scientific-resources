@@ -1,4 +1,4 @@
-Review 104:[Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction
+Review 104: [Short] Evaluating machine comprehension of sketch meaning at different levels of abstraction
 
 Paper: https://arxiv.org/abs/2312.03035v1
 

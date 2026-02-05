@@ -1,4 +1,4 @@
-Review 459:26.05.25Neuro-Symbolic AI i 2024: A Systematic Review
+Review 459: 26.05.25Neuro-Symbolic AI i 2024: A Systematic Review
 
 המאמר היומי של מייק
 

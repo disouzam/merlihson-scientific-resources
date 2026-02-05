@@ -1,4 +1,4 @@
-Review 382:Diffusion Models for Non-autoregressive Text Generation: A Survey
+Review 382: Diffusion Models for Non-autoregressive Text Generation: A Survey
 
 המאמר היומי של מייק - 16.01.25
 

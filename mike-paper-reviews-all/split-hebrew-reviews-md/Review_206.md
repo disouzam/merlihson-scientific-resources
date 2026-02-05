@@ -1,4 +1,4 @@
-Review 206:PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation
+Review 206: PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation
 
 Paper: https://arxiv.org/abs/2312.17276
 

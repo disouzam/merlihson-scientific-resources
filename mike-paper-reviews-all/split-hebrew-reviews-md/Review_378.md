@@ -1,4 +1,4 @@
-Review 378:When Can Transformers Count to n?
+Review 378: When Can Transformers Count to n?
 
 המאמר היומי של מייק - 09.01.25
 

@@ -1,4 +1,4 @@
-Review 353:Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study
+Review 353: Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study
 
 ⚡️🚀המאמר היומי של מייק -26.11.24: ⚡️🚀
 

@@ -1,4 +1,4 @@
-Review 374:Loss of plasticity in deep continual learning
+Review 374: Loss of plasticity in deep continual learning
 
 המאמר היומי של מייק - 02.01.25
 

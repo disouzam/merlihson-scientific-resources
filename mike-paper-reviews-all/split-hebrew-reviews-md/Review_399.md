@@ -1,4 +1,4 @@
-Review 399:STUFFED MAMBA: State Collapse and State Capacity of RNN-Based Long-Context Modeling
+Review 399: STUFFED MAMBA: State Collapse and State Capacity of RNN-Based Long-Context Modeling
 
 המאמר היומי של מייק - 12.02.25
 

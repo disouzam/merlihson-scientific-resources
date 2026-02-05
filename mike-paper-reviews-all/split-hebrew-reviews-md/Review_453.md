@@ -1,4 +1,4 @@
-Review 453:10.05.25EfficientQAT: Efficient Quantization-Aware Training for Large Language Models
+Review 453: 10.05.25EfficientQAT: Efficient Quantization-Aware Training for Large Language Models
 
 המאמר היומי של מייק
 

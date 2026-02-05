@@ -1,4 +1,4 @@
-Review 367:Reasoning in Large Language Models: A Geometric Perspective
+Review 367: Reasoning in Large Language Models: A Geometric Perspective
 
 המאמר היומי של מייק - 22.12.24
 

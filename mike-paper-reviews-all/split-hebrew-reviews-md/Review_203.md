@@ -1,4 +1,4 @@
-Review 203:SimPO: Simple Preference Optimization with a Reference-Free Reward
+Review 203: SimPO: Simple Preference Optimization with a Reference-Free Reward
 
 Paper: https://arxiv.org/abs/2405.14734v3
 

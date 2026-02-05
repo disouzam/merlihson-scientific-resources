@@ -1,4 +1,4 @@
-Review 151:Language Modeling Is Compression
+Review 151: Language Modeling Is Compression
 
 Paper: https://arxiv.org/abs/2309.10668v2
 

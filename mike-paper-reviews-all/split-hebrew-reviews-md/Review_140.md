@@ -1,4 +1,4 @@
-Review 140:Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models
+Review 140: Unsupervised Compositional Concepts Discovery with Text-to-Image Generative Models
 
 
 Paper: https://arxiv.org/abs/2306.05357v2

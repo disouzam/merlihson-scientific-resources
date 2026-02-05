@@ -1,4 +1,4 @@
-Review 305:Training Language Models to Self-Correct via Reinforcement Learning
+Review 305: Training Language Models to Self-Correct via Reinforcement Learning
 
 🚀המאמר היומי של מייק 23.09.24: ⚡️🚀
 

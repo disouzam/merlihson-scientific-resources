@@ -1,4 +1,4 @@
-Review 192:Hyena Hierarchy: Towards Larger Convolutional Language Models
+Review 192: Hyena Hierarchy: Towards Larger Convolutional Language Models
 
 Paper: https://arxiv.org/abs/2302.10866v3
 

@@ -1,4 +1,4 @@
-Review 189:Efficiently Modeling Long Sequences with Structured State Spaces
+Review 189: Efficiently Modeling Long Sequences with Structured State Spaces
 
 Paper: https://arxiv.org/abs/2111.00396v3
 

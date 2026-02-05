@@ -1,4 +1,4 @@
-Review 418:Transformers are Universal In-context Learner
+Review 418: Transformers are Universal In-context Learner
 
 המאמר היומי של מייק - 12.03.25
 

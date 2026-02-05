@@ -1,4 +1,4 @@
-Review 354:The Illusion of State in State-Space Models
+Review 354: The Illusion of State in State-Space Models
 
 ⚡️🚀המאמר היומי של מייק -27.11.24: ⚡️🚀
 

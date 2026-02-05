@@ -1,4 +1,4 @@
-Review 166:[Short] LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models
+Review 166: [Short] LoftQ: LoRA-Fine-Tuning-Aware Quantization for Large Language Models
 
 Paper: https://arxiv.org/abs/2310.08659v4
 

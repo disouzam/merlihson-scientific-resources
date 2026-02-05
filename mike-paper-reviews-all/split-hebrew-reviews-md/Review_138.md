@@ -1,4 +1,4 @@
-Review 138:YaRN: Efficient Context Window Extension of Large Language Models
+Review 138: YaRN: Efficient Context Window Extension of Large Language Models
 
 
 Paper: https://arxiv.org/abs/2309.00071v2

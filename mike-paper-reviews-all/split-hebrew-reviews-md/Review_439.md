@@ -1,4 +1,4 @@
-Review 439:14.04.25Draft Model Knows When to Stop: A Self-Verification Length Policy for Speculative Decoding
+Review 439: 14.04.25Draft Model Knows When to Stop: A Self-Verification Length Policy for Speculative Decoding
 
 המאמר היומי של מייק
 

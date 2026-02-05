@@ -1,4 +1,4 @@
-Review 336:LLMs Are In-Context Reinforcement Learners
+Review 336: LLMs Are In-Context Reinforcement Learners
 
 ⚡️🚀המאמר היומי של מייק -01.11.24: ⚡️🚀
 

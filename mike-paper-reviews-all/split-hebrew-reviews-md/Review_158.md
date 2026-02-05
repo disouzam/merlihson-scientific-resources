@@ -1,4 +1,4 @@
-Review 158:[Short] End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
+Review 158: [Short] End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
 
 Paper: https://arxiv.org/abs/2309.10917v1
 

@@ -1,4 +1,4 @@
-Review 165:[Short] Table-GPT: Table-tuned GPT for Diverse Table Tasks
+Review 165: [Short] Table-GPT: Table-tuned GPT for Diverse Table Tasks
 
 Paper: https://arxiv.org/abs/2310.09263v1
 

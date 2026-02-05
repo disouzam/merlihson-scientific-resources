@@ -1,4 +1,4 @@
-Review 409:The FFT Strikes Back: An Efficient Alternative to Self-Attention
+Review 409: The FFT Strikes Back: An Efficient Alternative to Self-Attention
 
 המאמר היומי של מייק - 28.02.25
 

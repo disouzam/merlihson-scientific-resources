@@ -1,4 +1,4 @@
-Review 385:19.01.25The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks
+Review 385: 19.01.25The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks
 
 המאמר היומי של מייק ואוראל
 

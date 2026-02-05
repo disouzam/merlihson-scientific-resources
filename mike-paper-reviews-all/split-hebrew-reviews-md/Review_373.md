@@ -1,4 +1,4 @@
-Review 373:Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models
+Review 373: Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models
 
 המאמר היומי של מייק - 01.01.25
 

@@ -1,4 +1,4 @@
-Review 372:Graph Diffusion Policy Optimization
+Review 372: Graph Diffusion Policy Optimization
 
 המאמר היומי של מייק - 30.12.24
 

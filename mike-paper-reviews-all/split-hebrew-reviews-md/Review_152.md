@@ -1,4 +1,4 @@
-Review 152:[Short] FreeU: Free Lunch in Diffusion U-Net
+Review 152: [Short] FreeU: Free Lunch in Diffusion U-Net
 
 Paper: https://arxiv.org/abs/2309.11497v2
 

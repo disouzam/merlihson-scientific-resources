@@ -1,4 +1,4 @@
-Review 310:ASR Error Correction using Large Language Models
+Review 310: ASR Error Correction using Large Language Models
 
 🚀המאמר היומי של מייק 29.09.24: ⚡️🚀
 

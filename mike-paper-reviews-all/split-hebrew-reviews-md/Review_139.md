@@ -1,4 +1,4 @@
-Review 139:G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment
+Review 139: G-EVAL: NLG Evaluation using GPT-4 with Better Human Alignment
 
 סקירה זו נכתבה על ידי עדן יבין
 

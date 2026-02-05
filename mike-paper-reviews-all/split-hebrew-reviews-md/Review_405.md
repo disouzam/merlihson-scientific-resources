@@ -1,4 +1,4 @@
-Review 405:When Does Perceptual Alignment Benefit Vision Representations?
+Review 405: When Does Perceptual Alignment Benefit Vision Representations?
 
 המאמר היומי של מייק - 22.02.25
 

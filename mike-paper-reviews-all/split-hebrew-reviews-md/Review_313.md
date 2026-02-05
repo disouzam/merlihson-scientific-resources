@@ -1,4 +1,4 @@
-Review 313:Transformers are Expressive, But Are They Expressive Enough for Regression?
+Review 313: Transformers are Expressive, But Are They Expressive Enough for Regression?
 
 🚀המאמר היומי של מייק -03.10.24: ⚡️🚀
 

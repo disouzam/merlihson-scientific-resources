@@ -1,4 +1,4 @@
-Review 141:[Short] One Wide Feedforward is All You Need
+Review 141: [Short] One Wide Feedforward is All You Need
 
 
 Paper: https://arxiv.org/abs/2309.01826v2

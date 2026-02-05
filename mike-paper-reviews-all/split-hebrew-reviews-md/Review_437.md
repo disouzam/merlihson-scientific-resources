@@ -1,4 +1,4 @@
-Review 437:Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics
+Review 437: Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics
 
 המאמר היומי של מייק - 11.04.25
 

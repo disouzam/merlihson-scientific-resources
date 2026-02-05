@@ -1,4 +1,4 @@
-Review 500:Scaling Laws for Forgetting When Fine-Tuning Large Language Models
+Review 500: Scaling Laws for Forgetting When Fine-Tuning Large Language Models
 
 המאמר היומי של מייק: 21.08.25
 

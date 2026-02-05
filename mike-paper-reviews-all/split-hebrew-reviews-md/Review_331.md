@@ -1,4 +1,4 @@
-Review 331:Efficient Vision-Language Pre-training by Cluster Masking
+Review 331: Efficient Vision-Language Pre-training by Cluster Masking
 
 ⚡️🚀המאמר היומי של מייק -26.10.24: ⚡️🚀
 

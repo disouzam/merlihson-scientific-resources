@@ -1,4 +1,4 @@
-Review 205:Simple linear attention language models balance the recall-throughput tradeoff
+Review 205: Simple linear attention language models balance the recall-throughput tradeoff
 
 Paper: https://arxiv.org/abs/2402.18668v2
 

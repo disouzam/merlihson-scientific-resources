@@ -1,4 +1,4 @@
-Review 200:LLM2Vec: Large Language Models Are Secretly Powerful Text Encoder
+Review 200: LLM2Vec: Large Language Models Are Secretly Powerful Text Encoder
 
 Paper: https://arxiv.org/abs/2404.05961v2
 

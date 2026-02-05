@@ -1,4 +1,4 @@
-Review 456:17.05.25ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
+Review 456: 17.05.25ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
 
 המאמר היומי של מייק
 

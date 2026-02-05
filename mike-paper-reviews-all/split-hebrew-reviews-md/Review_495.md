@@ -1,4 +1,4 @@
-Review 495:12.08.25Your LLM Knows the Future: Uncovering Its Multi-Token Prediction Potential
+Review 495: 12.08.25Your LLM Knows the Future: Uncovering Its Multi-Token Prediction Potential
 
 המאמר היומי של מייק
 

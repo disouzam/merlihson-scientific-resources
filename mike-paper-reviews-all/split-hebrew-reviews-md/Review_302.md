@@ -1,4 +1,4 @@
-Review 302:Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning
+Review 302: Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning
 
 🚀המאמר היומי של מייק 20.09.24: ⚡️🚀
 

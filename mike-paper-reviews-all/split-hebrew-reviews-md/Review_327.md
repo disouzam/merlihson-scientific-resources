@@ -1,4 +1,4 @@
-Review 327:Sample what you can’t compress
+Review 327: Sample what you can’t compress
 
 ⚡️🚀המאמר היומי של מייק -22.10.24: ⚡️🚀
 

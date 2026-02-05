@@ -1,4 +1,4 @@
-Review 178:[Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise
+Review 178: [Short] TeacherLM: Teaching to Fish Rather Than Giving the Fish, Language Modeling Likewise
 
 Paper: https://arxiv.org/abs/2310.19019v3
 

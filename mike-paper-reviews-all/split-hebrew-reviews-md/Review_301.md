@@ -1,4 +1,4 @@
-Review 301:Training Chain-of-Thought via Latent-Variable Inference
+Review 301: Training Chain-of-Thought via Latent-Variable Inference
 
 🚀המאמר היומי של מייק 19.09.24: ⚡️🚀
 

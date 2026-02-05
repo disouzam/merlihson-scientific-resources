@@ -1,4 +1,4 @@
-Review 422:JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
+Review 422: JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
 
 המאמר היומי של מייק - 17.03.25
 

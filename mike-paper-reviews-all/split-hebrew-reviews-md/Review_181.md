@@ -1,4 +1,4 @@
-Review 181:[Short] Learning From Mistakes Makes LLM Better Reasoner
+Review 181: [Short] Learning From Mistakes Makes LLM Better Reasoner
 
 Paper: https://arxiv.org/abs/2310.20689v4
 

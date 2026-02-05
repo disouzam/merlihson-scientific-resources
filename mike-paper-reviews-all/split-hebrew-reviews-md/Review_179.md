@@ -1,4 +1,4 @@
-Review 179:[Short] CAPSFUSION: Rethinking Image-Text Data at Scale
+Review 179: [Short] CAPSFUSION: Rethinking Image-Text Data at Scale
 
 Paper: https://arxiv.org/abs/2310.20550v3
 

@@ -1,4 +1,4 @@
-Review 444:22.04.25Normalizing Flows are Capable Generative Models
+Review 444: 22.04.25Normalizing Flows are Capable Generative Models
 
 המאמר היומי של מייק
 

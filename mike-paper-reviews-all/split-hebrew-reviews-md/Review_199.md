@@ -1,4 +1,4 @@
-Review 199:Improving Text Embeddings with Large Language Models
+Review 199: Improving Text Embeddings with Large Language Models
 
 Paper: https://arxiv.org/abs/2401.00368
 

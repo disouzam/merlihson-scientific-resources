@@ -1,4 +1,4 @@
-Review 131:SeamlessM4T—Massively Multilingual & Multimodal Machine Translation
+Review 131: SeamlessM4T—Massively Multilingual & Multimodal Machine Translation
 
 Paper: https://arxiv.org/abs/2308.11596v3
 

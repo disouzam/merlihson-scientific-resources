@@ -1,4 +1,4 @@
-Review 134:[Short] OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models
+Review 134: [Short] OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models
 
 Paper: https://arxiv.org/abs/2308.13137v3
 

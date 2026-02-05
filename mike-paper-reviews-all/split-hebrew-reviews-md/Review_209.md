@@ -1,4 +1,4 @@
-Review 209:2BP: 2-Stage Backpropagation
+Review 209: 2BP: 2-Stage Backpropagation
 
 ⚡🚀 המאמר היומי של מייק 30.05.2024⚡🚀
 

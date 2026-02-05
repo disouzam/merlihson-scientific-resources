@@ -1,4 +1,4 @@
-Review 342:Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?
+Review 342: Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?
 
 ⚡️🚀המאמר היומי של מייק -08.11.24: ⚡️🚀
 

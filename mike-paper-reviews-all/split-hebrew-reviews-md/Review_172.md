@@ -1,4 +1,4 @@
-Review 172:Matryoshka Diffusion Models
+Review 172: Matryoshka Diffusion Models
 
 Paper: https://arxiv.org/abs/2310.15111v2
 

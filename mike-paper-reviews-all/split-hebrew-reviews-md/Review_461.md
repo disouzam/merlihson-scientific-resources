@@ -1,4 +1,4 @@
-Review 461:30.05.25Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
+Review 461: 30.05.25Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
 
 המאמר היומי של מייק
 

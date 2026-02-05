@@ -1,4 +1,4 @@
-Review 496:13.08.25Checklists Are Better Than Reward Models For Aligning Language Model
+Review 496: 13.08.25Checklists Are Better Than Reward Models For Aligning Language Model
 
 המאמר היומי של מייק
 

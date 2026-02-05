@@ -1,4 +1,4 @@
-Review 452:08.05.25Memory Layers at Scale
+Review 452: 08.05.25Memory Layers at Scale
 
 המאמר היומי של מייק
 

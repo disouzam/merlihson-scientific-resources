@@ -1,4 +1,4 @@
-Review 332:HEAVY-TAILED DIFFUSION MODELS
+Review 332: HEAVY-TAILED DIFFUSION MODELS
 
 ⚡️🚀המאמר היומי של מייק -28.10.24: ⚡️🚀
 

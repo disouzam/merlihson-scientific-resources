@@ -1,4 +1,4 @@
-Review 364:Byte Latent Transformer: Patches Scale Better Than Tokens
+Review 364: Byte Latent Transformer: Patches Scale Better Than Tokens
 
 המאמר היומי של מייק - 18.12.24
 

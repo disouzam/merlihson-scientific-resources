@@ -1,4 +1,4 @@
-Review 381:Improve Mathematical Reasoning in Language Models by Automated Process Supervision
+Review 381: Improve Mathematical Reasoning in Language Models by Automated Process Supervision
 
 המאמר היומי של מייק - 13.01.25
 

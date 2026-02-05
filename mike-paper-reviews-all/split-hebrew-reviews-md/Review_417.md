@@ -1,4 +1,4 @@
-Review 417:Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation
+Review 417: Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation
 
 המאמר היומי של מייק - 11.03.25
 

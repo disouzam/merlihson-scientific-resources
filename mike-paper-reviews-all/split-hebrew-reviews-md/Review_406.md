@@ -1,4 +1,4 @@
-Review 406:Addition Is All You Need: For Energy-Efficient Language Models
+Review 406: Addition Is All You Need: For Energy-Efficient Language Models
 
 המאמר היומי של מייק - 23.02.25
 

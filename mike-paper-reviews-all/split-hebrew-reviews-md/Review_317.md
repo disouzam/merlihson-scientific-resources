@@ -1,4 +1,4 @@
-Review 317:DIFFERENTIAL TRANSFORMER
+Review 317: DIFFERENTIAL TRANSFORMER
 
 🚀המאמר היומי של מייק -10.10.24: ⚡️🚀
 

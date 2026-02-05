@@ -1,4 +1,4 @@
-Review 428:DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
+Review 428: DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
 
 המאמר היומי של מייק - 26.03.25
 

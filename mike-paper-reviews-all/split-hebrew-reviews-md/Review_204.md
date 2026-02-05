@@ -1,4 +1,4 @@
-Review 204:Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts
+Review 204: Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts
 
 Paper: https://arxiv.org/abs/2405.19893v1
 

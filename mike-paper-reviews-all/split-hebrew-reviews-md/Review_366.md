@@ -1,4 +1,4 @@
-Review 366:FAN: Fourier Analysis Networks
+Review 366: FAN: Fourier Analysis Networks
 
 המאמר היומי של מייק - 20.12.24
 

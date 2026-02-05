@@ -1,4 +1,4 @@
-Review 415:Number Cookbook: Number Understanding of Language Models and How to Improve It
+Review 415: Number Cookbook: Number Understanding of Language Models and How to Improve It
 
 המאמר היומי של מייק - 07.03.25
 

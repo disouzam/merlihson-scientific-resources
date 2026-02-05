@@ -1,4 +1,4 @@
-Review 363:LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement
+Review 363: LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement
 
 המאמר היומי של מייק - 10.12.24
 

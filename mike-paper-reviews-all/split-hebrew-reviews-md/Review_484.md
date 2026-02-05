@@ -1,4 +1,4 @@
-Review 484:19.07.25GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment
+Review 484: 19.07.25GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment
 
 המאמר היומי של מייק
 

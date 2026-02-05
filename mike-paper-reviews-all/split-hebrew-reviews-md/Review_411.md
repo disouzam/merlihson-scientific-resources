@@ -1,4 +1,4 @@
-Review 411:An Empirical Model of Large-Batch Training
+Review 411: An Empirical Model of Large-Batch Training
 
 המאמר היומי של מייק - 02.03.25
 

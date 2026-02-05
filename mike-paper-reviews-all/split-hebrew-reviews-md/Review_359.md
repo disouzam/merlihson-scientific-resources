@@ -1,4 +1,4 @@
-Review 359:KAN: Kolmogorov–Arnold Networks
+Review 359: KAN: Kolmogorov–Arnold Networks
 
 ⚡️🚀המאמר היומי של מייק -04.12.24: ⚡️🚀
 

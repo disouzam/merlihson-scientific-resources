@@ -1,4 +1,4 @@
-Review 400:One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation
+Review 400: One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation
 
 המאמר היומי של מייק - 13.02.25
 

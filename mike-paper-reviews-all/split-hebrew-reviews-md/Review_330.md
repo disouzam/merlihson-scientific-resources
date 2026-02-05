@@ -1,4 +1,4 @@
-Review 330:Amortized Planning with Large-Scale Transformers: A Case Study on Chess
+Review 330: Amortized Planning with Large-Scale Transformers: A Case Study on Chess
 
 ⚡️🚀המאמר היומי של מייק -25.10.24: ⚡️🚀
 

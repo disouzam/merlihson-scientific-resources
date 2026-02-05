@@ -1,4 +1,4 @@
-Review 170:Safe RLHF: Safe Reinforcement Learning from Human Feedback
+Review 170: Safe RLHF: Safe Reinforcement Learning from Human Feedback
 
 Paper: https://arxiv.org/abs/2310.12773v1
 

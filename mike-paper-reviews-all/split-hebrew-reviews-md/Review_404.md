@@ -1,4 +1,4 @@
-Review 404:Losing dimensions: Geometric memorization in generative diffusion
+Review 404: Losing dimensions: Geometric memorization in generative diffusion
 
 המאמר היומי של מייק - 20.02.25
 

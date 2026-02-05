@@ -1,4 +1,4 @@
-Review 175:In-Context Learning Creates Task Vectors
+Review 175: In-Context Learning Creates Task Vectors
 
 Paper: https://arxiv.org/abs/2310.15916
 

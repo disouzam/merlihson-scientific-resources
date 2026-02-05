@@ -1,4 +1,4 @@
-Review 443:20.04.25Training Large Language Models to Reason in a Continuous Latent Space
+Review 443: 20.04.25Training Large Language Models to Reason in a Continuous Latent Space
 
 המאמר היומי של מייק
 

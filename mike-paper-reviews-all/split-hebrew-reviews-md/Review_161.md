@@ -1,4 +1,4 @@
-Review 161:[Short] Vision Transformers Need Registers
+Review 161: [Short] Vision Transformers Need Registers
 
 Paper: https://arxiv.org/abs/2309.16588v2
 

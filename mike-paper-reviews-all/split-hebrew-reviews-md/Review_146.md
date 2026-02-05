@@ -1,4 +1,4 @@
-Review 146:Textbooks Are All You Need II: phi-1.5 technical report
+Review 146: Textbooks Are All You Need II: phi-1.5 technical report
 
 סקירה זו נכתבה על ידי עדן יבין
 

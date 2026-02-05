@@ -1,4 +1,4 @@
-Review 201:SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series
+Review 201: SiMBA: Simplified Mamba-based Architecture for Vision and Multivariate Time series
 
 Paper: https://arxiv.org/abs/2403.15360v2
 

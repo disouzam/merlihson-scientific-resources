@@ -1,4 +1,4 @@
-Review 191:Hungry Hungry Hippos: Towards Language Modeling with State Space Models(H3)
+Review 191: Hungry Hungry Hippos: Towards Language Modeling with State Space Models(H3)
 
 Paper: https://arxiv.org/abs/2212.14052v3
 

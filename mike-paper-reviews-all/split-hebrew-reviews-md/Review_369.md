@@ -1,4 +1,4 @@
-Review 369:Vision language models are blind
+Review 369: Vision language models are blind
 
 המאמר היומי של מייק - 25.12.24
 
