@@ -1,8 +1,6 @@
-Review 498:
+Review 498: Large Action Models: From Inception to Implementation
 
 המאמר היומי של עמרי ומייק: 16.08.25
-
-Large Action Models: From Inception to Implementation
 
 מה זה (Large Action Models (LAM ואיך זה שונה מ-LLM? שורה תחתונה: LAM הוא LLM, אבל כזה שאומן והותאם במיוחד כדי להפיק פעולות ברות־ביצוע בסביבה אמיתית. בעוד שמודל LLM רגיל מאומן להפיק טקסט איכותי ועקבי, LAM מאומן לייצר תוכניות ופקודות שניתן להפעיל בפועל דרך agent, בין אם זה קליק, הקלדה או קריאת API,  כך שהוא משפיע ישירות על מצב העולם ולא רק “מדבר עליו”.
 
