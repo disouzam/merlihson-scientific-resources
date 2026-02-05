@@ -1,4 +1,4 @@
-Review 124: [Short] Self-Alignment with Instruction Backtranslation, 14.08.23https://huggingface.co/papers/2308.06259
+Review 125: [Short] Self-Alignment with Instruction Backtranslation
 
 Paper: https://arxiv.org/abs/2308.06259v3
 

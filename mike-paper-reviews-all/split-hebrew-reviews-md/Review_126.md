@@ -1,4 +1,4 @@
-Review 125: Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP, 15.08.23https://huggingface.co/papers/2308.02487
+Review 126: Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP
 
 Paper: https://arxiv.org/abs/2308.02487v2
 
