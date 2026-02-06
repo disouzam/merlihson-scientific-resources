@@ -102,11 +102,11 @@ The hook handles various link formats:
 
 | Metric | Value |
 |--------|-------|
-| **Total Reviews** | 572 |
-| **With Paper Links** | 572 (100% coverage!) |
-| **Hebrew Reviews** | 572 markdown files |
-| **English Reviews** | 205 markdown files |
-| **DOCX Source Files** | 572 files |
+| **Total Reviews** | 573 |
+| **With Paper Links** | 573 (100% coverage!) |
+| **Hebrew Reviews** | 573 markdown files |
+| **English Reviews** | 206 markdown files |
+| **DOCX Source Files** | 573 files |
 
 ---
 
@@ -125,7 +125,7 @@ Use manual updates only if:
 
 ```bash
 cd /Users/michaelerlihson/Personal/Projects/scientific_repo
-python3 /private/tmp/claude-502/-Users-michaelerlihson/69d58795-5665-474b-8024-995d33399c52/scratchpad/update_metadata_standalone.py
+python3 .repo-tools/scripts/update_metadata.py
 ```
 
 This script:
@@ -139,7 +139,7 @@ This script:
 ```bash
 # Check total count
 wc -l mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
-# Should show: 573 (1 header + 572 reviews)
+# Should show: 574 (1 header + 573 reviews)
 
 # Check for missing links
 grep ",,$" mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
@@ -217,7 +217,7 @@ If you see duplicate entries in metadata:
 sort mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt | uniq -d
 
 # Re-run the standalone updater to fix
-python3 /path/to/update_metadata_standalone.py
+python3 .repo-tools/scripts/update_metadata.py
 ```
 
 ---
@@ -229,10 +229,10 @@ python3 /path/to/update_metadata_standalone.py
 After updates (automatic or manual), verify:
 
 - [ ] All metadata files updated: `paper_with_links.csv`, `all_paper_titles.txt`, `clean_titles_for_search.txt`, `reviews_from_208_titles.txt`
-- [ ] Total count matches in all files (572 reviews)
+- [ ] Total count matches in all files (573 reviews)
 - [ ] No duplicate entries
 - [ ] All links are working and properly formatted
-- [ ] Sequential numbering with no gaps (Review_001 to Review_572)
+- [ ] Sequential numbering with no gaps (Review_001 to Review_573)
 - [ ] No empty link fields (100% coverage)
 
 ### Quick Verification Commands
@@ -322,13 +322,13 @@ The repository migrated from manual metadata updates to automated git hooks:
 ## 📚 Additional Resources
 
 - **Git Hook Location**: `.git/hooks/pre-commit`
-- **Standalone Updater**: `/private/tmp/claude-502/.../update_metadata_standalone.py`
+- **Standalone Updater**: `.repo-tools/scripts/update_metadata.py`
 - **Main Updater Class**: `.repo-tools/repo_automator/updaters/metadata_updater.py`
 - **README Documentation**: See "🤖 Automated Metadata Updates" section
 
 ---
 
-**Last Updated:** February 3, 2026
+**Last Updated:** February 6, 2026
 **Automation Status:** ✅ Fully Automated via Git Hook
-**Coverage:** 572/572 reviews (100%)
+**Coverage:** 573/573 reviews (100%)
 **Repository:** https://github.com/merlihson/scientific-resources
