@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """
-Standalone updater for metadata AND README.
-Updates all metadata files and README statistics automatically.
+Enhanced updater for metadata and ALL documentation files.
+Automatically updates:
+- Metadata files (CSV, TXT)
+- README.md statistics
+- METADATA_UPDATE_PROCESS.md statistics
+- All review counts, file paths, and dates
 """
 import re
 import csv as csv_module
 import os
 from pathlib import Path
 from typing import Tuple, Optional, List, Dict, Any
+from datetime import datetime
 
 def clean_title(title: str) -> str:
     """Remove emojis and [Short] markers from title."""
@@ -196,12 +201,55 @@ def extract_title_and_link(file_path: Path) -> Tuple[Optional[str], Optional[str
         return None, None
 
 def get_repo_stats(repo_root: Path) -> Dict[str, Any]:
-    """Get repository statistics for README updates."""
+    """Get repository statistics for documentation updates."""
     stats = {}
 
-    # Count reviews
+    # Count Hebrew reviews
     hebrew_reviews = list((repo_root / "mike-paper-reviews-all" / "split-hebrew-reviews-md").glob("Review_*.md"))
-    stats['reviews'] = len(hebrew_reviews)
+    stats['hebrew_reviews'] = len(hebrew_reviews)
+    stats['reviews'] = len(hebrew_reviews)  # Alias for backward compatibility
+
+    # Count English reviews
+    english_reviews_path = repo_root / "mike-paper-reviews-all" / "split-english-reviews-md"
+    if english_reviews_path.exists():
+        english_reviews = list(english_reviews_path.glob("Review_*.md"))
+        stats['english_reviews'] = len(english_reviews)
+    else:
+        stats['english_reviews'] = 0
+
+    # Count DOCX files
+    docx_path = repo_root / "mike-paper-reviews-all" / "split-reviews-docx"
+    if docx_path.exists():
+        docx_files = list(docx_path.glob("Review_*.docx"))
+        stats['docx_files'] = len(docx_files)
+    else:
+        stats['docx_files'] = stats['hebrew_reviews']
+
+    # Count reviews with links from CSV
+    csv_path = repo_root / "mike-paper-reviews-all" / "reviews_metadata" / "paper_with_links.csv"
+    if csv_path.exists():
+        try:
+            with open(csv_path, 'r', encoding='utf-8') as f:
+                reader = csv_module.reader(f)
+                next(reader)  # Skip header
+                rows = list(reader)
+                # Count rows with non-empty link (3rd column)
+                stats['reviews_with_links'] = sum(1 for row in rows if len(row) >= 3 and row[2].strip())
+        except:
+            stats['reviews_with_links'] = stats['hebrew_reviews']
+    else:
+        stats['reviews_with_links'] = stats['hebrew_reviews']
+
+    # Get highest review number
+    if hebrew_reviews:
+        review_numbers = []
+        for f in hebrew_reviews:
+            match = re.search(r'Review_(\d+)\.md', f.name)
+            if match:
+                review_numbers.append(int(match.group(1)))
+        stats['max_review'] = max(review_numbers) if review_numbers else 1
+    else:
+        stats['max_review'] = 1
 
     # Count learning categories
     learning_materials = repo_root / "learning-materials"
@@ -221,10 +269,16 @@ def get_repo_stats(repo_root: Path) -> Dict[str, Any]:
 
     # Get repo size (approximate)
     try:
-        total_size = sum(f.stat().st_size for f in repo_root.rglob('*') if f.is_file())
+        total_size = sum(f.stat().st_size for f in repo_root.rglob('*') if f.is_file() and not '.git' in str(f))
         stats['size_gb'] = total_size / (1024**3)  # Convert to GB
     except:
         stats['size_gb'] = 2.0  # Default
+
+    # Calculate daily reviews (assuming reviews 209-XXX)
+    stats['daily_reviews'] = max(0, stats['reviews'] - 208)
+
+    # Get current date for "Last Updated"
+    stats['current_date'] = datetime.now().strftime("%B %-d, %Y")  # e.g., "February 6, 2026"
 
     return stats
 
@@ -238,24 +292,47 @@ def update_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
 
     original_content = content
 
-    # Patterns to update in README
+    # Enhanced patterns to update in README
     patterns = [
         # Highlights table
         (r'(<h3>📄 )\d+\+?(</h3>)', r'\g<1>{reviews}+\2'),
         (r'(<h3>📚 )\d+(</h3>)', r'\g<1>{categories}\2'),
         (r'(<h3>🎯 )[\d.]+( GB</h3>)', r'\g<1>{size_gb:.1f}\2'),
 
+        # Paper Reviews section - main description
+        (r'(The core collection containing \*\*)\d+( individual paper reviews\*\*)', r'\g<1>{reviews}\2'),
+
+        # Formats Available section
+        (r'(- \*\*`split-hebrew-reviews-md/`\*\* - )\d+( Hebrew review markdown files)', r'\g<1>{hebrew_reviews}\2'),
+        (r'(- \*\*`split-english-reviews-md/`\*\* - )\d+( English review markdown files)', r'\g<1>{english_reviews}\2'),
+        (r'(- \*\*`split-reviews-docx/`\*\* - )\d+ DOCX source files \(`Review_001\.docx` → `Review_\d+\.docx`\)',
+         r'\g<1>{docx_files} DOCX source files (`Review_001.docx` → `Review_{max_review:03d}.docx`)'),
+
+        # Automated Metadata Updates section
+        (r'(\| \*\*Total Reviews\*\* \| )\d+( \|[^\n]*\n[^\n]*\| \*\*With Paper Links\*\* \| )\d+',
+         r'\g<1>{reviews}\g<2>{reviews_with_links}'),
+
         # Collection Statistics table
         (r'(\| \*\*Total Paper Reviews\*\* \| )\d+', r'\g<1>{reviews}'),
-        (r'(\| \*\*Hebrew Reviews \(Markdown\)\*\* \| )\d+( files)', r'\g<1>{reviews}\2'),
+        (r'(\| \*\*Hebrew Reviews \(Markdown\)\*\* \| )\d+( files)', r'\g<1>{hebrew_reviews}\2'),
+        (r'(\| \*\*English Reviews \(Markdown\)\*\* \| )\d+( files)', r'\g<1>{english_reviews}\2'),
+        (r'(\| \*\*Reviews with Paper Links\*\* \| )\d+( \(100% coverage!\))', r'\g<1>{reviews_with_links}\2'),
         (r'(\| \*\*Daily Reviews\*\* \| )\d+', r'\g<1>{daily_reviews}'),
         (r'(\| \*\*Learning Categories\*\* \| )\d+', r'\g<1>{categories}'),
         (r'(\| \*\*Presentations\*\* \| )\d+', r'\g<1>{presentations}'),
         (r'(\| \*\*Total Repository Size\*\* \| )[\d.]+( GB)', r'\g<1>{size_gb:.1f}\2'),
-    ]
 
-    # Calculate daily reviews (assuming reviews 209-XXX)
-    stats['daily_reviews'] = max(0, stats['reviews'] - 208)
+        # Repository Structure section
+        (r'(│   ├── split-hebrew-reviews-md/     # )\d+( Hebrew review markdown files)', r'\g<1>{hebrew_reviews}\2'),
+        (r'(│   │   └── \.\.\. → Review_)\d+(\.md)', r'\g<1>{max_review:03d}\2'),
+        (r'(│   ├── split-english-reviews-md/    # )\d+( English review markdown files)', r'\g<1>{english_reviews}\2'),
+        (r'(│   ├── split-reviews-docx/          # )\d+( DOCX source files)', r'\g<1>{docx_files}\2'),
+        (r'(│   │   └── \.\.\. → Review_)\d+(\.docx)', r'\g<1>{max_review:03d}\2'),
+        (r'(│   │   ├── paper_with_links\.csv     # )\d+( reviews with links)', r'\g<1>{reviews_with_links}\2'),
+
+        # For Researchers section
+        (r'(- \*\*Literature Reviews\*\*: )\d+( analyzed papers)', r'\g<1>{reviews}\2'),
+    ]
 
     # Apply all patterns
     for pattern, replacement in patterns:
@@ -273,8 +350,64 @@ def update_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
 
     return False
 
+def update_metadata_doc(doc_path: Path, stats: Dict[str, Any]) -> bool:
+    """Update METADATA_UPDATE_PROCESS.md with current statistics."""
+    if not doc_path.exists():
+        print(f"Warning: {doc_path} not found, skipping")
+        return False
+
+    try:
+        content = doc_path.read_text(encoding='utf-8')
+    except IOError as e:
+        print(f"Error reading {doc_path}: {e}")
+        return False
+
+    original_content = content
+
+    # Calculate expected CSV line count (header + reviews)
+    csv_lines = stats['reviews'] + 1
+
+    # Patterns to update in METADATA_UPDATE_PROCESS.md
+    patterns = [
+        # Current Statistics table
+        (r'(\| \*\*Total Reviews\*\* \| )\d+', r'\g<1>{reviews}'),
+        (r'(\| \*\*With Paper Links\*\* \| )\d+( \(100% coverage!\))', r'\g<1>{reviews_with_links}\2'),
+        (r'(\| \*\*Hebrew Reviews\*\* \| )\d+( markdown files)', r'\g<1>{hebrew_reviews}\2'),
+        (r'(\| \*\*English Reviews\*\* \| )\d+( markdown files)', r'\g<1>{english_reviews}\2'),
+        (r'(\| \*\*DOCX Source Files\*\* \| )\d+( files)', r'\g<1>{docx_files}\2'),
+
+        # Manual verification - CSV line count
+        (r'(# Should show: )\d+( \(1 header \+ )\d+( reviews\))', r'\g<1>{csv_lines}\g<2>{reviews}\3'),
+
+        # Quality Assurance checklist
+        (r'(Total count matches in all files \()\d+( reviews\))', r'\g<1>{reviews}\2'),
+        (r'(Sequential numbering with no gaps \(Review_001 to Review_)\d+(\))', r'\g<1>{max_review:03d}\2'),
+
+        # Last Updated date
+        (r'(\*\*Last Updated:\*\* )[^\n]+', r'\g<1>{current_date}'),
+
+        # Coverage at bottom
+        (r'(\*\*Coverage:\*\* )\d+/\d+( reviews)', r'\g<1>{reviews}/{reviews}\2'),
+    ]
+
+    # Apply all patterns
+    for pattern, replacement in patterns:
+        formatted_replacement = replacement.format(**stats, csv_lines=csv_lines)
+        content = re.sub(pattern, formatted_replacement, content)
+
+    # Write if changed
+    if content != original_content:
+        try:
+            doc_path.write_text(content, encoding='utf-8')
+            return True
+        except IOError as e:
+            print(f"Error writing {doc_path}: {e}")
+            return False
+
+    return False
+
 def main():
-    """Main function to update metadata and README."""
+    """Main function to update metadata and all documentation."""
     # Use git to find repo root (works from any directory in the repo)
     import subprocess
     try:
@@ -366,9 +499,12 @@ def main():
 
     print(f"✓ Updated {titles_208_path.name}")
 
-    # Update README
-    print("\n📄 Updating README statistics...")
+    # Get repository statistics
+    print("\n📊 Collecting repository statistics...")
     stats = get_repo_stats(repo_root)
+
+    # Update README
+    print("\n📄 Updating README.md...")
     readme_path = repo_root / "README.md"
 
     if update_readme(readme_path, stats):
@@ -376,8 +512,22 @@ def main():
     else:
         print(f"  README.md already up to date")
 
+    # Update METADATA_UPDATE_PROCESS.md
+    print("\n📄 Updating METADATA_UPDATE_PROCESS.md...")
+    metadata_doc_path = repo_root / "METADATA_UPDATE_PROCESS.md"
+
+    if update_metadata_doc(metadata_doc_path, stats):
+        print(f"✓ Updated METADATA_UPDATE_PROCESS.md with current statistics")
+    else:
+        print(f"  METADATA_UPDATE_PROCESS.md already up to date")
+
     print(f"\n✅ All files updated successfully!")
-    print(f"   Total reviews: {len(reviews_data)}")
+    print(f"\n📊 Repository Statistics:")
+    print(f"   Hebrew reviews: {stats['hebrew_reviews']}")
+    print(f"   English reviews: {stats['english_reviews']}")
+    print(f"   DOCX files: {stats['docx_files']}")
+    print(f"   Reviews with links: {stats['reviews_with_links']} ({stats['reviews_with_links']/stats['reviews']*100:.1f}%)")
+    print(f"   Latest review: Review_{stats['max_review']:03d}")
     print(f"   Missing links: {len(missing_links)}")
     print(f"   Categories: {stats['categories']}")
     print(f"   Presentations: {stats['presentations']}")

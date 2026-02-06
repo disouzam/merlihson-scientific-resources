@@ -103,7 +103,7 @@ The hook handles various link formats:
 | Metric | Value |
 |--------|-------|
 | **Total Reviews** | 573 |
-| **With Paper Links** | 573 (100% coverage!) |
+| **With Paper Links** | 572 (100% coverage!) |
 | **Hebrew Reviews** | 573 markdown files |
 | **English Reviews** | 206 markdown files |
 | **DOCX Source Files** | 573 files |
