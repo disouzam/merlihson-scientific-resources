@@ -1,6 +1,6 @@
 Review 259: AI models collapse when trained on recursively generated data
 
-Paper: https://arxiv.org/abs/2305.17493
+Paper: https://www.nature.com/articles/s41586-024-07566-y
 
 ⚡️🚀המאמר היומי של מייק 25.07.24: ⚡️
 
