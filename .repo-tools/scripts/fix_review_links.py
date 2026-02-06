@@ -7,6 +7,7 @@ LINK FIXES:
 - Corrects wrong review numbers
 - Removes duplicate links (arxiv/HuggingFace/OpenReview)
 - Converts PDF links to abs links (arxiv.org/pdf/ → arxiv.org/abs/)
+- Moves standalone links from end of review to proper Paper: line at top
 - Verifies paper link matches review title
 - Auto-corrects wrong paper links by searching arXiv
 
@@ -397,6 +398,83 @@ def remove_duplicate_title_from_daily_marker(content: str) -> str:
                             return '\n'.join(lines)
 
     return content
+
+
+def move_link_from_end_to_top(content: str) -> str:
+    """Move standalone paper link from end of review to proper Paper: line at top.
+
+    Detects reviews where:
+    - No "Paper:" line exists in first 10 lines
+    - A standalone link (arxiv, openai, nature, etc.) exists at the end (after line 20)
+    - Moves the link to line 3 in "Paper: URL" format
+    - Removes the link from the end
+    """
+    lines = content.split('\n')
+
+    # Check if Paper: line already exists in first 10 lines
+    has_paper_line = False
+    for i in range(min(10, len(lines))):
+        if lines[i].strip().startswith('Paper:'):
+            has_paper_line = True
+            break
+
+    if has_paper_line:
+        return content
+
+    # Look for standalone link at the end (after line 20, on its own line)
+    link_patterns = [
+        r'^https?://arxiv\.org/abs/[\d.]+(?:v\d+)?$',
+        r'^https?://(?:www\.)?nature\.com/articles/[\w-]+$',
+        r'^https?://openai\.com/[\w/-]+$',
+        r'^https?://(?:cdn\.)?openai\.com/papers/[\w.-]+$',
+        r'^https?://aclanthology\.org/[\w.-/]+$',
+        r'^https?://proceedings\.mlr\.press/[\w/]+\.html$',
+        r'^https?://openreview\.net/[\w?=&]+$',
+        r'^https?://huggingface\.co/papers/[\d.]+$'
+    ]
+
+    found_link = None
+    link_line_idx = None
+
+    # Search from end backwards for standalone link
+    for i in range(len(lines) - 1, 19, -1):  # Start from end, stop at line 20
+        line = lines[i].strip()
+        for pattern in link_patterns:
+            if re.match(pattern, line):
+                found_link = line
+                link_line_idx = i
+                break
+        if found_link:
+            break
+
+    if not found_link or link_line_idx is None:
+        return content
+
+    # Insert Paper: line after title (line 0), with blank line
+    # Structure should be:
+    # Line 0: Review XXX: Title
+    # Line 1: (blank)
+    # Line 2: Paper: URL
+    # Line 3: (blank)
+    # Line 4: Daily marker or content...
+
+    new_lines = []
+    for i, line in enumerate(lines):
+        if i == 0:
+            # Add title line
+            new_lines.append(line)
+            new_lines.append('')
+            new_lines.append(f'Paper: {found_link}')
+        elif i == link_line_idx:
+            # Skip the link line at the end
+            continue
+        elif i == link_line_idx - 1 and not lines[i].strip():
+            # Skip empty line before the link if it exists
+            continue
+        else:
+            new_lines.append(line)
+
+    return '\n'.join(new_lines)
 
 
 def remove_standalone_duplicate_title(content: str) -> str:
@@ -826,6 +904,12 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
         new_content = fix_missing_review_header(content, correct_number)
         if new_content != content:
             changes.append("Added missing header")
+            content = new_content
+
+        # Move link from end to top if needed
+        new_content = move_link_from_end_to_top(content)
+        if new_content != content:
+            changes.append("Moved link to proper location")
             content = new_content
 
         # Fix emoji-only titles
