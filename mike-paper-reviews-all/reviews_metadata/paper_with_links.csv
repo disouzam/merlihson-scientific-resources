@@ -215,7 +215,7 @@ Review_213,Better & Faster Large Language Models via Multi-token Prediction,http
 Review_214,Are Emergent Abilities of Large Language Models a Mirage?,https://arxiv.org/abs/2304.15004
 Review_215,GraphAny: A Foundation Model for Node Classification on Any Graph,https://arxiv.org/abs/2405.2044
 Review_216,Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts,https://arxiv.org/abs/2405.19893
-Review_217,Scaling and evaluating sparse autoencoders?,
+Review_217,Scaling and evaluating sparse autoencoders?,https://arxiv.org/abs/2406.04093
 Review_218,Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality,https://arxiv.org/abs/2405.21060
 Review_219,What Do Language Models Learn in Context? The Structured Task Hypothesis.,https://arxiv.org/abs/2406.04216
 Review_220,Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks,https://arxiv.org/abs/2406.02550
@@ -257,7 +257,7 @@ Review_255,Consistency Models,https://arxiv.org/abs/2303.01469
 Review_256,TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING,https://arxiv.org/abs/2305.13301
 Review_257,Feedback Efficient Online Fine-Tuning of Diffusion Models,https://arxiv.org/abs/2402.16359
 Review_258,"The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof",https://arxiv.org/abs/2405.20231
-Review_259,AI models collapse when trained on recursively generated data,https://www.nature.com/articles/s41586-024-07566-y
+Review_259,AI models collapse when trained on recursively generated data,https://arxiv.org/abs/2305.17493
 Review_260,Questionable practices in machine learning,https://arxiv.org/abs/2407.12220
 Review_261,Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?,https://arxiv.org/abs/2407.16607
 Review_262,Large Scale Dataset Distillation with Domain Shift,https://dl.acm.org/doi/10.5555/3692070.3693400

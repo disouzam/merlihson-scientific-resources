@@ -1,5 +1,7 @@
 Review 231: Named Entity Recognition as Structured Span Prediction
 
+Paper: https://aclanthology.org/2022.umios-1.1/
+
 ⚡️🚀המאמר היומי של מייק 21.06.24:⚡️
 
 

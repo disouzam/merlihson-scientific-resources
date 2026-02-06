@@ -1,5 +1,7 @@
 Review 262: Large Scale Dataset Distillation with Domain Shift
 
+Paper: https://proceedings.mlr.press/v235/loo24a.html
+
 ⚡️🚀המאמר היומי של מייק 29.07.24: ⚡️
 
 

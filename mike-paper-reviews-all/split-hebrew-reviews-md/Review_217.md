@@ -1,5 +1,7 @@
 Review 217: Scaling and evaluating sparse autoencoders?
 
+Paper: https://arxiv.org/abs/2406.04093
+
 ⚡🚀המאמר היומי של מייק 07.06.24: ⚡
 
 
