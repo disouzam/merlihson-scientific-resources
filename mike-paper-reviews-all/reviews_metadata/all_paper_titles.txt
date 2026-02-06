@@ -126,7 +126,7 @@
 126. Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP
 127. SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION
 128. Dual-Stream Diffusion Net for Text-to-Video Generation
-129. 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain (סקירה זו נכתבה על ידי עדן יבין)
+129. 18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain
 130. Watch Your Steps: Local Image and Scene Editing by Text Instructions
 131. SeamlessM4T—Massively Multilingual & Multimodal Machine Translation
 132. 28.08.23: Nougat: Neural Optical Understanding for Academic Documents
