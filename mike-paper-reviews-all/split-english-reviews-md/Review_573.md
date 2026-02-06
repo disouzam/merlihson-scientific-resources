@@ -1,4 +1,4 @@
-FusionRoute: Bridging Gaps Between LLMs Via Additional Logit Routing
+# FusionRoute: Bridging Gaps Between LLMs Via Additional Logit Routing
 
 Mike’s Daily Paper Review: 04.02.26TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE
 
