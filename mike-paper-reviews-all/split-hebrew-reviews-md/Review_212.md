@@ -1,5 +1,7 @@
 Review 212: LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models
 
+Paper: https://arxiv.org/abs/2405.18377
+
 ⚡🚀המאמר היומי של מייק 02.06.24: ⚡
 
 

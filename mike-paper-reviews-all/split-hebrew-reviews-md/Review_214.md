@@ -1,5 +1,7 @@
 Review 214: Are Emergent Abilities of Large Language Models a Mirage?
 
+Paper: https://arxiv.org/abs/2304.15004
+
 ⚡🚀המאמר היומי של מייק 04.06.24: ⚡
 
 

@@ -207,12 +207,12 @@ Review_205,Simple linear attention language models balance the recall-throughput
 Review_206,PanGu-π: Enhancing Language Model Architectures via Nonlinearity Compensation,https://arxiv.org/abs/2312.17276
 Review_207,SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL,https://arxiv.org/abs/2405.11831v2
 Review_208,Training LLMs over Neurally Compressed Text,https://arxiv.org/abs/2404.03626v3
-Review_209,2BP: 2-Stage Backpropagation,
-Review_210,Transformers Can Do Arithmetic with the Right Embeddings,
-Review_211,The Evolution of Multimodal Model Architectures,
-Review_212,LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models,
-Review_213,Better & Faster Large Language Models via Multi-token Prediction,
-Review_214,Are Emergent Abilities of Large Language Models a Mirage?,
+Review_209,2BP: 2-Stage Backpropagation,https://arxiv.org/abs/2405.18047
+Review_210,Transformers Can Do Arithmetic with the Right Embeddings,https://arxiv.org/abs/2405.17399
+Review_211,The Evolution of Multimodal Model Architectures,https://arxiv.org/abs/2405.17927
+Review_212,LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models,https://arxiv.org/abs/2405.18377
+Review_213,Better & Faster Large Language Models via Multi-token Prediction,https://arxiv.org/abs/2404.19737
+Review_214,Are Emergent Abilities of Large Language Models a Mirage?,https://arxiv.org/abs/2304.15004
 Review_215,GraphAny: A Foundation Model for Node Classification on Any Graph,https://arxiv.org/abs/2405.2044
 Review_216,Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts,https://arxiv.org/abs/2405.19893
 Review_217,Scaling and evaluating sparse autoencoders?,

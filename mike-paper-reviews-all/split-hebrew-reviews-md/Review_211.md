@@ -1,5 +1,7 @@
 Review 211: The Evolution of Multimodal Model Architectures
 
+Paper: https://arxiv.org/abs/2405.17927
+
 ⚡🚀המאמר היומי של מייק 01.06.24: ⚡
 
 
