@@ -53,4 +53,4 @@ Review 392: Classical Statistical (In-Sample) Intuitions Don’t GeneralizeWell:
 
 עבודה זו מציעה פרספקטיבה מאוד מעניינת על מדוע אינטואיציות סטטיסטיות קלאסיות לא תמיד עובדת טוב בבעיות ב-ML מודרני. על ידי הדגשת השוואה בין R_f ל- R_d, המאמר מספק מסגרת מאחדת להבנת DD, Benign Interpolation, והתפקיד המתפתח של טרייד-אוף ההטיה-שונות.
 
-https://arxiv.org/pdf/2409.18842
+https://arxiv.org/abs/2409.18842

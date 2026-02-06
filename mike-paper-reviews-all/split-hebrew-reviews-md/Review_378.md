@@ -59,4 +59,4 @@ Review 378: When Can Transformers Count to n?
 
 - מחקרי mechanistic interpretability להבהרת הייצוגים הפנימיים שנלמדים על ידי טרנספורמרים במהלך משימות ספירה
 
-https://arxiv.org/pdf/2407.15160
+https://arxiv.org/abs/2407.15160

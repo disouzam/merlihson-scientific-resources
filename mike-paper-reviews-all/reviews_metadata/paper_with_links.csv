@@ -510,7 +510,7 @@ Review_508,Signal and Noise: A Framework for Reducing Uncertainty in Language Mo
 Review_509,Fantastic Pretraining Optimizers and Where to Find Them,https://arxiv.org/abs/2509.02046
 Review_510,Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making,https://www.researchsquare.com/article/rs-7587964/v1
 Review_511,On the Theoretical Limitations of Embedding-Based Retrieval,https://arxiv.org/abs/2508.21038
-Review_512,Bootstrapping Task Spaces for Self-Improvementֿ,https://arxiv.org/abs/2509.04575
+Review_512,Bootstrapping Task Spaces for Self-Improvement,https://arxiv.org/abs/2509.04575
 Review_513,THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION,https://arxiv.org/abs/2507.14560
 Review_514,Foundation Models for Time Series Analysis- A Tutorial and Survey,https://arxiv.org/abs/2403.14735
 Review_515,Corrector Sampling in Language Models,https://arxiv.org/abs/2506.06215
@@ -536,7 +536,7 @@ Review_534,Agent Learning via Early Experience,https://arxiv.org/abs/2510.08558
 Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,
 Review_536,FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE,https://arxiv.org/abs/2510.24256
 Review_537,"Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs",https://arxiv.org/abs/2511.01202
-Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers,https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
+Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers?,https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
 Review_539,Extracting alignment data in open models,https://arxiv.org/abs/2510.18554
 Review_540,Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125
 Review_541,LiteAttention: A Temporal Sparse Attention for Diffusion Transformers,https://huggingface.co/papers/2511.11062

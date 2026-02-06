@@ -14,4 +14,4 @@ Review 457: Don’t Do RAG: When Cache-Augmented Generation is All You Need for 
 
 מאמר די טריוויאלי אבל צריך לסקור גם כאלו לפעמים
 
-https://arxiv.org/pdf/2412.15605
+https://arxiv.org/abs/2412.15605

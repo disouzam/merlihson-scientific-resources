@@ -32,6 +32,6 @@ Review 502: Pulling Back the Curtain: Unsupervised Adversarial Detection via Con
 
 היא ניתנת להרחבה (Scalable): ניתן להוסיף בקלות את רשתות העזר הקלות למודלים קיימים ללא תוספת חישובית משמעותית.
 
-https://arxiv.org/pdf/2502.09110
+https://arxiv.org/abs/2502.09110
 
 המוח במיקור חוץ: הפרדיגמה החדשה שבה סוכני AI לומדים בלי לגעת ב-LLM.

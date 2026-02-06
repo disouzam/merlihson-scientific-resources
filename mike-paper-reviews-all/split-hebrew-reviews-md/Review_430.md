@@ -23,4 +23,4 @@ Review 430: Efficient Online Data Mixing For Language Model Pre-Training
 
 מאמר מומלץ - נהניתי לצלול אליו 
 
-https://arxiv.org/pdf/2312.02406
+https://arxiv.org/abs/2312.02406

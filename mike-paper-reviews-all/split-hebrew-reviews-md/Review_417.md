@@ -17,4 +17,4 @@ Review 417: Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representat
 
 טוב, נכון שהופיעה לנו המטריושקה בשם המאמר הדמיון בינו לבין המטרישקה המקורית די רופף. אבל המאמר די מעניין חוץ מזה….
 
-https://arxiv.org/pdf/2503.01776
+https://arxiv.org/abs/2503.01776

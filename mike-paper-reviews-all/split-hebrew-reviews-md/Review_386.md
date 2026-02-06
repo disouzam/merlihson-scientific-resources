@@ -15,4 +15,4 @@ Review 386: Time-MoE: Billion-Scale Time Series Foundation Models with Mixture o
 
 זהו וזה - סקירה קצרה, ובתקווה גם ברורה…. 
 
-https://arxiv.org/pdf/2409.16040
+https://arxiv.org/abs/2409.16040

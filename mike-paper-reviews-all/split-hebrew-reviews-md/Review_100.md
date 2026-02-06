@@ -6,7 +6,6 @@ Paper: https://arxiv.org/abs/2108.09084v6
 
 המאמר נקרא:
 
-Fastformer: Additive attention is Can Be All you need
 
 מטרת המאמר היא להתמודד עם הסיבוכיות הריבועית של הטרנספורמר (מבחינת אורך הקלט). המחברים עשו את זה בדרך פשוטה להפליא:
 

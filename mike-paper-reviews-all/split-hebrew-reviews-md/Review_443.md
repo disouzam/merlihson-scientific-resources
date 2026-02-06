@@ -14,4 +14,4 @@ Review 443: Training Large Language Models to Reason in a Continuous Latent Spac
 
 מאמר עם כיוון מאוד מעניין שאני צופה לו עתיד גדול.
 
-https://arxiv.org/pdf/2412.06769
+https://arxiv.org/abs/2412.06769

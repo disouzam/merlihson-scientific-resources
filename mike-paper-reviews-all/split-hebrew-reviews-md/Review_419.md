@@ -15,4 +15,4 @@ Review 419: SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity
 
 לבסוף המאמר מציע דרך לשלב כמה MoE עם LoRa עבור כמה משימות פיין טיון שונות אבל אחרי שגיליתי טעיות גם בפרק הזה, ויתרתי….
 
-https://arxiv.org/pdf/2410.07739
+https://arxiv.org/abs/2410.07739

@@ -15,4 +15,4 @@ Review 310: ASR Error Correction using Large Language Models
 
 מקווה שלא פספסתי שום דבר…
 
-arxiv.org/pdf/2409.09554
+https://arxiv.org/abs/2409.09554

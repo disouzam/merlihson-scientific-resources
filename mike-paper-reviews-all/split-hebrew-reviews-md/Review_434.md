@@ -19,4 +19,4 @@ Review 434: GIVT: Generative Infinite-Vocabulary Transformers
 
 בנוסף המאמר מציע לאמן טרנספורמר לא סיבתי לחיזוי ייצוגים לטנטיים של פאצ'ים (מאומן דומה לmasked languaged modeling או MLM). הגישה הזו שלא ידעתי עליה לפני הוצגה במאמר MaskGit.
 
-https://arxiv.org/pdf/2312.02116
+https://arxiv.org/abs/2312.02116

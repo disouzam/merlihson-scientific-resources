@@ -20,4 +20,4 @@ Review 447: Around the World in 80 Timesteps: A Generative Approach to Global Vi
 
 המאמר מאוד מעניין - מי שבקיא בגיאומטריה רימנית מוזמן לצלול ולהינות :)
 
- https://arxiv.org/pdf/2412.06781 
+ https://arxiv.org/abs/2412.06781 
