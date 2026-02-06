@@ -52,3 +52,5 @@ Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2018). Physics-Informed Neural
 Iserles, A. (2009). A First Course in the Numerical Analysis of Differential Equations. Cambridge University Press.
 
 Allen, S. M., & Cahn, J. W. (1972). Ground state structures in ordered binary alloys with second neighbor interactions. Acta Metallurgica, 20(3), 423–433.
+
+https://arxiv.org/abs/1711.10561

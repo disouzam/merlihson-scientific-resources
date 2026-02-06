@@ -533,12 +533,12 @@ Review_531,EMERGENCE FROM LEARNING DYNAMICS OF GROKKING,https://arxiv.org/abs/25
 Review_532,Language Models are Injective and Hence Invertible,https://arxiv.org/abs/2510.15511
 Review_533,x* = y - f(LN(x*)).,https://arxiv.org/abs/2508.19445
 Review_534,Agent Learning via Early Experience,https://arxiv.org/abs/2510.08558
-Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,
+Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,https://arxiv.org/abs/2504.17723
 Review_536,FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE,https://arxiv.org/abs/2510.24256
 Review_537,"Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs",https://arxiv.org/abs/2511.01202
-Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers?,https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/
+Review_538,Nested Learning: Is Deep Learning Just a Stack of Optimizers?,https://arxiv.org/abs/2512.24695
 Review_539,Extracting alignment data in open models,https://arxiv.org/abs/2510.18554
-Review_540,Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,https://www.sciencedirect.com/science/article/abs/pii/S0021999118307125
+Review_540,Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,https://arxiv.org/abs/1711.10561
 Review_541,LiteAttention: A Temporal Sparse Attention for Diffusion Transformers,https://huggingface.co/papers/2511.11062
 Review_542,ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT,https://arxiv.org/abs/2511.05313
 Review_543,"Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B",https://arxiv.org/abs/2511.06221
