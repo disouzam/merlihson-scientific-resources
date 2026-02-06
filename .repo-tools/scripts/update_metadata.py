@@ -299,8 +299,17 @@ def update_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
         (r'(<h3>📚 )\d+(</h3>)', r'\g<1>{categories}\2'),
         (r'(<h3>🎯 )[\d.]+( GB</h3>)', r'\g<1>{size_gb:.1f}\2'),
 
+        # Quick Start table - file path ranges
+        (r'(\| Individual review files \(DOCX\) \| `mike-paper-reviews-all/split-reviews-docx/Review_001\.docx` - `Review_)\d+(\.docx` \|)',
+         r'\g<1>{max_review:03d}\2'),
+        (r'(\| Individual reviews \(Markdown\) \| `mike-paper-reviews-all/split-hebrew-reviews-md/Review_001\.md` - `Review_)\d+(\.md` \|)',
+         r'\g<1>{max_review:03d}\2'),
+
         # Paper Reviews section - main description
         (r'(The core collection containing \*\*)\d+( individual paper reviews\*\*)', r'\g<1>{reviews}\2'),
+
+        # Paper Reviews section - Daily Reviews range
+        (r'(\| \*\*Daily Reviews\*\* \| )365-\d+', r'\g<1>365-{max_review}'),
 
         # Formats Available section
         (r'(- \*\*`split-hebrew-reviews-md/`\*\* - )\d+( Hebrew review markdown files)', r'\g<1>{hebrew_reviews}\2'),

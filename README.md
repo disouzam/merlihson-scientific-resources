@@ -89,8 +89,8 @@ cat mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
 ### Access Reviews
 | What you want | Where to find it |
 |---------------|------------------|
-| Individual review files (DOCX) | `mike-paper-reviews-all/split-reviews-docx/Review_001.docx` - `Review_572.docx` |
-| Individual reviews (Markdown) | `mike-paper-reviews-all/split-hebrew-reviews-md/Review_001.md` - `Review_572.md` |
+| Individual review files (DOCX) | `mike-paper-reviews-all/split-reviews-docx/Review_001.docx` - `Review_573.docx` |
+| Individual reviews (Markdown) | `mike-paper-reviews-all/split-hebrew-reviews-md/Review_001.md` - `Review_573.md` |
 | All paper titles | `mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt` |
 | Papers with links (100% coverage) | `mike-paper-reviews-all/reviews_metadata/paper_with_links.csv` |
 | Archived PDFs and old formats | `mike-paper-reviews-all/archive/` |
@@ -106,7 +106,7 @@ The core collection containing **573 individual paper reviews** in multiple form
 | Type | Count | Description |
 |------|-------|-------------|
 | **Individual Reviews** | 1-208 | Deep-dive analyses with paper links |
-| **Daily Reviews** | 365-572 | Chronological reviews (May 2024 - Feb 2026) |
+| **Daily Reviews** | 365-573 | Chronological reviews (May 2024 - Feb 2026) |
 
 #### Formats Available
 - **`split-hebrew-reviews-md/`** - 573 Hebrew review markdown files (primary format)
