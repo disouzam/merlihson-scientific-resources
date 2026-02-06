@@ -7,7 +7,6 @@ LINK FIXES:
 - Corrects wrong review numbers
 - Removes duplicate links (arxiv/HuggingFace/OpenReview)
 - Converts PDF links to abs links (arxiv.org/pdf/ → arxiv.org/abs/)
-- Moves standalone links from end of review to proper Paper: line at top
 - Verifies paper link matches review title
 - Auto-corrects wrong paper links by searching arXiv
 
@@ -904,12 +903,6 @@ def fix_review_file(filepath: Path) -> Tuple[bool, str]:
         new_content = fix_missing_review_header(content, correct_number)
         if new_content != content:
             changes.append("Added missing header")
-            content = new_content
-
-        # Move link from end to top if needed
-        new_content = move_link_from_end_to_top(content)
-        if new_content != content:
-            changes.append("Moved link to proper location")
             content = new_content
 
         # Fix emoji-only titles
