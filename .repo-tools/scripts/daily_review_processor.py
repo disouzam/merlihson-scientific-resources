@@ -305,6 +305,47 @@ def commit_and_push(processed_reviews: List[int], dry_run: bool = False) -> bool
         return False
 
 
+def wait_for_network(timeout: int = 60) -> bool:
+    """
+    Wait for network connection after wake from sleep.
+
+    When Mac wakes from sleep, Wi-Fi takes a few seconds to connect.
+    This function waits for network availability before proceeding.
+
+    Args:
+        timeout: Maximum seconds to wait for network (default: 60)
+
+    Returns:
+        True if network is available, False if timeout
+    """
+    import time
+
+    logger.info("Checking network connectivity...")
+    start_time = time.time()
+
+    while time.time() - start_time < timeout:
+        try:
+            # Try to ping Google DNS (8.8.8.8)
+            result = subprocess.run(
+                ['ping', '-c', '1', '-W', '2', '8.8.8.8'],
+                capture_output=True,
+                timeout=5
+            )
+            if result.returncode == 0:
+                logger.info("✓ Network is available")
+                return True
+        except subprocess.TimeoutExpired:
+            pass
+        except Exception as e:
+            logger.debug(f"Network check error: {e}")
+
+        logger.info("Waiting for network...")
+        time.sleep(5)
+
+    logger.warning(f"⚠️  Network timeout after {timeout}s, proceeding anyway")
+    return False
+
+
 def main():
     """Main entry point for daily review processor."""
 
@@ -319,6 +360,9 @@ def main():
     logger.info("Starting daily review processor")
     logger.info(f"Repository: {REPO_ROOT}")
     logger.info(f"Downloads: {DOWNLOADS_DIR}")
+
+    # Wait for network (important after wake from sleep)
+    wait_for_network(timeout=60)
 
     # Find new reviews
     new_reviews = find_new_reviews()
