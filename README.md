@@ -67,7 +67,7 @@
 
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
-- **573 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
+- **574 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
 - **21 learning categories** spanning machine learning, mathematics, algorithms, and more
 - **9 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
