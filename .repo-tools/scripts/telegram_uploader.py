@@ -20,6 +20,7 @@ import subprocess
 import logging
 import json
 import time
+import html
 from pathlib import Path
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional, Set, Tuple
@@ -193,6 +194,17 @@ def split_message(text: str, max_length: int = MAX_MESSAGE_LENGTH) -> List[str]:
     return messages
 
 
+def escape_for_telegram_html(text: str) -> str:
+    """
+    Escape text for Telegram HTML parse mode.
+
+    HTML mode requires escaping: <, >, &, and "
+    Python's html.escape() handles this perfectly.
+    Parentheses, periods, and technical characters do NOT need escaping.
+    """
+    return html.escape(text, quote=True)
+
+
 def send_telegram_message(bot_token: str, chat_id: str, text: str,
                          retry_count: int = 2, retry_delay: int = 5) -> bool:
     """
@@ -204,7 +216,7 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str,
     payload = {
         "chat_id": chat_id,
         "text": text,
-        "parse_mode": "Markdown"
+        "parse_mode": "HTML"
     }
 
     for attempt in range(retry_count + 1):
@@ -383,12 +395,15 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
     # Upload each part
     success = True
     for i, message_text in enumerate(messages, 1):
+        # Escape content for HTML mode
+        escaped_message = escape_for_telegram_html(message_text)
+
         # Add part indicator if multiple parts
         if len(messages) > 1:
             part_indicator = f"({i}/{len(messages)})\n\n"
-            final_text = part_indicator + message_text
+            final_text = part_indicator + escaped_message
         else:
-            final_text = message_text
+            final_text = escaped_message
 
         logger.info(f"Uploading Review_{review_num} part {i}/{len(messages)} to {channel_type} channel...")
 
