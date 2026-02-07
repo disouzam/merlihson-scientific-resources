@@ -216,6 +216,18 @@ def process_review(review_info: Dict[str, any], dry_run: bool = False) -> bool:
                 check=True
             )
             logger.debug(f"  Converter output: {result.stdout.strip()}")
+
+            # Extract title and prepend to English markdown (same as Hebrew)
+            english_title = extract_title_from_markdown(english_md_dest)
+            if english_title:
+                # Read current content
+                content = english_md_dest.read_text(encoding='utf-8')
+                # Prepend "Review XXX: TITLE"
+                new_content = f"Review {review_num}: {english_title}\n\n{content}"
+                english_md_dest.write_text(new_content, encoding='utf-8')
+                logger.info(f"  Added title header to English: Review {review_num}: {english_title[:50]}...")
+            else:
+                logger.warning(f"  Could not extract title from {english_md_dest.name}")
         else:
             logger.info(f"  No English file found for Review_{review_num}")
 

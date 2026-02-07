@@ -1,6 +1,10 @@
+Review 574: Scaling Embedding Outperforms Scaling Experts in Language Models
+
 Who Wins at Scale: N-gram Embedding Scaling or Scaling the Number of Experts in LLMs
 
-Mike’s Daily Paper Review: 06.02.26, Review 574Scaling Embedding Outperforms Scaling Experts in Language Models
+Mike's Daily Paper Review: 06.02.26, Review 574
+
+Scaling Embedding Outperforms Scaling Experts in Language Models
 
 The dominance of the Mixture-of-Experts (MoE) architecture for scaling LLMs is hitting an efficiency wall. While MoE decouples the total number of parameters from the compute volume, it generates significant communication overhead and memory bandwidth bottlenecks in GPU memory. This paper proposes a new structural axis: scaling the embedding layer as a dimension for increasing model parameters. As we "embed" more token combinations (a larger dictionary/embedding table), the number of model parameters increases, but the amount of computation remains roughly the same as in MoE.
 
