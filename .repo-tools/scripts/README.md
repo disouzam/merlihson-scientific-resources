@@ -36,7 +36,9 @@ python3 daily_review_processor.py
 ```
 
 **Scheduling:**
-- Runs automatically every day at 5:00 AM via launchd
+- Runs automatically at 5:00 AM and 6:00 AM (backup) daily via launchd
+- If 5:00 AM run succeeds, 6:00 AM run finds no new files and exits
+- If 5:00 AM run fails, 6:00 AM run processes the reviews
 - Setup: `./schedule_daily_job.sh`
 
 ### `update_metadata.py`
@@ -69,6 +71,34 @@ Converts DOCX files to Markdown format.
 ```bash
 python3 convert_docx_to_md.py input.docx output.md
 ```
+
+### `telegram_uploader.py`
+
+Uploads new reviews to Telegram test channels.
+
+**What it does:**
+- Checks for new reviews not yet uploaded to Telegram
+- Uploads Hebrew reviews to Hebrew channel
+- Uploads English reviews to English channel
+- Splits long messages (max 4096 chars per Telegram message)
+- Uses HTML parse mode (handles scientific notation, parentheses)
+- Tracks uploaded reviews to avoid duplicates
+
+**Usage:**
+
+```bash
+# Test without uploading
+python3 telegram_uploader.py --dry-run
+
+# Upload new reviews manually
+python3 telegram_uploader.py
+```
+
+**Scheduling:**
+- Runs automatically at 11:00 AM and 11:30 AM (backup) daily via launchd
+- If 11:00 AM run succeeds, 11:30 AM run finds no new reviews and exits
+- If 11:00 AM run fails, 11:30 AM run uploads the reviews
+- Setup: `./schedule_telegram_job.sh`
 
 ### `schedule_daily_job.sh`
 
