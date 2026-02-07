@@ -19,6 +19,9 @@
         <integer>0</integer>
     </dict>
 
+    <key>WakeSystem</key>
+    <true/>
+
     <key>StandardOutPath</key>
     <string>REPO_ROOT_PLACEHOLDER/.repo-tools/logs/telegram_uploader.log</string>
 
