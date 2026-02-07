@@ -4,8 +4,6 @@ Who Wins at Scale: N-gram Embedding Scaling or Scaling the Number of Experts in 
 
 Mike's Daily Paper Review: 06.02.26, Review 574
 
-Scaling Embedding Outperforms Scaling Experts in Language Models
-
 The dominance of the Mixture-of-Experts (MoE) architecture for scaling LLMs is hitting an efficiency wall. While MoE decouples the total number of parameters from the compute volume, it generates significant communication overhead and memory bandwidth bottlenecks in GPU memory. This paper proposes a new structural axis: scaling the embedding layer as a dimension for increasing model parameters. As we "embed" more token combinations (a larger dictionary/embedding table), the number of model parameters increases, but the amount of computation remains roughly the same as in MoE.
 
 The central innovation is the N-gram Embedding layer (NE), which is structured like a multi-layer hash table. In standard Transformers, a token t is mapped to a single vector in the E_0 dictionary, which the authors call the Base Embedding Table. The proposed architecture extends this by summing the base vector with embeddings from sub-tables of different n-grams that the token is part of, for various n values. For a given token, the model performs a lookup not only for the individual token but also for its context up to depth N. All of this is done without an explicit dic meaning there is no direct mapping between tokens and their embeddings as in standard Transformers.
