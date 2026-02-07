@@ -46,9 +46,9 @@ def check_english_review(file_path: Path) -> list[str]:
         if pdf_links:
             issues.append(f"PDF links found: {len(pdf_links)}")
 
-        # Check 4: Missing markdown header on line 1
-        if lines[0] and not lines[0].startswith('#'):
-            issues.append("Line 1 missing markdown header (#)")
+        # Check 4: Line 1 should start with "Review XXX:" format (not markdown #)
+        if lines[0] and not re.match(r'^Review \d+:', lines[0]):
+            issues.append("Line 1 should start with 'Review XXX:' format")
 
         # Check 5: Check for common formatting issues
         # Empty line 2 (should be between title lines)
@@ -88,8 +88,8 @@ def main():
                     issue_counts["Multiple links"] += 1
                 elif "PDF links" in issue:
                     issue_counts["PDF links"] += 1
-                elif "missing markdown header" in issue:
-                    issue_counts["Missing # header"] += 1
+                elif "should start with 'Review XXX:'" in issue:
+                    issue_counts["Missing Review XXX: header"] += 1
                 elif "Line 2 not empty" in issue:
                     issue_counts["Line 2 formatting"] += 1
         else:

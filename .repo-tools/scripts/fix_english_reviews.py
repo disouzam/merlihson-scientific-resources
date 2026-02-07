@@ -6,7 +6,8 @@ Automatically fixes common issues in English review markdown files:
 FORMATTING FIXES:
 - Removes duplicate titles (line 1 and line 3)
 - Ensures line 2 is blank between title lines
-- Adds markdown header (#) to line 1 if missing
+- Ensures "Review XXX: Title" header format on line 1 (matching Hebrew reviews)
+- Removes markdown headers (#) if present (old format)
 - Fixes concatenated date+title (adds missing spaces/colons)
 - Normalizes date separators (em dash → hyphen)
 
@@ -90,16 +91,34 @@ def ensure_blank_line2(content: str) -> str:
     return content
 
 
-def add_markdown_header(content: str) -> str:
-    """Add markdown header (#) to line 1 if missing."""
+def ensure_review_header(content: str, filepath: Path) -> str:
+    """Ensure line 1 has 'Review XXX: Title' format (matching Hebrew reviews)."""
     lines = content.split('\n')
 
     if not lines:
         return content
 
-    # If line 1 doesn't start with #, add it
-    if lines[0] and not lines[0].startswith('#'):
-        lines[0] = f"# {lines[0]}"
+    # Extract review number from filename
+    match = re.search(r'Review_(\d+)\.md', filepath.name)
+    if not match:
+        return content
+
+    review_num = int(match.group(1))
+
+    # If line 1 already starts with "Review XXX:", it's correct
+    if re.match(r'^Review \d+:', lines[0]):
+        return content
+
+    # If line 1 has markdown header, remove it
+    if lines[0].startswith('#'):
+        lines[0] = lines[0].lstrip('#').strip()
+
+    # Extract title from line 1 or find it in content
+    title = lines[0].strip() if lines[0] else extract_paper_title(content)
+
+    if title:
+        # Prepend "Review XXX: " to the title
+        lines[0] = f"Review {review_num}: {title}"
         return '\n'.join(lines)
 
     return content
@@ -320,10 +339,10 @@ def fix_english_review(filepath: Path) -> Tuple[bool, str]:
             changes.append("Fixed line 2 formatting")
             content = new_content
 
-        # Fix 3: Add markdown header if missing
-        new_content = add_markdown_header(content)
+        # Fix 3: Ensure "Review XXX: Title" header format
+        new_content = ensure_review_header(content, filepath)
         if new_content != content:
-            changes.append("Added # header")
+            changes.append("Added Review XXX: header")
             content = new_content
 
         # Fix 4: Convert PDF to abs links
