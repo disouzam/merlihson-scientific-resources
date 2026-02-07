@@ -34,6 +34,7 @@ ENGLISH_MD_DIR = REPO_ROOT / "mike-paper-reviews-all" / "split-english-reviews-m
 LOG_DIR = REPO_ROOT / ".repo-tools" / "logs"
 CONFIG_FILE = REPO_ROOT / ".repo-tools" / "scripts" / "telegram_config.yaml"
 UPLOAD_LOG_FILE = LOG_DIR / "telegram_uploads.log"
+MESSAGE_IDS_FILE = LOG_DIR / "telegram_message_ids.json"
 
 # Telegram limits
 MAX_MESSAGE_LENGTH = 4096
@@ -69,8 +70,11 @@ class TelegramConfig:
 
         self.hebrew_bot_token = config['hebrew_channel']['bot_token']
         self.hebrew_channel_id = config['hebrew_channel']['channel_id']
+        self.hebrew_username = config['hebrew_channel'].get('username')  # Public channel username
+
         self.english_bot_token = config['english_channel']['bot_token']
         self.english_channel_id = config['english_channel']['channel_id']
+        self.english_username = config['english_channel'].get('username')  # Public channel username
 
         self.max_message_length = config.get('settings', {}).get('max_message_length', 4096)
         self.check_history_depth = config.get('settings', {}).get('check_history_depth', 100)
@@ -206,11 +210,11 @@ def escape_for_telegram_html(text: str) -> str:
 
 
 def send_telegram_message(bot_token: str, chat_id: str, text: str,
-                         retry_count: int = 2, retry_delay: int = 5) -> bool:
+                         retry_count: int = 2, retry_delay: int = 5) -> Tuple[bool, Optional[int]]:
     """
     Send message to Telegram channel via Bot API.
 
-    Returns True if successful, False otherwise.
+    Returns (success: bool, message_id: Optional[int])
     """
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     payload = {
@@ -226,14 +230,15 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str,
             result = response.json()
 
             if result.get('ok'):
-                return True
+                message_id = result.get('result', {}).get('message_id')
+                return True, message_id
             else:
                 logger.error(f"Telegram API error: {result.get('description', 'Unknown error')}")
                 if attempt < retry_count:
                     logger.info(f"Retrying in {retry_delay} seconds... (attempt {attempt + 1}/{retry_count})")
                     time.sleep(retry_delay)
                 else:
-                    return False
+                    return False, None
 
         except requests.exceptions.RequestException as e:
             logger.error(f"Network error sending message: {e}")
@@ -241,9 +246,9 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str,
                 logger.info(f"Retrying in {retry_delay} seconds... (attempt {attempt + 1}/{retry_count})")
                 time.sleep(retry_delay)
             else:
-                return False
+                return False, None
 
-    return False
+    return False, None
 
 
 def get_channel_history(bot_token: str, chat_id: str, limit: int = 100) -> Set[int]:
@@ -325,6 +330,55 @@ def log_upload(review_num: int, channel_type: str, status: str):
         logger.error(f"Error writing to upload log: {e}")
 
 
+def save_message_id(review_num: int, channel_type: str, message_id: int,
+                   chat_id: str, username: Optional[str] = None):
+    """
+    Save message_id to JSON file for later retrieval (used by discord_poster).
+
+    This enables other scripts to construct Telegram message links.
+    """
+    try:
+        MESSAGE_IDS_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+        # Load existing data
+        if MESSAGE_IDS_FILE.exists():
+            with open(MESSAGE_IDS_FILE, 'r') as f:
+                data = json.load(f)
+        else:
+            data = {}
+
+        # Add new entry
+        review_key = str(review_num)
+        if review_key not in data:
+            data[review_key] = {}
+
+        # Construct Telegram link
+        if username:
+            # Public channel format: https://t.me/username/message_id
+            link = f"https://t.me/{username}/{message_id}"
+        else:
+            # Private channel format: https://t.me/c/chat_id/message_id
+            clean_chat_id = chat_id.replace("-100", "")
+            link = f"https://t.me/c/{clean_chat_id}/{message_id}"
+
+        data[review_key][channel_type] = {
+            'message_id': message_id,
+            'chat_id': chat_id,
+            'username': username,
+            'link': link,
+            'timestamp': datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+        }
+
+        # Save back to file
+        with open(MESSAGE_IDS_FILE, 'w') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
+        logger.debug(f"Saved message_id for Review_{review_num} ({channel_type}): {message_id}")
+
+    except Exception as e:
+        logger.error(f"Error saving message_id: {e}")
+
+
 def is_already_uploaded(review_num: int, channel_type: str,
                        uploaded_log: Dict[str, Set[int]],
                        bot_token: str, chat_id: str,
@@ -363,10 +417,12 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
         file_path = HEBREW_MD_DIR / f"Review_{review_num:03d}.md"
         bot_token = config.hebrew_bot_token
         chat_id = config.hebrew_channel_id
+        username = config.hebrew_username
     elif channel_type == 'english':
         file_path = ENGLISH_MD_DIR / f"Review_{review_num:03d}.md"
         bot_token = config.english_bot_token
         chat_id = config.english_channel_id
+        username = config.english_username
     else:
         logger.error(f"Unknown channel type: {channel_type}")
         return False
@@ -394,6 +450,8 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
 
     # Upload each part
     success = True
+    first_message_id = None  # Track first message ID for link construction
+
     for i, message_text in enumerate(messages, 1):
         # Escape content for HTML mode
         escaped_message = escape_for_telegram_html(message_text)
@@ -407,9 +465,16 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
 
         logger.info(f"Uploading Review_{review_num} part {i}/{len(messages)} to {channel_type} channel...")
 
-        if send_telegram_message(bot_token, chat_id, final_text,
-                                config.retry_count, config.retry_delay_seconds):
+        send_success, message_id = send_telegram_message(bot_token, chat_id, final_text,
+                                                         config.retry_count, config.retry_delay_seconds)
+
+        if send_success:
             logger.info(f"✓ Sent part {i}/{len(messages)}")
+
+            # Store first message_id (this is the main link we'll use)
+            if i == 1 and message_id:
+                first_message_id = message_id
+                save_message_id(review_num, channel_type, message_id, chat_id, username)
         else:
             logger.error(f"✗ Failed to send part {i}/{len(messages)}")
             success = False

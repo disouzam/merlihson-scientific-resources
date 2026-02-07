@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Job Label (Unique Identifier) -->
+    <key>Label</key>
+    <string>com.user.discord-review-poster</string>
+
+    <!-- Program to Execute -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>REPO_ROOT_PATH/.repo-tools/.venv/bin/python3</string>
+        <string>REPO_ROOT_PATH/.repo-tools/scripts/discord_poster.py</string>
+    </array>
+
+    <!-- Working Directory -->
+    <key>WorkingDirectory</key>
+    <string>REPO_ROOT_PATH</string>
+
+    <!-- Environment Variables -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+    </dict>
+
+    <!-- Schedule: 12:00 PM (Noon) and 6:00 PM Daily -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <!-- Primary run at 12:00 PM (Noon) - 1 hour after Telegram upload -->
+        <dict>
+            <key>Hour</key>
+            <integer>12</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <!-- Backup run at 6:00 PM - In case Substack wasn't ready at noon -->
+        <dict>
+            <key>Hour</key>
+            <integer>18</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+
+    <!-- Logging -->
+    <key>StandardOutPath</key>
+    <string>REPO_ROOT_PATH/.repo-tools/logs/discord_poster.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>REPO_ROOT_PATH/.repo-tools/logs/discord_poster_error.log</string>
+
+    <!-- Run only when user is logged in -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- Keep the job loaded -->
+    <key>KeepAlive</key>
+    <false/>
+</dict>
+</plist>

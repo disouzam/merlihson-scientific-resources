@@ -1,0 +1,28 @@
+# Discord Bot Configuration
+#
+# SETUP INSTRUCTIONS:
+# 1. Create a webhook in your Discord server:
+#    - Right-click channel → Edit Channel → Integrations → Create Webhook
+#    - Copy the webhook URL
+# 2. Add your Substack base URL
+# 3. Test with: python3 .repo-tools/scripts/discord_poster.py --dry-run
+
+# Discord Configuration
+discord:
+  # Webhook URL from Discord (get from channel settings)
+  webhook_url: "https://discord.com/api/webhooks/1469651262839717980/vskpaLMq7XX-dF5d0ISFzRuWx0iKPrhcvOlRNcea0Kyf8FSAAFDd0PyI1obCMtzVv9bv"
+
+# Substack Configuration
+substack:
+  # Your Substack base URL (no trailing slash)
+  base_url: "https://aiwithmike.substack.com"
+
+# Optional Settings
+settings:
+  # Wait time before posting (allows time for Substack publishing)
+  delay_minutes: 60  # Default: 1 hour after Telegram upload
+
+  # Retry settings
+  retry_on_failure: true
+  retry_count: 2
+  retry_delay_seconds: 30
