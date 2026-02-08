@@ -1,5 +1,28 @@
 # Skills Management Guide
 
+---
+
+## 🤖 INSTRUCTIONS FOR CLAUDE CODE
+
+**READ THIS FIRST - MANDATORY BEHAVIOR:**
+
+When you make ANY system change (schedules, workflows, configs, features), you MUST automatically:
+
+1. ✅ **Update ALL related skills** in `.repo-tools/skills/`
+2. ✅ **Update ALL related documentation** in `.repo-tools/docs/`
+3. ✅ **Update configuration templates** in `.repo-tools/scripts/`
+4. ✅ **Commit and push** all changes together
+
+**DO NOT WAIT to be asked.** This is required behavior for every system modification.
+
+**DO NOT SKIP any related file.** Check the "Files That Must Be Updated Together" section below.
+
+**DO NOT push partial updates.** All related files must be updated in a single commit.
+
+If you modify a schedule, workflow, or configuration, you have NOT completed the task until all skills and documentation reflect the change.
+
+---
+
 ## Overview
 
 This directory contains skill definitions that extend Claude Code's capabilities for managing the scientific review automation system.
@@ -125,6 +148,51 @@ Manages Discord posting automation, Telegram link handling, and Substack scrapin
 **"Update Once, Update Everywhere"**
 
 When you change one component of the system, immediately identify and update all related skills, documentation, and configuration files. This ensures users always get consistent, accurate information regardless of which skill or doc they consult.
+
+---
+
+## 🔄 Mandatory Workflow for System Changes
+
+**FOR CLAUDE CODE: This is your standard operating procedure. Follow it automatically.**
+
+```
+Step 1: Make the primary change
+        ↓
+Step 2: Identify all related files using the checklist above
+        ↓
+Step 3: Update ALL skills that reference the change
+        ↓
+Step 4: Update ALL docs that reference the change
+        ↓
+Step 5: Update ALL templates that embed the change
+        ↓
+Step 6: Stage all changes: git add <all modified files>
+        ↓
+Step 7: Commit with descriptive message
+        ↓
+Step 8: Push to GitHub
+        ↓
+Step 9: Confirm to user: "All pushed and documentation updated"
+```
+
+**Example conversation:**
+```
+User: "Add 8 AM and 9 AM backup runs"
+
+Claude:
+1. Updates plist file ✅
+2. Updates plist template ✅
+3. Updates discord-post.md skill ✅
+4. Updates IMPLEMENTATION_COMPLETE.md ✅
+5. Updates DISCORD_AUTOMATION.md ✅
+6. Updates TELEGRAM_SETUP.md ✅
+7. Updates scripts/README.md ✅
+8. Commits all changes ✅
+9. Pushes to GitHub ✅
+10. Reports: "All pushed and documentation updated" ✅
+
+NO reminder needed. This happens automatically.
+```
 
 ---
 
