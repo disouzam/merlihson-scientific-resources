@@ -248,28 +248,22 @@ def format_discord_message(review_num: int, title: str,
     lines = [
         "📢 **New paper review published:**",
         f"📄 **Review {review_num}: {title}**",
-        "",
         ""
     ]
 
     # Telegram links
     lines.append(f"🇮🇱 **Hebrew:** {hebrew_link}")
-    lines.append("")
-
     lines.append(f"🇬🇧 **English:** {english_link}")
-    lines.append("")
-
     lines.append(f"📝 **Substack:** {substack_link}")
-    lines.append("")
 
     # GitHub repo links
     if hebrew_github_link or english_github_link:
+        lines.append("")
         lines.append("📖 **Review Files (GitHub):**")
         if hebrew_github_link:
             lines.append(f"🇮🇱 **Hebrew:** {hebrew_github_link}")
         if english_github_link:
             lines.append(f"🇬🇧 **English:** {english_github_link}")
-        lines.append("")
 
     return "\n".join(lines)
 
