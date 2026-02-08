@@ -36,9 +36,10 @@ python3 daily_review_processor.py
 ```
 
 **Scheduling:**
-- Runs automatically at 5:00 AM and 6:00 AM (backup) daily via launchd
-- If 5:00 AM run succeeds, 6:00 AM run finds no new files and exits
-- If 5:00 AM run fails, 6:00 AM run processes the reviews
+- Runs automatically at 5:00 AM, 6:00 AM, 8:00 AM, and 9:00 AM daily via launchd
+- Primary run at 5:00 AM, with three backup runs for reliability
+- If earlier run succeeds, later runs find no new files and exit quickly
+- Multiple runs ensure reviews are processed even if early runs have timing issues
 - Setup: `./schedule_daily_job.sh`
 
 ### `update_metadata.py`

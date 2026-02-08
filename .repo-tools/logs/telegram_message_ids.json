@@ -9,11 +9,11 @@
   },
   "574": {
     "hebrew": {
-      "message_id": 904,
+      "message_id": 910,
       "chat_id": "-1003714004500",
       "username": "review_testing_heb",
-      "link": "https://t.me/review_testing_heb/904",
-      "timestamp": "2026-02-07T10:49:03"
+      "link": "https://t.me/review_testing_heb/910",
+      "timestamp": "2026-02-08T08:04:19"
     },
     "english": {
       "message_id": 9,
@@ -21,6 +21,22 @@
       "username": "review_testing_eng",
       "link": "https://t.me/review_testing_eng/9",
       "timestamp": "2026-02-07T16:18:02"
+    }
+  },
+  "575": {
+    "hebrew": {
+      "message_id": 911,
+      "chat_id": "-1003714004500",
+      "username": "review_testing_heb",
+      "link": "https://t.me/review_testing_heb/911",
+      "timestamp": "2026-02-08T08:04:23"
+    },
+    "english": {
+      "message_id": 11,
+      "chat_id": "-1003744896293",
+      "username": "review_testing_eng",
+      "link": "https://t.me/review_testing_eng/11",
+      "timestamp": "2026-02-08T08:04:24"
     }
   }
 }

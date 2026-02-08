@@ -306,7 +306,10 @@ cat .repo-tools/logs/telegram_uploads.log
 
 Once set up, your workflow is:
 
-**5:00 AM** → Daily processor commits reviews to repo
+**5:00 AM** → Daily processor commits reviews to repo (Primary)
+**6:00 AM** → Daily processor backup run #1
+**8:00 AM** → Daily processor backup run #2
+**9:00 AM** → Daily processor backup run #3
 **11:00 AM** → Telegram uploader reads from repo and posts to channels
 
 **You do nothing!** Just drop DOCX files in Downloads anytime. ☕

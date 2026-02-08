@@ -16,9 +16,18 @@ Each Discord post includes:
 ## Daily Workflow
 
 ```
-5:00 AM   → Process new reviews from Downloads
+5:00 AM   → Process new reviews from Downloads (Primary)
             Convert DOCX → Markdown
             Commit to GitHub
+
+6:00 AM   → Process reviews (Backup #1)
+            Catches any missed reviews
+
+8:00 AM   → Process reviews (Backup #2)
+            Additional safety net
+
+9:00 AM   → Process reviews (Backup #3)
+            Final check before Telegram
 
 11:00 AM  → Upload to Telegram channels (Hebrew + English)
             ✨ Message IDs automatically captured
@@ -31,7 +40,7 @@ Each Discord post includes:
             ├─ Post to Discord webhook
             └─ Log to discord_posts.log
 
-12:30 PM  → Backup Discord post (if 12:00 PM failed)
+6:00 PM   → Backup Discord post (if 12:00 PM failed)
 ```
 
 ---
