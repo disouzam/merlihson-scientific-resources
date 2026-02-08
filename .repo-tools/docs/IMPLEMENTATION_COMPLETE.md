@@ -82,13 +82,13 @@ Fully automated system that posts paper review links to Discord daily at 12:00 P
 📢 New paper review published:
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts in Language Models
 
-
 🇮🇱 Hebrew: https://t.me/review_testing_heb/904
-
 🇬🇧 English: https://t.me/review_testing_eng/7
-
 📝 Substack: https://aiwithmike.substack.com/p/review-574
 
+📖 Review Files (GitHub):
+🇮🇱 Hebrew: https://github.com/merlihson/scientific-resources/.../Review_574.md
+🇬🇧 English: https://github.com/merlihson/scientific-resources/.../Review_574.md
 ```
 
 ---

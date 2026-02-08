@@ -228,13 +228,13 @@ python3 .repo-tools/scripts/substack_scraper.py --review 574
 📢 New paper review published:
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts in Language Models
 
-
 🇮🇱 Hebrew: https://t.me/review_testing_heb/904
-
 🇬🇧 English: https://t.me/review_testing_eng/7
+📝 Substack: https://aiwithmike.substack.com/p/review-574
 
-📝 Substack: https://aiwithmike.substack.com/p/who-wins-at-scale-n-gram-embedding
-
+📖 Review Files (GitHub):
+🇮🇱 Hebrew: https://github.com/merlihson/scientific-resources/.../Review_574.md
+🇬🇧 English: https://github.com/merlihson/scientific-resources/.../Review_574.md
 ```
 
 ---
