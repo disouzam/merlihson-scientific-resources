@@ -78,6 +78,12 @@ class DiscordConfig:
         self.webhook_url = config.get('discord', {}).get('webhook_url')
         self.substack_url = config.get('substack', {}).get('base_url')
 
+        # GitHub repo URLs
+        github_config = config.get('github', {})
+        self.github_repo_url = github_config.get('repo_url', 'https://github.com/merlihson/scientific-resources')
+        self.hebrew_path = github_config.get('hebrew_path', 'mike-paper-reviews-all/split-hebrew-reviews-md')
+        self.english_path = github_config.get('english_path', 'mike-paper-reviews-all/split-english-reviews-md')
+
         if not self.webhook_url or 'YOUR_' in self.webhook_url:
             raise ValueError("Please configure 'discord.webhook_url' in discord_config.yaml")
 
@@ -222,7 +228,9 @@ def get_substack_link(config: DiscordConfig, review_num: int) -> Optional[str]:
 def format_discord_message(review_num: int, title: str,
                           hebrew_link: Optional[str],
                           english_link: Optional[str],
-                          substack_link: Optional[str]) -> str:
+                          substack_link: Optional[str],
+                          hebrew_github_link: Optional[str] = None,
+                          english_github_link: Optional[str] = None) -> str:
     """
     Format the Discord message with all links.
 
@@ -233,6 +241,9 @@ def format_discord_message(review_num: int, title: str,
       🇮🇱 Hebrew: https://t.me/c/.../12345
       🇬🇧 English: https://t.me/c/.../12346
       📝 Substack: https://yoursubstack.com/p/review-574
+      📖 Review Files:
+      🇮🇱 Hebrew (GitHub): [link]
+      🇬🇧 English (GitHub): [link]
     """
     lines = [
         "📢 **New paper review published:**",
@@ -241,7 +252,7 @@ def format_discord_message(review_num: int, title: str,
         ""
     ]
 
-    # All links are required - validated before calling this function
+    # Telegram links
     lines.append(f"🇮🇱 **Hebrew:** {hebrew_link}")
     lines.append("")
 
@@ -250,6 +261,15 @@ def format_discord_message(review_num: int, title: str,
 
     lines.append(f"📝 **Substack:** {substack_link}")
     lines.append("")
+
+    # GitHub repo links
+    if hebrew_github_link or english_github_link:
+        lines.append("📖 **Review Files (GitHub):**")
+        if hebrew_github_link:
+            lines.append(f"🇮🇱 **Hebrew:** {hebrew_github_link}")
+        if english_github_link:
+            lines.append(f"🇬🇧 **English:** {english_github_link}")
+        lines.append("")
 
     return "\n".join(lines)
 
@@ -394,8 +414,13 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
     # Get review title
     title = get_review_title(review_num)
 
+    # Construct GitHub links
+    hebrew_github_link = f"{config.github_repo_url}/blob/main/{config.hebrew_path}/Review_{review_num:03d}.md"
+    english_github_link = f"{config.github_repo_url}/blob/main/{config.english_path}/Review_{review_num:03d}.md"
+
     # Format message
-    message = format_discord_message(review_num, title, hebrew_link, english_link, substack_link)
+    message = format_discord_message(review_num, title, hebrew_link, english_link, substack_link,
+                                     hebrew_github_link, english_github_link)
 
     if dry_run:
         logger.info(f"[DRY RUN] Would post to Discord:")

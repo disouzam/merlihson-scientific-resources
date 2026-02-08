@@ -17,6 +17,13 @@ substack:
   # Your Substack base URL (no trailing slash)
   base_url: "https://aiwithmike.substack.com"
 
+# GitHub Repository Configuration
+github:
+  # GitHub repo base URL for markdown files
+  repo_url: "https://github.com/merlihson/scientific-resources"
+  hebrew_path: "mike-paper-reviews-all/split-hebrew-reviews-md"
+  english_path: "mike-paper-reviews-all/split-english-reviews-md"
+
 # Optional Settings
 settings:
   # Wait time before posting (allows time for Substack publishing)

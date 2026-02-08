@@ -65,6 +65,10 @@ The user can say:
 
 📝 Substack: https://aiwithmike.substack.com/p/review-574
 
+📖 Review Files (GitHub):
+🇮🇱 Hebrew: https://github.com/merlihson/scientific-resources/.../Review_574.md
+🇬🇧 English: https://github.com/merlihson/scientific-resources/.../Review_574.md
+
 ```
 
 ## Action Instructions
