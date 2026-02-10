@@ -166,18 +166,18 @@ Fully automated system that posts paper review links to Discord daily at 12:00 P
 ## 📊 Complete Daily Workflow
 
 ```
-5:00 AM   → Process reviews from Downloads (Primary)
+5:00 AM   → Process reviews from ReviewsInbox (Primary)
             - Convert DOCX → Markdown
             - Commit to GitHub
             - Metadata auto-updated
 
-6:00 AM   → Process reviews from Downloads (Backup #1)
+6:00 AM   → Process reviews from ReviewsInbox (Backup #1)
             - Same process, catches any missed reviews
 
-8:00 AM   → Process reviews from Downloads (Backup #2)
+8:00 AM   → Process reviews from ReviewsInbox (Backup #2)
             - Same process, additional safety net
 
-9:00 AM   → Process reviews from Downloads (Backup #3)
+9:00 AM   → Process reviews from ReviewsInbox (Backup #3)
             - Same process, final check before Telegram
 
 11:00 AM  → Upload to Telegram

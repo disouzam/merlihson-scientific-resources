@@ -6,7 +6,7 @@ This directory contains automation scripts for the scientific_repo repository.
 
 The automation system provides:
 
-1. **Daily review processing** - Automatically processes new review files from Downloads
+1. **Daily review processing** - Automatically processes new review files from ReviewsInbox
 2. **Metadata management** - Auto-updates metadata files when reviews are committed
 3. **DOCX to Markdown conversion** - Converts Word documents to markdown format
 
@@ -17,7 +17,7 @@ The automation system provides:
 Main automation script that runs daily to process new review files.
 
 **What it does:**
-- Scans `~/Downloads/` for new `Review_XXX.docx` files
+- Scans `~/ReviewsInbox/` for new `Review_XXX.docx` files
 - Checks for duplicates (skips reviews already in repo)
 - Copies Hebrew DOCX to `split-reviews-docx/`
 - Converts Hebrew DOCX to markdown
@@ -253,7 +253,7 @@ If DOCX conversion fails:
 
 2. **Test converter manually:**
    ```bash
-   python3 convert_docx_to_md.py ~/Downloads/Review_XXX.docx /tmp/test.md
+   python3 convert_docx_to_md.py ~/ReviewsInbox/Review_XXX.docx /tmp/test.md
    ```
 
 3. **Check dependencies:**
@@ -279,7 +279,7 @@ If reviews are being processed multiple times:
 
 ## File Naming Conventions
 
-The script expects files in Downloads to follow this naming:
+The script expects files in ReviewsInbox to follow this naming:
 
 - **Hebrew reviews:** `Review_XXX.docx` (e.g., `Review_574.docx`)
 - **English reviews:** `Review_XXX_english.docx` (e.g., `Review_574_english.docx`)
@@ -291,7 +291,7 @@ The script is case-insensitive for the `_english` part.
 ### Processing Flow
 
 1. **Discovery:**
-   - Scan `~/Downloads/` for `Review_*.docx` files
+   - Scan `~/ReviewsInbox/` for `Review_*.docx` files
    - Get highest existing review number from repo
    - Identify new reviews (not in repo)
 
@@ -320,8 +320,8 @@ The script uses this logic to avoid reprocessing:
 # Get all existing review numbers from repo
 existing = {1, 2, 3, ..., 573}
 
-# For each file in Downloads
-for file in Downloads:
+# For each file in ReviewsInbox
+for file in ReviewsInbox:
     review_num = extract_number(file)  # e.g., 574
     if review_num in existing:
         skip  # Already in repo
@@ -329,7 +329,7 @@ for file in Downloads:
         process  # New review
 ```
 
-This ensures that even if you leave DOCX files in Downloads, they won't be reprocessed.
+This ensures that even if you leave DOCX files in ReviewsInbox, they won't be reprocessed.
 
 ## Security Notes
 

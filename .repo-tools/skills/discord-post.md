@@ -266,10 +266,10 @@ Note: The system prevents duplicate posts automatically.
 ## Integration with Daily Workflow
 
 ```
- 5:00 AM → Reviews processed from Downloads (Primary)
- 6:00 AM → Reviews processed from Downloads (Backup #1)
- 8:00 AM → Reviews processed from Downloads (Backup #2)
- 9:00 AM → Reviews processed from Downloads (Backup #3)
+ 5:00 AM → Reviews processed from ReviewsInbox (Primary)
+ 6:00 AM → Reviews processed from ReviewsInbox (Backup #1)
+ 8:00 AM → Reviews processed from ReviewsInbox (Backup #2)
+ 9:00 AM → Reviews processed from ReviewsInbox (Backup #3)
 11:00 AM → Telegram upload (captures message IDs)
 12:00 PM → Discord Post #1 ✅ (Primary - 1 hour buffer for Substack)
  6:00 PM → Discord Post #2 ✅ (Backup - catches late Substack posts)

@@ -23,7 +23,7 @@ from datetime import datetime
 from typing import List, Dict, Optional, Set
 
 # Script configuration
-DOWNLOADS_DIR = Path.home() / "Downloads"
+DOWNLOADS_DIR = Path.home() / "ReviewsInbox"  # Changed from Downloads for better launchd access
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 REVIEWS_DIR = REPO_ROOT / "mike-paper-reviews-all"
 DOCX_DIR = REVIEWS_DIR / "split-reviews-docx"

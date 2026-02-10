@@ -312,7 +312,7 @@ Once set up, your workflow is:
 **9:00 AM** → Daily processor backup run #3
 **11:00 AM** → Telegram uploader reads from repo and posts to channels
 
-**You do nothing!** Just drop DOCX files in Downloads anytime. ☕
+**You do nothing!** Just drop DOCX files in ReviewsInbox anytime. ☕
 
 ---
 

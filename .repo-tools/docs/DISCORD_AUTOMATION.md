@@ -16,7 +16,7 @@ Each Discord post includes:
 ## Daily Workflow
 
 ```
-5:00 AM   → Process new reviews from Downloads (Primary)
+5:00 AM   → Process new reviews from ReviewsInbox (Primary)
             Convert DOCX → Markdown
             Commit to GitHub
 
