@@ -108,7 +108,7 @@ echo -e "${BLUE}   🤖 Optional: Daily Review Automation${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo
 echo -e "Would you like to set up automated daily review processing?"
-echo -e "This will check ~/Downloads every day at 5:00 AM for new Review_XXX.docx files"
+echo -e "This will check ~/ReviewsInbox every day at 5:00 AM for new Review_XXX.docx files"
 echo -e "and automatically process, commit, and push them to GitHub."
 echo
 read -p "Set up daily automation? (y/n): " -n 1 -r

@@ -76,7 +76,7 @@ rm test.txt
 ## ✅ You're Done!
 
 The system is now set up and will automatically:
-- **Every day at 5:00 AM**: Check ~/Downloads for new Review_XXX.docx files
+- **Every day at 5:00 AM**: Check ~/ReviewsInbox for new Review_XXX.docx files
 - **Process them**: Convert to markdown, commit, and push to GitHub
 - **Update metadata**: Automatically via pre-commit hook
 
@@ -121,7 +121,7 @@ Want reviews automatically uploaded to your Telegram channels at 11:00 AM?
 
 ### Option 1: Fully Automatic (Recommended)
 
-1. Save new review files to `~/Downloads/`:
+1. Save new review files to `~/ReviewsInbox/`:
    - `Review_574.docx` (Hebrew)
    - `Review_574_english.docx` (English, optional)
 
@@ -256,7 +256,7 @@ cat ~/.ssh/id_ed25519.pub
 **Solution:**
 ```bash
 # 1. Test converter manually
-python3 .repo-tools/scripts/convert_docx_to_md.py ~/Downloads/Review_XXX.docx /tmp/test.md
+python3 .repo-tools/scripts/convert_docx_to_md.py ~/ReviewsInbox/Review_XXX.docx /tmp/test.md
 
 # 2. Check DOCX file is valid
 # Open in Microsoft Word to verify
@@ -343,7 +343,7 @@ When you commit Hebrew review markdown files:
 
 ### Daily Job (5:00 AM)
 Every morning at 5 AM:
-- ✅ Scans ~/Downloads for new Review_XXX.docx files
+- ✅ Scans ~/ReviewsInbox for new Review_XXX.docx files
 - ✅ Checks for duplicates (skips existing reviews)
 - ✅ Copies Hebrew DOCX to repo
 - ✅ Converts Hebrew DOCX → Markdown
@@ -378,7 +378,7 @@ If configured, uploads reviews to Telegram channels:
 
 ## 📝 File Naming Requirements
 
-For automatic processing, files in ~/Downloads must follow this pattern:
+For automatic processing, files in ~/ReviewsInbox must follow this pattern:
 
 ✅ **Correct:**
 - `Review_574.docx` (Hebrew)
@@ -413,7 +413,7 @@ For automatic processing, files in ~/Downloads must follow this pattern:
 
 ## ✨ Tips & Best Practices
 
-1. **Leave files in Downloads** - The script won't delete them, safe to keep
+1. **Leave files in ReviewsInbox** - The script won't delete them, safe to keep
 2. **Check logs regularly** - Catch issues early
 3. **Test with dry-run first** - When unsure, use `--dry-run` flag
 4. **Monitor first few days** - Ensure automation works as expected

@@ -306,7 +306,7 @@ This repository includes **automated daily processing** of paper reviews. Every 
 
 The daily automation:
 
-1. ✅ **Scans** `~/Downloads/` for new `Review_XXX.docx` files
+1. ✅ **Scans** `~/ReviewsInbox/` for new `Review_XXX.docx` files
 2. ✅ **Checks for duplicates** - skips reviews already in repo
 3. ✅ **Copies** Hebrew DOCX to `split-reviews-docx/`
 4. ✅ **Converts** Hebrew DOCX to markdown with title formatting
