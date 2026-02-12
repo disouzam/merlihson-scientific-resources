@@ -5,7 +5,8 @@
 Fully automated system that posts paper review links to Discord daily at 12:00 PM and 6:00 PM.
 
 **Implementation Date:** February 7, 2026
-**Status:** ✅ Production Ready
+**Major Update:** February 12, 2026 (Thread-based posting with Discord Bot API)
+**Status:** ✅ Production Ready with Thread Organization
 **Testing:** ✅ All components tested and verified
 
 ---
@@ -54,16 +55,19 @@ Fully automated system that posts paper review links to Discord daily at 12:00 P
 ---
 
 ### Phase 3: Discord Poster
-**Status:** ✅ Complete
+**Status:** ✅ Complete (Updated Feb 12, 2026)
 
 **Features:**
+- Creates daily threads: "Daily Paper Review: {date}"
+- Posts reviews inside organized threads
 - Loads Telegram links from JSON
 - Calls Substack scraper to get post URL
 - Formats message with rich text and emojis
-- Posts via Discord webhook
+- Posts via Discord Bot API (was webhook, now bot for thread support)
 - Automatic deduplication (never posts twice)
-- Validates all 3 links exist before posting
+- Validates all 5 links exist before posting (Hebrew/English Telegram, Substack, Hebrew/English GitHub)
 - Only posts reviews from last 24 hours
+- Bot token validation and thread creation tests
 
 **Files Created:**
 - `.repo-tools/scripts/discord_poster.py`
@@ -72,12 +76,18 @@ Fully automated system that posts paper review links to Discord daily at 12:00 P
 
 **Safety Features:**
 1. ✅ No duplicates (tracks in `discord_posts.log`)
-2. ✅ Requires all 3 links (Hebrew + English Telegram + Substack)
+2. ✅ Requires all 5 links (Hebrew + English Telegram + Substack + Hebrew + English GitHub)
 3. ✅ Only posts reviews from last 24 hours
 4. ✅ Posts most recent reviews first
 5. ✅ Validates each link exists before posting
+6. ✅ Thread-based organization (one thread per day)
+7. ✅ Bot permissions validation
 
-**Message Format:**
+**Thread & Message Format:**
+
+Thread Name: `Daily Paper Review: Feb 12, 2026`
+
+Message inside thread:
 ```
 📢 New paper review published:
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts in Language Models

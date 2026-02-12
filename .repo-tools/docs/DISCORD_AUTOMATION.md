@@ -2,7 +2,12 @@
 
 ## Overview
 
-Automated system that posts paper review links to Discord daily at 12:00 PM.
+Automated system that posts paper review links to Discord in organized daily threads at 12:00 PM.
+
+**NEW: Thread-Based Organization**
+- Creates daily thread: "Daily Paper Review: {date}"
+- Posts review message inside the thread
+- Keeps channel organized with one thread per day
 
 Each Discord post includes:
 - 📢 Header: "New paper review published"
@@ -10,6 +15,7 @@ Each Discord post includes:
 - 🇮🇱 Hebrew Telegram link
 - 🇬🇧 English Telegram link
 - 📝 Substack post link
+- 📖 GitHub links (Hebrew & English)
 
 ---
 
@@ -33,14 +39,15 @@ Each Discord post includes:
             ✨ Message IDs automatically captured
             Saved to: telegram_message_ids.json
 
-12:00 PM  → Post to Discord 🎯 (THIS IS NEW!)
+12:00 PM  → Post to Discord 🎯
             ├─ Load Telegram links from JSON
             ├─ Scrape Substack for latest post
-            ├─ Format message with all 3 links
-            ├─ Post to Discord webhook
+            ├─ Create daily thread "Daily Paper Review: {date}"
+            ├─ Format message with all 5 links
+            ├─ Post to thread via Discord Bot API
             └─ Log to discord_posts.log
 
-6:00 PM   → Backup Discord post (if 12:00 PM failed)
+6:00 PM   → Backup Discord post (if 12:00 PM failed or Substack not ready)
 ```
 
 ---
@@ -58,17 +65,19 @@ Each Discord post includes:
 - Searches for "Review XXX" pattern in titles/subtitles
 - Returns the canonical URL for matching posts
 
-### 3. **discord_poster.py** (New)
-- Main automation script
+### 3. **discord_poster.py** (Updated)
+- Main automation script using Discord Bot API
+- Creates daily threads for organized posting
 - Loads Telegram links from JSON
 - Calls Substack scraper to get post URL
-- Formats Discord message with rich text
-- Posts via webhook
+- Formats Discord message with rich text (5 links total)
+- Posts via Discord Bot API to thread
 - Tracks posted reviews (deduplication)
+- Includes validation and error handling
 
-### 4. **Scheduled Job** (New)
+### 4. **Scheduled Job**
 - LaunchAgent: `com.user.discord-review-poster`
-- Runs at 12:00 PM and 12:30 PM daily
+- Runs at 12:00 PM and 6:00 PM daily
 - Location: `~/Library/LaunchAgents/`
 
 ---
@@ -78,16 +87,29 @@ Each Discord post includes:
 ### `.repo-tools/config/discord_config.yaml`
 ```yaml
 discord:
+  # Bot configuration (required for thread creation)
+  bot_token: "YOUR_BOT_TOKEN_HERE"
+  channel_id: "YOUR_CHANNEL_ID_HERE"
+  thread_name_format: "Daily Paper Review: {date}"
+
+  # Deprecated (kept for backward compatibility)
   webhook_url: "https://discord.com/api/webhooks/..."
 
 substack:
   base_url: "https://aiwithmike.substack.com"
+
+github:
+  repo_url: "https://github.com/merlihson/scientific-resources"
+  hebrew_path: "mike-paper-reviews-all/split-hebrew-reviews-md"
+  english_path: "mike-paper-reviews-all/split-english-reviews-md"
 
 settings:
   retry_on_failure: true
   retry_count: 2
   retry_delay_seconds: 30
 ```
+
+**Note:** `discord_config.yaml` is in `.gitignore` (contains secrets). See `.repo-tools/DISCORD_BOT_SETUP.md` for setup instructions.
 
 ### `.repo-tools/scripts/telegram_config.yaml`
 ```yaml
@@ -183,9 +205,14 @@ python3 .repo-tools/scripts/discord_poster.py --review 574
 python3 .repo-tools/scripts/discord_poster.py --dry-run
 ```
 
-### Test Discord Webhook
+### Test Discord Bot Token
 ```bash
-python3 .repo-tools/scripts/discord_poster.py --test-webhook
+python3 .repo-tools/scripts/discord_poster.py --test-bot-token
+```
+
+### Test Thread Creation
+```bash
+python3 .repo-tools/scripts/discord_poster.py --test-create-thread
 ```
 
 ### Find Latest Substack Post
@@ -222,8 +249,14 @@ python3 .repo-tools/scripts/substack_scraper.py --review 574
 
 ---
 
-## Discord Message Format
+## Discord Thread & Message Format
 
+**Thread Name:**
+```
+Daily Paper Review: Feb 12, 2026
+```
+
+**Message inside thread:**
 ```
 📢 New paper review published:
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts in Language Models
@@ -236,6 +269,12 @@ python3 .repo-tools/scripts/substack_scraper.py --review 574
 🇮🇱 Hebrew: https://github.com/merlihson/scientific-resources/.../Review_574.md
 🇬🇧 English: https://github.com/merlihson/scientific-resources/.../Review_574.md
 ```
+
+**Benefits of Thread-Based Posting:**
+- ✅ Organized by date - easy to find specific day's review
+- ✅ Keeps main channel clean
+- ✅ Discussions stay contained within thread
+- ✅ Better for community engagement
 
 ---
 
@@ -271,15 +310,31 @@ hebrew_channel:
 
 ### Substack Link Not Found
 
-**Issue**: Discord post shows "Substack: (pending)"
+**Issue**: Discord post not created, log shows "Substack link not found"
 **Reason**: Review not yet published to Substack
 
 **Solutions:**
-1. Wait and run backup at 12:30 PM
+1. Wait and run backup at 6:00 PM (Substack may not be ready at noon)
 2. Manually post after publishing to Substack:
    ```bash
    python3 .repo-tools/scripts/discord_poster.py --review 574
    ```
+
+### Thread Creation Failed
+
+**Issue**: Log shows "Failed to create thread"
+**Reason**: Bot missing permissions or invalid channel ID
+
+**Solutions:**
+1. Test bot token: `python3 discord_poster.py --test-bot-token`
+2. Test thread creation: `python3 discord_poster.py --test-create-thread`
+3. Verify bot has permissions:
+   - Send Messages
+   - Create Public Threads
+   - Send Messages in Threads
+   - Embed Links
+4. Check bot is still in the server
+5. Verify channel_id in `discord_config.yaml`
 
 ### Duplicate Posts
 
@@ -367,8 +422,8 @@ python3 .repo-tools/scripts/discord_poster.py --review 999
 - **Rich embeds**: Use Discord embeds instead of plain text
 - **Thumbnails**: Include paper preview images
 - **Mentions**: Tag specific Discord roles for notifications
-- **Threading**: Post each review in a thread
 - **Reactions**: Auto-add emoji reactions for feedback
+- ~~**Threading**: Post each review in a thread~~ ✅ **IMPLEMENTED**
 
 ---
 
@@ -381,6 +436,6 @@ For issues or questions:
 
 ---
 
-**System Status**: ✅ Fully Automated
+**System Status**: ✅ Fully Automated with Thread-Based Posting
 
-**Last Updated**: 2026-02-07
+**Last Updated**: 2026-02-12 (Added Discord Bot API and thread creation)
