@@ -54,5 +54,21 @@
       "link": "https://t.me/review_testing_eng/13",
       "timestamp": "2026-02-10T09:37:15"
     }
+  },
+  "577": {
+    "hebrew": {
+      "message_id": 915,
+      "chat_id": "-1003714004500",
+      "username": "review_testing_heb",
+      "link": "https://t.me/review_testing_heb/915",
+      "timestamp": "2026-02-12T11:00:02"
+    },
+    "english": {
+      "message_id": 15,
+      "chat_id": "-1003744896293",
+      "username": "review_testing_eng",
+      "link": "https://t.me/review_testing_eng/15",
+      "timestamp": "2026-02-12T11:00:02"
+    }
   }
 }

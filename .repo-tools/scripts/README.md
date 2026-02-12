@@ -101,6 +101,51 @@ python3 telegram_uploader.py
 - If 11:00 AM run fails, 11:30 AM run uploads the reviews
 - Setup: `./schedule_telegram_job.sh`
 
+### `discord_poster.py`
+
+Posts paper reviews to Discord channel in organized daily threads.
+
+**What it does:**
+- Creates daily thread "Daily Paper Review: {date}"
+- Posts review inside thread with all links:
+  - Hebrew Telegram link
+  - English Telegram link
+  - Substack link
+  - Hebrew GitHub link
+  - English GitHub link
+- Validates all links exist before posting
+- Tracks posted reviews to avoid duplicates
+- Only posts reviews from last 24 hours
+
+**Usage:**
+
+```bash
+# Test without posting
+python3 discord_poster.py --dry-run
+
+# Test bot token
+python3 discord_poster.py --test-bot-token
+
+# Test thread creation
+python3 discord_poster.py --test-create-thread
+
+# Post specific review manually
+python3 discord_poster.py --review 577
+
+# Post all new reviews
+python3 discord_poster.py
+```
+
+**Scheduling:**
+- Runs automatically at 12:00 PM (noon) and 6:00 PM daily via launchd
+- 12:00 PM: Primary run (1 hour after Telegram upload)
+- 6:00 PM: Backup run (catches reviews if Substack wasn't ready at noon)
+- Setup: Automatic via `com.user.discord-review-poster.plist` LaunchAgent
+
+**Configuration:**
+- Requires Discord bot token and channel ID
+- See `.repo-tools/DISCORD_BOT_SETUP.md` for setup instructions
+
 ### `schedule_daily_job.sh`
 
 Installs the daily processing job as a launchd service.
@@ -116,33 +161,79 @@ Installs the daily processing job as a launchd service.
 
 When setting up on a new laptop:
 
-1. **Clone repository:**
-   ```bash
-   git clone https://github.com/merlihson/scientific-resources.git
-   cd scientific-resources
-   ```
+### 1. Clone Repository
+```bash
+git clone https://github.com/merlihson/scientific-resources.git
+cd scientific-resources
+```
 
-2. **Run installation script:**
-   ```bash
-   cd .repo-tools
-   ./install.sh
-   # Follow prompts to set up daily job
-   ```
+### 2. Install Python Dependencies
+```bash
+cd .repo-tools
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pyyaml requests beautifulsoup4 python-telegram-bot
+```
 
-3. **Or manually set up daily job:**
-   ```bash
-   cd .repo-tools/scripts
-   ./schedule_daily_job.sh
-   ```
+### 3. Configure Telegram
+```bash
+# Create telegram config from template
+cp scripts/telegram_config.yaml.template scripts/telegram_config.yaml
+# Edit telegram_config.yaml and add your credentials
+```
 
-4. **Verify setup:**
-   ```bash
-   # Test the processor
-   python3 daily_review_processor.py --dry-run
+See `.repo-tools/docs/TELEGRAM_SETUP.md` for detailed Telegram setup instructions.
 
-   # Check launchd job is loaded
-   launchctl list | grep daily-review
-   ```
+### 4. Configure Discord Bot
+**IMPORTANT:** Discord posting now uses a bot (not webhook) to create organized daily threads.
+
+```bash
+# The config template is already in place
+# You need to:
+# 1. Create Discord bot in Developer Portal
+# 2. Get bot token and channel ID
+# 3. Update discord_config.yaml
+```
+
+**Follow the complete guide:** `.repo-tools/DISCORD_BOT_SETUP.md`
+
+Quick summary:
+- Go to https://discord.com/developers/applications
+- Create bot application
+- Copy bot token
+- Invite bot to server
+- Copy channel ID (enable Developer Mode in Discord)
+- Update `.repo-tools/config/discord_config.yaml`:
+  ```yaml
+  discord:
+    bot_token: "YOUR_BOT_TOKEN"
+    channel_id: "YOUR_CHANNEL_ID"
+  ```
+
+### 5. Set Up Automation Jobs
+```bash
+cd .repo-tools/scripts
+./schedule_daily_job.sh      # Daily review processing
+./schedule_telegram_job.sh   # Telegram uploads
+# Discord job is auto-loaded via LaunchAgent
+```
+
+### 6. Verify Setup
+```bash
+# Test daily processor
+python3 daily_review_processor.py --dry-run
+
+# Test Telegram uploader
+python3 telegram_uploader.py --dry-run
+
+# Test Discord bot
+python3 discord_poster.py --test-bot-token
+python3 discord_poster.py --test-create-thread
+python3 discord_poster.py --dry-run
+
+# Check all launchd jobs are loaded
+launchctl list | grep "daily-review\|telegram\|discord"
+```
 
 ## Logs
 

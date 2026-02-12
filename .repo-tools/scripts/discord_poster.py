@@ -2,25 +2,27 @@
 """
 Discord Review Poster
 
-Posts paper review links to Discord community channel.
-Combines Telegram links (Hebrew + English) + Substack link in one message.
+Posts paper review links to Discord community channel via bot.
+Creates a new thread for each review and posts the content inside.
 
 How it works:
 1. Load Telegram message links from telegram_message_ids.json
 2. For each new review (not yet posted to Discord):
    a. Get Substack link via substack_scraper.py
    b. Get review title from markdown file
-   c. Format Discord message with all 3 links
-   d. Post to Discord webhook
-   e. Log success to discord_posts.log
+   c. Create thread "Daily Paper Review: {date}"
+   d. Format Discord message with all 5 links
+   e. Post to thread via Discord Bot API
+   f. Log success to discord_posts.log
 
 Run manually:
   python3 discord_poster.py --dry-run          # Show what would be posted
-  python3 discord_poster.py --test-webhook     # Test webhook only
+  python3 discord_poster.py --test-bot-token   # Test bot token only
+  python3 discord_poster.py --test-create-thread  # Test thread creation
   python3 discord_poster.py --review 574       # Post specific review
   python3 discord_poster.py                    # Post all new reviews
 
-Scheduled: Runs at 12:00 PM and 12:30 PM (primary + backup)
+Scheduled: Runs at 12:00 PM and 6:00 PM (primary + backup)
 """
 
 import sys
@@ -75,7 +77,16 @@ class DiscordConfig:
         with open(config_path, 'r') as f:
             config = yaml.safe_load(f)
 
-        self.webhook_url = config.get('discord', {}).get('webhook_url')
+        discord_config = config.get('discord', {})
+
+        # Bot configuration (primary method)
+        self.bot_token = discord_config.get('bot_token')
+        self.channel_id = discord_config.get('channel_id')
+        self.thread_name_format = discord_config.get('thread_name_format', 'Daily Paper Review: {date}')
+
+        # Webhook URL (deprecated, kept for backward compatibility)
+        self.webhook_url = discord_config.get('webhook_url')
+
         self.substack_url = config.get('substack', {}).get('base_url')
 
         # GitHub repo URLs
@@ -84,8 +95,12 @@ class DiscordConfig:
         self.hebrew_path = github_config.get('hebrew_path', 'mike-paper-reviews-all/split-hebrew-reviews-md')
         self.english_path = github_config.get('english_path', 'mike-paper-reviews-all/split-english-reviews-md')
 
-        if not self.webhook_url or 'YOUR_' in self.webhook_url:
-            raise ValueError("Please configure 'discord.webhook_url' in discord_config.yaml")
+        # Validate bot configuration
+        if not self.bot_token or 'YOUR_' in self.bot_token:
+            raise ValueError("Please configure 'discord.bot_token' in discord_config.yaml")
+
+        if not self.channel_id or 'YOUR_' in self.channel_id:
+            raise ValueError("Please configure 'discord.channel_id' in discord_config.yaml")
 
         if not self.substack_url or 'YOUR_' in self.substack_url:
             raise ValueError("Please configure 'substack.base_url' in discord_config.yaml")
@@ -270,7 +285,7 @@ def format_discord_message(review_num: int, title: str,
 
 def post_to_discord(webhook_url: str, message: str) -> bool:
     """
-    Post message to Discord via webhook.
+    Post message to Discord via webhook (deprecated, kept for backward compatibility).
 
     Args:
         webhook_url: Discord webhook URL
@@ -291,6 +306,105 @@ def post_to_discord(webhook_url: str, message: str) -> bool:
     except Exception as e:
         logger.error(f"Error posting to Discord: {e}")
         return False
+
+
+def create_thread(channel_id: str, thread_name: str, bot_token: str) -> Optional[str]:
+    """
+    Create a new public thread in a Discord channel via Bot API.
+
+    Args:
+        channel_id: Discord channel ID where thread will be created
+        thread_name: Name of the thread to create
+        bot_token: Discord bot token
+
+    Returns:
+        Thread ID if successful, None otherwise
+    """
+    try:
+        url = f"https://discord.com/api/v10/channels/{channel_id}/threads"
+        headers = {
+            "Authorization": f"Bot {bot_token}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "name": thread_name,
+            "type": 11,  # Public thread
+            "auto_archive_duration": 1440  # Archive after 24 hours of inactivity
+        }
+
+        logger.info(f"Creating thread: {thread_name}")
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        response.raise_for_status()
+
+        thread_data = response.json()
+        thread_id = thread_data.get('id')
+
+        if thread_id:
+            logger.info(f"✓ Thread created: ID {thread_id}")
+            return thread_id
+        else:
+            logger.error("Thread creation response missing 'id' field")
+            return None
+
+    except requests.exceptions.HTTPError as e:
+        logger.error(f"HTTP error creating thread: {e}")
+        if e.response is not None:
+            logger.error(f"Response: {e.response.text}")
+        return None
+    except Exception as e:
+        logger.error(f"Error creating thread: {e}")
+        return None
+
+
+def post_to_thread(thread_id: str, message: str, bot_token: str) -> bool:
+    """
+    Post message to a Discord thread via Bot API.
+
+    Args:
+        thread_id: Discord thread ID
+        message: Message content
+        bot_token: Discord bot token
+
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        url = f"https://discord.com/api/v10/channels/{thread_id}/messages"
+        headers = {
+            "Authorization": f"Bot {bot_token}",
+            "Content-Type": "application/json"
+        }
+        payload = {"content": message}
+
+        logger.info(f"Posting message to thread {thread_id}")
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        response.raise_for_status()
+
+        logger.info("✓ Message posted to thread")
+        return True
+
+    except requests.exceptions.HTTPError as e:
+        logger.error(f"HTTP error posting to thread: {e}")
+        if e.response is not None:
+            logger.error(f"Response: {e.response.text}")
+        return False
+    except Exception as e:
+        logger.error(f"Error posting to thread: {e}")
+        return False
+
+
+def get_thread_name(name_format: str) -> str:
+    """
+    Generate thread name from format string.
+
+    Args:
+        name_format: Format string with {date} placeholder
+
+    Returns:
+        Formatted thread name with current date
+    """
+    date_str = datetime.now().strftime("%b %d, %Y")
+    return name_format.replace("{date}", date_str)
 
 
 def get_new_reviews_for_discord(telegram_links: Dict, already_posted: set) -> List[int]:
@@ -362,12 +476,17 @@ def get_new_reviews_for_discord(telegram_links: Dict, already_posted: set) -> Li
 def post_review_to_discord(review_num: int, config: DiscordConfig,
                           telegram_links: Dict, dry_run: bool = False) -> bool:
     """
-    Post a single review to Discord.
+    Post a single review to Discord thread.
 
     VALIDATION: Only posts if ALL 3 links are present:
     - Hebrew Telegram link
     - English Telegram link
     - Substack link
+
+    Process:
+    1. Validate all links exist
+    2. Create thread "Daily Paper Review: {date}"
+    3. Post message inside thread with all 5 links
 
     Args:
         review_num: Review number
@@ -397,7 +516,7 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
     # VALIDATION: Ensure Substack link exists
     if not substack_link:
         logger.warning(f"Review_{review_num} Substack link not found. Skipping this posting cycle.")
-        logger.warning(f"  Will retry in next run (5:00 PM) if Substack is published by then.")
+        logger.warning(f"  Will retry in next run (6:00 PM) if Substack is published by then.")
         return False
 
     logger.info(f"✓ All 3 links validated for Review_{review_num}")
@@ -416,34 +535,91 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
     message = format_discord_message(review_num, title, hebrew_link, english_link, substack_link,
                                      hebrew_github_link, english_github_link)
 
+    # Generate thread name
+    thread_name = get_thread_name(config.thread_name_format)
+
     if dry_run:
-        logger.info(f"[DRY RUN] Would post to Discord:")
+        logger.info(f"[DRY RUN] Would create thread and post to Discord:")
+        logger.info(f"  Thread name: {thread_name}")
         logger.info("")
         logger.info(message)
         logger.info("")
         return True
 
-    # Post to Discord
-    logger.info(f"Posting Review_{review_num} to Discord...")
-    success = post_to_discord(config.webhook_url, message)
+    # Create thread
+    logger.info(f"Creating thread in channel {config.channel_id}...")
+    thread_id = create_thread(config.channel_id, thread_name, config.bot_token)
+
+    if not thread_id:
+        logger.error(f"Failed to create thread for Review_{review_num}")
+        log_discord_post(review_num, 'failed - thread creation error')
+        return False
+
+    # Post to thread
+    logger.info(f"Posting Review_{review_num} to thread {thread_id}...")
+    success = post_to_thread(thread_id, message, config.bot_token)
 
     if success:
         log_discord_post(review_num, 'success')
-        logger.info(f"✓ Successfully posted Review_{review_num} to Discord")
+        logger.info(f"✓ Successfully posted Review_{review_num} to Discord thread")
     else:
-        log_discord_post(review_num, 'failed')
-        logger.error(f"✗ Failed to post Review_{review_num} to Discord")
+        log_discord_post(review_num, 'failed - posting error')
+        logger.error(f"✗ Failed to post Review_{review_num} to Discord thread")
 
     return success
 
 
 def test_webhook(config: DiscordConfig) -> bool:
-    """Test Discord webhook with a simple message."""
+    """Test Discord webhook with a simple message (deprecated)."""
     logger.info("Testing Discord webhook...")
 
     test_message = f"🧪 Test message from Discord poster\nTimestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     return post_to_discord(config.webhook_url, test_message)
+
+
+def test_bot_token(config: DiscordConfig) -> bool:
+    """Test Discord bot token by fetching bot user info."""
+    logger.info("Testing Discord bot token...")
+
+    try:
+        url = "https://discord.com/api/v10/users/@me"
+        headers = {
+            "Authorization": f"Bot {config.bot_token}",
+            "Content-Type": "application/json"
+        }
+
+        response = requests.get(url, headers=headers, timeout=30)
+        response.raise_for_status()
+
+        bot_data = response.json()
+        bot_username = bot_data.get('username', 'Unknown')
+        bot_id = bot_data.get('id', 'Unknown')
+
+        logger.info(f"✓ Bot token valid!")
+        logger.info(f"  Bot username: {bot_username}")
+        logger.info(f"  Bot ID: {bot_id}")
+        return True
+
+    except Exception as e:
+        logger.error(f"✗ Bot token test failed: {e}")
+        return False
+
+
+def test_create_thread(config: DiscordConfig) -> bool:
+    """Test thread creation only (creates a test thread)."""
+    logger.info("Testing thread creation...")
+
+    test_thread_name = f"Test Thread - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    thread_id = create_thread(config.channel_id, test_thread_name, config.bot_token)
+
+    if thread_id:
+        logger.info(f"✓ Test thread created successfully: {test_thread_name}")
+        logger.info(f"  Thread ID: {thread_id}")
+        return True
+    else:
+        logger.error("✗ Failed to create test thread")
+        return False
 
 
 def main():
@@ -452,6 +628,8 @@ def main():
     # Parse arguments
     dry_run = '--dry-run' in sys.argv or '--test' in sys.argv
     test_webhook_only = '--test-webhook' in sys.argv
+    test_bot_token_only = '--test-bot-token' in sys.argv
+    test_create_thread_only = '--test-create-thread' in sys.argv
     specific_review = None
     format_only = '--format-only' in sys.argv
 
@@ -479,7 +657,13 @@ def main():
         logger.error(f"Failed to load configuration: {e}")
         return 1
 
-    # Test webhook only
+    # Test commands
+    if test_bot_token_only:
+        return 0 if test_bot_token(config) else 1
+
+    if test_create_thread_only:
+        return 0 if test_create_thread(config) else 1
+
     if test_webhook_only:
         return 0 if test_webhook(config) else 1
 

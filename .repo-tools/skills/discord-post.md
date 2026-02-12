@@ -5,7 +5,7 @@ description: Post paper reviews to Discord or manage Discord posting automation
 
 # Discord Review Posting Skill
 
-Post paper review links (Telegram Hebrew, Telegram English, and Substack) to Discord.
+Post paper review links (Telegram Hebrew, Telegram English, and Substack) to Discord in organized daily threads.
 
 ## User Commands
 
@@ -15,7 +15,8 @@ The user can say:
 - "test discord posting"
 - "check discord posts"
 - "show recent discord posts"
-- "test discord webhook"
+- "test discord bot token"
+- "test discord thread creation"
 - "check discord automation status"
 - "view discord logs"
 - "why didn't review 575 post to discord?"
@@ -23,10 +24,11 @@ The user can say:
 ## What This Skill Does
 
 ### Posting Actions
-1. **Post specific review** - Posts one review to Discord immediately
-2. **Post all new reviews** - Posts all reviews from last 24 hours
+1. **Post specific review** - Creates daily thread and posts review inside it
+2. **Post all new reviews** - Posts all reviews from last 24 hours (each in daily thread)
 3. **Dry-run test** - Shows what would be posted without actually posting
-4. **Test webhook** - Sends test message to verify Discord connection
+4. **Test bot token** - Verifies Discord bot authentication
+5. **Test thread creation** - Creates a test thread to verify permissions
 
 ### Status & Debugging
 5. **Check automation status** - Shows if scheduled job is running
@@ -53,7 +55,11 @@ The user can say:
 - **12:00 PM (Noon)** - Primary run (1 hour after Telegram upload at 11 AM)
 - **6:00 PM** - Backup run (catches reviews if Substack wasn't ready)
 
-### Message Format
+### Thread & Message Format
+
+**Thread Name:** `Daily Paper Review: Feb 12, 2026`
+
+**Message inside thread:**
 ```
 📢 New paper review published:
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts
@@ -107,16 +113,25 @@ python3 .repo-tools/scripts/discord_poster.py --dry-run
 
 **Response:** Show formatted message preview and confirm which reviews would be posted
 
-### 4. Test Webhook
-**Trigger:** "test discord webhook"
+### 4. Test Bot Token
+**Trigger:** "test discord bot token"
 
 ```bash
-python3 .repo-tools/scripts/discord_poster.py --test-webhook
+python3 .repo-tools/scripts/discord_poster.py --test-bot-token
 ```
 
-**Response:** "✓ Webhook test successful - check your Discord channel for test message"
+**Response:** "✓ Bot token valid - Bot username: Paper Review Bot"
 
-### 5. Check Automation Status
+### 5. Test Thread Creation
+**Trigger:** "test discord thread creation"
+
+```bash
+python3 .repo-tools/scripts/discord_poster.py --test-create-thread
+```
+
+**Response:** "✓ Test thread created successfully - check your Discord channel"
+
+### 6. Check Automation Status
 **Trigger:** "check discord automation" or "is discord posting working?"
 
 ```bash
@@ -127,7 +142,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 - If active: "✓ Discord posting job is active. Next run: 12:00 PM and 6:00 PM daily"
 - If not active: "⚠️ Job not loaded. Run: `.repo-tools/scripts/schedule_discord_job.sh install`"
 
-### 6. View Recent Posts
+### 7. View Recent Posts
 **Trigger:** "show recent discord posts" or "what was posted to discord?"
 
 ```bash
@@ -136,7 +151,7 @@ tail -20 .repo-tools/logs/discord_posts.log
 
 **Response:** Format and show recent posts in human-readable format
 
-### 7. View Logs
+### 8. View Logs
 **Trigger:** "show discord logs" or "discord poster logs"
 
 ```bash
@@ -145,7 +160,7 @@ tail -20 .repo-tools/logs/discord_posts.log
 
 **Response:** Show last 20 lines of logs, highlight any errors
 
-### 8. Troubleshoot Missing Post
+### 9. Troubleshoot Missing Post
 **Trigger:** "why didn't review 575 post to discord?"
 
 **Steps:**
@@ -194,13 +209,14 @@ python3 .repo-tools/scripts/discord_poster.py --review 575 --dry-run
 **Cause:** Deduplication working correctly
 **Solution:** No action needed (this is expected behavior)
 
-### Webhook Error
-**Symptom:** "Error posting to Discord"
-**Cause:** Invalid webhook URL or Discord API issue
+### Bot Token or Permission Error
+**Symptom:** "Error creating thread" or "Error posting to Discord"
+**Cause:** Invalid bot token, missing permissions, or Discord API issue
 **Solution:**
-1. Check webhook URL in discord_config.yaml
-2. Test webhook: `python3 discord_poster.py --test-webhook`
-3. Verify webhook still exists in Discord channel settings
+1. Test bot token: `python3 discord_poster.py --test-bot-token`
+2. Test thread creation: `python3 discord_poster.py --test-create-thread`
+3. Verify bot has required permissions: Send Messages, Create Public Threads, Send Messages in Threads
+4. Check bot is still in the server
 
 ### Old Review (>24 hours)
 **Symptom:** Review not posted despite having all links
@@ -213,7 +229,9 @@ python3 .repo-tools/scripts/discord_poster.py --review 575 --dry-run
 
 ### Success
 ```
-✓ Successfully posted Review_{num} to Discord!
+✓ Successfully posted Review_{num} to Discord thread!
+
+Thread created: "Daily Paper Review: {date}"
 
 Message includes:
   📢 "New paper review published"
@@ -221,8 +239,9 @@ Message includes:
   🇮🇱 Hebrew Telegram link
   🇬🇧 English Telegram link
   📝 Substack link
+  📖 GitHub links (Hebrew & English)
 
-The review is now visible in your Discord channel.
+The review is now visible in your Discord channel inside today's thread.
 ```
 
 ### Dry-Run
@@ -281,9 +300,17 @@ Note: The system prevents duplicate posts automatically.
 Location: `.repo-tools/config/discord_config.yaml`
 ```yaml
 discord:
+  # Bot configuration (required for thread creation)
+  bot_token: "YOUR_BOT_TOKEN_HERE"
+  channel_id: "YOUR_CHANNEL_ID_HERE"
+  thread_name_format: "Daily Paper Review: {date}"
+
+  # Deprecated (kept for backward compatibility)
   webhook_url: "https://discord.com/api/webhooks/..."
+
 substack:
   base_url: "https://aiwithmike.substack.com"
+
 settings:
   retry_on_failure: true
   retry_count: 2
@@ -330,13 +357,15 @@ python3 .repo-tools/scripts/discord_poster.py --dry-run
 
 ## Key Features Summary
 
+✅ **Thread-Based** - Creates organized daily threads for each review
 ✅ **Fully Automated** - Runs at 12 PM and 6 PM daily
 ✅ **Safe** - No duplicates, validates all links
 ✅ **Smart** - Only posts reviews from last 24 hours
-✅ **Complete** - Requires all 3 links before posting
+✅ **Complete** - Requires all 5 links before posting (Telegram Hebrew, Telegram English, Substack, GitHub Hebrew, GitHub English)
 ✅ **Reliable** - Error handling and automatic retries
 ✅ **Trackable** - Full logging of all operations
-✅ **Public Links** - Anyone in Discord can access Telegram links
+✅ **Public Links** - Anyone in Discord can access all links
+✅ **Bot-Powered** - Uses Discord Bot API for thread creation
 
 ## Notes for Assistant
 

@@ -34,6 +34,11 @@ env/
 # Telegram credentials (DO NOT COMMIT)
 .repo-tools/scripts/telegram_config.yaml
 
+# Discord configuration and backups (DO NOT COMMIT)
+.repo-tools/config/discord_config.yaml
+.repo-tools/config/discord_config.yaml.backup
+.repo-tools/scripts/discord_poster.py.webhook-backup
+
 # Temporary files
 *.tmp
 *.temp
