@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Job Label (Unique Identifier) -->
+    <key>Label</key>
+    <string>com.user.twitter-thread-poster</string>
+
+    <!-- Program to Execute -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/michaelerlihson/Personal/Projects/scientific_repo/.repo-tools/.venv/bin/python3</string>
+        <string>/Users/michaelerlihson/Personal/Projects/scientific_repo/.repo-tools/scripts/twitter_thread_auto_poster.py</string>
+    </array>
+
+    <!-- Working Directory -->
+    <key>WorkingDirectory</key>
+    <string>/Users/michaelerlihson/Personal/Projects/scientific_repo</string>
+
+    <!-- Environment Variables -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+    </dict>
+
+    <!-- Schedule: 11:05 AM and 11:35 AM Daily (5 min after Telegram uploads) -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <!-- Primary run at 11:05 AM (5 min after Telegram upload at 11:00 AM) -->
+        <dict>
+            <key>Hour</key>
+            <integer>11</integer>
+            <key>Minute</key>
+            <integer>5</integer>
+        </dict>
+        <!-- Backup run at 11:35 AM (5 min after Telegram backup at 11:30 AM) -->
+        <dict>
+            <key>Hour</key>
+            <integer>11</integer>
+            <key>Minute</key>
+            <integer>35</integer>
+        </dict>
+    </array>
+
+    <!-- Logging -->
+    <key>StandardOutPath</key>
+    <string>/Users/michaelerlihson/Personal/Projects/scientific_repo/.repo-tools/logs/twitter_thread_auto_poster.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/michaelerlihson/Personal/Projects/scientific_repo/.repo-tools/logs/twitter_thread_auto_poster_error.log</string>
+
+    <!-- Run only when user is logged in -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <!-- Keep the job loaded -->
+    <key>KeepAlive</key>
+    <false/>
+</dict>
+</plist>
