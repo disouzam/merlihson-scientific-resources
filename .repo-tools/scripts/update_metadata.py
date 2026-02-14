@@ -468,6 +468,39 @@ def update_paper_reviews_readme(readme_path: Path, stats: Dict[str, Any]) -> boo
 
     return False
 
+def update_presentations_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
+    """Update presentations/readme.md with current presentation count."""
+    if not readme_path.exists():
+        print(f"Warning: {readme_path} not found, skipping")
+        return False
+
+    try:
+        content = readme_path.read_text(encoding='utf-8')
+    except IOError as e:
+        print(f"Error reading {readme_path}: {e}")
+        return False
+
+    original_content = content
+
+    # Pattern to update presentation count
+    patterns = [
+        (r'(\*\*Total Presentations\*\*: )\d+( PDF files)', r'\g<1>{presentations}\2'),
+    ]
+
+    # Apply all patterns
+    for pattern, replacement in patterns:
+        content = re.sub(pattern, replacement.format(**stats), content)
+
+    if content != original_content:
+        try:
+            readme_path.write_text(content, encoding='utf-8')
+            return True
+        except IOError as e:
+            print(f"Error writing {readme_path}: {e}")
+            return False
+
+    return False
+
 def main():
     """Main function to update metadata and all documentation."""
     # Use git to find repo root (works from any directory in the repo)
@@ -591,6 +624,15 @@ def main():
         print(f"✓ Updated mike-paper-reviews-all/readme.md with current statistics")
     else:
         print(f"  mike-paper-reviews-all/readme.md already up to date")
+
+    # Update presentations/readme.md
+    print("\n📄 Updating presentations/readme.md...")
+    presentations_readme = repo_root / "presentations" / "readme.md"
+
+    if update_presentations_readme(presentations_readme, stats):
+        print(f"✓ Updated presentations/readme.md with current statistics")
+    else:
+        print(f"  presentations/readme.md already up to date")
 
     print(f"\n✅ All files updated successfully!")
     print(f"\n📊 Repository Statistics:")
