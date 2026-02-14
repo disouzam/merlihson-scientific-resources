@@ -274,8 +274,8 @@ def get_repo_stats(repo_root: Path) -> Dict[str, Any]:
     except:
         stats['size_gb'] = 2.0  # Default
 
-    # Calculate daily reviews (assuming reviews 209-XXX)
-    stats['daily_reviews'] = max(0, stats['reviews'] - 208)
+    # Daily reviews start at 209
+    stats['daily_reviews'] = 209
 
     # Get current date for "Last Updated"
     stats['current_date'] = datetime.now().strftime("%B %-d, %Y")  # e.g., "February 6, 2026"
