@@ -377,7 +377,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **Reviews with Paper Links** | 577 (100% coverage!) |
 | **Daily Reviews** | 370 (May 2024 - Feb 2026) |
 | **Learning Categories** | 21 |
-| **Presentations** | 9 |
+| **Presentations** | 14 |
 | **Total Repository Size** | 2.0 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
