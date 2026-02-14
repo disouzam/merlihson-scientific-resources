@@ -375,7 +375,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **Hebrew Reviews (Markdown)** | 578 files |
 | **English Reviews (Markdown)** | 211 files |
 | **Reviews with Paper Links** | 577 (100% coverage!) |
-| **Daily Reviews** | 370 (May 2024 - Feb 2026) |
+| **Daily Reviews** | 209 (May 2024 - Feb 2026) |
 | **Learning Categories** | 21 |
 | **Presentations** | 14 |
 | **Total Repository Size** | 2.0 GB |
