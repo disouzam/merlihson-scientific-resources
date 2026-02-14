@@ -415,6 +415,59 @@ def update_metadata_doc(doc_path: Path, stats: Dict[str, Any]) -> bool:
 
     return False
 
+def update_paper_reviews_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
+    """Update mike-paper-reviews-all/readme.md with current statistics."""
+    if not readme_path.exists():
+        print(f"Warning: {readme_path} not found, skipping")
+        return False
+
+    try:
+        content = readme_path.read_text(encoding='utf-8')
+    except IOError as e:
+        print(f"Error reading {readme_path}: {e}")
+        return False
+
+    original_content = content
+
+    # Calculate daily reviews count
+    daily_count = stats['reviews'] - 208  # Reviews 209-XXX
+
+    # Get current date for Last Updated
+    from datetime import datetime
+    current_date = datetime.now().strftime("%B %d, %Y")
+
+    # Patterns to update
+    patterns = [
+        # Header section
+        (r'(\*\*Total Reviews\*\*: )\d+', r'\g<1>{reviews}'),
+        (r'(Review_001 to Review_)\d+', r'\g<1>{max_review:03d}'),
+        (r'(\*\*Last Updated\*\*: ).*', r'\g<1>' + current_date),
+
+        # Reviews range in structure section
+        (r'(Reviews 1-)\d+', r'\g<1>{reviews}'),
+        (r'(Reviews 209-)\d+', r'\g<1>{max_review:03d}'),
+        (r'(Daily Reviews \()\d+( files\))', r'\g<1>' + str(daily_count) + r'\2'),
+
+        # Statistics section
+        (r'(\*\*Total Individual Files\*\*: )\d+', r'\g<1>{reviews}'),
+        (r'(\*\*Individual Reviews\*\*: )\d+( files)', r'\g<1>208\2'),
+        (r'(\*\*Daily Reviews\*\*: )\d+', r'\g<1>' + str(daily_count)),
+    ]
+
+    # Apply all patterns
+    for pattern, replacement in patterns:
+        content = re.sub(pattern, replacement.format(**stats, daily_count=daily_count), content)
+
+    if content != original_content:
+        try:
+            readme_path.write_text(content, encoding='utf-8')
+            return True
+        except IOError as e:
+            print(f"Error writing {readme_path}: {e}")
+            return False
+
+    return False
+
 def main():
     """Main function to update metadata and all documentation."""
     # Use git to find repo root (works from any directory in the repo)
@@ -529,6 +582,15 @@ def main():
         print(f"✓ Updated METADATA_UPDATE_PROCESS.md with current statistics")
     else:
         print(f"  METADATA_UPDATE_PROCESS.md already up to date")
+
+    # Update mike-paper-reviews-all/readme.md
+    print("\n📄 Updating mike-paper-reviews-all/readme.md...")
+    paper_reviews_readme = repo_root / "mike-paper-reviews-all" / "readme.md"
+
+    if update_paper_reviews_readme(paper_reviews_readme, stats):
+        print(f"✓ Updated mike-paper-reviews-all/readme.md with current statistics")
+    else:
+        print(f"  mike-paper-reviews-all/readme.md already up to date")
 
     print(f"\n✅ All files updated successfully!")
     print(f"\n📊 Repository Statistics:")
