@@ -124,7 +124,7 @@ Use manual updates only if:
 #### Step 1: Run the Standalone Updater
 
 ```bash
-cd /Users/michaelerlihson/Personal/Projects/scientific_repo
+cd /Users/michaelerlihson/Personal/repos/scientific_repo
 python3 .repo-tools/scripts/update_metadata.py
 ```
 

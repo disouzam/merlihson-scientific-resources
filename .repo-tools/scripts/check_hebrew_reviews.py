@@ -85,7 +85,7 @@ def check_hebrew_review(file_path: Path) -> list[str]:
 
 def main():
     """Check all Hebrew review files."""
-    reviews_dir = Path("/Users/michaelerlihson/Personal/Projects/scientific_repo/mike-paper-reviews-all/split-hebrew-reviews-md")
+    reviews_dir = Path("/Users/michaelerlihson/Personal/repos/scientific_repo/mike-paper-reviews-all/split-hebrew-reviews-md")
 
     all_issues = defaultdict(list)
     issue_counts = defaultdict(int)

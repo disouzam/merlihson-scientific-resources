@@ -152,7 +152,7 @@ Repeat the same process:
 ### Create Config File:
 
 ```bash
-cd /Users/michaelerlihson/Personal/Projects/scientific_repo/.repo-tools/scripts
+cd /Users/michaelerlihson/Personal/repos/scientific_repo/.repo-tools/scripts
 
 # Copy template
 cp telegram_config.yaml.template telegram_config.yaml
@@ -205,7 +205,7 @@ settings:
 ### Run Setup Script:
 
 ```bash
-cd /Users/michaelerlihson/Personal/Projects/scientific_repo/.repo-tools/scripts
+cd /Users/michaelerlihson/Personal/repos/scientific_repo/.repo-tools/scripts
 ./schedule_telegram_job.sh
 ```
 
@@ -221,7 +221,7 @@ The script will:
    📱 Telegram Review Uploader Setup
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Repository: /Users/michaelerlihson/Personal/Projects/scientific_repo
+Repository: /Users/michaelerlihson/Personal/repos/scientific_repo
 Schedule: Every day at 11:00 AM
 
 🔍 Checking Python dependencies...
@@ -265,7 +265,7 @@ This will:
 **Expected output:**
 ```
 2026-02-05 11:00:00 - INFO - Starting Telegram review uploader
-2026-02-05 11:00:00 - INFO - Repository: /Users/michaelerlihson/Personal/Projects/scientific_repo
+2026-02-05 11:00:00 - INFO - Repository: /Users/michaelerlihson/Personal/repos/scientific_repo
 2026-02-05 11:00:00 - INFO - Checking reviews from last 24 hours
 2026-02-05 11:00:01 - INFO - Found 1 new Hebrew reviews, 1 new English reviews (last 24 hours)
 2026-02-05 11:00:01 - INFO - [DRY RUN] Would upload Review_574 to hebrew channel
