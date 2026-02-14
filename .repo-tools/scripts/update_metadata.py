@@ -501,6 +501,46 @@ def update_presentations_readme(readme_path: Path, stats: Dict[str, Any]) -> boo
 
     return False
 
+def update_claude_md(claude_path: Path, stats: Dict[str, Any]) -> bool:
+    """Update CLAUDE.md with current review counts (only numeric stats)."""
+    if not claude_path.exists():
+        print(f"Warning: {claude_path} not found, skipping")
+        return False
+
+    try:
+        content = claude_path.read_text(encoding='utf-8')
+    except IOError as e:
+        print(f"Error reading {claude_path}: {e}")
+        return False
+
+    original_content = content
+
+    # Only update numeric review counts, nothing else
+    patterns = [
+        # First paragraph: "577+ AI/ML paper reviews" → "578+ AI/ML paper reviews"
+        (r'(A curated knowledge base of )\d+(\+ AI/ML paper reviews)', r'\g<1>{reviews}\2'),
+
+        # Hebrew reviews count: "577 files" → "578 files"
+        (r'(split-hebrew-reviews-md/\` \()\d+( files, primary\))', r'\g<1>{hebrew_reviews}\2'),
+
+        # English reviews count: "210 files" → "211 files"
+        (r'(split-english-reviews-md/\` \()\d+( files\))', r'\g<1>{english_reviews}\2'),
+    ]
+
+    # Apply all patterns
+    for pattern, replacement in patterns:
+        content = re.sub(pattern, replacement.format(**stats), content)
+
+    if content != original_content:
+        try:
+            claude_path.write_text(content, encoding='utf-8')
+            return True
+        except IOError as e:
+            print(f"Error writing {claude_path}: {e}")
+            return False
+
+    return False
+
 def main():
     """Main function to update metadata and all documentation."""
     # Use git to find repo root (works from any directory in the repo)
@@ -633,6 +673,15 @@ def main():
         print(f"✓ Updated presentations/readme.md with current statistics")
     else:
         print(f"  presentations/readme.md already up to date")
+
+    # Update CLAUDE.md (only numeric stats)
+    print("\n📄 Updating CLAUDE.md...")
+    claude_path = repo_root / "CLAUDE.md"
+
+    if update_claude_md(claude_path, stats):
+        print(f"✓ Updated CLAUDE.md with current review counts")
+    else:
+        print(f"  CLAUDE.md already up to date")
 
     print(f"\n✅ All files updated successfully!")
     print(f"\n📊 Repository Statistics:")
