@@ -17,7 +17,7 @@ Before starting, ensure you have:
 ### Step 1: Clone Repository
 
 ```bash
-cd ~/Personal/Projects  # or your preferred location
+cd ~/Personal/repos  # or your preferred location
 git clone git@github.com:merlihson/scientific-resources.git
 cd scientific-resources
 ```
@@ -111,9 +111,42 @@ Want reviews automatically uploaded to your Telegram channels at 11:00 AM?
 - Automatically splits long messages
 - Prevents duplicates
 
+---
+
+## 💬 Optional: Discord Channel Automation
+
+Want reviews automatically posted to your Discord server at 12:00 PM?
+
+### Quick Setup (20 minutes):
+
+1. **Create Discord Bot** via [Discord Developer Portal](https://discord.com/developers/applications)
+2. **Invite bot** to your server with permissions: Send Messages, Create Public Threads, Send Messages in Threads
+3. **Get channel ID** (right-click channel → Copy Channel ID, requires Developer Mode)
+4. **Configure script:**
+   ```bash
+   cd .repo-tools/config
+   cp discord_config.yaml.template discord_config.yaml
+   nano discord_config.yaml  # Fill in bot token and channel ID
+   ```
+5. **Install automation:**
+   ```bash
+   .repo-tools/scripts/schedule_discord_job.sh install
+   ```
+
+**Full instructions:** [.repo-tools/DISCORD_BOT_SETUP.md](.repo-tools/DISCORD_BOT_SETUP.md)
+
+**What it does:**
+- Creates daily threads ("Daily Paper Review: Feb 14, 2026")
+- Posts review with Hebrew Telegram, English Telegram, Substack, and GitHub links
+- Finds Substack links automatically (with fallback for unnumbered posts)
+- Prevents duplicate posts
+- Requires all links present before posting
+
 **Timeline:**
 - 5:00 AM → Reviews processed and pushed to GitHub
 - 11:00 AM → Reviews uploaded to Telegram channels
+- 12:00 PM → Discord post (primary run)
+- 6:00 PM → Discord post (backup run, catches late Substack posts)
 
 ---
 
@@ -303,17 +336,27 @@ bash -n .git/hooks/pre-commit
 ## 📂 File Locations Reference
 
 ```
-~/Personal/Projects/scientific-resources/
+~/Personal/repos/scientific-resources/
 ├── .repo-tools/
 │   ├── scripts/
 │   │   ├── daily_review_processor.py    # Main automation
 │   │   ├── update_metadata.py           # Metadata updater
 │   │   ├── convert_docx_to_md.py        # DOCX converter
-│   │   ├── schedule_daily_job.sh        # Scheduler setup
+│   │   ├── telegram_uploader.py         # Telegram upload
+│   │   ├── discord_poster.py            # Discord posting
+│   │   ├── substack_scraper.py          # Substack link finder
+│   │   ├── schedule_daily_job.sh        # Daily job scheduler
+│   │   ├── schedule_telegram_job.sh     # Telegram job scheduler
+│   │   ├── schedule_discord_job.sh      # Discord job scheduler
 │   │   ├── README.md                     # Full docs
 │   │   └── QUICKSTART.md                 # Quick reference
+│   ├── config/
+│   │   ├── discord_config.yaml          # Discord config (gitignored)
+│   │   └── telegram_config.yaml         # Telegram config (gitignored)
 │   ├── logs/
 │   │   ├── daily_processor.log           # Main log
+│   │   ├── telegram_uploads.log          # Telegram log
+│   │   ├── discord_posts.log             # Discord log
 │   │   └── daily_processor_error.log     # Error log
 │   └── install.sh                        # Main installer
 ├── .git/hooks/
@@ -324,7 +367,9 @@ bash -n .git/hooks/pre-commit
 │   ├── split-english-reviews-md/        # English markdown
 │   └── reviews_metadata/                # Auto-generated metadata
 └── ~/Library/LaunchAgents/
-    └── com.user.daily-review-processor.plist  # Scheduler config
+    ├── com.user.daily-review-processor.plist   # Daily processing
+    ├── com.user.telegram-review-uploader.plist # Telegram upload
+    └── com.user.discord-review-poster.plist    # Discord posting
 ```
 
 ---
@@ -373,6 +418,17 @@ If configured, uploads reviews to Telegram channels:
 - ✅ Logs all uploads
 
 **Setup:** See [.repo-tools/docs/TELEGRAM_SETUP.md](.repo-tools/docs/TELEGRAM_SETUP.md)
+
+### Discord Posting Job (12:00 PM + 6:00 PM) - Optional
+If configured, posts reviews to Discord in daily threads:
+- ✅ Creates daily thread ("Daily Paper Review: Feb 14, 2026")
+- ✅ Posts with all links: Telegram (Hebrew + English), Substack, GitHub
+- ✅ Finds Substack links automatically via API (with fallback for unnumbered posts)
+- ✅ Prevents duplicate posts
+- ✅ Requires all links present before posting
+- ✅ Backup run at 6 PM catches late Substack posts
+
+**Setup:** See [.repo-tools/DISCORD_BOT_SETUP.md](.repo-tools/DISCORD_BOT_SETUP.md)
 
 ---
 
