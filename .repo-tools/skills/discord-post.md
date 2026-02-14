@@ -62,10 +62,13 @@ The user can say:
 **Message inside thread:**
 ```
 📢 New paper review published:
+
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts
 
+✈️ Telegram:
 🇮🇱 Hebrew: https://t.me/review_testing_heb/904
 🇬🇧 English: https://t.me/review_testing_eng/7
+
 📝 Substack: https://aiwithmike.substack.com/p/review-574
 
 📖 Review Files (GitHub):
@@ -81,7 +84,7 @@ When invoked, parse user intent and execute:
 **Trigger:** "post review 574 to discord"
 
 ```bash
-cd /Users/michaelerlihson/Personal/Projects/scientific_repo
+cd /Users/michaelerlihson/Personal/repos/scientific_repo
 source .repo-tools/.venv/bin/activate
 python3 .repo-tools/scripts/discord_poster.py --review 574
 ```

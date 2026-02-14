@@ -262,13 +262,16 @@ def format_discord_message(review_num: int, title: str,
     """
     lines = [
         "📢 **New paper review published:**",
+        "",
         f"📄 **Review {review_num}: {title}**",
         ""
     ]
 
     # Telegram links
+    lines.append(f"✈️ **Telegram:**")
     lines.append(f"🇮🇱 **Hebrew:** {hebrew_link}")
     lines.append(f"🇬🇧 **English:** {english_link}")
+    lines.append("")
     lines.append(f"📝 **Substack:** {substack_link}")
 
     # GitHub repo links

@@ -190,6 +190,8 @@ def parse_substack_posts(html: str) -> List[Dict]:
         links = soup.find_all('a', href=re.compile(r'/p/'))
         logger.debug(f"Fallback: Found {len(links)} /p/ links")
 
+    unnumbered = []
+
     for link in links:
         href = link.get('href', '')
         title = link.get_text(strip=True)
@@ -211,9 +213,14 @@ def parse_substack_posts(html: str) -> List[Dict]:
                 'review_num': review_num
             })
             logger.debug(f"Found: Review_{review_num} - {title[:50]}...")
+        elif href:
+            unnumbered.append({
+                'title': title,
+                'url': href
+            })
 
-    logger.info(f"Parsed {len(posts)} review posts")
-    return posts
+    logger.info(f"Parsed {len(posts)} review posts, {len(unnumbered)} unnumbered posts")
+    return posts, unnumbered
 
 
 def get_latest_review_post(base_url: str, review_num: Optional[int] = None) -> Optional[str]:
@@ -233,6 +240,7 @@ def get_latest_review_post(base_url: str, review_num: Optional[int] = None) -> O
     if posts_data:
         # Parse API response
         review_posts = []
+        unnumbered_posts = []
 
         for post in posts_data:
             # Check title and subtitle for review number
@@ -250,8 +258,13 @@ def get_latest_review_post(base_url: str, review_num: Optional[int] = None) -> O
                     'title': title
                 })
                 logger.debug(f"Found Review_{post_review_num}: {title[:50]}...")
+            else:
+                unnumbered_posts.append({
+                    'url': post.get('canonical_url'),
+                    'title': title
+                })
 
-        if not review_posts:
+        if not review_posts and not unnumbered_posts:
             logger.warning("No review posts found in Substack API response")
             return None
 
@@ -260,9 +273,22 @@ def get_latest_review_post(base_url: str, review_num: Optional[int] = None) -> O
             matching = [p for p in review_posts if p['review_num'] == review_num]
             if not matching:
                 logger.warning(f"Review_{review_num} not found on Substack")
+                # Fallback: use the most recent unnumbered post
+                if unnumbered_posts:
+                    fallback = unnumbered_posts[0]  # API returns sort=new, first is most recent
+                    logger.warning(
+                        f"No exact match for Review_{review_num}, "
+                        f"using most recent unnumbered post: {fallback['title']}"
+                    )
+                    url = fallback['url']
+                    logger.info(f"✓ Fallback match for Review_{review_num}: {url}")
+                    return url
                 return None
             post = matching[0]
         else:
+            if not review_posts:
+                logger.warning("No numbered review posts found in Substack API response")
+                return None
             # Get the latest (highest number)
             post = max(review_posts, key=lambda p: p['review_num'])
 
@@ -278,8 +304,8 @@ def get_latest_review_post(base_url: str, review_num: Optional[int] = None) -> O
         if not html:
             return None
 
-        posts = parse_substack_posts(html)
-        if not posts:
+        posts, unnumbered_posts = parse_substack_posts(html)
+        if not posts and not unnumbered_posts:
             logger.warning("No review posts found on Substack homepage")
             return None
 
@@ -288,9 +314,24 @@ def get_latest_review_post(base_url: str, review_num: Optional[int] = None) -> O
             matching = [p for p in posts if p['review_num'] == review_num]
             if not matching:
                 logger.warning(f"Review_{review_num} not found on Substack")
+                # Fallback: use the most recent unnumbered post
+                if unnumbered_posts:
+                    fallback = unnumbered_posts[0]
+                    logger.warning(
+                        f"No exact match for Review_{review_num}, "
+                        f"using most recent unnumbered post: {fallback['title']}"
+                    )
+                    url = fallback['url']
+                    if url.startswith('/'):
+                        url = base_url + url
+                    logger.info(f"✓ Fallback match for Review_{review_num}: {url}")
+                    return url
                 return None
             post = matching[0]
         else:
+            if not posts:
+                logger.warning("No numbered review posts found on Substack homepage")
+                return None
             # Get the latest (highest number)
             post = max(posts, key=lambda p: p['review_num'])
 
