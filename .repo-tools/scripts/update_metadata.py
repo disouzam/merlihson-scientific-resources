@@ -309,7 +309,7 @@ def update_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
         (r'(The core collection containing \*\*)\d+( individual paper reviews\*\*)', r'\g<1>{reviews}\2'),
 
         # Paper Reviews section - Daily Reviews range
-        (r'(\| \*\*Daily Reviews\*\* \| )370-\d+', r'\g<1>370-{max_review}'),
+        (r'(\| \*\*Daily Reviews\*\* \| )209-\d+', r'\g<1>209-{max_review}'),
 
         # Formats Available section
         (r'(- \*\*`split-hebrew-reviews-md/`\*\* - )\d+( Hebrew review markdown files)', r'\g<1>{hebrew_reviews}\2'),

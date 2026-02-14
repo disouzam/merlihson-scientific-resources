@@ -106,7 +106,7 @@ The core collection containing **578 individual paper reviews** in multiple form
 | Type | Count | Description |
 |------|-------|-------------|
 | **Individual Reviews** | 1-208 | Deep-dive analyses with paper links |
-| **Daily Reviews** | 370-578 | Chronological reviews (May 2024 - Feb 2026) |
+| **Daily Reviews** | 209-578 | Chronological reviews (May 2024 - Feb 2026) |
 
 #### Formats Available
 - **`split-hebrew-reviews-md/`** - 578 Hebrew review markdown files (primary format)
