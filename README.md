@@ -69,7 +69,7 @@ This repository is a **curated knowledge base** for AI/ML researchers, students,
 
 - **578 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
 - **21 learning categories** spanning machine learning, mathematics, algorithms, and more
-- **9 research presentations** on deep learning architectures
+- **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
 
@@ -195,18 +195,24 @@ The core collection containing **578 individual paper reviews** in multiple form
 
 ### `presentations/`
 
-**9 research presentations** covering major deep learning topics:
+**14 research presentations** covering major deep learning topics:
 
 | Presentation | Topic |
 |--------------|-------|
+| `55-Years-500-Papers-A-Fascinating-Journey-Through-Deep-Learnings-Evolution_compressed.pdf` | Deep learning history |
 | `CNN_Intro_INT_12_2020.pptx.pdf` | Convolutional Neural Networks |
-| `Intro_to_RNNs_Transformers.pdf` | RNNs and Transformer basics |
-| `Intro to Transformers_ NLP 3rd Meetup.pdf` | Transformers for NLP |
-| `Survey of Transformers_ NLP Meetup.pdf` | Comprehensive Transformer survey |
+| `Diffusion Models for Data Generation_ An Intro.pdf` | Diffusion model introduction |
 | `Generative Adversarial Networks (GAN).pdf` | GAN architectures |
-| `Diffusion Models for Data Generation.pdf` | Diffusion model introduction |
+| `Intro to Transformers_ NLP 3rd Meetup.pdf` | Transformers for NLP |
+| `Intro_to_RNNs_Transformers.pdf` | RNNs and Transformer basics |
+| `LLM Fine Tuning_  Why and How.pdf` | LLM fine-tuning |
+| `Making Data Generation with LLM Faster_ Full Version.pdf` | Data generation with LLMs |
+| `Orchestrating-Intelligence-The-Multi-Agent-AI-Revolution_compressed.pdf` | Multi-agent AI |
+| `Survey of Transformers_ NLP Meetup, 01.03.pdf` | Comprehensive Transformer survey |
+| `Survey of Transformers_ The Shortest Version.pdf` | Transformer survey (short) |
+| `Teaching-LLMs-with-RL-Advancing-Beyond-Data-Mimicry (1).pdf` | Reinforcement learning for LLMs |
 | `Text2Any Generative DDPMs_ 2022-2023.pdf` | Text-to-X generation |
-| `Unsupervised Learning of Visual Features.pdf` | Contrastive learning (SwAV) |
+| `Unsupervised Learning of Visual Features by Contrasting Cluster Assignments.pdf` | Contrastive learning (SwAV) |
 
 ---
 
@@ -417,7 +423,7 @@ scientific-resources/
 │   └── ... (21 categories total)
 │
 ├── presentations/                   # Research presentations (32 MB)
-│   └── 9 PDF presentations
+│   └── 14 PDF presentations
 │
 ├── .repo-tools/                     # Automation framework
 │   └── repo_automator/              # Metadata updater
