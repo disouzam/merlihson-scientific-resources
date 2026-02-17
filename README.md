@@ -31,7 +31,7 @@
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 2.1 GB</h3>
+<h3>🎯 2.0 GB</h3>
 <b>Resources</b><br>
 <sub>PDFs, presentations,<br>cheat sheets & more</sub>
 </td>
@@ -67,7 +67,7 @@
 
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
-- **578 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
+- **579 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
 - **21 learning categories** spanning machine learning, mathematics, algorithms, and more
 - **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
@@ -384,7 +384,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
 | **Learning Categories** | 21 |
 | **Presentations** | 14 |
-| **Total Repository Size** | 2.1 GB |
+| **Total Repository Size** | 2.0 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
 | **License** | CC0-1.0 (Public Domain) |
