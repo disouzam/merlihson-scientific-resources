@@ -264,13 +264,13 @@ This will:
 
 **Expected output:**
 ```
-2026-02-05 11:00:00 - INFO - Starting Telegram review uploader
-2026-02-05 11:00:00 - INFO - Repository: /Users/michaelerlihson/Personal/repos/scientific_repo
-2026-02-05 11:00:00 - INFO - Checking reviews from last 24 hours
-2026-02-05 11:00:01 - INFO - Found 1 new Hebrew reviews, 1 new English reviews (last 24 hours)
-2026-02-05 11:00:01 - INFO - [DRY RUN] Would upload Review_574 to hebrew channel
-2026-02-05 11:00:01 - INFO - [DRY RUN]   Content length: 3245 characters
-2026-02-05 11:00:01 - INFO - [DRY RUN]   Would split into 1 message(s)
+2026-02-05 15:00:00 - INFO - Starting Telegram review uploader
+2026-02-05 15:00:00 - INFO - Repository: /Users/michaelerlihson/Personal/repos/scientific_repo
+2026-02-05 15:00:00 - INFO - Checking reviews from last 24 hours
+2026-02-05 15:00:01 - INFO - Found 1 new Hebrew reviews, 1 new English reviews (last 24 hours)
+2026-02-05 15:00:01 - INFO - [DRY RUN] Would upload Review_574 to hebrew channel
+2026-02-05 15:00:01 - INFO - [DRY RUN]   Content length: 3245 characters
+2026-02-05 15:00:01 - INFO - [DRY RUN]   Would split into 1 message(s)
 ```
 
 ### Test for Real (Optional):

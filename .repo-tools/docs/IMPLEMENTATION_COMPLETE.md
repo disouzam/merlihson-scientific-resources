@@ -300,7 +300,7 @@ english_channel:
 - [x] Deduplication works (no duplicate posts)
 - [x] Public Telegram links work for everyone
 - [x] Scheduled job installed and active
-- [x] Schedule times correct (12 PM and 6 PM)
+- [x] Schedule times correct (7:00 PM)
 - [x] Only reviews from last 24 hours posted
 - [x] English review spacing issue fixed
 
@@ -428,7 +428,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 **Tests Passed:** 100%
 **Status:** ✅ **PRODUCTION READY**
 
-The Discord automation system is now fully operational and will post paper reviews automatically to your Discord community every day at 12:00 PM and 6:00 PM (backup).
+The Discord automation system is now fully operational and will post paper reviews automatically to your Discord community every day at 7:00 PM.
 
 **No further action required** - the system is autonomous! 🎉
 
