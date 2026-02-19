@@ -42,9 +42,8 @@ The user can say:
 - **Logs:** `.repo-tools/logs/twitter_threads_posted.log`
 
 ### Automated Schedule
-- **11:00 AM** - Hebrew review uploads to Telegram (existing)
-- **11:05 AM** - Twitter thread auto-generates and posts to Telegram (NEW)
-- **11:35 AM** - Backup run
+- **3:00/4:00/5:00 PM** - Review uploads to Telegram
+- **3:05/4:05/5:05 PM** - Twitter thread auto-generates and posts to Telegram
 
 ### Thread Format (500 chars/tweet)
 
@@ -117,7 +116,7 @@ launchctl list | grep twitter-thread
 ```
 
 **Response:**
-- If active: "✓ Twitter thread job is active. Next run: 11:05 AM daily"
+- If active: "✓ Twitter thread job is active. Next run: 3:05 PM daily"
 - If not active: "⚠️ Job not loaded. Reinstall with: launchctl load ~/Library/LaunchAgents/com.user.twitter-thread-poster.plist"
 
 ### 5. View Logs
@@ -150,17 +149,16 @@ OR use Twitter's thread composer (faster):
 ## Integration with Daily Workflow
 
 ```
-5:00 AM   → Process reviews from ReviewsInbox ✅
-11:00 AM  → Upload to Telegram (Hebrew + English) ✅
-11:05 AM  → Generate Twitter thread → Post to Telegram ✅ NEW
-12:00 PM  → Post to Discord threads ✅
-2:00 PM   → (Reserved for future automation)
+5:00 AM      → Process reviews from ReviewsInbox ✅
+3/4/5 PM     → Upload to Telegram (Hebrew + English) ✅
+3:05/4:05/5:05 PM → Generate Twitter thread → Post to Telegram ✅
+7:00 PM      → Post to Discord threads ✅
 ```
 
 ## Error Scenarios & Solutions
 
 ### Thread Not Generated
-**Symptom:** No thread in Telegram after 11:05 AM
+**Symptom:** No thread in Telegram after 3:05 PM
 **Cause:** Review not uploaded or automation not running
 **Solution:**
 1. Check if review uploaded: `grep "Review_XXX" .repo-tools/logs/telegram_message_ids.json`

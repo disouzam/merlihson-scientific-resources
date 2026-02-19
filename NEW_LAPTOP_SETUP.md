@@ -84,7 +84,7 @@ The system is now set up and will automatically:
 
 ## 📱 Optional: Telegram Channel Automation
 
-Want reviews automatically uploaded to your Telegram channels at 11:00 AM?
+Want reviews automatically uploaded to your Telegram channels at 3:00 PM?
 
 ### Quick Setup (20 minutes):
 
@@ -115,7 +115,7 @@ Want reviews automatically uploaded to your Telegram channels at 11:00 AM?
 
 ## 💬 Optional: Discord Channel Automation
 
-Want reviews automatically posted to your Discord server at 12:00 PM?
+Want reviews automatically posted to your Discord server at 7:00 PM?
 
 ### Quick Setup (20 minutes):
 
@@ -144,9 +144,9 @@ Want reviews automatically posted to your Discord server at 12:00 PM?
 
 **Timeline:**
 - 5:00 AM → Reviews processed and pushed to GitHub
-- 11:00 AM → Reviews uploaded to Telegram channels
-- 12:00 PM → Discord post (primary run)
-- 6:00 PM → Discord post (backup run, catches late Substack posts)
+- 3/4/5 PM → Reviews uploaded to Telegram channels
+- 3:05/4:05/5:05 PM → Twitter thread generated
+- 7:00 PM → Discord post
 
 ---
 
@@ -406,7 +406,7 @@ When you push to main branch:
 - ✅ Updates cosmic-neural-header.svg
 - ✅ Commits and pushes changes
 
-### Telegram Upload Job (11:00 AM) - Optional
+### Telegram Upload Job (3:00/4:00/5:00 PM) - Optional
 If configured, uploads reviews to Telegram channels:
 - ✅ Checks git log for reviews added in last 24 hours
 - ✅ Reads markdown from repo
@@ -419,7 +419,7 @@ If configured, uploads reviews to Telegram channels:
 
 **Setup:** See [.repo-tools/docs/TELEGRAM_SETUP.md](.repo-tools/docs/TELEGRAM_SETUP.md)
 
-### Discord Posting Job (12:00 PM + 6:00 PM) - Optional
+### Discord Posting Job (7:00 PM) - Optional
 If configured, posts reviews to Discord in daily threads:
 - ✅ Creates daily thread ("Daily Paper Review: Feb 14, 2026")
 - ✅ Posts with all links: Telegram (Hebrew + English), Substack, GitHub

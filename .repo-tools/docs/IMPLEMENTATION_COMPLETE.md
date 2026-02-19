@@ -2,7 +2,7 @@
 
 ## Overview
 
-Fully automated system that posts paper review links to Discord daily at 12:00 PM and 6:00 PM.
+Fully automated system that posts paper review links to Discord daily at 7:00 PM.
 
 **Implementation Date:** February 7, 2026
 **Major Update:** February 12, 2026 (Thread-based posting with Discord Bot API)
@@ -107,8 +107,7 @@ Message inside thread:
 **Status:** ✅ Complete and Active
 
 **Schedule:**
-- **12:00 PM (Noon)** - Primary posting (1 hour after Telegram upload at 11:00 AM)
-- **6:00 PM** - Backup posting (catches reviews if Substack wasn't ready at noon)
+- **7:00 PM** - Primary posting (after Telegram uploads at 3:00/4:00/5:00 PM)
 
 **Files Created:**
 - `.repo-tools/scripts/com.user.discord-review-poster.plist.template`
@@ -190,23 +189,36 @@ Message inside thread:
 9:00 AM   → Process reviews from ReviewsInbox (Backup #3)
             - Same process, final check before Telegram
 
-11:00 AM  → Upload to Telegram
+3:00 PM   → Upload to Telegram (Primary)
             - Hebrew channel: review_testing_heb
             - English channel: review_testing_eng
             - Capture message IDs
             - Save to telegram_message_ids.json
 
-12:00 PM  → Discord Post #1 (Primary)
+3:05 PM   → Twitter Thread Generation (Primary)
+            - Generate thread content
+            - Post to Telegram for manual Twitter posting
+
+4:00 PM   → Upload to Telegram (Backup #1)
+            - Same process, catches any missed reviews
+
+4:05 PM   → Twitter Thread Generation (Backup #1)
+            - Same process
+
+5:00 PM   → Upload to Telegram (Backup #2)
+            - Same process
+
+5:05 PM   → Twitter Thread Generation (Backup #2)
+            - Same process
+
+7:00 PM   → Discord Post
             ├─ Load Telegram links from JSON
             ├─ Scrape Substack for latest post
-            ├─ Validate all 3 links exist
+            ├─ Validate all 5 links exist
             ├─ Check review is from last 24 hours
             ├─ Format message with emojis
             ├─ Post to Discord webhook
             └─ Log success (prevent duplicates)
-
-6:00 PM   → Discord Post #2 (Backup)
-            └─ Same process, catches reviews if Substack wasn't ready
 
 ```
 
@@ -303,8 +315,8 @@ english_channel:
 - ✅ Documentation complete
 
 ### Next Automatic Run
-- **Today at 6:00 PM** - Will post any reviews from last 24 hours
-- **Tomorrow at 12:00 PM** - Will post new reviews after Telegram upload
+- **Today at 7:00 PM** - Will post any reviews from last 24 hours
+- **Tomorrow at 7:00 PM** - Will post new reviews after Telegram uploads
 
 ### Manual Commands
 
@@ -342,7 +354,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 1. ✅ Telegram message IDs automatically captured
 2. ✅ Substack posts automatically found
 3. ✅ Discord posts formatted with all 3 links
-4. ✅ Runs automatically twice daily (12 PM and 6 PM)
+4. ✅ Runs automatically daily (7:00 PM)
 5. ✅ No duplicate posts
 6. ✅ Only recent reviews (last 24 hours)
 7. ✅ All links validated before posting
@@ -386,7 +398,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
    - Telegram config: `.repo-tools/scripts/telegram_config.yaml`
 
 5. **Common issues:**
-   - No Substack link found → Publish to Substack first, 6 PM run will retry
+   - No Substack link found → Publish to Substack first, 7 PM run will post
    - Missing Telegram links → Check telegram_message_ids.json
    - Duplicate posts → Check discord_posts.log, clear if needed
 
@@ -402,8 +414,8 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 
 **Healthy system indicators:**
 - discord_poster_error.log is empty or has no recent errors
-- discord_posts.log has daily entries at 12 PM or 6 PM
-- telegram_message_ids.json gets new entries at 11 AM daily
+- discord_posts.log has daily entries at 7:00 PM
+- telegram_message_ids.json gets new entries at 3:00/4:00/5:00 PM daily
 
 ---
 

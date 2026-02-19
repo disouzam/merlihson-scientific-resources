@@ -2,7 +2,7 @@
 
 ## Overview
 
-Automated system that posts paper review links to Discord in organized daily threads at 12:00 PM.
+Automated system that posts paper review links to Discord in organized daily threads at 7:00 PM.
 
 **NEW: Thread-Based Organization**
 - Creates daily thread: "Daily Paper Review: {date}"
@@ -35,19 +35,33 @@ Each Discord post includes:
 9:00 AM   → Process reviews (Backup #3)
             Final check before Telegram
 
-11:00 AM  → Upload to Telegram channels (Hebrew + English)
+3:00 PM   → Upload to Telegram channels (Hebrew + English) (Primary)
             ✨ Message IDs automatically captured
             Saved to: telegram_message_ids.json
 
-12:00 PM  → Post to Discord 🎯
+3:05 PM   → Twitter Thread Generation (Primary)
+            Generate thread content
+            Post to Telegram for manual Twitter posting
+
+4:00 PM   → Upload to Telegram (Backup #1)
+            Same process, catches any missed reviews
+
+4:05 PM   → Twitter Thread Generation (Backup #1)
+            Same process
+
+5:00 PM   → Upload to Telegram (Backup #2)
+            Same process
+
+5:05 PM   → Twitter Thread Generation (Backup #2)
+            Same process
+
+7:00 PM   → Post to Discord 🎯
             ├─ Load Telegram links from JSON
             ├─ Scrape Substack for latest post
             ├─ Create daily thread "Daily Paper Review: {date}"
             ├─ Format message with all 5 links
             ├─ Post to thread via Discord Bot API
             └─ Log to discord_posts.log
-
-6:00 PM   → Backup Discord post (if 12:00 PM failed or Substack not ready)
 ```
 
 ---
@@ -77,7 +91,7 @@ Each Discord post includes:
 
 ### 4. **Scheduled Job**
 - LaunchAgent: `com.user.discord-review-poster`
-- Runs at 12:00 PM and 6:00 PM daily
+- Runs at 7:00 PM daily
 - Location: `~/Library/LaunchAgents/`
 
 ---
@@ -314,7 +328,7 @@ hebrew_channel:
 **Reason**: Review not yet published to Substack
 
 **Solutions:**
-1. Wait and run backup at 6:00 PM (Substack may not be ready at noon)
+1. Wait for Substack to be published, then run again at 7:00 PM
 2. Manually post after publishing to Substack:
    ```bash
    python3 .repo-tools/scripts/discord_poster.py --review 574

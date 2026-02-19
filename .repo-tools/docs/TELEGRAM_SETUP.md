@@ -6,7 +6,7 @@ Complete guide for setting up automated review uploads to Telegram channels.
 
 ## Overview
 
-This automation uploads paper reviews to your Telegram channels at 11:00 AM daily:
+This automation uploads paper reviews to your Telegram channels at 3:00 PM, 4:00 PM, and 5:00 PM daily:
 - Hebrew reviews → Hebrew channel
 - English reviews → English channel
 - Automatically splits long messages
@@ -213,7 +213,7 @@ The script will:
 - ✅ Check your config file
 - ✅ Install Python dependencies
 - ✅ Test the uploader
-- ✅ Schedule the 11:00 AM daily job
+- ✅ Schedule the 3:00/4:00/5:00 PM daily jobs
 
 **Expected output:**
 ```
@@ -222,7 +222,7 @@ The script will:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Repository: /Users/michaelerlihson/Personal/repos/scientific_repo
-Schedule: Every day at 11:00 AM
+Schedule: Every day at 3:00 PM, 4:00 PM, and 5:00 PM
 
 🔍 Checking Python dependencies...
 ✓ Dependencies already installed
@@ -245,7 +245,7 @@ Schedule: Every day at 11:00 AM
 
 ## ✅ Setup Complete!
 
-Your automation is now active and will run at 11:00 AM daily.
+Your automation is now active and will run at 3:00 PM, 4:00 PM, and 5:00 PM daily.
 
 ---
 
@@ -286,7 +286,7 @@ python3 .repo-tools/scripts/telegram_uploader.py --hours 48
 ### Trigger the Job Immediately:
 
 ```bash
-# Don't wait for 11 AM - run now
+# Don't wait for 3/4/5 PM - run now
 launchctl start com.user.telegram-review-uploader
 ```
 
@@ -310,7 +310,9 @@ Once set up, your workflow is:
 **6:00 AM** → Daily processor backup run #1
 **8:00 AM** → Daily processor backup run #2
 **9:00 AM** → Daily processor backup run #3
-**11:00 AM** → Telegram uploader reads from repo and posts to channels
+**3:00 PM** → Telegram uploader reads from repo and posts to channels (Primary)
+**4:00 PM** → Telegram uploader backup run #1
+**5:00 PM** → Telegram uploader backup run #2
 
 **You do nothing!** Just drop DOCX files in ReviewsInbox anytime. ☕
 
@@ -470,7 +472,7 @@ Long reviews are automatically split at paragraph boundaries. This is normal for
 
 ### Workflow:
 
-1. **11:00 AM daily** → launchd triggers script
+1. **3:00/4:00/5:00 PM daily** → launchd triggers script
 2. **Check git log** → Find reviews added in last 24 hours
 3. **Read markdown files** → From `split-hebrew-reviews-md/` and `split-english-reviews-md/`
 4. **Duplicate check:**
@@ -564,7 +566,7 @@ A: The script checks channel history, so it won't re-upload.
 **Q: Can I change the upload time?**
 A: Yes, edit the plist file and change Hour from 11 to your preferred hour.
 
-**Q: What happens if my laptop is off at 11 AM?**
+**Q: What happens if my laptop is off at 3/4/5 PM?**
 A: The job won't run. Run manually when laptop is on, or it will catch up next day.
 
 **Q: Can I upload old reviews?**
@@ -591,7 +593,7 @@ You'll know it's working when:
 ✅ Duplicates are properly skipped
 ✅ Long reviews split correctly
 ✅ Logs show successful uploads
-✅ Job runs automatically at 11 AM
+✅ Job runs automatically at 3/4/5 PM
 
 ---
 

@@ -52,8 +52,7 @@ The user can say:
 ✅ **Error handling** - Logs failures, retries at next scheduled time
 
 ### Automated Schedule
-- **12:00 PM (Noon)** - Primary run (1 hour after Telegram upload at 11 AM)
-- **6:00 PM** - Backup run (catches reviews if Substack wasn't ready)
+- **7:00 PM** - Daily run (after Telegram uploads at 3/4/5 PM)
 
 ### Thread & Message Format
 
@@ -142,7 +141,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-create-thread
 ```
 
 **Response:**
-- If active: "✓ Discord posting job is active. Next run: 12:00 PM and 6:00 PM daily"
+- If active: "✓ Discord posting job is active. Next run: 7:00 PM daily"
 - If not active: "⚠️ Job not loaded. Run: `.repo-tools/scripts/schedule_discord_job.sh install`"
 
 ### 7. View Recent Posts
@@ -273,7 +272,7 @@ Status:
 Next steps:
   {specific action needed}
 
-The system will automatically retry at 6:00 PM.
+The system will automatically retry at the next scheduled run.
 ```
 
 ### Already Posted
@@ -292,9 +291,8 @@ Note: The system prevents duplicate posts automatically.
  6:00 AM → Reviews processed from ReviewsInbox (Backup #1)
  8:00 AM → Reviews processed from ReviewsInbox (Backup #2)
  9:00 AM → Reviews processed from ReviewsInbox (Backup #3)
-11:00 AM → Telegram upload (captures message IDs)
-12:00 PM → Discord Post #1 ✅ (Primary - 1 hour buffer for Substack)
- 6:00 PM → Discord Post #2 ✅ (Backup - catches late Substack posts)
+ 3/4/5 PM → Telegram upload (captures message IDs)
+ 7:00 PM  → Discord Post ✅
 ```
 
 ## Configuration
