@@ -41,6 +41,9 @@ def docx_to_markdown(docx_path: Path) -> str:
     # Join paragraphs with double newlines for markdown
     markdown_content = '\n\n'.join(paragraphs)
 
+    # Normalize arxiv links: /pdf → /abs
+    markdown_content = markdown_content.replace('arxiv.org/pdf/', 'arxiv.org/abs/')
+
     return markdown_content
 
 def main():

@@ -197,10 +197,20 @@ def process_review(review_info: Dict[str, any], dry_run: bool = False) -> bool:
         # Step 3: Extract title and prepend to markdown
         title = extract_title_from_markdown(hebrew_md_dest)
         if title:
-            # Read current content
+            # Read current content and remove the title line to avoid duplication
             content = hebrew_md_dest.read_text(encoding='utf-8')
+            lines = content.split('\n')
+            # Find and remove the first line that matches the extracted title
+            for i, line in enumerate(lines):
+                if line.strip() == title:
+                    lines.pop(i)
+                    # Also remove trailing blank line if present
+                    while i < len(lines) and lines[i].strip() == '':
+                        lines.pop(i)
+                    break
+            content = '\n'.join(lines)
             # Prepend "Review XXX: TITLE"
-            new_content = f"Review {review_num}: {title}\n\n{content}"
+            new_content = f"Review {review_num}: {title}\n{content}"
             hebrew_md_dest.write_text(new_content, encoding='utf-8')
             logger.info(f"  Added title header: Review {review_num}: {title[:50]}...")
         else:
@@ -220,10 +230,20 @@ def process_review(review_info: Dict[str, any], dry_run: bool = False) -> bool:
             # Extract title and prepend to English markdown (same as Hebrew)
             english_title = extract_title_from_markdown(english_md_dest)
             if english_title:
-                # Read current content
+                # Read current content and remove the title line to avoid duplication
                 content = english_md_dest.read_text(encoding='utf-8')
+                lines = content.split('\n')
+                # Find and remove the first line that matches the extracted title
+                for i, line in enumerate(lines):
+                    if line.strip() == english_title:
+                        lines.pop(i)
+                        # Also remove trailing blank line if present
+                        while i < len(lines) and lines[i].strip() == '':
+                            lines.pop(i)
+                        break
+                content = '\n'.join(lines)
                 # Prepend "Review XXX: TITLE"
-                new_content = f"Review {review_num}: {english_title}\n\n{content}"
+                new_content = f"Review {review_num}: {english_title}\n{content}"
                 english_md_dest.write_text(new_content, encoding='utf-8')
                 logger.info(f"  Added title header to English: Review {review_num}: {english_title[:50]}...")
             else:

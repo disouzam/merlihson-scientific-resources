@@ -30,7 +30,7 @@ MatFormer: Nested Transformer for Elastic Inference
 
 סך הכל זו ארכיטקטורה מאוד מעניינת ואנו רוצים לראות עוד מודלים מבוססים עליה בעתיד.
 
-https://arxiv.org/pdf/2310.07707
+https://arxiv.org/abs/2310.07707
 
 HF Blog post: https://huggingface.co/blog/rishiraj/matformer-in-gemma-3n
 

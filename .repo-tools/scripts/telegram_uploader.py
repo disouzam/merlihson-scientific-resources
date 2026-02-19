@@ -209,6 +209,41 @@ def escape_for_telegram_html(text: str) -> str:
     return html.escape(text, quote=True)
 
 
+def format_header_bold(escaped_text: str) -> str:
+    """
+    Format the review header block as bold for Telegram.
+
+    The header includes everything up to and including the metadata line
+    (the line containing the review number pattern like "סקירה NNN").
+    Also inserts a newline after 'Review NNN:' to separate it from the title.
+    """
+    # Split into paragraphs
+    paragraphs = escaped_text.split('\n\n')
+
+    # Find the metadata line (contains "סקירה" or "סקירת") to determine header end
+    header_end = 0
+    for i, para in enumerate(paragraphs):
+        if re.search(r'סקיר[הת]', para):
+            header_end = i
+            break
+
+    # Build header and body
+    header_parts = paragraphs[:header_end + 1]
+    body_parts = paragraphs[header_end + 1:]
+
+    header = '\n\n'.join(header_parts)
+
+    # Insert newline after "Review NNN:" pattern (keep title on next line)
+    header = re.sub(r'^(Review \d+:)\s*', r'\1\n', header)
+
+    # Wrap header in bold tags
+    formatted = f"<b>{header}</b>"
+    if body_parts:
+        formatted += "\n\n" + "\n\n".join(body_parts)
+
+    return formatted
+
+
 def send_telegram_message(bot_token: str, chat_id: str, text: str,
                          retry_count: int = 2, retry_delay: int = 5) -> Tuple[bool, Optional[int]]:
     """
@@ -455,6 +490,10 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
     for i, message_text in enumerate(messages, 1):
         # Escape content for HTML mode
         escaped_message = escape_for_telegram_html(message_text)
+
+        # Format header block as bold (first message part only)
+        if i == 1:
+            escaped_message = format_header_bold(escaped_message)
 
         # Add part indicator if multiple parts
         if len(messages) > 1:

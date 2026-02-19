@@ -1,7 +1,4 @@
 Review 580: LLMs as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
-
-LLMs as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
-
 Mike's daily paper review: 18.02.26
 
 LARGE LANGUAGE MODELS: A MATHEMATICAL FORMULATION
