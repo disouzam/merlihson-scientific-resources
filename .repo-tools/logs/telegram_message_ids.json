@@ -102,5 +102,21 @@
       "link": "https://t.me/review_testing_eng/18",
       "timestamp": "2026-02-17T11:00:06"
     }
+  },
+  "580": {
+    "hebrew": {
+      "message_id": 928,
+      "chat_id": "-1003714004500",
+      "username": "review_testing_heb",
+      "link": "https://t.me/review_testing_heb/928",
+      "timestamp": "2026-02-19T11:20:12"
+    },
+    "english": {
+      "message_id": 492,
+      "chat_id": "-1002359167665",
+      "username": "science_and_ai_with_mike_english",
+      "link": "https://t.me/science_and_ai_with_mike_english/492",
+      "timestamp": "2026-02-19T11:20:14"
+    }
   }
 }
