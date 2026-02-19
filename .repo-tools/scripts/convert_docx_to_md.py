@@ -23,11 +23,15 @@ def docx_to_markdown(docx_path: Path) -> str:
     # Extract paragraphs
     paragraphs = []
     for paragraph in root.findall('.//w:p', namespace):
-        # Get all text runs in this paragraph
+        # Get all text runs in this paragraph, handling line breaks
         texts = []
-        for text_element in paragraph.findall('.//w:t', namespace):
-            if text_element.text:
-                texts.append(text_element.text)
+        for run in paragraph.findall('.//w:r', namespace):
+            for child in run:
+                tag = child.tag.split('}')[-1]
+                if tag == 't' and child.text:
+                    texts.append(child.text)
+                elif tag == 'br':
+                    texts.append('\n')
 
         # Join text runs and add paragraph if not empty
         para_text = ''.join(texts).strip()

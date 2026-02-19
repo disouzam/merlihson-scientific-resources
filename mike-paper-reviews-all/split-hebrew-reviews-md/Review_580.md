@@ -1,6 +1,10 @@
-Review 580: מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוחסקירת המאמר היומית של מייק: 18.02.26, סקירה 580, 444 סקירות עד 1024Large Language Models as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
+Review 580: מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח
+סקירת המאמר היומית של מייק: 18.02.26, סקירה 580, 444 סקירות עד 1024
+Large Language Models as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
 
-מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוחסקירת המאמר היומית של מייק: 18.02.26, סקירה 580, 444 סקירות עד 1024Large Language Models as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
+מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח
+סקירת המאמר היומית של מייק: 18.02.26, סקירה 580, 444 סקירות עד 1024
+Large Language Models as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
 
 המאמר הנוכחי חריג בנוף: הוא מגדיר מחדש את כל ה"סטאק" (Stack) של מודלי שפה מודרניים כרצף של אובייקטים ומיפויים מתמטיים מוגדרים היטב. מטרת המחברים היא להפוך את הנדסת ה-LLM למערכת "סגורה הגדרותית", כזו שבה כל רכיב אינטואיטיבי בתרשימי הבלוקים (טוקניזציה, שיכון, attention, אימון וגנרציה) מתורגם לאופרטור פורמלי בין מרחבים מוגדרים.
 
