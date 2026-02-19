@@ -177,7 +177,7 @@ def get_review_title(review_num: int) -> str:
     hebrew_file = HEBREW_MD_DIR / f"Review_{review_num:03d}.md"
     english_file = ENGLISH_MD_DIR / f"Review_{review_num:03d}.md"
 
-    for file_path in [hebrew_file, english_file]:
+    for file_path in [english_file, hebrew_file]:
         if file_path.exists():
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
