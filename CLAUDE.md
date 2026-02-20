@@ -66,6 +66,12 @@ launchctl list | grep "daily-review\|telegram\|discord\|twitter"
 
 # Search papers
 grep -i "transformer" mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt
+
+# Arxiv paper downloader (scans Chrome tabs, downloads PDFs, closes tabs)
+arxiv-to-repo                  # download, commit, push, close tabs
+arxiv-to-repo --dry-run        # preview only
+arxiv-to-repo --no-push        # commit but don't push
+arxiv-to-repo --keep-tabs      # don't close Chrome tabs
 ```
 
 ## Important Rules

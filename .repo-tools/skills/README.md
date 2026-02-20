@@ -126,6 +126,14 @@ After updating skills:
 
 ## Current Skills
 
+### arxiv-to-repo.md
+Scans Chrome tabs for arxiv papers, downloads PDFs to `learning-materials/arxiv-papers/`, closes processed tabs, and commits/pushes. CLI alias: `arxiv-to-repo`.
+
+**Key sections to update when:**
+- Destination folder changes → "Implementation Details"
+- Naming convention changes → "Implementation Details"
+- New flags/options → "Action Instructions" and CLAUDE.md Commands section
+
 ### discord-post.md
 Manages Discord posting automation, Telegram link handling, and Substack scraping.
 
