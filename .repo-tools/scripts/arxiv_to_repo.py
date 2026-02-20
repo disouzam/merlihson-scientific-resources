@@ -20,7 +20,7 @@ from html import unescape
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEST_DIR = REPO_ROOT / "learning-materials" / "arxiv-papers"
+DEST_DIR = REPO_ROOT / "arxiv-papers"
 
 ARXIV_ID_RE = re.compile(r"arxiv\.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5}(?:v\d+)?)")
 

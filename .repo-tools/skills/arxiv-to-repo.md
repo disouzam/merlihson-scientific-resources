@@ -21,7 +21,7 @@ The user can say:
 
 1. **Scans Chrome** — reads all open tabs via AppleScript
 2. **Extracts arxiv IDs** — matches `arxiv.org/abs/`, `/pdf/`, `/html/` URLs, deduplicates
-3. **Skips existing** — checks `learning-materials/arxiv-papers/` for already-downloaded papers
+3. **Skips existing** — checks `arxiv-papers/` for already-downloaded papers
 4. **Fetches titles** — gets the paper title from the arxiv abstract page
 5. **Downloads PDFs** — saves as `[arxiv-ID] Title.pdf`
 6. **Closes tabs** — closes all Chrome tabs for papers now in the repo
@@ -31,7 +31,7 @@ The user can say:
 
 - **Script**: `.repo-tools/scripts/arxiv_to_repo.py`
 - **CLI alias**: `arxiv-to-repo` (defined in `~/.zshrc`)
-- **Destination**: `learning-materials/arxiv-papers/`
+- **Destination**: `arxiv-papers/`
 - **Naming**: `[YYMM.NNNNN] Paper Title.pdf`
 - **Dependencies**: Python 3 standard library only (no pip packages needed)
 - **Platform**: macOS only (uses AppleScript for Chrome interaction)
@@ -64,7 +64,7 @@ python3 .repo-tools/scripts/arxiv_to_repo.py
 
 ## Integration
 
-- Papers land in `learning-materials/arxiv-papers/` alongside other learning materials
+- Papers land in `arxiv-papers/` alongside other learning materials
 - No overlap with `mike-paper-reviews-all/` (those are reviewed papers with Hebrew/English summaries)
 - The script is idempotent — running it multiple times only downloads new papers
 

@@ -1,0 +1,471 @@
+================================================================================
+CHROME TABS - ORGANIZED BY TOPIC
+Collected: February 9, 2026
+Total: 98 tabs across 4 windows
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. REINFORCEMENT LEARNING & RLHF (21 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Reinforcement Learning from Human Feedback
+https://rlhfbook.com/book.pdf
+
+RLHF Book by Nathan Lambert
+https://rlhfbook.com/
+
+A vision researcher's guide to some RL stuff: PPO & GRPO - Yuge (Jimmy) Shi
+https://yugeten.github.io/posts/2025/01/ppogrpo/
+
+RL Textbook (MIT)
+https://web.mit.edu/dimitrib/www/RLbook.html
+
+FOD#120: GRPO -> Why is everybody talking about it this weekend?
+https://www.turingpost.com/p/fod120
+
+(1) REINFORCE: Easy Online RL for LLMs
+https://cameronrwolfe.substack.com/p/reinforce
+
+RL Grokking Recipe: How Can We Enable LLMs to Solve Previously Unsolvable Tasks with RL?
+https://accessible-dragon-75f.notion.site/RL-Grokking-Recipe-How-Can-We-Enable-LLMs-to-Solve-Previously-Unsolvable-Tasks-with-RL-100a1714e6778062bae5eafad8e7677d
+
+Flow Matching Policy Gradients
+https://flowreinforce.github.io/
+
+CRTR (Princeton RL)
+https://princeton-rl.github.io/CRTR/
+
+A Practitioner's Guide to Multi-turn Agentic Reinforcement Learning
+https://arxiv.org/pdf/2510.01132
+
+Knapsack RL: Unlocking Exploration of LLMs via Optimizing Budget Allocation
+https://huggingface.co/papers/2509.25849
+
+Soft Policy Optimization: Online Off-Policy RL for Sequence Models
+https://arxiv.org/pdf/2503.05453
+
+[2505.18098] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL
+https://arxiv.org/abs/2505.18098
+
+[1506.02438] High-Dimensional Continuous Control Using Generalized Advantage Estimation
+https://arxiv.org/abs/1506.02438
+
+[2504.20571] Reinforcement Learning for Reasoning in Large Language Models with One Training Example
+https://arxiv.org/abs/2504.20571
+
+Spurious Rewards: Rethinking Training Signals in RLVR (Notion)
+https://rethink-rlvr.notion.site/Spurious-Rewards-Rethinking-Training-Signals-in-RLVR-1f4df34dac1880948858f95aeb88872f
+
+[2509.16189] Latent learning: episodic memory complements parametric learning
+https://arxiv.org/abs/2509.16189
+
+arXiv:2312.08935
+https://arxiv.org/pdf/2312.08935
+
+arXiv:2401.10034
+https://arxiv.org/pdf/2401.10034
+
+arXiv:2408.08435
+https://arxiv.org/pdf/2408.08435
+
+arXiv:2504.09777
+https://arxiv.org/pdf/2504.09777
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. DIFFUSION MODELS & GENERATIVE AI (8 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Denoising Diffusion Codebook Models
+https://ddcm-2025.github.io/
+
+A Crash Course in Diffusion-based Generative Models
+https://jmtomczak.github.io/crash-course-diffusion/
+
+Deep Researcher with Test-Time Diffusion | alphaXiv
+https://www.alphaxiv.org/abs/2507.16075
+
+[2510.03289] Why mask diffusion does not work
+https://arxiv.org/abs/2510.03289
+
+Bit-Level Discrete Diffusion with Markov Probabilistic Models
+https://arxiv.org/pdf/2502.07939
+
+[2503.01006] Underdamped Diffusion Bridges with Applications to Sampling
+https://arxiv.org/abs/2503.01006
+
+[2505.15809] MMaDA: Multimodal Large Diffusion Language Models
+https://arxiv.org/abs/2505.15809
+
+Energy Matching: Unifying Flow Matching and Energy-Based Models
+https://arxiv.org/pdf/2504.10612
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. LLM REASONING & TRAINING (17 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LLMs Do Not Predict the Next Word
+https://www.harysdalvi.com/blog/llms-dont-predict-next-word/
+
+[2509.22230] In Their Own Words: Reasoning Traces Tailored for Small Models
+https://arxiv.org/abs/2509.22230
+
+Hierarchical Reasoning Models: Perspectives and Misconceptions
+https://arxiv.org/pdf/2510.00355
+
+[2509.25666] Nudging the Boundaries of LLM Reasoning
+https://arxiv.org/abs/2509.25666
+
+Thoughtbubbles: an Unsupervised Method for Parallel Thinking in Latent Space
+https://arxiv.org/pdf/2510.00219
+
+G\"odel Test: Can Large Language Models Solve Easy Conjectures?
+https://arxiv.org/pdf/2509.18383
+
+[2411.03766] Number Cookbook: Number Understanding of Language Models
+https://arxiv.org/abs/2411.03766
+
+[2503.01830] From Language to Cognition: How LLMs Outgrow the Human Language Network
+https://arxiv.org/abs/2503.01830
+
+[2504.04022] Rethinking Reflection in Pre-Training
+https://arxiv.org/abs/2504.04022
+
+[2506.06215] Corrector Sampling in Language Models
+https://arxiv.org/abs/2506.06215
+
+From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning
+https://arxiv.org/pdf/2505.17117
+
+[2411.02083] Regress, Don't Guess -- A Regression-like Loss on Number Tokens
+https://arxiv.org/abs/2411.02083
+
+[2506.23408] Do LLMs Dream of Discrete Algorithms?
+https://arxiv.org/abs/2506.23408
+
+The Unreasonable Effectiveness of Entropy Minimization in LLM Reasoning
+https://www.arxiv.org/pdf/2505.15134
+
+[2505.13308] Seek in the Dark: Reasoning via Test-Time Instance-Level Policy Gradient
+https://arxiv.org/abs/2505.13308
+
+AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
+https://arxiv.org/pdf/2506.07751v2
+
+We Politely Insist: Your LLM Must Learn the Persian Art of Taarof
+https://arxiv.org/abs/2509.01035
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. MODEL COMPRESSION, OPTIMIZATION & INFERENCE (8 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Introduction to Model Compression: Why and How to Shrink Neural Networks
+https://arikpoz.github.io/posts/2025-04-02-introduction-to-model-compression-why-and-how-to-shrink-neural-networks-for-speed/
+
+Inside vLLM: Anatomy of a High-Throughput LLM Inference System - Aleksa Gordić
+https://www.aleksagordic.com/blog/vllm
+
+[2510.00636] Expected Attention: KV Cache Compression by Estimating Attention
+https://arxiv.org/abs/2510.00636
+
+[2404.08634] When Attention Collapses: How Degenerate Layers in LLMs Enable Smaller Models
+https://arxiv.org/abs/2404.08634
+
+[2401.15347] A Comprehensive Survey of Compression Algorithms for Language Models
+https://arxiv.org/abs/2401.15347
+
+Bottlenecked Transformers: Periodic KV Cache Abstraction for Generalised Reasoning
+https://arxiv.org/pdf/2505.16950
+
+DeepSeek and the Future of Distillation – Malted AI
+https://malted.ai/deepseek-and-the-future-of-distillation/
+
+Efficient LLM Processing with Ollama on Local Multi-GPU Server Environment
+https://medium.com/@sangho.oh/efficient-llm-processing-with-ollama-on-local-multi-gpu-server-environment-33bc8e8550c4
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. INTERPRETABILITY & EXPLAINABILITY (5 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Feature Attribution in Explainable AI | Geek Culture | Medium
+https://medium.com/geekculture/feature-attribution-in-explainable-ai-626f0a1d95e2
+
+interpreting GPT: the logit lens — LessWrong
+https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens
+
+Interpretability: Understanding how AI models think - YouTube
+https://www.youtube.com/watch?v=fGKNUvivvnc
+
+[2502.17017] Quantifying Logical Consistency in Transformers via Query-Key Alignment
+https://arxiv.org/abs/2502.17017
+
+[2502.07753] Direct Ascent Synthesis: Revealing Hidden Generative Capabilities
+https://arxiv.org/abs/2502.07753
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. NEURAL ARCHITECTURE & LEARNING THEORY (15 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Some Math behind Neural Tangent Kernel | Lil'Log
+https://lilianweng.github.io/posts/2022-09-08-ntk/
+
+On Vanishing Variance in Transformer Length Generalization
+https://ruiningli.com/vanishing-variance
+
+[2501.00663v1] Titans: Learning to Memorize at Test Time
+https://arxiv.org/abs/2501.00663v1
+
+Wide Neural Networks of Any Depth Evolve as Linear Models Under Gradient Descent
+https://arxiv.org/pdf/1902.06720
+
+Dynamical phases of short-term memory mechanisms in RNNs
+https://arxiv.org/pdf/2502.17433
+
+[2505.23681] Understanding Mode Connectivity via Parameter Space Symmetry
+https://arxiv.org/abs/2505.23681
+
+Flatness After All?
+https://arxiv.org/pdf/2506.17809
+
+[2507.06211] Modern Methods in Associative Memory (duplicate entry)
+https://arxiv.org/abs/2507.06211
+
+[2507.06204] Differential Mamba
+https://arxiv.org/abs/2507.06204
+
+SETOL: A Semi-Empirical Theory of (Deep) Learning
+https://arxiv.org/pdf/2507.17912
+
+arXiv:2502.18277
+https://arxiv.org/pdf/2502.18277
+
+arXiv:2407.11894
+https://arxiv.org/pdf/2407.11894
+
+arXiv:1711.00946
+https://arxiv.org/pdf/1711.00946
+
+arXiv:2504.03159v1
+https://arxiv.org/pdf/2504.03159v1
+
+arXiv:2410.10469
+https://arxiv.org/pdf/2410.10469
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. MATHEMATICS & OPTIMIZATION (11 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Mathematical Engineering of Deep Learning
+https://deeplearningmath.org/
+
+Learning Deep Representations of Data Distributions
+https://ma-lab-berkeley.github.io/deep-representation-learning-book/
+
+Why the Maximum Entropy Principle Shapes So Much of Probability and Machine Learning
+https://medium.com/@uriitai/why-the-maximum-entropy-principle-shapes-so-much-of-probability-and-machine-learning-6e1bf610e379
+
+[2405.14813] Scalable Optimization in the Modular Norm
+https://arxiv.org/abs/2405.14813
+
+The "η-trick" or the effectiveness of reweighted least-squares
+https://francisbach.com/the-%ce%b7-trick-or-the-effectiveness-of-reweighted-least-squares/
+
+Demystifying Graph Sampling & Walk Methods
+https://patricknicolas.substack.com/p/demystifying-graph-sampling-and-walk
+
+Flowing Datasets with Wasserstein over Wasserstein Gradient Flows
+https://openreview.net/pdf?id=I1OHPb4zWo
+
+On Incorporating Scale into Graph Networks | OpenReview
+https://openreview.net/forum?id=SRCsyJafgP
+
+Lecture Notes | Topics in Mathematics of Data Science | MIT OpenCourseWare
+https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-of-data-science-fall-2015/pages/lecture-notes/
+
+Calculus Made Easy, 2nd Edition (Project Gutenberg)
+https://www.gutenberg.org/files/33283/33283-pdf.pdf
+
+arXiv:1608.04471
+https://arxiv.org/pdf/1608.04471
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. AI AGENTS & AGENTIC SYSTEMS (4 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Context Engineering for AI Agents: Lessons from Building Manus
+https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus?hl=en-GB
+
+the-decoder.com - NVIDIA on Agentic AI
+https://the-decoder.com/nvidia-researchers-urge-the-ai-industry-to-rethink-agentic-ai-in-favor-of-smaller-more-efficient-llms/
+
+[2507.00081v1] State and Memory is All You Need for Robust and Reliable AI Agents
+https://arxiv.org/abs/2507.00081v1
+
+Taxonomy of Failure Mode in Agentic AI Systems (Microsoft)
+https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. MACHINE LEARNING TRAINING & ALIGNMENT (5 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2509.15797] Transfer learning under latent space model
+https://arxiv.org/abs/2509.15797
+
+Bridging the Gap Between Preference Alignment and Machine Unlearning
+https://arxiv.org/pdf/2504.06659v1
+
+arXiv:2401.06080v2
+https://arxiv.org/pdf/2401.06080v2
+
+arXiv:2304.09151
+https://arxiv.org/pdf/2304.09151
+
+arXiv:2104.13478
+https://arxiv.org/pdf/2104.13478
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. EDUCATIONAL RESOURCES & TUTORIALS (4 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PyTorch in One Hour: From Tensors to Training Neural Networks on Multiple GPUs
+https://sebastianraschka.com/teaching/pytorch-1h/
+
+Inside NVIDIA GPUs: Anatomy of high performance matmul kernels - Aleksa Gordić
+https://www.aleksagordic.com/blog/matmul
+
+Ji-Ha's Blog
+https://jiha-kim.github.io/
+
+Crossing the uncanny valley of conversational voice
+https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11. RESEARCH TOOLS & PAPER DISCOVERY (2 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GitHub - allenai/asta-paper-finder
+https://github.com/allenai/asta-paper-finder
+
+Explore | alphaXiv
+https://www.alphaxiv.org/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+12. WORK/PROFESSIONAL - AIONAS (7 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Inbox (10) - mike@aionas.ai
+https://mail.google.com/mail/u/0/#inbox
+
+Dashboard | IAM | Global (AWS)
+https://us-east-1.console.aws.amazon.com/iam/home?region=eu-north-1#/home
+
+Getting Started - Cloud Computing Tutorials for Building on AWS
+https://aws.amazon.com/getting-started/
+
+monday.com: Where Teams Get Work Done
+https://aionas.monday.com/auth/login_monday/email_password
+
+Competitors - Google Drive
+https://drive.google.com/drive/folders/0AOxbQ_QRqXBRUk9PVA
+
+Aionas-AI/LLMsknow (GitHub)
+https://github.com/Aionas-AI/LLMsknow
+
+Google Search: how to access aws gpus via my account
+https://www.google.com/search?q=how+to+I+access+aws+gpus+via+my+account%2C+I+want+to+work+with+IDE+or+claude+code
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+13. TOOLS & UTILITIES (5 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ChatGPT
+https://chatgpt.com/
+
+Google Gemini
+https://gemini.google.com/app/6d8123062b7cefbd
+
+AI21 S-RAG for Aggregative Queries (ChatGPT conversation)
+https://chatgpt.com/c/698a4f7a-5fd8-8329-a889-241d8b437fee
+
+Type mathematical symbols - online keyboard
+https://math.typeit.org/
+
+🇮🇱 Flag: Israel Emoji
+https://emojipedia.org/flag-israel
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+14. PERSONAL (3 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Inbox (285) - erlihson@gmail.com - Gmail
+https://mail.google.com/mail/u/0/#inbox
+
+Discord | #qq | Israel Scientific AI Community
+https://discord.com/channels/1406384122091278537/1470531315337265244
+
+Search results - Google Drive
+https://drive.google.com/drive/search?dmr=1&ec=wgc-drive-hero-goto&q=578
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+15. UNCATEGORIZED ARXIV PAPERS (3 tabs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+arXiv:2504.06611
+https://arxiv.org/pdf/2504.06611
+
+arXiv:2412.06769
+https://arxiv.org/pdf/2412.06769
+
+arXiv:2503.24235
+https://arxiv.org/pdf/2503.24235
+
+arXiv:2503.15299
+https://arxiv.org/pdf/2503.15299
+
+arXiv:2504.13181v1
+https://arxiv.org/pdf/2504.13181v1
+
+arXiv:2503.11701
+https://arxiv.org/pdf/2503.11701
+
+arXiv:2503.17407 (Overleaf Example)
+https://arxiv.org/pdf/2503.17407
+
+arXiv:2410.17131v1
+https://arxiv.org/pdf/2410.17131v1
+
+OpenReview: pdf (sIE2rI3ZPs)
+https://openreview.net/pdf?id=sIE2rI3ZPs
+
+arXiv:2501.12948
+https://arxiv.org/pdf/2501.12948
+
+arXiv:2305.10427
+https://arxiv.org/pdf/2305.10427
+
+arXiv:2504.01002v1
+https://arxiv.org/pdf/2504.01002v1
+
+arXiv:2402.03300
+https://arxiv.org/pdf/2402.03300
+
+arXiv:2503.23829v1
+https://arxiv.org/pdf/2503.23829v1
+
+arXiv:2505.12043v2
+https://arxiv.org/pdf/2505.12043v2
+
+arXiv:2505.04898
+https://arxiv.org/pdf/2505.04898
+
+arXiv:2502.04052
+https://arxiv.org/pdf/2502.04052
+
+arXiv:2502.14180
+https://arxiv.org/pdf/2502.14180
+
+OpenReview: pdf (SRCsyJafgP) - duplicate
+https://openreview.net/pdf?id=SRCsyJafgP
+
+================================================================================
+END OF ORGANIZED TABS
+================================================================================
