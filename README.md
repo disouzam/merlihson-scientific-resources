@@ -26,12 +26,12 @@
 <sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
 </td>
 <td align="center" width="25%">
-<h3>📚 22</h3>
+<h3>📚 23</h3>
 <b>Learning Categories</b><br>
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 2.4 GB</h3>
+<h3>🎯 2.5 GB</h3>
 <b>Resources</b><br>
 <sub>PDFs, presentations,<br>cheat sheets & more</sub>
 </td>
@@ -68,7 +68,7 @@
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
 - **580 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
-- **22 learning categories** spanning machine learning, mathematics, algorithms, and more
+- **23 learning categories** spanning machine learning, mathematics, algorithms, and more
 - **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
@@ -382,9 +382,9 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **English Reviews (Markdown)** | 213 files |
 | **Reviews with Paper Links** | 579 (100% coverage!) |
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
-| **Learning Categories** | 22 |
+| **Learning Categories** | 23 |
 | **Presentations** | 14 |
-| **Total Repository Size** | 2.4 GB |
+| **Total Repository Size** | 2.5 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
 | **License** | CC0-1.0 (Public Domain) |
