@@ -24,9 +24,9 @@ The user can say:
 3. **Skips existing** — checks `arxiv-papers/` for already-downloaded papers
 4. **Fetches titles & dates** — gets the paper title and submission date from the arxiv abstract page
 5. **Sorts by date** — newest papers first
-6. **Downloads PDFs** — saves as `YYYY-MM-DD [arxiv-ID] Title.pdf`
-6. **Closes tabs** — closes all Chrome tabs for papers now in the repo
-7. **Commits & pushes** — stages, commits, and pushes to GitHub
+6. **Downloads PDFs** — saves as `YYYY-MM-DD [arxiv-ID] Title.pdf`, sets file mtime to publication date (sort by Date Modified descending in Finder for newest first)
+7. **Closes tabs** — closes all Chrome tabs for papers now in the repo
+8. **Commits & pushes** — stages, commits, and pushes to GitHub
 
 ## Implementation Details
 
