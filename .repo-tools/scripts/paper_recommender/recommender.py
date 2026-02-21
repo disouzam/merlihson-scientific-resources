@@ -42,15 +42,30 @@ def load_config() -> dict:
         return yaml.safe_load(f)
 
 
-def git_pull_last_run() -> None:
-    """Pull latest last_run.txt from remote to detect if another machine already ran."""
+def check_remote_last_run() -> bool:
+    """Check if the remote repo's last_run.txt has today's date.
+
+    Uses git fetch + git show to read the remote file without needing
+    a clean working tree (avoids conflicts with local changes).
+    Returns True if another machine already ran today.
+    """
+    today = datetime.now().strftime("%Y-%m-%d")
+    rel_path = LAST_RUN_FILE.relative_to(REPO_ROOT)
     try:
         subprocess.run(
-            ["git", "pull", "--rebase", "--quiet"],
+            ["git", "fetch", "--quiet"],
             cwd=REPO_ROOT, capture_output=True, timeout=30,
         )
+        result = subprocess.run(
+            ["git", "show", f"origin/main:{rel_path}"],
+            cwd=REPO_ROOT, capture_output=True, text=True, timeout=10,
+        )
+        remote_date = result.stdout.strip()
+        if remote_date == today:
+            return True
     except (subprocess.SubprocessError, OSError) as e:
-        print(f"Warning: git pull failed ({e}), proceeding with local state.")
+        print(f"Warning: git fetch failed ({e}), proceeding with local state.")
+    return False
 
 
 def git_push_last_run() -> None:
@@ -93,14 +108,15 @@ def main():
     parser.add_argument("--days", type=int, default=1, help="Number of days to look back (default: 1)")
     args = parser.parse_args()
 
-    # Pull latest state from git (so we see if another machine already ran today)
+    # Check if already ran today — local file first, then remote
     if not args.force and not args.dry_run:
-        git_pull_last_run()
-
-    # Check if already ran today (local file, synced via git)
-    if not args.force and not args.dry_run and already_ran_today():
-        print("Already ran today. Use --force to run again.")
-        return
+        if already_ran_today():
+            print("Already ran today. Use --force to run again.")
+            return
+        if check_remote_last_run():
+            print("Today's picks were already sent by another machine. Skipping.")
+            mark_ran_today()  # Update local so we don't check remote again
+            return
 
     config = load_config()
 
