@@ -80,6 +80,10 @@ arxiv-to-repo --keep-tabs      # don't close Chrome tabs
 arxiv-to-repo --fix-dates      # one-time: add date prefixes to existing papers
 ```
 
+## Session Start
+
+**At the start of every session**, before doing any work, ask Mike to pull the latest main branch (`git pull` in the repo). This ensures we're always working on top of the latest automated commits (daily processor, metadata updates, etc.).
+
 ## Important Rules
 
 - **When making system changes** (schedules, workflows, configs): you MUST update ALL related skills in `.repo-tools/skills/`, docs in `.repo-tools/docs/`, and config templates together in a single commit. See `.repo-tools/skills/README.md` for the full checklist.
