@@ -308,6 +308,30 @@ def commit_and_push(processed_reviews: List[int], dry_run: bool = False) -> bool
         )
         logger.info("✓ Commit created (metadata auto-updated by pre-commit hook)")
 
+        # Pull remote changes first (rebase to keep linear history)
+        logger.info("Pulling remote changes...")
+        pull_result = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+        if pull_result.returncode != 0:
+            logger.warning(f"Pull --rebase had issues: {pull_result.stderr}")
+            # If rebase conflict, abort and try merge instead
+            if 'CONFLICT' in (pull_result.stdout + pull_result.stderr):
+                logger.info("Rebase conflict detected, aborting rebase and trying merge...")
+                subprocess.run(['git', '-C', str(REPO_ROOT), 'rebase', '--abort'],
+                               capture_output=True, text=True)
+                merge_result = subprocess.run(
+                    ['git', '-C', str(REPO_ROOT), 'pull', '--autostash'],
+                    capture_output=True, text=True, timeout=60
+                )
+                if merge_result.returncode != 0:
+                    logger.error(f"✗ Pull (merge) also failed: {merge_result.stderr}")
+                    logger.info("  Files are committed locally. You can manually push later.")
+                    return False
+
         # Push to remote
         logger.info("Pushing to GitHub...")
         result = subprocess.run(
