@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.paper-recommender</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/.venv/bin/python3</string>
+        <string>-m</string>
+        <string>paper_recommender.recommender</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <!-- Run when the agent loads (first login/wake) -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>
+</dict>
+</plist>

@@ -1,0 +1,27 @@
+# Paper Recommender Configuration Template
+#
+# SETUP INSTRUCTIONS:
+# 1. Copy this file: cp config.yaml.template config.yaml
+# 2. Fill in your API key and bot credentials below
+# 3. Keep config.yaml private (it's in .gitignore)
+
+# Anthropic API key (or set ANTHROPIC_API_KEY env var)
+anthropic_api_key: "YOUR_ANTHROPIC_API_KEY_HERE"
+
+# Telegram bot credentials for the review_testing_eng channel
+telegram_bot_token: "YOUR_TELEGRAM_BOT_TOKEN_HERE"
+telegram_channel_id: "YOUR_TELEGRAM_CHANNEL_ID_HERE"
+
+# arXiv categories to monitor
+arxiv_categories:
+  - cs.LG
+  - cs.CL
+  - cs.AI
+  - cs.CV
+  - stat.ML
+
+# Number of top papers to send
+max_papers_to_send: 10
+
+# Claude model for ranking
+model: "claude-haiku-4-5-20251001"

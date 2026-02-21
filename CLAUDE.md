@@ -61,8 +61,13 @@ python3 .repo-tools/scripts/discord_poster.py --review 577
 python3 .repo-tools/scripts/twitter_thread_builder.py --review 578 --clickbait
 python3 .repo-tools/scripts/twitter_thread_auto_poster.py --dry-run
 
+# Paper recommender (daily arXiv picks)
+cd .repo-tools/scripts && python3 -m paper_recommender.recommender --dry-run    # preview top 10
+cd .repo-tools/scripts && python3 -m paper_recommender.recommender --force      # send to Telegram
+cd .repo-tools/scripts && python3 -m paper_recommender.recommender --days 2     # look back 2 days
+
 # Check launchd jobs
-launchctl list | grep "daily-review\|telegram\|discord\|twitter"
+launchctl list | grep "daily-review\|telegram\|discord\|twitter\|paper-recommender"
 
 # Search papers
 grep -i "transformer" mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt

@@ -39,6 +39,11 @@ env/
 .repo-tools/config/discord_config.yaml.backup
 .repo-tools/scripts/discord_poster.py.webhook-backup
 
+# Paper recommender credentials and state (DO NOT COMMIT)
+.repo-tools/scripts/paper_recommender/config.yaml
+.repo-tools/scripts/paper_recommender/last_run.txt
+.repo-tools/scripts/paper_recommender/.interest_profile_cache.json
+
 # Temporary files
 *.tmp
 *.temp

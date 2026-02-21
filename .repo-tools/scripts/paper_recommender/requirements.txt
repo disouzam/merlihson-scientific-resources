@@ -1,0 +1,4 @@
+anthropic>=0.40
+arxiv>=2.0
+pyyaml
+requests
