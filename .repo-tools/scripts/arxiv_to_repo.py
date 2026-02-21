@@ -64,21 +64,34 @@ def extract_arxiv_ids(urls):
     return sorted(ids)
 
 
-def fetch_title(arxiv_id):
-    """Fetch the paper title from the arxiv abstract page."""
+def fetch_title_and_date(arxiv_id):
+    """Fetch the paper title and submission date from the arxiv abstract page.
+
+    Returns (title, date_str) where date_str is 'YYYY-MM-DD' or None.
+    """
     url = f"https://arxiv.org/abs/{arxiv_id}"
+    title = None
+    date_str = None
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "arxiv-to-repo/1.0"})
         with urllib.request.urlopen(req, timeout=15) as resp:
             html = resp.read().decode("utf-8", errors="replace")
-        # Extract from <title> tag: "[ID] Title"
+        # Extract title from <title> tag: "[ID] Title"
         m = re.search(r"<title>\[.*?\]\s*(.*?)</title>", html)
         if m:
             title = unescape(m.group(1)).strip()
-            return sanitize_filename(title)
+            title = sanitize_filename(title)
+        # Extract submission date (first date on the page, typically "[Submitted on DD Mon YYYY]")
+        dm = re.search(r"\[Submitted on\s+(\d{1,2})\s+(\w{3})\s+(\d{4})", html)
+        if dm:
+            day, mon, year = dm.group(1), dm.group(2), dm.group(3)
+            months = {'Jan':'01','Feb':'02','Mar':'03','Apr':'04','May':'05','Jun':'06',
+                      'Jul':'07','Aug':'08','Sep':'09','Oct':'10','Nov':'11','Dec':'12'}
+            if mon in months:
+                date_str = f"{year}-{months[mon]}-{int(day):02d}"
     except Exception as e:
         print(f"  Warning: could not fetch title for {arxiv_id}: {e}", file=sys.stderr)
-    return None
+    return title, date_str
 
 
 def sanitize_filename(name):
@@ -96,15 +109,18 @@ def get_existing_ids():
     ids = set()
     if DEST_DIR.exists():
         for f in DEST_DIR.iterdir():
-            m = re.match(r"\[(\d{4}\.\d{4,5})\]", f.name)
+            m = re.search(r"\[(\d{4}\.\d{4,5})\]", f.name)
             if m:
                 ids.add(m.group(1))
     return ids
 
 
-def download_pdf(arxiv_id, title):
+def download_pdf(arxiv_id, title, date_str=None):
     """Download the PDF from arxiv."""
-    filename = f"[{arxiv_id}] {title}.pdf"
+    if date_str:
+        filename = f"{date_str} [{arxiv_id}] {title}.pdf"
+    else:
+        filename = f"[{arxiv_id}] {title}.pdf"
     filepath = DEST_DIR / filename
     url = f"https://arxiv.org/pdf/{arxiv_id}"
     try:
@@ -160,6 +176,16 @@ def git_commit_and_push(files, push=True):
     subprocess.run(["git", "commit", "-m", msg], check=True)
 
     if push:
+        print("Pulling remote changes...")
+        pull = subprocess.run(
+            ["git", "pull", "--rebase", "--autostash"],
+            capture_output=True, text=True
+        )
+        if pull.returncode != 0:
+            print(f"  Pull warning: {pull.stderr.strip()}")
+            # Fallback to merge
+            subprocess.run(["git", "rebase", "--abort"], capture_output=True)
+            subprocess.run(["git", "pull", "--autostash"], check=True)
         print("Pushing to remote...")
         subprocess.run(["git", "push"], check=True)
         print("Pushed.")
@@ -167,12 +193,55 @@ def git_commit_and_push(files, push=True):
         print("Committed locally (--no-push).")
 
 
+def rename_existing_papers():
+    """One-time migration: add date prefix to existing papers that lack one."""
+    if not DEST_DIR.exists():
+        return 0
+
+    renamed = 0
+    for f in sorted(DEST_DIR.iterdir()):
+        # Skip files that already have a date prefix
+        if re.match(r"\d{4}-\d{2}-\d{2}\s+\[", f.name):
+            continue
+        m = re.match(r"\[(\d{4}\.\d{4,5})\]", f.name)
+        if not m:
+            continue
+        arxiv_id = m.group(1)
+        print(f"  Fetching date for [{arxiv_id}]...")
+        _, date_str = fetch_title_and_date(arxiv_id)
+        if date_str:
+            new_name = f"{date_str} {f.name}"
+            new_path = f.parent / new_name
+            f.rename(new_path)
+            print(f"    -> {new_name}")
+            renamed += 1
+        else:
+            print(f"    -> Could not determine date, skipping")
+
+    return renamed
+
+
 def main():
     parser = argparse.ArgumentParser(description="Download arxiv papers from Chrome tabs to repo")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be downloaded")
     parser.add_argument("--no-push", action="store_true", help="Commit but don't push")
     parser.add_argument("--keep-tabs", action="store_true", help="Don't close Chrome tabs after downloading")
+    parser.add_argument("--fix-dates", action="store_true", help="Add date prefix to existing papers that lack one")
     args = parser.parse_args()
+
+    # Handle --fix-dates mode (one-time migration)
+    if args.fix_dates:
+        print("Adding date prefixes to existing papers...")
+        renamed = rename_existing_papers()
+        if renamed:
+            print(f"\nRenamed {renamed} paper(s). Committing changes...")
+            os.chdir(REPO_ROOT)
+            subprocess.run(["git", "add", str(DEST_DIR)], check=True)
+            subprocess.run(["git", "commit", "-m", f"Add date prefix to {renamed} arxiv paper(s)"], check=True)
+            print("Committed. Push manually or use --no-push to skip.")
+        else:
+            print("No papers needed renaming.")
+        return
 
     print("Scanning Chrome tabs for arxiv papers...")
     urls = get_chrome_tabs()
@@ -204,21 +273,32 @@ def main():
     DEST_DIR.mkdir(parents=True, exist_ok=True)
     downloaded = []
 
+    # Fetch metadata for all papers first, then sort by date
+    papers = []
     for arxiv_id in new_ids:
         print(f"  [{arxiv_id}] Fetching title...")
-        title = fetch_title(arxiv_id)
+        title, date_str = fetch_title_and_date(arxiv_id)
         if not title:
             title = f"arxiv-{arxiv_id}"
             print(f"    Using fallback title: {title}")
         else:
             print(f"    Title: {title}")
+        if date_str:
+            print(f"    Date: {date_str}")
+        papers.append((arxiv_id, title, date_str))
 
+    # Sort by publication date (newest first), papers without date go last
+    papers.sort(key=lambda p: p[2] or "0000-00-00", reverse=True)
+    print(f"\nSorted {len(papers)} papers by publication date.\n")
+
+    for arxiv_id, title, date_str in papers:
         if args.dry_run:
-            print(f"    -> Would download to: [{arxiv_id}] {title}.pdf\n")
+            prefix = f"{date_str} " if date_str else ""
+            print(f"    -> Would download to: {prefix}[{arxiv_id}] {title}.pdf")
             continue
 
-        print(f"    Downloading PDF...")
-        filepath, size_mb = download_pdf(arxiv_id, title)
+        print(f"  [{arxiv_id}] Downloading PDF...")
+        filepath, size_mb = download_pdf(arxiv_id, title, date_str)
         if filepath:
             print(f"    -> Saved: {filepath.name} ({size_mb:.1f} MB)\n")
             downloaded.append(filepath)

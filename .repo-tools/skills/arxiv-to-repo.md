@@ -22,8 +22,9 @@ The user can say:
 1. **Scans Chrome** — reads all open tabs via AppleScript
 2. **Extracts arxiv IDs** — matches `arxiv.org/abs/`, `/pdf/`, `/html/` URLs, deduplicates
 3. **Skips existing** — checks `arxiv-papers/` for already-downloaded papers
-4. **Fetches titles** — gets the paper title from the arxiv abstract page
-5. **Downloads PDFs** — saves as `[arxiv-ID] Title.pdf`
+4. **Fetches titles & dates** — gets the paper title and submission date from the arxiv abstract page
+5. **Sorts by date** — newest papers first
+6. **Downloads PDFs** — saves as `YYYY-MM-DD [arxiv-ID] Title.pdf`
 6. **Closes tabs** — closes all Chrome tabs for papers now in the repo
 7. **Commits & pushes** — stages, commits, and pushes to GitHub
 
@@ -32,7 +33,7 @@ The user can say:
 - **Script**: `.repo-tools/scripts/arxiv_to_repo.py`
 - **CLI alias**: `arxiv-to-repo` (defined in `~/.zshrc`)
 - **Destination**: `arxiv-papers/`
-- **Naming**: `[YYMM.NNNNN] Paper Title.pdf`
+- **Naming**: `YYYY-MM-DD [YYMM.NNNNN] Paper Title.pdf` (date-prefixed, sorted newest first)
 - **Dependencies**: Python 3 standard library only (no pip packages needed)
 - **Platform**: macOS only (uses AppleScript for Chrome interaction)
 
@@ -44,6 +45,7 @@ arxiv-to-repo              # full run: download, commit, push, close tabs
 arxiv-to-repo --dry-run    # preview what would be downloaded
 arxiv-to-repo --no-push    # download and commit locally, don't push
 arxiv-to-repo --keep-tabs  # don't close Chrome tabs after downloading
+arxiv-to-repo --fix-dates  # one-time: add date prefixes to existing papers
 ```
 
 ### Run from Claude Code
@@ -59,7 +61,7 @@ python3 .repo-tools/scripts/arxiv_to_repo.py
 | "No arxiv tabs found" | Open some arxiv papers in Chrome first |
 | Chrome permission denied | Grant terminal/osascript access in System Settings > Privacy > Automation |
 | Download fails for a paper | Script continues with remaining papers, reports failures |
-| GitHub push rejected | Run `git pull --rebase` then retry |
+| GitHub push rejected | Script auto-pulls with `--rebase --autostash` before push |
 | Large file warning (>50MB) | GitHub warns but allows up to 100MB; consider Git LFS for very large papers |
 
 ## Integration
