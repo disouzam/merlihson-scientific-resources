@@ -28,30 +28,6 @@ def format_message(ranked_papers: List[RankedPaper], date: datetime = None) -> s
     return "\n".join(lines)
 
 
-def already_sent_today(bot_token: str, channel_id: str) -> bool:
-    """Check if today's paper picks were already sent to the channel.
-
-    Prevents duplicates when the bot runs on multiple machines.
-    """
-    today_str = datetime.now().strftime("%b %d, %Y")
-    marker = f"Daily Paper Picks for Mike ({today_str})"
-
-    url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
-    try:
-        resp = requests.get(url, params={"limit": 50, "timeout": 5}, timeout=15)
-        data = resp.json()
-        if not data.get("ok"):
-            return False
-        for update in data.get("result", []):
-            msg = update.get("channel_post", {}) or update.get("message", {})
-            text = msg.get("text", "")
-            if marker in text:
-                return True
-    except requests.RequestException:
-        pass
-    return False
-
-
 def send_to_telegram(
     message: str,
     bot_token: str,

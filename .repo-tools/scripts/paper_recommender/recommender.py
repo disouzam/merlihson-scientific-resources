@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import os
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -22,9 +23,10 @@ import yaml
 from .arxiv_fetcher import fetch_recent_papers
 from .interest_profile import build_interest_profile
 from .paper_ranker import rank_papers
-from .telegram_sender import already_sent_today, format_message, send_to_telegram
+from .telegram_sender import format_message, send_to_telegram
 
 SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parents[2]
 LAST_RUN_FILE = SCRIPT_DIR / "last_run.txt"
 CONFIG_FILE = SCRIPT_DIR / "config.yaml"
 
@@ -38,6 +40,37 @@ def load_config() -> dict:
 
     with open(CONFIG_FILE) as f:
         return yaml.safe_load(f)
+
+
+def git_pull_last_run() -> None:
+    """Pull latest last_run.txt from remote to detect if another machine already ran."""
+    try:
+        subprocess.run(
+            ["git", "pull", "--rebase", "--quiet"],
+            cwd=REPO_ROOT, capture_output=True, timeout=30,
+        )
+    except (subprocess.SubprocessError, OSError) as e:
+        print(f"Warning: git pull failed ({e}), proceeding with local state.")
+
+
+def git_push_last_run() -> None:
+    """Commit and push last_run.txt so other machines see today's run."""
+    try:
+        rel_path = LAST_RUN_FILE.relative_to(REPO_ROOT)
+        subprocess.run(
+            ["git", "add", str(rel_path)],
+            cwd=REPO_ROOT, capture_output=True, timeout=10,
+        )
+        subprocess.run(
+            ["git", "commit", "-m", "paper recommender: mark daily run"],
+            cwd=REPO_ROOT, capture_output=True, timeout=10,
+        )
+        subprocess.run(
+            ["git", "push", "--quiet"],
+            cwd=REPO_ROOT, capture_output=True, timeout=30,
+        )
+    except (subprocess.SubprocessError, OSError) as e:
+        print(f"Warning: git push of last_run.txt failed ({e}). Second machine may re-send.")
 
 
 def already_ran_today() -> bool:
@@ -60,7 +93,11 @@ def main():
     parser.add_argument("--days", type=int, default=1, help="Number of days to look back (default: 1)")
     args = parser.parse_args()
 
-    # Check if already ran today
+    # Pull latest state from git (so we see if another machine already ran today)
+    if not args.force and not args.dry_run:
+        git_pull_last_run()
+
+    # Check if already ran today (local file, synced via git)
     if not args.force and not args.dry_run and already_ran_today():
         print("Already ran today. Use --force to run again.")
         return
@@ -74,17 +111,6 @@ def main():
     if not api_key:
         print("Error: No Anthropic API key found. Set it in config.yaml or ANTHROPIC_API_KEY env var.")
         sys.exit(1)
-
-    bot_token = config.get("telegram_bot_token", "")
-    channel_id = config.get("telegram_channel_id", "")
-
-    # Early dedup check: if another machine already sent today, skip everything
-    # (saves the Haiku API cost on the second machine)
-    if not args.force and not args.dry_run and bot_token and channel_id:
-        if already_sent_today(bot_token, channel_id):
-            print("Today's picks were already sent by another machine. Skipping.")
-            mark_ran_today()
-            return
 
     categories = config.get("arxiv_categories", ["cs.LG", "cs.CL", "cs.AI", "cs.CV", "stat.ML"])
     max_papers = config.get("max_papers_to_send", 10)
@@ -124,6 +150,8 @@ def main():
         return
 
     # Step 5: Send to Telegram
+    bot_token = config.get("telegram_bot_token", "")
+    channel_id = config.get("telegram_channel_id", "")
     if not bot_token or not channel_id:
         print("Error: Telegram bot_token and channel_id must be set in config.yaml")
         sys.exit(1)
@@ -133,6 +161,7 @@ def main():
 
     if success:
         mark_ran_today()
+        git_push_last_run()
         print("Done! Message sent successfully.")
     else:
         print("Failed to send message to Telegram.")
