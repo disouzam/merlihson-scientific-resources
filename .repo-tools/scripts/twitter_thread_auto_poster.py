@@ -20,6 +20,7 @@ Scheduled: Runs at 11:05 AM daily (5 min after telegram upload)
 
 import sys
 import json
+import re
 import logging
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -150,6 +151,46 @@ def log_thread_posted(review_num: int, status: str):
             f.write(f"{timestamp} | Review_{review_num:03d} | {status}\n")
     except Exception as e:
         logger.error(f"Error writing to threads log: {e}")
+
+
+def check_telegram_channel_for_threads(bot_token: str, chat_id: str) -> Set[int]:
+    """
+    Check Telegram channel for already-posted Twitter threads.
+    Prevents duplicate posts when running from multiple machines.
+
+    Returns set of review numbers that already have threads posted.
+    """
+    posted = set()
+    try:
+        # Get recent messages from the channel
+        url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
+        # Use getHistory via channel messages
+        url = f"https://api.telegram.org/bot{bot_token}/getChat"
+        response = requests.get(url, params={'chat_id': chat_id}, timeout=15)
+
+        # Search recent messages for thread patterns
+        # Twitter threads typically contain "🧵" or "Thread" and "Review NNN"
+        search_url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
+        params = {'offset': -100, 'limit': 100, 'allowed_updates': ['channel_post']}
+        resp = requests.get(search_url, params=params, timeout=15)
+
+        if resp.status_code == 200 and resp.json().get('ok'):
+            for update in resp.json().get('result', []):
+                msg = update.get('channel_post', {})
+                text = msg.get('text', '')
+                if '🧵' in text or 'thread' in text.lower():
+                    match = re.search(r'(?:Review|סקירה)\s*#?\s*(\d+)', text)
+                    if match:
+                        posted.add(int(match.group(1)))
+
+        if posted:
+            logger.info(f"Found {len(posted)} reviews with Twitter threads already in Telegram channel")
+
+    except Exception as e:
+        logger.warning(f"Could not check Telegram channel for threads: {e}")
+        # Don't block posting if check fails
+
+    return posted
 
 
 def split_long_message(text: str, max_length: int = 4000) -> List[str]:
@@ -324,8 +365,15 @@ def main():
             return 0
 
         # Filter out already posted (unless --force)
+        # Check both local log AND Telegram channel to prevent duplicates across machines
         if not args.force:
             already_posted = load_posted_threads()
+            # Also check Telegram channel history for threads already posted by another machine
+            channel_posted = check_telegram_channel_for_threads(
+                config.get('twitter_threads', {}).get('bot_token', config.get('hebrew', {}).get('bot_token', '')),
+                config.get('twitter_threads', {}).get('channel_id', config.get('hebrew', {}).get('channel_id', ''))
+            )
+            already_posted = already_posted | channel_posted
             reviews_to_process = [r for r in reviews_uploaded_today if r not in already_posted]
 
             if len(reviews_to_process) < len(reviews_uploaded_today):

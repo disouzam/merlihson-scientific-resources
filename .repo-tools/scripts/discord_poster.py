@@ -155,6 +155,74 @@ def load_posted_reviews() -> set:
         return set()
 
 
+def get_discord_channel_threads(channel_id: str, bot_token: str) -> set:
+    """
+    Check Discord channel for existing threads to find already-posted reviews.
+    This prevents duplicate posts when running from multiple machines.
+
+    Returns set of review numbers already posted.
+    """
+    posted = set()
+    try:
+        # Get active threads
+        url = f"https://discord.com/api/v10/channels/{channel_id}/threads/archived/public"
+        headers = {"Authorization": f"Bot {bot_token}"}
+
+        # Also check active threads
+        active_url = f"https://discord.com/api/v10/guilds"
+        # Use channel messages to find threads with Review_ in name
+        threads_url = f"https://discord.com/api/v10/channels/{channel_id}/threads/archived/public?limit=100"
+        response = requests.get(threads_url, headers=headers, timeout=30)
+
+        if response.status_code == 200:
+            data = response.json()
+            for thread in data.get('threads', []):
+                thread_name = thread.get('name', '')
+                # Check first message in thread for Review_NNN pattern
+                thread_id = thread.get('id')
+                if thread_id:
+                    msg_url = f"https://discord.com/api/v10/channels/{thread_id}/messages?limit=1"
+                    msg_resp = requests.get(msg_url, headers=headers, timeout=15)
+                    if msg_resp.status_code == 200:
+                        messages = msg_resp.json()
+                        for msg in messages:
+                            content = msg.get('content', '')
+                            match = re.search(r'Review\s+(\d+)', content)
+                            if match:
+                                posted.add(int(match.group(1)))
+
+        # Also get active (non-archived) threads via guild endpoint
+        # First get guild_id from channel
+        ch_url = f"https://discord.com/api/v10/channels/{channel_id}"
+        ch_resp = requests.get(ch_url, headers=headers, timeout=15)
+        if ch_resp.status_code == 200:
+            guild_id = ch_resp.json().get('guild_id')
+            if guild_id:
+                active_url = f"https://discord.com/api/v10/guilds/{guild_id}/threads/active"
+                active_resp = requests.get(active_url, headers=headers, timeout=15)
+                if active_resp.status_code == 200:
+                    for thread in active_resp.json().get('threads', []):
+                        thread_id = thread.get('id')
+                        parent_id = thread.get('parent_id')
+                        if parent_id == channel_id and thread_id:
+                            msg_url = f"https://discord.com/api/v10/channels/{thread_id}/messages?limit=1"
+                            msg_resp = requests.get(msg_url, headers=headers, timeout=15)
+                            if msg_resp.status_code == 200:
+                                for msg in msg_resp.json():
+                                    match = re.search(r'Review\s+(\d+)', msg.get('content', ''))
+                                    if match:
+                                        posted.add(int(match.group(1)))
+
+        if posted:
+            logger.info(f"Found {len(posted)} reviews already posted in Discord channel")
+
+    except Exception as e:
+        logger.warning(f"Could not check Discord channel history: {e}")
+        # Don't block posting if check fails — fall back to local log only
+
+    return posted
+
+
 def log_discord_post(review_num: int, status: str):
     """Append Discord post record to log file."""
     try:
@@ -676,8 +744,11 @@ def main():
         logger.warning("No Telegram links found. Run telegram_uploader.py first.")
         return 1
 
-    # Load already posted reviews
+    # Load already posted reviews (local log + Discord channel history)
     already_posted = load_posted_reviews()
+    # Also check Discord channel to prevent duplicates across machines
+    channel_posted = get_discord_channel_threads(config.channel_id, config.bot_token)
+    already_posted = already_posted | channel_posted
 
     # Get reviews to post
     if specific_review:
