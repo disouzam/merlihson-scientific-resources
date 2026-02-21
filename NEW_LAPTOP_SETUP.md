@@ -109,7 +109,7 @@ Want reviews automatically uploaded to your Telegram channels at 3:00 PM?
 - Uploads Hebrew reviews → Hebrew channel
 - Uploads English reviews → English channel
 - Automatically splits long messages
-- Prevents duplicates
+- Prevents duplicates (local log + channel history, safe across multiple machines)
 
 ---
 
@@ -139,7 +139,7 @@ Want reviews automatically posted to your Discord server at 7:00 PM?
 - Creates daily threads ("Daily Paper Review: Feb 14, 2026")
 - Posts review with Hebrew Telegram, English Telegram, Substack, and GitHub links
 - Finds Substack links automatically (with fallback for unnumbered posts)
-- Prevents duplicate posts
+- Prevents duplicate posts (local log + Discord channel API check, safe across multiple machines)
 - Requires all links present before posting
 
 **Timeline:**
@@ -396,6 +396,7 @@ Every morning at 5 AM:
 - ✅ Adds "Review XXX: TITLE" header
 - ✅ Git commit with descriptive message
 - ✅ Metadata auto-updates (via pre-commit hook)
+- ✅ Git pull --rebase --autostash (syncs with other machines first)
 - ✅ Git push to GitHub
 - ✅ Logs everything
 
@@ -424,7 +425,7 @@ If configured, posts reviews to Discord in daily threads:
 - ✅ Creates daily thread ("Daily Paper Review: Feb 14, 2026")
 - ✅ Posts with all links: Telegram (Hebrew + English), Substack, GitHub
 - ✅ Finds Substack links automatically via API (with fallback for unnumbered posts)
-- ✅ Prevents duplicate posts
+- ✅ Prevents duplicate posts (local log + Discord channel API check, safe across multiple machines)
 - ✅ Requires all links present before posting
 - ✅ Backup run at 6 PM catches late Substack posts
 

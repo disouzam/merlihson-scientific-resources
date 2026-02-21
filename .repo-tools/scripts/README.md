@@ -83,7 +83,7 @@ Uploads new reviews to Telegram test channels.
 - Uploads English reviews to English channel
 - Splits long messages (max 4096 chars per Telegram message)
 - Uses HTML parse mode (handles scientific notation, parentheses)
-- Tracks uploaded reviews to avoid duplicates
+- Tracks uploaded reviews to avoid duplicates (local log + channel history, safe across multiple machines)
 
 **Usage:**
 
@@ -114,7 +114,7 @@ Posts paper reviews to Discord channel in organized daily threads.
   - Hebrew GitHub link
   - English GitHub link
 - Validates all links exist before posting
-- Tracks posted reviews to avoid duplicates
+- Tracks posted reviews to avoid duplicates (local log + Discord API check, safe across multiple machines)
 - Only posts reviews from last 24 hours
 
 **Usage:**
@@ -400,8 +400,10 @@ The script is case-insensitive for the `_english` part.
    - Metadata files are added to the same commit
 
 4. **Push:**
+   - Pull remote changes first (`git pull --rebase --autostash`) to avoid conflicts with other machines
    - Push commit to GitHub
-   - If push fails (network issue), files remain committed locally
+   - If rebase conflicts occur, falls back to merge pull
+   - If push still fails (network issue), files remain committed locally
 
 ### Deduplication Logic
 
@@ -434,7 +436,7 @@ The script handles various error scenarios:
 
 - **No new reviews:** Logs and exits gracefully
 - **DOCX conversion fails:** Logs error, continues with next file
-- **Git push fails:** Logs error, leaves files committed locally for manual push
+- **Git push fails:** Pulls with rebase first, retries; if still fails, leaves files committed locally for manual push
 - **Missing English file:** Processes Hebrew only, logs info message
 - **Network timeout:** Logs error, leaves files committed locally
 
