@@ -20,6 +20,7 @@ import subprocess
 import logging
 import json
 import time
+import random
 import html
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -573,6 +574,18 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
         logger.info(f"[DRY RUN]   Would split into {len(messages)} message(s)")
         return True
 
+    # Last-second cross-machine check: pull and re-check ledger right before sending
+    logger.info(f"Final ledger check before uploading Review_{review_num} ({channel_type})...")
+    subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+        capture_output=True, timeout=30
+    )
+    ledger = load_upload_ledger()
+    if review_num in ledger.get(channel_type, set()):
+        logger.info(f"Review_{review_num} appeared in ledger during processing — skipping (other machine uploaded it)")
+        log_upload(review_num, channel_type, 'success')
+        return True
+
     # Split message if needed
     messages = split_message(content, config.max_message_length)
 
@@ -695,6 +708,13 @@ def main():
 
     # Wait for network (important after wake from sleep)
     wait_for_network(timeout=60)
+
+    # Random startup delay (0-90 seconds) to prevent race condition
+    # when two machines have identical launchd schedules
+    if not dry_run:
+        delay = random.randint(0, 90)
+        logger.info(f"Random startup delay: {delay}s (cross-machine race prevention)")
+        time.sleep(delay)
 
     # Pull latest from remote (critical: gets the upload ledger from the other machine)
     logger.info("Pulling latest from remote (for cross-machine ledger sync)...")
