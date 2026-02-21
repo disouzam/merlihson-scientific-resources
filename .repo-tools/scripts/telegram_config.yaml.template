@@ -46,3 +46,8 @@ settings:
   retry_on_failure: true
   retry_count: 2
   retry_delay_seconds: 5
+
+  # Machine ID for cross-machine dedup (1 or 2).
+  # Each machine MUST have a different ID to guarantee non-overlapping startup delays.
+  # machine_id 1 → early slot (0-20s delay), machine_id 2 → late slot (65-90s delay)
+  machine_id: 1

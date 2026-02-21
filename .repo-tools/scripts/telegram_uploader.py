@@ -82,6 +82,7 @@ class TelegramConfig:
         self.retry_on_failure = config.get('settings', {}).get('retry_on_failure', True)
         self.retry_count = config.get('settings', {}).get('retry_count', 2)
         self.retry_delay_seconds = config.get('settings', {}).get('retry_delay_seconds', 5)
+        self.machine_id = config.get('settings', {}).get('machine_id', 1)
 
         # Validate tokens
         if 'YOUR_' in self.hebrew_bot_token or 'YOUR_' in self.english_bot_token:
@@ -706,21 +707,29 @@ def main():
     logger.info(f"Repository: {REPO_ROOT}")
     logger.info(f"Checking reviews from last {hours} hours")
 
+    # Load configuration (needed early for machine_id)
+    try:
+        config = TelegramConfig(CONFIG_FILE)
+    except Exception as e:
+        logger.error(f"Failed to load configuration: {e}")
+        return 1
+
     # Wait for network (important after wake from sleep)
     wait_for_network(timeout=60)
 
-    # Deterministic startup delay based on hostname to prevent race condition
-    # when two machines have identical launchd schedules.
-    # Machines get non-overlapping slots: even hostname hash → 0-20s, odd → 65-90s
+    # Deterministic startup delay to prevent race condition when two machines
+    # have identical launchd schedules. Each machine gets a non-overlapping slot:
+    #   machine_id 1 → 0-20s delay (early slot)
+    #   machine_id 2 → 65-90s delay (late slot)
     # This guarantees at least 45 seconds between any two machines.
+    # machine_id is set in telegram_config.yaml (defaults to 1 if not set).
     if not dry_run:
-        import socket
-        host_hash = sum(ord(c) for c in socket.gethostname())
-        if host_hash % 2 == 0:
+        machine_id = config.machine_id
+        if machine_id == 1:
             delay = random.randint(0, 20)
         else:
             delay = random.randint(65, 90)
-        logger.info(f"Startup delay: {delay}s (host={socket.gethostname()}, slot={'early' if host_hash % 2 == 0 else 'late'})")
+        logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot={'early' if machine_id == 1 else 'late'})")
         time.sleep(delay)
 
     # Pull latest from remote (critical: gets the upload ledger from the other machine)
@@ -733,13 +742,6 @@ def main():
         logger.warning(f"Git pull warning: {pull_result.stderr.strip()}")
     else:
         logger.info("✓ Repo up to date")
-
-    # Load configuration
-    try:
-        config = TelegramConfig(CONFIG_FILE)
-    except Exception as e:
-        logger.error(f"Failed to load configuration: {e}")
-        return 1
 
     # Get new reviews from git log
     new_reviews = get_new_reviews_from_git(hours)
