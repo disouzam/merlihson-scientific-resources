@@ -143,7 +143,7 @@ Want reviews automatically posted to your Discord server at 7:00 PM?
 - Creates daily threads ("Daily Paper Review: Feb 14, 2026")
 - Posts review with Hebrew Telegram, English Telegram, Substack, and GitHub links
 - Finds Substack links automatically (with fallback for unnumbered posts)
-- Prevents duplicate posts (local log + Discord channel API check, safe across multiple machines)
+- Prevents duplicate posts (git-tracked ledger + delay slots + Discord API, safe across multiple machines)
 - Requires all links present before posting
 
 **Timeline:**
@@ -431,7 +431,7 @@ If configured, posts reviews to Discord in daily threads:
 - ✅ Creates daily thread ("Daily Paper Review: Feb 14, 2026")
 - ✅ Posts with all links: Telegram (Hebrew + English), Substack, GitHub
 - ✅ Finds Substack links automatically via API (with fallback for unnumbered posts)
-- ✅ Prevents duplicate posts (local log + Discord channel API check, safe across multiple machines)
+- ✅ Prevents duplicate posts (git-tracked ledger + delay slots + Discord API, safe across multiple machines)
 - ✅ Requires all links present before posting
 - ✅ Backup run at 6 PM catches late Substack posts
 

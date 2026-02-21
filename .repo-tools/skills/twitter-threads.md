@@ -279,7 +279,7 @@ Run without --dry-run to actually post.
 ### Already Posted
 ```
 Review_{num} thread was already posted to Telegram on {date} at {time}.
-(Checked both local log and Telegram channel history — safe across multiple machines)
+(Checked git-tracked ledger + delay slots + Telegram channel history + local log — safe across multiple machines)
 
 To repost anyway: python3 twitter_thread_auto_poster.py --review {num} --force
 ```

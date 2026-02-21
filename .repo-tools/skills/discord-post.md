@@ -45,7 +45,7 @@ The user can say:
 - **Scheduler:** `.repo-tools/scripts/schedule_discord_job.sh`
 
 ### Safety Features
-✅ **No duplicates** - Dual check: local log + Discord channel API (safe across multiple machines)
+✅ **No duplicates** - Git-tracked ledger + delay slots + last-second re-check + Discord API + local log (safe across multiple machines)
 ✅ **Complete validation** - Requires ALL 3 links (Hebrew, English, Substack)
 ✅ **Time-based** - Only posts reviews from last 24 hours
 ✅ **Most recent first** - Prioritizes newest reviews
@@ -360,7 +360,7 @@ python3 .repo-tools/scripts/discord_poster.py --dry-run
 
 ✅ **Thread-Based** - Creates organized daily threads for each review
 ✅ **Fully Automated** - Runs at 12 PM and 6 PM daily
-✅ **Safe** - No duplicates (local log + Discord API check across machines), validates all links
+✅ **Safe** - No duplicates (git-tracked ledger + delay slots + Discord API), validates all links
 ✅ **Smart** - Only posts reviews from last 24 hours
 ✅ **Complete** - Requires all 5 links before posting (Telegram Hebrew, Telegram English, Substack, GitHub Hebrew, GitHub English)
 ✅ **Reliable** - Error handling and automatic retries

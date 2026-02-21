@@ -86,7 +86,7 @@ Each Discord post includes:
 - Calls Substack scraper to get post URL
 - Formats Discord message with rich text (5 links total)
 - Posts via Discord Bot API to thread
-- Tracks posted reviews (deduplication via local log + Discord channel API check, safe across multiple machines)
+- Tracks posted reviews (deduplication via git-tracked ledger + delay slots + Discord API + local log, safe across multiple machines)
 - Includes validation and error handling
 
 ### 4. **Scheduled Job**

@@ -114,7 +114,7 @@ Posts paper reviews to Discord channel in organized daily threads.
   - Hebrew GitHub link
   - English GitHub link
 - Validates all links exist before posting
-- Tracks posted reviews to avoid duplicates (local log + Discord API check, safe across multiple machines)
+- Tracks posted reviews to avoid duplicates (git-tracked ledger + delay slots + Discord API + local log, safe across multiple machines)
 - Only posts reviews from last 24 hours
 
 **Usage:**
