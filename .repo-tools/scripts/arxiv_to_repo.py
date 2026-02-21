@@ -15,6 +15,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.request
 from html import unescape
 from pathlib import Path
@@ -115,6 +116,18 @@ def get_existing_ids():
     return ids
 
 
+def set_file_date(filepath, date_str):
+    """Set file modification time to the given YYYY-MM-DD date."""
+    if not date_str:
+        return
+    try:
+        y, m, d = date_str.split("-")
+        ts = time.mktime(time.strptime(f"{y}-{m}-{d}", "%Y-%m-%d"))
+        os.utime(filepath, (ts, ts))
+    except Exception:
+        pass
+
+
 def download_pdf(arxiv_id, title, date_str=None):
     """Download the PDF from arxiv."""
     if date_str:
@@ -128,6 +141,7 @@ def download_pdf(arxiv_id, title, date_str=None):
         with urllib.request.urlopen(req, timeout=60) as resp:
             data = resp.read()
         filepath.write_bytes(data)
+        set_file_date(filepath, date_str)
         size_mb = len(data) / (1024 * 1024)
         return filepath, size_mb
     except Exception as e:
@@ -225,7 +239,9 @@ def rename_existing_papers():
 
         if date_str:
             new_name = f"{date_str} {base_name}"
-            f.rename(f.parent / new_name)
+            new_path = f.parent / new_name
+            f.rename(new_path)
+            set_file_date(new_path, date_str)
             print(f"    -> {new_name}")
             renamed += 1
         else:
