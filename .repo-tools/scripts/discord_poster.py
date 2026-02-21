@@ -29,8 +29,11 @@ import sys
 import json
 import re
 import logging
+import subprocess
+import time
+import random
 from pathlib import Path
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Set
 from datetime import datetime
 import requests
 import yaml
@@ -110,6 +113,7 @@ class DiscordConfig:
         self.retry_on_failure = settings.get('retry_on_failure', True)
         self.retry_count = settings.get('retry_count', 2)
         self.retry_delay_seconds = settings.get('retry_delay_seconds', 30)
+        self.machine_id = settings.get('machine_id', 1)
 
 
 def load_telegram_links() -> Dict:
@@ -232,6 +236,59 @@ def log_discord_post(review_num: int, status: str):
             f.write(f"{timestamp} | Review_{review_num:03d} | {status}\n")
     except Exception as e:
         logger.error(f"Error writing to Discord log: {e}")
+
+
+# --- Git-tracked upload ledger (cross-machine duplicate prevention) ---
+
+DISCORD_LEDGER_FILE = REPO_ROOT / ".repo-tools" / "logs" / "discord_upload_ledger.json"
+
+
+def load_discord_ledger() -> Set[int]:
+    """Load the git-tracked Discord upload ledger (shared across all machines)."""
+    if not DISCORD_LEDGER_FILE.exists():
+        return set()
+    try:
+        with open(DISCORD_LEDGER_FILE, 'r') as f:
+            data = json.load(f)
+        return set(data.get('posted', []))
+    except Exception as e:
+        logger.error(f"Error reading Discord ledger: {e}")
+        return set()
+
+
+def update_discord_ledger(review_num: int):
+    """Add review to git-tracked ledger and immediately commit + push."""
+    try:
+        if DISCORD_LEDGER_FILE.exists():
+            with open(DISCORD_LEDGER_FILE, 'r') as f:
+                data = json.load(f)
+        else:
+            data = {'posted': []}
+
+        reviews = set(data.get('posted', []))
+        reviews.add(review_num)
+        data['posted'] = sorted(reviews)
+
+        DISCORD_LEDGER_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(DISCORD_LEDGER_FILE, 'w') as f:
+            json.dump(data, f, indent=2)
+
+        logger.info(f"Committing Discord ledger for Review_{review_num}...")
+        subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(DISCORD_LEDGER_FILE)],
+                       capture_output=True, timeout=10)
+        subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                        f'discord: mark Review_{review_num} as posted', '--no-verify'],
+                       capture_output=True, timeout=15)
+        subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                       capture_output=True, timeout=30)
+        push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
+                                     capture_output=True, text=True, timeout=30)
+        if push_result.returncode == 0:
+            logger.info(f"✓ Discord ledger pushed (Review_{review_num} locked)")
+        else:
+            logger.warning(f"Discord ledger push failed: {push_result.stderr.strip()}")
+    except Exception as e:
+        logger.error(f"Error updating Discord ledger: {e}")
 
 
 def get_review_title(review_num: int) -> str:
@@ -617,6 +674,15 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
         logger.info("")
         return True
 
+    # Last-second cross-machine check: pull and re-check ledger right before posting
+    logger.info(f"Final ledger check before posting Review_{review_num}...")
+    subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                   capture_output=True, timeout=30)
+    if review_num in load_discord_ledger():
+        logger.info(f"Review_{review_num} appeared in ledger — skipping (other machine posted it)")
+        log_discord_post(review_num, 'success')
+        return True
+
     # Create thread
     logger.info(f"Creating thread in channel {config.channel_id}...")
     thread_id = create_thread(config.channel_id, thread_name, config.bot_token)
@@ -632,6 +698,7 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
 
     if success:
         log_discord_post(review_num, 'success')
+        update_discord_ledger(review_num)
         logger.info(f"✓ Successfully posted Review_{review_num} to Discord thread")
     else:
         log_discord_post(review_num, 'failed - posting error')
@@ -738,15 +805,35 @@ def main():
     if test_webhook_only:
         return 0 if test_webhook(config) else 1
 
+    # Deterministic startup delay based on machine_id (cross-machine race prevention)
+    if not dry_run and not specific_review:
+        machine_id = config.machine_id
+        slot_start = (machine_id - 1) * 65
+        delay = random.randint(slot_start, slot_start + 20)
+        logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot {slot_start}-{slot_start+20}s)")
+        time.sleep(delay)
+
+    # Pull latest from remote (critical: gets ledger from other machines)
+    logger.info("Pulling latest from remote (for cross-machine ledger sync)...")
+    pull_result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+        capture_output=True, text=True, timeout=60
+    )
+    if pull_result.returncode != 0:
+        logger.warning(f"Git pull warning: {pull_result.stderr.strip()}")
+    else:
+        logger.info("✓ Repo up to date")
+
     # Load Telegram links
     telegram_links = load_telegram_links()
     if not telegram_links:
         logger.warning("No Telegram links found. Run telegram_uploader.py first.")
         return 1
 
-    # Load already posted reviews (local log + Discord channel history)
+    # Load already posted reviews (local log + git ledger + Discord channel history)
     already_posted = load_posted_reviews()
-    # Also check Discord channel to prevent duplicates across machines
+    already_posted = already_posted | load_discord_ledger()
+    # Also check Discord channel API to prevent duplicates across machines
     channel_posted = get_discord_channel_threads(config.channel_id, config.bot_token)
     already_posted = already_posted | channel_posted
 

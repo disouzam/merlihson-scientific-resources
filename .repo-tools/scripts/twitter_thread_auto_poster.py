@@ -22,6 +22,9 @@ import sys
 import json
 import re
 import logging
+import subprocess
+import time
+import random
 from pathlib import Path
 from datetime import datetime, timedelta
 from typing import List, Set, Dict
@@ -193,6 +196,59 @@ def check_telegram_channel_for_threads(bot_token: str, chat_id: str) -> Set[int]
     return posted
 
 
+# --- Git-tracked upload ledger (cross-machine duplicate prevention) ---
+
+TWITTER_LEDGER_FILE = REPO_ROOT / ".repo-tools" / "logs" / "twitter_upload_ledger.json"
+
+
+def load_twitter_ledger() -> Set[int]:
+    """Load the git-tracked Twitter thread ledger (shared across all machines)."""
+    if not TWITTER_LEDGER_FILE.exists():
+        return set()
+    try:
+        with open(TWITTER_LEDGER_FILE, 'r') as f:
+            data = json.load(f)
+        return set(data.get('posted', []))
+    except Exception as e:
+        logger.error(f"Error reading Twitter ledger: {e}")
+        return set()
+
+
+def update_twitter_ledger(review_num: int):
+    """Add review to git-tracked ledger and immediately commit + push."""
+    try:
+        if TWITTER_LEDGER_FILE.exists():
+            with open(TWITTER_LEDGER_FILE, 'r') as f:
+                data = json.load(f)
+        else:
+            data = {'posted': []}
+
+        reviews = set(data.get('posted', []))
+        reviews.add(review_num)
+        data['posted'] = sorted(reviews)
+
+        TWITTER_LEDGER_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(TWITTER_LEDGER_FILE, 'w') as f:
+            json.dump(data, f, indent=2)
+
+        logger.info(f"Committing Twitter ledger for Review_{review_num}...")
+        subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(TWITTER_LEDGER_FILE)],
+                       capture_output=True, timeout=10)
+        subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                        f'twitter: mark Review_{review_num} as posted', '--no-verify'],
+                       capture_output=True, timeout=15)
+        subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                       capture_output=True, timeout=30)
+        push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
+                                     capture_output=True, text=True, timeout=30)
+        if push_result.returncode == 0:
+            logger.info(f"✓ Twitter ledger pushed (Review_{review_num} locked)")
+        else:
+            logger.warning(f"Twitter ledger push failed: {push_result.stderr.strip()}")
+    except Exception as e:
+        logger.error(f"Error updating Twitter ledger: {e}")
+
+
 def split_long_message(text: str, max_length: int = 4000) -> List[str]:
     """Split long message into chunks."""
     if len(text) <= max_length:
@@ -307,6 +363,15 @@ def post_thread_to_telegram(review_num: int, config: Dict, dry_run: bool = False
         logger.info(f"  Message length: {len(full_message)} chars")
         return True
 
+    # Last-second cross-machine check: pull and re-check ledger right before posting
+    logger.info(f"Final ledger check before posting Review_{review_num} thread...")
+    subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                   capture_output=True, timeout=30)
+    if review_num in load_twitter_ledger():
+        logger.info(f"Review_{review_num} appeared in ledger — skipping (other machine posted it)")
+        log_thread_posted(review_num, 'success')
+        return True
+
     # Post to Hebrew channel
     hebrew_config = config['hebrew_channel']
     bot_token = hebrew_config['bot_token']
@@ -317,6 +382,7 @@ def post_thread_to_telegram(review_num: int, config: Dict, dry_run: bool = False
 
     if success:
         log_thread_posted(review_num, 'success')
+        update_twitter_ledger(review_num)
         logger.info(f"✓ Twitter thread posted for review {review_num}")
     else:
         log_thread_posted(review_num, 'failed')
@@ -352,6 +418,25 @@ def main():
         logger.error(f"Failed to load config: {e}")
         return 1
 
+    # Deterministic startup delay based on machine_id (cross-machine race prevention)
+    if not args.dry_run and not args.review:
+        machine_id = config.get('settings', {}).get('machine_id', 1)
+        slot_start = (machine_id - 1) * 65
+        delay = random.randint(slot_start, slot_start + 20)
+        logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot {slot_start}-{slot_start+20}s)")
+        time.sleep(delay)
+
+    # Pull latest from remote (critical: gets ledger from other machines)
+    logger.info("Pulling latest from remote (for cross-machine ledger sync)...")
+    pull_result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+        capture_output=True, text=True, timeout=60
+    )
+    if pull_result.returncode != 0:
+        logger.warning(f"Git pull warning: {pull_result.stderr.strip()}")
+    else:
+        logger.info("✓ Repo up to date")
+
     # Get reviews to process
     if args.review:
         reviews_to_process = [args.review]
@@ -365,9 +450,10 @@ def main():
             return 0
 
         # Filter out already posted (unless --force)
-        # Check both local log AND Telegram channel to prevent duplicates across machines
+        # Check local log + git ledger + Telegram channel to prevent duplicates
         if not args.force:
             already_posted = load_posted_threads()
+            already_posted = already_posted | load_twitter_ledger()
             # Also check Telegram channel history for threads already posted by another machine
             channel_posted = check_telegram_channel_for_threads(
                 config.get('twitter_threads', {}).get('bot_token', config.get('hebrew', {}).get('bot_token', '')),

@@ -99,16 +99,21 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 ### When Adding a New Machine
 1. Assign a unique `machine_id` (next unused integer) in ALL config files:
    - `.repo-tools/scripts/telegram_config.yaml` → `settings.machine_id`
-   - `.repo-tools/config/discord_config.yaml` → `settings.machine_id` (if applicable)
-2. Verify the ledger file exists and is up to date: `git pull` and check `.repo-tools/logs/telegram_upload_ledger.json`
+   - `.repo-tools/config/discord_config.yaml` → `settings.machine_id`
+2. Verify ledger files exist and are up to date: `git pull` and check `.repo-tools/logs/*_ledger.json`
 3. Never reuse a `machine_id` from another active machine
+
+### Ledger Files (git-tracked, DO NOT edit manually)
+- `.repo-tools/logs/telegram_upload_ledger.json` — Telegram uploads (Hebrew + English)
+- `.repo-tools/logs/discord_upload_ledger.json` — Discord thread posts
+- `.repo-tools/logs/twitter_upload_ledger.json` — Twitter thread posts
 
 ### Current Dedup by Script
 | Script | Method |
 |--------|--------|
 | `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + local log |
-| `discord_poster.py` | Local log + Discord channel API thread check |
-| `twitter_thread_auto_poster.py` | Local log + Telegram channel history check |
+| `discord_poster.py` | Git-tracked ledger + delay slots + last-second re-check + Discord API + local log |
+| `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + Telegram API + local log |
 | `daily_review_processor.py` | `git pull --rebase --autostash` before push |
 
 ## Important Rules
