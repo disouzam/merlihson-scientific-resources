@@ -865,7 +865,6 @@ def main():
 
             # Small delay between posts to avoid rate limiting
             if not dry_run and len(reviews_to_post) > 1:
-                import time
                 time.sleep(2)
 
         except Exception as e:

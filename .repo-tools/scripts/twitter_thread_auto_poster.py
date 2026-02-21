@@ -305,7 +305,6 @@ def send_telegram_message(text: str, bot_token: str, chat_id: str,
 
             # Small delay between chunks
             if i < len(chunks):
-                import time
                 time.sleep(1)
 
         except Exception as e:
@@ -487,7 +486,6 @@ def main():
 
             # Small delay between reviews
             if len(reviews_to_process) > 1 and not args.dry_run:
-                import time
                 time.sleep(2)
 
         except Exception as e:
