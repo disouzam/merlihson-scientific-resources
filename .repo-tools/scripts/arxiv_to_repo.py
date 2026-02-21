@@ -115,10 +115,17 @@ def get_existing_ids():
     return ids
 
 
+def invert_date(date_str):
+    """Convert YYYY-MM-DD to an inverted sort key so newest dates sort first alphabetically."""
+    y, m, d = date_str.split("-")
+    return f"{9999 - int(y):04d}-{12 - int(m):02d}-{31 - int(d):02d}"
+
+
 def download_pdf(arxiv_id, title, date_str=None):
     """Download the PDF from arxiv."""
     if date_str:
-        filename = f"{date_str} [{arxiv_id}] {title}.pdf"
+        sort_key = invert_date(date_str)
+        filename = f"{sort_key} {date_str} [{arxiv_id}] {title}.pdf"
     else:
         filename = f"[{arxiv_id}] {title}.pdf"
     filepath = DEST_DIR / filename
@@ -194,25 +201,39 @@ def git_commit_and_push(files, push=True):
 
 
 def rename_existing_papers():
-    """One-time migration: add date prefix to existing papers that lack one."""
+    """One-time migration: add/update date sort prefix on existing papers."""
     if not DEST_DIR.exists():
         return 0
 
     renamed = 0
     for f in sorted(DEST_DIR.iterdir()):
-        # Skip files that already have a date prefix
-        if re.match(r"\d{4}-\d{2}-\d{2}\s+\[", f.name):
+        if not f.name.endswith(".pdf"):
             continue
-        m = re.match(r"\[(\d{4}\.\d{4,5})\]", f.name)
+        m = re.search(r"\[(\d{4}\.\d{4,5})\]", f.name)
         if not m:
             continue
         arxiv_id = m.group(1)
-        print(f"  Fetching date for [{arxiv_id}]...")
-        _, date_str = fetch_title_and_date(arxiv_id)
+
+        # Check if file already has the inverted sort key + real date prefix
+        if re.match(r"\d{4}-\d{2}-\d{2}\s+\d{4}-\d{2}-\d{2}\s+\[", f.name):
+            continue
+
+        # Strip any old-format date prefix (just YYYY-MM-DD without sort key)
+        base_name = re.sub(r"^\d{4}-\d{2}-\d{2}\s+", "", f.name)
+
+        # Extract existing date from old prefix, or fetch from arxiv
+        old_date = re.match(r"(\d{4}-\d{2}-\d{2})\s+\[", f.name)
+        if old_date:
+            date_str = old_date.group(1)
+            print(f"  [{arxiv_id}] Reusing date {date_str}")
+        else:
+            print(f"  [{arxiv_id}] Fetching date...")
+            _, date_str = fetch_title_and_date(arxiv_id)
+
         if date_str:
-            new_name = f"{date_str} {f.name}"
-            new_path = f.parent / new_name
-            f.rename(new_path)
+            sort_key = invert_date(date_str)
+            new_name = f"{sort_key} {date_str} {base_name}"
+            f.rename(f.parent / new_name)
             print(f"    -> {new_name}")
             renamed += 1
         else:

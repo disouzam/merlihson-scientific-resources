@@ -24,7 +24,7 @@ The user can say:
 3. **Skips existing** — checks `arxiv-papers/` for already-downloaded papers
 4. **Fetches titles & dates** — gets the paper title and submission date from the arxiv abstract page
 5. **Sorts by date** — newest papers first
-6. **Downloads PDFs** — saves as `YYYY-MM-DD [arxiv-ID] Title.pdf`
+6. **Downloads PDFs** — saves with inverted date sort key so newest appear first
 6. **Closes tabs** — closes all Chrome tabs for papers now in the repo
 7. **Commits & pushes** — stages, commits, and pushes to GitHub
 
@@ -33,7 +33,7 @@ The user can say:
 - **Script**: `.repo-tools/scripts/arxiv_to_repo.py`
 - **CLI alias**: `arxiv-to-repo` (defined in `~/.zshrc`)
 - **Destination**: `arxiv-papers/`
-- **Naming**: `YYYY-MM-DD [YYMM.NNNNN] Paper Title.pdf` (date-prefixed, sorted newest first)
+- **Naming**: `SORT-KEY YYYY-MM-DD [YYMM.NNNNN] Paper Title.pdf` (inverted date sort key + real date, newest first alphabetically)
 - **Dependencies**: Python 3 standard library only (no pip packages needed)
 - **Platform**: macOS only (uses AppleScript for Chrome interaction)
 
