@@ -83,7 +83,7 @@ Uploads new reviews to Telegram test channels.
 - Uploads English reviews to English channel
 - Splits long messages (max 4096 chars per Telegram message)
 - Uses HTML parse mode (handles scientific notation, parentheses)
-- Tracks uploaded reviews to avoid duplicates (local log + channel history, safe across multiple machines)
+- Tracks uploaded reviews to avoid duplicates (local log + git-tracked upload ledger + channel updates, safe across multiple machines)
 
 **Usage:**
 

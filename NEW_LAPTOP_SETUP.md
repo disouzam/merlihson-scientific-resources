@@ -109,7 +109,7 @@ Want reviews automatically uploaded to your Telegram channels at 3:00 PM?
 - Uploads Hebrew reviews → Hebrew channel
 - Uploads English reviews → English channel
 - Automatically splits long messages
-- Prevents duplicates (local log + channel history, safe across multiple machines)
+- Prevents duplicates (local log + git-tracked upload ledger, safe across multiple machines)
 
 ---
 
@@ -413,7 +413,7 @@ When you push to main branch:
 If configured, uploads reviews to Telegram channels:
 - ✅ Checks git log for reviews added in last 24 hours
 - ✅ Reads markdown from repo
-- ✅ Checks for duplicates (local log + channel history)
+- ✅ Checks for duplicates (local log + git-tracked upload ledger, safe across multiple machines)
 - ✅ Splits long messages at paragraph boundaries
 - ✅ Uploads Hebrew reviews → Hebrew channel
 - ✅ Uploads English reviews → English channel
