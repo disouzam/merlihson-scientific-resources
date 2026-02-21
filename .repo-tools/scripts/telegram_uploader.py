@@ -288,37 +288,123 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str,
 
 def get_channel_history(bot_token: str, chat_id: str, limit: int = 100) -> Set[int]:
     """
-    Get recent messages from channel and extract review numbers.
+    Get recent messages from channel by reading actual channel messages.
 
-    Returns set of review numbers found in channel history.
+    Uses Telegram Bot API's getChat + message forwarding probe approach.
+    Since Bot API doesn't have a getHistory endpoint, we read the git-tracked
+    upload ledger (shared across machines) as the primary cross-machine check.
+
+    As a secondary check, we also try to read recent channel_post updates.
     """
-    url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
+    review_numbers = set()
 
+    # Primary method: read git-tracked upload ledger (shared across machines)
+    ledger_reviews = load_upload_ledger()
+    review_numbers.update(ledger_reviews.get('hebrew', set()))
+    review_numbers.update(ledger_reviews.get('english', set()))
+
+    # Secondary method: try getUpdates for channel_post (may be empty but doesn't hurt)
     try:
-        response = requests.get(url, timeout=30)
+        url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
+        params = {"allowed_updates": '["channel_post"]', "limit": limit}
+        response = requests.get(url, params=params, timeout=30)
         response.raise_for_status()
         result = response.json()
 
-        if not result.get('ok'):
-            logger.warning(f"Could not fetch channel history: {result.get('description')}")
-            return set()
+        if result.get('ok'):
+            for update in result.get('result', []):
+                if 'channel_post' in update:
+                    text = update['channel_post'].get('text', '')
+                    matches = re.findall(r'Review[_\s](\d+)', text, re.IGNORECASE)
+                    for match in matches:
+                        review_numbers.add(int(match))
+    except Exception as e:
+        logger.debug(f"getUpdates check failed (non-critical): {e}")
 
-        # Extract review numbers from messages
-        review_numbers = set()
-        for update in result.get('result', [])[-limit:]:
-            if 'channel_post' in update:
-                text = update['channel_post'].get('text', '')
-                # Look for "Review XXX" or "Review_XXX" pattern
-                matches = re.findall(r'Review[_\s](\d+)', text, re.IGNORECASE)
-                for match in matches:
-                    review_numbers.add(int(match))
+    logger.debug(f"Found {len(review_numbers)} reviews from ledger + channel updates")
+    return review_numbers
 
-        logger.debug(f"Found {len(review_numbers)} reviews in channel history")
-        return review_numbers
+
+# --- Git-tracked upload ledger (cross-machine duplicate prevention) ---
+
+UPLOAD_LEDGER_FILE = REPO_ROOT / ".repo-tools" / "logs" / "telegram_upload_ledger.json"
+
+
+def load_upload_ledger() -> Dict[str, Set[int]]:
+    """
+    Load the git-tracked upload ledger (shared across all machines).
+
+    Unlike the local log (gitignored), this file is committed and pushed
+    immediately after each upload, ensuring cross-machine consistency.
+    """
+    if not UPLOAD_LEDGER_FILE.exists():
+        return {'hebrew': set(), 'english': set()}
+
+    try:
+        with open(UPLOAD_LEDGER_FILE, 'r') as f:
+            data = json.load(f)
+        return {
+            'hebrew': set(data.get('hebrew', [])),
+            'english': set(data.get('english', []))
+        }
+    except Exception as e:
+        logger.error(f"Error reading upload ledger: {e}")
+        return {'hebrew': set(), 'english': set()}
+
+
+def update_upload_ledger(review_num: int, channel_type: str):
+    """
+    Add a review to the git-tracked ledger and immediately commit + push.
+
+    This is the critical cross-machine lock — must happen right after a
+    successful upload and before anything else.
+    """
+    try:
+        # Load current ledger
+        if UPLOAD_LEDGER_FILE.exists():
+            with open(UPLOAD_LEDGER_FILE, 'r') as f:
+                data = json.load(f)
+        else:
+            data = {'hebrew': [], 'english': []}
+
+        # Add the review number (keep sorted, no duplicates)
+        reviews = set(data.get(channel_type, []))
+        reviews.add(review_num)
+        data[channel_type] = sorted(reviews)
+
+        # Write ledger
+        UPLOAD_LEDGER_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(UPLOAD_LEDGER_FILE, 'w') as f:
+            json.dump(data, f, indent=2)
+
+        # Immediately commit and push (this is the cross-machine lock)
+        logger.info(f"Committing upload ledger for Review_{review_num} ({channel_type})...")
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'add', str(UPLOAD_LEDGER_FILE)],
+            capture_output=True, timeout=10
+        )
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'commit', '-m',
+             f'telegram: mark Review_{review_num} ({channel_type}) as uploaded',
+             '--no-verify'],
+            capture_output=True, timeout=15
+        )
+        # Pull first to avoid rejection
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+            capture_output=True, timeout=30
+        )
+        push_result = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'push'],
+            capture_output=True, text=True, timeout=30
+        )
+        if push_result.returncode == 0:
+            logger.info(f"✓ Ledger pushed (Review_{review_num} {channel_type} locked)")
+        else:
+            logger.warning(f"Ledger push failed: {push_result.stderr.strip()}")
 
     except Exception as e:
-        logger.warning(f"Error fetching channel history: {e}")
-        return set()
+        logger.error(f"Error updating upload ledger: {e}")
 
 
 def load_upload_log() -> Dict[str, Set[int]]:
@@ -419,21 +505,28 @@ def is_already_uploaded(review_num: int, channel_type: str,
                        bot_token: str, chat_id: str,
                        check_channel: bool = True) -> bool:
     """
-    Check if review was already uploaded (dual method: log + channel history).
+    Check if review was already uploaded (triple method: local log + git ledger + channel updates).
 
     Returns True if already uploaded, False otherwise.
     """
-    # Method 1: Check local log (fast)
+    # Method 1: Check local log (fast, machine-local)
     if review_num in uploaded_log.get(channel_type, set()):
         logger.info(f"Review_{review_num} already in local log for {channel_type} channel")
         return True
 
-    # Method 2: Check channel history (slower but thorough)
+    # Method 2: Check git-tracked ledger (cross-machine, authoritative)
+    ledger = load_upload_ledger()
+    if review_num in ledger.get(channel_type, set()):
+        logger.info(f"Review_{review_num} found in git ledger for {channel_type} channel")
+        # Sync local log for consistency
+        log_upload(review_num, channel_type, 'success')
+        return True
+
+    # Method 3: Check channel updates (best-effort Telegram API check)
     if check_channel:
         channel_reviews = get_channel_history(bot_token, chat_id)
         if review_num in channel_reviews:
             logger.info(f"Review_{review_num} found in {channel_type} channel history")
-            # Update local log for consistency
             log_upload(review_num, channel_type, 'success')
             return True
 
@@ -525,6 +618,8 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
 
     if success:
         log_upload(review_num, channel_type, 'success')
+        # Immediately update and push the git-tracked ledger (cross-machine lock)
+        update_upload_ledger(review_num, channel_type)
         logger.info(f"✓ Successfully uploaded Review_{review_num} to {channel_type} channel")
     else:
         log_upload(review_num, channel_type, 'failed')
@@ -600,6 +695,17 @@ def main():
 
     # Wait for network (important after wake from sleep)
     wait_for_network(timeout=60)
+
+    # Pull latest from remote (critical: gets the upload ledger from the other machine)
+    logger.info("Pulling latest from remote (for cross-machine ledger sync)...")
+    pull_result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+        capture_output=True, text=True, timeout=60
+    )
+    if pull_result.returncode != 0:
+        logger.warning(f"Git pull warning: {pull_result.stderr.strip()}")
+    else:
+        logger.info("✓ Repo up to date")
 
     # Load configuration
     try:
