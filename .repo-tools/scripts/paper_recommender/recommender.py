@@ -22,7 +22,7 @@ import yaml
 from .arxiv_fetcher import fetch_recent_papers
 from .interest_profile import build_interest_profile
 from .paper_ranker import rank_papers
-from .telegram_sender import format_message, send_to_telegram
+from .telegram_sender import already_sent_today, format_message, send_to_telegram
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 LAST_RUN_FILE = SCRIPT_DIR / "last_run.txt"
@@ -75,6 +75,17 @@ def main():
         print("Error: No Anthropic API key found. Set it in config.yaml or ANTHROPIC_API_KEY env var.")
         sys.exit(1)
 
+    bot_token = config.get("telegram_bot_token", "")
+    channel_id = config.get("telegram_channel_id", "")
+
+    # Early dedup check: if another machine already sent today, skip everything
+    # (saves the Haiku API cost on the second machine)
+    if not args.force and not args.dry_run and bot_token and channel_id:
+        if already_sent_today(bot_token, channel_id):
+            print("Today's picks were already sent by another machine. Skipping.")
+            mark_ran_today()
+            return
+
     categories = config.get("arxiv_categories", ["cs.LG", "cs.CL", "cs.AI", "cs.CV", "stat.ML"])
     max_papers = config.get("max_papers_to_send", 10)
     model = config.get("model", "claude-haiku-4-5-20251001")
@@ -113,8 +124,6 @@ def main():
         return
 
     # Step 5: Send to Telegram
-    bot_token = config.get("telegram_bot_token", "")
-    channel_id = config.get("telegram_channel_id", "")
     if not bot_token or not channel_id:
         print("Error: Telegram bot_token and channel_id must be set in config.yaml")
         sys.exit(1)
