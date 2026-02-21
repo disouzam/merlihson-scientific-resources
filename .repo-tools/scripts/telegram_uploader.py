@@ -709,11 +709,18 @@ def main():
     # Wait for network (important after wake from sleep)
     wait_for_network(timeout=60)
 
-    # Random startup delay (0-90 seconds) to prevent race condition
-    # when two machines have identical launchd schedules
+    # Deterministic startup delay based on hostname to prevent race condition
+    # when two machines have identical launchd schedules.
+    # Machines get non-overlapping slots: even hostname hash → 0-20s, odd → 65-90s
+    # This guarantees at least 45 seconds between any two machines.
     if not dry_run:
-        delay = random.randint(0, 90)
-        logger.info(f"Random startup delay: {delay}s (cross-machine race prevention)")
+        import socket
+        host_hash = sum(ord(c) for c in socket.gethostname())
+        if host_hash % 2 == 0:
+            delay = random.randint(0, 20)
+        else:
+            delay = random.randint(65, 90)
+        logger.info(f"Startup delay: {delay}s (host={socket.gethostname()}, slot={'early' if host_hash % 2 == 0 else 'late'})")
         time.sleep(delay)
 
     # Pull latest from remote (critical: gets the upload ledger from the other machine)
