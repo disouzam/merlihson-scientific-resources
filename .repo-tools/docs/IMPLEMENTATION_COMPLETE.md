@@ -220,6 +220,14 @@ Message inside thread:
             ├─ Post to Discord webhook
             └─ Log success (prevent duplicates)
 
+On Wake → Paper Recommender (once per day)
+            ├─ Check last_run.txt (local + remote via git fetch)
+            ├─ Fetch recent papers from arXiv (cs.LG, cs.CL, cs.AI, cs.CV, stat.ML)
+            ├─ Rank by relevance using Claude Haiku (~$0.07/run)
+            ├─ Send top 10 picks to review_testing_eng Telegram channel
+            ├─ Commit+push last_run.txt (cross-machine dedup)
+            └─ Cost: ~$2/month
+
 ```
 
 ---
@@ -434,6 +442,6 @@ The Discord automation system is now fully operational and will post paper revie
 
 ---
 
-**Last Updated:** 2026-02-07
+**Last Updated:** 2026-02-21
 **Version:** 1.0.0
 **Maintainer:** Automated via launchd

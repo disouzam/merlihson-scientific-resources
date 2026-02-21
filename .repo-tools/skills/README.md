@@ -143,6 +143,19 @@ Manages Discord posting automation, Telegram link handling, and Substack scrapin
 - Configuration changes → "Implementation Details" and "Configuration"
 - Error handling → "Error Scenarios & Solutions"
 
+### paper-recommender (no skill file — runs autonomously)
+Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relevance to Mike's interests using Claude Haiku, sends top 10 to Telegram. Cross-machine dedup via git-tracked `last_run.txt`.
+
+**Location:** `.repo-tools/scripts/paper_recommender/`
+**Config:** `.repo-tools/scripts/paper_recommender/config.yaml` (gitignored)
+**Schedule:** launchd `RunAtLoad` (triggers on first login/wake, runs once per day)
+
+**Key sections to update when:**
+- arXiv categories change → `config.yaml` and `config.yaml.template`
+- Telegram channel changes → `config.yaml`
+- Model changes → `config.yaml`
+- Schedule changes → `com.user.paper-recommender.plist.template`
+
 ## Best Practices
 
 1. **Consistency** - Use the same terminology across all skills and docs
@@ -204,5 +217,5 @@ NO reminder needed. This happens automatically.
 
 ---
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-21
 **Maintainer:** Claude Code Automation

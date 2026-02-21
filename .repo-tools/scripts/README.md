@@ -146,6 +146,42 @@ python3 discord_poster.py
 - Requires Discord bot token and channel ID
 - See `.repo-tools/DISCORD_BOT_SETUP.md` for setup instructions
 
+### `paper_recommender/` (package)
+
+Daily arXiv paper recommender bot. Fetches recent papers, ranks them by relevance to Mike's interests using Claude Haiku, and sends top 10 picks to Telegram.
+
+**What it does:**
+- Fetches recent papers from arXiv (cs.LG, cs.CL, cs.AI, cs.CV, stat.ML)
+- Builds interest profile from 580+ reviewed papers in `paper_with_links.csv`
+- Ranks papers using Claude Haiku (~$0.07/run)
+- Sends top 10 to review_testing_eng Telegram channel
+- Cross-machine dedup via git-tracked `last_run.txt` (git fetch + git show)
+
+**Usage:**
+
+```bash
+cd .repo-tools/scripts
+
+# Preview top 10 picks (no Telegram send)
+python3 -m paper_recommender.recommender --dry-run
+
+# Send to Telegram (force, ignoring last_run check)
+python3 -m paper_recommender.recommender --force
+
+# Look back 2 days
+python3 -m paper_recommender.recommender --days 2
+```
+
+**Scheduling:**
+- Runs on first Mac wake via launchd `RunAtLoad`
+- `last_run.txt` ensures once-per-day execution
+- Setup: copy `com.user.paper-recommender.plist.template` to `~/Library/LaunchAgents/`
+
+**Configuration:**
+- Copy `config.yaml.template` → `config.yaml` (gitignored)
+- Set Anthropic API key (or `ANTHROPIC_API_KEY` env var)
+- Telegram bot token and channel ID pre-filled for review_testing_eng
+
 ### `schedule_daily_job.sh`
 
 Installs the daily processing job as a launchd service.
@@ -231,8 +267,12 @@ python3 discord_poster.py --test-bot-token
 python3 discord_poster.py --test-create-thread
 python3 discord_poster.py --dry-run
 
+# Test paper recommender
+cd .repo-tools/scripts
+python3 -m paper_recommender.recommender --dry-run
+
 # Check all launchd jobs are loaded
-launchctl list | grep "daily-review\|telegram\|discord"
+launchctl list | grep "daily-review\|telegram\|discord\|paper-recommender"
 ```
 
 ## Logs

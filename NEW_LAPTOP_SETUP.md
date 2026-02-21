@@ -345,6 +345,7 @@ bash -n .git/hooks/pre-commit
 │   │   ├── telegram_uploader.py         # Telegram upload
 │   │   ├── discord_poster.py            # Discord posting
 │   │   ├── substack_scraper.py          # Substack link finder
+│   │   ├── paper_recommender/           # Daily arXiv paper recommender
 │   │   ├── schedule_daily_job.sh        # Daily job scheduler
 │   │   ├── schedule_telegram_job.sh     # Telegram job scheduler
 │   │   ├── schedule_discord_job.sh      # Discord job scheduler
@@ -369,7 +370,8 @@ bash -n .git/hooks/pre-commit
 └── ~/Library/LaunchAgents/
     ├── com.user.daily-review-processor.plist   # Daily processing
     ├── com.user.telegram-review-uploader.plist # Telegram upload
-    └── com.user.discord-review-poster.plist    # Discord posting
+    ├── com.user.discord-review-poster.plist    # Discord posting
+    └── com.user.paper-recommender.plist        # Paper recommender (on wake)
 ```
 
 ---
@@ -430,6 +432,30 @@ If configured, posts reviews to Discord in daily threads:
 - ✅ Backup run at 6 PM catches late Substack posts
 
 **Setup:** See [.repo-tools/DISCORD_BOT_SETUP.md](.repo-tools/DISCORD_BOT_SETUP.md)
+
+### Paper Recommender (On Wake, Once Per Day) - Optional
+Daily arXiv paper recommender — picks top 10 papers matching Mike's interests:
+- ✅ Fetches recent papers from arXiv (cs.LG, cs.CL, cs.AI, cs.CV, stat.ML)
+- ✅ Ranks by relevance using Claude Haiku (~$0.07/run, ~$2/month)
+- ✅ Sends top 10 picks to review_testing_eng Telegram channel
+- ✅ Cross-machine dedup via git-tracked `last_run.txt` (safe across multiple machines)
+- ✅ Runs on first Mac wake via launchd `RunAtLoad`
+
+**Setup:**
+```bash
+cd .repo-tools/scripts/paper_recommender
+cp config.yaml.template config.yaml
+# Edit config.yaml — add Anthropic API key (or set ANTHROPIC_API_KEY env var)
+# Telegram bot token and channel ID are pre-filled for review_testing_eng
+
+# Install launchd job
+cp com.user.paper-recommender.plist.template ~/Library/LaunchAgents/com.user.paper-recommender.plist
+launchctl load ~/Library/LaunchAgents/com.user.paper-recommender.plist
+
+# Test
+cd .repo-tools/scripts
+python3 -m paper_recommender.recommender --dry-run
+```
 
 ---
 
