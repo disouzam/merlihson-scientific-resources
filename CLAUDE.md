@@ -84,6 +84,33 @@ arxiv-to-repo --fix-dates      # one-time: add date prefixes to existing papers
 
 **At the start of every session**, before doing any work, ask Mike to pull the latest main branch (`git pull` in the repo). This ensures we're always working on top of the latest automated commits (daily processor, metadata updates, etc.).
 
+## Multi-Machine Setup (CRITICAL)
+
+Automations run from **multiple local computers** simultaneously. Every publishing script MUST prevent duplicate posts:
+
+### How Cross-Machine Dedup Works
+1. **Git-tracked upload ledger** (`.repo-tools/logs/telegram_upload_ledger.json`) — committed and pushed immediately after each successful upload. All machines pull before checking.
+2. **Deterministic startup delays** — each machine has a unique `machine_id` in its local config (`telegram_config.yaml`, `discord_config.yaml`). Machines get non-overlapping delay slots (45s+ gap):
+   - `machine_id: 1` → 0-20s delay
+   - `machine_id: 2` → 65-85s delay
+   - `machine_id: 3` → 130-150s delay
+3. **Last-second re-check** — right before sending, pulls git again and re-checks the ledger.
+
+### When Adding a New Machine
+1. Assign a unique `machine_id` (next unused integer) in ALL config files:
+   - `.repo-tools/scripts/telegram_config.yaml` → `settings.machine_id`
+   - `.repo-tools/config/discord_config.yaml` → `settings.machine_id` (if applicable)
+2. Verify the ledger file exists and is up to date: `git pull` and check `.repo-tools/logs/telegram_upload_ledger.json`
+3. Never reuse a `machine_id` from another active machine
+
+### Current Dedup by Script
+| Script | Method |
+|--------|--------|
+| `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + local log |
+| `discord_poster.py` | Local log + Discord channel API thread check |
+| `twitter_thread_auto_poster.py` | Local log + Telegram channel history check |
+| `daily_review_processor.py` | `git pull --rebase --autostash` before push |
+
 ## Important Rules
 
 - **When making system changes** (schedules, workflows, configs): you MUST update ALL related skills in `.repo-tools/skills/`, docs in `.repo-tools/docs/`, and config templates together in a single commit. See `.repo-tools/skills/README.md` for the full checklist.

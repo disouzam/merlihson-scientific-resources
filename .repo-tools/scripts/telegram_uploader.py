@@ -717,19 +717,16 @@ def main():
     # Wait for network (important after wake from sleep)
     wait_for_network(timeout=60)
 
-    # Deterministic startup delay to prevent race condition when two machines
-    # have identical launchd schedules. Each machine gets a non-overlapping slot:
-    #   machine_id 1 → 0-20s delay (early slot)
-    #   machine_id 2 → 65-90s delay (late slot)
+    # Deterministic startup delay to prevent race condition when multiple machines
+    # have identical launchd schedules. Each machine gets a non-overlapping slot
+    # based on its machine_id (set in telegram_config.yaml):
+    #   machine_id 1 → 0-20s,  machine_id 2 → 65-85s,  machine_id 3 → 130-150s
     # This guarantees at least 45 seconds between any two machines.
-    # machine_id is set in telegram_config.yaml (defaults to 1 if not set).
     if not dry_run:
         machine_id = config.machine_id
-        if machine_id == 1:
-            delay = random.randint(0, 20)
-        else:
-            delay = random.randint(65, 90)
-        logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot={'early' if machine_id == 1 else 'late'})")
+        slot_start = (machine_id - 1) * 65
+        delay = random.randint(slot_start, slot_start + 20)
+        logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot {slot_start}-{slot_start+20}s)")
         time.sleep(delay)
 
     # Pull latest from remote (critical: gets the upload ledger from the other machine)

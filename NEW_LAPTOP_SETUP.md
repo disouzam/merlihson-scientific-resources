@@ -97,7 +97,11 @@ Want reviews automatically uploaded to your Telegram channels at 3:00 PM?
    cp telegram_config.yaml.template telegram_config.yaml
    nano telegram_config.yaml  # Fill in bot tokens and channel IDs
    ```
-5. **Install automation:**
+5. **Set unique machine_id** in `telegram_config.yaml` → `settings.machine_id`:
+   - Each machine MUST have a different ID (1, 2, 3, ...)
+   - This prevents duplicate posts when multiple machines run at the same time
+   - Check existing machines first — never reuse an active machine's ID
+6. **Install automation:**
    ```bash
    ./schedule_telegram_job.sh
    ```

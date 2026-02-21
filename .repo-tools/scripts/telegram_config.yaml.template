@@ -47,7 +47,11 @@ settings:
   retry_count: 2
   retry_delay_seconds: 5
 
-  # Machine ID for cross-machine dedup (1 or 2).
-  # Each machine MUST have a different ID to guarantee non-overlapping startup delays.
-  # machine_id 1 → early slot (0-20s delay), machine_id 2 → late slot (65-90s delay)
+  # Machine ID for cross-machine duplicate prevention.
+  # Each machine MUST have a unique ID (1, 2, 3, ...).
+  # Machines get non-overlapping startup delay slots (45s+ gap between any two):
+  #   machine_id 1 → 0-20s delay
+  #   machine_id 2 → 65-85s delay
+  #   machine_id 3 → 130-150s delay
+  # Combined with git-tracked upload ledger for bulletproof dedup.
   machine_id: 1

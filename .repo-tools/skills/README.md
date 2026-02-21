@@ -134,6 +134,14 @@ Scans Chrome tabs for arxiv papers, downloads PDFs to `learning-materials/arxiv-
 - Naming convention changes → "Implementation Details"
 - New flags/options → "Action Instructions" and CLAUDE.md Commands section
 
+### telegram-upload (no separate skill file — uses main CLAUDE.md)
+Uploads reviews to Telegram channels. Cross-machine dedup via git-tracked upload ledger (`.repo-tools/logs/telegram_upload_ledger.json`) + deterministic delay slots based on `machine_id` in config. Each machine MUST have a unique `machine_id`.
+
+**Key sections to update when:**
+- Dedup mechanism changes → CLAUDE.md "Multi-Machine Setup" section
+- Config changes → `telegram_config.yaml.template` and NEW_LAPTOP_SETUP.md
+- Adding a new machine → Assign next `machine_id` in all config files
+
 ### discord-post.md
 Manages Discord posting automation, Telegram link handling, and Substack scraping.
 
