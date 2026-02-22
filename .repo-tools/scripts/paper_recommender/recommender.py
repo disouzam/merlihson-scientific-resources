@@ -108,6 +108,11 @@ def main():
     parser.add_argument("--days", type=int, default=1, help="Number of days to look back (default: 1)")
     args = parser.parse_args()
 
+    # Skip weekends — arXiv doesn't publish on Sat/Sun
+    if datetime.now().weekday() in (5, 6) and not args.force and not args.dry_run:
+        print("Weekend — arXiv doesn't publish. Skipping.")
+        return
+
     # Check if already ran today — local file first, then remote
     if not args.force and not args.dry_run:
         if already_ran_today():
