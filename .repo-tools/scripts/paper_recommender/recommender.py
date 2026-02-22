@@ -137,9 +137,15 @@ def main():
     max_papers = config.get("max_papers_to_send", 10)
     model = config.get("model", "claude-haiku-4-5-20251001")
 
+    # Monday: cover Sat+Sun+Mon (3 days, 20 papers). Other weekdays: 1 day, 10 papers.
+    is_monday = datetime.now().weekday() == 0
+    days_back = args.days if args.days != 1 else (3 if is_monday else 1)
+    if is_monday:
+        max_papers = 20
+
     # Step 1: Fetch recent papers
     print(f"Fetching papers from arXiv ({', '.join(categories)})...")
-    papers = fetch_recent_papers(categories, days_back=args.days)
+    papers = fetch_recent_papers(categories, days_back=days_back)
     print(f"Found {len(papers)} recent papers.")
 
     if not papers:
