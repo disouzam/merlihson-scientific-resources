@@ -152,7 +152,7 @@ Manages Discord posting automation, Telegram link handling, and Substack scrapin
 - Error handling → "Error Scenarios & Solutions"
 
 ### paper-recommender (no skill file — runs autonomously)
-Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relevance to Mike's interests using Claude Haiku, sends top 10 to Telegram. Cross-machine dedup via git-tracked `last_run.txt`.
+Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relevance to Mike's interests using Claude Haiku. Monday: 3-day lookback, top 20 papers. Tue–Fri: 1-day lookback, top 10. Sat–Sun: skip. Cross-machine dedup via git-tracked `last_run.txt`.
 
 **Location:** `.repo-tools/scripts/paper_recommender/`
 **Config:** `.repo-tools/scripts/paper_recommender/config.yaml` (gitignored)

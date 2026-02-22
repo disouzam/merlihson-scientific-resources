@@ -61,10 +61,10 @@ python3 .repo-tools/scripts/discord_poster.py --review 577
 python3 .repo-tools/scripts/twitter_thread_builder.py --review 578 --clickbait
 python3 .repo-tools/scripts/twitter_thread_auto_poster.py --dry-run
 
-# Paper recommender (daily arXiv picks)
-cd .repo-tools/scripts && python3 -m paper_recommender.recommender --dry-run    # preview top 10
+# Paper recommender (daily arXiv picks — Mon: 20 papers/3 days, Tue-Fri: 10/1 day, Sat-Sun: skip)
+cd .repo-tools/scripts && python3 -m paper_recommender.recommender --dry-run    # preview picks
 cd .repo-tools/scripts && python3 -m paper_recommender.recommender --force      # send to Telegram
-cd .repo-tools/scripts && python3 -m paper_recommender.recommender --days 2     # look back 2 days
+cd .repo-tools/scripts && python3 -m paper_recommender.recommender --days 2     # custom lookback
 
 # Check launchd jobs
 launchctl list | grep "daily-review\|telegram\|discord\|twitter\|paper-recommender"
@@ -115,6 +115,7 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 | `discord_poster.py` | Git-tracked ledger + delay slots + last-second re-check + Discord API + local log |
 | `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + Telegram API + local log |
 | `daily_review_processor.py` | `git pull --rebase --autostash` before push |
+| `paper_recommender` | Git-tracked `last_run.txt` + git fetch remote check |
 
 ## Important Rules
 
