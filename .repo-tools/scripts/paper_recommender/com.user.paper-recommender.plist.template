@@ -21,9 +21,13 @@
         <string>/usr/local/bin:/usr/bin:/bin</string>
     </dict>
 
-    <!-- Run when the agent loads (first login/wake) -->
-    <key>RunAtLoad</key>
-    <true/>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>10</integer>
+        <key>Minute</key>
+        <integer>30</integer>
+    </dict>
 
     <key>StandardOutPath</key>
     <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>

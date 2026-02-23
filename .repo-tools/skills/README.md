@@ -156,7 +156,7 @@ Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relev
 
 **Location:** `.repo-tools/scripts/paper_recommender/`
 **Config:** `.repo-tools/scripts/paper_recommender/config.yaml` (gitignored)
-**Schedule:** launchd `RunAtLoad` (triggers on first login/wake, runs once per day)
+**Schedule:** launchd at 10:30 AM daily (skips weekends, once per day via `last_run.txt`)
 
 **Key sections to update when:**
 - arXiv categories change → `config.yaml` and `config.yaml.template`
