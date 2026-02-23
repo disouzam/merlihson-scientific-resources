@@ -154,7 +154,7 @@ Daily arXiv paper recommender bot. Fetches recent papers, ranks them by relevanc
 - Fetches recent papers from arXiv (cs.LG, cs.CL, cs.AI, cs.CV, stat.ML)
 - Builds interest profile from 580+ reviewed papers in `paper_with_links.csv`
 - Ranks papers using Claude Haiku (~$0.07/run)
-- Sends top 10 to review_testing_eng Telegram channel
+- Sends top picks to review_testing_eng Telegram channel (Mon: 20 papers/3 days, Tue-Fri: 10/1 day, skip weekends)
 - Cross-machine dedup via git-tracked `last_run.txt` (git fetch + git show)
 
 **Usage:**
@@ -173,8 +173,9 @@ python3 -m paper_recommender.recommender --days 2
 ```
 
 **Scheduling:**
-- Runs on first Mac wake via launchd `RunAtLoad`
-- `last_run.txt` ensures once-per-day execution
+- Runs daily at 10:30 AM via launchd
+- `last_run.txt` ensures once-per-day execution (cross-machine dedup via git)
+- Skips weekends (arXiv doesn't publish Sat/Sun)
 - Setup: copy `com.user.paper-recommender.plist.template` to `~/Library/LaunchAgents/`
 
 **Configuration:**

@@ -220,11 +220,12 @@ Message inside thread:
             ├─ Post to Discord webhook
             └─ Log success (prevent duplicates)
 
-On Wake → Paper Recommender (once per day)
+10:30 AM  → Paper Recommender (once per day, skips weekends)
             ├─ Check last_run.txt (local + remote via git fetch)
             ├─ Fetch recent papers from arXiv (cs.LG, cs.CL, cs.AI, cs.CV, stat.ML)
             ├─ Rank by relevance using Claude Haiku (~$0.07/run)
-            ├─ Send top 10 picks to review_testing_eng Telegram channel
+            ├─ Mon: top 20 from 3 days, Tue-Fri: top 10 from 1 day
+            ├─ Send picks to review_testing_eng Telegram channel
             ├─ Commit+push last_run.txt (cross-machine dedup)
             └─ Cost: ~$2/month
 

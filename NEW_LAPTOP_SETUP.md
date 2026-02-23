@@ -148,6 +148,7 @@ Want reviews automatically posted to your Discord server at 7:00 PM?
 
 **Timeline:**
 - 5:00 AM → Reviews processed and pushed to GitHub
+- 10:30 AM → Paper recommender (Mon: 20 papers/3 days, Tue-Fri: 10/1 day, skip weekends)
 - 3/4/5 PM → Reviews uploaded to Telegram channels
 - 3:05/4:05/5:05 PM → Twitter thread generated
 - 7:00 PM → Discord post
