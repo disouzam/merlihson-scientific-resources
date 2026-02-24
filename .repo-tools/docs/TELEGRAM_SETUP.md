@@ -475,20 +475,22 @@ Long reviews are automatically split at paragraph boundaries. This is normal for
 1. **3:00/4:00/5:00 PM daily** → launchd triggers script
 2. **Check git log** → Find reviews added in last 24 hours
 3. **Read markdown files** → From `split-hebrew-reviews-md/` and `split-english-reviews-md/`
-4. **Duplicate check:**
+4. **Duplicate check (per-channel, 3 methods):**
    - Check local log (`.repo-tools/logs/telegram_uploads.log`)
-   - Check channel history (last 100 messages)
+   - Check git-tracked ledger for the specific channel (cross-machine)
+   - Check Telegram API getUpdates (best-effort fallback)
 5. **Split if needed** → Messages over 4096 chars split at paragraphs
 6. **Upload** → Send to appropriate channel via Telegram Bot API
 7. **Log** → Record upload in local log
 
 ### Duplicate Detection:
 
-**Two-layer safety:**
-- **Layer 1:** Local log file (fast)
-- **Layer 2:** Channel history query (thorough)
+**Three-layer safety (per-channel):**
+- **Layer 1:** Local log file (fast, machine-local)
+- **Layer 2:** Git-tracked ledger for the specific channel (cross-machine, authoritative)
+- **Layer 3:** Telegram API getUpdates (best-effort fallback for uploads not yet in ledger)
 
-If either detects a duplicate, upload is skipped.
+Each layer checks only the relevant channel (Hebrew or English). If any layer detects a duplicate, upload is skipped.
 
 ### Message Splitting:
 
@@ -561,7 +563,7 @@ A: No! Use the same bot tokens on all your laptops.
 A: Yes, create more bots and add them to `telegram_config.yaml`.
 
 **Q: What if I delete a message from the channel?**
-A: The script checks channel history, so it won't re-upload.
+A: The script checks the git-tracked ledger (primary) and local log. If the review is in the ledger, it won't re-upload even if the message is deleted from the channel. To force re-upload, remove the review number from the ledger JSON file.
 
 **Q: Can I change the upload time?**
 A: Yes, edit the plist file and change Hour from 11 to your preferred hour.

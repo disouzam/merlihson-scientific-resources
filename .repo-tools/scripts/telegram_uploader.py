@@ -290,22 +290,15 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str,
 
 def get_channel_history(bot_token: str, chat_id: str, limit: int = 100) -> Set[int]:
     """
-    Get recent messages from channel by reading actual channel messages.
+    Get recent review numbers from Telegram channel via Bot API getUpdates.
 
-    Uses Telegram Bot API's getChat + message forwarding probe approach.
-    Since Bot API doesn't have a getHistory endpoint, we read the git-tracked
-    upload ledger (shared across machines) as the primary cross-machine check.
-
-    As a secondary check, we also try to read recent channel_post updates.
+    This is a best-effort fallback check. The git-tracked ledger (checked
+    separately in is_already_uploaded Method 2) is the authoritative
+    cross-machine duplicate check. This function only queries the Telegram
+    API for channel_post updates to catch uploads not yet in the ledger.
     """
     review_numbers = set()
 
-    # Primary method: read git-tracked upload ledger (shared across machines)
-    ledger_reviews = load_upload_ledger()
-    review_numbers.update(ledger_reviews.get('hebrew', set()))
-    review_numbers.update(ledger_reviews.get('english', set()))
-
-    # Secondary method: try getUpdates for channel_post (may be empty but doesn't hurt)
     try:
         url = f"https://api.telegram.org/bot{bot_token}/getUpdates"
         params = {"allowed_updates": '["channel_post"]', "limit": limit}
@@ -323,7 +316,7 @@ def get_channel_history(bot_token: str, chat_id: str, limit: int = 100) -> Set[i
     except Exception as e:
         logger.debug(f"getUpdates check failed (non-critical): {e}")
 
-    logger.debug(f"Found {len(review_numbers)} reviews from ledger + channel updates")
+    logger.debug(f"Found {len(review_numbers)} reviews from channel updates")
     return review_numbers
 
 
