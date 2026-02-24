@@ -453,8 +453,9 @@ cp config.yaml.template config.yaml
 # Edit config.yaml — add Anthropic API key (or set ANTHROPIC_API_KEY env var)
 # Telegram bot token and channel ID are pre-filled for review_testing_eng
 
-# Install launchd job
+# Install launchd job (re-run after git pull if template changed)
 cp com.user.paper-recommender.plist.template ~/Library/LaunchAgents/com.user.paper-recommender.plist
+launchctl unload ~/Library/LaunchAgents/com.user.paper-recommender.plist 2>/dev/null
 launchctl load ~/Library/LaunchAgents/com.user.paper-recommender.plist
 
 # Test
