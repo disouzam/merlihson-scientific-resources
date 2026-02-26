@@ -31,7 +31,7 @@
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 891 PDFs</h3>
+<h3>🎯 865 PDFs</h3>
 <b>Resources</b><br>
 <sub>8.7 GB of books,<br>cheat sheets & more</sub>
 </td>
@@ -68,7 +68,7 @@
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
 - **583 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
-- **23 learning categories** with 891 PDFs spanning machine learning, mathematics, algorithms, and more
+- **23 learning categories** with 865 PDFs spanning machine learning, mathematics, algorithms, and more
 - **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
@@ -132,18 +132,18 @@ The core collection containing **583 individual paper reviews** in multiple form
 
 ### `learning-materials/`
 
-**23 specialized categories** with 891 PDFs (8.7 GB) of educational resources:
+**23 specialized categories** with 865 PDFs (8.7 GB) of educational resources:
 
 <table>
 <tr>
 <td width="50%">
 
 #### Core AI/ML
-- `machine learning/` - 14 subcategories (303 PDFs)
-  - Broad ML materials (139)
+- `machine learning/` - 14 subcategories (293 PDFs)
+  - Broad ML materials (132)
   - Deep neural nets (52)
-  - ML concepts & algorithms (46)
-  - Reinforcement learning (18)
+  - ML concepts & algorithms (45)
+  - Reinforcement learning (17)
   - NLP (16)
   - Conformal prediction, time series, GenAI, and more
 - `ai/` - General AI concepts
@@ -152,7 +152,7 @@ The core collection containing **583 individual paper reviews** in multiple form
 <td width="50%">
 
 #### Mathematics & CS
-- `math/` - 25 subcategories (321 PDFs)
+- `math/` - 25 subcategories (307 PDFs)
   - Probability & stats, linear algebra, optimization
   - Analysis, abstract algebra, physics, calculus
   - Combinatorics, topology, game theory, and more
@@ -170,7 +170,7 @@ The core collection containing **583 individual paper reviews** in multiple form
 - `programming/` - 17 subcategories (85 PDFs)
   - Python, R & Scala, PyTorch, TensorFlow, scikit-learn
   - Software design, Git, NumPy, pandas, and more
-- `python-ml-math/` - Integrated tutorials (50 PDFs)
+- `python-ml-math/` - Integrated tutorials (48 PDFs)
 - `data engineering/` - Pipelines & processing (29 PDFs)
 - `MLOps/` - ML operations
 - `kubernetes/` - Container orchestration
@@ -388,7 +388,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **English Reviews (Markdown)** | 216 files |
 | **Reviews with Paper Links** | 582 (100% coverage!) |
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
-| **Learning Material PDFs** | 891 |
+| **Learning Material PDFs** | 865 |
 | **Learning Categories** | 23 |
 | **Presentations** | 14 |
 | **Total Repository Size** | ~17 GB |
@@ -421,11 +421,11 @@ scientific-resources/
 │       ├── old-docx/                # Old batch DOCX files
 │       └── archive-reviews/         # Legacy individual PDFs
 │
-├── learning-materials/              # Educational resources (8.7 GB, 891 PDFs)
-│   ├── machine learning/            # 14 subcategories, 303 PDFs
-│   ├── math/                        # 25 subcategories, 321 PDFs
+├── learning-materials/              # Educational resources (8.7 GB, 865 PDFs)
+│   ├── machine learning/            # 14 subcategories, 293 PDFs
+│   ├── math/                        # 25 subcategories, 307 PDFs
 │   ├── programming/                 # 17 subcategories, 85 PDFs
-│   ├── python-ml-math/              # Math for ML & DS, 50 PDFs
+│   ├── python-ml-math/              # Math for ML & DS, 48 PDFs
 │   ├── data engineering/            # Pipelines & processing, 29 PDFs
 │   ├── algorithms/                  # Data structures & algorithms
 │   ├── interview preparation/       # Career resources
@@ -455,7 +455,7 @@ scientific-resources/
 - **Quick Reference**: Searchable metadata for rapid paper discovery
 
 ### Students
-- **Structured Learning**: 23 categories with 891 PDFs of educational materials
+- **Structured Learning**: 23 categories with 865 PDFs of educational materials
 - **Academic Writing**: Examples of comprehensive paper reviews
 - **Interview Prep**: 32+ resources for ML/DS interviews
 - **Practical Skills**: Programming, SQL, data engineering tutorials

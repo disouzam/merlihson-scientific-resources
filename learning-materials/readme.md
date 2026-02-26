@@ -1,16 +1,16 @@
 # 📚 Learning Materials
 
-A comprehensive collection of **891 PDFs** (8.7 GB) of educational resources, tutorials, and reference materials organized by domain.
+A comprehensive collection of **865 PDFs** (8.7 GB) of educational resources, tutorials, and reference materials organized by domain.
 
 ## 📁 Directory Structure
 
-### 🤖 Artificial Intelligence & Machine Learning (303 PDFs)
+### 🤖 Artificial Intelligence & Machine Learning (293 PDFs)
 - **ai/**: Core AI concepts and myth-busting resources
 - **machine learning/**: 14 subcategories covering:
-  - `broad ml materials/` (139) — general ML textbooks and references
+  - `broad ml materials/` (132) — general ML textbooks and references
   - `deep neural nets/` (52) — deep learning architectures and theory
-  - `ML concepts, algorithms and machinery/` (46) — scikit-learn, causal inference, recommender systems
-  - `reinforcement learning/` (18) — RL theory and applications
+  - `ML concepts, algorithms and machinery/` (45) — scikit-learn, causal inference, recommender systems
+  - `reinforcement learning/` (17) — RL theory and applications
   - `nlp/` (16) — NLP, LLMs, language models
   - `cheat sheets/` (8) — quick reference guides
   - `conformal prediction/` (6) — uncertainty quantification
@@ -19,7 +19,7 @@ A comprehensive collection of **891 PDFs** (8.7 GB) of educational resources, tu
   - `building ml models/`, `fairness ml/`, `courses/`, `applicative ML/`
 - **surveys/**: Academic survey papers on cutting-edge topics
 
-### 🔢 Mathematics (321 PDFs)
+### 🔢 Mathematics (307 PDFs)
 - **math/**: 25 subcategories including:
   - `probability & stats/` — Bayesian, Markov, foundations
   - `just beautiful math/` — classic math collections
@@ -30,9 +30,9 @@ A comprehensive collection of **891 PDFs** (8.7 GB) of educational resources, tu
   - `complex analysis/`, `functional analysis/`, `number theory/`, and more
 - **algorithms/**: Data structures, algorithms, and computational methods
 
-### 💻 Programming & Development (135 PDFs)
+### 💻 Programming & Development (133 PDFs)
 - **programming/**: 17 subcategories including Python, R & Scala, PyTorch, TensorFlow, scikit-learn, Git, software design, and more
-- **python-ml-math/**: Integrated Python resources for mathematical and ML applications (50 PDFs)
+- **python-ml-math/**: Integrated Python resources for mathematical and ML applications (48 PDFs)
 
 ### 📊 Data Science & Engineering (29 PDFs)
 - **data engineering/**: Data processing, Spark, Kafka, big data pipelines
@@ -101,9 +101,9 @@ See `repos/book_repos.md` for the full list of source repos and download status.
 
 ## 📊 Collection Statistics
 
-- **Total PDFs**: 891 across 23 top-level categories
+- **Total PDFs**: 865 across 23 top-level categories
 - **Total Size**: 8.7 GB
-- **Key Areas**: Machine learning (303), Mathematics (321), Programming (85), Data engineering (29)
+- **Key Areas**: Machine learning (293), Mathematics (307), Programming (85), Data engineering (29)
 - **Resource Types**: PDFs, textbooks, reference materials, cheat sheets
 - **Coverage**: Foundational to advanced topics across multiple disciplines
 
