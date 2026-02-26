@@ -31,7 +31,7 @@
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 3.7 GB</h3>
+<h3>🎯 5.4 GB</h3>
 <b>Resources</b><br>
 <sub>PDFs, presentations,<br>cheat sheets & more</sub>
 </td>
@@ -384,7 +384,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
 | **Learning Categories** | 22 |
 | **Presentations** | 14 |
-| **Total Repository Size** | 3.7 GB |
+| **Total Repository Size** | 5.4 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
 | **License** | CC0-1.0 (Public Domain) |
