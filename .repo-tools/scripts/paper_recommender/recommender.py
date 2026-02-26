@@ -13,8 +13,10 @@ Usage:
 
 import argparse
 import os
+import socket
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -40,6 +42,21 @@ def load_config() -> dict:
 
     with open(CONFIG_FILE) as f:
         return yaml.safe_load(f)
+
+
+def wait_for_network(max_wait: int = 120) -> bool:
+    """Wait up to max_wait seconds for network connectivity.
+
+    Checks by resolving a DNS name. Returns True if network is available.
+    """
+    start = time.time()
+    while time.time() - start < max_wait:
+        try:
+            socket.getaddrinfo("export.arxiv.org", 443)
+            return True
+        except socket.gaierror:
+            time.sleep(10)
+    return False
 
 
 def check_remote_last_run() -> bool:
@@ -118,9 +135,19 @@ def main():
         if already_ran_today():
             print("Already ran today. Use --force to run again.")
             return
+
+    # Wait for network before proceeding (handles wake-from-sleep with no network yet)
+    if not args.dry_run:
+        print("Checking network connectivity...")
+        if not wait_for_network():
+            print("No network after 2 minutes. Will retry on next scheduled run.")
+            sys.exit(1)
+
+    # Check remote after network is confirmed
+    if not args.force and not args.dry_run:
         if check_remote_last_run():
             print("Today's picks were already sent by another machine. Skipping.")
-            mark_ran_today()  # Update local so we don't check remote again
+            mark_ran_today()
             return
 
     config = load_config()

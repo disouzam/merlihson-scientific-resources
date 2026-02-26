@@ -173,9 +173,11 @@ python3 -m paper_recommender.recommender --days 2
 ```
 
 **Scheduling:**
-- Runs daily at 10:30 AM via launchd
+- Runs hourly 8:30 AM – 6:30 PM via launchd + on wake/login (RunAtLoad)
+- Waits up to 2 minutes for network connectivity before proceeding
 - `last_run.txt` ensures once-per-day execution (cross-machine dedup via git)
 - Skips weekends (arXiv doesn't publish Sat/Sun)
+- If a run fails (no network), retries on the next hourly slot
 - Setup: copy `com.user.paper-recommender.plist.template` to `~/Library/LaunchAgents/`
 
 **Configuration:**

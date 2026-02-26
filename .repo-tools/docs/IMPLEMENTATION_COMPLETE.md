@@ -220,7 +220,7 @@ Message inside thread:
             ├─ Post to Discord webhook
             └─ Log success (prevent duplicates)
 
-10:30 AM  → Paper Recommender (once per day, skips weekends)
+8:30 AM–6:30 PM (hourly) → Paper Recommender (once per day, skips weekends)
             ├─ Check last_run.txt (local + remote via git fetch)
             ├─ Fetch recent papers from arXiv (cs.LG, cs.CL, cs.AI, cs.CV, stat.ML)
             ├─ Rank by relevance using Claude Haiku (~$0.07/run)
