@@ -296,5 +296,21 @@
       "link": "https://t.me/science_and_ai_with_mike_english/497",
       "timestamp": "2026-02-21T15:02:45"
     }
+  },
+  "583": {
+    "hebrew": {
+      "message_id": 1047,
+      "chat_id": "-1003714004500",
+      "username": "review_testing_heb",
+      "link": "https://t.me/review_testing_heb/1047",
+      "timestamp": "2026-02-26T15:17:37"
+    },
+    "english": {
+      "message_id": 510,
+      "chat_id": "-1002359167665",
+      "username": "science_and_ai_with_mike_english",
+      "link": "https://t.me/science_and_ai_with_mike_english/510",
+      "timestamp": "2026-02-26T15:17:46"
+    }
   }
 }

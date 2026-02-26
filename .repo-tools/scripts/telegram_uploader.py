@@ -509,6 +509,24 @@ def save_message_id(review_num: int, channel_type: str, message_id: int,
 
         logger.debug(f"Saved message_id for Review_{review_num} ({channel_type}): {message_id}")
 
+        # Commit + push so other machines can see the Telegram links (needed by discord_poster)
+        try:
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'add', str(MESSAGE_IDS_FILE)],
+                           capture_output=True, timeout=10)
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'commit', '-m',
+                            f'telegram: save message_id for Review_{review_num} ({channel_type})', '--no-verify'],
+                           capture_output=True, timeout=15)
+            subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                           capture_output=True, timeout=30)
+            push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
+                                         capture_output=True, text=True, timeout=30)
+            if push_result.returncode == 0:
+                logger.info(f"✓ Message IDs pushed (Review_{review_num} {channel_type})")
+            else:
+                logger.warning(f"Message IDs push failed: {push_result.stderr.strip()}")
+        except Exception as push_err:
+            logger.warning(f"Could not push message IDs: {push_err}")
+
     except Exception as e:
         logger.error(f"Error saving message_id: {e}")
 
