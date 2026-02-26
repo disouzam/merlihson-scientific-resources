@@ -580,3 +580,4 @@ the illusion of insight in reasoning models
 attention
 orthogonal model merging
 the information geometry of softmax probing and steering
+next concept prediction in discrete latent space leads to stronger language models

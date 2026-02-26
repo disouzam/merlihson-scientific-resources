@@ -1,5 +1,5 @@
 # 📚 Paper Titles from Reviews 208+ (Auto-generated)
-# Successfully extracted: 375 titles
+# Successfully extracted: 376 titles
 
   1. Training LLMs over Neurally Compressed Text
   2. 2BP: 2-Stage Backpropagation
@@ -376,3 +376,4 @@
 373. מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח
 374. Orthogonal Model Merging
 375. THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING
+376. Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models

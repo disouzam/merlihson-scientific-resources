@@ -580,3 +580,4 @@
 580. מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח
 581. Orthogonal Model Merging
 582. THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING
+583. Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models
