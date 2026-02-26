@@ -217,6 +217,7 @@ def format_header_bold(escaped_text: str) -> str:
 
     The header includes everything up to and including the metadata line
     (the line containing the review number pattern like "סקירה NNN").
+    Any body text after the metadata line (even in the same paragraph) stays normal.
     Also inserts a newline after 'Review NNN:' to separate it from the title.
     """
     # Split into paragraphs
@@ -229,10 +230,22 @@ def format_header_bold(escaped_text: str) -> str:
             header_end = i
             break
 
-    # Build header and body
-    header_parts = paragraphs[:header_end + 1]
-    body_parts = paragraphs[header_end + 1:]
+    # The metadata paragraph might contain body text after the metadata line.
+    # Split it: only the metadata line (and lines before it) go in the header.
+    meta_para = paragraphs[header_end]
+    meta_lines = meta_para.split('\n')
 
+    meta_line_idx = 0
+    for j, line in enumerate(meta_lines):
+        if re.search(r'סקיר[הת]', line):
+            meta_line_idx = j
+            break
+
+    header_meta_lines = meta_lines[:meta_line_idx + 1]
+    body_from_meta = [l for l in meta_lines[meta_line_idx + 1:] if l.strip()]
+
+    # Build header
+    header_parts = paragraphs[:header_end] + ['\n'.join(header_meta_lines)]
     header = '\n\n'.join(header_parts)
 
     # Insert newline after "Review NNN:" pattern (keep title on next line)
@@ -240,6 +253,11 @@ def format_header_bold(escaped_text: str) -> str:
 
     # Wrap header in bold tags
     formatted = f"<b>{header}</b>"
+
+    # Append any body text that was in the same paragraph as the metadata line
+    body_parts = paragraphs[header_end + 1:]
+    if body_from_meta:
+        formatted += "\n\n" + '\n'.join(body_from_meta)
     if body_parts:
         formatted += "\n\n" + "\n\n".join(body_parts)
 
@@ -564,7 +582,8 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
     if dry_run:
         logger.info(f"[DRY RUN] Would upload Review_{review_num} to {channel_type} channel")
         logger.info(f"[DRY RUN]   Content length: {len(content)} characters")
-        messages = split_message(content, config.max_message_length)
+        escaped_content = escape_for_telegram_html(content)
+        messages = split_message(escaped_content, config.max_message_length - 24)
         logger.info(f"[DRY RUN]   Would split into {len(messages)} message(s)")
         return True
 
@@ -580,17 +599,19 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
         log_upload(review_num, channel_type, 'success')
         return True
 
-    # Split message if needed
-    messages = split_message(content, config.max_message_length)
+    # Escape content for HTML mode first, then split on escaped text.
+    # This ensures message lengths account for HTML entity expansion
+    # (e.g., quotes → &quot;) and bold tag overhead.
+    escaped_content = escape_for_telegram_html(content)
+
+    # Reserve space for bold tags (<b></b> x2 = 14 chars) and part indicator (~10 chars)
+    messages = split_message(escaped_content, config.max_message_length - 24)
 
     # Upload each part
     success = True
     first_message_id = None  # Track first message ID for link construction
 
-    for i, message_text in enumerate(messages, 1):
-        # Escape content for HTML mode
-        escaped_message = escape_for_telegram_html(message_text)
-
+    for i, escaped_message in enumerate(messages, 1):
         # Format header block as bold (first message part only)
         if i == 1:
             escaped_message = format_header_bold(escaped_message)
