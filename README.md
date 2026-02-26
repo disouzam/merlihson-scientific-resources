@@ -31,9 +31,9 @@
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 8.0 GB</h3>
+<h3>🎯 891 PDFs</h3>
 <b>Resources</b><br>
-<sub>PDFs, presentations,<br>cheat sheets & more</sub>
+<sub>8.7 GB of books,<br>cheat sheets & more</sub>
 </td>
 <td align="center" width="25%">
 <h3>📅 2022-26</h3>
@@ -68,7 +68,7 @@
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
 - **583 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
-- **23 learning categories** spanning machine learning, mathematics, algorithms, and more
+- **23 learning categories** with 891 PDFs spanning machine learning, mathematics, algorithms, and more
 - **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
@@ -132,28 +132,30 @@ The core collection containing **583 individual paper reviews** in multiple form
 
 ### `learning-materials/`
 
-**22 specialized categories** with 1.7 GB of educational resources:
+**23 specialized categories** with 891 PDFs (8.7 GB) of educational resources:
 
 <table>
 <tr>
 <td width="50%">
 
 #### Core AI/ML
-- `machine learning/` - 15 subcategories
-  - Deep neural nets
-  - NLP & GenAI
-  - Reinforcement learning
-  - Conformal prediction
-  - Time series
-  - Fairness in ML
+- `machine learning/` - 14 subcategories (303 PDFs)
+  - Broad ML materials (139)
+  - Deep neural nets (52)
+  - ML concepts & algorithms (46)
+  - Reinforcement learning (18)
+  - NLP (16)
+  - Conformal prediction, time series, GenAI, and more
 - `ai/` - General AI concepts
-- `deep learning/` - Architecture deep-dives
 
 </td>
 <td width="50%">
 
 #### Mathematics & CS
-- `math/` - Mathematical foundations
+- `math/` - 25 subcategories (321 PDFs)
+  - Probability & stats, linear algebra, optimization
+  - Analysis, abstract algebra, physics, calculus
+  - Combinatorics, topology, game theory, and more
 - `algorithms/` - Data structures & methods
 - `computer science/` - CS fundamentals
 - `signal processing/` - Signal analysis
@@ -165,9 +167,11 @@ The core collection containing **583 individual paper reviews** in multiple form
 <td>
 
 #### Programming & Tools
-- `programming/` - Languages & practices
-- `python-ml-math/` - Integrated tutorials
-- `data engineering/` - Pipelines & processing
+- `programming/` - 17 subcategories (85 PDFs)
+  - Python, R & Scala, PyTorch, TensorFlow, scikit-learn
+  - Software design, Git, NumPy, pandas, and more
+- `python-ml-math/` - Integrated tutorials (50 PDFs)
+- `data engineering/` - Pipelines & processing (29 PDFs)
 - `MLOps/` - ML operations
 - `kubernetes/` - Container orchestration
 - `sql/` - Database queries
@@ -181,9 +185,11 @@ The core collection containing **583 individual paper reviews** in multiple form
 - `data science applications/` - Real-world DS
 - `finance/` - Financial modeling
 - `economics/` - Economic analysis
-- `interview preparation/` - 32+ resources
+- `interview preparation/` - 29 resources
+- `general reading/` - Broad interest
 - `surveys/` - Academic surveys
 - `selected papers/` - Curated readings
+- `repos/` - Book source repos tracking
 
 </td>
 </tr>
@@ -382,9 +388,10 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **English Reviews (Markdown)** | 216 files |
 | **Reviews with Paper Links** | 582 (100% coverage!) |
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
+| **Learning Material PDFs** | 891 |
 | **Learning Categories** | 23 |
 | **Presentations** | 14 |
-| **Total Repository Size** | 8.0 GB |
+| **Total Repository Size** | ~17 GB |
 | **Coverage Period** | 2022-2026 |
 | **Languages** | English + Hebrew |
 | **License** | CC0-1.0 (Public Domain) |
@@ -414,13 +421,16 @@ scientific-resources/
 │       ├── old-docx/                # Old batch DOCX files
 │       └── archive-reviews/         # Legacy individual PDFs
 │
-├── learning-materials/              # Educational resources (1.7 GB)
-│   ├── machine learning/            # 15 ML subcategories
-│   ├── math/                        # Mathematical foundations
+├── learning-materials/              # Educational resources (8.7 GB, 891 PDFs)
+│   ├── machine learning/            # 14 subcategories, 303 PDFs
+│   ├── math/                        # 25 subcategories, 321 PDFs
+│   ├── programming/                 # 17 subcategories, 85 PDFs
+│   ├── python-ml-math/              # Math for ML & DS, 50 PDFs
+│   ├── data engineering/            # Pipelines & processing, 29 PDFs
 │   ├── algorithms/                  # Data structures & algorithms
-│   ├── programming/                 # Languages & practices
 │   ├── interview preparation/       # Career resources
-│   └── ... (21 categories total)
+│   ├── repos/                       # Book source repos tracking
+│   └── ... (23 categories total)
 │
 ├── presentations/                   # Research presentations (32 MB)
 │   └── 14 PDF presentations
@@ -445,7 +455,7 @@ scientific-resources/
 - **Quick Reference**: Searchable metadata for rapid paper discovery
 
 ### Students
-- **Structured Learning**: 22 categories of educational materials
+- **Structured Learning**: 23 categories with 891 PDFs of educational materials
 - **Academic Writing**: Examples of comprehensive paper reviews
 - **Interview Prep**: 32+ resources for ML/DS interviews
 - **Practical Skills**: Programming, SQL, data engineering tutorials

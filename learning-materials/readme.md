@@ -1,30 +1,47 @@
 # 📚 Learning Materials
 
-A comprehensive collection of educational resources, tutorials, and reference materials organized by domain.
+A comprehensive collection of **891 PDFs** (8.7 GB) of educational resources, tutorials, and reference materials organized by domain.
 
 ## 📁 Directory Structure
 
-### 🤖 Artificial Intelligence
+### 🤖 Artificial Intelligence & Machine Learning (303 PDFs)
 - **ai/**: Core AI concepts and myth-busting resources
-- **machine learning/**: Comprehensive ML resources including deep learning, NLP, reinforcement learning
+- **machine learning/**: 14 subcategories covering:
+  - `broad ml materials/` (139) — general ML textbooks and references
+  - `deep neural nets/` (52) — deep learning architectures and theory
+  - `ML concepts, algorithms and machinery/` (46) — scikit-learn, causal inference, recommender systems
+  - `reinforcement learning/` (18) — RL theory and applications
+  - `nlp/` (16) — NLP, LLMs, language models
+  - `cheat sheets/` (8) — quick reference guides
+  - `conformal prediction/` (6) — uncertainty quantification
+  - `time series/` (6) — forecasting and temporal analysis
+  - `genAI/` (5) — TensorFlow, Keras, generative frameworks
+  - `building ml models/`, `fairness ml/`, `courses/`, `applicative ML/`
 - **surveys/**: Academic survey papers on cutting-edge topics
 
-### 🔢 Mathematics & Algorithms
+### 🔢 Mathematics (321 PDFs)
+- **math/**: 25 subcategories including:
+  - `probability & stats/` — Bayesian, Markov, foundations
+  - `just beautiful math/` — classic math collections
+  - `linear algebra/` — vectors, matrices, applications
+  - `optimization/` — convex, Bayesian, manifold optimization
+  - `analysis/`, `abstract algebra/`, `physics/`, `calculus/`
+  - `combinatorics/`, `topology/`, `game theory/`, `information theory/`
+  - `complex analysis/`, `functional analysis/`, `number theory/`, and more
 - **algorithms/**: Data structures, algorithms, and computational methods
-- **math/**: Mathematical foundations including geometry, statistics, and applied mathematics
 
-### 💻 Programming & Development
-- **programming/**: Programming languages, software development, and best practices
-- **python-ml-math/**: Integrated Python resources for mathematical and ML applications
+### 💻 Programming & Development (135 PDFs)
+- **programming/**: 17 subcategories including Python, R & Scala, PyTorch, TensorFlow, scikit-learn, Git, software design, and more
+- **python-ml-math/**: Integrated Python resources for mathematical and ML applications (50 PDFs)
 
-### 📊 Data Science & Engineering
-- **data engineering/**: Data processing, cleaning, and pipeline development
+### 📊 Data Science & Engineering (29 PDFs)
+- **data engineering/**: Data processing, Spark, Kafka, big data pipelines
 - **data science applications/**: Real-world applications and use cases
 - **sql/**: Database querying and management
 - **visualisation/**: Data visualization techniques and tools
 
 ### 🏢 Professional & Industry
-- **interview preparation/**: Technical interview resources and preparation materials
+- **interview preparation/**: 29 technical interview resources
 - **MLOps/**: Machine learning operations and deployment
 - **kubernetes/**: Container orchestration and cloud deployment
 - **excel/**: Spreadsheet analysis and business intelligence
@@ -33,13 +50,29 @@ A comprehensive collection of educational resources, tutorials, and reference ma
 - **selected papers/**: Curated collection of important research papers
 - **surveys/**: Comprehensive academic surveys on specialized topics
 - **quantum computing/**: Quantum computing fundamentals and applications
+- **general reading/**: Broad interest resources
 
 ### 💰 Specialized Domains
 - **economics/**: Econometrics and economic analysis
 - **finance/**: Mathematical finance and quantitative methods
 - **signal processing/**: Digital signal processing and analysis
 
+### 📂 Meta
+- **repos/**: Tracking file for GitHub repos used as book sources
+
 ## 🆕 Recent Additions
+
+### Book Collection (Feb 2026)
+451 books added from 7 GitHub repos covering ML, deep learning, math, statistics, and programming:
+- **valeman/Awesome_Math_Books** — 197 math & science textbooks
+- **Carl-McBride-Ellis/Compendium-of-free-ML-reading-resources** — 128 ML/DL books
+- **cakaki68/Machine-Learning-Books** — 52 ML books
+- **aridiosilva/AI_Books** — 31 AI/DL books
+- **camoverride/lit** — 23 CS/ML classics
+- **fadcrep/the-best-artificial-intelligence-books** — 13 AI books
+- **rohanmistry231/Mathematics-for-Machine-Learning-Books** — 7 math-for-ML books
+
+See `repos/book_repos.md` for the full list of source repos and download status.
 
 ### Survey Papers Collection
 - **RAG (Retrieval Augmented Generation)**: Comprehensive evaluation surveys for LLM-era applications
@@ -68,10 +101,11 @@ A comprehensive collection of educational resources, tutorials, and reference ma
 
 ## 📊 Collection Statistics
 
-- **Total Directories**: 20+ specialized learning domains
-- **Resource Types**: PDFs, markdown guides, reference materials, and links
+- **Total PDFs**: 891 across 23 top-level categories
+- **Total Size**: 8.7 GB
+- **Key Areas**: Machine learning (303), Mathematics (321), Programming (85), Data engineering (29)
+- **Resource Types**: PDFs, textbooks, reference materials, cheat sheets
 - **Coverage**: Foundational to advanced topics across multiple disciplines
-- **Recent Updates**: Survey papers collection with RAG and time series analysis
 
 ---
 
