@@ -281,7 +281,7 @@ Review_{num} was already posted to Discord on {date} at {time}.
 
 To see the message, check your Discord channel around that time.
 
-Note: The system prevents duplicate posts automatically (checks both local log and Discord channel threads via API, safe across multiple machines).
+Note: The system prevents duplicate posts automatically (checks both local log and Discord channel threads via API, safe across multiple machines). Telegram message IDs are committed+pushed to git after each upload, so Discord can find them from any machine.
 ```
 
 ## Integration with Daily Workflow
@@ -291,8 +291,8 @@ Note: The system prevents duplicate posts automatically (checks both local log a
  6:00 AM → Reviews processed from ReviewsInbox (Backup #1)
  8:00 AM → Reviews processed from ReviewsInbox (Backup #2)
  9:00 AM → Reviews processed from ReviewsInbox (Backup #3)
- 3/4/5 PM → Telegram upload (captures message IDs)
- 7:00 PM  → Discord Post ✅
+ 3/4/5 PM → Telegram upload (captures message IDs, commits+pushes to git)
+ 7:00 PM  → Discord Post (pulls git first, reads Telegram links) ✅
 ```
 
 ## Configuration

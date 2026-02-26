@@ -105,13 +105,14 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 
 ### Ledger Files (git-tracked, DO NOT edit manually)
 - `.repo-tools/logs/telegram_upload_ledger.json` — Telegram uploads (Hebrew + English)
+- `.repo-tools/logs/telegram_message_ids.json` — Telegram message IDs + links (committed+pushed after each upload, used by discord_poster to build Discord messages)
 - `.repo-tools/logs/discord_upload_ledger.json` — Discord thread posts
 - `.repo-tools/logs/twitter_upload_ledger.json` — Twitter thread posts
 
 ### Current Dedup by Script
 | Script | Method |
 |--------|--------|
-| `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + local log |
+| `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + local log + commits message IDs to git |
 | `discord_poster.py` | Git-tracked ledger + delay slots + last-second re-check + Discord API + local log |
 | `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + Telegram API + local log |
 | `daily_review_processor.py` | `git pull --rebase --autostash` before push |
