@@ -283,50 +283,18 @@
   },
   "581": {
     "hebrew": {
-      "message_id": 986,
+      "message_id": 987,
       "chat_id": "-1003714004500",
       "username": "review_testing_heb",
-      "link": "https://t.me/review_testing_heb/986",
-      "timestamp": "2026-02-21T15:02:14"
+      "link": "https://t.me/review_testing_heb/987",
+      "timestamp": "2026-02-21T15:02:44"
     },
     "english": {
-      "message_id": 495,
+      "message_id": 497,
       "chat_id": "-1002359167665",
       "username": "science_and_ai_with_mike_english",
-      "link": "https://t.me/science_and_ai_with_mike_english/495",
-      "timestamp": "2026-02-21T15:02:15"
-    }
-  },
-  "582": {
-    "hebrew": {
-      "message_id": 992,
-      "chat_id": "-1003714004500",
-      "username": "review_testing_heb",
-      "link": "https://t.me/review_testing_heb/992",
-      "timestamp": "2026-02-24T15:01:23"
-    },
-    "english": {
-      "message_id": 499,
-      "chat_id": "-1002359167665",
-      "username": "science_and_ai_with_mike_english",
-      "link": "https://t.me/science_and_ai_with_mike_english/499",
-      "timestamp": "2026-02-24T15:11:48"
-    }
-  },
-  "583": {
-    "hebrew": {
-      "message_id": 995,
-      "chat_id": "-1003714004500",
-      "username": "review_testing_heb",
-      "link": "https://t.me/review_testing_heb/995",
-      "timestamp": "2026-02-26T15:17:37"
-    },
-    "english": {
-      "message_id": 504,
-      "chat_id": "-1002359167665",
-      "username": "science_and_ai_with_mike_english",
-      "link": "https://t.me/science_and_ai_with_mike_english/504",
-      "timestamp": "2026-02-26T15:17:44"
+      "link": "https://t.me/science_and_ai_with_mike_english/497",
+      "timestamp": "2026-02-21T15:02:45"
     }
   }
 }

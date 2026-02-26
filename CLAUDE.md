@@ -61,7 +61,7 @@ python3 .repo-tools/scripts/discord_poster.py --review 577
 python3 .repo-tools/scripts/twitter_thread_builder.py --review 578 --clickbait
 python3 .repo-tools/scripts/twitter_thread_auto_poster.py --dry-run
 
-# Paper recommender (hourly 8:30AM-6:30PM + on wake — Mon: 20/3d, Tue-Fri: 10/1d, skip weekends)
+# Paper recommender (10:30 AM daily — Mon: 20 papers/3 days, Tue-Fri: 10/1 day, Sat-Sun: skip)
 cd .repo-tools/scripts && python3 -m paper_recommender.recommender --dry-run    # preview picks
 cd .repo-tools/scripts && python3 -m paper_recommender.recommender --force      # send to Telegram
 cd .repo-tools/scripts && python3 -m paper_recommender.recommender --days 2     # custom lookback
