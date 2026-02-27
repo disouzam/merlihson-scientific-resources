@@ -1,6 +1,6 @@
 # 📚 Learning Materials
 
-A comprehensive collection of **934 PDFs** (8.9 GB) of educational resources, tutorials, and reference materials organized by domain.
+A comprehensive collection of **990 PDFs** (9.6 GB) of educational resources, tutorials, and reference materials organized by domain.
 
 ## 📁 Directory Structure
 
@@ -101,8 +101,8 @@ See `repos/book_repos.md` for the full list of source repos and download status.
 
 ## 📊 Collection Statistics
 
-- **Total PDFs**: 934 across 23 top-level categories
-- **Total Size**: 8.9 GB
+- **Total PDFs**: 990 across 23 top-level categories
+- **Total Size**: 9.6 GB
 - **Key Areas**: Machine learning (293), Mathematics (307), Programming (85), Data engineering (29)
 - **Resource Types**: PDFs, textbooks, reference materials, cheat sheets
 - **Coverage**: Foundational to advanced topics across multiple disciplines

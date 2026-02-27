@@ -69,4 +69,6 @@ Best bang for buck (high book count, downloadable links):
 - [ ] rossant/awesome-math — skipped (mostly web links, only ~6 PDFs)
 - [ ] EbookFoundation/free-programming-books (math/ML sections)
 - [x] manjunath5496/Open-Access-Books — 69 books downloaded & sorted
-- [ ] zslucky/awesome-AI-books
+- [x] zslucky/awesome-AI-books — all Yandex.Disk links dead (404), 0 books
+- [x] AzatAI/cs_books — 40 books sorted (106 new after dupe check, 40 relevant curated)
+- [x] Rafiquzzaman420/Math-Books — 13 books sorted (14 new after dupe check, 1 internal dupe)
