@@ -71,11 +71,11 @@ def check_remote_last_run() -> bool:
     try:
         subprocess.run(
             ["git", "fetch", "--quiet"],
-            cwd=REPO_ROOT, capture_output=True, timeout=30,
+            cwd=REPO_ROOT, capture_output=True, timeout=60,
         )
         result = subprocess.run(
             ["git", "show", f"origin/main:{rel_path}"],
-            cwd=REPO_ROOT, capture_output=True, text=True, timeout=10,
+            cwd=REPO_ROOT, capture_output=True, text=True, timeout=15,
         )
         remote_date = result.stdout.strip()
         if remote_date == today:

@@ -21,9 +21,9 @@
         <string>/usr/local/bin:/usr/bin:/bin</string>
     </dict>
 
-    <!-- Run every hour from 8 AM to 6 PM. The script checks last_run.txt
-         and skips instantly if already ran today. This ensures that if the
-         primary 10:30 AM run fails (no network, etc.), it retries hourly. -->
+    <!-- Run every hour from 8:30 AM to 6:30 PM. The script checks last_run.txt
+         and skips instantly if already ran today. Ensures resilience: if one
+         run fails (no network, etc.), the next hourly slot retries. -->
     <key>StartCalendarInterval</key>
     <array>
         <dict>
