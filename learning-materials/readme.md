@@ -101,7 +101,7 @@ See `repos/book_repos.md` for the full list of source repos and download status.
 
 ## 📊 Collection Statistics
 
-- **Total PDFs**: 865 across 23 top-level categories
+- **Total PDFs**: 934 across 23 top-level categories
 - **Total Size**: 8.9 GB
 - **Key Areas**: Machine learning (293), Mathematics (307), Programming (85), Data engineering (29)
 - **Resource Types**: PDFs, textbooks, reference materials, cheat sheets

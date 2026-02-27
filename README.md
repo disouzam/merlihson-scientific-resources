@@ -388,7 +388,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **English Reviews (Markdown)** | 216 files |
 | **Reviews with Paper Links** | 582 (100% coverage!) |
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
-| **Learning Material PDFs** | 865 |
+| **Learning Material PDFs** | 934 |
 | **Learning Categories** | 23 |
 | **Presentations** | 14 |
 | **Total Repository Size** | ~17 GB |
