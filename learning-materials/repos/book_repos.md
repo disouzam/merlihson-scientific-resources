@@ -65,7 +65,8 @@ Best bang for buck (high book count, downloadable links):
 - [x] camoverride/lit — 23 books cloned & sorted
 - [x] fadcrep/the-best-artificial-intelligence-books — 13 books cloned & sorted
 - [x] rohanmistry231/Mathematics-for-Machine-Learning-Books — 7 books cloned & sorted
+- [x] chaconnewu/free-data-science-books — 10 books downloaded (6 dead links, 4 dupes)
 - [ ] rossant/awesome-math — skipped (mostly web links, only ~6 PDFs)
 - [ ] EbookFoundation/free-programming-books (math/ML sections)
-- [ ] manjunath5496/Open-Access-Books
+- [x] manjunath5496/Open-Access-Books — 69 books downloaded & sorted
 - [ ] zslucky/awesome-AI-books
