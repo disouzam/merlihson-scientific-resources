@@ -78,6 +78,13 @@ arxiv-to-repo --dry-run        # preview only
 arxiv-to-repo --no-push        # commit but don't push
 arxiv-to-repo --keep-tabs      # don't close Chrome tabs
 arxiv-to-repo --fix-dates      # one-time: add date prefixes to existing papers
+
+# YouTube clip cutter (download a segment from a YouTube video)
+python3 .repo-tools/scripts/youtube_clip_cutter.py --url "URL" --start "27:55" --end "38:58"
+python3 .repo-tools/scripts/youtube_clip_cutter.py --url "URL" --start "1:05:30" --end "1:15:00" --output ~/Desktop/
+# Cut + upload to test Hebrew Telegram (≤50MB: video+caption, >50MB: text caption only)
+# Claude generates caption from YouTube subtitles — see .repo-tools/skills/youtube-clip.md
+python3 .repo-tools/scripts/youtube_clip_cutter.py --url "URL" --start "27:55" --end "38:58" --upload --message "caption"
 ```
 
 ## Session Start

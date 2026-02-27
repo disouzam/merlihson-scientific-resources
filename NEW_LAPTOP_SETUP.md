@@ -9,6 +9,7 @@ Before starting, ensure you have:
 - Python 3.8 or higher
 - Git
 - GitHub access (SSH key or credentials configured)
+- `yt-dlp` and `ffmpeg` for YouTube clip cutting: `brew install yt-dlp ffmpeg`
 
 ---
 
