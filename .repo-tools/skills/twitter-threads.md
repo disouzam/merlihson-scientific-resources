@@ -20,14 +20,14 @@ The user can say:
 
 ### Core Functionality
 1. **Generate Twitter threads** - Converts Hebrew reviews to 500-char tweet threads
-2. **Clickbait optimization** - Adds engaging hooks, emojis, CTAs
+2. **Content-aware hooks** - Extracts paper name and key concepts for engaging, relevant hooks
 3. **Auto-post to Telegram** - Posts threads to Hebrew test channel
 4. **Manual Twitter posting** - User copies from Telegram to Twitter
 
 ### Features
 - ✅ **500 chars/tweet** - Optimized for Twitter Premium
 - ✅ **~10-12 tweets/thread** - Manageable size
-- ✅ **Clickbait hooks** - "Mind-blowing insights", "Game-changing paper"
+- ✅ **Content-aware hooks** - Paper name + key concepts extracted automatically
 - ✅ **Strategic emojis** - 🤖 models, ⚠️ errors, 🎯 accuracy
 - ✅ **Strong CTAs** - "RT if you learned something"
 - ✅ **Image generation** - Optional title cards (not used in automation)
@@ -50,23 +50,24 @@ The user can say:
 **Example thread structure:**
 ```
 Tweet 1 (Hook):
-🧠 Mind-blowing insights on LLM failures 🧵
-📄 Review 577: A MODEL OF ERRORS IN TRANSFORMERS
+(1/11) 🧠 A MODEL OF ERRORS IN TRANSFORMERS 🧵
+📄 Review 577 Hebrew title
 🇮🇱 Full Hebrew review below ⬇️
+📄 https://arxiv.org/abs/...
 #AI #MachineLearning
 
 Tweet 2 (Intro):
-סקירה 577 - למה הפוסט הזה חשוב? 🤔
-➡️ תובנות מהפכניות על LLMs
-➡️ פיזיקה של שגיאות
-➡️ פתרונות מעשיים
+(2/11) סקירה 577 - למה הפוסט הזה חשוב? 🤔
+➡️ KeyConcept1
+➡️ KeyConcept2
+➡️ KeyConcept3
 בואו נצלול פנימה 🏊‍♂️
 
 Tweets 3-10 (Content with emojis):
-📊 [Full paragraph content - up to 500 chars]
+(3/11) 📊 [Full paragraph content - up to 500 chars]
 
 Tweet 11 (CTA):
-🎓 רוצים לקרוא את המחקר המלא?
+(11/11) 🎓 רוצים לקרוא את המחקר המלא?
 📄 Paper: https://arxiv.org/abs/...
 💬 מה דעתכם? כתבו בתגובות!
 🔄 RT אם למדתם משהו חדש
@@ -208,16 +209,14 @@ def split_into_tweets(text: str, max_chars: int = 500):  # Change 500 to desired
 - 800 chars - Longer tweets, fewer in thread
 - 4000 chars - Max Premium (not recommended, kills engagement)
 
-### Clickbait Hooks
-**Location:** `.repo-tools/scripts/twitter_thread_builder.py` line ~179
+### Content-Aware Hooks
+**Location:** `.repo-tools/scripts/twitter_thread_builder.py`
 
-```python
-hooks = [
-    "🔥 Thread about transformers you NEED to read",
-    "🧠 Mind-blowing insights on LLM failures",
-    # Add more hooks here
-]
-```
+Hooks are now generated dynamically from the paper content:
+- **Tweet 1 hook:** Uses `extract_paper_name()` to pull the English paper title from the review header
+- **Tweet 2 intro:** Uses `extract_key_concepts()` to find CamelCase terms (e.g., TokenRank), parenthetical definitions, and capitalized phrases from the review body
+- **Paper link:** Included in both the first and last tweet
+- **Numbering:** `(i/N)` at the beginning of each tweet
 
 ## Manual Commands
 
@@ -245,7 +244,7 @@ python3 .repo-tools/scripts/twitter_thread_auto_poster.py --review 577 --force
 ## Key Features Summary
 
 ✅ **Automatic generation** - Runs 5 min after Telegram upload
-✅ **Clickbait optimized** - Engaging hooks and formatting
+✅ **Content-aware hooks** - Paper name + key concepts extracted automatically
 ✅ **Premium optimized** - 500 chars/tweet sweet spot
 ✅ **Easy to post** - Copy/paste from Telegram to Twitter
 ✅ **No working code touched** - Completely separate system

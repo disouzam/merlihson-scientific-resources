@@ -66,6 +66,77 @@ def extract_title(content: str) -> str:
     return "Paper Review"
 
 
+def extract_paper_name(content: str) -> str:
+    """Extract the English paper name from the review header line.
+
+    Typical format: 'סקירת המאמר היומית של מייק: DD.MM.YY, סקירה NNN, NNN סקירות ל-1024 PAPER TITLE'
+    The English paper name is the all-caps (or mixed-case) tail after the last number sequence.
+    """
+    lines = content.strip().split('\n')
+    for line in lines:
+        if 'סקירה' not in line or 'סקירת' not in line:
+            continue
+        # Match: after 'ל-1024' or similar, grab the English paper name at the end
+        match = re.search(r'ל-\d+\s+(.+)', line)
+        if match:
+            name = match.group(1).strip()
+            if name and any(c.isascii() and c.isalpha() for c in name):
+                return name
+        # Fallback: grab the last uppercase English segment
+        match = re.search(r'([A-Z][A-Z\s\-\(\):,]+[A-Z\)])\s*$', line)
+        if match:
+            return match.group(1).strip()
+    return ""
+
+
+def extract_key_concepts(content: str, max_concepts: int = 3) -> List[str]:
+    """Extract key technical concepts from the review body for the intro tweet.
+
+    Looks for meaningful English technical terms: CamelCase words, terms in
+    parentheses that look like definitions, and capitalized noun phrases.
+    Skips the title/header lines to avoid picking up fragments.
+    """
+    # Work on review body only (skip first 2 lines which are title + header)
+    lines = content.strip().split('\n')
+    body = '\n'.join(lines[2:]) if len(lines) > 2 else content
+
+    concepts = []
+    seen = set()
+
+    # 1. CamelCase terms (TokenRank, PageRank, etc.)
+    camel_terms = re.findall(r'\b([A-Z][a-z]+[A-Z][a-zA-Z]*)\b', body)
+    for term in camel_terms:
+        if term.lower() not in seen:
+            seen.add(term.lower())
+            concepts.append(term)
+            if len(concepts) >= max_concepts:
+                return concepts
+
+    # 2. English terms in parentheses that look like definitions
+    paren_terms = re.findall(r'\(([A-Za-z][A-Za-z\s\-]{4,}?)\)', body)
+    for term in paren_terms:
+        term = term.strip()
+        if re.match(r'^(as|the|a|an|or|and|i\.e|e\.g|aka|כמו|כלומר)\b', term, re.IGNORECASE):
+            continue
+        if term.lower() not in seen and len(term.split()) <= 5:
+            seen.add(term.lower())
+            concepts.append(term)
+            if len(concepts) >= max_concepts:
+                return concepts
+
+    # 3. Standalone capitalized English phrases in the body (2-4 words)
+    cap_phrases = re.findall(r'(?<!\()\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3})\b(?!\))', body)
+    for term in cap_phrases:
+        term = term.strip()
+        if term.lower() not in seen:
+            seen.add(term.lower())
+            concepts.append(term)
+            if len(concepts) >= max_concepts:
+                return concepts
+
+    return concepts
+
+
 def extract_arxiv_link(content: str) -> Optional[str]:
     """Extract ArXiv link from review."""
     # Look for arxiv.org URLs
@@ -202,25 +273,30 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
     thread = []
 
     if clickbait:
-        # CLICKBAIT VERSION - More engaging hooks
-        hooks = [
-            "🔥 Thread about transformers you NEED to read",
-            "🧠 Mind-blowing insights on LLM failures",
-            "⚡ The physics behind transformer errors",
-            "🎯 Why your LLM is actually failing",
-            "💡 Revolutionary way to understand LLMs",
-            "🚀 Game-changing paper alert"
-        ]
+        # CLICKBAIT VERSION - Content-aware hooks
+        paper_name = extract_paper_name(content)
+        hook_emojis = ["🔥", "🧠", "⚡", "🎯", "💡", "🚀"]
+        hook_emoji = hook_emojis[review_num % len(hook_emojis)]
 
-        # Pick a hook based on review number (deterministic but varied)
-        hook = hooks[review_num % len(hooks)]
+        total = len(content_tweets) + 3
 
-        # First tweet: Engaging hook + title
-        first_tweet = f"{hook} 🧵\n\n📄 {title}\n\n🇮🇱 Full Hebrew review below ⬇️\n\n#AI #MachineLearning"
+        # Build hook from actual paper title + paper link
+        link_line = f"\n\n📄 {arxiv_link}" if arxiv_link else ""
+        if paper_name:
+            first_tweet = f"(1/{total}) {hook_emoji} {paper_name} 🧵\n\n📄 {title}\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
+        else:
+            first_tweet = f"(1/{total}) {hook_emoji} {title} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         thread.append(first_tweet)
 
-        # Add an engaging intro tweet
-        intro_tweet = f"סקירה {review_num} - למה הפוסט הזה חשוב? 🤔\n\n➡️ תובנות מהפכניות על LLMs\n➡️ פיזיקה של שגיאות\n➡️ פתרונות מעשיים\n\nבואו נצלול פנימה 🏊‍♂️\n\n(2/{len(content_tweets) + 3})"
+        # Build intro from actual review concepts
+        concepts = extract_key_concepts(content)
+        intro_lines = [f"(2/{total}) סקירה {review_num} - למה הפוסט הזה חשוב? 🤔\n"]
+        for concept in concepts:
+            intro_lines.append(f"➡️ {concept}")
+        if not concepts:
+            intro_lines.append(f"➡️ {title}")
+        intro_lines.append(f"\nבואו נצלול פנימה 🏊‍♂️")
+        intro_tweet = "\n".join(intro_lines)
         thread.append(intro_tweet)
 
         # Content tweets with emojis
@@ -245,31 +321,31 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
                     emoji = emoji_char
                     break
 
-            numbered_tweet = f"{emoji} {tweet_text}\n\n({i}/{len(content_tweets) + 3})"
+            numbered_tweet = f"({i}/{total}) {emoji} {tweet_text}"
             thread.append(numbered_tweet)
 
         # Last tweet: Strong CTA + link
-        last_tweet = f"🎓 רוצים לקרוא את המחקר המלא?\n\n"
+        last_tweet = f"({total}/{total}) 🎓 רוצים לקרוא את המחקר המלא?\n\n"
         if arxiv_link:
             last_tweet += f"📄 Paper: {arxiv_link}\n\n"
-        last_tweet += f"💬 מה דעתכם? כתבו בתגובות!\n\n🔄 RT אם למדתם משהו חדש\n\n✅ סוף Thread\n\n#AI #MachineLearning #DeepLearning\n\n({len(content_tweets) + 3}/{len(content_tweets) + 3})"
+        last_tweet += f"💬 מה דעתכם? כתבו בתגובות!\n\n🔄 RT אם למדתם משהו חדש\n\n✅ סוף Thread\n\n#AI #MachineLearning #DeepLearning"
         thread.append(last_tweet)
 
     else:
         # ORIGINAL VERSION - Simple and clean
-        first_tweet = f"{title}\n\n🧵 Full Hebrew review ⬇️"
+        total_tweets = len(content_tweets) + 2
+        link_line = f"\n\n📄 {arxiv_link}" if arxiv_link else ""
+        first_tweet = f"(1/{total_tweets}) {title}\n\n🧵 Full Hebrew review ⬇️{link_line}"
         thread.append(first_tweet)
 
-        total_tweets = len(content_tweets) + 2
-
         for i, tweet_text in enumerate(content_tweets, start=2):
-            numbered_tweet = f"{tweet_text}\n\n({i}/{total_tweets})"
+            numbered_tweet = f"({i}/{total_tweets}) {tweet_text}"
             thread.append(numbered_tweet)
 
-        last_tweet = ""
+        last_tweet = f"({total_tweets}/{total_tweets}) "
         if arxiv_link:
-            last_tweet = f"📄 Full paper: {arxiv_link}\n\n"
-        last_tweet += f"✅ End of thread\n\n#MachineLearning #AI #Hebrew\n\n({total_tweets}/{total_tweets})"
+            last_tweet += f"📄 Full paper: {arxiv_link}\n\n"
+        last_tweet += f"✅ End of thread\n\n#MachineLearning #AI #Hebrew"
         thread.append(last_tweet)
 
     return thread
@@ -299,12 +375,8 @@ def format_thread_for_display(thread: List[str]) -> str:
     for i, tweet in enumerate(thread, start=1):
         output.append(f"─── Tweet {i}/{len(thread)} ───")
         output.append(tweet)
-        output.append(f"[{len(tweet)} chars]")
         output.append("")
 
-    output.append("=" * 60)
-    output.append(f"Total tweets: {len(thread)}")
-    output.append(f"Total characters: {sum(len(t) for t in thread)}")
     output.append("=" * 60)
 
     return "\n".join(output)
