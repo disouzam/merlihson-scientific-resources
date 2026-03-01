@@ -315,11 +315,18 @@
   },
   "584": {
     "hebrew": {
-      "message_id": 1013,
+      "message_id": 1008,
       "chat_id": "-1003714004500",
       "username": "review_testing_heb",
-      "link": "https://t.me/review_testing_heb/1013",
-      "timestamp": "2026-03-01T15:13:51"
+      "link": "https://t.me/review_testing_heb/1008",
+      "timestamp": "2026-03-01T15:01:20"
+    },
+    "english": {
+      "message_id": 508,
+      "chat_id": "-1002359167665",
+      "username": "science_and_ai_with_mike_english",
+      "link": "https://t.me/science_and_ai_with_mike_english/508",
+      "timestamp": "2026-03-01T15:01:27"
     }
   }
 }

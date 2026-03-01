@@ -2,7 +2,8 @@
 """
 Twitter Thread Builder
 
-Builds Twitter threads from Hebrew reviews (280 chars per tweet).
+Builds Twitter threads from Hebrew reviews (400 chars per tweet).
+Paper link appears only in first and last tweets.
 Can post to Telegram for manual Twitter posting.
 
 Usage:
@@ -146,78 +147,69 @@ def extract_arxiv_link(content: str) -> Optional[str]:
     return None
 
 
-def split_into_tweets(text: str, max_chars: int = 500) -> List[str]:
+def split_into_tweets(text: str, max_chars: int = 380) -> List[str]:
     """
     Split text into tweet-sized chunks intelligently.
 
     Args:
         text: Text to split
-        max_chars: Max characters per tweet (default 270 to reserve 10 for numbering)
+        max_chars: Max characters per tweet (default 380 to reserve ~20 for numbering/emoji)
 
     Returns:
         List of tweet texts
     """
-    tweets = []
-
-    # Split by double newline (paragraphs)
+    # First, collect all atomic pieces (sentences)
     paragraphs = text.split('\n\n')
-
-    current_tweet = ""
-
+    pieces = []
     for para in paragraphs:
         para = para.strip()
         if not para:
             continue
+        sentences = split_by_sentences(para)
+        for sent in sentences:
+            sent = sent.strip()
+            if sent:
+                pieces.append(sent)
+        pieces.append('\n\n')  # paragraph break marker
 
-        # If adding this paragraph fits
-        if len(current_tweet) + len(para) + 2 <= max_chars:  # +2 for \n\n
-            if current_tweet:
-                current_tweet += "\n\n" + para
-            else:
-                current_tweet = para
+    # Remove trailing paragraph break
+    while pieces and pieces[-1] == '\n\n':
+        pieces.pop()
+
+    # Greedily pack sentences into tweets
+    tweets = []
+    current_tweet = ""
+
+    for piece in pieces:
+        if piece == '\n\n':
+            # Paragraph break - try to keep as separator
+            continue
+
+        # Determine separator
+        sep = " " if current_tweet else ""
+
+        if len(current_tweet) + len(sep) + len(piece) <= max_chars:
+            current_tweet += sep + piece
         else:
-            # Save current tweet if not empty
+            # Save current tweet
             if current_tweet:
                 tweets.append(current_tweet)
 
-            # If paragraph itself is too long, split by sentences
-            if len(para) > max_chars:
-                sentences = split_by_sentences(para)
-
-                for sent in sentences:
-                    sent = sent.strip()
-                    if not sent:
-                        continue
-
-                    if len(current_tweet) + len(sent) + 1 <= max_chars:  # +1 for space
-                        if current_tweet:
-                            current_tweet += " " + sent
-                        else:
-                            current_tweet = sent
+            # If single sentence is too long, split by words
+            if len(piece) > max_chars:
+                words = piece.split()
+                current_tweet = ""
+                for word in words:
+                    wsep = " " if current_tweet else ""
+                    if len(current_tweet) + len(wsep) + len(word) <= max_chars:
+                        current_tweet += wsep + word
                     else:
                         if current_tweet:
                             tweets.append(current_tweet)
-
-                        # If sentence still too long, split by words
-                        if len(sent) > max_chars:
-                            words = sent.split()
-                            current_tweet = ""
-                            for word in words:
-                                if len(current_tweet) + len(word) + 1 <= max_chars:
-                                    if current_tweet:
-                                        current_tweet += " " + word
-                                    else:
-                                        current_tweet = word
-                                else:
-                                    if current_tweet:
-                                        tweets.append(current_tweet)
-                                    current_tweet = word
-                        else:
-                            current_tweet = sent
+                        current_tweet = word
             else:
-                current_tweet = para
+                current_tweet = piece
 
-    # Don't forget the last tweet
     if current_tweet:
         tweets.append(current_tweet)
 
@@ -266,8 +258,12 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
     lines = clean_content.split('\n')
     content_without_title = '\n'.join(lines[1:]).strip()
 
-    # Split content into tweets
-    content_tweets = split_into_tweets(content_without_title, max_chars=490)
+    # Strip URLs from content (paper link only in first/last tweet)
+    content_without_title = re.sub(r'https?://\S+', '', content_without_title)
+    content_without_title = re.sub(r'\n{3,}', '\n\n', content_without_title).strip()
+
+    # Split content into tweets (380 chars to leave room for numbering/emoji prefix)
+    content_tweets = split_into_tweets(content_without_title, max_chars=380)
 
     # Build thread
     thread = []
@@ -351,8 +347,8 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
     return thread
 
 
-def validate_thread(thread: List[str], max_chars: int = 500) -> bool:
-    """Validate all tweets are under max characters (500 for Premium, 280 for free)."""
+def validate_thread(thread: List[str], max_chars: int = 400) -> bool:
+    """Validate all tweets are under max characters (400 limit)."""
     all_valid = True
 
     for i, tweet in enumerate(thread, start=1):
@@ -401,7 +397,6 @@ def format_thread_for_telegram(thread: List[str]) -> str:
         output.append(f"✂️ TWEET {i}/{len(thread)} ✂️")
         output.append("─────────────────────")
         output.append(tweet)
-        output.append(f"[{len(tweet)} chars]")
         output.append("")
         if i < len(thread):
             output.append("━━━━━━━━━━━━━━━━━━━━━━━━")
@@ -533,11 +528,11 @@ def main():
             print("")
 
     # Validate
-    if not validate_thread(thread, max_chars=500):
-        print("\n⚠️ Warning: Some tweets exceed 500 characters!")
+    if not validate_thread(thread, max_chars=400):
+        print("\n⚠️ Warning: Some tweets exceed 400 characters!")
         print("   Thread may need adjustment\n")
     else:
-        print("✓ All tweets under 500 characters (Twitter Premium)")
+        print("✓ All tweets under 400 characters")
         print("")
 
     # Output options
