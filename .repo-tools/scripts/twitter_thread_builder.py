@@ -424,34 +424,42 @@ def post_to_telegram(thread: List[str], review_num: int):
     try:
         # Import Telegram uploader
         sys.path.insert(0, str(REPO_ROOT / ".repo-tools" / "scripts"))
-        from telegram_uploader import send_telegram_message, TelegramConfig, load_config
+        from telegram_uploader import send_telegram_message, split_message, TelegramConfig
 
         # Load Telegram config
         config_file = REPO_ROOT / ".repo-tools" / "scripts" / "telegram_config.yaml"
-        config = load_config(config_file)
+        config = TelegramConfig(config_file)
 
         # Format for Telegram
         message = format_thread_for_telegram(thread)
 
+        # Split if over Telegram's 4096 char limit
+        parts = split_message(message, max_length=4096)
+
         # Send to Hebrew test channel
         print(f"\nPosting thread to Telegram (Hebrew channel)...")
-        print(f"Review {review_num}, {len(thread)} tweets")
+        print(f"Review {review_num}, {len(thread)} tweets, {len(parts)} message(s)")
 
-        response = send_telegram_message(
-            message,
-            config.hebrew_channel.bot_token,
-            config.hebrew_channel.chat_id,
-            parse_mode='HTML'
-        )
+        all_ok = True
+        for i, part in enumerate(parts, 1):
+            success, message_id = send_telegram_message(
+                config.hebrew_bot_token,
+                config.hebrew_channel_id,
+                part
+            )
+            if success:
+                print(f"  ✓ Part {i}/{len(parts)} sent (msg ID: {message_id})")
+            else:
+                print(f"  ❌ Part {i}/{len(parts)} failed")
+                all_ok = False
 
-        if response:
+        if all_ok:
             print(f"✓ Thread posted to Telegram!")
-            print(f"  Channel: {config.hebrew_channel.username}")
-            print(f"  Message ID: {response.get('message_id')}")
+            print(f"  Channel: {config.hebrew_username}")
             return True
-        else:
-            print(f"❌ Failed to post to Telegram")
-            return False
+
+        print(f"❌ Some parts failed to post")
+        return False
 
     except Exception as e:
         print(f"❌ Error posting to Telegram: {e}")
