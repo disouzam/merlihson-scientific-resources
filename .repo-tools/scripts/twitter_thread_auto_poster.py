@@ -372,12 +372,12 @@ def post_thread_to_telegram(review_num: int, config: Dict, dry_run: bool = False
         log_thread_posted(review_num, 'success')
         return True
 
-    # Post to Hebrew channel
-    hebrew_config = config['hebrew_channel']
-    bot_token = hebrew_config['bot_token']
-    chat_id = hebrew_config['channel_id']
+    # Post to Hebrew test channel (twitter threads stay on test channel)
+    threads_config = config.get('twitter_threads', config['hebrew_channel'])
+    bot_token = threads_config['bot_token']
+    chat_id = threads_config['channel_id']
 
-    logger.info(f"Posting thread to Telegram Hebrew channel...")
+    logger.info(f"Posting thread to Telegram ({threads_config.get('username', 'unknown')})...")
     success = send_telegram_message(full_message, bot_token, chat_id, parse_mode=None)
 
     if success:

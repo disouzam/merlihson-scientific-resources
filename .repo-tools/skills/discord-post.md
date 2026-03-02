@@ -65,7 +65,7 @@ The user can say:
 📄 Review 574: Scaling Embedding Outperforms Scaling Experts
 
 ✈️ Telegram:
-🇮🇱 Hebrew: https://t.me/review_testing_heb/904
+🇮🇱 Hebrew: https://t.me/MathyAIwithMike/123
 🇬🇧 English: https://t.me/review_testing_eng/7
 
 📝 Substack: https://aiwithmike.substack.com/p/review-574
@@ -322,9 +322,9 @@ settings:
 Location: `.repo-tools/scripts/telegram_config.yaml`
 ```yaml
 hebrew_channel:
-  username: "review_testing_heb"  # Public channel
+  username: "MathyAIwithMike"  # Real Hebrew channel
 english_channel:
-  username: "review_testing_eng"  # Public channel
+  username: "science_and_ai_with_mike_english"  # Real English channel
 ```
 
 ## Monitoring & Maintenance
