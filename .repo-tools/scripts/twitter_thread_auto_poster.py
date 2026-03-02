@@ -275,7 +275,7 @@ def split_long_message(text: str, max_length: int = 4000) -> List[str]:
 
 
 def send_telegram_message(text: str, bot_token: str, chat_id: str,
-                          parse_mode: str = 'HTML') -> bool:
+                          parse_mode: str = None) -> bool:
     """Send message to Telegram channel (splits if too long)."""
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
 
@@ -288,9 +288,10 @@ def send_telegram_message(text: str, bot_token: str, chat_id: str,
         payload = {
             'chat_id': chat_id,
             'text': chunk,
-            'parse_mode': parse_mode,
             'disable_web_page_preview': False
         }
+        if parse_mode:
+            payload['parse_mode'] = parse_mode
 
         try:
             response = requests.post(url, json=payload, timeout=30)
@@ -377,7 +378,7 @@ def post_thread_to_telegram(review_num: int, config: Dict, dry_run: bool = False
     chat_id = hebrew_config['channel_id']
 
     logger.info(f"Posting thread to Telegram Hebrew channel...")
-    success = send_telegram_message(full_message, bot_token, chat_id, parse_mode='HTML')
+    success = send_telegram_message(full_message, bot_token, chat_id, parse_mode=None)
 
     if success:
         log_thread_posted(review_num, 'success')

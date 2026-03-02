@@ -19,18 +19,19 @@ The user can say:
 ## What This Skill Does
 
 ### Core Functionality
-1. **Generate Twitter threads** - Converts Hebrew reviews to 500-char tweet threads
+1. **Generate Twitter threads** - Converts Hebrew reviews to 400-char tweet threads
 2. **Content-aware hooks** - Extracts paper name and key concepts for engaging, relevant hooks
-3. **Auto-post to Telegram** - Posts threads to Hebrew test channel
+3. **Auto-post to Telegram** - Posts threads to Hebrew test channel (plain text, no HTML parse mode)
 4. **Manual Twitter posting** - User copies from Telegram to Twitter
 
 ### Features
-- ✅ **500 chars/tweet** - Optimized for Twitter Premium
-- ✅ **~10-12 tweets/thread** - Manageable size
+- ✅ **400 chars/tweet** - Hard limit per tweet
+- ✅ **Paper link in first + last tweet only** - Clean content tweets without URLs
+- ✅ **~10-15 tweets/thread** - Manageable size
 - ✅ **Content-aware hooks** - Paper name + key concepts extracted automatically
 - ✅ **Strategic emojis** - 🤖 models, ⚠️ errors, 🎯 accuracy
 - ✅ **Strong CTAs** - "RT if you learned something"
-- ✅ **Image generation** - Optional title cards (not used in automation)
+- ✅ **Message splitting** - Auto-splits Telegram messages over 4096 chars
 
 ## Implementation Details
 
@@ -45,11 +46,11 @@ The user can say:
 - **3:00/4:00/5:00 PM** - Review uploads to Telegram
 - **3:05/4:05/5:05 PM** - Twitter thread auto-generates and posts to Telegram
 
-### Thread Format (500 chars/tweet)
+### Thread Format (400 chars/tweet)
 
 **Example thread structure:**
 ```
-Tweet 1 (Hook):
+Tweet 1 (Hook + paper link):
 (1/11) 🧠 A MODEL OF ERRORS IN TRANSFORMERS 🧵
 📄 Review 577 Hebrew title
 🇮🇱 Full Hebrew review below ⬇️
@@ -63,10 +64,10 @@ Tweet 2 (Intro):
 ➡️ KeyConcept3
 בואו נצלול פנימה 🏊‍♂️
 
-Tweets 3-10 (Content with emojis):
-(3/11) 📊 [Full paragraph content - up to 500 chars]
+Tweets 3-10 (Content — NO URLs):
+(3/11) 📊 [Full paragraph content - up to 400 chars, no paper links]
 
-Tweet 11 (CTA):
+Tweet 11 (CTA + paper link):
 (11/11) 🎓 רוצים לקרוא את המחקר המלא?
 📄 Paper: https://arxiv.org/abs/...
 💬 מה דעתכם? כתבו בתגובות!
@@ -85,8 +86,9 @@ python3 .repo-tools/scripts/twitter_thread_builder.py --review 577 --clickbait
 ```
 
 **Expected output:**
-- Thread built: 10-12 tweets
-- All tweets under 500 characters
+- Thread built: 10-15 tweets
+- All tweets under 400 characters
+- Paper link in first and last tweet only
 - Formatted output ready to copy
 
 ### 2. Post Thread to Telegram
@@ -168,12 +170,12 @@ OR use Twitter's thread composer (faster):
 4. Manual run: `python3 .repo-tools/scripts/twitter_thread_auto_poster.py --review XXX`
 
 ### Thread Too Long
-**Symptom:** Thread has >15 tweets
+**Symptom:** Thread has >20 tweets
 **Cause:** Review is very long
 **Solution:**
 - This is normal for comprehensive reviews
 - Consider summarizing key points manually
-- Current limit: 500 chars/tweet (optimized for Premium)
+- Current limit: 400 chars/tweet
 
 ### Telegram Posting Failed
 **Symptom:** Log shows "Failed to post"
@@ -194,20 +196,18 @@ OR use Twitter's thread composer (faster):
 ## Configuration
 
 ### Tweet Length
-**Default:** 500 characters (optimized for Twitter Premium)
+**Default:** 400 characters (hard limit, content split at 380 to leave room for numbering/emojis)
 
 **To change:**
 Edit `.repo-tools/scripts/twitter_thread_builder.py`:
 ```python
-# Line ~163
-def split_into_tweets(text: str, max_chars: int = 500):  # Change 500 to desired length
+def split_into_tweets(text: str, max_chars: int = 380):  # Change 380 to desired length
 ```
 
 **Recommended values:**
 - 270 chars - Standard Twitter (no Premium)
-- 500 chars - Premium sweet spot (current) ✅
+- 400 chars - Current setting ✅
 - 800 chars - Longer tweets, fewer in thread
-- 4000 chars - Max Premium (not recommended, kills engagement)
 
 ### Content-Aware Hooks
 **Location:** `.repo-tools/scripts/twitter_thread_builder.py`
@@ -245,7 +245,7 @@ python3 .repo-tools/scripts/twitter_thread_auto_poster.py --review 577 --force
 
 ✅ **Automatic generation** - Runs 5 min after Telegram upload
 ✅ **Content-aware hooks** - Paper name + key concepts extracted automatically
-✅ **Premium optimized** - 500 chars/tweet sweet spot
+✅ **400 chars/tweet** - Paper link in first + last tweet only
 ✅ **Easy to post** - Copy/paste from Telegram to Twitter
 ✅ **No working code touched** - Completely separate system
 ✅ **Manual control** - User chooses when to post to Twitter
@@ -257,8 +257,8 @@ python3 .repo-tools/scripts/twitter_thread_auto_poster.py --review 577 --force
 ✓ Twitter thread generated for Review_{num}!
 
 Thread posted to Telegram (Hebrew channel):
-  📊 11 tweets total
-  📝 500 chars max per tweet
+  📊 ~12 tweets total
+  📝 400 chars max per tweet
   🔥 Clickbait-optimized
 
 Ready to copy/paste to Twitter!
@@ -301,7 +301,7 @@ grep "success" .repo-tools/logs/twitter_threads_posted.log | wc -l
 
 - System is completely independent of existing automation
 - NO modifications were made to telegram_uploader.py, discord_poster.py, or daily_review_processor.py
-- User has Twitter Premium (4000 char limit) but uses 500 chars for optimal engagement
+- User has Twitter Premium (4000 char limit) but uses 400 chars for optimal engagement
 - Threads are posted to Telegram for manual Twitter posting (not automated to Twitter)
 - Free tier alternative available (no Twitter API needed)
 
