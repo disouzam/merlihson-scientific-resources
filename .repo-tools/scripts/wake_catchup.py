@@ -1,0 +1,269 @@
+#!/usr/bin/env python3
+"""
+Wake Catch-Up Script — runs on login/wake via launchd (RunAtLoad).
+
+Checks if today's review pipeline steps completed. For any that didn't,
+calls the appropriate script. The scripts' own 5-layer dedup is the safety net.
+
+Steps checked (in dependency order):
+  1. daily_review_processor — DOCX in ReviewsInbox → repo
+  2. telegram_uploader — upload to Telegram channels
+  3. twitter_thread_auto_poster — generate Twitter threads (needs telegram done)
+  4. discord_poster — post to Discord (needs telegram done)
+"""
+
+import sys
+import re
+import json
+import subprocess
+import logging
+import time
+from pathlib import Path
+from datetime import datetime, date
+
+# Paths
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+SCRIPTS_DIR = REPO_ROOT / ".repo-tools" / "scripts"
+LOG_DIR = REPO_ROOT / ".repo-tools" / "logs"
+DOWNLOADS_DIR = Path.home() / "ReviewsInbox"
+DOCX_DIR = REPO_ROOT / "mike-paper-reviews-all" / "split-reviews-docx"
+
+# Ledger paths
+TELEGRAM_LEDGER = LOG_DIR / "telegram_upload_ledger.json"
+TWITTER_LEDGER = LOG_DIR / "twitter_upload_ledger.json"
+DISCORD_LEDGER = LOG_DIR / "discord_upload_ledger.json"
+
+# Cooldown
+COOLDOWN_FILE = LOG_DIR / "wake_catchup_last_run"
+COOLDOWN_SECONDS = 600  # 10 minutes
+
+# Python interpreters (must match launchd plists)
+SYSTEM_PYTHON = "/usr/bin/python3"
+VENV_PYTHON = str(REPO_ROOT / ".repo-tools" / ".venv" / "bin" / "python3")
+
+# Setup logging
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+log_file = LOG_DIR / "wake_catchup.log"
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+
+def check_cooldown() -> bool:
+    """Return True if we should skip (last run too recent)."""
+    if not COOLDOWN_FILE.exists():
+        return False
+    try:
+        last_run = float(COOLDOWN_FILE.read_text().strip())
+        elapsed = time.time() - last_run
+        if elapsed < COOLDOWN_SECONDS:
+            logger.info(f"Cooldown active — last run {elapsed:.0f}s ago (limit {COOLDOWN_SECONDS}s). Skipping.")
+            return True
+    except (ValueError, OSError):
+        pass
+    return False
+
+
+def update_cooldown():
+    """Record current time as last run."""
+    COOLDOWN_FILE.write_text(str(time.time()))
+
+
+def git_pull():
+    """Pull latest to sync ledgers from other machines."""
+    logger.info("Pulling latest from remote...")
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(REPO_ROOT), "pull", "--rebase", "--autostash"],
+            capture_output=True, text=True, timeout=60
+        )
+        if result.returncode == 0:
+            logger.info(f"Git pull OK: {result.stdout.strip()}")
+        else:
+            logger.warning(f"Git pull issue (rc={result.returncode}): {result.stderr.strip()}")
+    except subprocess.TimeoutExpired:
+        logger.warning("Git pull timed out after 60s")
+    except Exception as e:
+        logger.error(f"Git pull failed: {e}")
+
+
+def find_inbox_review_numbers() -> set:
+    """Find all Review_NNN.docx numbers in ReviewsInbox."""
+    if not DOWNLOADS_DIR.exists():
+        logger.warning(f"ReviewsInbox not found: {DOWNLOADS_DIR}")
+        return set()
+    numbers = set()
+    for f in DOWNLOADS_DIR.glob("Review_*.docx"):
+        # Skip English files
+        if "_english" in f.name.lower() or "_English" in f.name:
+            continue
+        match = re.search(r'Review_(\d+)\.docx', f.name)
+        if match:
+            numbers.add(int(match.group(1)))
+    return numbers
+
+
+def find_repo_review_numbers() -> set:
+    """Find all Review_NNN.docx numbers already in repo."""
+    if not DOCX_DIR.exists():
+        return set()
+    numbers = set()
+    for f in DOCX_DIR.glob("Review_*.docx"):
+        match = re.search(r'Review_(\d+)\.docx', f.name)
+        if match:
+            numbers.add(int(match.group(1)))
+    return numbers
+
+
+def load_ledger(path: Path) -> dict:
+    """Load a JSON ledger file."""
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError) as e:
+        logger.error(f"Failed to read ledger {path.name}: {e}")
+        return {}
+
+
+def is_in_telegram_ledger(review_num: int) -> bool:
+    """Check if review is in telegram ledger (both Hebrew and English)."""
+    ledger = load_ledger(TELEGRAM_LEDGER)
+    hebrew = set(ledger.get("hebrew", []))
+    english = set(ledger.get("english", []))
+    return review_num in hebrew and review_num in english
+
+
+def is_in_ledger(review_num: int, ledger_path: Path) -> bool:
+    """Check if review is in a simple {posted: [...]} ledger."""
+    ledger = load_ledger(ledger_path)
+    return review_num in set(ledger.get("posted", []))
+
+
+def run_script(python: str, script: Path, label: str) -> bool:
+    """Run a script via subprocess. Returns True on success."""
+    logger.info(f"Running {label}...")
+    try:
+        result = subprocess.run(
+            [python, str(script)],
+            capture_output=True, text=True, timeout=300,
+            cwd=str(REPO_ROOT)
+        )
+        if result.returncode == 0:
+            logger.info(f"{label} completed successfully (rc=0)")
+            return True
+        else:
+            logger.warning(f"{label} exited with rc={result.returncode}")
+            if result.stderr:
+                logger.warning(f"{label} stderr: {result.stderr[:500]}")
+            return False
+    except subprocess.TimeoutExpired:
+        logger.error(f"{label} timed out after 300s")
+        return False
+    except Exception as e:
+        logger.error(f"{label} failed: {e}")
+        return False
+
+
+def main():
+    logger.info("=" * 60)
+    logger.info("Wake catch-up script starting")
+    logger.info(f"Date: {date.today()}")
+
+    # Cooldown check
+    if check_cooldown():
+        return
+
+    update_cooldown()
+
+    # Sync ledgers
+    git_pull()
+
+    # Find what's in the inbox vs what's already processed
+    inbox_nums = find_inbox_review_numbers()
+    repo_nums = find_repo_review_numbers()
+
+    if not inbox_nums:
+        logger.info("No reviews found in ReviewsInbox. Nothing to do.")
+        return
+
+    # Reviews in inbox but not yet in repo = need processing
+    unprocessed = inbox_nums - repo_nums
+    # Reviews already in repo = check publishing steps
+    processed = inbox_nums & repo_nums
+
+    # Only care about recent reviews (highest numbers likely today's)
+    # We check all unprocessed + the latest few processed ones
+    all_to_check = unprocessed | {max(processed)} if processed else unprocessed
+    if not all_to_check:
+        logger.info("No reviews to check. Nothing to do.")
+        return
+
+    logger.info(f"Inbox reviews: {sorted(inbox_nums)}")
+    logger.info(f"Unprocessed (not in repo): {sorted(unprocessed)}")
+    logger.info(f"Checking publishing for: {sorted(all_to_check)}")
+
+    ran_something = False
+
+    # Step 1: Daily review processor (if any DOCX not yet in repo)
+    if unprocessed:
+        logger.info(f"Step 1: {len(unprocessed)} review(s) need processing: {sorted(unprocessed)}")
+        run_script(SYSTEM_PYTHON, SCRIPTS_DIR / "daily_review_processor.py", "daily_review_processor")
+        ran_something = True
+        # Re-pull after processor commits
+        git_pull()
+    else:
+        logger.info("Step 1: All inbox reviews already processed. Skipping processor.")
+
+    # Step 2: Telegram uploader
+    # Check the latest review number (most likely today's)
+    latest_review = max(all_to_check)
+    if not is_in_telegram_ledger(latest_review):
+        logger.info(f"Step 2: Review {latest_review} not in telegram ledger. Running uploader.")
+        run_script(SYSTEM_PYTHON, SCRIPTS_DIR / "telegram_uploader.py", "telegram_uploader")
+        ran_something = True
+        # Re-pull after uploader commits ledger
+        git_pull()
+    else:
+        logger.info(f"Step 2: Review {latest_review} already in telegram ledger. Skipping.")
+
+    # Re-check telegram status after potential upload
+    telegram_done = is_in_telegram_ledger(latest_review)
+
+    # Step 3 & 4: Twitter + Discord (both depend on telegram being done)
+    if not telegram_done:
+        logger.info("Steps 3-4: Telegram not done yet — skipping twitter and discord.")
+    else:
+        # Twitter
+        if not is_in_ledger(latest_review, TWITTER_LEDGER):
+            logger.info(f"Step 3: Review {latest_review} not in twitter ledger. Running poster.")
+            run_script(VENV_PYTHON, SCRIPTS_DIR / "twitter_thread_auto_poster.py", "twitter_thread_auto_poster")
+            ran_something = True
+        else:
+            logger.info(f"Step 3: Review {latest_review} already in twitter ledger. Skipping.")
+
+        # Discord
+        if not is_in_ledger(latest_review, DISCORD_LEDGER):
+            logger.info(f"Step 4: Review {latest_review} not in discord ledger. Running poster.")
+            run_script(VENV_PYTHON, SCRIPTS_DIR / "discord_poster.py", "discord_poster")
+            ran_something = True
+        else:
+            logger.info(f"Step 4: Review {latest_review} already in discord ledger. Skipping.")
+
+    if ran_something:
+        logger.info("Wake catch-up completed — ran one or more scripts.")
+    else:
+        logger.info("Wake catch-up completed — everything already done, nothing to run.")
+
+    logger.info("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
