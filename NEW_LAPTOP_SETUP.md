@@ -120,7 +120,7 @@ Want reviews automatically uploaded to your Telegram channels at 3:00 PM?
 
 ## 💬 Optional: Discord Channel Automation
 
-Want reviews automatically posted to your Discord server at 7:00 PM?
+Want reviews automatically posted to your Discord server (every 30 min from 4:00-7:00 PM)?
 
 ### Quick Setup (20 minutes):
 
@@ -150,9 +150,9 @@ Want reviews automatically posted to your Discord server at 7:00 PM?
 **Timeline:**
 - 5:00 AM → Reviews processed and pushed to GitHub
 - 8:30 AM–6:30 PM (hourly, once/day) → Paper recommender (Mon: 20 papers/3 days, Tue-Fri: 10/1 day, skip weekends)
-- 3/4/5 PM → Reviews uploaded to Telegram channels
-- 3:05/4:05/5:05 PM → Twitter thread generated
-- 7:00 PM → Discord post
+- 11:00 AM-3:00 PM (every 30 min) → Reviews uploaded to Telegram channels
+- 11:35 AM-3:35 PM (every 30 min) → Twitter thread generated
+- 4:00-7:00 PM (every 30 min) → Discord post
 
 ---
 
@@ -428,7 +428,7 @@ If configured, uploads reviews to Telegram channels:
 
 **Setup:** See [.repo-tools/docs/TELEGRAM_SETUP.md](.repo-tools/docs/TELEGRAM_SETUP.md)
 
-### Discord Posting Job (7:00 PM) - Optional
+### Discord Posting Job (4:00-7:00 PM, every 30 min) - Optional
 If configured, posts reviews to Discord in daily threads:
 - ✅ Creates daily thread ("Daily Paper Review: Feb 14, 2026")
 - ✅ Posts with all links: Telegram (Hebrew + English), Substack, GitHub

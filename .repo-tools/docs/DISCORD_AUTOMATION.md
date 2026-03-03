@@ -2,7 +2,7 @@
 
 ## Overview
 
-Automated system that posts paper review links to Discord in organized daily threads at 7:00 PM.
+Automated system that posts paper review links to Discord in organized daily threads (every 30 min from 4:00-7:00 PM until success).
 
 **NEW: Thread-Based Organization**
 - Creates daily thread: "Daily Paper Review: {date}"
@@ -35,27 +35,17 @@ Each Discord post includes:
 9:00 AM   → Process reviews (Backup #3)
             Final check before Telegram
 
-3:00 PM   → Upload to Telegram channels (Hebrew + English) (Primary)
-            ✨ Message IDs automatically captured
-            Saved to: telegram_message_ids.json
+11:00 AM-3:00 PM (every 30 min) → Upload to Telegram channels (Hebrew + English)
+                                   ✨ Message IDs automatically captured
+                                   Saved to: telegram_message_ids.json
+                                   Stops once succeeded (dedup protection)
 
-3:05 PM   → Twitter Thread Generation (Primary)
-            Generate thread content
-            Post to Telegram for manual Twitter posting
+11:35 AM-3:35 PM (every 30 min) → Twitter Thread Generation
+                                   Generate thread content
+                                   Post to Telegram for manual Twitter posting
+                                   Stops once succeeded (dedup protection)
 
-4:00 PM   → Upload to Telegram (Backup #1)
-            Same process, catches any missed reviews
-
-4:05 PM   → Twitter Thread Generation (Backup #1)
-            Same process
-
-5:00 PM   → Upload to Telegram (Backup #2)
-            Same process
-
-5:05 PM   → Twitter Thread Generation (Backup #2)
-            Same process
-
-7:00 PM   → Post to Discord 🎯
+4:00-7:00 PM (every 30 min)     → Post to Discord 🎯
             ├─ Load Telegram links from JSON
             ├─ Scrape Substack for latest post
             ├─ Create daily thread "Daily Paper Review: {date}"
@@ -91,7 +81,7 @@ Each Discord post includes:
 
 ### 4. **Scheduled Job**
 - LaunchAgent: `com.user.discord-review-poster`
-- Runs at 7:00 PM daily
+- Runs every 30 min from 4:00 PM to 7:00 PM daily (stops once succeeded)
 - Location: `~/Library/LaunchAgents/`
 
 ---
@@ -328,7 +318,7 @@ hebrew_channel:
 **Reason**: Review not yet published to Substack
 
 **Solutions:**
-1. Wait for Substack to be published, then run again at 7:00 PM
+1. Wait for Substack to be published — it will automatically retry every 30 min until 7:00 PM
 2. Manually post after publishing to Substack:
    ```bash
    python3 .repo-tools/scripts/discord_poster.py --review 574

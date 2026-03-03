@@ -2,7 +2,7 @@
 
 ## Overview
 
-Fully automated system that posts paper review links to Discord daily at 7:00 PM.
+Fully automated system that posts paper review links to Discord every 30 min from 4:00-7:00 PM daily (stops once succeeded).
 
 **Implementation Date:** February 7, 2026
 **Major Update:** February 12, 2026 (Thread-based posting with Discord Bot API)
@@ -107,7 +107,7 @@ Message inside thread:
 **Status:** ✅ Complete and Active
 
 **Schedule:**
-- **7:00 PM** - Primary posting (after Telegram uploads at 3:00/4:00/5:00 PM)
+- **Every 30 min from 4:00-7:00 PM** (after Telegram uploads at 11:00 AM-3:00 PM)
 
 **Files Created:**
 - `.repo-tools/scripts/com.user.discord-review-poster.plist.template`
@@ -189,29 +189,17 @@ Message inside thread:
 9:00 AM   → Process reviews from ReviewsInbox (Backup #3)
             - Same process, final check before Telegram
 
-3:00 PM   → Upload to Telegram (Primary)
-            - Hebrew channel: review_testing_heb
-            - English channel: review_testing_eng
+11:00 AM-3:00 PM (every 30 min) → Upload to Telegram (stops once succeeded)
+            - Hebrew channel: MathyAIwithMike
+            - English channel: science_and_ai_with_mike_english
             - Capture message IDs
             - Save to telegram_message_ids.json
 
-3:05 PM   → Twitter Thread Generation (Primary)
+11:35 AM-3:35 PM (every 30 min) → Twitter Thread Generation (stops once succeeded)
             - Generate thread content
             - Post to Telegram for manual Twitter posting
 
-4:00 PM   → Upload to Telegram (Backup #1)
-            - Same process, catches any missed reviews
-
-4:05 PM   → Twitter Thread Generation (Backup #1)
-            - Same process
-
-5:00 PM   → Upload to Telegram (Backup #2)
-            - Same process
-
-5:05 PM   → Twitter Thread Generation (Backup #2)
-            - Same process
-
-7:00 PM   → Discord Post
+4:00-7:00 PM (every 30 min) → Discord Post (stops once succeeded)
             ├─ Load Telegram links from JSON
             ├─ Scrape Substack for latest post
             ├─ Validate all 5 links exist
@@ -309,7 +297,7 @@ english_channel:
 - [x] Deduplication works (no duplicate posts)
 - [x] Public Telegram links work for everyone
 - [x] Scheduled job installed and active
-- [x] Schedule times correct (7:00 PM)
+- [x] Schedule times correct (4:00-7:00 PM every 30 min)
 - [x] Only reviews from last 24 hours posted
 - [x] English review spacing issue fixed
 
@@ -324,8 +312,8 @@ english_channel:
 - ✅ Documentation complete
 
 ### Next Automatic Run
-- **Today at 7:00 PM** - Will post any reviews from last 24 hours
-- **Tomorrow at 7:00 PM** - Will post new reviews after Telegram uploads
+- **Today every 30 min from 4:00-7:00 PM** - Will post any reviews from last 24 hours
+- **Tomorrow every 30 min from 4:00-7:00 PM** - Will post new reviews after Telegram uploads
 
 ### Manual Commands
 
@@ -363,7 +351,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 1. ✅ Telegram message IDs automatically captured
 2. ✅ Substack posts automatically found
 3. ✅ Discord posts formatted with all 3 links
-4. ✅ Runs automatically daily (7:00 PM)
+4. ✅ Runs automatically every 30 min 4:00-7:00 PM
 5. ✅ No duplicate posts
 6. ✅ Only recent reviews (last 24 hours)
 7. ✅ All links validated before posting
@@ -423,8 +411,8 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 
 **Healthy system indicators:**
 - discord_poster_error.log is empty or has no recent errors
-- discord_posts.log has daily entries at 7:00 PM
-- telegram_message_ids.json gets new entries at 3:00/4:00/5:00 PM daily
+- discord_posts.log has daily entries every 30 min from 4:00-7:00 PM
+- telegram_message_ids.json gets new entries during 11:00 AM-3:00 PM window
 
 ---
 
@@ -437,7 +425,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 **Tests Passed:** 100%
 **Status:** ✅ **PRODUCTION READY**
 
-The Discord automation system is now fully operational and will post paper reviews automatically to your Discord community every day at 7:00 PM.
+The Discord automation system is now fully operational and will post paper reviews automatically to your Discord community every day every 30 min from 4:00-7:00 PM.
 
 **No further action required** - the system is autonomous! 🎉
 

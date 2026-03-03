@@ -12,9 +12,9 @@ A curated knowledge base of 584+ AI/ML paper reviews (Hebrew primary, English se
 1. New DOCX reviews land in `~/ReviewsInbox/`
 2. `daily_review_processor.py` runs via launchd (5/6/8/9 AM) — copies DOCX, converts to markdown, commits & pushes
 3. Git pre-commit hook runs `update_metadata.py` — extracts titles/links from Hebrew markdown, updates 4 metadata files + 3 READMEs (main, mike-paper-reviews-all, presentations)
-4. `telegram_uploader.py` runs at 3:00/4:00/5:00 PM — uploads to Telegram channels
-5. `twitter_thread_auto_poster.py` runs at 3:05/4:05/5:05 PM — generates Twitter threads, posts to Telegram for manual Twitter posting
-6. `discord_poster.py` runs at 7:00 PM — creates daily threads in Discord
+4. `telegram_uploader.py` runs every 30 min from 11:00 AM to 3:00 PM — uploads to Telegram channels (stops once succeeded)
+5. `twitter_thread_auto_poster.py` runs every 30 min from 11:35 AM to 3:35 PM — generates Twitter threads, posts to Telegram (stops once succeeded)
+6. `discord_poster.py` runs every 30 min from 4:00 PM to 7:00 PM — creates daily threads in Discord (stops once succeeded)
 
 ### Review File Conventions
 - Naming: `Review_NNN.md` / `Review_NNN.docx` (zero-padded 3 digits)

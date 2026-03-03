@@ -43,8 +43,8 @@ The user can say:
 - **Logs:** `.repo-tools/logs/twitter_threads_posted.log`
 
 ### Automated Schedule
-- **3:00/4:00/5:00 PM** - Review uploads to Telegram
-- **3:05/4:05/5:05 PM** - Twitter thread auto-generates and posts to Telegram
+- **Every 30 min from 11:00 AM to 3:00 PM** - Review uploads to Telegram (stops once succeeded)
+- **Every 30 min from 11:35 AM to 3:35 PM** - Twitter thread auto-generates and posts to Telegram (stops once succeeded)
 
 ### Thread Format (400 chars/tweet)
 
@@ -119,7 +119,7 @@ launchctl list | grep twitter-thread
 ```
 
 **Response:**
-- If active: "✓ Twitter thread job is active. Next run: 3:05 PM daily"
+- If active: "✓ Twitter thread job is active. Runs every 30 min from 11:35 AM-3:35 PM daily"
 - If not active: "⚠️ Job not loaded. Reinstall with: launchctl load ~/Library/LaunchAgents/com.user.twitter-thread-poster.plist"
 
 ### 5. View Logs
@@ -153,9 +153,9 @@ OR use Twitter's thread composer (faster):
 
 ```
 5:00 AM      → Process reviews from ReviewsInbox ✅
-3/4/5 PM     → Upload to Telegram (Hebrew + English) ✅
-3:05/4:05/5:05 PM → Generate Twitter thread → Post to Telegram ✅
-7:00 PM      → Post to Discord threads ✅
+11:00 AM-3:00 PM (every 30 min) → Upload to Telegram (Hebrew + English) ✅
+11:35 AM-3:35 PM (every 30 min) → Generate Twitter thread → Post to Telegram ✅
+4:00-7:00 PM (every 30 min)     → Post to Discord threads ✅
 ```
 
 ## Error Scenarios & Solutions

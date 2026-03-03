@@ -52,7 +52,7 @@ The user can say:
 ✅ **Error handling** - Logs failures, retries at next scheduled time
 
 ### Automated Schedule
-- **7:00 PM** - Daily run (after Telegram uploads at 3/4/5 PM)
+- **Every 30 min from 4:00 PM to 7:00 PM** - Retries until it succeeds (after Telegram uploads at 11:00 AM-3:00 PM)
 
 ### Thread & Message Format
 
@@ -141,7 +141,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-create-thread
 ```
 
 **Response:**
-- If active: "✓ Discord posting job is active. Next run: 7:00 PM daily"
+- If active: "✓ Discord posting job is active. Runs every 30 min from 4:00-7:00 PM daily"
 - If not active: "⚠️ Job not loaded. Run: `.repo-tools/scripts/schedule_discord_job.sh install`"
 
 ### 7. View Recent Posts
@@ -291,8 +291,8 @@ Note: The system prevents duplicate posts automatically (checks both local log a
  6:00 AM → Reviews processed from ReviewsInbox (Backup #1)
  8:00 AM → Reviews processed from ReviewsInbox (Backup #2)
  9:00 AM → Reviews processed from ReviewsInbox (Backup #3)
- 3/4/5 PM → Telegram upload (captures message IDs, commits+pushes to git)
- 7:00 PM  → Discord Post (pulls git first, reads Telegram links) ✅
+ 11:00 AM-3:00 PM (every 30 min) → Telegram upload (captures message IDs, commits+pushes to git)
+ 4:00-7:00 PM (every 30 min)    → Discord Post (pulls git first, reads Telegram links) ✅
 ```
 
 ## Configuration
