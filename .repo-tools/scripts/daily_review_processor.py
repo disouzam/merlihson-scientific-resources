@@ -15,6 +15,7 @@ Scheduled: Runs daily at 5:00 AM via launchd
 
 import sys
 import re
+import time
 import subprocess
 import shutil
 import logging
@@ -332,22 +333,31 @@ def commit_and_push(processed_reviews: List[int], dry_run: bool = False) -> bool
                     logger.info("  Files are committed locally. You can manually push later.")
                     return False
 
-        # Push to remote
+        # Push to remote (retry up to 3 times)
         logger.info("Pushing to GitHub...")
-        result = subprocess.run(
-            ['git', '-C', str(REPO_ROOT), 'push'],
-            capture_output=True,
-            text=True,
-            timeout=60
-        )
+        for attempt in range(1, 4):
+            result = subprocess.run(
+                ['git', '-C', str(REPO_ROOT), 'push'],
+                capture_output=True,
+                text=True,
+                timeout=60
+            )
 
-        if result.returncode == 0:
-            logger.info("✓ Successfully pushed to GitHub")
-            return True
-        else:
-            logger.error(f"✗ Push failed: {result.stderr}")
-            logger.info("  Files are committed locally. You can manually push later.")
-            return False
+            if result.returncode == 0:
+                logger.info("✓ Successfully pushed to GitHub")
+                return True
+            else:
+                logger.warning(f"Push attempt {attempt}/3 failed: {result.stderr}")
+                if attempt < 3:
+                    time.sleep(attempt * 5)
+                    subprocess.run(
+                        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                        capture_output=True, text=True, timeout=60
+                    )
+                else:
+                    logger.error(f"✗ Push failed after 3 attempts: {result.stderr}")
+                    logger.info("  Files are committed locally. You can manually push later.")
+                    return False
 
     except subprocess.TimeoutExpired:
         logger.error("✗ Push timed out (network issue?)")
@@ -419,6 +429,16 @@ def main():
 
     # Wait for network (important after wake from sleep)
     wait_for_network(timeout=60)
+
+    # Pull latest before dedup check (critical: prevents two machines processing same review)
+    logger.info("Pulling latest from remote before checking for new reviews...")
+    try:
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+            capture_output=True, text=True, timeout=60
+        )
+    except Exception as e:
+        logger.warning(f"Pre-check git pull failed: {e}")
 
     # Find new reviews
     new_reviews = find_new_reviews()

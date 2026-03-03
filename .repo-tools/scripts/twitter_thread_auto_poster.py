@@ -239,12 +239,22 @@ def update_twitter_ledger(review_num: int):
                        capture_output=True, timeout=15)
         subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
                        capture_output=True, timeout=30)
-        push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
-                                     capture_output=True, text=True, timeout=30)
-        if push_result.returncode == 0:
-            logger.info(f"✓ Twitter ledger pushed (Review_{review_num} locked)")
-        else:
-            logger.warning(f"Twitter ledger push failed: {push_result.stderr.strip()}")
+        # Retry push up to 3 times (critical: prevents duplicate posts across machines)
+        for attempt in range(1, 4):
+            push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
+                                         capture_output=True, text=True, timeout=30)
+            if push_result.returncode == 0:
+                logger.info(f"✓ Twitter ledger pushed (Review_{review_num} locked)")
+                break
+            else:
+                logger.warning(f"Twitter ledger push attempt {attempt}/3 failed: {push_result.stderr.strip()}")
+                if attempt < 3:
+                    time.sleep(attempt * 5)
+                    subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                                   capture_output=True, timeout=30)
+                else:
+                    logger.error(f"CRITICAL: Twitter ledger push failed after 3 attempts for Review_{review_num}. "
+                                 f"Duplicate post possible if another machine runs before manual push.")
     except Exception as e:
         logger.error(f"Error updating Twitter ledger: {e}")
 

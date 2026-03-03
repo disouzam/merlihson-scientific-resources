@@ -407,14 +407,26 @@ def update_upload_ledger(review_num: int, channel_type: str):
             ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
             capture_output=True, timeout=30
         )
-        push_result = subprocess.run(
-            ['git', '-C', str(REPO_ROOT), 'push'],
-            capture_output=True, text=True, timeout=30
-        )
-        if push_result.returncode == 0:
-            logger.info(f"✓ Ledger pushed (Review_{review_num} {channel_type} locked)")
-        else:
-            logger.warning(f"Ledger push failed: {push_result.stderr.strip()}")
+        # Retry push up to 3 times (critical: prevents duplicate posts across machines)
+        for attempt in range(1, 4):
+            push_result = subprocess.run(
+                ['git', '-C', str(REPO_ROOT), 'push'],
+                capture_output=True, text=True, timeout=30
+            )
+            if push_result.returncode == 0:
+                logger.info(f"✓ Ledger pushed (Review_{review_num} {channel_type} locked)")
+                break
+            else:
+                logger.warning(f"Ledger push attempt {attempt}/3 failed: {push_result.stderr.strip()}")
+                if attempt < 3:
+                    time.sleep(attempt * 5)
+                    subprocess.run(
+                        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                        capture_output=True, timeout=30
+                    )
+                else:
+                    logger.error(f"CRITICAL: Ledger push failed after 3 attempts for Review_{review_num} ({channel_type}). "
+                                 f"Duplicate post possible if another machine runs before manual push.")
 
     except Exception as e:
         logger.error(f"Error updating upload ledger: {e}")
@@ -518,12 +530,19 @@ def save_message_id(review_num: int, channel_type: str, message_id: int,
                            capture_output=True, timeout=15)
             subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
                            capture_output=True, timeout=30)
-            push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
-                                         capture_output=True, text=True, timeout=30)
-            if push_result.returncode == 0:
-                logger.info(f"✓ Message IDs pushed (Review_{review_num} {channel_type})")
-            else:
-                logger.warning(f"Message IDs push failed: {push_result.stderr.strip()}")
+            # Retry push up to 3 times
+            for attempt in range(1, 4):
+                push_result = subprocess.run(['git', '-C', str(REPO_ROOT), 'push'],
+                                             capture_output=True, text=True, timeout=30)
+                if push_result.returncode == 0:
+                    logger.info(f"✓ Message IDs pushed (Review_{review_num} {channel_type})")
+                    break
+                else:
+                    logger.warning(f"Message IDs push attempt {attempt}/3 failed: {push_result.stderr.strip()}")
+                    if attempt < 3:
+                        time.sleep(attempt * 5)
+                        subprocess.run(['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                                       capture_output=True, timeout=30)
         except Exception as push_err:
             logger.warning(f"Could not push message IDs: {push_err}")
 
