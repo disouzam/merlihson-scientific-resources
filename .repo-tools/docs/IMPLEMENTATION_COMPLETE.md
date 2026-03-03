@@ -217,6 +217,14 @@ Message inside thread:
             ├─ Commit+push last_run.txt (cross-machine dedup)
             └─ Cost: ~$2/month
 
+On Login   → Wake Catch-Up (safety net for missed steps)
+            ├─ git pull (sync ledgers from other machines)
+            ├─ Check: was today's review processed? → run daily_review_processor if not
+            ├─ Check: was Telegram upload done? → run telegram_uploader if not
+            ├─ Check: was Twitter thread posted? → run twitter_thread_auto_poster if not
+            ├─ Check: was Discord thread posted? → run discord_poster if not
+            └─ 10-min cooldown between runs
+
 ```
 
 ---

@@ -485,10 +485,12 @@ Long reviews are automatically split at paragraph boundaries. This is normal for
 
 ### Duplicate Detection:
 
-**Three-layer safety (per-channel):**
+**Multi-layer safety (per-channel):**
 - **Layer 1:** Local log file (fast, machine-local)
 - **Layer 2:** Git-tracked ledger for the specific channel (cross-machine, authoritative)
 - **Layer 3:** Telegram API getUpdates (best-effort fallback for uploads not yet in ledger)
+- **Layer 4:** Last-second git pull + ledger re-check right before sending
+- **Layer 5:** Push retry 3x with backoff (5s, 10s) after sending — ensures ledger is locked on remote
 
 Each layer checks only the relevant channel (Hebrew or English). If any layer detects a duplicate, upload is skipped.
 

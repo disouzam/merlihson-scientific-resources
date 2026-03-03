@@ -83,7 +83,7 @@ Uploads new reviews to Telegram test channels.
 - Uploads English reviews to English channel
 - Splits long messages (max 4096 chars per Telegram message)
 - Uses HTML parse mode (handles scientific notation, parentheses)
-- Tracks uploaded reviews to avoid duplicates (git-tracked upload ledger + deterministic delay slots per machine_id + last-second re-check + local log, safe across multiple machines)
+- Tracks uploaded reviews to avoid duplicates (git-tracked upload ledger + deterministic delay slots per machine_id + last-second re-check + push retry 3x with backoff + local log, safe across multiple machines)
 
 **Usage:**
 
@@ -114,7 +114,7 @@ Posts paper reviews to Discord channel in organized daily threads.
   - Hebrew GitHub link
   - English GitHub link
 - Validates all links exist before posting
-- Tracks posted reviews to avoid duplicates (git-tracked ledger + delay slots + Discord API + local log, safe across multiple machines)
+- Tracks posted reviews to avoid duplicates (git-tracked ledger + delay slots + Discord API + push retry 3x with backoff + local log, safe across multiple machines)
 - Only posts reviews from last 24 hours
 
 **Usage:**
@@ -184,6 +184,38 @@ python3 -m paper_recommender.recommender --days 2
 - Copy `config.yaml.template` → `config.yaml` (gitignored)
 - Set Anthropic API key (or `ANTHROPIC_API_KEY` env var)
 - Telegram bot token and channel ID pre-filled for review_testing_eng
+
+### `wake_catchup.py`
+
+Safety net that runs on login (via launchd `RunAtLoad`) and catches up any missed pipeline steps.
+
+**What it does:**
+- Pulls latest git to sync ledgers from other machines
+- Checks if today's reviews were processed (daily_review_processor)
+- Checks if Telegram upload happened (telegram_uploader)
+- Checks if Twitter thread was posted (twitter_thread_auto_poster)
+- Checks if Discord thread was posted (discord_poster)
+- Runs any missing steps in dependency order
+- 10-minute cooldown between runs to avoid spam
+
+**Usage:**
+
+```bash
+# Run manually
+python3 wake_catchup.py
+
+# Check launchd job
+launchctl list | grep wake-catchup
+```
+
+**Scheduling:**
+- Runs on login via launchd `RunAtLoad` (`com.user.wake-catchup.plist`)
+- Does NOT trigger on wake-from-sleep (only login/restart)
+- Cooldown: skips if last run was <10 minutes ago
+
+**Dedup safety:**
+- Only checks ledger status — the scripts it calls have their own full dedup chain
+- Git pull before every check ensures cross-machine awareness
 
 ### `schedule_daily_job.sh`
 
@@ -275,7 +307,7 @@ cd .repo-tools/scripts
 python3 -m paper_recommender.recommender --dry-run
 
 # Check all launchd jobs are loaded
-launchctl list | grep "daily-review\|telegram\|discord\|paper-recommender"
+launchctl list | grep "daily-review\|telegram\|discord\|paper-recommender\|wake-catchup"
 ```
 
 ## Logs
@@ -446,7 +478,8 @@ The script is case-insensitive for the `_english` part.
    - Pull remote changes first (`git pull --rebase --autostash`) to avoid conflicts with other machines
    - Push commit to GitHub
    - If rebase conflicts occur, falls back to merge pull
-   - If push still fails (network issue), files remain committed locally
+   - Push retries up to 3 times with backoff (5s, 10s) and pull --rebase between attempts
+   - If all retries fail, files remain committed locally
 
 ### Deduplication Logic
 
@@ -479,7 +512,7 @@ The script handles various error scenarios:
 
 - **No new reviews:** Logs and exits gracefully
 - **DOCX conversion fails:** Logs error, continues with next file
-- **Git push fails:** Pulls with rebase first, retries; if still fails, leaves files committed locally for manual push
+- **Git push fails:** Pulls with rebase first, retries up to 3 times with backoff; if still fails, leaves files committed locally for manual push
 - **Missing English file:** Processes Hebrew only, logs info message
 - **Network timeout:** Logs error, leaves files committed locally
 

@@ -151,6 +151,14 @@ Manages Discord posting automation, Telegram link handling, and Substack scrapin
 - Configuration changes → "Implementation Details" and "Configuration"
 - Error handling → "Error Scenarios & Solutions"
 
+### wake-catchup.md
+Safety net that runs on login (launchd `RunAtLoad`) and catches up any missed pipeline steps. Checks all ledgers, runs any missing scripts in dependency order.
+
+**Key sections to update when:**
+- Pipeline steps change → "Pipeline Steps Checked" section
+- Ledger files change → update ledger path constants in `wake_catchup.py`
+- New publishing scripts added → add step to `wake_catchup.py` main() and skill doc
+
 ### paper-recommender (no skill file — runs autonomously)
 Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relevance to Mike's interests using Claude Haiku. Monday: 3-day lookback, top 20 papers. Tue–Fri: 1-day lookback, top 10. Sat–Sun: skip. Cross-machine dedup via git-tracked `last_run.txt`.
 

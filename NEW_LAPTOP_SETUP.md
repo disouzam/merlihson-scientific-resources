@@ -153,6 +153,7 @@ Want reviews automatically posted to your Discord server (every 30 min from 4:00
 - 11:00 AM-3:00 PM (every 30 min) → Reviews uploaded to Telegram channels
 - 11:35 AM-3:35 PM (every 30 min) → Twitter thread generated
 - 4:00-7:00 PM (every 30 min) → Discord post
+- On login → Wake catch-up (runs any missed steps)
 
 ---
 
@@ -377,7 +378,8 @@ bash -n .git/hooks/pre-commit
     ├── com.user.daily-review-processor.plist   # Daily processing
     ├── com.user.telegram-review-uploader.plist # Telegram upload
     ├── com.user.discord-review-poster.plist    # Discord posting
-    └── com.user.paper-recommender.plist        # Paper recommender (on wake)
+    ├── com.user.paper-recommender.plist        # Paper recommender (on wake)
+    └── com.user.wake-catchup.plist              # Wake catch-up (on login)
 ```
 
 ---
@@ -463,6 +465,64 @@ launchctl load ~/Library/LaunchAgents/com.user.paper-recommender.plist
 cd .repo-tools/scripts
 python3 -m paper_recommender.recommender --dry-run
 ```
+
+---
+
+## 🔄 Optional: Wake Catch-Up Automation
+
+Safety net that runs on every login and catches up any missed pipeline steps.
+
+### Setup:
+
+```bash
+# Install launchd job
+launchctl load ~/Library/LaunchAgents/com.user.wake-catchup.plist
+
+# Verify
+launchctl list | grep wake-catchup
+```
+
+If the plist doesn't exist yet, create it (update path to match your repo location):
+
+```bash
+cat > ~/Library/LaunchAgents/com.user.wake-catchup.plist << 'PLIST'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.wake-catchup</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/YOUR/REPO/PATH/.repo-tools/scripts/wake_catchup.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/YOUR/REPO/PATH</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/YOUR/REPO/PATH/.repo-tools/logs/wake_catchup.log</string>
+    <key>StandardErrorPath</key>
+    <string>/YOUR/REPO/PATH/.repo-tools/logs/wake_catchup_error.log</string>
+    <key>KeepAlive</key>
+    <false/>
+</dict>
+</plist>
+PLIST
+launchctl load ~/Library/LaunchAgents/com.user.wake-catchup.plist
+```
+
+**What it does:**
+- Runs on login → pulls git → checks each pipeline step → runs anything missed
+- 10-minute cooldown prevents repeated runs
+- Does NOT trigger on wake-from-sleep (only login/restart)
+- Safe: each script it calls has its own full dedup chain
 
 ---
 
