@@ -365,6 +365,35 @@ def load_upload_ledger() -> Dict[str, Set[int]]:
         return {'hebrew': set(), 'english': set()}
 
 
+def check_remote_ledger(review_num: int, channel_type: str) -> bool:
+    """
+    Check the REMOTE ledger via git fetch + git show (defense in depth).
+
+    This catches cases where the other machine uploaded and pushed the ledger
+    but our local repo hasn't pulled yet, or where git pull failed/returned
+    'up to date' incorrectly.
+    """
+    try:
+        rel_path = UPLOAD_LEDGER_FILE.relative_to(REPO_ROOT)
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'fetch', '--quiet'],
+            capture_output=True, timeout=60,
+        )
+        result = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'show', f'origin/main:{rel_path}'],
+            capture_output=True, text=True, timeout=15,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            remote_data = json.loads(result.stdout)
+            remote_reviews = set(remote_data.get(channel_type, []))
+            if review_num in remote_reviews:
+                logger.info(f"Review_{review_num} found in REMOTE ledger for {channel_type} (git fetch check)")
+                return True
+    except (subprocess.SubprocessError, OSError, json.JSONDecodeError) as e:
+        logger.warning(f"Remote ledger check failed ({e}), proceeding with local state.")
+    return False
+
+
 def update_upload_ledger(review_num: int, channel_type: str):
     """
     Add a review to the git-tracked ledger and immediately commit + push.
@@ -624,7 +653,7 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
         logger.info(f"[DRY RUN]   Would split into {len(messages)} message(s)")
         return True
 
-    # Last-second cross-machine check: pull and re-check ledger right before sending
+    # Last-second cross-machine check: pull + remote fetch before sending
     logger.info(f"Final ledger check before uploading Review_{review_num} ({channel_type})...")
     subprocess.run(
         ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
@@ -633,6 +662,13 @@ def upload_review(review_num: int, channel_type: str, config: TelegramConfig,
     ledger = load_upload_ledger()
     if review_num in ledger.get(channel_type, set()):
         logger.info(f"Review_{review_num} appeared in ledger during processing — skipping (other machine uploaded it)")
+        log_upload(review_num, channel_type, 'success')
+        return True
+
+    # Defense in depth: also check remote ledger directly via git fetch + git show
+    # (catches cases where other machine pushed but our pull missed it)
+    if check_remote_ledger(review_num, channel_type):
+        logger.info(f"Review_{review_num} found in remote ledger — skipping (other machine uploaded it)")
         log_upload(review_num, channel_type, 'success')
         return True
 

@@ -214,6 +214,34 @@ def load_twitter_ledger() -> Set[int]:
         return set()
 
 
+def check_remote_twitter_ledger(review_num: int) -> bool:
+    """
+    Check the REMOTE Twitter ledger via git fetch + git show (defense in depth).
+
+    Catches cases where the other machine uploaded and pushed the ledger
+    but our local repo hasn't pulled yet.
+    """
+    try:
+        rel_path = TWITTER_LEDGER_FILE.relative_to(REPO_ROOT)
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'fetch', '--quiet'],
+            capture_output=True, timeout=60,
+        )
+        result = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'show', f'origin/main:{rel_path}'],
+            capture_output=True, text=True, timeout=15,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            remote_data = json.loads(result.stdout)
+            remote_posted = set(remote_data.get('posted', []))
+            if review_num in remote_posted:
+                logger.info(f"Review_{review_num} found in REMOTE Twitter ledger (git fetch check)")
+                return True
+    except (subprocess.SubprocessError, OSError, json.JSONDecodeError) as e:
+        logger.warning(f"Remote Twitter ledger check failed ({e}), proceeding with local state.")
+    return False
+
+
 def update_twitter_ledger(review_num: int):
     """Add review to git-tracked ledger and immediately commit + push."""
     try:
@@ -379,6 +407,12 @@ def post_thread_to_telegram(review_num: int, config: Dict, dry_run: bool = False
                    capture_output=True, timeout=30)
     if review_num in load_twitter_ledger():
         logger.info(f"Review_{review_num} appeared in ledger — skipping (other machine posted it)")
+        log_thread_posted(review_num, 'success')
+        return True
+
+    # Defense in depth: also check remote ledger directly via git fetch + git show
+    if check_remote_twitter_ledger(review_num):
+        logger.info(f"Review_{review_num} found in remote ledger — skipping (other machine posted it)")
         log_thread_posted(review_num, 'success')
         return True
 
