@@ -83,7 +83,7 @@ Uploads new reviews to Telegram test channels.
 - Uploads English reviews to English channel
 - Splits long messages (max 4096 chars per Telegram message)
 - Uses HTML parse mode (handles scientific notation, parentheses)
-- Tracks uploaded reviews to avoid duplicates (git-tracked upload ledger + deterministic delay slots per machine_id + last-second re-check + push retry 3x with backoff + local log, safe across multiple machines)
+- Tracks uploaded reviews to avoid duplicates (git-tracked upload ledger + deterministic delay slots per machine_id + last-second re-check + git fetch remote ledger check + push retry 3x with backoff + local log, safe across multiple machines)
 
 **Usage:**
 
@@ -96,9 +96,9 @@ python3 telegram_uploader.py
 ```
 
 **Scheduling:**
-- Runs automatically at 11:00 AM and 11:30 AM (backup) daily via launchd
-- If 11:00 AM run succeeds, 11:30 AM run finds no new reviews and exits
-- If 11:00 AM run fails, 11:30 AM run uploads the reviews
+- Runs every 30 min from 11:00 AM to 3:00 PM via launchd (stops once succeeded)
+- Script checks ledger and skips instantly if already uploaded
+- Ensures resilience: if early slots fail (no network, git conflict), later slots retry
 - Setup: `./schedule_telegram_job.sh`
 
 ### `discord_poster.py`

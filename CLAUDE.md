@@ -124,9 +124,9 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 ### Current Dedup by Script
 | Script | Method |
 |--------|--------|
-| `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + push retry 3x + local log + commits message IDs to git |
+| `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + git fetch remote ledger check + push retry 3x + local log + commits message IDs to git |
 | `discord_poster.py` | Git-tracked ledger + delay slots + last-second re-check + push retry 3x + Discord API + local log |
-| `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + push retry 3x + Telegram API + local log |
+| `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + git fetch remote ledger check + push retry 3x + Telegram API + local log |
 | `daily_review_processor.py` | `git pull` before dedup check + `git pull --rebase --autostash` before push + push retry 3x |
 | `paper_recommender` | Git-tracked `last_run.txt` + git fetch remote check |
 
