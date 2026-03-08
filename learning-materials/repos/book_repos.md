@@ -80,3 +80,8 @@ Best bang for buck (high book count, downloadable links):
 - [ ] joeldg/Deep-learning-books — 0 PDFs (links only)
 - [ ] demorenoc/springer-books — 0 PDFs (markdown lists only)
 - [ ] khuyentran1401/awesome-Python-data-science-books — Amazon links only
+- [x] GauravWalia19/Free-Algorithms-Books — 18 algorithms books sorted
+- [x] gowtamkumar/DSA-Books — 0 books (all <1MB)
+- [x] 0bprashanthc/algorithm-books — 0 books (all dupes)
+- [x] ahkarami/Great-Deep-Learning-Books — 0 PDFs (links only)
+- [x] GunterMueller/Books-3 — 59 CS/SE books sorted

@@ -135,6 +135,11 @@ After every batch, update ALL of these:
 | MasoudKaviani/freemachinelearninigbooks | 0 | Links only |
 | joeldg/Deep-learning-books | 0 | Links only |
 | demorenoc/springer-books | 0 | Markdown only |
+| GauravWalia19/Free-Algorithms-Books | 18 | Done |
+| GunterMueller/Books-3 | 59 | Done |
+| gowtamkumar/DSA-Books | 0 | All <1MB |
+| 0bprashanthc/algorithm-books | 0 | All dupes |
+| ahkarami/Great-Deep-Learning-Books | 0 | Links only |
 
 ## Error Scenarios
 

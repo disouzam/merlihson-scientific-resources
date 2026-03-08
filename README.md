@@ -31,9 +31,9 @@
 <sub>From ML basics to<br>quantum computing</sub>
 </td>
 <td align="center" width="25%">
-<h3>🎯 1,153 PDFs</h3>
+<h3>🎯 1,230 PDFs</h3>
 <b>Resources</b><br>
-<sub>10.9 GB of books,<br>cheat sheets & more</sub>
+<sub>11.7 GB of books,<br>cheat sheets & more</sub>
 </td>
 <td align="center" width="25%">
 <h3>📅 2022-26</h3>
@@ -68,7 +68,7 @@
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
 - **586 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
-- **23 learning categories** with 1,153 PDFs spanning machine learning, mathematics, algorithms, and more
+- **23 learning categories** with 1,230 PDFs spanning machine learning, mathematics, algorithms, and more
 - **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
@@ -132,7 +132,7 @@ The core collection containing **586 individual paper reviews** in multiple form
 
 ### `learning-materials/`
 
-**23 specialized categories** with 1,153 PDFs (10.9 GB) of educational resources:
+**23 specialized categories** with 1,230 PDFs (11.7 GB) of educational resources:
 
 <table>
 <tr>
@@ -421,7 +421,7 @@ scientific-resources/
 │       ├── old-docx/                # Old batch DOCX files
 │       └── archive-reviews/         # Legacy individual PDFs
 │
-├── learning-materials/              # Educational resources (10.9 GB, 1,153 PDFs)
+├── learning-materials/              # Educational resources (11.7 GB, 1,230 PDFs)
 │   ├── machine learning/            # 14 subcategories, 293 PDFs
 │   ├── math/                        # 25 subcategories, 307 PDFs
 │   ├── programming/                 # 17 subcategories, 85 PDFs
@@ -455,7 +455,7 @@ scientific-resources/
 - **Quick Reference**: Searchable metadata for rapid paper discovery
 
 ### Students
-- **Structured Learning**: 23 categories with 1,153 PDFs of educational materials
+- **Structured Learning**: 23 categories with 1,230 PDFs of educational materials
 - **Academic Writing**: Examples of comprehensive paper reviews
 - **Interview Prep**: 32+ resources for ML/DS interviews
 - **Practical Skills**: Programming, SQL, data engineering tutorials
