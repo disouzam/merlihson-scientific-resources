@@ -72,3 +72,11 @@ Best bang for buck (high book count, downloadable links):
 - [x] zslucky/awesome-AI-books — all Yandex.Disk links dead (404), 0 books
 - [x] AzatAI/cs_books — 40 books sorted (106 new after dupe check, 40 relevant curated)
 - [x] Rafiquzzaman420/Math-Books — 13 books sorted (14 new after dupe check, 1 internal dupe)
+- [x] md-sawrab/Statistics-Book-Collections — 29 stats/probability books sorted
+- [x] mdnuruzzamanKALLOL/Machine-Learning-Book-Collections — 59 ML books sorted
+- [x] MinhNguyenDS/AI-pdf-books — 26 AI/ML books sorted (O'Reilly, LLM, NLP)
+- [x] manjunath5496/AI-Books — 41 AI books & papers sorted (renamed from cryptic filenames)
+- [ ] MasoudKaviani/freemachinelearninigbooks — 0 PDFs (links only)
+- [ ] joeldg/Deep-learning-books — 0 PDFs (links only)
+- [ ] demorenoc/springer-books — 0 PDFs (markdown lists only)
+- [ ] khuyentran1401/awesome-Python-data-science-books — Amazon links only

@@ -125,9 +125,16 @@ After every batch, update ALL of these:
 | manjunath5496/Open-Access-Books | 69 | Done |
 | AzatAI/cs_books | 40 | Done |
 | Rafiquzzaman420/Math-Books | 13 | Done |
+| md-sawrab/Statistics-Book-Collections | 29 | Done |
+| mdnuruzzamanKALLOL/Machine-Learning-Book-Collections | 59 | Done |
+| MinhNguyenDS/AI-pdf-books | 26 | Done |
+| manjunath5496/AI-Books | 41 | Done |
 | zslucky/awesome-AI-books | 0 | Dead links |
 | rossant/awesome-math | 0 | Web links only |
 | khuyentran1401/awesome-Python-data-science-books | 0 | Amazon links only |
+| MasoudKaviani/freemachinelearninigbooks | 0 | Links only |
+| joeldg/Deep-learning-books | 0 | Links only |
+| demorenoc/springer-books | 0 | Markdown only |
 
 ## Error Scenarios
 

@@ -1,6 +1,6 @@
 # 📚 Learning Materials
 
-A comprehensive collection of **990 PDFs** (9.6 GB) of educational resources, tutorials, and reference materials organized by domain.
+A comprehensive collection of **1,153 PDFs** (10.9 GB) of educational resources, tutorials, and reference materials organized by domain.
 
 ## 📁 Directory Structure
 
@@ -62,8 +62,8 @@ A comprehensive collection of **990 PDFs** (9.6 GB) of educational resources, tu
 
 ## 🆕 Recent Additions
 
-### Book Collection (Feb 2026)
-451 books added from 7 GitHub repos covering ML, deep learning, math, statistics, and programming:
+### Book Collection (Feb-Mar 2026)
+606 books added from 11 GitHub repos covering ML, deep learning, math, statistics, and programming:
 - **valeman/Awesome_Math_Books** — 197 math & science textbooks
 - **Carl-McBride-Ellis/Compendium-of-free-ML-reading-resources** — 128 ML/DL books
 - **cakaki68/Machine-Learning-Books** — 52 ML books
@@ -71,6 +71,10 @@ A comprehensive collection of **990 PDFs** (9.6 GB) of educational resources, tu
 - **camoverride/lit** — 23 CS/ML classics
 - **fadcrep/the-best-artificial-intelligence-books** — 13 AI books
 - **rohanmistry231/Mathematics-for-Machine-Learning-Books** — 7 math-for-ML books
+- **md-sawrab/Statistics-Book-Collections** — 29 statistics & probability books
+- **mdnuruzzamanKALLOL/Machine-Learning-Book-Collections** — 59 ML books
+- **MinhNguyenDS/AI-pdf-books** — 26 AI/ML books (O'Reilly, LLM, NLP)
+- **manjunath5496/AI-Books** — 41 AI books & papers
 
 See `repos/book_repos.md` for the full list of source repos and download status.
 
@@ -101,8 +105,8 @@ See `repos/book_repos.md` for the full list of source repos and download status.
 
 ## 📊 Collection Statistics
 
-- **Total PDFs**: 990 across 23 top-level categories
-- **Total Size**: 9.6 GB
+- **Total PDFs**: 1,153 across 23 top-level categories
+- **Total Size**: 10.9 GB
 - **Key Areas**: Machine learning (293), Mathematics (307), Programming (85), Data engineering (29)
 - **Resource Types**: PDFs, textbooks, reference materials, cheat sheets
 - **Coverage**: Foundational to advanced topics across multiple disciplines
