@@ -108,6 +108,9 @@ class DiscordConfig:
         if not self.substack_url or 'YOUR_' in self.substack_url:
             raise ValueError("Please configure 'substack.base_url' in discord_config.yaml")
 
+        # Additional channels to cross-post to
+        self.additional_channels = discord_config.get('additional_channels', [])
+
         # Optional settings
         settings = config.get('settings', {})
         self.retry_on_failure = settings.get('retry_on_failure', True)
@@ -679,6 +682,9 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
     if dry_run:
         logger.info(f"[DRY RUN] Would create thread and post to Discord:")
         logger.info(f"  Thread name: {thread_name}")
+        logger.info(f"  Primary channel: {config.channel_id}")
+        for extra_ch in config.additional_channels:
+            logger.info(f"  + Additional channel: #{extra_ch.get('name', extra_ch.get('id'))} ({extra_ch.get('id')})")
         logger.info("")
         logger.info(message)
         logger.info("")
@@ -710,6 +716,25 @@ def post_review_to_discord(review_num: int, config: DiscordConfig,
         log_discord_post(review_num, 'success')
         update_discord_ledger(review_num)
         logger.info(f"✓ Successfully posted Review_{review_num} to Discord thread")
+
+        # Cross-post to additional channels
+        for extra_ch in config.additional_channels:
+            extra_id = extra_ch.get('id')
+            extra_name = extra_ch.get('name', extra_id)
+            if not extra_id:
+                continue
+            try:
+                logger.info(f"Cross-posting Review_{review_num} to #{extra_name} ({extra_id})...")
+                extra_thread_id = create_thread(extra_id, thread_name, config.bot_token)
+                if extra_thread_id:
+                    if post_to_thread(extra_thread_id, message, config.bot_token):
+                        logger.info(f"✓ Cross-posted Review_{review_num} to #{extra_name}")
+                    else:
+                        logger.warning(f"Failed to post message in #{extra_name} thread")
+                else:
+                    logger.warning(f"Failed to create thread in #{extra_name}")
+            except Exception as e:
+                logger.warning(f"Error cross-posting to #{extra_name}: {e}")
     else:
         log_discord_post(review_num, 'failed - posting error')
         logger.error(f"✗ Failed to post Review_{review_num} to Discord thread")

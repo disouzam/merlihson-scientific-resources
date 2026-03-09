@@ -131,7 +131,7 @@ Want reviews automatically posted to your Discord server (every 30 min from 4:00
    ```bash
    cd .repo-tools/config
    cp discord_config.yaml.template discord_config.yaml
-   nano discord_config.yaml  # Fill in bot token and channel ID
+   nano discord_config.yaml  # Fill in bot token, channel ID, additional_channels, and machine_id
    ```
 5. **Install automation:**
    ```bash

@@ -235,7 +235,14 @@ On Login   → Wake Catch-Up (safety net for missed steps)
 **File:** `.repo-tools/config/discord_config.yaml`
 ```yaml
 discord:
-  webhook_url: "https://discord.com/api/webhooks/1469651262839717980/..."
+  bot_token: "YOUR_BOT_TOKEN_HERE"
+  channel_id: "YOUR_CHANNEL_ID_HERE"
+  thread_name_format: "Daily Paper Review: {date}"
+
+  # Additional channels to cross-post to (optional)
+  additional_channels:
+    - id: "CHANNEL_ID"
+      name: "paper-discussions"
 
 substack:
   base_url: "https://aiwithmike.substack.com"

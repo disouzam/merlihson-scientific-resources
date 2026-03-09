@@ -96,6 +96,11 @@ discord:
   channel_id: "YOUR_CHANNEL_ID_HERE"
   thread_name_format: "Daily Paper Review: {date}"
 
+  # Additional channels to cross-post to (optional)
+  additional_channels:
+    - id: "CHANNEL_ID"
+      name: "paper-discussions"
+
   # Deprecated (kept for backward compatibility)
   webhook_url: "https://discord.com/api/webhooks/..."
 
