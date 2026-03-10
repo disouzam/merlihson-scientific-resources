@@ -43,6 +43,9 @@ env/
 .repo-tools/scripts/paper_recommender/config.yaml
 .repo-tools/scripts/paper_recommender/.interest_profile_cache.json
 
+# Email digest credentials (DO NOT COMMIT)
+.repo-tools/scripts/email_digest/config.yaml
+
 # Temporary files
 *.tmp
 *.temp

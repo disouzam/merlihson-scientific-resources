@@ -159,6 +159,20 @@ Safety net that runs on login (launchd `RunAtLoad`) and catches up any missed pi
 - Ledger files change → update ledger path constants in `wake_catchup.py`
 - New publishing scripts added → add step to `wake_catchup.py` main() and skill doc
 
+### email-digest (no skill file — runs autonomously)
+Daily Gmail digest agent. Fetches yesterday's emails via Gmail API, summarizes with Claude Sonnet, sends digest to personal Telegram chat. Catches up missed days automatically. Refresh mode for mid-day updates.
+
+**Location:** `.repo-tools/scripts/email_digest/`
+**Config:** `.repo-tools/scripts/email_digest/config.yaml` (gitignored)
+**OAuth:** `~/.config/email-digest/credentials.json` + `token.json`
+**Schedule:** launchd daily at 10:00 AM + RunAtLoad on login (once per day via `last_run.txt`)
+
+**Key sections to update when:**
+- Telegram channel changes → `config.yaml`
+- Model changes → `config.yaml`
+- Schedule changes → `com.user.email-digest.plist.template`
+- OAuth re-auth needed → run `setup_oauth.py`
+
 ### paper-recommender (no skill file — runs autonomously)
 Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relevance to Mike's interests using Claude Haiku. Monday: 3-day lookback, top 20 papers. Tue–Fri: 1-day lookback, top 10. Sat–Sun: skip. Cross-machine dedup via git-tracked `last_run.txt`.
 

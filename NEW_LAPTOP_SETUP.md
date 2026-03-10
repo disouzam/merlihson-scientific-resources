@@ -153,6 +153,7 @@ Want reviews automatically posted to your Discord server (every 30 min from 4:00
 - 11:00 AM-3:00 PM (every 30 min) → Reviews uploaded to Telegram channels
 - 11:35 AM-3:35 PM (every 30 min) → Twitter thread generated
 - 4:00-7:00 PM (every 30 min) → Discord post
+- 10:00 AM + on login → Email digest (Gmail summary to Telegram)
 - On login → Wake catch-up (runs any missed steps)
 
 ---
@@ -352,6 +353,7 @@ bash -n .git/hooks/pre-commit
 │   │   ├── telegram_uploader.py         # Telegram upload
 │   │   ├── discord_poster.py            # Discord posting
 │   │   ├── substack_scraper.py          # Substack link finder
+│   │   ├── email_digest/                # Daily Gmail digest agent
 │   │   ├── paper_recommender/           # Daily arXiv paper recommender
 │   │   ├── schedule_daily_job.sh        # Daily job scheduler
 │   │   ├── schedule_telegram_job.sh     # Telegram job scheduler
@@ -378,6 +380,7 @@ bash -n .git/hooks/pre-commit
     ├── com.user.daily-review-processor.plist   # Daily processing
     ├── com.user.telegram-review-uploader.plist # Telegram upload
     ├── com.user.discord-review-poster.plist    # Discord posting
+    ├── com.user.email-digest.plist              # Email digest (10 AM + on login)
     ├── com.user.paper-recommender.plist        # Paper recommender (on wake)
     └── com.user.wake-catchup.plist              # Wake catch-up (on login)
 ```
@@ -440,6 +443,38 @@ If configured, posts reviews to Discord in daily threads:
 - ✅ Backup run at 6 PM catches late Substack posts
 
 **Setup:** See [.repo-tools/DISCORD_BOT_SETUP.md](.repo-tools/DISCORD_BOT_SETUP.md)
+
+### Email Digest (10:00 AM + On Login, Once Per Day) - Optional
+Daily Gmail digest — fetches yesterday's emails, summarizes with Claude, sends to Telegram:
+- ✅ Fetches emails via Gmail API (OAuth)
+- ✅ Categorizes and summarizes using Claude Sonnet
+- ✅ Sends digest to personal Telegram chat
+- ✅ Catches up missed days automatically
+- ✅ Refresh mode for mid-day new email summaries
+
+**Setup:**
+```bash
+# 1. Install venv (if not already created)
+cd .repo-tools/scripts/email_digest
+python3 -m venv venv
+venv/bin/pip install google-auth google-auth-oauthlib google-api-python-client anthropic html2text requests pyyaml
+
+# 2. Configure
+cp config.yaml.template config.yaml
+# Edit config.yaml — add Anthropic API key, Telegram bot token & chat ID
+
+# 3. Set up Gmail OAuth (requires credentials.json from Google Cloud Console)
+# Place credentials.json in ~/.config/email-digest/
+venv/bin/python3 setup_oauth.py  # Opens browser for Google consent
+
+# 4. Install launchd job
+cp com.user.email-digest.plist.template ~/Library/LaunchAgents/com.user.email-digest.plist
+launchctl load ~/Library/LaunchAgents/com.user.email-digest.plist
+
+# 5. Test
+cd .repo-tools/scripts
+email_digest/venv/bin/python3 -m email_digest.scheduler --dry-run
+```
 
 ### Paper Recommender (On Wake, Once Per Day) - Optional
 Daily arXiv paper recommender — picks top 10 papers matching Mike's interests:

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.email-digest</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts/email_digest/venv/bin/python3</string>
+        <string>-m</string>
+        <string>email_digest.scheduler</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
+    </dict>
+
+    <!-- Run daily at 10:00 AM -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>10</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Also run on login/wake -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/michaelerlihson/.config/email-digest/launchd_stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/michaelerlihson/.config/email-digest/launchd_stderr.log</string>
+</dict>
+</plist>

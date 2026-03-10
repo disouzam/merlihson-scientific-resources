@@ -1,0 +1,19 @@
+# Email Digest Configuration
+# Copy to config.yaml and fill in your credentials
+# Test with: cd .repo-tools/scripts && python3 -m email_digest.scheduler --dry-run
+
+# Anthropic API key (or set ANTHROPIC_API_KEY env var)
+anthropic_api_key: "YOUR_ANTHROPIC_API_KEY"
+
+# Telegram bot credentials
+telegram_bot_token: "YOUR_TELEGRAM_BOT_TOKEN"
+telegram_chat_id: "YOUR_TELEGRAM_CHAT_ID"
+
+# Gmail OAuth paths (default locations, usually no need to change)
+gmail_credentials_path: "~/.config/email-digest/credentials.json"
+gmail_token_path: "~/.config/email-digest/token.json"
+
+# Optional settings
+claude_model: "claude-sonnet-4-20250514"
+max_emails_per_batch: 50
+log_file: "~/.config/email-digest/email_digest.log"

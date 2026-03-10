@@ -185,6 +185,47 @@ python3 -m paper_recommender.recommender --days 2
 - Set Anthropic API key (or `ANTHROPIC_API_KEY` env var)
 - Telegram bot token and channel ID pre-filled for review_testing_eng
 
+### `email_digest/` (package)
+
+Daily Gmail digest agent. Fetches yesterday's emails via Gmail API, summarizes with Claude Sonnet, sends digest to personal Telegram chat.
+
+**What it does:**
+- Fetches emails via Gmail API (OAuth)
+- Categorizes and summarizes using Claude Sonnet
+- Sends digest to personal Telegram chat
+- Catches up missed days automatically
+- Refresh mode for mid-day new email summaries
+
+**Usage:**
+
+```bash
+# Dry run (preview, don't send)
+cd .repo-tools/scripts
+email_digest/venv/bin/python3 -m email_digest.scheduler --dry-run
+
+# Force run
+email_digest/venv/bin/python3 -m email_digest.scheduler --force
+
+# Specific date
+email_digest/venv/bin/python3 -m email_digest.scheduler --date 2026-03-09
+
+# Refresh (new emails only)
+email_digest/venv/bin/python3 -m email_digest.scheduler --refresh
+
+# Re-authenticate Gmail OAuth
+email_digest/venv/bin/python3 email_digest/setup_oauth.py
+```
+
+**Scheduling:**
+- Runs daily at 10:00 AM + on login (RunAtLoad) via launchd
+- Once per day via `~/.config/email-digest/last_run.txt`
+- Setup: copy `com.user.email-digest.plist.template` to `~/Library/LaunchAgents/`
+
+**Configuration:**
+- Copy `config.yaml.template` → `config.yaml` (gitignored)
+- Set Anthropic API key, Telegram bot token & chat ID
+- Gmail OAuth: place `credentials.json` in `~/.config/email-digest/`, run `setup_oauth.py` once
+
 ### `wake_catchup.py`
 
 Safety net that runs on login (via launchd `RunAtLoad`) and catches up any missed pipeline steps.
@@ -307,7 +348,7 @@ cd .repo-tools/scripts
 python3 -m paper_recommender.recommender --dry-run
 
 # Check all launchd jobs are loaded
-launchctl list | grep "daily-review\|telegram\|discord\|paper-recommender\|wake-catchup"
+launchctl list | grep "daily-review\|telegram\|discord\|paper-recommender\|email-digest\|wake-catchup"
 ```
 
 ## Logs

@@ -4,6 +4,9 @@
 
 Fully automated system that posts paper review links to Discord every 30 min from 4:00-7:00 PM daily (stops once succeeded).
 
+### Email Digest (added March 2026)
+Daily Gmail digest agent integrated from standalone project. Fetches yesterday's Gmail via OAuth, summarizes with Claude Sonnet, sends to Telegram. Runs daily at 10:00 AM + on login. Location: `.repo-tools/scripts/email_digest/`.
+
 **Implementation Date:** February 7, 2026
 **Major Update:** February 12, 2026 (Thread-based posting with Discord Bot API)
 **Status:** ✅ Production Ready with Thread Organization
