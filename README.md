@@ -68,7 +68,7 @@
 This repository is a **curated knowledge base** for AI/ML researchers, students, and practitioners. It contains:
 
 - **587 comprehensive paper reviews** covering cutting-edge AI/ML research (2022-2026)
-- **24 learning categories** with 1,280 PDFs spanning machine learning, mathematics, algorithms, and more
+- **22 learning categories** with 1,280 PDFs spanning machine learning, mathematics, algorithms, and more
 - **14 research presentations** on deep learning architectures
 - **Searchable metadata indices** for quick paper discovery
 - **Python tooling** for document processing and automation
@@ -132,7 +132,7 @@ The core collection containing **587 individual paper reviews** in multiple form
 
 ### `learning-materials/`
 
-**24 specialized categories** with 1,280 PDFs (11 GB) of educational resources:
+**22 specialized categories** with 1,280 PDFs (11 GB) of educational resources:
 
 <table>
 <tr>
@@ -430,7 +430,7 @@ scientific-resources/
 │   ├── algorithms/                  # Data structures & algorithms
 │   ├── interview preparation/       # Career resources
 │   ├── repos/                       # Book source repos tracking
-│   └── ... (24 categories total)
+│   └── ... (22 categories total)
 │
 ├── presentations/                   # Research presentations (32 MB)
 │   └── 14 PDF presentations
@@ -455,7 +455,7 @@ scientific-resources/
 - **Quick Reference**: Searchable metadata for rapid paper discovery
 
 ### Students
-- **Structured Learning**: 24 categories with 1,280 PDFs of educational materials
+- **Structured Learning**: 22 categories with 1,280 PDFs of educational materials
 - **Academic Writing**: Examples of comprehensive paper reviews
 - **Interview Prep**: 32+ resources for ML/DS interviews
 - **Practical Skills**: Programming, SQL, data engineering tutorials
