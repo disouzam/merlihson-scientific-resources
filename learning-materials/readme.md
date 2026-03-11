@@ -1,6 +1,6 @@
 # 📚 Learning Materials
 
-A comprehensive collection of **1,230 PDFs** (11.7 GB) of educational resources, tutorials, and reference materials organized by domain.
+A comprehensive collection of **1,280 PDFs** (11 GB) of educational resources, tutorials, and reference materials organized by domain.
 
 ## 📁 Directory Structure
 
@@ -30,11 +30,14 @@ A comprehensive collection of **1,230 PDFs** (11.7 GB) of educational resources,
   - `complex analysis/`, `functional analysis/`, `number theory/`, and more
 - **algorithms/**: Data structures, algorithms, and computational methods
 
-### 💻 Programming & Development (133 PDFs)
+### 👁️ Computer Vision & Image Processing (18 PDFs)
+- **computer science/computer vision/**: CV algorithms, OpenCV, image processing, action recognition
+
+### 💻 Programming & Development (135 PDFs)
 - **programming/**: 17 subcategories including Python, R & Scala, PyTorch, TensorFlow, scikit-learn, Git, software design, and more
 - **python-ml-math/**: Integrated Python resources for mathematical and ML applications (48 PDFs)
 
-### 📊 Data Science & Engineering (29 PDFs)
+### 📊 Data Science & Engineering (31 PDFs)
 - **data engineering/**: Data processing, Spark, Kafka, big data pipelines
 - **data science applications/**: Real-world applications and use cases
 - **sql/**: Database querying and management
@@ -63,10 +66,11 @@ A comprehensive collection of **1,230 PDFs** (11.7 GB) of educational resources,
 ## 🆕 Recent Additions
 
 ### Book Collection (Feb-Mar 2026)
-606 books added from 11 GitHub repos covering ML, deep learning, math, statistics, and programming:
+663 books added from 21 GitHub repos covering ML, deep learning, math, statistics, CV, and programming:
 - **valeman/Awesome_Math_Books** — 197 math & science textbooks
 - **Carl-McBride-Ellis/Compendium-of-free-ML-reading-resources** — 128 ML/DL books
 - **cakaki68/Machine-Learning-Books** — 52 ML books
+- **manjunath5496/Computer-Vision-Books** — 14 CV books
 - **aridiosilva/AI_Books** — 31 AI/DL books
 - **camoverride/lit** — 23 CS/ML classics
 - **fadcrep/the-best-artificial-intelligence-books** — 13 AI books
@@ -75,6 +79,11 @@ A comprehensive collection of **1,230 PDFs** (11.7 GB) of educational resources,
 - **mdnuruzzamanKALLOL/Machine-Learning-Book-Collections** — 59 ML books
 - **MinhNguyenDS/AI-pdf-books** — 26 AI/ML books (O'Reilly, LLM, NLP)
 - **manjunath5496/AI-Books** — 41 AI books & papers
+- **pdf-dump** — 31 Springer stats/ML/finance textbooks
+- **Book-Collection** — 7 books (combinatorics, image processing, FastAPI)
+- **Data-Science-Books** — 4 books (Manga guides, productivity)
+- **MLResources** — 1 book (Fluent Python)
+- **Monarene-books** — 1 book (Collective Intelligence)
 
 See `repos/book_repos.md` for the full list of source repos and download status.
 
@@ -105,9 +114,9 @@ See `repos/book_repos.md` for the full list of source repos and download status.
 
 ## 📊 Collection Statistics
 
-- **Total PDFs**: 1,153 across 23 top-level categories
-- **Total Size**: 11.7 GB
-- **Key Areas**: Machine learning (293), Mathematics (307), Programming (85), Data engineering (29)
+- **Total PDFs**: 1,280 across 24 top-level categories
+- **Total Size**: 11 GB
+- **Key Areas**: Mathematics (323), Machine learning (301), Computer vision (18), Programming (135), Data science (31), Finance (3+)
 - **Resource Types**: PDFs, textbooks, reference materials, cheat sheets
 - **Coverage**: Foundational to advanced topics across multiple disciplines
 

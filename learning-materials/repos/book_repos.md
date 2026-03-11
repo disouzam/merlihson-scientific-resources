@@ -85,3 +85,12 @@ Best bang for buck (high book count, downloadable links):
 - [x] 0bprashanthc/algorithm-books — 0 books (all dupes)
 - [x] ahkarami/Great-Deep-Learning-Books — 0 PDFs (links only)
 - [x] GunterMueller/Books-3 — 59 CS/SE books sorted
+- [x] manjunath5496/Computer-Vision-Books — 14 CV books sorted (renamed from cv(N).pdf)
+- [x] varunkashyapks/Books — 0 relevant (2 new but Java/networking)
+- [x] khurrameycon/Data-Science-Books — 4 books sorted (Manga guides + Building a Second Brain)
+- [x] Book-Collection (private) — 7 books sorted (combinatorics, image processing, FastAPI)
+- [x] Monarene-books (private) — 1 book sorted (Collective Intelligence)
+- [x] MLResources (private) — 1 book sorted (Fluent Python)
+- [x] books-ML-and-DL (private) — 0 books (all dupes)
+- [x] machine-learning-books (private) — 0 books (all dupes of existing 46 PDFs)
+- [x] pdf-dump (NUS Statistics) — 31 books sorted (Springer textbooks, stats, ML, finance)
