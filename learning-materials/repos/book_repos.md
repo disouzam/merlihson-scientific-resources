@@ -94,3 +94,5 @@ Best bang for buck (high book count, downloadable links):
 - [x] books-ML-and-DL (private) — 0 books (all dupes)
 - [x] machine-learning-books (private) — 0 books (all dupes of existing 46 PDFs)
 - [x] pdf-dump (NUS Statistics) — 31 books sorted (Springer textbooks, stats, ML, finance)
+- [x] changwookjun/StudyBook — 0 books (no PDFs >1MB)
+- [x] mukeshmithrakumar/Book_List — 0 books (all 13 dupes)
