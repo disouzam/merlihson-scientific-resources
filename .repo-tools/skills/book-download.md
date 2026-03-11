@@ -9,7 +9,7 @@ description: Download and sort free books from GitHub repos into learning-materi
 
 - "download books from [repo]"
 - "do [repo]" (in context of book downloading)
-- "look for more repos with relevant books"
+- "look for more repos with relevant books" (always cross-check `book_repos.md` first to avoid re-scanning)
 - "how many non-dupe books in [repo]?"
 - "full cycle" / "tackle this" — autonomous end-to-end processing
 
@@ -21,6 +21,7 @@ Downloads free PDF books from GitHub repositories and sorts them into the `learn
 
 **ALWAYS do these steps before downloading from ANY repo:**
 
+0. **Check if repo was already processed**: Read `learning-materials/repos/book_repos.md` and check the Status section. If the repo is already marked `[x]`, **SKIP IT** — do not clone, do not re-scan. This is the single source of truth for processed repos.
 1. **Clone/fetch the repo** to `/tmp/`
 2. **List all PDFs** in the repo
 3. **Filter out irrelevant content**: Chinese/Russian books, cheat sheets, short papers (<1MB), memos, documentation files, language textbooks (German, English grammar), mobile dev, databases (unless data science)
