@@ -36,52 +36,15 @@ Downloads free PDF books from GitHub repositories and sorts them into the `learn
 - Books destination: `/Users/michaelerlihson/Personal/repos/scientific-resources/learning-materials/`
 - Tracking file: `learning-materials/repos/book_repos.md`
 
-### Existing Categories (use these, create new subcategories only when needed)
+### Existing Categories
+**Always discover dynamically** — don't rely on a hardcoded list:
+```bash
+# Get current category tree (run before sorting books)
+find learning-materials -type d | sort
 ```
-ai/
-algorithms/
-computer science/
-computer science/computer vision/
-data engineering/
-data science applications/
-economics/
-excel/
-finance/
-general reading/
-interview preparation/
-kubernetes/
-machine learning/
-machine learning/broad ml materials/
-machine learning/deep neural nets/
-machine learning/nlp/
-machine learning/reinforcement learning/
-machine learning/ML concepts, algorithms and machinery/
-math/
-math/algebra/
-math/analysis/
-math/combinatorics/
-math/information theory/
-math/just beautiful math/
-math/linear algebra/
-math/logic and foundations/
-math/optimization/
-math/pdes/
-math/physics/
-math/probability & stats/
-MLOps/
-programming/
-programming/general programming resources/
-programming/general python resources/
-programming/matlab/
-programming/r & scala/
-programming/software design/
-python-ml-math/
-quantum computing/
-signal processing/
-sql/
-surveys/
-visualisation/
-```
+Use existing directories when possible. Create new subcategories only when a batch has 3+ books in a clearly distinct topic (e.g., `computer science/computer vision/`).
+
+**If you create a new category**, you MUST also update the category count ("NN categories") in the post-download update files (README.md, learning-materials/readme.md).
 
 ### File Naming
 - Clean titles: remove leading `NNN_` prefixes, replace `_` with spaces
@@ -145,16 +108,21 @@ find learning-materials -name "*.pdf" | wc -l
 # 2. Get total size
 du -sh learning-materials/
 
-# 3. Find all places with old count in README.md
-grep -n "OLD_COUNT" README.md
+# 3. Count categories (top-level dirs only, excluding repos/)
+ls -d learning-materials/*/ | grep -v repos | wc -l
 
-# 4. Update all occurrences
-# Use Edit tool with replace_all for each file
+# 4. Find all places with old PDF count
+grep -rn "OLD_COUNT" README.md learning-materials/readme.md images/cosmic-neural-header.svg
 
-# 5. Stage all updated files
-git add README.md learning-materials/readme.md images/cosmic-neural-header.svg learning-materials/repos/book_repos.md
+# 5. Find all places with old category count (if new category was added)
+grep -rn "OLD_CAT_COUNT" README.md learning-materials/readme.md
 
-# 6. Commit together with the books (or as a separate commit)
+# 6. Update all occurrences using Edit tool with replace_all
+
+# 7. Stage all updated files
+git add README.md learning-materials/readme.md images/cosmic-neural-header.svg learning-materials/repos/book_repos.md .repo-tools/skills/book-download.md
+
+# 8. Commit together with the books (or as a separate commit)
 git commit -m "Update PDF counts to N,NNN after adding books from [repos]"
 ```
 
