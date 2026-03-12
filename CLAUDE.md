@@ -101,7 +101,7 @@ python3 .repo-tools/scripts/youtube_clip_cutter.py --url "URL" --start "27:55" -
 
 ## Session Start
 
-**At the start of every session**, before doing any work, ask Mike to pull the latest main branch (`git pull` in the repo). This ensures we're always working on top of the latest automated commits (daily processor, metadata updates, etc.).
+**At the start of every session**, before doing any work, run `git pull --rebase --autostash` to get the latest main branch. This ensures we're always working on top of the latest automated commits (daily processor, metadata updates, etc.). Do this automatically — no need to ask Mike first.
 
 ## Multi-Machine Setup (CRITICAL)
 
