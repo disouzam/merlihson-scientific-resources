@@ -109,10 +109,10 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 
 ### How Cross-Machine Dedup Works
 1. **Git-tracked upload ledger** (`.repo-tools/logs/telegram_upload_ledger.json`) — committed and pushed immediately after each successful upload. All machines pull before checking.
-2. **Deterministic startup delays** — each machine has a unique `machine_id` in its local config (`telegram_config.yaml`, `discord_config.yaml`). Machines get non-overlapping delay slots (45s+ gap):
+2. **Deterministic startup delays** — each machine has a unique `machine_id` in its local config (`telegram_config.yaml`, `discord_config.yaml`). Machines get non-overlapping delay slots (100s+ gap):
    - `machine_id: 1` → 0-20s delay
-   - `machine_id: 2` → 65-85s delay
-   - `machine_id: 3` → 130-150s delay
+   - `machine_id: 2` → 120-140s delay
+   - `machine_id: 3` → 240-260s delay
 3. **Last-second re-check** — right before sending, pulls git again and re-checks the ledger.
 4. **Push retry with backoff** — after sending, retries `git push` up to 3 times (5s, 10s backoff) with `pull --rebase` between attempts. Logs CRITICAL if all 3 fail.
 5. **Startup push recovery** — both `daily_review_processor.py` and `wake_catchup.py` check for unpushed local commits on startup and retry pushing (3 attempts with pull+rebase+backoff). This ensures commits aren't stranded after network timeouts.

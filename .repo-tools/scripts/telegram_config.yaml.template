@@ -49,9 +49,9 @@ settings:
 
   # Machine ID for cross-machine duplicate prevention.
   # Each machine MUST have a unique ID (1, 2, 3, ...).
-  # Machines get non-overlapping startup delay slots (45s+ gap between any two):
+  # Machines get non-overlapping startup delay slots (100s+ gap between any two):
   #   machine_id 1 → 0-20s delay
-  #   machine_id 2 → 65-85s delay
-  #   machine_id 3 → 130-150s delay
+  #   machine_id 2 → 120-140s delay
+  #   machine_id 3 → 240-260s delay
   # Combined with git-tracked upload ledger for bulletproof dedup.
   machine_id: 1

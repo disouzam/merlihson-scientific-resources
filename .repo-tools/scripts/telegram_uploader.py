@@ -807,11 +807,11 @@ def main():
     # Deterministic startup delay to prevent race condition when multiple machines
     # have identical launchd schedules. Each machine gets a non-overlapping slot
     # based on its machine_id (set in telegram_config.yaml):
-    #   machine_id 1 → 0-20s,  machine_id 2 → 65-85s,  machine_id 3 → 130-150s
-    # This guarantees at least 45 seconds between any two machines.
+    #   machine_id 1 → 0-20s,  machine_id 2 → 120-140s,  machine_id 3 → 240-260s
+    # This guarantees at least 100 seconds between any two machines.
     if not dry_run:
         machine_id = config.machine_id
-        slot_start = (machine_id - 1) * 65
+        slot_start = (machine_id - 1) * 120
         delay = random.randint(slot_start, slot_start + 20)
         logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot {slot_start}-{slot_start+20}s)")
         time.sleep(delay)

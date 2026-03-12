@@ -843,7 +843,7 @@ def main():
     # Deterministic startup delay based on machine_id (cross-machine race prevention)
     if not dry_run and not specific_review:
         machine_id = config.machine_id
-        slot_start = (machine_id - 1) * 65
+        slot_start = (machine_id - 1) * 120
         delay = random.randint(slot_start, slot_start + 20)
         logger.info(f"Startup delay: {delay}s (machine_id={machine_id}, slot {slot_start}-{slot_start+20}s)")
         time.sleep(delay)
