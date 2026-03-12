@@ -520,7 +520,7 @@ The script is case-insensitive for the `_english` part.
    - Push commit to GitHub
    - If rebase conflicts occur, falls back to merge pull
    - Push retries up to 3 times with backoff (5s, 10s) and pull --rebase between attempts
-   - If all retries fail, files remain committed locally
+   - If all retries fail, files remain committed locally — **the next run (6/8/9 AM or wake_catchup on login) will automatically detect unpushed commits and retry the push**
 
 ### Deduplication Logic
 
@@ -553,7 +553,7 @@ The script handles various error scenarios:
 
 - **No new reviews:** Logs and exits gracefully
 - **DOCX conversion fails:** Logs error, continues with next file
-- **Git push fails:** Pulls with rebase first, retries up to 3 times with backoff; if still fails, leaves files committed locally for manual push
+- **Git push fails:** Pulls with rebase first, retries up to 3 times with backoff; if still fails, leaves files committed locally — next run automatically retries the push
 - **Missing English file:** Processes Hebrew only, logs info message
 - **Network timeout:** Logs error, leaves files committed locally
 

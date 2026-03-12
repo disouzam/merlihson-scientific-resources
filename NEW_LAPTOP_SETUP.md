@@ -273,7 +273,9 @@ cd .repo-tools/scripts
 
 **Problem:** Files are committed but not pushed
 
-**Solution:**
+**Note:** Both `daily_review_processor.py` and `wake_catchup.py` automatically detect unpushed commits on startup and retry pushing (3 attempts with backoff). In most cases this self-heals without manual intervention.
+
+**Manual solution (if automatic retry also fails):**
 ```bash
 # 1. Check SSH key works
 ssh -T git@github.com

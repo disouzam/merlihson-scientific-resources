@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-A curated knowledge base of 587+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
+A curated knowledge base of 588+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
 
 ## Key Architecture
 
@@ -20,8 +20,8 @@ A curated knowledge base of 587+ AI/ML paper reviews (Hebrew primary, English se
 
 ### Review File Conventions
 - Naming: `Review_NNN.md` / `Review_NNN.docx` (zero-padded 3 digits)
-- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (587 files, primary)
-- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (220 files)
+- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (588 files, primary)
+- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (221 files)
 - DOCX sources in `mike-paper-reviews-all/split-reviews-docx/`
 - Reviews contain Hebrew header, English paper title as "Review NNN: Title", paper link (arxiv/doi/etc)
 
@@ -115,6 +115,7 @@ Automations run from **multiple local computers** simultaneously. Every publishi
    - `machine_id: 3` → 130-150s delay
 3. **Last-second re-check** — right before sending, pulls git again and re-checks the ledger.
 4. **Push retry with backoff** — after sending, retries `git push` up to 3 times (5s, 10s backoff) with `pull --rebase` between attempts. Logs CRITICAL if all 3 fail.
+5. **Startup push recovery** — both `daily_review_processor.py` and `wake_catchup.py` check for unpushed local commits on startup and retry pushing (3 attempts with pull+rebase+backoff). This ensures commits aren't stranded after network timeouts.
 
 ### When Adding a New Machine
 1. Assign a unique `machine_id` (next unused integer) in ALL config files:
@@ -135,7 +136,7 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 | `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + git fetch remote ledger check + push retry 3x + local log + commits message IDs to git |
 | `discord_poster.py` | Git-tracked ledger + delay slots + last-second re-check + push retry 3x + Discord API + local log |
 | `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + git fetch remote ledger check + push retry 3x + Telegram API + local log |
-| `daily_review_processor.py` | `git pull` before dedup check + `git pull --rebase --autostash` before push + push retry 3x |
+| `daily_review_processor.py` | `git pull` before dedup check + `git pull --rebase --autostash` before push + push retry 3x + startup push recovery for unpushed commits |
 | `paper_recommender` | Git-tracked `last_run.txt` + git fetch remote check |
 
 ## Important Rules

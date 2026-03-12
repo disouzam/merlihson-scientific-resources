@@ -440,6 +440,35 @@ def main():
     except Exception as e:
         logger.warning(f"Pre-check git pull failed: {e}")
 
+    # Retry push if previous run committed but failed to push
+    try:
+        ahead = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'rev-list', '--count', '@{u}..HEAD'],
+            capture_output=True, text=True, timeout=10
+        )
+        if ahead.returncode == 0 and int(ahead.stdout.strip()) > 0:
+            n = ahead.stdout.strip()
+            logger.info(f"Found {n} unpushed commit(s) from previous run. Pushing...")
+            for attempt in range(1, 4):
+                subprocess.run(
+                    ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+                    capture_output=True, text=True, timeout=60
+                )
+                push = subprocess.run(
+                    ['git', '-C', str(REPO_ROOT), 'push'],
+                    capture_output=True, text=True, timeout=60
+                )
+                if push.returncode == 0:
+                    logger.info("✓ Pushed previously unpushed commits")
+                    break
+                logger.warning(f"Push retry attempt {attempt}/3 failed: {push.stderr.strip()}")
+                if attempt < 3:
+                    time.sleep(attempt * 5)
+            else:
+                logger.error("✗ Failed to push unpushed commits after 3 attempts")
+    except Exception as e:
+        logger.warning(f"Unpushed commit check failed: {e}")
+
     # Find new reviews
     new_reviews = find_new_reviews()
 

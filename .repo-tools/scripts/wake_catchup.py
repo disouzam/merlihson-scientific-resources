@@ -76,6 +76,27 @@ def update_cooldown():
     COOLDOWN_FILE.write_text(str(time.time()))
 
 
+def wait_for_network(timeout: int = 60) -> bool:
+    """Wait for network after wake from sleep."""
+    logger.info("Checking network connectivity...")
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        try:
+            result = subprocess.run(
+                ['ping', '-c', '1', '-W', '2', '8.8.8.8'],
+                capture_output=True, timeout=5
+            )
+            if result.returncode == 0:
+                logger.info("✓ Network is available")
+                return True
+        except (subprocess.TimeoutExpired, Exception):
+            pass
+        logger.info("Waiting for network...")
+        time.sleep(5)
+    logger.warning(f"⚠️  Network timeout after {timeout}s, proceeding anyway")
+    return False
+
+
 def git_pull():
     """Pull latest to sync ledgers from other machines."""
     logger.info("Pulling latest from remote...")
@@ -92,6 +113,37 @@ def git_pull():
         logger.warning("Git pull timed out after 60s")
     except Exception as e:
         logger.error(f"Git pull failed: {e}")
+
+
+def push_unpushed_commits():
+    """Push any locally committed but unpushed changes from a previous failed run."""
+    try:
+        ahead = subprocess.run(
+            ["git", "-C", str(REPO_ROOT), "rev-list", "--count", "@{u}..HEAD"],
+            capture_output=True, text=True, timeout=10
+        )
+        if ahead.returncode != 0 or int(ahead.stdout.strip()) == 0:
+            return
+        n = ahead.stdout.strip()
+        logger.info(f"Found {n} unpushed commit(s) from previous run. Pushing...")
+        for attempt in range(1, 4):
+            subprocess.run(
+                ["git", "-C", str(REPO_ROOT), "pull", "--rebase", "--autostash"],
+                capture_output=True, text=True, timeout=60
+            )
+            push = subprocess.run(
+                ["git", "-C", str(REPO_ROOT), "push"],
+                capture_output=True, text=True, timeout=60
+            )
+            if push.returncode == 0:
+                logger.info("✓ Pushed previously unpushed commits")
+                return
+            logger.warning(f"Push retry attempt {attempt}/3 failed: {push.stderr.strip()}")
+            if attempt < 3:
+                time.sleep(attempt * 5)
+        logger.error("✗ Failed to push unpushed commits after 3 attempts")
+    except Exception as e:
+        logger.warning(f"Unpushed commit check failed: {e}")
 
 
 def find_inbox_review_numbers() -> set:
@@ -183,8 +235,14 @@ def main():
 
     update_cooldown()
 
+    # Wait for network (important after wake from sleep)
+    wait_for_network(timeout=60)
+
     # Sync ledgers
     git_pull()
+
+    # Push any commits that failed to push in a previous run
+    push_unpushed_commits()
 
     # Find what's in the inbox vs what's already processed
     inbox_nums = find_inbox_review_numbers()

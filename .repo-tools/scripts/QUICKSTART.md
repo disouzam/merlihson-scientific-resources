@@ -82,7 +82,7 @@ For each new `Review_XXX.docx` in Downloads:
 
 - **Deduplication:** Reviews already in the repo are automatically skipped
 - **No cleanup:** Files in Downloads are left alone (not deleted)
-- **Network issues:** If push fails, files are committed locally and can be pushed manually later
+- **Network issues:** If push fails, files are committed locally — the next scheduled run or wake_catchup on login will automatically retry the push
 - **Error handling:** Errors are logged but don't stop processing of other reviews
 
 ## 🔧 Troubleshooting

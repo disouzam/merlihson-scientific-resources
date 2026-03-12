@@ -18,10 +18,12 @@ The user can say:
 ## What This Skill Does
 
 ### Core Functionality
-1. **Sync ledgers** — `git pull` to get latest state from all machines
-2. **Check pipeline steps** — Inspects ledgers to see what's been done today
-3. **Run missing steps** — Executes scripts for any incomplete steps (in dependency order)
-4. **Cooldown** — Skips if last run was <10 minutes ago
+1. **Wait for network** — Polls until network is available (important after wake from sleep)
+2. **Sync ledgers** — `git pull` to get latest state from all machines
+3. **Push unpushed commits** — If a previous run committed but failed to push (e.g. network timeout), retries push with pull+rebase (3 attempts with backoff)
+4. **Check pipeline steps** — Inspects ledgers to see what's been done today
+5. **Run missing steps** — Executes scripts for any incomplete steps (in dependency order)
+6. **Cooldown** — Skips if last run was <10 minutes ago
 
 ### Pipeline Steps Checked (in order)
 1. `daily_review_processor.py` — Are there unprocessed DOCX files in ReviewsInbox?
