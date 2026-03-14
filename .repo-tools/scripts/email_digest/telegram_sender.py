@@ -83,14 +83,43 @@ def split_message(text: str, max_length: int = MAX_MESSAGE_LENGTH) -> list[str]:
     return messages
 
 
+def _sanitize_html(text: str) -> str:
+    """Escape characters that break Telegram HTML parse mode.
+
+    Telegram HTML only supports: <b>, <i>, <u>, <s>, <a>, <code>, <pre>.
+    All other < > & must be escaped, but we preserve our known tags.
+    """
+    import re
+
+    # Temporarily replace known Telegram HTML tags with placeholders
+    known_tags = re.findall(r'</?(?:b|i|u|s|code|pre|a\b)[^>]*>', text)
+    placeholders = {}
+    for idx, tag in enumerate(known_tags):
+        ph = f"\x00TAG{idx}\x00"
+        placeholders[ph] = tag
+        text = text.replace(tag, ph, 1)
+
+    # Escape remaining HTML-special characters
+    text = text.replace("&", "&amp;")
+    text = text.replace("<", "&lt;")
+    text = text.replace(">", "&gt;")
+
+    # Restore known tags
+    for ph, tag in placeholders.items():
+        text = text.replace(ph, tag)
+
+    return text
+
+
 def _send_message(
     bot_token: str, chat_id: str, text: str, retry_count: int = 2, retry_delay: int = 5
 ) -> bool:
-    """Send a single message via Telegram Bot API."""
+    """Send a single message via Telegram Bot API. Falls back to plain text on HTML errors."""
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    sanitized = _sanitize_html(text)
     payload = {
         "chat_id": chat_id,
-        "text": text,
+        "text": sanitized,
         "parse_mode": "HTML",
     }
 
@@ -103,6 +132,18 @@ def _send_message(
                 logger.warning(f"Rate limited, waiting {retry_after}s...")
                 time.sleep(retry_after)
                 continue
+
+            if response.status_code == 400 and attempt == retry_count:
+                # Last attempt: fall back to plain text (strip all HTML tags)
+                import re
+                plain = re.sub(r'<[^>]+>', '', text)
+                plain_payload = {"chat_id": chat_id, "text": plain}
+                logger.warning("HTML parse failed, falling back to plain text")
+                fallback = requests.post(url, json=plain_payload, timeout=30)
+                if fallback.status_code == 200 and fallback.json().get("ok"):
+                    return True
+                logger.error(f"Plain text fallback also failed: {fallback.status_code}")
+                return False
 
             response.raise_for_status()
             result = response.json()
