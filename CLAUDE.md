@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-A curated knowledge base of 589+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
+A curated knowledge base of 590+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
 
 ## Key Architecture
 
@@ -20,8 +20,8 @@ A curated knowledge base of 589+ AI/ML paper reviews (Hebrew primary, English se
 
 ### Review File Conventions
 - Naming: `Review_NNN.md` / `Review_NNN.docx` (zero-padded 3 digits)
-- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (589 files, primary)
-- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (222 files)
+- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (590 files, primary)
+- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (223 files)
 - DOCX sources in `mike-paper-reviews-all/split-reviews-docx/`
 - Reviews contain Hebrew header, English paper title as "Review NNN: Title", paper link (arxiv/doi/etc)
 
