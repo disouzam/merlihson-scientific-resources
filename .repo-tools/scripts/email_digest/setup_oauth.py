@@ -18,17 +18,12 @@ from pathlib import Path
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from dotenv import load_dotenv
 from google_auth_oauthlib.flow import InstalledAppFlow
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
 
 
 def main():
-    env_path = Path(__file__).resolve().parent.parent / ".env"
-    if env_path.exists():
-        load_dotenv(env_path)
-
     credentials_path = Path(os.getenv("GMAIL_CREDENTIALS_PATH", "~/.config/email-digest/credentials.json")).expanduser()
     token_path = Path(os.getenv("GMAIL_TOKEN_PATH", "~/.config/email-digest/token.json")).expanduser()
 
