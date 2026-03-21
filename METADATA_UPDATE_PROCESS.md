@@ -102,11 +102,11 @@ The hook handles various link formats:
 
 | Metric | Value |
 |--------|-------|
-| **Total Reviews** | 590 |
-| **With Paper Links** | 589 (100% coverage!) |
-| **Hebrew Reviews** | 590 markdown files |
-| **English Reviews** | 223 markdown files |
-| **DOCX Source Files** | 590 files |
+| **Total Reviews** | 591 |
+| **With Paper Links** | 590 (100% coverage!) |
+| **Hebrew Reviews** | 591 markdown files |
+| **English Reviews** | 224 markdown files |
+| **DOCX Source Files** | 591 files |
 
 ---
 
@@ -139,7 +139,7 @@ This script:
 ```bash
 # Check total count
 wc -l mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
-# Should show: 591 (1 header + 590 reviews)
+# Should show: 592 (1 header + 591 reviews)
 
 # Check for missing links
 grep ",,$" mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
@@ -229,10 +229,10 @@ python3 .repo-tools/scripts/update_metadata.py
 After updates (automatic or manual), verify:
 
 - [ ] All metadata files updated: `paper_with_links.csv`, `all_paper_titles.txt`, `clean_titles_for_search.txt`, `reviews_from_208_titles.txt`
-- [ ] Total count matches in all files (590 reviews)
+- [ ] Total count matches in all files (591 reviews)
 - [ ] No duplicate entries
 - [ ] All links are working and properly formatted
-- [ ] Sequential numbering with no gaps (Review_001 to Review_590)
+- [ ] Sequential numbering with no gaps (Review_001 to Review_591)
 - [ ] No empty link fields (100% coverage)
 
 ### Quick Verification Commands
@@ -328,7 +328,7 @@ The repository migrated from manual metadata updates to automated git hooks:
 
 ---
 
-**Last Updated:** March 18, 2026
+**Last Updated:** March 21, 2026
 **Automation Status:** ✅ Fully Automated via Git Hook
-**Coverage:** 590/590 reviews (100%)
+**Coverage:** 591/591 reviews (100%)
 **Repository:** https://github.com/merlihson/scientific-resources
