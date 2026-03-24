@@ -21,7 +21,7 @@
 <table>
 <tr>
 <td align="center" width="25%">
-<h3>📄 591+</h3>
+<h3>📄 592+</h3>
 <b>Paper Reviews</b><br>
 <sub>Deep analysis of cutting-edge<br>AI/ML research papers</sub>
 </td>
@@ -89,8 +89,8 @@ cat mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
 ### Access Reviews
 | What you want | Where to find it |
 |---------------|------------------|
-| Individual review files (DOCX) | `mike-paper-reviews-all/split-reviews-docx/Review_001.docx` - `Review_591.docx` |
-| Individual reviews (Markdown) | `mike-paper-reviews-all/split-hebrew-reviews-md/Review_001.md` - `Review_591.md` |
+| Individual review files (DOCX) | `mike-paper-reviews-all/split-reviews-docx/Review_001.docx` - `Review_592.docx` |
+| Individual reviews (Markdown) | `mike-paper-reviews-all/split-hebrew-reviews-md/Review_001.md` - `Review_592.md` |
 | All paper titles | `mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt` |
 | Papers with links (100% coverage) | `mike-paper-reviews-all/reviews_metadata/paper_with_links.csv` |
 | Archived PDFs and old formats | `mike-paper-reviews-all/archive/` |
@@ -101,17 +101,17 @@ cat mike-paper-reviews-all/reviews_metadata/paper_with_links.csv
 
 ### `mike-paper-reviews-all/`
 
-The core collection containing **591 individual paper reviews** in multiple formats.
+The core collection containing **592 individual paper reviews** in multiple formats.
 
 | Type | Count | Description |
 |------|-------|-------------|
 | **Individual Reviews** | 1-208 | Deep-dive analyses with paper links |
-| **Daily Reviews** | 209-591 | Chronological reviews (May 2024 - Feb 2026) |
+| **Daily Reviews** | 209-592 | Chronological reviews (May 2024 - Feb 2026) |
 
 #### Formats Available
-- **`split-hebrew-reviews-md/`** - 591 Hebrew review markdown files (primary format)
-- **`split-english-reviews-md/`** - 224 English review markdown files
-- **`split-reviews-docx/`** - 591 DOCX source files (`Review_001.docx` → `Review_591.docx`)
+- **`split-hebrew-reviews-md/`** - 592 Hebrew review markdown files (primary format)
+- **`split-english-reviews-md/`** - 225 English review markdown files
+- **`split-reviews-docx/`** - 592 DOCX source files (`Review_001.docx` → `Review_592.docx`)
 - **`reviews_metadata/`** - Auto-updated metadata (100% link coverage)
 - **`archive/`** - Historical PDFs and old batch documents
 
@@ -301,8 +301,8 @@ The hook extracts links from multiple sources:
 
 | Metric | Value |
 |--------|-------|
-| **Total Reviews** | 591 |
-| **With Paper Links** | 590 (100% coverage!) |
+| **Total Reviews** | 592 |
+| **With Paper Links** | 591 (100% coverage!) |
 | **Auto-Extracted** | 571 |
 | **Manually Added** | 1 |
 
@@ -383,10 +383,10 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 
 | Metric | Value |
 |--------|-------|
-| **Total Paper Reviews** | 591 |
-| **Hebrew Reviews (Markdown)** | 591 files |
-| **English Reviews (Markdown)** | 224 files |
-| **Reviews with Paper Links** | 590 (100% coverage!) |
+| **Total Paper Reviews** | 592 |
+| **Hebrew Reviews (Markdown)** | 592 files |
+| **English Reviews (Markdown)** | 225 files |
+| **Reviews with Paper Links** | 591 (100% coverage!) |
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
 | **Learning Material PDFs** | 1,153 |
 | **Learning Categories** | 23 |
@@ -403,16 +403,16 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 ```
 scientific-resources/
 ├── mike-paper-reviews-all/          # Main review collection
-│   ├── split-hebrew-reviews-md/     # 591 Hebrew review markdown files ⭐
+│   ├── split-hebrew-reviews-md/     # 592 Hebrew review markdown files ⭐
 │   │   ├── Review_001.md
 │   │   ├── Review_002.md
-│   │   └── ... → Review_591.md
-│   ├── split-english-reviews-md/    # 224 English review markdown files
-│   ├── split-reviews-docx/          # 591 DOCX source files
+│   │   └── ... → Review_592.md
+│   ├── split-english-reviews-md/    # 225 English review markdown files
+│   ├── split-reviews-docx/          # 592 DOCX source files
 │   │   ├── Review_001.docx
-│   │   └── ... → Review_591.docx
+│   │   └── ... → Review_592.docx
 │   ├── reviews_metadata/            # Auto-updated metadata (100% coverage) 🤖
-│   │   ├── paper_with_links.csv     # 590 reviews with links
+│   │   ├── paper_with_links.csv     # 591 reviews with links
 │   │   ├── all_paper_titles.txt     # Numbered title list
 │   │   ├── clean_titles_for_search.txt
 │   │   └── reviews_from_208_titles.txt
@@ -449,7 +449,7 @@ scientific-resources/
 ## For Researchers & Students
 
 ### Researchers
-- **Literature Reviews**: 591 analyzed papers with critical insights
+- **Literature Reviews**: 592 analyzed papers with critical insights
 - **Trend Analysis**: Track AI/ML research evolution (2022-2026)
 - **Methodology Examples**: Models for academic analysis
 - **Quick Reference**: Searchable metadata for rapid paper discovery
