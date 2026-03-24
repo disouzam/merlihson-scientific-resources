@@ -273,7 +273,7 @@ cd .repo-tools/scripts
 
 **Problem:** Files are committed but not pushed
 
-**Note:** Both `daily_review_processor.py` and `wake_catchup.py` automatically detect unpushed commits on startup and retry pushing (3 attempts with backoff). In most cases this self-heals without manual intervention.
+**Note:** Both `daily_review_processor.py` and `wake_catchup.py` automatically detect unpushed commits on startup and retry pushing (3 attempts with backoff). They also auto-resolve merge conflicts: if `git pull --rebase` hits a conflict (common with auto-generated files like readme.md stats), the script aborts the rebase, does a merge pull, accepts the remote version (`checkout --theirs`), re-runs `update_metadata.py` to regenerate correct stats, and completes the merge. In most cases this self-heals without manual intervention.
 
 **Manual solution (if automatic retry also fails):**
 ```bash

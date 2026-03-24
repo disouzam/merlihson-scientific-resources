@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-A curated knowledge base of 591+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
+A curated knowledge base of 592+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
 
 ## Key Architecture
 
 ### Content Pipeline
 1. New DOCX reviews land in `~/ReviewsInbox/`
-2. `daily_review_processor.py` runs via launchd (5/6/8/9 AM) — copies DOCX, converts to markdown, commits & pushes
+2. `daily_review_processor.py` runs via launchd (5/6/8/9 AM) — copies DOCX, converts to markdown, commits & pushes (auto-resolves merge conflicts in metadata files)
 3. Git pre-commit hook runs `update_metadata.py` — extracts titles/links from Hebrew markdown, updates 4 metadata files + 3 READMEs (main, mike-paper-reviews-all, presentations)
 4. `telegram_uploader.py` runs every 30 min from 11:00 AM to 3:00 PM — uploads to Telegram channels (stops once succeeded)
 5. `twitter_thread_auto_poster.py` runs every 30 min from 11:35 AM to 3:35 PM — generates Twitter threads, posts to Telegram (stops once succeeded)
@@ -20,8 +20,8 @@ A curated knowledge base of 591+ AI/ML paper reviews (Hebrew primary, English se
 
 ### Review File Conventions
 - Naming: `Review_NNN.md` / `Review_NNN.docx` (zero-padded 3 digits)
-- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (591 files, primary)
-- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (224 files)
+- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (592 files, primary)
+- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (225 files)
 - DOCX sources in `mike-paper-reviews-all/split-reviews-docx/`
 - Reviews contain Hebrew header, English paper title as "Review NNN: Title", paper link (arxiv/doi/etc)
 
@@ -136,7 +136,8 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 | `telegram_uploader.py` | Git-tracked ledger + delay slots + last-second re-check + git fetch remote ledger check + push retry 3x + local log + commits message IDs to git |
 | `discord_poster.py` | Git-tracked ledger + delay slots + last-second re-check + push retry 3x + Discord API + local log |
 | `twitter_thread_auto_poster.py` | Git-tracked ledger + delay slots + last-second re-check + git fetch remote ledger check + push retry 3x + Telegram API + local log |
-| `daily_review_processor.py` | `git pull` before dedup check + `git pull --rebase --autostash` before push + push retry 3x + startup push recovery for unpushed commits |
+| `daily_review_processor.py` | `git pull` before dedup check + `git pull --rebase --autostash` before push + auto-resolve merge conflicts (abort rebase → merge pull → checkout theirs → re-run update_metadata.py) + push retry 3x + startup push recovery for unpushed commits |
+| `wake_catchup.py` | Git pull with auto-resolve merge conflicts (same logic as daily_review_processor) + checks each pipeline step ledger + runs missing steps + 10-min cooldown |
 | `paper_recommender` | Git-tracked `last_run.txt` + git fetch remote check |
 
 ## Important Rules

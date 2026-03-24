@@ -97,6 +97,58 @@ def wait_for_network(timeout: int = 60) -> bool:
     return False
 
 
+def _auto_resolve_conflicts():
+    """Auto-resolve merge conflicts in auto-generated files (readmes, metadata).
+
+    After a failed rebase, does a merge pull, resolves conflicts by accepting
+    remote version then re-running update_metadata.py, and completes the merge.
+    Returns True on success.
+    """
+    logger.info("Auto-resolving merge conflicts...")
+    subprocess.run(
+        ["git", "-C", str(REPO_ROOT), "pull", "--no-rebase", "--autostash"],
+        capture_output=True, text=True, timeout=60
+    )
+    status = subprocess.run(
+        ["git", "-C", str(REPO_ROOT), "diff", "--name-only", "--diff-filter=U"],
+        capture_output=True, text=True
+    )
+    unmerged = [f.strip() for f in status.stdout.strip().split('\n') if f.strip()]
+    if not unmerged:
+        logger.info("No unmerged files found")
+        return True
+
+    logger.info(f"Resolving {len(unmerged)} conflicted file(s): {unmerged}")
+    for f in unmerged:
+        subprocess.run(["git", "-C", str(REPO_ROOT), "checkout", "--theirs", "--", f],
+                       capture_output=True, text=True)
+        subprocess.run(["git", "-C", str(REPO_ROOT), "add", f],
+                       capture_output=True, text=True)
+
+    # Re-run update_metadata.py to regenerate correct stats
+    try:
+        subprocess.run(
+            ["python3", str(REPO_ROOT / ".repo-tools" / "scripts" / "update_metadata.py")],
+            capture_output=True, text=True, timeout=60, cwd=str(REPO_ROOT)
+        )
+        # Stage any regenerated files
+        for f in unmerged:
+            subprocess.run(["git", "-C", str(REPO_ROOT), "add", f],
+                           capture_output=True, text=True)
+    except Exception as e:
+        logger.warning(f"update_metadata.py error during conflict resolution: {e}")
+
+    commit = subprocess.run(
+        ["git", "-C", str(REPO_ROOT), "commit", "--no-edit"],
+        capture_output=True, text=True, timeout=30
+    )
+    if commit.returncode == 0:
+        logger.info("✓ Merge conflicts auto-resolved")
+        return True
+    logger.error(f"✗ Merge commit failed: {commit.stderr.strip()}")
+    return False
+
+
 def git_pull():
     """Pull latest to sync ledgers from other machines."""
     logger.info("Pulling latest from remote...")
@@ -108,7 +160,14 @@ def git_pull():
         if result.returncode == 0:
             logger.info(f"Git pull OK: {result.stdout.strip()}")
         else:
-            logger.warning(f"Git pull issue (rc={result.returncode}): {result.stderr.strip()}")
+            combined = result.stdout + result.stderr
+            if 'CONFLICT' in combined:
+                logger.warning("Rebase conflict during pull, auto-resolving...")
+                subprocess.run(["git", "-C", str(REPO_ROOT), "rebase", "--abort"],
+                               capture_output=True, text=True)
+                _auto_resolve_conflicts()
+            else:
+                logger.warning(f"Git pull issue (rc={result.returncode}): {result.stderr.strip()}")
     except subprocess.TimeoutExpired:
         logger.warning("Git pull timed out after 60s")
     except Exception as e:
@@ -127,10 +186,14 @@ def push_unpushed_commits():
         n = ahead.stdout.strip()
         logger.info(f"Found {n} unpushed commit(s) from previous run. Pushing...")
         for attempt in range(1, 4):
-            subprocess.run(
+            pull_r = subprocess.run(
                 ["git", "-C", str(REPO_ROOT), "pull", "--rebase", "--autostash"],
                 capture_output=True, text=True, timeout=60
             )
+            if pull_r.returncode != 0 and 'CONFLICT' in (pull_r.stdout + pull_r.stderr):
+                subprocess.run(["git", "-C", str(REPO_ROOT), "rebase", "--abort"],
+                               capture_output=True, text=True)
+                _auto_resolve_conflicts()
             push = subprocess.run(
                 ["git", "-C", str(REPO_ROOT), "push"],
                 capture_output=True, text=True, timeout=60

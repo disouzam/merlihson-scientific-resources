@@ -17,6 +17,7 @@ import sys
 import re
 import time
 import subprocess
+import os
 import shutil
 import logging
 from pathlib import Path
@@ -263,6 +264,98 @@ def process_review(review_info: Dict[str, any], dry_run: bool = False) -> bool:
         return False
 
 
+def _auto_resolve_and_merge() -> bool:
+    """Auto-resolve merge conflicts in auto-generated files, then complete the merge.
+
+    Strategy:
+    1. git pull (merge) — leaves conflict markers in files
+    2. For auto-generated files (readmes, metadata): re-run update_metadata.py + git add
+    3. For any remaining conflicts: accept remote version (theirs)
+    4. Complete the merge commit
+    """
+    logger.info("Attempting auto-resolve: pull with merge strategy...")
+    merge_result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'pull', '--no-rebase', '--autostash'],
+        capture_output=True, text=True, timeout=60
+    )
+
+    # Check for unmerged files
+    status_result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'diff', '--name-only', '--diff-filter=U'],
+        capture_output=True, text=True
+    )
+    unmerged = [f.strip() for f in status_result.stdout.strip().split('\n') if f.strip()]
+
+    if not unmerged:
+        if merge_result.returncode == 0:
+            logger.info("✓ Merge completed without conflicts")
+            return True
+        logger.error(f"✗ Pull failed with no unmerged files: {merge_result.stderr}")
+        return False
+
+    logger.info(f"Auto-resolving {len(unmerged)} conflicted file(s): {unmerged}")
+
+    # Auto-generated files that update_metadata.py will regenerate correctly
+    auto_generated = {
+        'mike-paper-reviews-all/readme.md',
+        'README.md',
+        'mike-paper-reviews-all/reviews_metadata/paper_with_links.csv',
+        'mike-paper-reviews-all/reviews_metadata/all_paper_titles.txt',
+        'mike-paper-reviews-all/reviews_metadata/clean_titles_for_search.txt',
+        'mike-paper-reviews-all/reviews_metadata/reviews_from_208_titles.txt',
+        'presentations/readme.md',
+        'CLAUDE.md',
+    }
+
+    # For auto-generated files: accept theirs first (to clear conflict markers),
+    # then update_metadata.py will overwrite with correct values during the commit hook.
+    # For other files: also accept theirs (remote is likely more recent from the other machine).
+    for f in unmerged:
+        logger.info(f"  Resolving {f}: accepting remote version")
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'checkout', '--theirs', '--', f],
+            capture_output=True, text=True
+        )
+        subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'add', f],
+            capture_output=True, text=True
+        )
+
+    # Now re-run update_metadata.py to regenerate correct stats for the merged state
+    if any(f in auto_generated for f in unmerged):
+        logger.info("  Re-running update_metadata.py to fix auto-generated stats...")
+        try:
+            meta_result = subprocess.run(
+                ['python3', str(REPO_ROOT / '.repo-tools' / 'scripts' / 'update_metadata.py')],
+                capture_output=True, text=True, timeout=60, cwd=str(REPO_ROOT)
+            )
+            if meta_result.returncode == 0:
+                logger.info("  ✓ Metadata regenerated")
+                # Stage the regenerated files
+                for f in unmerged:
+                    if f in auto_generated:
+                        subprocess.run(
+                            ['git', '-C', str(REPO_ROOT), 'add', f],
+                            capture_output=True, text=True
+                        )
+            else:
+                logger.warning(f"  update_metadata.py failed: {meta_result.stderr}")
+        except Exception as e:
+            logger.warning(f"  update_metadata.py error: {e}")
+
+    # Complete the merge commit
+    commit_result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'commit', '--no-edit'],
+        capture_output=True, text=True, timeout=30
+    )
+    if commit_result.returncode == 0:
+        logger.info("✓ Merge conflict auto-resolved and committed")
+        return True
+    else:
+        logger.error(f"✗ Merge commit failed: {commit_result.stderr}")
+        return False
+
+
 def commit_and_push(processed_reviews: List[int], dry_run: bool = False) -> bool:
     """
     Commit processed reviews and push to GitHub.
@@ -319,18 +412,12 @@ def commit_and_push(processed_reviews: List[int], dry_run: bool = False) -> bool
         )
         if pull_result.returncode != 0:
             logger.warning(f"Pull --rebase had issues: {pull_result.stderr}")
-            # If rebase conflict, abort and try merge instead
-            if 'CONFLICT' in (pull_result.stdout + pull_result.stderr):
-                logger.info("Rebase conflict detected, aborting rebase and trying merge...")
+            combined_output = pull_result.stdout + pull_result.stderr
+            if 'CONFLICT' in combined_output:
+                logger.info("Rebase conflict detected, aborting rebase and auto-resolving...")
                 subprocess.run(['git', '-C', str(REPO_ROOT), 'rebase', '--abort'],
                                capture_output=True, text=True)
-                merge_result = subprocess.run(
-                    ['git', '-C', str(REPO_ROOT), 'pull', '--autostash'],
-                    capture_output=True, text=True, timeout=60
-                )
-                if merge_result.returncode != 0:
-                    logger.error(f"✗ Pull (merge) also failed: {merge_result.stderr}")
-                    logger.info("  Files are committed locally. You can manually push later.")
+                if not _auto_resolve_and_merge():
                     return False
 
         # Push to remote (retry up to 3 times)
@@ -350,10 +437,14 @@ def commit_and_push(processed_reviews: List[int], dry_run: bool = False) -> bool
                 logger.warning(f"Push attempt {attempt}/3 failed: {result.stderr}")
                 if attempt < 3:
                     time.sleep(attempt * 5)
-                    subprocess.run(
+                    retry_pull = subprocess.run(
                         ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
                         capture_output=True, text=True, timeout=60
                     )
+                    if retry_pull.returncode != 0 and 'CONFLICT' in (retry_pull.stdout + retry_pull.stderr):
+                        subprocess.run(['git', '-C', str(REPO_ROOT), 'rebase', '--abort'],
+                                       capture_output=True, text=True)
+                        _auto_resolve_and_merge()
                 else:
                     logger.error(f"✗ Push failed after 3 attempts: {result.stderr}")
                     logger.info("  Files are committed locally. You can manually push later.")

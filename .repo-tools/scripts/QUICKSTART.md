@@ -83,6 +83,7 @@ For each new `Review_XXX.docx` in Downloads:
 - **Deduplication:** Reviews already in the repo are automatically skipped
 - **No cleanup:** Files in Downloads are left alone (not deleted)
 - **Network issues:** If push fails, files are committed locally — the next scheduled run or wake_catchup on login will automatically retry the push
+- **Merge conflicts:** Auto-resolved — if `git pull --rebase` conflicts on auto-generated files (readme stats, metadata), the script falls back to merge, accepts remote, re-runs `update_metadata.py`, and continues
 - **Error handling:** Errors are logged but don't stop processing of other reviews
 
 ## 🔧 Troubleshooting

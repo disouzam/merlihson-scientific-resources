@@ -257,6 +257,7 @@ launchctl list | grep wake-catchup
 **Dedup safety:**
 - Only checks ledger status — the scripts it calls have their own full dedup chain
 - Git pull before every check ensures cross-machine awareness
+- Auto-resolves merge conflicts on pull (same logic as daily_review_processor: abort rebase → merge pull → accept theirs → re-run update_metadata.py)
 
 ### `schedule_daily_job.sh`
 
@@ -433,6 +434,8 @@ git commit -m "Test commit"
 
 ### Git push fails
 
+**Note:** Both `daily_review_processor.py` and `wake_catchup.py` now auto-resolve merge conflicts (common with auto-generated metadata files). If `git pull --rebase` hits a conflict, the script aborts the rebase, does a merge pull, accepts the remote version of conflicted files, re-runs `update_metadata.py` to regenerate correct stats, and completes the merge. This is fully automatic.
+
 If the job can commit but can't push (network issues, auth problems):
 
 1. **Check commit was created:**
@@ -518,7 +521,13 @@ The script is case-insensitive for the `_english` part.
 4. **Push:**
    - Pull remote changes first (`git pull --rebase --autostash`) to avoid conflicts with other machines
    - Push commit to GitHub
-   - If rebase conflicts occur, falls back to merge pull
+   - If rebase conflicts occur (typically in auto-generated files like readme.md stats):
+     1. Aborts the rebase (`git rebase --abort`)
+     2. Falls back to merge pull (`git pull` without rebase)
+     3. Auto-resolves conflicts by accepting remote version (`git checkout --theirs`)
+     4. Re-runs `update_metadata.py` to regenerate correct stats from local content
+     5. Completes the merge commit
+     6. Continues with push
    - Push retries up to 3 times with backoff (5s, 10s) and pull --rebase between attempts
    - If all retries fail, files remain committed locally — **the next run (6/8/9 AM or wake_catchup on login) will automatically detect unpushed commits and retry the push**
 
@@ -553,7 +562,7 @@ The script handles various error scenarios:
 
 - **No new reviews:** Logs and exits gracefully
 - **DOCX conversion fails:** Logs error, continues with next file
-- **Git push fails:** Pulls with rebase first, retries up to 3 times with backoff; if still fails, leaves files committed locally — next run automatically retries the push
+- **Git push fails:** Pulls with rebase first; if rebase conflicts (e.g., in auto-generated metadata), auto-resolves by accepting remote + re-running `update_metadata.py`; retries up to 3 times with backoff; if still fails, leaves files committed locally — next run automatically retries the push
 - **Missing English file:** Processes Hebrew only, logs info message
 - **Network timeout:** Logs error, leaves files committed locally
 
