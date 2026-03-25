@@ -25,3 +25,6 @@ max_papers_to_send: 10
 
 # Claude model for ranking
 model: "claude-haiku-4-5-20251001"
+
+# Claude model for generating paper reviews (Sonnet for quality)
+review_model: "claude-sonnet-4-20250514"

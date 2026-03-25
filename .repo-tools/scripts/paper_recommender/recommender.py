@@ -25,6 +25,7 @@ import yaml
 from .arxiv_fetcher import fetch_recent_papers
 from .interest_profile import build_interest_profile
 from .paper_ranker import rank_papers
+from .paper_reviewer import generate_reviews
 from .telegram_sender import format_message, send_to_telegram
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -163,6 +164,7 @@ def main():
     categories = config.get("arxiv_categories", ["cs.LG", "cs.CL", "cs.AI", "cs.CV", "stat.ML"])
     max_papers = config.get("max_papers_to_send", 10)
     model = config.get("model", "claude-haiku-4-5-20251001")
+    review_model = config.get("review_model", "claude-sonnet-4-20250514")
 
     # Monday: cover Sat+Sun+Mon (3 days, 20 papers). Other weekdays: 1 day, 10 papers.
     is_monday = datetime.now().weekday() == 0
@@ -192,7 +194,13 @@ def main():
         print("No papers scored. Something may be wrong with the ranking.")
         return
 
-    # Step 4: Format message
+    # Step 4: Generate reviews (abstract + intro via Sonnet)
+    print(f"Generating reviews using {review_model}...")
+    top_papers = generate_reviews(top_papers, api_key, model=review_model)
+    reviewed_count = sum(1 for rp in top_papers if rp.review)
+    print(f"Generated {reviewed_count}/{len(top_papers)} reviews.")
+
+    # Step 5: Format message
     message = format_message(top_papers)
 
     if args.dry_run:
@@ -203,7 +211,7 @@ def main():
         print("=" * 60)
         return
 
-    # Step 5: Send to Telegram
+    # Step 6: Send to Telegram
     bot_token = config.get("telegram_bot_token", "")
     channel_id = config.get("telegram_channel_id", "")
     if not bot_token or not channel_id:

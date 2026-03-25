@@ -15,6 +15,7 @@ class RankedPaper:
     paper: ArxivPaper
     score: float
     reason: str
+    review: str = ""
 
 
 def rank_papers(

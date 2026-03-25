@@ -18,12 +18,15 @@ def format_message(ranked_papers: List[RankedPaper], date: datetime = None) -> s
 
     for i, rp in enumerate(ranked_papers, 1):
         authors_str = ", ".join(rp.paper.authors)
-        lines.append(
+        entry = (
             f"{i}. {rp.paper.title}\n"
             f"   Authors: {authors_str}\n"
             f"   \u2b50 \"{rp.reason}\"\n"
-            f"   \U0001f517 {rp.paper.link}\n"
         )
+        if rp.review:
+            entry += f"\n   {rp.review}\n"
+        entry += f"\n   \U0001f517 {rp.paper.link}\n"
+        lines.append(entry)
 
     return "\n".join(lines)
 
