@@ -10,380 +10,380 @@
   7. Are Emergent Abilities of Large Language Models a Mirage?
   8. GraphAny: A Foundation Model for Node Classification on Any Graph
   9. Similarity is Not All You Need: Endowing Retrieval-Augmented Generation with Multi–layered Thoughts
-  10. Scaling and evaluating sparse autoencoders?
-  11. Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality
-  12. What Do Language Models Learn in Context? The Structured Task Hypothesis.
-  13. Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks
-  14. The Geometry of Categorical and Hierarchical Concepts in Large Language Models
-  15. Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving
-  16. Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING
-  17. CLLMs: Consistency Large Language Models
-  18. MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads
-  19. STATISTICAL REJECTION SAMPLING IMPROVES PREFERENCE OPTIMIZATION
-  20. SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL
-  21. Helping or Herding? Reward Model Ensembles Mitigate but do not Eliminate REWARD HACKING
-  22. INTRINSIC DIMENSIONALITY EXPLAINS THE EFFECTIVENESS OF LANGUAGE MODEL FINE-TUNING
-  23. WARM: On the Benefits of Weight Averaged Reward Models
-  24. Named Entity Recognition as Structured Span Prediction
-  25. GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer
-  26. TextGrad: Automatic “Differentiation” via Text
-  27. Are you still on track!? Catching LLM Task Drift with Activations
-  28. Improving Reinforcement Learning from Human Feedback with Efficient Reward Model Ensemble
-  29. Probing the Decision Boundaries of In-context Learning in Large Language Models
-  30. On-Policy Distillation OF LANGUAGE MODELS: LEARNING FROM SELF-GENERATED MISTAKES
-  31. What Are the Odds? Language Models Are Capable of Probabilistic Reasoning
-  32. Grokfast: Accelerated Grokking by Amplifying Slow Gradients
-  33. From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data
-  34. The Remarkable Robustness of LLMs: Stages of Inference?
-  35. How Do Large Language Models Acquire Factual Knowledge During Pretraining?
-  36. A Survey of Large Language Models for Graphs
-  37. The Road Less Scheduled
-  38. Mixture of A Million Experts
-  39. Learning to (Learn at Test Time): RNNs with Expressive Hidden States
-  40. DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS
-  41. To Believe or Not to Believe Your LLM
-  42. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales
-  43. Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps
-  44. How Does Quantization Affect Multilingual LLMs?
-  45. Learning Rate Curriculum
-  46. Trainable Highly-expressive Activation Functions
-  47. DataDream: Few-shot Guided Dataset Generation
-  48. Consistency Models
-  49. TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING
-  50. Feedback Efficient Online Fine-Tuning of Diffusion Models
-  51. The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof
-  52. AI models collapse when trained on recursively generated data
-  53. Questionable practices in machine learning
-  54. Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?
-  55. Large Scale Dataset Distillation with Domain Shift
-  56. Denoising Vision Transformers
-  57. DENOISING DIFFUSION IMPLICIT MODELS
-  58. IMPROVED TECHNIQUES FOR TRAINING CONSISTENCY MODELS
-  59. NEFTUNE: NOISY EMBEDDINGS IMPROVE INSTRUCTION FINETUNING
-  60. Consistency Models Made Easy
-  61. Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning
-  62. TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models
-  63. Language Model Can Listen While Speaking
-  64. Masked Attention is All You Need for Graphs
-  65. Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
-  66. Synthesizing Text-to-SQL Data fromWeak and Strong LLMs
-  67. Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models
-  68. Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2
-  69. Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders
-  70. Your Classifier Can Be Secretly a Likelihood-Based OOD Detect
-  71. On the Geometry of Deep Learning
-  72. Faster Machine Unlearning via Natural Gradient Descent
-  73. DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION
-  74. JPEG-LM: LLMs as Image Generators with Canonical Codec Representations
-  75. Tree Attention: Topology-Aware Decoding for Long-Context Attention on GPU Clusters
-  76. Approaching Deep Learning through the Spectral Dynamics of Weights
-  77. Platypus: A Generalized Specialist Model for Reading Text in Various Forms
-  78. Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review
-  79. DIFFUSION MODELS ARE REAL-TIME GAME ENGINES
-  80. Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode
-  81. Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling
-  82. Flexora: Flexible Low Rank Adaptation for Large Language Models
-  83. EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty
-  84. ReMamba: Equip Mamba with Effective Long-Sequence Modeling
-  85. DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?
-  86. MemLong: Memory-Augmented Retrieval for Long Text Modeling
-  87. Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers
-  88. Learning to reason with LLMs
-  89. LLMs Will Always Hallucinate, We Need to Live With This
-  90. Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning
-  91. Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning
-  92. Rethinking Benchmark and Contamination for Language Models with Rephrased Samples
-  93. STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning
-  94. Training Chain-of-Thought via Latent-Variable Inference
-  95. Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning
-  96. REFT: Reasoning with REinforced Fine-Tuning
-  97. Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
-  98. Training Language Models to Self-Correct via Reinforcement Learning
-  99. LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH
-  100. RRM: ROBUST REWARD MODEL TRAINING MITIGATES REWARD HACKING
-  101. REWARD-ROBUST RLHF IN LLMS
-  102. Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages
-  103. ASR Error Correction using Large Language Models
-  104. SCHRODINGER’S MEMORY: LARGE LANGUAGE MODELS
-  105. Larger and more instructable language models become less reliable
-  106. Transformers are Expressive, But Are They Expressive Enough for Regression?
-  107. Were RNNs All We Needed?
-  108. CONTRASTIVE LOCALIZED LANGUAGE-IMAGE PRE-TRAINING
-  109. CONTEXTUAL DOCUMENT EMBEDDINGS
-  110. DIFFERENTIAL TRANSFORMER
-  111. SELECTIVE ATTENTION IMPROVES TRANSFORMER
-  112. GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
-  113. LLMS KNOW MORE THAN THEY SHOW: ON THE IN-TRINSIC REPRESENTATION OF LLM HALLUCINATIONS
-  114. EFFICIENT DICTIONARY LEARNING WITH SWITCH SPARSE AUTOENCODERS
-  115. EFFICIENT REINFORCEMENT LEARNING WITH LARGE LANGUAGE MODEL PRIORS
-  116. EQUIVARIANT CONTRASTIVE LEARNING
-  117. SimCSE: Simple Contrastive Learning of Sentence Embeddings
-  118. DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
-  119. RL, BUT DON’T DO ANYTHING I WOULDN’T DO
-  120. Sample what you can’t compress
-  121. Predicting from Strings: Language Model Embeddings for Bayesian Optimization
-  122. HOW MANY VAN GOGHS DOES IT TAKE TO VAN GOGH? FINDING THE IMITATION THRESHOLD
-  123. Amortized Planning with Large-Scale Transformers: A Case Study on Chess
-  124. Efficient Vision-Language Pre-training by Cluster Masking
-  125. HEAVY-TAILED DIFFUSION MODELS
-  126. Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers
-  127. Beyond Preferences in AI Alignment
-  128. Understanding Transformers via N-gram Statistics
-  129. LLMs Are In-Context Reinforcement Learners
-  130. Learning to Compress: Local Rank and Information Compression in Deep Neural Networks
-  131. TOKENFORMER: RETHINKING TRANSFORMER SCALING WITH TOKENIZED MODEL PARAMETERS
-  132. Refusal in Language Models Is Mediated by a Single Direction
-  133. RETHINKING SOFTMAX: SELF-ATTENTION WITH POLYNOMIAL ACTIVATIONS
-  134. Cross-layer Attention Sharing for Large Language Models
-  135. Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?
-  136. CROSS-ENTROPY IS ALL YOU NEED TO INVERT THE DATA GENERATING PROCESS
-  137. WHAT MATTERS IN TRANSFORMERS? NOT ALL ATTENTION IS NEEDED
-  138. Stealing Part of a Production Language Model
-  139. OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step
-  140. NON-NEGATIVE CONTRASTIVE LEARNING
-  141. Knowledge Editing in Language Models via Adapted Direct Preference Optimization
-  142. Adaptive Decoding via Latent Preference Optimization
-  143. Unfamiliar Finetuning Examples Control How Language Models Hallucinate
-  144. The Unreasonable Ineffectiveness of the Deeper Layers
-  145. Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study
-  146. Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study
-  147. The Illusion of State in State-Space Models
-  148. Parameter-Efficient Fine-Tuning with Discrete Fourier Transform
-  149. In-Context Learning with Long-Context Models: An In-Depth Exploration
-  150. Fishing for Magikarp: Automatically detecting under-trained tokens in large language models
-  151. Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation
-  152. KAN: Kolmogorov–Arnold Networks
-  153. Memory3: Language Modeling with Explicit Memory
-  154. Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering
-  155. Scaling Synthetic Data Creation with 1,000,000,000 Personas
-  156. LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement
-  157. Byte Latent Transformer: Patches Scale Better Than Tokens
-  158. Large Concept Models: Language Modeling in a Sentence Representation Space
-  159. FAN: Fourier Analysis Networks
-  160. Reasoning in Large Language Models: A Geometric Perspective
-  161. T-FREE: Tokenizer-Free Generative LLMs via Sparse Representations for Memory-Efficient Embeddings
-  162. Vision language models are blind
-  163. RL for Consistency Models: Faster Reward Guided Text-to-Image Generation
-  164. Position: Future Directions in the Theory of Graph Machine Learning
-  165. Graph Diffusion Policy Optimization
-  166. Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models
-  167. Loss of plasticity in deep continual learning
-  168. A PERCOLATION MODEL OF EMERGENCE: ANALYZING TRANSFORMERS TRAINED ON A FORMAL LANGUAGE
-  169. A Survey on Efficient Inference for Large Language Models
-  170. Anchored Preference Optimization and Contrastive Revisions Addressing Underspecification in Alignment
-  171. When Can Transformers Count to n?
-  172. Chain of Thought Empowers Transformers to Solve Inherently Serial Problems
-  173. Evaluating the Design Space of Diffusion-Based Generative Models
-  174. Improve Mathematical Reasoning in Language Models by Automated Process Supervision
-  175. Diffusion Models for Non-autoregressive Text Generation: A Survey
-  176. Towards a Unified View of Preference Learning for Large Language Models: A Survey
-  177. MAKING TEXT EMBEDDERS FEW-SHOT LEARNERS
-  178. The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks
-  179. Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts
-  180. MONOFORMER: ONE TRANSFORMER FOR BOTH DIFFUSION AND AUTOREGRESSION
-  181. Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs
-  182. FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression
-  183. A Survey on Diffusion Models for Inverse Problems
-  184. Law of the Weakest Link: Cross Capabilities of Large Language Models
-  185. Classical Statistical (In-Sample) Intuitions Don’t GeneralizeWell: A Note on Bias-Variance Tradeoffs, Overfitting and Moving from Fixed to Random Designs
-  186. The Perfect Blend: Redefining RLHF with Mixture of Judges
-  187. Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections
-  188. SMALL LANGUAGE MODELS: SURVEY, MEASUREMENTS, AND INSIGHTS
-  189. Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis
-  190. Why Is Anything Conscious?
-  191. On the expressiveness and spectral bias of KANs
-  192. STUFFED MAMBA: State Collapse and State Capacity of RNN-Based Long-Context Modeling
-  193. One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation
-  194. A Spectral Condition for Feature Learning
-  195. Representation Alignment for Generation: Training Diffusion Transformers is Easier than you Think
-  196. THINKING LLMS: GENERAL INSTRUCTION FOLLOWING WITH THOUGHT GENERATION
-  197. Losing dimensions: Geometric memorization in generative diffusion
-  198. When Does Perceptual Alignment Benefit Vision Representations?
-  199. Addition Is All You Need: For Energy-Efficient Language Models
-  200. Understanding Visual Feature Reliance through the Lens of Complexity
-  201. Unity by Diversity: Improved Representation Learning for Multimodal VAEs
-  202. The FFT Strikes Back: An Efficient Alternative to Self-Attention
-  203. LORA VS FULL FINE-TUNING: AN ILLUSION OF EQUIVALENCE
-  204. An Empirical Model of Large-Batch Training
-  205. The Geometry of Concepts: Sparse Autoencoder Feature Structure
-  206. Mixtures of in-context learners
-  207. LYNX: ENABLING EFFICIENT MOE INFERENCE THROUGH DYNAMIC BATCH-AWARE EXPERT SELECTION
-  208. Number Cookbook: Number Understanding of Language Models and How to Improve It
-  209. THE SUPER WEIGHT IN LARGE LANGUAGE MODELS
-  210. Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation
-  211. Transformers are Universal In-context Learner
-  212. SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture
-  213. A Survey on Kolmogorov-Arnold Network
-  214. Generative Representational Instruction Tuning
-  215. JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
-  216. EFFICIENTLY LEARNING AT TEST-TIME: ACTIVE FINE-TUNING OF LLMS
-  217. softmax is not enough (for sharp out-of-distribution)
-  218. LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
-  219. Physics in Next-token Prediction
-  220. STAR ATTENTION: EFFICIENT LLM INFERENCE OVER LONG SEQUENCES
-  221. DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
-  222. UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining
-  223. Efficient Online Data Mixing For Language Model Pre-Training
-  224. OPTIMIZING PRETRAINING DATA MIXTURES WITH LLM-ESTIMATED UTILITY
-  225. SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization
-  226. Amortizing intractable inference in diffusion models for vision, language, and control
-  227. GIVT: Generative Infinite-Vocabulary Transformers
-  228. JETFORMER: AN AUTOREGRESSIVE GENERATIVE MODEL OF RAW IMAGES AND TEXT
-  229. O1-CODER: AN O1 REPLICATION FOR CODING
-  230. Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics
-  231. ONE STEP DIFFUSION VIA SHORTCUT MODELS
-  232. Draft Model Knows When to Stop: A Self-Verification Length Policy for Speculative Decoding
-  233. Classifier-Free Guidance inside the Attraction Basin May Cause Memorization
-  234. Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
-  235. Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
-  236. Training Large Language Models to Reason in a Continuous Latent Space
-  237. Normalizing Flows are Capable Generative Models
-  238. 23.04.25 The Broader Spectrum of In-Context Learning
-  239. Multimodal Latent Language Modeling with Next-Token Diffusion
-  240. Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
-  241. THE COMPLEXITY DYNAMICS OF GROKKING
-  242. ON SPEEDING UP LANGUAGE MODEL EVALUATION
-  243. Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs
-  244. Graph Generative Pre-trained Transformer
-  245. Memory Layers at Scale
-  246. EfficientQAT: Efficient Quantization-Aware Training for Large Language Models
-  247. ICLR: In-Context Learning of Representations
-  248. GROKKING AT THE EDGE OF NUMERICAL STABILITY
-  249. ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
-  250. Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
-  251. 24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
-  252. Neuro-Symbolic AI i 2024: A Systematic Review
-  253. Jasper and Stella: distillation of SOTA embedding models
-  254. Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
-  255. Common Sense Is All You Need
-  256. Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn’t
-  257. Task Singular Vectors: Reducing Task Interference in Model Merging
-  258. Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation
-  259. Spurious Rewards: Rethinking Training Signals in RLVR – Fast Overview
-  260. TRANSFORMER-SQUARED: SELF-ADAPTIVE LLMS
-  261. Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps
-  262. Is Stochastic Gradient Descent Effective? A PDE Perspective on Machine Learning Processes
-  263. Random Teachers are Good Teachers
-  264. Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap
-  265. Harnessing the Universal Geometry of Embeddings
-  266. Evolving Deeper LLM Thinking
-  267. Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation
-  268. The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs
-  269. Open Problems in Mechanistic Interpretability
-  270. Agent-as-a-Judge: Evaluate Agents with Agents
-  271. In-Context Symbolic Regression: Leveraging Large Language Models for Function Discovery
-  272. DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning
-  273. Investigating Tax Evasion Emergence Using Dual Large Language Model and Deep Reinforcement Learning Powered Agent-based Simulation
-  274. Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models
-  275. Frontier Models are Capable of In-context Scheming
-  276. s1: Simple test-time scaling
-  277. GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment
-  278. Reinforcement Pre-Training
-  279. Building Bridges between Regression, Clustering, and Classification
-  280. Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory
-  281. Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon
-  282. Empirical evidence of Large Language Model's influence on human spoken communication
-  283. Hierarchical Reasoning Model
-  284. Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation
-  285. Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models
-  286. Where to show Demos in Your Prompt: A Positional Bias of In-Context Learning
-  287. Efficient Attention Mechanisms for Large Language Models: A Survey
-  288. Your LLM Knows the Future: Uncovering Its Multi-Token Prediction Potential
-  289. Checklists Are Better Than Reward Models For Aligning Language Model
-  290. FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming
-  291. Large Action Models: From Inception to Implementation
-  292. Training Transformers with Enforced Lipschitz Bounds
-  293. Scaling Laws for Forgetting When Fine-Tuning Large Language Models
-  294. MemOS: An Operating System for Memory-Augmented Generation (MAG) in Large Language Models
-  295. Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks
-  296. Memento: Fine-tuning LLM Agents without Fine-tuning LLMs
-  297. DEEP THINK WITH CONFIDENCE
-  298. Strategic Intelligence in Large Language Models: Evidence from evolutionary Game Theory
-  299. A Survey on Large Language Model Benchmarks
-  300. Group Sequence Policy Optimization
-  301. Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation
-  302. Fantastic Pretraining Optimizers and Where to Find Them
-  303. Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making
-  304. On the Theoretical Limitations of Embedding-Based Retrieval
-  305. Bootstrapping Task Spaces for Self-Improvement
-  306. THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION
-  307. Foundation Models for Time Series Analysis- A Tutorial and Survey
-  308. Corrector Sampling in Language Models
-  309. Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free
-  310. EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING
-  311. Optimizers Qualitatively Alter Solutions And We Should Leverage This
-  312. Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs
-  313. BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR
-  314. Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING
-  315. COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A
-  316. Less is More: Recursive Reasoning with Tiny Networks
-  317. Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
-  318. LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM
-  319. Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs
-  320. The Markovian Thinker
-  321. Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO
-  322. DeepSeek-OCR: Contexts Optical Compression
-  323. Imbalanced Gradients in RL Post-Training of Multi-Task LLMs
-  324. EMERGENCE FROM LEARNING DYNAMICS OF GROKKING
-  325. Language Models are Injective and Hence Invertible
-  326. x* = y - f(LN(x*)).
-  327. Agent Learning via Early Experience
-  328. Statistical Runtime Verification for LLMs via Robustness Estimation
-  329. FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE
-  330. Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs
-  331. Nested Learning: Is Deep Learning Just a Stack of Optimizers?
-  332. Extracting alignment data in open models
-  333. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations
-  334. LiteAttention: A Temporal Sparse Attention for Diffusion Transformers
-  335. ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT
-  336. Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B
-  337. LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics
-  338. Whisper Leak: a side-channel attack on Large Language Models
-  339. How to Correctly Report LLM-as-a-Judge Evaluations
-  340. Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free
-  341. Solving a Million-Step LLM Task with Zero Errors
-  342. HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions
-  343. ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration
-  344. MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing
-  345. HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission
-  346. Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs
-  347. DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning
-  348. Learning Dynamics of LLM Finetuning
-  349. Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)
-  350. SEAL: Self-Adapting Language Models
-  351. Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning
-  352. RECURSIVE LANGUAGE MODELS
-  353. Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition
-  354. Small Language Models are the Future of Agentic AI
-  355. From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence
-  356. WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?
-  357. Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning
-  358. The Free Transformer
-  359. RAFT - Retrieval Augmented Time Series Forecasting
-  360. Deep Delta Learning
-  361. SFT Memorizes, RL Generalizes
-  362. REPO: Language Models with Context Re-Positioning
-  363. DoPE: Denoising Rotary Position Embedding
-  364. mHC: Manifold-Constrained Hyper-Connections
-  365. Efficient Context Scaling with LongCat ZigZag Attention
-  366. TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE
-  367. Scaling Embedding Outperforms Scaling Experts in Language Models
-  368. MatFormer: Nested Transformer for Elastic Inference
-  369. Structured RAG for Answering Aggregative Questions
-  370. A MODEL OF ERRORS IN TRANSFORMERS
-  371. Interpretability of Graph Neural Networks to Assess Effects of Global Change Drivers on Ecological Networks
-  372. The Illusion of Insight in Reasoning Models
-  373. מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח
-  374. Orthogonal Model Merging
-  375. THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING
-  376. Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models
-  377. ATTENTION (AS DISCRETE-TIME MARKOV) CHAINS
-  378. THE GEOMETRY OF REASONING: FLOWING LOGICS IN REPRESENTATION SPACE
-  379. INTRINSIC TASK SYMMETRY DRIVES GENERALIZATION IN ALGORITHMIC TASKS
-  380. Generative Modeling via Drifting
-  381. SYMMETRY IN LANGUAGE STATISTICS SHAPES THE GEOMETRY OF MODEL REPRESENTATIONS
-  382. NEURAL THICKETS: DIVERSE TASK EXPERTS ARE DENSE AROUND PRETRAINED
-  383. Speculative Speculative Decoding
-  384. TinyV: Reducing False Negatives in Verification Improves RL for LLM Reasoning
-  385. Attention Residuals
-  386. Exclusive Self Attention
+ 10. Scaling and evaluating sparse autoencoders?
+ 11. Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality
+ 12. What Do Language Models Learn in Context? The Structured Task Hypothesis.
+ 13. Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks
+ 14. The Geometry of Categorical and Hierarchical Concepts in Large Language Models
+ 15. Accelerating Feedforward Computation via Parallel Nonlinear Equation Solving
+ 16. Break the Sequential Dependency of LLM Inference Using LOOKAHEAD DECODING
+ 17. CLLMs: Consistency Large Language Models
+ 18. MEDUSA: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads
+ 19. STATISTICAL REJECTION SAMPLING IMPROVES PREFERENCE OPTIMIZATION
+ 20. SSAMBA: SELF-SUPERVISED AUDIO REPRESENTATION LEARNING WITH MAMBA STATE SPACE MODEL
+ 21. Helping or Herding? Reward Model Ensembles Mitigate but do not Eliminate REWARD HACKING
+ 22. INTRINSIC DIMENSIONALITY EXPLAINS THE EFFECTIVENESS OF LANGUAGE MODEL FINE-TUNING
+ 23. WARM: On the Benefits of Weight Averaged Reward Models
+ 24. Named Entity Recognition as Structured Span Prediction
+ 25. GLiNER: Generalist Model for Named Entity Recognition using Bidirectional Transformer
+ 26. TextGrad: Automatic “Differentiation” via Text
+ 27. Are you still on track!? Catching LLM Task Drift with Activations
+ 28. Improving Reinforcement Learning from Human Feedback with Efficient Reward Model Ensemble
+ 29. Probing the Decision Boundaries of In-context Learning in Large Language Models
+ 30. On-Policy Distillation OF LANGUAGE MODELS: LEARNING FROM SELF-GENERATED MISTAKES
+ 31. What Are the Odds? Language Models Are Capable of Probabilistic Reasoning
+ 32. Grokfast: Accelerated Grokking by Amplifying Slow Gradients
+ 33. From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data
+ 34. The Remarkable Robustness of LLMs: Stages of Inference?
+ 35. How Do Large Language Models Acquire Factual Knowledge During Pretraining?
+ 36. A Survey of Large Language Models for Graphs
+ 37. The Road Less Scheduled
+ 38. Mixture of A Million Experts
+ 39. Learning to (Learn at Test Time): RNNs with Expressive Hidden States
+ 40. DOLA: DECODING BY CONTRASTING LAYERS IMPROVES FACTUALITY IN LARGE LANGUAGE MODELS
+ 41. To Believe or Not to Believe Your LLM
+ 42. SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales
+ 43. Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps
+ 44. How Does Quantization Affect Multilingual LLMs?
+ 45. Learning Rate Curriculum
+ 46. Trainable Highly-expressive Activation Functions
+ 47. DataDream: Few-shot Guided Dataset Generation
+ 48. Consistency Models
+ 49. TRAINING DIFFUSION MODELS WITH REINFORCEMENT LEARNING
+ 50. Feedback Efficient Online Fine-Tuning of Diffusion Models
+ 51. The Empirical Impact of Neural Parameter Symmetries, or Lack Thereof
+ 52. AI models collapse when trained on recursively generated data
+ 53. Questionable practices in machine learning
+ 54. Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?
+ 55. Large Scale Dataset Distillation with Domain Shift
+ 56. Denoising Vision Transformers
+ 57. DENOISING DIFFUSION IMPLICIT MODELS
+ 58. IMPROVED TECHNIQUES FOR TRAINING CONSISTENCY MODELS
+ 59. NEFTUNE: NOISY EMBEDDINGS IMPROVE INSTRUCTION FINETUNING
+ 60. Consistency Models Made Easy
+ 61. Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning
+ 62. TurboEdit: Text-Based Image Editing Using Few-Step Diffusion Models
+ 63. Language Model Can Listen While Speaking
+ 64. Masked Attention is All You Need for Graphs
+ 65. Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
+ 66. Synthesizing Text-to-SQL Data fromWeak and Strong LLMs
+ 67. Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models
+ 68. Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2
+ 69. Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders
+ 70. Your Classifier Can Be Secretly a Likelihood-Based OOD Detect
+ 71. On the Geometry of Deep Learning
+ 72. Faster Machine Unlearning via Natural Gradient Descent
+ 73. DIGRESS: DISCRETE DENOISING DIFFUSION FOR GRAPH GENERATION
+ 74. JPEG-LM: LLMs as Image Generators with Canonical Codec Representations
+ 75. Tree Attention: Topology-Aware Decoding for Long-Context Attention on GPU Clusters
+ 76. Approaching Deep Learning through the Spectral Dynamics of Weights
+ 77. Platypus: A Generalized Specialist Model for Reading Text in Various Forms
+ 78. Counterfactual Explanations and Algorithmic Recourses for Machine Learning: A Review
+ 79. DIFFUSION MODELS ARE REAL-TIME GAME ENGINES
+ 80. Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Mode
+ 81. Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling
+ 82. Flexora: Flexible Low Rank Adaptation for Large Language Models
+ 83. EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty
+ 84. ReMamba: Equip Mamba with Effective Long-Sequence Modeling
+ 85. DO TRANSFORMER WORLD MODELS GIVE BETTER POLICY GRADIENTS?
+ 86. MemLong: Memory-Augmented Retrieval for Long Text Modeling
+ 87. Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers
+ 88. Learning to reason with LLMs
+ 89. LLMs Will Always Hallucinate, We Need to Live With This
+ 90. Beyond Neural Scaling Laws: Beating Power Law Scaling via Data Pruning
+ 91. Q*: Improving Multi-step Reasoning for LLMs with Deliberative Planning
+ 92. Rethinking Benchmark and Contamination for Language Models with Rephrased Samples
+ 93. STaR: Self-Taught Reasoner Bootstrapping Reasoning With Reasoning
+ 94. Training Chain-of-Thought via Latent-Variable Inference
+ 95. Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning
+ 96. REFT: Reasoning with REinforced Fine-Tuning
+ 97. Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking
+ 98. Training Language Models to Self-Correct via Reinforcement Learning
+ 99. LLMs Still can’t Plan; can LRMs? A PRELIMINARY EVALUATION OF OPENAI’S O1 on PLANBENCH
+100. RRM: ROBUST REWARD MODEL TRAINING MITIGATES REWARD HACKING
+101. REWARD-ROBUST RLHF IN LLMS
+102. Meta-Whisper: Speech-Based Meta-ICL for ASR on Low-Resource Languages
+103. ASR Error Correction using Large Language Models
+104. SCHRODINGER’S MEMORY: LARGE LANGUAGE MODELS
+105. Larger and more instructable language models become less reliable
+106. Transformers are Expressive, But Are They Expressive Enough for Regression?
+107. Were RNNs All We Needed?
+108. CONTRASTIVE LOCALIZED LANGUAGE-IMAGE PRE-TRAINING
+109. CONTEXTUAL DOCUMENT EMBEDDINGS
+110. DIFFERENTIAL TRANSFORMER
+111. SELECTIVE ATTENTION IMPROVES TRANSFORMER
+112. GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models
+113. LLMS KNOW MORE THAN THEY SHOW: ON THE IN-TRINSIC REPRESENTATION OF LLM HALLUCINATIONS
+114. EFFICIENT DICTIONARY LEARNING WITH SWITCH SPARSE AUTOENCODERS
+115. EFFICIENT REINFORCEMENT LEARNING WITH LARGE LANGUAGE MODEL PRIORS
+116. EQUIVARIANT CONTRASTIVE LEARNING
+117. SimCSE: Simple Contrastive Learning of Sentence Embeddings
+118. DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings
+119. RL, BUT DON’T DO ANYTHING I WOULDN’T DO
+120. Sample what you can’t compress
+121. Predicting from Strings: Language Model Embeddings for Bayesian Optimization
+122. HOW MANY VAN GOGHS DOES IT TAKE TO VAN GOGH? FINDING THE IMITATION THRESHOLD
+123. Amortized Planning with Large-Scale Transformers: A Case Study on Chess
+124. Efficient Vision-Language Pre-training by Cluster Masking
+125. HEAVY-TAILED DIFFUSION MODELS
+126. Global Lyapunov functions: a long-standing open problem in mathematics, with symbolic transformers
+127. Beyond Preferences in AI Alignment
+128. Understanding Transformers via N-gram Statistics
+129. LLMs Are In-Context Reinforcement Learners
+130. Learning to Compress: Local Rank and Information Compression in Deep Neural Networks
+131. TOKENFORMER: RETHINKING TRANSFORMER SCALING WITH TOKENIZED MODEL PARAMETERS
+132. Refusal in Language Models Is Mediated by a Single Direction
+133. RETHINKING SOFTMAX: SELF-ATTENTION WITH POLYNOMIAL ACTIVATIONS
+134. Cross-layer Attention Sharing for Large Language Models
+135. Occam’s Razor for Self Supervised Learning: What is Sufficient to Learn Good Representations?
+136. CROSS-ENTROPY IS ALL YOU NEED TO INVERT THE DATA GENERATING PROCESS
+137. WHAT MATTERS IN TRANSFORMERS? NOT ALL ATTENTION IS NEEDED
+138. Stealing Part of a Production Language Model
+139. OccamLLM: Fast and Exact Language Model Arithmetic in a Single Step
+140. NON-NEGATIVE CONTRASTIVE LEARNING
+141. Knowledge Editing in Language Models via Adapted Direct Preference Optimization
+142. Adaptive Decoding via Latent Preference Optimization
+143. Unfamiliar Finetuning Examples Control How Language Models Hallucinate
+144. The Unreasonable Ineffectiveness of the Deeper Layers
+145. Table Meets LLM: Can Large Language Models Understand Structured Table Data? A Benchmark and Empirical Study
+146. Is DPO Superior to PPO for LLM Alignment? A Comprehensive Study
+147. The Illusion of State in State-Space Models
+148. Parameter-Efficient Fine-Tuning with Discrete Fourier Transform
+149. In-Context Learning with Long-Context Models: An In-Depth Exploration
+150. Fishing for Magikarp: Automatically detecting under-trained tokens in large language models
+151. Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation
+152. KAN: Kolmogorov–Arnold Networks
+153. Memory3: Language Modeling with Explicit Memory
+154. Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering
+155. Scaling Synthetic Data Creation with 1,000,000,000 Personas
+156. LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement
+157. Byte Latent Transformer: Patches Scale Better Than Tokens
+158. Large Concept Models: Language Modeling in a Sentence Representation Space
+159. FAN: Fourier Analysis Networks
+160. Reasoning in Large Language Models: A Geometric Perspective
+161. T-FREE: Tokenizer-Free Generative LLMs via Sparse Representations for Memory-Efficient Embeddings
+162. Vision language models are blind
+163. RL for Consistency Models: Faster Reward Guided Text-to-Image Generation
+164. Position: Future Directions in the Theory of Graph Machine Learning
+165. Graph Diffusion Policy Optimization
+166. Inference-Aware Fine-Tuning for Best-of-N Sampling in Large Language Models
+167. Loss of plasticity in deep continual learning
+168. A PERCOLATION MODEL OF EMERGENCE: ANALYZING TRANSFORMERS TRAINED ON A FORMAL LANGUAGE
+169. A Survey on Efficient Inference for Large Language Models
+170. Anchored Preference Optimization and Contrastive Revisions Addressing Underspecification in Alignment
+171. When Can Transformers Count to n?
+172. Chain of Thought Empowers Transformers to Solve Inherently Serial Problems
+173. Evaluating the Design Space of Diffusion-Based Generative Models
+174. Improve Mathematical Reasoning in Language Models by Automated Process Supervision
+175. Diffusion Models for Non-autoregressive Text Generation: A Survey
+176. Towards a Unified View of Preference Learning for Large Language Models: A Survey
+177. MAKING TEXT EMBEDDERS FEW-SHOT LEARNERS
+178. The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks
+179. Time-MoE: Billion-Scale Time Series Foundation Models with Mixture of Experts
+180. MONOFORMER: ONE TRANSFORMER FOR BOTH DIFFUSION AND AUTOREGRESSION
+181. Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs
+182. FineZip: Pushing the Limits of Large Language Models for Practical Lossless Text Compression
+183. A Survey on Diffusion Models for Inverse Problems
+184. Law of the Weakest Link: Cross Capabilities of Large Language Models
+185. Classical Statistical (In-Sample) Intuitions Don’t GeneralizeWell: A Note on Bias-Variance Tradeoffs, Overfitting and Moving from Fixed to Random Designs
+186. The Perfect Blend: Redefining RLHF with Mixture of Judges
+187. Deep Generative Models through the Lens of the Manifold Hypothesis: A Survey and New Connections
+188. SMALL LANGUAGE MODELS: SURVEY, MEASUREMENTS, AND INSIGHTS
+189. Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis
+190. Why Is Anything Conscious?
+191. On the expressiveness and spectral bias of KANs
+192. STUFFED MAMBA: State Collapse and State Capacity of RNN-Based Long-Context Modeling
+193. One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation
+194. A Spectral Condition for Feature Learning
+195. Representation Alignment for Generation: Training Diffusion Transformers is Easier than you Think
+196. THINKING LLMS: GENERAL INSTRUCTION FOLLOWING WITH THOUGHT GENERATION
+197. Losing dimensions: Geometric memorization in generative diffusion
+198. When Does Perceptual Alignment Benefit Vision Representations?
+199. Addition Is All You Need: For Energy-Efficient Language Models
+200. Understanding Visual Feature Reliance through the Lens of Complexity
+201. Unity by Diversity: Improved Representation Learning for Multimodal VAEs
+202. The FFT Strikes Back: An Efficient Alternative to Self-Attention
+203. LORA VS FULL FINE-TUNING: AN ILLUSION OF EQUIVALENCE
+204. An Empirical Model of Large-Batch Training
+205. The Geometry of Concepts: Sparse Autoencoder Feature Structure
+206. Mixtures of in-context learners
+207. LYNX: ENABLING EFFICIENT MOE INFERENCE THROUGH DYNAMIC BATCH-AWARE EXPERT SELECTION
+208. Number Cookbook: Number Understanding of Language Models and How to Improve It
+209. THE SUPER WEIGHT IN LARGE LANGUAGE MODELS
+210. Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation
+211. Transformers are Universal In-context Learner
+212. SLIM: Let LLM Learn More and Forget Less with Soft LoRA and Identity Mixture
+213. A Survey on Kolmogorov-Arnold Network
+214. Generative Representational Instruction Tuning
+215. JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation
+216. EFFICIENTLY LEARNING AT TEST-TIME: ACTIVE FINE-TUNING OF LLMS
+217. softmax is not enough (for sharp out-of-distribution)
+218. LLMs learn governing principles of dynamical systems, revealing an in-context neural scaling law
+219. Physics in Next-token Prediction
+220. STAR ATTENTION: EFFICIENT LLM INFERENCE OVER LONG SEQUENCES
+221. DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining
+222. UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining
+223. Efficient Online Data Mixing For Language Model Pre-Training
+224. OPTIMIZING PRETRAINING DATA MIXTURES WITH LLM-ESTIMATED UTILITY
+225. SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization
+226. Amortizing intractable inference in diffusion models for vision, language, and control
+227. GIVT: Generative Infinite-Vocabulary Transformers
+228. JETFORMER: AN AUTOREGRESSIVE GENERATIVE MODEL OF RAW IMAGES AND TEXT
+229. O1-CODER: AN O1 REPLICATION FOR CODING
+230. Arithmetic Without Algorithms: Language Models Solve Math with a Bag of Heuristics
+231. ONE STEP DIFFUSION VIA SHORTCUT MODELS
+232. Draft Model Knows When to Stop: A Self-Verification Length Policy for Speculative Decoding
+233. Classifier-Free Guidance inside the Attraction Basin May Cause Memorization
+234. Memorization to Generalization: The Emergence of Diffusion Models from Associative Memory
+235. Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
+236. Training Large Language Models to Reason in a Continuous Latent Space
+237. Normalizing Flows are Capable Generative Models
+238. 23.04.25 The Broader Spectrum of In-Context Learning
+239. Multimodal Latent Language Modeling with Next-Token Diffusion
+240. Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
+241. THE COMPLEXITY DYNAMICS OF GROKKING
+242. ON SPEEDING UP LANGUAGE MODEL EVALUATION
+243. Do NOT Think That Much for 2+3=? On the Overthinking of o1-Like LLMs
+244. Graph Generative Pre-trained Transformer
+245. Memory Layers at Scale
+246. EfficientQAT: Efficient Quantization-Aware Training for Large Language Models
+247. ICLR: In-Context Learning of Representations
+248. GROKKING AT THE EDGE OF NUMERICAL STABILITY
+249. ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
+250. Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
+251. 24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
+252. Neuro-Symbolic AI i 2024: A Systematic Review
+253. Jasper and Stella: distillation of SOTA embedding models
+254. Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
+255. Common Sense Is All You Need
+256. Reinforcement Learning for Reasoning in Small LLMs: What Works and What Doesn’t
+257. Task Singular Vectors: Reducing Task Interference in Model Merging
+258. Rate-In: Information-Driven Adaptive Dropout Rates for Improved Inference-Time Uncertainty Estimation
+259. Spurious Rewards: Rethinking Training Signals in RLVR – Fast Overview
+260. TRANSFORMER-SQUARED: SELF-ADAPTIVE LLMS
+261. Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps
+262. Is Stochastic Gradient Descent Effective? A PDE Perspective on Machine Learning Processes
+263. Random Teachers are Good Teachers
+264. Evolutionary Computation in the Era of Large Language Model: Survey and Roadmap
+265. Harnessing the Universal Geometry of Embeddings
+266. Evolving Deeper LLM Thinking
+267. Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation
+268. The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs
+269. Open Problems in Mechanistic Interpretability
+270. Agent-as-a-Judge: Evaluate Agents with Agents
+271. In-Context Symbolic Regression: Leveraging Large Language Models for Function Discovery
+272. DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning
+273. Investigating Tax Evasion Emergence Using Dual Large Language Model and Deep Reinforcement Learning Powered Agent-based Simulation
+274. Procedural Knowledge in Pretraining Drives Reasoning in Large Language Models
+275. Frontier Models are Capable of In-context Scheming
+276. s1: Simple test-time scaling
+277. GENARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment
+278. Reinforcement Pre-Training
+279. Building Bridges between Regression, Clustering, and Classification
+280. Decision Trees That Remember: Gradient-Based Learning of Recurrent Decision Trees with Memory
+281. Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon
+282. Empirical evidence of Large Language Model's influence on human spoken communication
+283. Hierarchical Reasoning Model
+284. Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation
+285. Rethinking Transformers Through the Lens of Physics: The Rise of Energy-Based Models
+286. Where to show Demos in Your Prompt: A Positional Bias of In-Context Learning
+287. Efficient Attention Mechanisms for Large Language Models: A Survey
+288. Your LLM Knows the Future: Uncovering Its Multi-Token Prediction Potential
+289. Checklists Are Better Than Reward Models For Aligning Language Model
+290. FormulaOne: Measuring the Depth of Algorithmic Reasoning Beyond Competitive Programming
+291. Large Action Models: From Inception to Implementation
+292. Training Transformers with Enforced Lipschitz Bounds
+293. Scaling Laws for Forgetting When Fine-Tuning Large Language Models
+294. MemOS: An Operating System for Memory-Augmented Generation (MAG) in Large Language Models
+295. Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks
+296. Memento: Fine-tuning LLM Agents without Fine-tuning LLMs
+297. DEEP THINK WITH CONFIDENCE
+298. Strategic Intelligence in Large Language Models: Evidence from evolutionary Game Theory
+299. A Survey on Large Language Model Benchmarks
+300. Group Sequence Policy Optimization
+301. Signal and Noise: A Framework for Reducing Uncertainty in Language Model Evaluation
+302. Fantastic Pretraining Optimizers and Where to Find Them
+303. Inducing State Anxiety in LLM Agents Reproduces Human-Like Biases in Consumer Decision-Making
+304. On the Theoretical Limitations of Embedding-Based Retrieval
+305. Bootstrapping Task Spaces for Self-Improvement
+306. THE ORIGIN OF SELF-ATTENTION: PAIRWISE AFFINITY MATRICES IN FEATURE SELECTION AND THE EMERGENCE OF SELF-ATTENTION
+307. Foundation Models for Time Series Analysis- A Tutorial and Survey
+308. Corrector Sampling in Language Models
+309. Gated Attention for Large Language Models- Non-linearity, Sparsity, and Attention-Sink-Free
+310. EVOLUTION OF CONCEPTS IN LANGUAGE MODEL PRE-TRAINING
+311. Optimizers Qualitatively Alter Solutions And We Should Leverage This
+312. Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs
+313. BEYOND THE EXPLORATION-EXPLOITATION TRADE-OFF: A HIDDEN STATE APPROACH FOR LLM REASONING IN RLVR
+314. Evolution Strategies at Scale: LLM FINE-TUNING BEYOND REINFORCEMENT LEARNING
+315. COMPLLM: COMPRESSION FOR LONG CONTEXT Q&A
+316. Less is More: Recursive Reasoning with Tiny Networks
+317. Inadequacies of Large Language Model Benchmarks in the Era of Generative Artificial Intelligence
+318. LIMITATIONS OF NORMALIZATION IN ATTENTION MECHANISM
+319. Between Underthinking and Overthinking: An Empirical Study of Reasoning Length and Correctness in LLMs
+320. The Markovian Thinker
+321. Shaping Explanations: Semantic Reward Modeling with Encoder-Only Transformers for GRPO
+322. DeepSeek-OCR: Contexts Optical Compression
+323. Imbalanced Gradients in RL Post-Training of Multi-Task LLMs
+324. EMERGENCE FROM LEARNING DYNAMICS OF GROKKING
+325. Language Models are Injective and Hence Invertible
+326. x* = y - f(LN(x*)).
+327. Agent Learning via Early Experience
+328. Statistical Runtime Verification for LLMs via Robustness Estimation
+329. FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE
+330. Forget BIT, It is All about TOKEN: Towards Semantic Information Theory for LLMs
+331. Nested Learning: Is Deep Learning Just a Stack of Optimizers?
+332. Extracting alignment data in open models
+333. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations
+334. LiteAttention: A Temporal Sparse Attention for Diffusion Transformers
+335. ATTENTION AND COMPRESSION IS ALL YOU NEED FOR CONTROLLABLY EFFICIENT
+336. Tiny Model, Big Logic: Diversity-Driven Optimization Elicits Large-Model Reasoning Ability in VibeThinker-1.5B
+337. LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics
+338. Whisper Leak: a side-channel attack on Large Language Models
+339. How to Correctly Report LLM-as-a-Judge Evaluations
+340. Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free
+341. Solving a Million-Step LLM Task with Zero Errors
+342. HeavyWater and SimplexWater: Watermarking Low‑Entropy Text Distributions
+343. ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration
+344. MOETUNER: Optimized Mixture of Expert Serving with Balanced Expert Placement and Token Routing
+345. HybridEP: Scaling Expert Parallelism to Cross-Datacenter Scenario via Hybrid Expert/Data Transmission
+346. Let's (not) just put things in Context: Test-Time Training for Long-Context LLMs
+347. DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning
+348. Learning Dynamics of LLM Finetuning
+349. Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)
+350. SEAL: Self-Adapting Language Models
+351. Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning
+352. RECURSIVE LANGUAGE MODELS
+353. Paraformer-v2: An improved non-autoregressive transformer for noise-robust speech recognition
+354. Small Language Models are the Future of Agentic AI
+355. From Entropy to Epiplexity: Rethinking Information for Computationally Bounded Intelligence
+356. WAIT, WAIT, WAIT... WHY DO REASONING MODELS LOOP?
+357. Joint-Embedding vs Reconstruction: Provable Benefits of Latent Space Prediction for Self-Supervised Learning
+358. The Free Transformer
+359. RAFT - Retrieval Augmented Time Series Forecasting
+360. Deep Delta Learning
+361. SFT Memorizes, RL Generalizes
+362. REPO: Language Models with Context Re-Positioning
+363. DoPE: Denoising Rotary Position Embedding
+364. mHC: Manifold-Constrained Hyper-Connections
+365. Efficient Context Scaling with LongCat ZigZag Attention
+366. TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE
+367. Scaling Embedding Outperforms Scaling Experts in Language Models
+368. MatFormer: Nested Transformer for Elastic Inference
+369. Structured RAG for Answering Aggregative Questions
+370. A MODEL OF ERRORS IN TRANSFORMERS
+371. Interpretability of Graph Neural Networks to Assess Effects of Global Change Drivers on Ecological Networks
+372. The Illusion of Insight in Reasoning Models
+373. מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח
+374. Orthogonal Model Merging
+375. THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING
+376. Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models
+377. ATTENTION (AS DISCRETE-TIME MARKOV) CHAINS
+378. THE GEOMETRY OF REASONING: FLOWING LOGICS IN REPRESENTATION SPACE
+379. INTRINSIC TASK SYMMETRY DRIVES GENERALIZATION IN ALGORITHMIC TASKS
+380. Generative Modeling via Drifting
+381. SYMMETRY IN LANGUAGE STATISTICS SHAPES THE GEOMETRY OF MODEL REPRESENTATIONS
+382. NEURAL THICKETS: DIVERSE TASK EXPERTS ARE DENSE AROUND PRETRAINED
+383. Speculative Speculative Decoding
+384. TinyV: Reducing False Negatives in Verification Improves RL for LLM Reasoning
+385. Attention Residuals
+386. Exclusive Self Attention
