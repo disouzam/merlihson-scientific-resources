@@ -1,0 +1,19 @@
+Review 593: Exclusive Self-Attention: Orthogonal Projection as an Architectural Inductive Bias
+Mike’s daily paper review: 24.03.26, review 593, 431 reviews to 1024
+Exclusive Self-Attention
+
+A light review of a tiny improvement to the attention mechanism from Apple researchers.
+
+This is a short and focused contribution (7 pages, with the abstract itself taking up a third of a page or even less) that proposes a two-line code change to self-attention, which removes redundancy (according to the authors) between what the attention layer and the feed-forward layer (that is, the FFN) compute. The idea is clean and the paper is well constructed, so let’s get into it.
+
+In the standard self-attention mechanism, each token produces Query, Key, and Value vectors through learned linear projections. The output for position i is a weighted sum (with softmax weights) of the V vectors from positions 1 through i. The authors found that, in trained models, this output has high cosine similarity with the token’s own value vector, and that this similarity increases with layer depth. They call this the “attention similarity bias”: the attention layer wastes capacity on re-encoding information that the token already carries, thereby duplicating work that the FFN (which receives the original representation through the residual connection) can perform on its own.
+
+The XSA fix is a single simple geometric operation: after computing the standard attention output, subtract its projection onto its own V vector. The result is guaranteed to be orthogonal to that V vector. The implementation is two lines of code: L2 normalization of the V vectors, followed by subtraction of the projection result. No new parameters are introduced, it is fully parallelizable, and the added cost (one normalization, one inner product, one scalar-vector multiplication, and one subtraction per attention head and position) is linear in sequence length and head dimension, negligible relative to the quadratic cost of attention.
+
+The authors note that this removes not only the contribution of the token’s own V vector, but also any component of V vectors from positions “related” to it. They present this as an advantage: it “completely removes the attention similarity bias.” A natural question (which the paper does not discuss, by the way) is whether this is too aggressive, and whether it might harm useful contextual signals from other tokens that happen to align with the direction of the token’s own V.
+
+A nice connection: XSA is related to attention sinks (tokens that absorb excess attention mass). In standard self-attention, the attention weights must sum to 1 because of the softmax, so even when a token has no real need for contextual information, it is forced to allocate the weight somewhere, which contaminates the output. Attention sinks address this by adding artificial tokens at the beginning of the sequence that serve as a “trash bin” for excess attention. In XSA, the model does not need special tokens because it can simply assign high attention weight to itself, and the projection step neutralizes the effect—that is, each token becomes its own sink for free. The paper tests XSA together with explicit sink tokens (0, 1, and 4) and finds that the benefit of XSA remains, suggesting that the two mechanisms are complementary rather than redundant.
+
+In my opinion, the paper is missing some ablations: there is no analysis of applying the projection only to a subset of layers, no discussion of grouped query attention, no investigation of bidirectional attention as in encoders, and no examination of how the projection reshapes the attention patterns learned during training.
+
+https://arxiv.org/abs/2603.09078
