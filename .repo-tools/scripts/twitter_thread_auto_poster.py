@@ -472,14 +472,20 @@ def main():
 
     # Pull latest from remote (critical: gets ledger from other machines)
     logger.info("Pulling latest from remote (for cross-machine ledger sync)...")
-    pull_result = subprocess.run(
-        ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
-        capture_output=True, text=True, timeout=60
-    )
-    if pull_result.returncode != 0:
-        logger.warning(f"Git pull warning: {pull_result.stderr.strip()}")
-    else:
-        logger.info("✓ Repo up to date")
+    try:
+        pull_result = subprocess.run(
+            ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
+            capture_output=True, text=True, timeout=60
+        )
+        if pull_result.returncode != 0:
+            logger.error(f"Git pull FAILED: {pull_result.stderr.strip()}")
+            logger.error("Cannot proceed without a clean pull — risk of duplicate posts. Aborting.")
+            return 1
+        else:
+            logger.info("✓ Repo up to date")
+    except subprocess.TimeoutExpired:
+        logger.error("Git pull timed out after 60s. Aborting to avoid duplicate posts.")
+        return 1
 
     # Get reviews to process
     if args.review:
