@@ -67,7 +67,10 @@ Best bang for buck (high book count, downloadable links):
 - [x] rohanmistry231/Mathematics-for-Machine-Learning-Books — 7 books cloned & sorted
 - [x] chaconnewu/free-data-science-books — 10 books downloaded (6 dead links, 4 dupes)
 - [ ] rossant/awesome-math — skipped (mostly web links, only ~6 PDFs)
-- [ ] EbookFoundation/free-programming-books (math/ML sections)
+- [ ] EbookFoundation/free-programming-books — links only, ~68 direct PDFs scattered across URLs, not worth effort
+- [x] aniketpotabatti/Data-Science-EBooks — 47 books sorted (ML, GenAI/LLM, NLP, math, data science)
+- [x] wdp-007/Deep-learning-books — 23 books sorted (NLP, DL, ML, math, speech)
+- [x] Chandra0505/Data-Science-Resources — 12 books sorted (stats, ML, data science)
 - [x] manjunath5496/Open-Access-Books — 69 books downloaded & sorted
 - [x] zslucky/awesome-AI-books — all Yandex.Disk links dead (404), 0 books
 - [x] AzatAI/cs_books — 40 books sorted (106 new after dupe check, 40 relevant curated)

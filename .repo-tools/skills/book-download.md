@@ -52,7 +52,7 @@ Use existing directories when possible. Create new subcategories only when a bat
 - Rename cryptic filenames (e.g., `cv(1).pdf`, `os(198).pdf`) to descriptive titles from README
 - No special characters: `< > : " / \ | ? *`
 
-### 7 Files >100MB (local only, NEVER stage/commit)
+### 10 Files >50MB (local only, NEVER stage/commit)
 These must be excluded from EVERY `git add`:
 1. `machine learning/broad ml materials/050_Probabilistic_Machine_Learning_Advanced_Topics.pdf`
 2. `machine learning/broad ml materials/075_Concise_Machine_Learning.pdf`
@@ -61,6 +61,9 @@ These must be excluded from EVERY `git add`:
 5. `math/linear algebra/034_Linear_Algebra_And_Multi_Dimensional_Geometry.pdf`
 6. `math/just beautiful math/122_Pure_mathematics,_Part_I.pdf`
 7. `math/just beautiful math/123_Pure_mathematics,_Part_II.pdf`
+8. `machine learning/genAI/AI Agents in Action.pdf`
+9. `machine learning/building ml models/AI Engineering - Chip Huyen.pdf`
+10. `math/probability & stats/Linear Regression Notes.pdf`
 
 ### Git Workflow
 1. `git pull --rebase` before committing
@@ -139,7 +142,7 @@ After updating, verify consistency:
 
 See `learning-materials/repos/book_repos.md` for the full list (single source of truth).
 
-**Summary**: 663+ books from 22+ repos processed. Collection: 1,280 PDFs.
+**Summary**: 745+ books from 25+ repos processed. Collection: 1,366 PDFs.
 
 ## Error Scenarios
 
@@ -152,4 +155,4 @@ See `learning-materials/repos/book_repos.md` for the full list (single source of
 
 ---
 
-**Last Updated:** 2026-03-11
+**Last Updated:** 2026-04-02
