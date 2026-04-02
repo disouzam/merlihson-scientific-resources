@@ -142,7 +142,7 @@ After updating, verify consistency:
 
 See `learning-materials/repos/book_repos.md` for the full list (single source of truth).
 
-**Summary**: 745+ books from 25+ repos processed. Collection: 1,366 PDFs.
+**Summary**: 767+ books from 27+ repos processed. Collection: 1,388 PDFs.
 
 ## Error Scenarios
 
