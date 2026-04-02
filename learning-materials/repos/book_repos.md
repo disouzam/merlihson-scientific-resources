@@ -73,6 +73,7 @@ Best bang for buck (high book count, downloadable links):
 - [x] Chandra0505/Data-Science-Resources — 12 books sorted (stats, ML, data science)
 - [x] datixai/AI-DataScience-ML-Books — 0 books (subset of aniketpotabatti, all dupes)
 - [x] Abhiroyq1/eBooks-PDFs-necessary-for-data-analysis — 22 books sorted (CV, NLP, algorithms, Python, MongoDB)
+- [x] hammer-wang/machine_learning_books — 12 books sorted (advanced ML, RL, CV, optimization, info theory)
 - [x] manjunath5496/Open-Access-Books — 69 books downloaded & sorted
 - [x] zslucky/awesome-AI-books — all Yandex.Disk links dead (404), 0 books
 - [x] AzatAI/cs_books — 40 books sorted (106 new after dupe check, 40 relevant curated)
