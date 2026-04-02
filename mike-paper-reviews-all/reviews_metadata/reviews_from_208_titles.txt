@@ -366,27 +366,27 @@
   363. DoPE: Denoising Rotary Position Embedding
   364. mHC: Manifold-Constrained Hyper-Connections
   365. Efficient Context Scaling with LongCat ZigZag Attention
-  366. # FusionRoute: Bridging Gaps Between LLMs Via Additional Logit Routing
-  367. Scaling Embedding Outperforms Scaling Experts in Language Models
+  366. Mike’s Daily Paper Review: 04.02.26TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE
+  367. Who Wins at Scale: N-gram Embedding Scaling or Scaling the Number of Experts in LLMs
   368. One Model, Infinite Sizes: The Era of Elastic Inference
   369. From World Cup Statistics to Business Data: AI21's New RAG
   370. The Thermodynamics of Transformer Errors: A New Physics of Scale
   371. Bees, Flowers, Deep in the Web
   372. The “Aha” That Wasn’t: When Language Models Only Pretend to Think
-  373. LLMs as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
-  374. Merging via Lie Algebra: Preserving Manifold Geometry in Deep Model Merging
-  375. The Geometry of Probabilities in LLMs
-  376. Conceptual-Level Planning in Latent Space
-  377. Beyond Direct Attention: Analyzing the Attention Mechanism as Markov Chains
-  378. Beyond the Conceptual Graph: The Differential Dynamics of Reasoning Flow in Language Models
-  379. Symmetry as the Structural Engine of Deep Representations
-  380. Generative Modeling via Drift Fields
-  381. Fourier Geometry of Semantic Symmetries
-  382. Exploring Weight Space Thickets
-  383. Can Token Speculation Work Twice?
-  384. Mechanics of reward signal recovery for mathematical reasoning
-  385. Letting Each Transformer Layer Choose What It Needs to Listen To
-  386. Exclusive Self-Attention: Orthogonal Projection as an Architectural Inductive Bias
-  387. Knowledge Distillation with a "Lego" Approach
-  388. Right for the Right Concepts: Teaching Models to Think Like Humans Enhances Robustness
-  389. More Than a Logical Chain: The Hidden Power of Reasoning You Haven’t Met Yet
+  373. LARGE LANGUAGE MODELS: A MATHEMATICAL FORMULATION
+  374. Orthogonal Model Merging
+  375. THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING
+  376. Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models
+  377. ATTENTION (AS DISCRETE-TIME MARKOV) CHAINS
+  378. THE GEOMETRY OF REASONING: FLOWING LOGICS IN REPRESENTATION SPACE
+  379. INTRINSIC TASK SYMMETRY DRIVES GENERALIZATION IN ALGORITHMIC TASKS
+  380. Generative Modeling via Drifting
+  381. SYMMETRY IN LANGUAGE STATISTICS SHAPES THE GEOMETRY OF MODEL REPRESENTATIONS
+  382. NEURAL THICKETS: DIVERSE TASK EXPERTS ARE DENSE AROUND PRETRAINED WEIGHTS
+  383. Speculative Speculative Decoding
+  384. TINYV: REDUCING FALSE NEGATIVES IN VERIFICATION IMPROVES RL FOR LLM REASONING
+  385. Attention Residuals
+  386. Exclusive Self-Attention
+  387. PUZZLE: DISTILLATION-BASED NAS FOR INFERENCE-OPTIMIZED LLMS
+  388. Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
+  389. THINKING TO RECALL: HOW REASONING UNLOCKS PARAMETRIC KNOWLEDGE IN LARGE LANGUAGE MODELS (LLMs)

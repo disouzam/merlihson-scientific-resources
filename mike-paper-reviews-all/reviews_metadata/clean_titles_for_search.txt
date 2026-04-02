@@ -570,27 +570,27 @@ REPO: Language Models with Context Re-Positioning
 DoPE: Denoising Rotary Position Embedding
 mHC: Manifold-Constrained Hyper-Connections
 Efficient Context Scaling with LongCat ZigZag Attention
-# FusionRoute: Bridging Gaps Between LLMs Via Additional Logit Routing
-Scaling Embedding Outperforms Scaling Experts in Language Models
+Mike’s Daily Paper Review: 04.02.26TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE
+Who Wins at Scale: N-gram Embedding Scaling or Scaling the Number of Experts in LLMs
 One Model, Infinite Sizes: The Era of Elastic Inference
 From World Cup Statistics to Business Data: AI21's New RAG
 The Thermodynamics of Transformer Errors: A New Physics of Scale
 Bees, Flowers, Deep in the Web
 The “Aha” That Wasn’t: When Language Models Only Pretend to Think
-LLMs as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding
-Merging via Lie Algebra: Preserving Manifold Geometry in Deep Model Merging
-The Geometry of Probabilities in LLMs
-Conceptual-Level Planning in Latent Space
-Beyond Direct Attention: Analyzing the Attention Mechanism as Markov Chains
-Beyond the Conceptual Graph: The Differential Dynamics of Reasoning Flow in Language Models
-Symmetry as the Structural Engine of Deep Representations
-Generative Modeling via Drift Fields
-Fourier Geometry of Semantic Symmetries
-Exploring Weight Space Thickets
-Can Token Speculation Work Twice?
-Mechanics of reward signal recovery for mathematical reasoning
-Letting Each Transformer Layer Choose What It Needs to Listen To
-Exclusive Self-Attention: Orthogonal Projection as an Architectural Inductive Bias
-Knowledge Distillation with a "Lego" Approach
-Right for the Right Concepts: Teaching Models to Think Like Humans Enhances Robustness
-More Than a Logical Chain: The Hidden Power of Reasoning You Haven’t Met Yet
+LARGE LANGUAGE MODELS: A MATHEMATICAL FORMULATION
+Orthogonal Model Merging
+THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING
+Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models
+ATTENTION (AS DISCRETE-TIME MARKOV) CHAINS
+THE GEOMETRY OF REASONING: FLOWING LOGICS IN REPRESENTATION SPACE
+INTRINSIC TASK SYMMETRY DRIVES GENERALIZATION IN ALGORITHMIC TASKS
+Generative Modeling via Drifting
+SYMMETRY IN LANGUAGE STATISTICS SHAPES THE GEOMETRY OF MODEL REPRESENTATIONS
+NEURAL THICKETS: DIVERSE TASK EXPERTS ARE DENSE AROUND PRETRAINED WEIGHTS
+Speculative Speculative Decoding
+TINYV: REDUCING FALSE NEGATIVES IN VERIFICATION IMPROVES RL FOR LLM REASONING
+Attention Residuals
+Exclusive Self-Attention
+PUZZLE: DISTILLATION-BASED NAS FOR INFERENCE-OPTIMIZED LLMS
+Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
+THINKING TO RECALL: HOW REASONING UNLOCKS PARAMETRIC KNOWLEDGE IN LARGE LANGUAGE MODELS (LLMs)

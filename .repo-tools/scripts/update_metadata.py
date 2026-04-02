@@ -127,14 +127,33 @@ def extract_title_and_link(file_path: Path) -> Tuple[Optional[str], Optional[str
         # Try extracting title from Hebrew file
         title = _extract_title_from_lines(lines)
 
-        # Always prefer English review file title when available — it has the
-        # canonical English paper name in "Review N: Title" format on line 1.
+        # English review files have a consistent 3-line header:
+        #   Line 1: "Review N: <Mike's creative review title>"
+        #   Line 2: "Mike's daily paper review: DD.MM.YY..."
+        #   Line 3: "<ACTUAL PAPER NAME>" (often ALL CAPS)
+        # The actual paper name is on line 3, NOT line 1. When available,
+        # prefer line 3 from English file. Fall back to line 1 if line 3
+        # is empty or not a valid title.
         english_dir = file_path.parent.parent / "split-english-reviews-md"
         english_file = english_dir / file_path.name
         if english_file.exists():
             with open(english_file, 'r', encoding='utf-8') as f:
                 english_lines = [line.strip() for line in f.readlines()]
-            english_title = _extract_title_from_lines(english_lines)
+
+            # Try lines 3-5 for actual paper name (skipping blank lines)
+            english_title = None
+            for line in english_lines[2:6]:
+                if not line:
+                    continue
+                if re.match(r"^(Mike'?s|Daily|Review\b|סקירת)", line, re.IGNORECASE):
+                    continue
+                if _is_english_title(line):
+                    english_title = line
+                    break
+
+            # Fall back to line 1 "Review N: Title"
+            if not english_title:
+                english_title = _extract_title_from_lines(english_lines)
             if english_title:
                 title = english_title
 
