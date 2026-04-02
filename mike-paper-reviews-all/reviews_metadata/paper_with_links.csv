@@ -127,10 +127,10 @@ Review_125,Self-Alignment with Instruction Backtranslation,https://arxiv.org/abs
 Review_126,Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP,https://arxiv.org/abs/2308.02487v2
 Review_127,SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION,https://arxiv.org/abs/2308.07921v1
 Review_128,Dual-Stream Diffusion Net for Text-to-Video Generation,https://arxiv.org/abs/2308.08316v3
-Review_129,18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain,https://arxiv.org/abs/2210.08218v1
+Review_129,CyBERT: Contextualized Embeddings for the Cybersecurity Domain,https://arxiv.org/abs/2210.08218v1
 Review_130,Watch Your Steps: Local Image and Scene Editing by Text Instructions,https://arxiv.org/abs/2308.08947v1
 Review_131,SeamlessM4T—Massively Multilingual & Multimodal Machine Translation,https://arxiv.org/abs/2308.11596v3
-Review_132,28.08.23: Nougat: Neural Optical Understanding for Academic Documents,https://arxiv.org/abs/2308.13418v1
+Review_132,Nougat: Neural Optical Understanding for Academic Documents,https://arxiv.org/abs/2308.13418v1
 Review_133,"Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models",https://arxiv.org/abs/2305.16582v2
 Review_134,OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models,https://arxiv.org/abs/2308.13137v3
 Review_135,LM-INFINITE: SIMPLE ON-THE-FLY LENGTH GENERALIZATION FOR LARGE LANGUAGE MODELS,https://arxiv.org/abs/2305.13281v1
@@ -155,7 +155,7 @@ Review_153,CoCA: Fusing Position Embedding with Collinear Constrained Attention 
 Review_154,FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION,https://arxiv.org/abs/2309.10537v1
 Review_155,Context is Environment,https://arxiv.org/abs/2309.09888v2
 Review_156,CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS,https://arxiv.org/abs/2309.11495v2
-Review_157,Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS,https://arxiv.org/abs/2309.12307v3
+Review_157,LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS,https://arxiv.org/abs/2309.12307v3
 Review_158,"End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23",https://arxiv.org/abs/2309.10917v1
 Review_159,Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment,https://arxiv.org/abs/2306.08877v3
 Review_160,Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization,https://arxiv.org/abs/2306.09222v5
@@ -443,7 +443,7 @@ Review_441,Memorization to Generalization: The Emergence of Diffusion Models fro
 Review_442,Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability,https://arxiv.org/abs/2411.19943
 Review_443,Training Large Language Models to Reason in a Continuous Latent Space,https://arxiv.org/abs/2412.06769
 Review_444,Normalizing Flows are Capable Generative Models,https://arxiv.org/abs/2412.06329
-Review_445,23.04.25 The Broader Spectrum of In-Context Learning,https://arxiv.org/abs/2412.03782
+Review_445,The Broader Spectrum of In-Context Learning,https://arxiv.org/abs/2412.03782
 Review_446,Multimodal Latent Language Modeling with Next-Token Diffusion,https://arxiv.org/abs/2412.08635
 Review_447,Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation,https://arxiv.org/abs/2412.06781
 Review_448,THE COMPLEXITY DYNAMICS OF GROKKING,https://arxiv.org/abs/2412.09810
@@ -456,7 +456,7 @@ Review_454,ICLR: In-Context Learning of Representations,https://arxiv.org/abs/25
 Review_455,GROKKING AT THE EDGE OF NUMERICAL STABILITY,https://arxiv.org/abs/2501.04697
 Review_456,ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching,https://arxiv.org/abs/2505.04588
 Review_457,Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks,https://arxiv.org/abs/2412.15605
-Review_458,24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking,https://arxiv.org/abs/2501.04519
+Review_458,rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking,https://arxiv.org/abs/2501.04519
 Review_459,Neuro-Symbolic AI i 2024: A Systematic Review,https://arxiv.org/abs/2501.05435
 Review_460,Jasper and Stella: distillation of SOTA embedding models,https://arxiv.org/abs/2412.19048
 Review_461,Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning,https://arxiv.org/abs/2406.12050

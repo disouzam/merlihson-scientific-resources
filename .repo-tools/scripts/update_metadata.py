@@ -36,9 +36,20 @@ def clean_title(title: str) -> str:
 
     return title
 
+def _strip_date_prefix(text: str) -> str:
+    """Strip leading date patterns like 'DD.MM.YY: ' or 'DD.MM.YY ' from text.
+    Also handles [Short] markers before the date."""
+    text = re.sub(r'^\[?[Ss]hort\]?\s*:?\s*', '', text).strip()
+    return re.sub(r'^\d{2}\.\d{2}\.\d{2,4}[:\s]*', '', text).strip()
+
+
 def _is_english_title(text: str) -> bool:
     """Check if text is a valid English paper title (not Hebrew, not a formula, long enough)."""
     if not text or len(text) < 10:
+        return False
+    # Strip leading date prefix before validation
+    text = _strip_date_prefix(text)
+    if len(text) < 10:
         return False
     # Must contain letters
     if not re.search(r'[A-Za-z]', text):
@@ -66,7 +77,7 @@ def _extract_title_from_lines(lines: List[str]) -> Optional[str]:
         if review_match:
             candidate = review_match.group(1).strip()
             if _is_english_title(candidate):
-                return candidate
+                return _strip_date_prefix(candidate)
 
     # Strategy 2: Look for English title in first 15 lines
     for line in lines[:15]:
@@ -106,7 +117,7 @@ def _extract_title_from_lines(lines: List[str]) -> Optional[str]:
 
         # Standalone line with significant English content
         if _is_english_title(line):
-            return line
+            return _strip_date_prefix(line)
 
     return None
 

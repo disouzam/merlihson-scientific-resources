@@ -126,10 +126,10 @@ Self-Alignment with Instruction Backtranslation
 Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP
 SOLVING CHALLENGING MATH WORD PROBLEMS USING GPT-4 CODE INTERPRETER WITH CODE-BASED SELF-VERIFICATION
 Dual-Stream Diffusion Net for Text-to-Video Generation
-18.08.23: CyBERT: Contextualized Embeddings for the Cybersecurity Domain
+CyBERT: Contextualized Embeddings for the Cybersecurity Domain
 Watch Your Steps: Local Image and Scene Editing by Text Instructions
 SeamlessM4T—Massively Multilingual & Multimodal Machine Translation
-28.08.23: Nougat: Neural Optical Understanding for Academic Documents
+Nougat: Neural Optical Understanding for Academic Documents
 Beyond Chain-of-Thought, Effective Graph-of-Thought Reasoning in Large Language Models
 OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models
 LM-INFINITE: SIMPLE ON-THE-FLY LENGTH GENERALIZATION FOR LARGE LANGUAGE MODELS
@@ -154,7 +154,7 @@ CoCA: Fusing Position Embedding with Collinear Constrained Attention in Transfor
 FOLEYGEN: VISUALLY-GUIDED AUDIO GENERATION
 Context is Environment
 CHAIN-OF-VERIFICATION REDUCES HALLUCINATION IN LARGE LANGUAGE MODELS
-Short : LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS
+LONGLORA: EFFICIENT FINE-TUNING OF LONG CONTEXT LARGE LANGUAGE MODELS
 End-to-End Speech Recognition Contextualization with Large Language Models, 30.09.23
 Linguistic Binding in Diffusion Models: Enhancing Attribute Correspondence through Attention Map Alignment
 Stochastic Re-weighted Gradient Descent via Distributionally Robust Optimization
@@ -442,7 +442,7 @@ Memorization to Generalization: The Emergence of Diffusion Models from Associati
 Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
 Training Large Language Models to Reason in a Continuous Latent Space
 Normalizing Flows are Capable Generative Models
-23.04.25 The Broader Spectrum of In-Context Learning
+The Broader Spectrum of In-Context Learning
 Multimodal Latent Language Modeling with Next-Token Diffusion
 Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
 THE COMPLEXITY DYNAMICS OF GROKKING
@@ -455,7 +455,7 @@ ICLR: In-Context Learning of Representations
 GROKKING AT THE EDGE OF NUMERICAL STABILITY
 ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
 Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
-24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
+rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
 Neuro-Symbolic AI i 2024: A Systematic Review
 Jasper and Stella: distillation of SOTA embedding models
 Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning

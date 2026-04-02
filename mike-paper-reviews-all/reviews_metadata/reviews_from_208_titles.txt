@@ -238,7 +238,7 @@
   235. Critical Tokens Matter: Token-Level Contrastive Estimation Enhances LLM’s Reasoning Capability
   236. Training Large Language Models to Reason in a Continuous Latent Space
   237. Normalizing Flows are Capable Generative Models
-  238. 23.04.25 The Broader Spectrum of In-Context Learning
+  238. The Broader Spectrum of In-Context Learning
   239. Multimodal Latent Language Modeling with Next-Token Diffusion
   240. Around the World in 80 Timesteps: A Generative Approach to Global Visual Geolocation
   241. THE COMPLEXITY DYNAMICS OF GROKKING
@@ -251,7 +251,7 @@
   248. GROKKING AT THE EDGE OF NUMERICAL STABILITY
   249. ZEROSEARCH: Incentivize the Search Capability of LLMs without Searching
   250. Don’t Do RAG: When Cache-Augmented Generation is All You Need for Knowledge Tasks
-  251. 24.05.25rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
+  251. rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking
   252. Neuro-Symbolic AI i 2024: A Systematic Review
   253. Jasper and Stella: distillation of SOTA embedding models
   254. Learn Beyond the Answer: Training Language Models with Reflection for Mathematical Reasoning
