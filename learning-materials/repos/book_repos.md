@@ -102,3 +102,4 @@ Best bang for buck (high book count, downloadable links):
 - [x] pdf-dump (NUS Statistics) — 31 books sorted (Springer textbooks, stats, ML, finance)
 - [x] changwookjun/StudyBook — 0 books (no PDFs >1MB)
 - [x] mukeshmithrakumar/Book_List — 0 books (all 13 dupes)
+- [x] dreamerparadise/Pdf-Collections — 61 books sorted (math, CS theory, algorithms, ML, programming)

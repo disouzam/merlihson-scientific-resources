@@ -1,6 +1,6 @@
 # 📚 Learning Materials
 
-A comprehensive collection of **1,398 PDFs** (12 GB) of educational resources, tutorials, and reference materials organized by domain.
+A comprehensive collection of **1,459 PDFs** (13 GB) of educational resources, tutorials, and reference materials organized by domain.
 
 ## 📁 Directory Structure
 
@@ -66,7 +66,7 @@ A comprehensive collection of **1,398 PDFs** (12 GB) of educational resources, t
 ## 🆕 Recent Additions
 
 ### Book Collection (Feb-Mar 2026)
-663 books added from 21 GitHub repos covering ML, deep learning, math, statistics, CV, and programming:
+724 books added from 22 GitHub repos covering ML, deep learning, math, statistics, CV, and programming:
 - **valeman/Awesome_Math_Books** — 197 math & science textbooks
 - **Carl-McBride-Ellis/Compendium-of-free-ML-reading-resources** — 128 ML/DL books
 - **cakaki68/Machine-Learning-Books** — 52 ML books
@@ -84,6 +84,7 @@ A comprehensive collection of **1,398 PDFs** (12 GB) of educational resources, t
 - **Data-Science-Books** — 4 books (Manga guides, productivity)
 - **MLResources** — 1 book (Fluent Python)
 - **Monarene-books** — 1 book (Collective Intelligence)
+- **dreamerparadise/Pdf-Collections** — 61 books (linear algebra, calculus, number theory, logic, CS theory, algorithms, ML)
 
 See `repos/book_repos.md` for the full list of source repos and download status.
 
@@ -114,8 +115,8 @@ See `repos/book_repos.md` for the full list of source repos and download status.
 
 ## 📊 Collection Statistics
 
-- **Total PDFs**: 1,398 across 22 top-level categories
-- **Total Size**: 12 GB
+- **Total PDFs**: 1,459 across 22 top-level categories
+- **Total Size**: 13 GB
 - **Key Areas**: Mathematics (323), Machine learning (301), Computer vision (18), Programming (135), Data science (31), Finance (3+)
 - **Resource Types**: PDFs, textbooks, reference materials, cheat sheets
 - **Coverage**: Foundational to advanced topics across multiple disciplines

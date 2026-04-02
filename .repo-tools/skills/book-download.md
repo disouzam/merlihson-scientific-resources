@@ -52,7 +52,7 @@ Use existing directories when possible. Create new subcategories only when a bat
 - Rename cryptic filenames (e.g., `cv(1).pdf`, `os(198).pdf`) to descriptive titles from README
 - No special characters: `< > : " / \ | ? *`
 
-### 10 Files >50MB (local only, NEVER stage/commit)
+### 11 Files >50MB (local only, NEVER stage/commit)
 These must be excluded from EVERY `git add`:
 1. `machine learning/broad ml materials/050_Probabilistic_Machine_Learning_Advanced_Topics.pdf`
 2. `machine learning/broad ml materials/075_Concise_Machine_Learning.pdf`
@@ -64,6 +64,7 @@ These must be excluded from EVERY `git add`:
 8. `machine learning/genAI/AI Agents in Action.pdf`
 9. `machine learning/building ml models/AI Engineering - Chip Huyen.pdf`
 10. `math/probability & stats/Linear Regression Notes.pdf`
+11. `math/linear algebra/Introduction to Linear Algebra - Gilbert Strang 2016.pdf`
 
 ### Git Workflow
 1. `git pull --rebase` before committing
@@ -142,7 +143,7 @@ After updating, verify consistency:
 
 See `learning-materials/repos/book_repos.md` for the full list (single source of truth).
 
-**Summary**: 779+ books from 28+ repos processed. Collection: 1,398 PDFs.
+**Summary**: 840+ books from 29+ repos processed. Collection: 1,459 PDFs.
 
 ## Error Scenarios
 
