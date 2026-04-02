@@ -36,8 +36,87 @@ def clean_title(title: str) -> str:
 
     return title
 
+def _is_english_title(text: str) -> bool:
+    """Check if text is a valid English paper title (not Hebrew, not a formula, long enough)."""
+    if not text or len(text) < 10:
+        return False
+    # Must contain letters
+    if not re.search(r'[A-Za-z]', text):
+        return False
+    # Must be predominantly ASCII (English)
+    ascii_ratio = sum(1 for c in text if ord(c) < 128) / len(text)
+    if ascii_ratio < 0.7:
+        return False
+    # Reject if contains Hebrew characters
+    if re.search(r'[\u0590-\u05FF]', text):
+        return False
+    # Reject if it looks like a math formula (no words longer than 3 chars)
+    words = re.findall(r'[A-Za-z]+', text)
+    if not words or max(len(w) for w in words) < 4:
+        return False
+    return True
+
+
+def _extract_title_from_lines(lines: List[str]) -> Optional[str]:
+    """Try to extract an English paper title from review file lines."""
+    # Strategy 1: Check if first line has "Review X: Title" format
+    if lines and lines[0]:
+        first_line = lines[0]
+        review_match = re.match(r'^Review\s+\d+[ab]?:\s*(.+)$', first_line, re.IGNORECASE)
+        if review_match:
+            candidate = review_match.group(1).strip()
+            if _is_english_title(candidate):
+                return candidate
+
+    # Strategy 2: Look for English title in first 15 lines
+    for line in lines[:15]:
+        if not line or len(line) < 10:
+            continue
+
+        # Skip lines that start with known non-title patterns
+        if re.match(r'^(Review|Paper:|v\d+$|תחום|מושגים)', line):
+            continue
+
+        # If line has Hebrew header keywords, try to extract English part after date/number
+        if 'סקירה' in line or 'המאמר' in line or 'סקירת' in line:
+            # "...סקירות עד XXX Title"
+            hebrew_match = re.search(r'סקירות עד \d+\s+(.+)$', line)
+            if hebrew_match:
+                candidate = hebrew_match.group(1).strip()
+                if _is_english_title(candidate):
+                    return candidate
+
+            # "DD.MM.YY Title" or "DD.MM.YY: Title"
+            date_match = re.search(r'\d{2}\.\d{2}\.\d{2}[:\s]+([A-Z].+)$', line)
+            if not date_match:
+                date_match = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Za-z].+)$', line)
+            if date_match:
+                candidate = date_match.group(1).strip()
+                if _is_english_title(candidate):
+                    return candidate
+
+            # "...1024.TITLE"
+            period_match = re.search(r'\d{4}\.([A-Z][A-Za-z\s:,-]+)', line)
+            if period_match:
+                candidate = period_match.group(1).strip()
+                if _is_english_title(candidate):
+                    return candidate
+
+            continue
+
+        # Standalone line with significant English content
+        if _is_english_title(line):
+            return line
+
+    return None
+
+
 def extract_title_and_link(file_path: Path) -> Tuple[Optional[str], Optional[str]]:
-    """Extract paper title and arxiv link from a review markdown file."""
+    """Extract paper title and arxiv link from a review markdown file.
+
+    Tries the Hebrew review file first. If no valid English title is found,
+    falls back to the corresponding English review file.
+    """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             lines = [line.strip() for line in f.readlines()]
@@ -45,101 +124,19 @@ def extract_title_and_link(file_path: Path) -> Tuple[Optional[str], Optional[str
         title = None
         arxiv_link = None
 
-        # Strategy 1: Check if first line has "Review X: Title" format
-        if lines and lines[0]:
-            first_line = lines[0]
-            review_match = re.match(r'^Review\s+\d+[ab]?:\s*(.+)$', first_line, re.IGNORECASE)
-            if review_match:
-                title = review_match.group(1).strip()
+        # Try extracting title from Hebrew file
+        title = _extract_title_from_lines(lines)
 
-        # Strategy 1b: Check if first line has Hebrew date format with English title
-        if not title and lines and lines[0]:
-            first_line = lines[0]
-
-            # Look for pattern like "סקירות עד 1024 Title"
-            hebrew_pattern = re.search(r'סקירות עד \d+\s+(.+)$', first_line)
-            if hebrew_pattern:
-                potential_title = hebrew_pattern.group(1).strip()
-                if re.search(r'[A-Za-z]', potential_title):
-                    ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                    if ascii_ratio > 0.7:
-                        title = potential_title
-
-            # Look for date followed by English title (with or without colon/space)
-            if not title:
-                # Pattern 1: Date with colon/space: "DD.MM.YY: Title" or "DD.MM.YY Title"
-                date_title_match = re.search(r'\d{2}\.\d{2}\.\d{2}[:\s]+(.+)$', first_line)
-                if date_title_match:
-                    potential_title = date_title_match.group(1).strip()
-                    if re.search(r'[A-Za-z]', potential_title):
-                        ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                        if ascii_ratio > 0.7:
-                            title = potential_title
-
-                # Pattern 2: Date without separator: "DD.MM.YYTitle"
-                if not title:
-                    date_no_sep_match = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Za-z].+)$', first_line)
-                    if date_no_sep_match:
-                        potential_title = date_no_sep_match.group(1).strip()
-                        if re.search(r'[A-Za-z]', potential_title):
-                            ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                            if ascii_ratio > 0.7:
-                                title = potential_title
-
-        # Strategy 2: If no title yet, look for English title in first 15 lines
-        if not title:
-            for i, line in enumerate(lines[:15]):
-                if not line or len(line) < 10:
-                    continue
-
-                # Skip lines that start with known patterns
-                if re.match(r'^(Review|Paper:|v\d+$|תחום|מושגים)', line):
-                    continue
-
-                # If line has Hebrew header, try to extract English part
-                if 'סקירה' in line or 'המאמר' in line or 'סקירת' in line:
-                    # Pattern 1: "...סקירות עד XXX Title"
-                    hebrew_match = re.search(r'סקירות עד \d+\s+(.+)$', line)
-                    if hebrew_match:
-                        potential_title = hebrew_match.group(1).strip()
-                        if re.search(r'[A-Za-z]', potential_title):
-                            ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                            if ascii_ratio > 0.7:
-                                title = potential_title
-                                break
-
-                    # Pattern 2: Date after Hebrew
-                    date_after_hebrew = re.search(r'\d{2}\.\d{2}\.\d{2}\s+([A-Z].+)$', line)
-                    if not date_after_hebrew:
-                        date_after_hebrew = re.search(r'\d{2}\.\d{2}\.\d{2}([A-Za-z].+)$', line)
-
-                    if date_after_hebrew:
-                        potential_title = date_after_hebrew.group(1).strip()
-                        if re.search(r'[A-Za-z]', potential_title):
-                            ascii_ratio = sum(1 for c in potential_title if ord(c) < 128) / len(potential_title)
-                            if ascii_ratio > 0.85:
-                                title = potential_title
-                                break
-
-                    # Pattern 3: "...1024.TITLE"
-                    period_title_match = re.search(r'\d{4}\.([A-Z][A-Za-z\s:,-]+)', line)
-                    if period_title_match:
-                        potential_title = period_title_match.group(1).strip()
-                        if len(potential_title) > 10:
-                            title = potential_title
-                            break
-
-                    continue
-
-                # Check if line has significant English content
-                if re.search(r'[A-Za-z]', line):
-                    ascii_count = sum(1 for c in line if ord(c) < 128)
-                    ascii_ratio = ascii_count / len(line)
-
-                    # If mostly ASCII/English, it's likely the paper title
-                    if ascii_ratio > 0.7 and len(line) > 10:
-                        title = line
-                        break
+        # Always prefer English review file title when available — it has the
+        # canonical English paper name in "Review N: Title" format on line 1.
+        english_dir = file_path.parent.parent / "split-english-reviews-md"
+        english_file = english_dir / file_path.name
+        if english_file.exists():
+            with open(english_file, 'r', encoding='utf-8') as f:
+                english_lines = [line.strip() for line in f.readlines()]
+            english_title = _extract_title_from_lines(english_lines)
+            if english_title:
+                title = english_title
 
         # Look for paper link (can appear anywhere in the file)
         # Priority 1: arxiv links

@@ -302,7 +302,7 @@ The hook extracts links from multiple sources:
 | Metric | Value |
 |--------|-------|
 | **Total Reviews** | 596 |
-| **With Paper Links** | 594 (100% coverage!) |
+| **With Paper Links** | 595 (100% coverage!) |
 | **Auto-Extracted** | 571 |
 | **Manually Added** | 1 |
 
@@ -386,7 +386,7 @@ For detailed documentation, see [.repo-tools/scripts/README.md](.repo-tools/scri
 | **Total Paper Reviews** | 596 |
 | **Hebrew Reviews (Markdown)** | 596 files |
 | **English Reviews (Markdown)** | 229 files |
-| **Reviews with Paper Links** | 594 (100% coverage!) |
+| **Reviews with Paper Links** | 595 (100% coverage!) |
 | **Daily Reviews** | 209 (May 2024 - Feb 2026) |
 | **Learning Material PDFs** | 1,153 |
 | **Learning Categories** | 23 |
@@ -412,7 +412,7 @@ scientific-resources/
 │   │   ├── Review_001.docx
 │   │   └── ... → Review_596.docx
 │   ├── reviews_metadata/            # Auto-updated metadata (100% coverage) 🤖
-│   │   ├── paper_with_links.csv     # 594 reviews with links
+│   │   ├── paper_with_links.csv     # 595 reviews with links
 │   │   ├── all_paper_titles.txt     # Numbered title list
 │   │   ├── clean_titles_for_search.txt
 │   │   └── reviews_from_208_titles.txt
