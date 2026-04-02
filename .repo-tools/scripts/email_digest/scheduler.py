@@ -64,7 +64,7 @@ def get_last_run_date() -> date | None:
 
 
 def save_last_run_date(d: date):
-    """Save today as the last successful run date."""
+    """Save the last date whose emails were successfully processed."""
     LAST_RUN_FILE.parent.mkdir(parents=True, exist_ok=True)
     LAST_RUN_FILE.write_text(d.isoformat())
 
@@ -73,32 +73,20 @@ def get_dates_to_cover() -> list[date]:
     """
     Determine which dates need to be covered.
 
-    Returns list of dates from (last_run_date + 1) through yesterday.
+    last_run stores the last date whose emails were successfully processed.
+    Returns list of dates from (last_run + 1) through yesterday.
     If no previous run, covers yesterday only.
     """
-    today = date.today()
-    yesterday = today - timedelta(days=1)
+    yesterday = date.today() - timedelta(days=1)
     last_run = get_last_run_date()
 
     if last_run is None:
         return [yesterday]
 
-    if last_run >= today:
-        # Already ran today
+    if last_run >= yesterday:
         return []
 
-    # Cover all days from day after last run through yesterday
     start = last_run + timedelta(days=1)
-    if start > yesterday:
-        # Last run was yesterday, cover yesterday again? No -- already covered.
-        # But last_run stores the date OF the run, not the date covered.
-        # If last run was yesterday, we need to cover yesterday's emails.
-        # Actually, last_run stores the date when we ran, and we covered up to
-        # the day before that run. So if last_run == yesterday, we covered
-        # day-before-yesterday. We still need yesterday.
-        # Let's simplify: last_run_file stores the last date whose emails we processed.
-        return [yesterday] if last_run < yesterday else []
-
     dates = []
     current = start
     while current <= yesterday:
@@ -368,12 +356,6 @@ def main() -> int:
         dates_to_cover = [manual_date]
         logger.info(f"Manual date override: {manual_date}")
     else:
-        # Check if already ran today
-        last_run = get_last_run_date()
-        if last_run == date.today() and not force and not dry_run:
-            logger.info(f"Already ran today ({last_run}). Skipping. Use --force to override.")
-            return 0
-
         dates_to_cover = get_dates_to_cover()
         if not dates_to_cover:
             logger.info("No dates to cover. Already up to date.")
@@ -398,8 +380,6 @@ def main() -> int:
             time.sleep(2)
 
     if all_success:
-        if not dry_run and not manual_date:
-            save_last_run_date(date.today())
         logger.info("Email digest completed successfully")
         return 0
     else:
