@@ -531,7 +531,7 @@ Review_529,DeepSeek-OCR: Contexts Optical Compression,https://arxiv.org/abs/2510
 Review_530,Imbalanced Gradients in RL Post-Training of Multi-Task LLMs,https://arxiv.org/abs/2510.19178
 Review_531,EMERGENCE FROM LEARNING DYNAMICS OF GROKKING,https://arxiv.org/abs/2509.21519
 Review_532,Language Models are Injective and Hence Invertible,https://arxiv.org/abs/2510.15511
-Review_533,ON SURJECTIVITY OF NEURAL NETWORKS: CAN YOU ELICIT ANY BEHAVIOR FROM YOUR MODEL?,https://arxiv.org/abs/2508.19445
+Review_533,x* = y - f(LN(x*)).,https://arxiv.org/abs/2508.19445
 Review_534,Agent Learning via Early Experience,https://arxiv.org/abs/2510.08558
 Review_535,Statistical Runtime Verification for LLMs via Robustness Estimation,https://arxiv.org/abs/2504.17723
 Review_536,FROM MEMORIZATION TO REASONING IN THE SPECTRUM OF LOSS CURVATURE,https://arxiv.org/abs/2510.24256
@@ -571,27 +571,26 @@ Review_569,REPO: Language Models with Context Re-Positioning,https://arxiv.org/a
 Review_570,DoPE: Denoising Rotary Position Embedding,https://arxiv.org/abs/2511.09146
 Review_571,mHC: Manifold-Constrained Hyper-Connections,https://arxiv.org/abs/2512.24880
 Review_572,Efficient Context Scaling with LongCat ZigZag Attention,https://arxiv.org/abs/2512.23966v2
-Review_573,# FusionRoute: Bridging Gaps Between LLMs Via Additional Logit Routing,https://arxiv.org/abs/2601.05106
+Review_573,TOKEN-LEVEL LLM COLLABORATION VIA FUSIONROUTE,https://arxiv.org/abs/2601.05106
 Review_574,Scaling Embedding Outperforms Scaling Experts in Language Models,https://arxiv.org/abs/2601.21204
-Review_575,"One Model, Infinite Sizes: The Era of Elastic Inference",https://arxiv.org/abs/2310.07707
-Review_576,From World Cup Statistics to Business Data: AI21's New RAG,https://arxiv.org/abs/2511.08505
-Review_577,The Thermodynamics of Transformer Errors: A New Physics of Scale,https://arxiv.org/abs/2601.14175
-Review_578,"Bees, Flowers, Deep in the Web",https://arxiv.org/abs/2503.15107
-Review_579,The “Aha” That Wasn’t: When Language Models Only Pretend to Think,https://arxiv.org/abs/2601.00514
-Review_580,"LLMs as Operators on Measures: A Clean Mathematical Pipeline for Tokenization, Training, Attention, and Decoding",https://arxiv.org/abs/2601.22170
-Review_581,Merging via Lie Algebra: Preserving Manifold Geometry in Deep Model Merging,https://arxiv.org/abs/2602.05943
-Review_582,The Geometry of Probabilities in LLMs,https://arxiv.org/abs/2602.15293
-Review_583,Conceptual-Level Planning in Latent Space,https://arxiv.org/abs/2602.08984
-Review_584,Beyond Direct Attention: Analyzing the Attention Mechanism as Markov Chains,https://arxiv.org/abs/2507.17657
-Review_585,Beyond the Conceptual Graph: The Differential Dynamics of Reasoning Flow in Language Models,https://arxiv.org/abs/2510.09782
-Review_586,Symmetry as the Structural Engine of Deep Representations,https://arxiv.org/abs/2603.01968
-Review_587,Generative Modeling via Drift Fields,https://arxiv.org/abs/2602.04770
-Review_588,Fourier Geometry of Semantic Symmetries,https://arxiv.org/abs/2602.15029
-Review_589,Exploring Weight Space Thickets,https://arxiv.org/abs/2603.12228
-Review_590,Can Token Speculation Work Twice?,https://arxiv.org/abs/2603.03251
-Review_591,Mechanics of reward signal recovery for mathematical reasoning,https://arxiv.org/abs/2505.14625
-Review_592,Letting Each Transformer Layer Choose What It Needs to Listen To,https://arxiv.org/abs/2603.15031
-Review_593,Exclusive Self-Attention: Orthogonal Projection as an Architectural Inductive Bias,https://arxiv.org/abs/2603.09078
-Review_594,"Knowledge Distillation with a ""Lego"" Approach",https://arxiv.org/abs/2411.19146
-Review_595,Right for the Right Concepts: Teaching Models to Think Like Humans Enhances Robustness,https://arxiv.org/abs/2603.08309
-Review_596,More Than a Logical Chain: The Hidden Power of Reasoning You Haven’t Met Yet,https://arxiv.org/abs/2603.09906
+Review_575,MatFormer: Nested Transformer for Elastic Inference,https://arxiv.org/abs/2310.07707
+Review_576,Structured RAG for Answering Aggregative Questions,https://arxiv.org/abs/2511.08505
+Review_577,A MODEL OF ERRORS IN TRANSFORMERS,https://arxiv.org/abs/2601.14175
+Review_578,Interpretability of Graph Neural Networks to Assess Effects of Global Change Drivers on Ecological Networks,https://arxiv.org/abs/2503.15107
+Review_579,The Illusion of Insight in Reasoning Models,https://arxiv.org/abs/2601.00514
+Review_580,"מודלי שפה גדולים כסדרת אופרטורים: פייפליין מתמטי נקי עבור טוקניזציה, אימון, attention ופענוח",https://arxiv.org/abs/2601.22170
+Review_581,Orthogonal Model Merging,https://arxiv.org/abs/2602.05943
+Review_582,THE INFORMATION GEOMETRY OF SOFTMAX: PROBING AND STEERING,https://arxiv.org/abs/2602.15293
+Review_583,Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models,https://arxiv.org/abs/2602.08984
+Review_584,ATTENTION (AS DISCRETE-TIME MARKOV) CHAINS,https://arxiv.org/abs/2507.17657
+Review_585,THE GEOMETRY OF REASONING: FLOWING LOGICS IN REPRESENTATION SPACE,https://arxiv.org/abs/2510.09782
+Review_586,INTRINSIC TASK SYMMETRY DRIVES GENERALIZATION IN ALGORITHMIC TASKS,https://arxiv.org/abs/2603.01968
+Review_587,Generative Modeling via Drifting,https://arxiv.org/abs/2602.04770
+Review_588,SYMMETRY IN LANGUAGE STATISTICS SHAPES THE GEOMETRY OF MODEL REPRESENTATIONS,https://arxiv.org/abs/2602.15029
+Review_589,NEURAL THICKETS: DIVERSE TASK EXPERTS ARE DENSE AROUND PRETRAINED,https://arxiv.org/abs/2603.12228
+Review_590,Speculative Speculative Decoding,https://arxiv.org/abs/2603.03251
+Review_591,TinyV: Reducing False Negatives in Verification Improves RL for LLM Reasoning,https://arxiv.org/abs/2505.14625
+Review_592,Attention Residuals,https://arxiv.org/abs/2603.15031
+Review_593,Exclusive Self Attention,https://arxiv.org/abs/2603.09078
+Review_594,זיקוק ידע (Knowledge Distillation) עם גישת לגו,https://arxiv.org/abs/2411.19146
+Review_595,Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness,https://arxiv.org/abs/2603.08309
