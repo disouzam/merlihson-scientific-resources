@@ -391,16 +391,28 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
     if not arxiv_link and english_content:
         arxiv_link = extract_arxiv_link(english_content)
 
-    # Remove title from content (already in first tweet)
+    # Remove header lines from content (title, subtitle, date/review header)
+    # These are already represented in tweets 1-2, so skip them
     lines = clean_content.split('\n')
-    content_without_title = '\n'.join(lines[1:]).strip()
+    body_start = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if i < 2:
+            continue
+        # Skip review header lines (date, review number, etc.)
+        if 'סקירה' in stripped or 'סקירת' in stripped or 'סקירות' in stripped:
+            continue
+        if re.match(r'^\d{2}\.\d{2}\.\d{2}', stripped):
+            continue
+        body_start = i
+        break
+    content_without_title = '\n'.join(lines[body_start:]).strip()
 
     # Strip URLs from content (paper link only in first/last tweet)
     content_without_title = re.sub(r'https?://\S+', '', content_without_title)
     content_without_title = re.sub(r'\n{3,}', '\n\n', content_without_title).strip()
-
-    # Split content into tweets (380 chars to leave room for numbering/emoji prefix)
-    content_tweets = split_into_tweets(content_without_title, max_chars=380)
 
     # Build thread
     thread = []
@@ -413,6 +425,22 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
             paper_name = extract_english_paper_name(english_content)
         if not paper_name:
             paper_name = extract_paper_name(content)
+
+        # Extract Hebrew hook before counting tweets (need to remove it from content)
+        hebrew_hook = extract_hebrew_hook(content)
+
+        # Remove hook text from content to avoid duplication in tweet 2 + content tweets
+        if hebrew_hook:
+            # Strip the hook paragraph from content (match first 80 chars to handle truncation)
+            hook_prefix = hebrew_hook[:80]
+            if hook_prefix in content_without_title:
+                # Find the paragraph containing the hook and remove it
+                paras = content_without_title.split('\n\n')
+                paras = [p for p in paras if hook_prefix not in p]
+                content_without_title = '\n\n'.join(paras).strip()
+
+        # Split content into tweets (380 chars to leave room for numbering/emoji prefix)
+        content_tweets = split_into_tweets(content_without_title, max_chars=380)
 
         hook_emojis = ["🔥", "🧠", "⚡", "🎯", "💡", "🚀"]
         hook_emoji = hook_emojis[review_num % len(hook_emojis)]
@@ -427,9 +455,6 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
         else:
             first_tweet = f"(1/{total}) {hook_emoji} {hebrew_name} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         thread.append(first_tweet)
-
-        # Build intro tweet — Hebrew hook from review body, fallback to concepts
-        hebrew_hook = extract_hebrew_hook(content)
 
         if hebrew_hook:
             intro_tweet = f"(2/{total}) 🔍 {hebrew_hook}"
@@ -479,6 +504,7 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
 
     else:
         # ORIGINAL VERSION - Simple and clean
+        content_tweets = split_into_tweets(content_without_title, max_chars=380)
         total_tweets = len(content_tweets) + 2
         link_line = f"\n\n📄 {arxiv_link}" if arxiv_link else ""
         first_tweet = f"(1/{total_tweets}) {title}\n\n🧵 Full Hebrew review ⬇️{link_line}"
