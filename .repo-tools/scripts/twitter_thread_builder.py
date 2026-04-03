@@ -199,6 +199,19 @@ def extract_hebrew_review_name(content: str) -> str:
     return line1
 
 
+def extract_review_header(content: str) -> str:
+    """Extract the review header line (סקירת המאמרים היומית של מייק: date, סקירה NNN...).
+
+    This line contains the review number, date, and count — used in tweet 2.
+    """
+    lines = content.strip().split('\n')
+    for line in lines[:8]:
+        line = line.strip()
+        if 'סקירת המאמר' in line or ('סקירה' in line and 'סקירות' in line):
+            return line
+    return ""
+
+
 def extract_paper_name(content: str) -> str:
     """Extract the English paper name from the review header line.
 
@@ -456,8 +469,10 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
             first_tweet = f"(1/{total}) {hook_emoji} {hebrew_name} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         thread.append(first_tweet)
 
+        review_header = extract_review_header(content)
         if hebrew_hook:
-            intro_tweet = f"(2/{total}) 🔍 {hebrew_hook}"
+            header_line = f"{review_header}\n\n" if review_header else ""
+            intro_tweet = f"(2/{total}) {header_line}🔍 {hebrew_hook}"
             thread.append(intro_tweet)
         else:
             concepts = extract_key_concepts(content)
