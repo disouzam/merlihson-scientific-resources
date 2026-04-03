@@ -380,6 +380,62 @@ def split_by_sentences(text: str) -> List[str]:
     return result
 
 
+def _generate_hashtags(content: str, english_content: Optional[str] = None) -> str:
+    """Generate 4 hashtags: #AI #MachineLearning + 2 topic-specific.
+
+    Scans both Hebrew and English content for topic keywords.
+    """
+    # Combine both sources for keyword matching
+    text = content
+    if english_content:
+        text += '\n' + english_content
+
+    text_lower = text.lower()
+
+    # Ordered by specificity — first match wins, pick top 2
+    topic_tags = [
+        (['mixture of experts', 'moe ', 'expert parallel'], '#MoE'),
+        (['reinforcement learning', 'rlhf', 'reward model', 'ppo ', 'grpo', 'rl training'], '#ReinforcementLearning'),
+        (['diffusion model', 'denoising', 'score matching', 'ddpm'], '#DiffusionModels'),
+        (['knowledge distill', 'distillation', 'teacher model', 'student model'], '#KnowledgeDistillation'),
+        (['retrieval augmented', 'rag ', 'retrieval-augmented'], '#RAG'),
+        (['reasoning', 'chain-of-thought', 'chain of thought', 'cot '], '#Reasoning'),
+        (['attention mechanism', 'self-attention', 'self attention', 'multi-head'], '#Attention'),
+        (['transformer', 'encoder-decoder', 'decoder-only'], '#Transformers'),
+        (['fine-tun', 'fine tun', 'lora', 'qlora', 'adapter', 'peft'], '#FineTuning'),
+        (['scaling law', 'scaling behav', 'compute optimal'], '#ScalingLaws'),
+        (['inference', 'speculative decoding', 'kv-cache', 'kv cache', 'throughput'], '#Inference'),
+        (['quantiz', 'pruning', 'compression', 'sparsity'], '#ModelCompression'),
+        (['graph neural', 'gnn', 'message passing'], '#GraphNeuralNetworks'),
+        (['computer vision', 'image classif', 'object detect', 'vit ', 'vision transformer'], '#ComputerVision'),
+        (['natural language', 'nlp', 'text classif', 'sentiment'], '#NLP'),
+        (['embedding', 'representation learn', 'latent space'], '#Representations'),
+        (['safety', 'alignment', 'hallucination', 'sycophancy', 'sycophantic'], '#AISafety'),
+        (['bayesian', 'posterior', 'prior belief', 'probabilistic'], '#Bayesian'),
+        (['geometry', 'manifold', 'curvature', 'topolog'], '#Geometry'),
+        (['optimization', 'adam', 'sgd', 'learning rate', 'convergence'], '#Optimization'),
+        (['state space', 'ssm', 'mamba'], '#StateSpaceModels'),
+        (['agent', 'tool use', 'agentic'], '#AIAgents'),
+        (['multimodal', 'vision-language', 'image-text'], '#Multimodal'),
+    ]
+
+    selected = []
+    for keywords, tag in topic_tags:
+        if any(kw in text_lower for kw in keywords):
+            selected.append(tag)
+            if len(selected) >= 2:
+                break
+
+    # Fallback: if fewer than 2 topic tags found, add #DeepLearning
+    while len(selected) < 2:
+        if '#DeepLearning' not in selected:
+            selected.append('#DeepLearning')
+        else:
+            break
+
+    return f"#AI #MachineLearning {' '.join(selected)}"
+
+
 def build_thread(content: str, review_num: int, clickbait: bool = True,
                   english_content: Optional[str] = None) -> List[str]:
     """
@@ -460,13 +516,14 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
 
         total = len(content_tweets) + 3
 
-        # Build hook: paper name + Hebrew review name
+        # Build hook: paper name + Hebrew review name + topic hashtags
         hebrew_name = extract_hebrew_review_name(content)
         link_line = f"\n\n📄 {arxiv_link}" if arxiv_link else ""
+        hashtags = _generate_hashtags(content, english_content)
         if paper_name:
-            first_tweet = f"(1/{total}) {hook_emoji} {paper_name} 🧵\n\n📄 {hebrew_name}\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
+            first_tweet = f"(1/{total}) {hook_emoji} {paper_name} 🧵\n\n📄 {hebrew_name}\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n{hashtags}"
         else:
-            first_tweet = f"(1/{total}) {hook_emoji} {hebrew_name} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
+            first_tweet = f"(1/{total}) {hook_emoji} {hebrew_name} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n{hashtags}"
         thread.append(first_tweet)
 
         review_header = extract_review_header(content)
