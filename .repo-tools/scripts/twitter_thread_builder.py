@@ -80,30 +80,25 @@ def extract_english_paper_name(english_content: str) -> str:
     return ""
 
 
-def extract_english_hook(english_content: str) -> str:
-    """Extract first paragraph of English review body for use as hook/TL;DR.
+def extract_hebrew_hook(content: str, max_chars: int = 280) -> str:
+    """Extract first substantial paragraph from Hebrew review body for tweet 2.
 
-    Returns the first substantial paragraph after the header lines.
+    Skips the title, date/review header lines, and short quips (< 150 chars).
+    Truncates at sentence boundary for tweet use.
     """
-    lines = english_content.strip().split('\n')
-    # Identify the paper name so we can skip it
-    paper_name = extract_english_paper_name(english_content)
-
+    lines = content.strip().split('\n')
+    # Skip header lines: title, date/review info
     body_start = 0
     for i, line in enumerate(lines):
-        if i < 2:
-            continue
         line = line.strip()
         if not line:
             continue
-        # Skip Mike's header patterns
-        if re.match(r"^(Mike'?s|Daily|Review\b)", line, re.IGNORECASE):
+        if i < 2:
             continue
-        # Skip the paper name line (exact or near match)
-        if paper_name and (line == paper_name or line.upper() == paper_name.upper()):
+        # Skip review header lines (date, review number, etc.)
+        if 'סקירה' in line or 'סקירת' in line or 'סקירות' in line:
             continue
-        # Skip short non-body lines in the header area (lines 3-5)
-        if i < 6 and len(line) < 40:
+        if re.match(r'^\d{2}\.\d{2}\.\d{2}', line):
             continue
         body_start = i
         break
@@ -111,39 +106,30 @@ def extract_english_hook(english_content: str) -> str:
     if body_start == 0:
         return ""
 
-    # Collect first substantial paragraph (skip short quips/jokes)
-    paragraph = ""
+    # Collect first substantial paragraph (skip short quips < 150 chars)
     i = body_start
     while i < len(lines):
         paragraph_lines = []
-        for line in lines[i:]:
-            line = line.strip()
+        while i < len(lines):
+            line = lines[i].strip()
+            i += 1
             if not line and paragraph_lines:
                 break
             if line:
                 paragraph_lines.append(line)
-            i += 1
-        i += 1  # skip blank line
         candidate = ' '.join(paragraph_lines)
         if len(candidate) >= 150:
-            paragraph = candidate
-            break
-        # If short paragraph, keep looking
+            # Truncate at sentence boundary
+            if len(candidate) > max_chars:
+                truncated = candidate[:max_chars]
+                last_period = max(truncated.rfind('. '), truncated.rfind('? '), truncated.rfind('! '))
+                if last_period > 100:
+                    candidate = candidate[:last_period + 1]
+                else:
+                    candidate = truncated.rsplit(' ', 1)[0] + '...'
+            return candidate
 
-    if not paragraph:
-        return ""
-
-    # Truncate to ~300 chars at sentence boundary for tweet use
-    if len(paragraph) > 300:
-        # Find last sentence end before 300 chars
-        truncated = paragraph[:300]
-        last_period = max(truncated.rfind('. '), truncated.rfind('? '), truncated.rfind('! '))
-        if last_period > 100:
-            paragraph = paragraph[:last_period + 1]
-        else:
-            paragraph = truncated.rsplit(' ', 1)[0] + '...'
-
-    return paragraph
+    return ""
 
 
 def clean_markdown(content: str) -> str:
@@ -401,13 +387,11 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
             first_tweet = f"(1/{total}) {hook_emoji} {title} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         thread.append(first_tweet)
 
-        # Build intro tweet — use English hook if available, else Hebrew concepts
-        english_hook = ""
-        if english_content:
-            english_hook = extract_english_hook(english_content)
+        # Build intro tweet — Hebrew hook from review body, fallback to concepts
+        hebrew_hook = extract_hebrew_hook(content)
 
-        if english_hook:
-            intro_tweet = f"(2/{total}) 🔍 TL;DR:\n\n{english_hook}"
+        if hebrew_hook:
+            intro_tweet = f"(2/{total}) 🔍 {hebrew_hook}"
             thread.append(intro_tweet)
         else:
             concepts = extract_key_concepts(content)
