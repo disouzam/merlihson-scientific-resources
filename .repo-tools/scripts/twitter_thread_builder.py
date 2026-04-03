@@ -159,6 +159,46 @@ def extract_title(content: str) -> str:
     return "Paper Review"
 
 
+def extract_hebrew_review_name(content: str) -> str:
+    """Extract the Hebrew review name (subtitle) for use in tweet 1.
+
+    Hebrew review format:
+      Line 1: "Review N: <title>" (often English)
+      Line 2: Hebrew subtitle / review name
+      Line 3: date header (סקירת המאמר היומית...)
+
+    Returns line 2 if it's a real subtitle, otherwise falls back to line 1
+    (with "Review N:" prefix stripped). For reviews where line 1 is already
+    Hebrew (no "Review N:" prefix), returns line 1 directly.
+    """
+    lines = content.strip().split('\n')
+    if not lines:
+        return ""
+
+    line1 = lines[0].strip()
+    line2 = lines[1].strip() if len(lines) > 1 else ""
+
+    # If line 1 is already Hebrew (no "Review N:" prefix), use it
+    if not re.match(r'^Review\s+\d+', line1, re.IGNORECASE):
+        if line1:
+            return line1
+
+    # Check if line 2 is a real subtitle (not a date/header line)
+    if (line2
+            and 'סקירת המאמר' not in line2
+            and 'סקירות עד' not in line2
+            and 'סקירות ל' not in line2
+            and not re.match(r'^\d{2}\.\d{2}\.\d{2}', line2)):
+        return line2
+
+    # Fallback: strip "Review N:" from line 1
+    match = re.match(r'^Review\s+\d+[ab]?:\s*(.+)$', line1, re.IGNORECASE)
+    if match:
+        return match.group(1).strip()
+
+    return line1
+
+
 def extract_paper_name(content: str) -> str:
     """Extract the English paper name from the review header line.
 
@@ -379,12 +419,13 @@ def build_thread(content: str, review_num: int, clickbait: bool = True,
 
         total = len(content_tweets) + 3
 
-        # Build hook from actual paper title + paper link
+        # Build hook: paper name + Hebrew review name
+        hebrew_name = extract_hebrew_review_name(content)
         link_line = f"\n\n📄 {arxiv_link}" if arxiv_link else ""
         if paper_name:
-            first_tweet = f"(1/{total}) {hook_emoji} {paper_name} 🧵\n\n📄 {title}\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
+            first_tweet = f"(1/{total}) {hook_emoji} {paper_name} 🧵\n\n📄 {hebrew_name}\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         else:
-            first_tweet = f"(1/{total}) {hook_emoji} {title} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
+            first_tweet = f"(1/{total}) {hook_emoji} {hebrew_name} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         thread.append(first_tweet)
 
         # Build intro tweet — Hebrew hook from review body, fallback to concepts
