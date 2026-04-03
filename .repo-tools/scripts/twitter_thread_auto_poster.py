@@ -39,6 +39,7 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 # Import our thread builder
 from twitter_thread_builder import (
     load_hebrew_review,
+    load_english_review,
     build_thread,
     format_thread_for_telegram,
     extract_title,
@@ -373,9 +374,15 @@ def post_thread_to_telegram(review_num: int, config: Dict, dry_run: bool = False
         logger.error(f"Could not load review {review_num}")
         return False
 
+    # Load English review (optional — enhances paper name & hook)
+    english_content = load_english_review(review_num)
+    if english_content:
+        logger.info(f"English review found for review {review_num} — using for paper name & hook")
+
     # Build thread (clickbait style)
     logger.info(f"Building Twitter thread for review {review_num}...")
-    thread = build_thread(content, review_num, clickbait=True)
+    thread = build_thread(content, review_num, clickbait=True,
+                          english_content=english_content)
 
     logger.info(f"✓ Thread built: {len(thread)} tweets")
 

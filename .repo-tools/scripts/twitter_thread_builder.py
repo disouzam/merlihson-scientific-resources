@@ -21,6 +21,7 @@ from datetime import datetime
 # Repository paths
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 HEBREW_MD_DIR = REPO_ROOT / "mike-paper-reviews-all" / "split-hebrew-reviews-md"
+ENGLISH_MD_DIR = REPO_ROOT / "mike-paper-reviews-all" / "split-english-reviews-md"
 
 
 def load_hebrew_review(review_num: int) -> Optional[str]:
@@ -38,6 +39,111 @@ def load_hebrew_review(review_num: int) -> Optional[str]:
     except Exception as e:
         print(f"❌ Error reading review file: {e}")
         return None
+
+
+def load_english_review(review_num: int) -> Optional[str]:
+    """Load English review markdown file. Returns None if not available."""
+    review_file = ENGLISH_MD_DIR / f"Review_{review_num:03d}.md"
+
+    if not review_file.exists():
+        return None
+
+    try:
+        with open(review_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+        return content
+    except Exception:
+        return None
+
+
+def extract_english_paper_name(english_content: str) -> str:
+    """Extract actual paper name from English review (typically ALL-CAPS line 3-5).
+
+    English review format:
+      Line 1: "Review N: <Mike's review title>"
+      Line 2: "Mike's daily paper review: date..."
+      Line 3+: "<ACTUAL PAPER NAME>" (often ALL CAPS, sometimes title case)
+    """
+    lines = english_content.strip().split('\n')
+    for line in lines[2:6]:
+        line = line.strip()
+        if not line:
+            continue
+        # Skip Mike's header lines
+        if re.match(r"^(Mike'?s|Daily|Review\b|סקירת)", line, re.IGNORECASE):
+            continue
+        # Must contain English letters, be long enough, no Hebrew
+        if (len(line) > 10
+                and re.search(r'[A-Za-z]', line)
+                and not re.search(r'[\u0590-\u05FF]', line)):
+            return line
+    return ""
+
+
+def extract_english_hook(english_content: str) -> str:
+    """Extract first paragraph of English review body for use as hook/TL;DR.
+
+    Returns the first substantial paragraph after the header lines.
+    """
+    lines = english_content.strip().split('\n')
+    # Identify the paper name so we can skip it
+    paper_name = extract_english_paper_name(english_content)
+
+    body_start = 0
+    for i, line in enumerate(lines):
+        if i < 2:
+            continue
+        line = line.strip()
+        if not line:
+            continue
+        # Skip Mike's header patterns
+        if re.match(r"^(Mike'?s|Daily|Review\b)", line, re.IGNORECASE):
+            continue
+        # Skip the paper name line (exact or near match)
+        if paper_name and (line == paper_name or line.upper() == paper_name.upper()):
+            continue
+        # Skip short non-body lines in the header area (lines 3-5)
+        if i < 6 and len(line) < 40:
+            continue
+        body_start = i
+        break
+
+    if body_start == 0:
+        return ""
+
+    # Collect first substantial paragraph (skip short quips/jokes)
+    paragraph = ""
+    i = body_start
+    while i < len(lines):
+        paragraph_lines = []
+        for line in lines[i:]:
+            line = line.strip()
+            if not line and paragraph_lines:
+                break
+            if line:
+                paragraph_lines.append(line)
+            i += 1
+        i += 1  # skip blank line
+        candidate = ' '.join(paragraph_lines)
+        if len(candidate) >= 150:
+            paragraph = candidate
+            break
+        # If short paragraph, keep looking
+
+    if not paragraph:
+        return ""
+
+    # Truncate to ~300 chars at sentence boundary for tweet use
+    if len(paragraph) > 300:
+        # Find last sentence end before 300 chars
+        truncated = paragraph[:300]
+        last_period = max(truncated.rfind('. '), truncated.rfind('? '), truncated.rfind('! '))
+        if last_period > 100:
+            paragraph = paragraph[:last_period + 1]
+        else:
+            paragraph = truncated.rsplit(' ', 1)[0] + '...'
+
+    return paragraph
 
 
 def clean_markdown(content: str) -> str:
@@ -235,14 +341,16 @@ def split_by_sentences(text: str) -> List[str]:
     return result
 
 
-def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[str]:
+def build_thread(content: str, review_num: int, clickbait: bool = True,
+                  english_content: Optional[str] = None) -> List[str]:
     """
     Build complete Twitter thread from review content.
 
     Args:
-        content: Review content
+        content: Hebrew review content (primary thread body)
         review_num: Review number
         clickbait: If True, use engaging/clickbait style
+        english_content: Optional English review (used for paper name, hook, concepts)
 
     Returns:
         List of tweets with numbering
@@ -253,6 +361,9 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
     # Extract components
     title = extract_title(content)
     arxiv_link = extract_arxiv_link(content)
+    # Also check English review for arxiv link if not found in Hebrew
+    if not arxiv_link and english_content:
+        arxiv_link = extract_arxiv_link(english_content)
 
     # Remove title from content (already in first tweet)
     lines = clean_content.split('\n')
@@ -270,7 +381,13 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
 
     if clickbait:
         # CLICKBAIT VERSION - Content-aware hooks
-        paper_name = extract_paper_name(content)
+        # Prefer English review for paper name (more reliable)
+        paper_name = ""
+        if english_content:
+            paper_name = extract_english_paper_name(english_content)
+        if not paper_name:
+            paper_name = extract_paper_name(content)
+
         hook_emojis = ["🔥", "🧠", "⚡", "🎯", "💡", "🚀"]
         hook_emoji = hook_emojis[review_num % len(hook_emojis)]
 
@@ -284,16 +401,24 @@ def build_thread(content: str, review_num: int, clickbait: bool = True) -> List[
             first_tweet = f"(1/{total}) {hook_emoji} {title} 🧵\n\n🇮🇱 Full Hebrew review below ⬇️{link_line}\n\n#AI #MachineLearning"
         thread.append(first_tweet)
 
-        # Build intro from actual review concepts
-        concepts = extract_key_concepts(content)
-        intro_lines = [f"(2/{total}) סקירה {review_num} - למה הפוסט הזה חשוב? 🤔\n"]
-        for concept in concepts:
-            intro_lines.append(f"➡️ {concept}")
-        if not concepts:
-            intro_lines.append(f"➡️ {title}")
-        intro_lines.append(f"\nבואו נצלול פנימה 🏊‍♂️")
-        intro_tweet = "\n".join(intro_lines)
-        thread.append(intro_tweet)
+        # Build intro tweet — use English hook if available, else Hebrew concepts
+        english_hook = ""
+        if english_content:
+            english_hook = extract_english_hook(english_content)
+
+        if english_hook:
+            intro_tweet = f"(2/{total}) 🔍 TL;DR:\n\n{english_hook}"
+            thread.append(intro_tweet)
+        else:
+            concepts = extract_key_concepts(content)
+            intro_lines = [f"(2/{total}) סקירה {review_num} - למה הפוסט הזה חשוב? 🤔\n"]
+            for concept in concepts:
+                intro_lines.append(f"➡️ {concept}")
+            if not concepts:
+                intro_lines.append(f"➡️ {title}")
+            intro_lines.append(f"\nבואו נצלול פנימה 🏊‍♂️")
+            intro_tweet = "\n".join(intro_lines)
+            thread.append(intro_tweet)
 
         # Content tweets with emojis
         emoji_map = {
@@ -494,13 +619,21 @@ def main():
         print("   📝 Using simple style")
     print("")
 
-    # Load review
+    # Load reviews
     content = load_hebrew_review(args.review)
     if not content:
         return 1
 
+    english_content = load_english_review(args.review)
+    if english_content:
+        print("   🇬🇧 English review found — using for paper name & hook")
+    else:
+        print("   🇮🇱 No English review — using Hebrew only")
+    print("")
+
     # Build thread
-    thread = build_thread(content, args.review, clickbait=use_clickbait)
+    thread = build_thread(content, args.review, clickbait=use_clickbait,
+                          english_content=english_content)
 
     print(f"✓ Thread built: {len(thread)} tweets")
     print("")
