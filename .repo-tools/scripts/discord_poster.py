@@ -857,9 +857,15 @@ def main():
         'presentations/readme.md',
         'CLAUDE.md',
     ]
+    # First abort any in-progress rebase/merge that left conflict markers
+    subprocess.run(['git', '-C', str(REPO_ROOT), 'rebase', '--abort'],
+                   capture_output=True, text=True, timeout=10)
+    subprocess.run(['git', '-C', str(REPO_ROOT), 'merge', '--abort'],
+                   capture_output=True, text=True, timeout=10)
+    # Then reset auto-generated files to HEAD
     for f in AUTO_GENERATED_FILES:
         subprocess.run(
-            ['git', '-C', str(REPO_ROOT), 'checkout', '--', f],
+            ['git', '-C', str(REPO_ROOT), 'checkout', 'HEAD', '--', f],
             capture_output=True, text=True, timeout=10
         )
 
