@@ -5,17 +5,24 @@ Recent Downloads CLI
 Finds the N most recently committed files in a given repo folder
 and downloads any that are missing from ~/Downloads/Books/.
 
+Modes:
+  recent  - N most recently committed files (default)
+  random  - N random files committed in the last M days
+
 Usage:
   python3 recent_downloads.py learning-materials/math 5
   python3 recent_downloads.py "learning-materials/machine learning" 10
   python3 recent_downloads.py learning-materials/math --list-only
+  python3 recent_downloads.py learning-materials/math 3 --random --days 30
 """
 
 import argparse
+import random
 import subprocess
 import sys
 import urllib.parse
 import urllib.request
+from datetime import datetime, timedelta
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -78,6 +85,55 @@ def get_recent_files(folder: str, n: int) -> list[dict]:
     return files
 
 
+def get_files_from_last_days(folder: str, days: int) -> list[dict]:
+    """Find all files committed in the last M days in a repo folder."""
+    since_date = (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
+    result = subprocess.run(
+        ['git', '-C', str(REPO_ROOT), 'log', f'--since={since_date}',
+         '--diff-filter=A', '--name-only', '--pretty=format:%H %aI', '--', f'{folder}/*'],
+        capture_output=True, text=True, timeout=30
+    )
+
+    if result.returncode != 0:
+        print(f"Error running git log: {result.stderr}")
+        return []
+
+    files = []
+    seen = set()
+    current_commit = None
+    current_date = None
+
+    for line in result.stdout.strip().split('\n'):
+        line = line.strip()
+        if not line:
+            continue
+
+        if ' ' in line and len(line.split()[0]) == 40:
+            parts = line.split(' ', 1)
+            current_commit = parts[0]
+            current_date = parts[1]
+            continue
+
+        file_path = line
+        if file_path in seen:
+            continue
+        if not file_path.startswith(folder):
+            continue
+        full_path = REPO_ROOT / file_path
+        if full_path.is_dir():
+            continue
+
+        seen.add(file_path)
+        files.append({
+            'path': file_path,
+            'name': Path(file_path).name,
+            'date': current_date,
+            'commit': current_commit,
+        })
+
+    return files
+
+
 def check_and_download(files: list[dict], list_only: bool = False) -> None:
     """Check which files are missing from Downloads/Books and download them."""
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
@@ -136,8 +192,10 @@ def main():
         description="Download N most recently added files from a repo folder"
     )
     parser.add_argument('folder', help='Folder path in repo (e.g., learning-materials/math)')
-    parser.add_argument('n', nargs='?', type=int, default=5, help='Number of recent files (default: 5)')
+    parser.add_argument('n', nargs='?', type=int, default=5, help='Number of files (default: 5)')
     parser.add_argument('--list-only', action='store_true', help='Only list files, do not download')
+    parser.add_argument('--random', action='store_true', help='Pick N random files from last --days')
+    parser.add_argument('--days', type=int, default=30, help='Lookback window for --random (default: 30)')
 
     args = parser.parse_args()
 
@@ -154,8 +212,17 @@ def main():
                 print(f"  {d.relative_to(REPO_ROOT)}")
         return 1
 
-    print(f"Scanning: {folder} (last {args.n} files)")
-    files = get_recent_files(folder, args.n)
+    if args.random:
+        print(f"Scanning: {folder} (random {args.n} from last {args.days} days)")
+        all_files = get_files_from_last_days(folder, args.days)
+        if not all_files:
+            print(f"No files added to {folder} in the last {args.days} days")
+            return 1
+        files = random.sample(all_files, min(args.n, len(all_files)))
+        print(f"Found {len(all_files)} files in window, picked {len(files)}")
+    else:
+        print(f"Scanning: {folder} (last {args.n} files)")
+        files = get_recent_files(folder, args.n)
 
     if not files:
         print(f"No files found in {folder}")
