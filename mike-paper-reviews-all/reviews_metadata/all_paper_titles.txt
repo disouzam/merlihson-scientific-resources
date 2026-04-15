@@ -598,3 +598,4 @@
 598. MATCHING FEATURES, NOT TOKENS: ENERGY-BASED FINE-TUNING OF LANGUAGE MODELS
 599. KL-REGULARIZED REINFORCEMENT LEARNING IS DESIGNED TO MODE COLLAPSE
 600. P-LESS SAMPLING: A ROBUST HYPERPARAMETER-FREE APPROACH FOR LLM DECODING
+601. A few months ago, when Anthropic introduced the Agent Skills protocol, the market was buzzing. The idea was enticingly simple: instead of building a complex agent from scratch for every task, you simply "equip" it with sets of pre-made capabilities (Skills). These are modular packages of procedural knowledge consisting of instructions, scripts, and examples.

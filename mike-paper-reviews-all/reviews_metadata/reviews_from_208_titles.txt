@@ -1,5 +1,5 @@
 # 📚 Paper Titles from Reviews 208+ (Auto-generated)
-# Successfully extracted: 393 titles
+# Successfully extracted: 394 titles
 
   1. Training LLMs over Neurally Compressed Text
   2. 2BP: 2-Stage Backpropagation
@@ -394,3 +394,4 @@
   391. MATCHING FEATURES, NOT TOKENS: ENERGY-BASED FINE-TUNING OF LANGUAGE MODELS
   392. KL-REGULARIZED REINFORCEMENT LEARNING IS DESIGNED TO MODE COLLAPSE
   393. P-LESS SAMPLING: A ROBUST HYPERPARAMETER-FREE APPROACH FOR LLM DECODING
+  394. A few months ago, when Anthropic introduced the Agent Skills protocol, the market was buzzing. The idea was enticingly simple: instead of building a complex agent from scratch for every task, you simply "equip" it with sets of pre-made capabilities (Skills). These are modular packages of procedural knowledge consisting of instructions, scripts, and examples.
