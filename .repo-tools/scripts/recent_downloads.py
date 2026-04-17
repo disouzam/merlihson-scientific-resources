@@ -2,18 +2,20 @@
 """
 Recent Downloads CLI
 
-Finds the N most recently committed files in a given repo folder
-and downloads any that are missing from ~/Downloads/Books/.
+Finds files in a given repo folder and downloads any missing from ~/Downloads/Books/.
 
 Modes:
   recent  - N most recently committed files (default)
-  random  - N random files committed in the last M days
+  random  - N random files committed in the last M days; if some 404 (local-only
+            >100MB files not in git), extra random batches are drawn from the pool
+            until N successes are reached or --max-extra-batches is exhausted.
 
 Usage:
   python3 recent_downloads.py learning-materials/math 5
   python3 recent_downloads.py "learning-materials/machine learning" 10
   python3 recent_downloads.py learning-materials/math --list-only
   python3 recent_downloads.py learning-materials/math 3 --random --days 30
+  python3 recent_downloads.py learning-materials/math 7 --random --days 60 --max-extra-batches 10
 """
 
 import argparse
@@ -134,57 +136,42 @@ def get_files_from_last_days(folder: str, days: int) -> list[dict]:
     return files
 
 
-def check_and_download(files: list[dict], list_only: bool = False) -> None:
-    """Check which files are missing from Downloads/Books and download them."""
+def try_download(files: list[dict], list_only: bool = False) -> tuple[list[dict], list[dict]]:
+    """Check which files are missing from Downloads/Books and download them.
+
+    Returns (successes, failures): files now present in ~/Downloads/Books/ and
+    those that 404'd (typically local-only >100MB files excluded from git).
+    """
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
-    missing = []
-    present = []
+    successes: list[dict] = []
+    failures: list[dict] = []
 
     for f in files:
         local_path = DOWNLOADS_DIR / f['name']
-        if local_path.exists():
-            present.append(f)
-        else:
-            missing.append(f)
-
-    # Print summary
-    print(f"\n{'='*60}")
-    print(f"Recent files in repo ({len(files)} found)")
-    print(f"{'='*60}\n")
-
-    for i, f in enumerate(files, 1):
-        status = "✓ exists" if f in present else "✗ missing"
         date_short = f['date'][:10] if f['date'] else '?'
-        print(f"  {i}. [{date_short}] {f['name']}")
-        print(f"     {status} in ~/Downloads/Books/")
-        print(f"     repo: {f['path']}")
-        print()
 
-    print(f"Summary: {len(present)} already downloaded, {len(missing)} missing\n")
+        if local_path.exists():
+            print(f"  ✓ [{date_short}] {f['name']} (already present)")
+            successes.append(f)
+            continue
 
-    if list_only:
-        return
+        if list_only:
+            print(f"  · [{date_short}] {f['name']} (missing — would download)")
+            continue
 
-    if not missing:
-        print("Nothing to download.")
-        return
-
-    print(f"Downloading {len(missing)} file(s)...\n")
-
-    for f in missing:
         url = f"{GITHUB_RAW_BASE}/{urllib.parse.quote(f['path'])}"
-        local_path = DOWNLOADS_DIR / f['name']
-
-        print(f"  Downloading: {f['name']}")
-        print(f"  From: {url[:80]}...")
-
         try:
             urllib.request.urlretrieve(url, str(local_path))
             size_mb = local_path.stat().st_size / (1024 * 1024)
-            print(f"  ✓ Saved ({size_mb:.1f} MB)\n")
+            print(f"  ✓ [{date_short}] {f['name']} → saved ({size_mb:.1f} MB)")
+            successes.append(f)
         except Exception as e:
-            print(f"  ✗ Failed: {e}\n")
+            print(f"  ✗ [{date_short}] {f['name']} → {e}")
+            local_path.unlink(missing_ok=True)
+            failures.append(f)
+
+    return successes, failures
 
 
 def main():
@@ -196,6 +183,8 @@ def main():
     parser.add_argument('--list-only', action='store_true', help='Only list files, do not download')
     parser.add_argument('--random', action='store_true', help='Pick N random files from last --days')
     parser.add_argument('--days', type=int, default=30, help='Lookback window for --random (default: 30)')
+    parser.add_argument('--max-extra-batches', type=int, default=5,
+                        help='In --random mode, max extra sampling batches to compensate for 404s (default: 5)')
 
     args = parser.parse_args()
 
@@ -213,22 +202,58 @@ def main():
         return 1
 
     if args.random:
-        print(f"Scanning: {folder} (random {args.n} from last {args.days} days)")
         all_files = get_files_from_last_days(folder, args.days)
         if not all_files:
             print(f"No files added to {folder} in the last {args.days} days")
             return 1
-        files = random.sample(all_files, min(args.n, len(all_files)))
-        print(f"Found {len(all_files)} files in window, picked {len(files)}")
-    else:
-        print(f"Scanning: {folder} (last {args.n} files)")
-        files = get_recent_files(folder, args.n)
 
+        print(f"Scanning: {folder} (random {args.n} from last {args.days} days, pool: {len(all_files)})\n")
+
+        # Shuffle once, then draw from the head of the pool as needed.
+        pool = list(all_files)
+        random.shuffle(pool)
+
+        target = args.n
+        successes: list[dict] = []
+        failures: list[dict] = []
+        batch_num = 0
+
+        while len(successes) < target and pool and batch_num <= args.max_extra_batches:
+            needed = target - len(successes)
+            batch = pool[:needed]
+            pool = pool[needed:]
+            batch_num += 1
+
+            if batch_num == 1:
+                print(f"--- Picking {len(batch)} file(s) ---")
+            else:
+                print(f"--- Compensating (batch {batch_num}): picking {len(batch)} replacement(s) for 404s ---")
+            batch_successes, batch_failures = try_download(batch, args.list_only)
+            successes.extend(batch_successes)
+            failures.extend(batch_failures)
+            print()
+
+            if args.list_only:
+                break  # no retries in list-only mode
+
+        print("=" * 60)
+        print(f"Final: {len(successes)}/{target} available in ~/Downloads/Books/")
+        if failures:
+            print(f"Skipped {len(failures)} (likely local-only >100MB files not in git):")
+            for f in failures:
+                print(f"  - {f['name']}")
+        if len(successes) < target and not pool:
+            print(f"Pool exhausted — widen window with --days or choose a bigger folder.")
+        print("=" * 60)
+        return 0 if len(successes) >= target or args.list_only else 1
+
+    # Recent mode (no retry: user asked for the N most-recent specifically)
+    print(f"Scanning: {folder} (last {args.n} files)\n")
+    files = get_recent_files(folder, args.n)
     if not files:
         print(f"No files found in {folder}")
         return 1
-
-    check_and_download(files, list_only=args.list_only)
+    try_download(files, args.list_only)
     return 0
 
 
