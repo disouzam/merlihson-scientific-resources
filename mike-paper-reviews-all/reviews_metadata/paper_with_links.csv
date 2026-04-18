@@ -600,3 +600,4 @@ Review_598,"MATCHING FEATURES, NOT TOKENS: ENERGY-BASED FINE-TUNING OF LANGUAGE 
 Review_599,KL-REGULARIZED REINFORCEMENT LEARNING IS DESIGNED TO MODE COLLAPSE,https://arxiv.org/abs/2510.20817
 Review_600,P-LESS SAMPLING: A ROBUST HYPERPARAMETER-FREE APPROACH FOR LLM DECODING,https://arxiv.org/abs/2509.23234
 Review_601,"A few months ago, when Anthropic introduced the Agent Skills protocol, the market was buzzing. The idea was enticingly simple: instead of building a complex agent from scratch for every task, you simply ""equip"" it with sets of pre-made capabilities (Skills). These are modular packages of procedural knowledge consisting of instructions, scripts, and examples.",https://arxiv.org/abs/2602.12670
+Review_602,vCache: Verified Semantic Prompt Caching,https://arxiv.org/abs/2502.03771
