@@ -195,6 +195,7 @@ Daily Gmail digest agent. Fetches yesterday's emails via Gmail API, summarizes w
 - Sends digest to personal Telegram chat
 - Catches up missed days automatically
 - Refresh mode for mid-day new email summaries
+- 60s HTTP timeout + 3x retry on transient Gmail errors (timeout/429/network) — fails fast instead of hanging when the Mac wakes with flaky network
 
 **Usage:**
 

@@ -173,12 +173,14 @@ Daily Gmail digest agent. Fetches yesterday's emails via Gmail API, summarizes w
 **Config:** `.repo-tools/scripts/email_digest/config.yaml` (gitignored)
 **OAuth:** `~/.config/email-digest/credentials.json` + `token.json`
 **Schedule:** launchd daily at 10:00 AM + RunAtLoad on login (once per day via `last_run.txt`)
+**Resilience:** 60s HTTP timeout per Gmail call (`GMAIL_REQUEST_TIMEOUT` in `gmail_client.py`) + 3-attempt retry with 2/4/8s backoff on transient errors (429, timeout, network). Prevents hangs when the Mac wakes up with flaky network.
 
 **Key sections to update when:**
 - Telegram channel changes → `config.yaml`
 - Model changes → `config.yaml`
 - Schedule changes → `com.user.email-digest.plist.template`
 - OAuth re-auth needed → run `setup_oauth.py`
+- Gmail timeout/retry tuning → `gmail_client.py` (`GMAIL_REQUEST_TIMEOUT`, `_execute_with_retry`)
 
 ### paper-recommender (no skill file — runs autonomously)
 Daily arXiv paper recommender bot. Fetches new papers from arXiv, ranks by relevance to Mike's interests using Claude Haiku. Monday: 3-day lookback, top 20 papers. Tue–Fri: 1-day lookback, top 10. Sat–Sun: skip. Cross-machine dedup via git-tracked `last_run.txt`.

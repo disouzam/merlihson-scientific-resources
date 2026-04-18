@@ -6,8 +6,10 @@ import time
 from datetime import date, timedelta
 from pathlib import Path
 
+import httplib2
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
+from google_auth_httplib2 import AuthorizedHttp
 from googleapiclient.discovery import build
 from googleapiclient.http import BatchHttpRequest
 
@@ -16,6 +18,7 @@ from email_digest.config import Settings
 logger = logging.getLogger(__name__)
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+GMAIL_REQUEST_TIMEOUT = 60  # seconds per HTTP call; fail fast instead of hanging
 
 
 def authenticate(settings: Settings) -> Credentials:
@@ -53,7 +56,8 @@ def fetch_emails(
     Returns list of raw Gmail API message dicts with full payload.
     """
     creds = authenticate(settings)
-    service = build("gmail", "v1", credentials=creds)
+    http = AuthorizedHttp(creds, http=httplib2.Http(timeout=GMAIL_REQUEST_TIMEOUT))
+    service = build("gmail", "v1", http=http, cache_discovery=False)
 
     if target_date is None:
         target_date = date.today() - timedelta(days=1)
@@ -72,9 +76,10 @@ def fetch_emails(
     page_token = None
 
     while True:
-        result = service.users().messages().list(
+        list_request = service.users().messages().list(
             userId="me", q=query, pageToken=page_token, maxResults=500
-        ).execute()
+        )
+        result = _execute_with_retry(list_request.execute)
 
         messages = result.get("messages", [])
         message_ids.extend(msg["id"] for msg in messages)
@@ -120,16 +125,28 @@ def fetch_emails(
     return all_messages
 
 
-def _execute_batch_with_retry(batch: BatchHttpRequest, max_retries: int = 3):
-    """Execute batch request with exponential backoff on 429."""
+def _is_transient_error(e: Exception) -> bool:
+    """Return True for errors worth retrying: rate limits, timeouts, transient network."""
+    if isinstance(e, (TimeoutError, ConnectionError, OSError)):
+        return True
+    msg = str(e)
+    return "429" in msg or "timed out" in msg.lower() or "timeout" in msg.lower()
+
+
+def _execute_with_retry(call, max_retries: int = 3):
+    """Execute a callable with exponential backoff on rate limits / timeouts."""
     for attempt in range(max_retries):
         try:
-            batch.execute()
-            return
+            return call()
         except Exception as e:
-            if "429" in str(e) and attempt < max_retries - 1:
+            if _is_transient_error(e) and attempt < max_retries - 1:
                 wait = 2 ** (attempt + 1)
-                logger.warning(f"Rate limited, retrying in {wait}s...")
+                logger.warning(f"Transient error ({e}), retrying in {wait}s...")
                 time.sleep(wait)
             else:
                 raise
+
+
+def _execute_batch_with_retry(batch: BatchHttpRequest, max_retries: int = 3):
+    """Execute batch request with exponential backoff on rate limits / timeouts."""
+    _execute_with_retry(batch.execute, max_retries=max_retries)
