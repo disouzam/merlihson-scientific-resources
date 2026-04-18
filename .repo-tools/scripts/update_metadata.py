@@ -306,6 +306,7 @@ def get_repo_stats(repo_root: Path) -> Dict[str, Any]:
 
     # Get current date for "Last Updated"
     stats['current_date'] = datetime.now().strftime("%B %-d, %Y")  # e.g., "February 6, 2026"
+    stats['current_month_year'] = datetime.now().strftime("%B_%Y")  # e.g., "April_2026" — for shields.io badge
 
     return stats
 
@@ -368,6 +369,9 @@ def update_readme(readme_path: Path, stats: Dict[str, Any]) -> bool:
 
         # For Researchers section
         (r'(- \*\*Literature Reviews\*\*: )\d+( analyzed papers)', r'\g<1>{reviews}\2'),
+
+        # shields.io "Last Updated" badge — keep month/year fresh
+        (r'(badge/Updated-)[A-Za-z]+_\d{4}(-success\.svg)', r'\g<1>{current_month_year}\2'),
     ]
 
     # Apply all patterns
