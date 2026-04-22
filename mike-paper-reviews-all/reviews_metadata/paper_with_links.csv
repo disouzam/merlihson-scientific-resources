@@ -602,3 +602,4 @@ Review_600,P-LESS SAMPLING: A ROBUST HYPERPARAMETER-FREE APPROACH FOR LLM DECODI
 Review_601,"A few months ago, when Anthropic introduced the Agent Skills protocol, the market was buzzing. The idea was enticingly simple: instead of building a complex agent from scratch for every task, you simply ""equip"" it with sets of pre-made capabilities (Skills). These are modular packages of procedural knowledge consisting of instructions, scripts, and examples.",https://arxiv.org/abs/2602.12670
 Review_602,vCache: Verified Semantic Prompt Caching,https://arxiv.org/abs/2502.03771
 Review_603,Chronos-2: From Univariate to Universal Forecasting,https://arxiv.org/abs/2510.15821
+Review_604,NEURAL COMPUTERS,https://arxiv.org/abs/2604.06425
