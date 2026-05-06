@@ -51,11 +51,16 @@ That feels closer to how real systems behave. 🤔
 
 ## Output
 
-1. Save post as `~/Downloads/linkedin_posts_materials/post_<N>_<short_name>.txt`
+1. **Check if book already in scientific_repo** before adding:
+   - `find /Users/michaelerlihson/Personal/repos/scientific_repo/learning-materials -iname "*<keywords>*"`
+   - If found, tell the user and skip the repo-add step
+   - If not, add to the appropriate folder (e.g. `learning-materials/math/<subject>/`),
+     commit and push
+2. Save post as `~/Downloads/linkedin_posts_materials/post_<N>_<short_name>.txt`
    - N = next available number (check existing files)
    - short_name = lowercase, underscores, ~3-4 words derived from book title
-2. **Always copy the source book to the same folder** so user has post + book together:
+3. **Always copy the source book to the linkedin posts folder** so user has post + book together:
    - For PDF input: `cp <source.pdf> ~/Downloads/linkedin_posts_materials/`
    - Skip if file already exists there
    - For URL input: skip (no local file)
-3. Briefly tell the user the filename — do not paste the full post back unless asked
+4. Briefly tell the user the filename — do not paste the full post back unless asked
