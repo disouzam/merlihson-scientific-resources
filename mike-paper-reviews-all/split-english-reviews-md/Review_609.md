@@ -1,0 +1,21 @@
+Review 609: When Local Optimization Breaks Global Demand
+Mike's daily paper review: 09.05.26, review 609
+THE AI LAYOFF TRAP
+
+An unusual review of an unusual AI paper that incorporates flavors of game theory, which I will someday (in retirement) learn properly. Since I am an expert in neither game theory nor economics, and only understand a bit about AI, I don't rule out mistakes in this review. Perhaps even more so than in my 608 previous reviews.
+
+The deployment of AI tools in enterprise environments is often framed as a cost-reduction mechanism. The paper we are reviewing today asks what happens when the human entities (the paper's phrasing, not mine) being replaced are also the source driving the system's demand. The paper models the tension between the private incentives to deploy automated agents and the collective erosion of consumer purchasing power that follows the widespread displacement of workers.
+
+The authors construct a symmetric, continuous-strategy, non-cooperative game. The primary control variable for each firm is the automation rate, defined as the fraction of the firm's human task allocation that is replaced by AI. The system tracks the operating profit of each firm individually, alongside a generalized social welfare function that weights worker income against the aggregate owner surplus.
+
+The modeling environment establishes a product market where multiple identical firms produce goods using a task-based framework. Each firm manages a fixed continuum of tasks initially performed by humans at a fixed wage. Firms can choose to transition a portion of these tasks to AI, which operates at a lower per-task cost. However, this transition is subject to a convex integration friction, representing the increasing difficulty of automating more complex marginal tasks. A firm's objective is to maximize its profit, calculated as its share of the total sectoral revenue minus its production and integration costs.
+
+An important mechanism in this setup is the aggregate demand feedback loop. Workers have a positive marginal propensity to consume, meaning they spend a certain fraction of their wage income on the goods produced by a firm. When a firm automates a task, the displaced worker loses a portion of their income, which directly subtracts from the total macroeconomic expenditure available to all firms. To evaluate the dynamics of the system, the authors derive the Nash equilibrium, the state where no firm can improve its profit by unilaterally changing its automation rate.
+
+They compare this to a cooperative optimum where a central planner explicitly maximizes aggregate profit. The analysis involves adding perturbations to the baseline environment through various controlled interventions, such as modifying the income replacement rate, introducing a universal basic income, applying capital income taxes, enforcing worker equity participation, and implementing a per-task Pigouvian automation tax (a tax aimed at correcting the negative externalities created by replacing human workers with technology, specifically AI).
+
+The proposed mathematical formulation relies heavily on the assumption of a closed, single-sector economy with perfectly symmetric firms. The framework treats AI capabilities and integration costs as static and known quantities, ignoring the stochastic nature of real-world deployment. Furthermore, the demand destruction mechanism assumes workers have a significantly higher marginal propensity to consume compared to capital owners, with the baseline owner consumption explicitly normalized to zero. If reabsorbed workers find alternative employment at higher wages rapidly enough, the fundamental sign of the demand externality could invert.
+
+The analytical complexity of the baseline game seems somewhat simplistic, yielding closed-form algebraic solutions for the equilibrium strategies. However, extending the method to include dynamic, multi-sector interactions or rich second-stage price and quantity competition would dramatically increase the dimensionality and require numerical approximation.
+
+https://arxiv.org/abs/2603.20617
