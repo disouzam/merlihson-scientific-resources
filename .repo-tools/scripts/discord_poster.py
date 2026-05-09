@@ -550,10 +550,10 @@ def get_thread_name(name_format: str) -> str:
 
 def get_new_reviews_for_discord(telegram_links: Dict, already_posted: set) -> List[int]:
     """
-    Find reviews that:
-    1. Have both Hebrew and English Telegram links
-    2. Were uploaded in the last 24 hours
-    3. Haven't been posted to Discord yet
+    Find reviews that have both Hebrew and English Telegram links and haven't
+    been posted to Discord yet. Returns reviews newer than the latest one
+    already on Discord, so a transient failure (e.g. Substack down) can recover
+    on a later run instead of silently aging out.
 
     Args:
         telegram_links: Dict from telegram_message_ids.json
@@ -562,10 +562,8 @@ def get_new_reviews_for_discord(telegram_links: Dict, already_posted: set) -> Li
     Returns:
         List of review numbers to post (most recent first)
     """
-    from datetime import datetime, timedelta
-
     new_reviews = []
-    cutoff_time = datetime.now() - timedelta(hours=24)
+    max_posted = max(already_posted) if already_posted else 0
 
     for review_key, links in telegram_links.items():
         # Skip non-numeric keys (like "test")
@@ -574,12 +572,16 @@ def get_new_reviews_for_discord(telegram_links: Dict, already_posted: set) -> Li
 
         review_num = int(review_key)
 
-        # Skip if already posted
         if review_num in already_posted:
             logger.debug(f"Review_{review_num} already posted to Discord")
             continue
 
-        # Check if both Hebrew and English links exist
+        # Only consider reviews newer than the latest one already on Discord —
+        # avoids mass-backfill if the ledger is empty or freshly checked out.
+        if review_num <= max_posted:
+            logger.debug(f"Review_{review_num} older than latest posted ({max_posted}), skipping")
+            continue
+
         has_hebrew = 'hebrew' in links and links['hebrew'].get('link')
         has_english = 'english' in links and links['english'].get('link')
 
@@ -587,30 +589,8 @@ def get_new_reviews_for_discord(telegram_links: Dict, already_posted: set) -> Li
             logger.debug(f"Review_{review_num} missing Telegram links (Hebrew: {has_hebrew}, English: {has_english})")
             continue
 
-        # Check if uploaded in last 24 hours
-        hebrew_timestamp = links.get('hebrew', {}).get('timestamp', '')
-        english_timestamp = links.get('english', {}).get('timestamp', '')
+        new_reviews.append(review_num)
 
-        try:
-            # Parse timestamp (format: "2026-02-07T11:00:00")
-            upload_time = None
-            for ts in [hebrew_timestamp, english_timestamp]:
-                if ts:
-                    upload_time = datetime.strptime(ts, '%Y-%m-%dT%H:%M:%S')
-                    break
-
-            if upload_time and upload_time >= cutoff_time:
-                new_reviews.append(review_num)
-                logger.debug(f"Review_{review_num} uploaded at {upload_time}, eligible for posting")
-            else:
-                logger.debug(f"Review_{review_num} too old (uploaded: {upload_time})")
-
-        except ValueError as e:
-            # If timestamp parsing fails, include it anyway (backward compatibility)
-            logger.warning(f"Could not parse timestamp for Review_{review_num}: {e}")
-            new_reviews.append(review_num)
-
-    # Return most recent reviews first (highest numbers)
     return sorted(new_reviews, reverse=True)
 
 

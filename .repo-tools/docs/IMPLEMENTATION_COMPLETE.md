@@ -69,7 +69,7 @@ Daily Gmail digest agent integrated from standalone project. Fetches yesterday's
 - Posts via Discord Bot API (was webhook, now bot for thread support)
 - Automatic deduplication (never posts twice)
 - Validates all 5 links exist before posting (Hebrew/English Telegram, Substack, Hebrew/English GitHub)
-- Only posts reviews from last 24 hours
+- Only posts reviews newer than the latest one already on Discord (forward-only)
 - Bot token validation and thread creation tests
 
 **Files Created:**
@@ -80,7 +80,7 @@ Daily Gmail digest agent integrated from standalone project. Fetches yesterday's
 **Safety Features:**
 1. ✅ No duplicates (tracks in `discord_posts.log`)
 2. ✅ Requires all 5 links (Hebrew + English Telegram + Substack + Hebrew + English GitHub)
-3. ✅ Only posts reviews from last 24 hours
+3. ✅ Only posts reviews newer than the latest one already on Discord (forward-only)
 4. ✅ Posts most recent reviews first
 5. ✅ Validates each link exists before posting
 6. ✅ Thread-based organization (one thread per day)
@@ -206,7 +206,7 @@ Message inside thread:
             ├─ Load Telegram links from JSON
             ├─ Scrape Substack for latest post
             ├─ Validate all 5 links exist
-            ├─ Check review is from last 24 hours
+            ├─ Check review_num > max(already_posted) — forward-only
             ├─ Format message with emojis
             ├─ Post to Discord webhook
             └─ Log success (prevent duplicates)
@@ -316,7 +316,7 @@ english_channel:
 - [x] Public Telegram links work for everyone
 - [x] Scheduled job installed and active
 - [x] Schedule times correct (4:00-7:00 PM every 30 min)
-- [x] Only reviews from last 24 hours posted
+- [x] Only reviews newer than max(already_posted) (forward-only) posted
 - [x] English review spacing issue fixed
 
 ---
@@ -330,7 +330,7 @@ english_channel:
 - ✅ Documentation complete
 
 ### Next Automatic Run
-- **Today every 30 min from 4:00-7:00 PM** - Will post any reviews from last 24 hours
+- **Today every 30 min from 4:00-7:00 PM** - Will post any reviews newer than max(already_posted)
 - **Tomorrow every 30 min from 4:00-7:00 PM** - Will post new reviews after Telegram uploads
 
 ### Manual Commands
@@ -371,7 +371,7 @@ python3 .repo-tools/scripts/discord_poster.py --test-webhook
 3. ✅ Discord posts formatted with all 3 links
 4. ✅ Runs automatically every 30 min 4:00-7:00 PM
 5. ✅ No duplicate posts
-6. ✅ Only recent reviews (last 24 hours)
+6. ✅ Only forward (review_num > max(already_posted))
 7. ✅ All links validated before posting
 8. ✅ Public Telegram links work for everyone
 9. ✅ Error handling and logging

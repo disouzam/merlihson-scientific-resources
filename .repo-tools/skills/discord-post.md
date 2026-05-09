@@ -25,7 +25,7 @@ The user can say:
 
 ### Posting Actions
 1. **Post specific review** - Creates daily thread and posts review inside it
-2. **Post all new reviews** - Posts all reviews from last 24 hours (each in daily thread)
+2. **Post all new reviews** - Posts all reviews newer than the latest one already on Discord (each in daily thread)
 3. **Dry-run test** - Shows what would be posted without actually posting
 4. **Test bot token** - Verifies Discord bot authentication
 5. **Test thread creation** - Creates a test thread to verify permissions
@@ -47,7 +47,7 @@ The user can say:
 ### Safety Features
 ✅ **No duplicates** - Git-tracked ledger + delay slots + last-second re-check + Discord API + local log (safe across multiple machines)
 ✅ **Complete validation** - Requires ALL 3 links (Hebrew, English, Substack)
-✅ **Time-based** - Only posts reviews from last 24 hours
+✅ **Forward-only** - Posts reviews with number > max(already_posted), so transient failures (Substack down, network) recover on later runs instead of aging out
 ✅ **Most recent first** - Prioritizes newest reviews
 ✅ **Error handling** - Logs failures, retries at next scheduled time
 
@@ -169,7 +169,7 @@ tail -20 .repo-tools/logs/discord_posts.log
 1. Check if review exists in telegram_message_ids.json
 2. Check if Substack link exists
 3. Check if already posted in discord_posts.log
-4. Check if within 24-hour window
+4. Check if review_num > max(already_posted) — older reviews are skipped to avoid backfill
 
 ```bash
 # Check Telegram links
@@ -186,7 +186,7 @@ python3 .repo-tools/scripts/discord_poster.py --review 575 --dry-run
 - "Review 575 hasn't been uploaded to Telegram yet"
 - "Review 575 is missing Substack link - publish to Substack first"
 - "Review 575 was already posted on [date/time]"
-- "Review 575 is older than 24 hours"
+- "Review 575 is older than the latest already-posted review (skipped to avoid backfill — force with --review 575)"
 
 ## Error Scenarios & Solutions
 
@@ -220,12 +220,11 @@ python3 .repo-tools/scripts/discord_poster.py --review 575 --dry-run
 3. Verify bot has required permissions: Send Messages, Create Public Threads, Send Messages in Threads
 4. Check bot is still in the server
 
-### Old Review (>24 hours)
+### Older Than Latest Posted
 **Symptom:** Review not posted despite having all links
-**Cause:** Review older than 24 hours
+**Cause:** Review number is below max(already_posted) — skipped to prevent backfilling old reviews after a fresh ledger / clone
 **Solution:**
-1. This is by design (only posts recent reviews)
-2. To post old review: `python3 discord_poster.py --review XXX`
+1. To post anyway: `python3 discord_poster.py --review XXX`
 
 ## Response Templates
 
@@ -354,7 +353,7 @@ cat .repo-tools/logs/discord_poster_error.log
 # Uninstall job
 .repo-tools/scripts/schedule_discord_job.sh uninstall
 
-# Manual post (bypasses 24-hour check)
+# Manual post (bypasses the forward-only filter)
 python3 .repo-tools/scripts/discord_poster.py --review 574
 
 # Test without posting
@@ -366,7 +365,7 @@ python3 .repo-tools/scripts/discord_poster.py --dry-run
 ✅ **Thread-Based** - Creates organized daily threads for each review
 ✅ **Fully Automated** - Runs at 12 PM and 6 PM daily
 ✅ **Safe** - No duplicates (git-tracked ledger + delay slots + Discord API), validates all links
-✅ **Smart** - Only posts reviews from last 24 hours
+✅ **Smart** - Only posts reviews newer than the latest one already on Discord (transient failures recover on later runs)
 ✅ **Complete** - Requires all 5 links before posting (Telegram Hebrew, Telegram English, Substack, GitHub Hebrew, GitHub English)
 ✅ **Reliable** - Error handling and automatic retries
 ✅ **Trackable** - Full logging of all operations
