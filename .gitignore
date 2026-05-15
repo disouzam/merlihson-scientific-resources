@@ -46,6 +46,9 @@ env/
 # Email digest credentials (DO NOT COMMIT)
 .repo-tools/scripts/email_digest/config.yaml
 
+# News scout credentials (DO NOT COMMIT)
+.repo-tools/scripts/news_scout/config.yaml
+
 # Temporary files
 *.tmp
 *.temp

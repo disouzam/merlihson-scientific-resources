@@ -1,0 +1,42 @@
+# News Scout Configuration Template
+#
+# SETUP:
+# 1. cp config.yaml.template config.yaml
+# 2. Fill in your Anthropic API key and Telegram credentials below
+# 3. config.yaml is gitignored — never commit it
+
+# Anthropic API key (or set ANTHROPIC_API_KEY env var)
+anthropic_api_key: "YOUR_ANTHROPIC_API_KEY_HERE"
+
+# Telegram — defaults target the review_testing_heb channel ("Mike's Test Hebrew Reviews").
+# These reuse the bot/channel already configured under `twitter_threads` in telegram_config.yaml.
+telegram_bot_token: "8303708697:AAFBS1-oa-CNLOmy-lft7WS6gnmc9j9qoS0"
+telegram_channel_id: "-1003714004500"
+telegram_channel_username: "review_testing_heb"
+
+# Claude models
+ranker_model: "claude-haiku-4-5-20251001"        # cheap, fast, used for AI-relevance pre-filter + ranking
+coverage_model: "claude-sonnet-4-5-20250929"     # supports web_search tool; used for Hebrew coverage check
+formatter_model: "claude-sonnet-4-5-20250929"    # used to write Hebrew teasers
+
+# How many stories to send daily
+top_n: 7
+
+# How far back to scan English sources (hours)
+# Tue-Fri use lookback_hours. Monday uses monday_lookback_hours so it absorbs
+# Saturday + Sunday (no digest runs on weekends).
+lookback_hours: 36
+monday_lookback_hours: 72
+
+# Hard exclusions — auto-reject candidates matching these patterns (case-insensitive)
+# Keep narrow; the ranker also enforces general-public criteria.
+hard_exclusions:
+  - "benchmark"
+  - "fine-tuning technique"
+  - "fine tuning technique"
+  - "arxiv preprint"
+  - "ablation"
+
+# Machine ID for cross-machine dedup (must differ on each laptop). Same convention as
+# telegram_config.yaml / discord_config.yaml. Delay slot = (machine_id - 1) * 120 + jitter.
+machine_id: 2
