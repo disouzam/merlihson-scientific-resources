@@ -24,7 +24,7 @@ echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "${BLUE}   📰 News Scout Setup${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo "Repository:    $REPO_ROOT"
-echo "Primary slot:  08:00 daily (retries every hour through 12:00)"
+echo "Schedule:      Tue + Thu 08:00 (retries every hour through 12:00)"
 echo ""
 
 if [ ! -f "$CONFIG_FILE" ]; then
