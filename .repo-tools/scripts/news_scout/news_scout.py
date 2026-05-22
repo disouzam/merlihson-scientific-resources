@@ -219,8 +219,8 @@ def main() -> None:
     lookback = args.lookback or (monday_lookback if weekday == 0 else default_lookback)
     top_n = int(config.get("top_n", 7))
     ranker_model = config.get("ranker_model", "claude-haiku-4-5-20251001")
-    coverage_model = config.get("coverage_model", "claude-sonnet-4-5-20250929")
-    formatter_model = config.get("formatter_model", "claude-sonnet-4-5-20250929")
+    coverage_model = config.get("coverage_model", "claude-sonnet-4-6")
+    formatter_model = config.get("formatter_model", "claude-sonnet-4-6")
     hard_exclusions = config.get("hard_exclusions", []) or []
 
     # Step 1: fetch

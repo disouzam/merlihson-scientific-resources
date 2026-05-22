@@ -97,7 +97,7 @@ def format_items(
     if not ranked:
         return []
 
-    client = anthropic.Anthropic(api_key=api_key)
+    client = anthropic.Anthropic(api_key=api_key, max_retries=5)
     resp = client.messages.create(
         model=model,
         max_tokens=3000,

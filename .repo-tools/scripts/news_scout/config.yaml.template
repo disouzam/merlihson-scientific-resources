@@ -8,16 +8,17 @@
 # Anthropic API key (or set ANTHROPIC_API_KEY env var)
 anthropic_api_key: "YOUR_ANTHROPIC_API_KEY_HERE"
 
-# Telegram — defaults target the review_testing_heb channel ("Mike's Test Hebrew Reviews").
-# These reuse the bot/channel already configured under `twitter_threads` in telegram_config.yaml.
-telegram_bot_token: "8303708697:AAFBS1-oa-CNLOmy-lft7WS6gnmc9j9qoS0"
+# Telegram — targets the review_testing_heb channel ("Mike's Test Hebrew Reviews").
+# Copy the bot token from the `twitter_threads` section of telegram_config.yaml (gitignored).
+# Never paste a real token here — this template is committed to a public repo.
+telegram_bot_token: "YOUR_TELEGRAM_BOT_TOKEN_HERE"
 telegram_channel_id: "-1003714004500"
 telegram_channel_username: "review_testing_heb"
 
 # Claude models
-ranker_model: "claude-haiku-4-5-20251001"        # cheap, fast, used for AI-relevance pre-filter + ranking
-coverage_model: "claude-sonnet-4-5-20250929"     # supports web_search tool; used for Hebrew coverage check
-formatter_model: "claude-sonnet-4-5-20250929"    # used to write Hebrew teasers
+ranker_model: "claude-haiku-4-5-20251001"     # cheap, fast, used for AI-relevance pre-filter + ranking
+coverage_model: "claude-sonnet-4-6"           # supports web_search tool; used for Hebrew coverage check
+formatter_model: "claude-sonnet-4-6"          # used to write Hebrew teasers
 
 # How many stories to send daily
 top_n: 7
