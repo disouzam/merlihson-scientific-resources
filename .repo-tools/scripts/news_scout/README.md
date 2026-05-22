@@ -1,10 +1,10 @@
 # News Scout
 
-Daily AI news digest in Hebrew, posted to the Telegram channel **review_testing_heb** ("Mike's Test Hebrew Reviews"). Surfaces the 7 most interesting AI stories that **have not yet been covered by Israeli Hebrew press** — raw material for posts, op-eds, and TV/radio segments.
+Twice-weekly AI news digest in Hebrew, posted to the Telegram channel **review_testing_heb** ("Mike's Test Hebrew Reviews"). Surfaces the 7 most interesting AI stories that **have not yet been covered by Israeli Hebrew press** — raw material for posts, op-eds, and TV/radio segments.
 
 ## How it works
 
-1. **Fetch** — pulls the last ~36h from 10 curated English-language feeds (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review). AI-keyword pre-filter on the generic-tech feeds.
+1. **Fetch** — pulls the last ~120h (5 days) from 10 curated English-language feeds (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review). AI-keyword pre-filter on the generic-tech feeds.
 2. **Coverage check** — for each remaining candidate, Claude uses the `web_search` tool to check whether the same story has been covered in Hebrew on 10 Israeli sites (Ynet, N12/Mako, Walla, Israel Hayom, Maariv, Haaretz, TheMarker, Calcalist, Globes, Geektime).
 3. **Rank** — Claude scores 0–100 on "interestingness for general Israeli public" with hard exclusions for research-paper / benchmark / dev-tooling minutiae.
 4. **Format** — Hebrew headline + 1–2 sentence teaser + "Israeli angle" line per item.
@@ -12,7 +12,7 @@ Daily AI news digest in Hebrew, posted to the Telegram channel **review_testing_
 
 ## Schedule
 
-`08:00` Monday through Friday. Hourly retries until `12:00` in case the early slot fails — the `last_run.txt` guard makes retries instant no-ops once the day's digest has shipped. Saturday and Sunday are skipped. **Monday** uses a 72h lookback (`monday_lookback_hours` in config) so it absorbs Sat+Sun.
+`08:00` on **Tuesday and Thursday** — twice weekly (~8-9 runs/month). Hourly retries until `12:00` in case the early slot fails — the `last_run.txt` guard makes retries instant no-ops once the run's digest has shipped. Weekends are hard-skipped in code as a safety net. `lookback_hours` is 120h so the Thursday→Tuesday gap (~5 days) is fully fetched.
 
 ## Multi-machine dedup (5 layers)
 

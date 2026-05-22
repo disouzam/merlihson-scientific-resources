@@ -1,6 +1,6 @@
 # News Scout — Setup
 
-Two one-time steps. After this, the digest runs Mon-Fri at 08:00 automatically.
+Two one-time steps. After this, the digest runs Tuesday + Thursday at 08:00 automatically.
 
 ```bash
 cd /Users/michaelerlihson/Personal/repos/scientific_repo/.repo-tools/scripts/news_scout
@@ -34,10 +34,10 @@ tail -f /Users/michaelerlihson/Personal/repos/scientific_repo/.repo-tools/logs/n
 
 ## Schedule
 
-- **Mon-Fri 08:00** primary slot.
-- Hourly retries through 12:00 if the early slot fails (no-op once the day's run succeeded — `last_run.txt` guards it).
-- **Sat-Sun** silently skip.
-- **Monday** uses a 72h lookback (config: `monday_lookback_hours`) to absorb Fri-evening + Sat + Sun stories.
+- **Tuesday + Thursday, 08:00** — twice weekly (~8-9 runs/month).
+- Hourly retries through 12:00 if the early slot fails (no-op once the run succeeded — `last_run.txt` guards it).
+- Weekends are hard-skipped in code as a safety net.
+- `lookback_hours` is 120h so the Thursday→Tuesday gap (~5 days) is fully scanned.
 
 ## Uninstall / pause
 

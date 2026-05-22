@@ -23,10 +23,11 @@ formatter_model: "claude-sonnet-4-6"          # used to write Hebrew teasers
 # How many stories to send daily
 top_n: 7
 
-# How far back to scan English sources (hours)
-# Tue-Fri use lookback_hours. Monday uses monday_lookback_hours so it absorbs
-# Saturday + Sunday (no digest runs on weekends).
-lookback_hours: 36
+# How far back to scan English sources (hours).
+# Schedule is twice weekly (Tue + Thu), so the longest gap between runs is
+# Thu -> Tue (~5 days); lookback_hours must cover that gap or news is missed.
+# monday_lookback_hours is unused with the Tue/Thu schedule (kept for reference).
+lookback_hours: 120
 monday_lookback_hours: 72
 
 # Hard exclusions — auto-reject candidates matching these patterns (case-insensitive)

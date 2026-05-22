@@ -507,11 +507,11 @@ python3 -m paper_recommender.recommender --dry-run
 
 ## 📰 Optional: News Scout Setup
 
-Daily AI news digest in Hebrew, targeting the `review_testing_heb` channel ("Mike's Test Hebrew Reviews"). Surfaces stories not yet covered by Israeli press — material for posts, op-eds, TV/radio segments.
+Twice-weekly AI news digest in Hebrew, targeting the `review_testing_heb` channel ("Mike's Test Hebrew Reviews"). Surfaces stories not yet covered by Israeli press — material for posts, op-eds, TV/radio segments.
 
 **What it does:**
-- ✅ Mon-Fri at 08:00 (hourly retries until 12:00; Sat-Sun skip). On Monday the lookback expands to 72h so the digest absorbs Sat+Sun.
-- ✅ Pulls last ~36h from 10 curated English feeds (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review)
+- ✅ Tuesday + Thursday at 08:00 (hourly retries until 12:00; weekends skipped). ~8-9 runs/month.
+- ✅ Pulls last ~120h (5 days) from 10 curated English feeds (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review)
 - ✅ Drops items already covered by 10 Israeli Hebrew sites (Ynet, N12/Mako, Walla, Israel Hayom, Maariv, Haaretz, TheMarker, Calcalist, Globes, Geektime) via Anthropic `web_search`
 - ✅ Ranks remaining items 0–100 for general-public TV-style interestingness; sends top 7
 - ✅ Cross-machine dedup via git-tracked `last_run.txt` + `news_scout_ledger.json` + `machine_id` delay
@@ -521,7 +521,7 @@ Daily AI news digest in Hebrew, targeting the `review_testing_heb` channel ("Mik
 cd .repo-tools/scripts/news_scout
 cp config.yaml.template config.yaml
 # Edit config.yaml — set anthropic_api_key (or use ANTHROPIC_API_KEY env var).
-# Telegram credentials are pre-filled for review_testing_heb.
+# Set telegram_bot_token — copy it from the twitter_threads section of telegram_config.yaml.
 # Set machine_id to a unique integer per machine.
 
 # Install launchd job (auto-creates venv + installs deps if missing)
