@@ -1,6 +1,6 @@
 # 🖥️ New Laptop Setup Guide
 
-Complete setup instructions for getting the scientific_repo automation running on a new laptop.
+Complete setup instructions for getting the scientific-resources automation running on a new laptop.
 
 ## 📋 Prerequisites
 

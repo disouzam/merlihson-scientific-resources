@@ -32,7 +32,7 @@ recent-books learning-materials/math 7 --random --days 60 --max-extra-batches 10
 
 ## What It Does
 
-1. `git log` inside the scientific_repo to find files matching the query (recent or within `--days` window).
+1. `git log` inside the scientific-resources to find files matching the query (recent or within `--days` window).
 2. In `--random` mode, shuffles the candidate pool and draws N.
 3. Checks `~/Downloads/Books/` — files already there count as successes.
 4. Downloads the rest via GitHub raw URLs.

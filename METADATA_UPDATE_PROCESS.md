@@ -124,7 +124,7 @@ Use manual updates only if:
 #### Step 1: Run the Standalone Updater
 
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific_repo
+cd /Users/michaelerlihson/Personal/repos/scientific-resources
 python3 .repo-tools/scripts/update_metadata.py
 ```
 
@@ -328,7 +328,7 @@ The repository migrated from manual metadata updates to automated git hooks:
 
 ---
 
-**Last Updated:** May 13, 2026
+**Last Updated:** May 23, 2026
 **Automation Status:** ✅ Fully Automated via Git Hook
 **Coverage:** 610/610 reviews (100%)
 **Repository:** https://github.com/merlihson/scientific-resources

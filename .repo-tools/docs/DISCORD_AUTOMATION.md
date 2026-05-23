@@ -175,7 +175,7 @@ Format:
 
 ### Check Status
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific_repo
+cd /Users/michaelerlihson/Personal/repos/scientific-resources
 .repo-tools/scripts/schedule_discord_job.sh status
 ```
 

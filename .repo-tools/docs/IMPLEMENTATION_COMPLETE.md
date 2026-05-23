@@ -337,7 +337,7 @@ english_channel:
 
 **Post specific review:**
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific_repo
+cd /Users/michaelerlihson/Personal/repos/scientific-resources
 source .repo-tools/.venv/bin/activate
 python3 .repo-tools/scripts/discord_poster.py --review 574
 ```

@@ -62,7 +62,7 @@ def check_english_review(file_path: Path) -> list[str]:
 
 def main():
     """Check all English review files."""
-    reviews_dir = Path("/Users/michaelerlihson/Personal/repos/scientific_repo/mike-paper-reviews-all/split-english-reviews-md")
+    reviews_dir = Path("/Users/michaelerlihson/Personal/repos/scientific-resources/mike-paper-reviews-all/split-english-reviews-md")
 
     all_issues = defaultdict(list)
     issue_counts = defaultdict(int)

@@ -1,5 +1,5 @@
 """
-Automation scripts for scientific_repo repository.
+Automation scripts for scientific-resources repository.
 
 This package contains scripts for automated review processing,
 metadata updates, and daily job scheduling.

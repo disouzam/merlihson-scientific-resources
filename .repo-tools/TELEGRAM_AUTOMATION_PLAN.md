@@ -581,7 +581,7 @@ Add to `.repo-tools/requirements.txt`
 ## File Structure After Implementation
 
 ```
-scientific_repo/
+scientific-resources/
 ├── .repo-tools/
 │   ├── scripts/
 │   │   ├── telegram_uploader.py                    # NEW: Main uploader
