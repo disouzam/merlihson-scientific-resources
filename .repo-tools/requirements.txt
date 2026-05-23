@@ -4,3 +4,4 @@ PyYAML>=6.0          # Config file parsing
 python-docx>=0.8.11  # DOCX reading (for metadata extraction)
 requests>=2.31.0     # HTTP requests (Telegram Bot API)
 yt-dlp>=2024.0       # YouTube video/clip downloading
+pymupdf>=1.24.0      # PDF text extraction (used by paper_recommender)
