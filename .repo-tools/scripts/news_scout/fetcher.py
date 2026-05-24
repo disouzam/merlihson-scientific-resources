@@ -54,9 +54,22 @@ def _strip_html(text: str) -> str:
     return re.sub(r"<[^>]+>", " ", text).replace("&nbsp;", " ").strip()
 
 
+# Pre-compile keyword patterns with boundary checks. Naive substring matching
+# made "AI" match "said"/"aid"/"again", letting non-AI stories slip through.
+# Right boundary is skipped for keywords already ending in a non-alphanumeric
+# char (e.g. "GPT-" must still match "GPT-4", "A.I." must still match "A.I.").
+_AI_KEYWORD_PATTERNS = [
+    re.compile(
+        rf'(?<![A-Za-z0-9]){re.escape(kw.lower())}'
+        + (r'(?![A-Za-z0-9])' if kw[-1:].isalnum() else '')
+    )
+    for kw in AI_KEYWORDS
+]
+
+
 def _is_ai_related(title: str, summary: str) -> bool:
     blob = f"{title} {summary}".lower()
-    return any(kw.lower() in blob for kw in AI_KEYWORDS)
+    return any(p.search(blob) for p in _AI_KEYWORD_PATTERNS)
 
 
 def _fetch_one(source: EnglishSource, cutoff: datetime) -> List[NewsItem]:
