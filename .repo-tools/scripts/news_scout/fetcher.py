@@ -97,7 +97,11 @@ def _fetch_one(source: EnglishSource, cutoff: datetime) -> List[NewsItem]:
 
         summary = _strip_html(entry.get("summary") or entry.get("description") or "")[:600]
 
-        if not source.is_ai_specific and not _is_ai_related(title, summary):
+        # Always apply the keyword filter, even on "AI-specific" feeds. Google News
+        # site-search for "AI OR artificial intelligence" returns plenty of items
+        # that only tangentially mention AI (e.g. Trump/Iran, sports, Ebola) — the
+        # is_ai_specific flag is no longer trusted on its own.
+        if not _is_ai_related(title, summary):
             continue
 
         items.append(NewsItem(
