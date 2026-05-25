@@ -134,11 +134,14 @@ def build_telegram_message(formatted: List[FormattedItem], today: datetime) -> s
     )
     blocks: List[str] = [header]
     for i, fi in enumerate(formatted, 1):
+        # URL on its own line so the full address is visible and clickable
+        # (Telegram auto-links plain URLs in HTML parse mode).
         block = (
             f"\n<b>{i}. {_escape(fi.headline_he)}</b>\n"
             f"{_escape(fi.teaser_he)}\n"
             f"<i>זווית ישראלית:</i> {_escape(fi.angle_he)}\n"
-            f"<i>מקור:</i> {_escape(fi.source)} — <a href=\"{fi.url}\">קישור</a>"
+            f"<i>מקור:</i> {_escape(fi.source)}\n"
+            f"🔗 {fi.url}"
         )
         blocks.append(block)
     return "\n".join(blocks)
