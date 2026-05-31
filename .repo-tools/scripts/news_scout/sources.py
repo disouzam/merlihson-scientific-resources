@@ -75,6 +75,35 @@ ENGLISH_SOURCES: List[EnglishSource] = [
         feed_url="https://www.technologyreview.com/feed/",
         is_ai_specific=False,
     ),
+    # --- Buzzier sources for sharper, more newsroom-friendly stories ---
+    # Wires and legacy press skew toward measured/policy. These add drama,
+    # founder fights, exposés, and "what tech people are actually arguing about".
+    EnglishSource(
+        name="TechCrunch — AI",
+        feed_url="https://techcrunch.com/category/artificial-intelligence/feed/",
+        is_ai_specific=True,
+    ),
+    EnglishSource(
+        name="Platformer",
+        feed_url="https://www.platformer.news/feed",
+        is_ai_specific=False,
+    ),
+    EnglishSource(
+        name="Hacker News front page",
+        # front page items with at least 50 points (signal of community attention; AI filter trims to AI)
+        feed_url="https://hnrss.org/frontpage?points=50",
+        is_ai_specific=False,
+    ),
+    EnglishSource(
+        name="Stratechery",
+        feed_url="https://stratechery.com/feed/",
+        is_ai_specific=False,
+    ),
+    EnglishSource(
+        name="Ars Technica — AI",
+        feed_url="https://arstechnica.com/tag/artificial-intelligence/feed/",
+        is_ai_specific=True,
+    ),
 ]
 
 

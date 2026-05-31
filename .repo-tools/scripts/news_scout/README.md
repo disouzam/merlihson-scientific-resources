@@ -4,9 +4,9 @@ Twice-weekly AI news digest in Hebrew, posted to the Telegram channel **review_t
 
 ## How it works
 
-1. **Fetch** — pulls the last ~120h (5 days) from 10 curated English-language feeds (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review). AI-keyword pre-filter on the generic-tech feeds.
-2. **Coverage check** — for each remaining candidate, Claude uses the `web_search` tool to check whether the same story has been covered in Hebrew on 10 Israeli sites (Ynet, N12/Mako, Walla, Israel Hayom, Maariv, Haaretz, TheMarker, Calcalist, Globes, Geektime).
-3. **Rank** — Claude scores 0–100 on "interestingness for general Israeli public" with hard exclusions for research-paper / benchmark / dev-tooling minutiae.
+1. **Fetch** — pulls the last ~120h (5 days) from 15 curated English-language feeds: legacy press (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review) plus buzzier sources (TechCrunch AI, Platformer, Hacker News front page, Stratechery, Ars Technica AI). AI-keyword filter applied to every item (word-boundary regex, not naive substring). Duplicate stories aren't dropped — they're counted: `source_count >= 2` is a "real story" signal passed to the ranker.
+2. **Coverage check** — for each remaining candidate, Claude uses the `web_search` tool to check whether the same story has been covered in Hebrew on 10 Israeli sites (Ynet, N12/Mako, Walla, Israel Hayom, Maariv, Haaretz, TheMarker, Calcalist, Globes, Geektime). Calls run serially behind a token-rate pacer to respect the per-minute input-token limit.
+3. **Rank** — Claude scores 0–100 with a PR-agent rubric — named characters in moments, surprising claims, concrete consequences with numbers, visual hooks, Israeli pain/pride, running controversies, ethical edges, quotable quotes. Multi-source items get +8–15. "Interesting beats important."
 4. **Format** — Hebrew headline + 1–2 sentence teaser + "Israeli angle" line per item.
 5. **Post** — single HTML-formatted message to the test Hebrew channel.
 

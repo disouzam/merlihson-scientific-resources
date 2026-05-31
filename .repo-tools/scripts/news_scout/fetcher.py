@@ -31,6 +31,7 @@ class NewsItem:
     summary: str
     published: datetime
     item_id: str = field(default="")  # stable hash for dedup
+    source_count: int = 1  # how many distinct feeds reported this story (set by _dedup)
 
     def __post_init__(self):
         if not self.item_id:
@@ -115,16 +116,23 @@ def _fetch_one(source: EnglishSource, cutoff: datetime) -> List[NewsItem]:
 
 
 def _dedup(items: List[NewsItem]) -> List[NewsItem]:
-    seen_urls: set[str] = set()
-    seen_titles: set[str] = set()
+    """Dedup by URL + normalized title, recording how many sources covered the
+    same story via item.source_count. Multi-source coverage is a strong signal
+    of newsworthiness and is surfaced to the ranker for boosting."""
+    seen_urls: dict[str, NewsItem] = {}
+    seen_titles: dict[str, NewsItem] = {}
     out: List[NewsItem] = []
     for item in items:
         norm_title = re.sub(r"[^\w\s]", "", item.title.lower()).strip()
         norm_title = re.sub(r"\s+", " ", norm_title)
-        if item.url in seen_urls or norm_title in seen_titles:
+        if item.url in seen_urls:
+            seen_urls[item.url].source_count += 1
             continue
-        seen_urls.add(item.url)
-        seen_titles.add(norm_title)
+        if norm_title in seen_titles:
+            seen_titles[norm_title].source_count += 1
+            continue
+        seen_urls[item.url] = item
+        seen_titles[norm_title] = item
         out.append(item)
     return out
 

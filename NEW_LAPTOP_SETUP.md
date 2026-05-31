@@ -511,9 +511,9 @@ Twice-weekly AI news digest in Hebrew, targeting the `review_testing_heb` channe
 
 **What it does:**
 - ✅ Tuesday + Thursday at 08:00 (hourly retries until 12:00; weekends skipped). ~8-9 runs/month.
-- ✅ Pulls last ~120h (5 days) from 10 curated English feeds (Reuters, AP, BBC, NYT, Guardian, The Verge, CNBC, Wired, Axios, MIT Tech Review)
+- ✅ Pulls last ~120h (5 days) from 15 English feeds: legacy press (Reuters, AP, BBC, NYT, Guardian, Verge, CNBC, Wired, Axios, MIT Tech Review) + buzzier outlets (TechCrunch AI, Platformer, HN front page, Stratechery, Ars Technica AI). Duplicates counted, not dropped — `source_count >= 2` boosts the ranker score.
 - ✅ Drops items already covered by 10 Israeli Hebrew sites (Ynet, N12/Mako, Walla, Israel Hayom, Maariv, Haaretz, TheMarker, Calcalist, Globes, Geektime) via Anthropic `web_search`
-- ✅ Ranks remaining items 0–100 for general-public TV-style interestingness; sends top 7
+- ✅ Ranks remaining items 0–100 with a PR-agent rubric (named characters, drama, concrete consequence, Israeli angle, controversy); sends top 7
 - ✅ Cross-machine dedup via git-tracked `last_run.txt` + `news_scout_ledger.json` + `machine_id` delay
 
 **Setup:**
