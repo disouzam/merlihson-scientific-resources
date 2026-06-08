@@ -498,22 +498,16 @@ def main():
             capture_output=True, text=True, timeout=10
         )
 
-    # Pull latest from remote (critical: gets ledger from other machines)
+    # Pull latest from remote (critical: gets ledger from other machines).
+    # Uses _git_utils.robust_git_pull to retry after laptop-wake SSH transients.
+    from _git_utils import robust_git_pull
     logger.info("Pulling latest from remote (for cross-machine ledger sync)...")
-    try:
-        pull_result = subprocess.run(
-            ['git', '-C', str(REPO_ROOT), 'pull', '--rebase', '--autostash'],
-            capture_output=True, text=True, timeout=60
-        )
-        if pull_result.returncode != 0:
-            logger.error(f"Git pull FAILED: {pull_result.stderr.strip()}")
-            logger.error("Cannot proceed without a clean pull — risk of duplicate posts. Aborting.")
-            return 1
-        else:
-            logger.info("✓ Repo up to date")
-    except subprocess.TimeoutExpired:
-        logger.error("Git pull timed out after 60s. Aborting to avoid duplicate posts.")
+    ok, err = robust_git_pull(REPO_ROOT, logger=logger)
+    if not ok:
+        logger.error(f"Git pull FAILED after retries: {err}")
+        logger.error("Cannot proceed without a clean pull — risk of duplicate posts. Aborting.")
         return 1
+    logger.info("✓ Repo up to date")
 
     # Get reviews to process
     if args.review:
