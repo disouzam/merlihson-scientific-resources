@@ -1,5 +1,5 @@
 # 📚 Paper Titles from Reviews 208+ (Auto-generated)
-# Successfully extracted: 404 titles
+# Successfully extracted: 405 titles
 
   1. Training LLMs over Neurally Compressed Text
   2. 2BP: 2-Stage Backpropagation
@@ -405,3 +405,4 @@
   402. THE AI LAYOFF TRAP
   403. Poly-EPO: Training Exploratory Reasoning Models
   404. ARE: Scaling Up Agent Environments and Evaluations
+  405. NIV: Neural Axis Variations for Variable Font Generation

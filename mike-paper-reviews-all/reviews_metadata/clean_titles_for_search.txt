@@ -609,3 +609,4 @@ Can LLMs Replace Manual Annotation of Software Engineering Artifacts?
 THE AI LAYOFF TRAP
 Poly-EPO: Training Exploratory Reasoning Models
 ARE: Scaling Up Agent Environments and Evaluations
+NIV: Neural Axis Variations for Variable Font Generation

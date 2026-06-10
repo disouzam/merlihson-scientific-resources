@@ -609,3 +609,4 @@
 609. THE AI LAYOFF TRAP
 610. Poly-EPO: Training Exploratory Reasoning Models
 611. ARE: Scaling Up Agent Environments and Evaluations
+612. NIV: Neural Axis Variations for Variable Font Generation
