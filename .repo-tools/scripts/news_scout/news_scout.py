@@ -72,14 +72,25 @@ def resolve_api_key(config: dict) -> str:
 
 # ---------- network ----------
 
-def wait_for_network(max_wait: int = 120) -> bool:
+def wait_for_network(max_wait: int = 300) -> bool:
+    """Wait for DNS to resolve the key hosts the script depends on.
+
+    After laptop sleep/wake the network interface can take several minutes
+    to fully come up. The previous 2 min budget was too short and the
+    single-host probe sometimes returned True while RSS feeds were still
+    DNS-failing. We now poll for up to 5 min and require BOTH the Anthropic
+    API (coverage + ranker + formatter) AND a representative RSS host
+    (Google News fronts most feeds) to resolve.
+    """
+    # Lazy import: _git_utils lives in the parent scripts/ directory and is
+    # added to sys.path by Python's -m invocation, but importing at module
+    # load would break callers that pick news_scout up from elsewhere.
+    from _git_utils import wake_network
     start = time.time()
     while time.time() - start < max_wait:
-        try:
-            socket.getaddrinfo("api.anthropic.com", 443)
+        if wake_network("api.anthropic.com", 443) and wake_network("news.google.com", 443):
             return True
-        except socket.gaierror:
-            time.sleep(10)
+        time.sleep(15)
     return False
 
 
