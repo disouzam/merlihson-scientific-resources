@@ -81,7 +81,7 @@ Tweet 11 (CTA + paper link):
 **Trigger:** "generate twitter thread for review 577"
 
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific-resources
+cd /Users/mike_erlihson/personal/repos/scientific-resources
 python3 .repo-tools/scripts/twitter_thread_builder.py --review 577 --clickbait
 ```
 

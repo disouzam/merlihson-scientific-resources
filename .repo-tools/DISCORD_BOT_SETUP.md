@@ -89,7 +89,7 @@
 
 ### Step 4: Update Configuration File
 
-**Edit:** `/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/config/discord_config.yaml`
+**Edit:** `/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/config/discord_config.yaml`
 
 Replace these values:
 ```yaml
@@ -117,7 +117,7 @@ Once you've updated the config file, run these tests:
 
 ### Test 1: Bot Token Validation
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts
+cd /Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts
 python3 discord_poster.py --test-bot-token
 ```
 
@@ -172,14 +172,14 @@ python3 discord_poster.py --review 577
 If bot approach fails, restore original files:
 
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts
+cd /Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts
 cp discord_poster.py.webhook-backup discord_poster.py
 
 cd ../config
 cp discord_config.yaml.backup discord_config.yaml
 
 # Test webhook still works
-python3 /Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts/discord_poster.py --test-webhook
+python3 /Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts/discord_poster.py --test-webhook
 ```
 
 ---

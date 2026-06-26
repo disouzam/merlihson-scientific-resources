@@ -346,7 +346,7 @@ bash -n .git/hooks/pre-commit
 ## 📂 File Locations Reference
 
 ```
-~/Personal/repos/scientific-resources/
+~/personal/repos/scientific-resources/
 ├── .repo-tools/
 │   ├── scripts/
 │   │   ├── daily_review_processor.py    # Main automation

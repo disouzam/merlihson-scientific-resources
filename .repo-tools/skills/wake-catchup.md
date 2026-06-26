@@ -68,7 +68,7 @@ launchctl list | grep wake-catchup
 **Trigger:** "run wake catch-up"
 
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific-resources
+cd /Users/mike_erlihson/personal/repos/scientific-resources
 python3 .repo-tools/scripts/wake_catchup.py
 ```
 

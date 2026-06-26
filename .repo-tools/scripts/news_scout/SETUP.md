@@ -3,7 +3,7 @@
 Two one-time steps. After this, the digest runs Tuesday + Thursday at 08:00 automatically.
 
 ```bash
-cd /Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts/news_scout
+cd /Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts/news_scout
 
 # 1. Create config.yaml and paste your Anthropic key
 cp config.yaml.template config.yaml
@@ -22,14 +22,14 @@ That's it. Telegram credentials for `review_testing_heb` are already pre-filled 
 launchctl list | grep news-scout
 
 # preview message without sending (works without API key only if --dry-run errors out cleanly):
-cd /Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts
+cd /Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts
 ../.venv/bin/python3 -m news_scout.news_scout --dry-run
 
 # force a real send right now (bypasses Mon-Fri + once-per-day guards):
 ../.venv/bin/python3 -m news_scout.news_scout --force --skip-delay
 
 # follow the runtime log:
-tail -f /Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/news_scout.log
+tail -f /Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/logs/news_scout.log
 ```
 
 ## Schedule

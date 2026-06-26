@@ -582,7 +582,7 @@ def main():
         repo_root = Path(result.stdout.strip())
     except subprocess.CalledProcessError:
         # Fallback to hardcoded path
-        repo_root = Path("/Users/michaelerlihson/Personal/repos/scientific-resources")
+        repo_root = Path("/Users/mike_erlihson/personal/repos/scientific-resources")
 
     reviews_path = repo_root / "mike-paper-reviews-all" / "split-hebrew-reviews-md"
     metadata_path = repo_root / "mike-paper-reviews-all" / "reviews_metadata"

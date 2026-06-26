@@ -397,7 +397,7 @@ def main():
         print(__doc__)
         sys.exit(1)
 
-    reviews_dir = Path("/Users/michaelerlihson/Personal/repos/scientific-resources/mike-paper-reviews-all/split-english-reviews-md")
+    reviews_dir = Path("/Users/mike_erlihson/personal/repos/scientific-resources/mike-paper-reviews-all/split-english-reviews-md")
 
     # Parse arguments
     fix_all = '--all' in sys.argv

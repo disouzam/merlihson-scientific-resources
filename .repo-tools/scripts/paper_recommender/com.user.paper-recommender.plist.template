@@ -7,13 +7,13 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/.venv/bin/python3</string>
+        <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/.venv/bin/python3</string>
         <string>-m</string>
         <string>paper_recommender.recommender</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts</string>
 
     <key>EnvironmentVariables</key>
     <dict>
@@ -99,9 +99,9 @@
     <true/>
 
     <key>StandardOutPath</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/logs/paper_recommender.log</string>
 </dict>
 </plist>

@@ -9,13 +9,13 @@
     <!-- Program to Execute -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/.venv/bin/python3</string>
-        <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts/twitter_thread_auto_poster.py</string>
+        <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/.venv/bin/python3</string>
+        <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts/twitter_thread_auto_poster.py</string>
     </array>
 
     <!-- Working Directory -->
     <key>WorkingDirectory</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources</string>
 
     <!-- Environment Variables -->
     <key>EnvironmentVariables</key>
@@ -45,10 +45,10 @@
 
     <!-- Logging -->
     <key>StandardOutPath</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/twitter_thread_auto_poster.log</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/logs/twitter_thread_auto_poster.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/logs/twitter_thread_auto_poster_error.log</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/logs/twitter_thread_auto_poster_error.log</string>
 
     <!-- Run only when user is logged in -->
     <key>RunAtLoad</key>

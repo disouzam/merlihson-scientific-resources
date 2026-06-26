@@ -34,7 +34,7 @@ Downloads free PDF books from GitHub repositories and sorts them into the `learn
 ## Implementation Details
 
 ### Repo Structure
-- Books destination: `/Users/michaelerlihson/Personal/repos/scientific-resources/learning-materials/`
+- Books destination: `/Users/mike_erlihson/personal/repos/scientific-resources/learning-materials/`
 - Tracking file: `learning-materials/repos/book_repos.md`
 
 ### Existing Categories

@@ -8,13 +8,13 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts/email_digest/venv/bin/python3</string>
+        <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts/email_digest/venv/bin/python3</string>
         <string>-m</string>
         <string>email_digest.scheduler</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/michaelerlihson/Personal/repos/scientific-resources/.repo-tools/scripts</string>
+    <string>/Users/mike_erlihson/personal/repos/scientific-resources/.repo-tools/scripts</string>
 
     <key>EnvironmentVariables</key>
     <dict>
@@ -36,9 +36,9 @@
     <true/>
 
     <key>StandardOutPath</key>
-    <string>/Users/michaelerlihson/.config/email-digest/launchd_stdout.log</string>
+    <string>/Users/mike_erlihson/.config/email-digest/launchd_stdout.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/michaelerlihson/.config/email-digest/launchd_stderr.log</string>
+    <string>/Users/mike_erlihson/.config/email-digest/launchd_stderr.log</string>
 </dict>
 </plist>

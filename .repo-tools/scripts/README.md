@@ -441,7 +441,7 @@ If the job can commit but can't push (network issues, auth problems):
 
 1. **Check commit was created:**
    ```bash
-   cd /Users/michaelerlihson/Personal/repos/scientific-resources
+   cd /Users/mike_erlihson/personal/repos/scientific-resources
    git log -1
    ```
 
