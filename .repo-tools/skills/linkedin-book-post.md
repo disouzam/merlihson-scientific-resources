@@ -52,7 +52,7 @@ That feels closer to how real systems behave. 🤔
 ## Output
 
 1. **Check if book already in scientific-resources** before adding:
-   - `find /Users/michaelerlihson/Personal/repos/scientific-resources/learning-materials -iname "*<keywords>*"`
+   - `find /Users/mike_erlihson/personal/repos/scientific-resources/learning-materials -iname "*<keywords>*"`
    - If found, tell the user and skip the repo-add step
    - If not, add to the appropriate folder (e.g. `learning-materials/math/<subject>/`),
      commit and push
