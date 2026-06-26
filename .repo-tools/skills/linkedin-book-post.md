@@ -5,7 +5,7 @@ description: Write a LinkedIn post about a book (from PDF or URL) in Michael's s
 
 # LinkedIn Book Post Skill
 
-Write LinkedIn posts about technical/academic books in Michael Erlihson's voice. Posts go to `~/linkedin_posts/post_N_<short_name>.txt` (next available N).
+Write LinkedIn posts about technical/academic books in Michael Erlihson's voice. Posts go to `/Users/mike_erlihson/personal/linkedin_posts/post_N_<short_name>.txt` (next available N).
 
 ## Inputs
 
@@ -51,16 +51,19 @@ That feels closer to how real systems behave. 🤔
 
 ## Output
 
-1. **Check if book already in scientific-resources** before adding:
-   - `find /Users/mike_erlihson/personal/repos/scientific-resources/learning-materials -iname "*<keywords>*"`
-   - If found, tell the user and skip the repo-add step
-   - If not, add to the appropriate folder (e.g. `learning-materials/math/<subject>/`),
-     commit and push
-2. Save post as `~/linkedin_posts/post_<N>_<short_name>.txt`
+1. **Always ensure the book is in the repo (`learning-materials/`)** — do this every time, not optionally:
+   - Check first: `find /Users/mike_erlihson/personal/repos/scientific-resources/learning-materials -iname "*<keywords>*"`
+   - If found, tell the user it's already in the repo and skip the add.
+   - If not found, copy it into the **most specific existing** subject folder
+     (e.g. `learning-materials/math/analysis/`, `learning-materials/machine learning/`).
+     Reuse an existing folder whenever one reasonably fits — **only create a new
+     subfolder if no existing folder is an appropriate home**.
+   - Then `git add` the file, commit, and push (authored as the repo's configured git user).
+2. Save post as `/Users/mike_erlihson/personal/linkedin_posts/post_<N>_<short_name>.txt`
    - N = next available number (check existing files)
    - short_name = lowercase, underscores, ~3-4 words derived from book title
 3. **Always copy the source book to the linkedin posts folder** so user has post + book together:
-   - For PDF input: `cp <source.pdf> ~/linkedin_posts/`
+   - For PDF input: `cp <source.pdf> /Users/mike_erlihson/personal/linkedin_posts/`
    - Skip if file already exists there
    - For URL input: skip (no local file)
 4. Briefly tell the user the filename — do not paste the full post back unless asked
