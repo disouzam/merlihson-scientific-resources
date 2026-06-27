@@ -134,6 +134,14 @@ Scans Chrome tabs for arxiv papers, downloads PDFs to `learning-materials/arxiv-
 - Naming convention changes → "Implementation Details"
 - New flags/options → "Action Instructions" and CLAUDE.md Commands section
 
+### explainable-promo.md
+Writes inspiring, clickbait **Hebrew** promo posts for the explAInable podcast, tailored separately for Facebook, X/Twitter, and LinkedIn, to promote a reel/episode. Asks the user for the guest (+ LinkedIn URL), the hooks/numbers, and the episode's YouTube + Spotify links.
+
+**Key sections to update when:**
+- Voice/tone changes → "Voice & style"
+- Platform formatting changes → "Per-platform shaping"
+- Podcast pages/handles change → "Fixed assets"
+
 ### recent-books.md
 Fetches N most-recent or N random books from a `learning-materials/` folder into `~/Downloads/Books/`. Auto-compensates when some files 404 (local-only >100MB files) by sampling more from the pool until N successes. CLI alias: `recent-books` → `recent_downloads.py`.
 
