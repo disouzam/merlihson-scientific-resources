@@ -436,7 +436,7 @@ scientific-resources/
 │   └── 14 PDF presentations
 │
 ├── .repo-tools/                     # Automation framework
-│   └── repo_automator/              # Metadata updater
+│   └── scripts/update_metadata.py   # Metadata/README/badge updater (via pre-commit hook)
 │
 ├── .git/hooks/pre-commit            # Auto-update git hook 🤖
 ├── .gitignore                       # Ignore system files

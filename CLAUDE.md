@@ -34,8 +34,7 @@ All in `mike-paper-reviews-all/reviews_metadata/`:
 
 ### Automation Tooling
 - `.repo-tools/scripts/` — All automation scripts (Python 3)
-- `.repo-tools/repo_automator/` — Watcher-based automation framework with scanners and updaters
-- `.repo-tools/config.yaml` — Defines watched paths, modifiable files whitelist, stat update patterns
+- `.repo-tools/scripts/update_metadata.py` — Regenerates README stats, the "Last Updated" badge, and metadata files; runs via the git pre-commit hook
 - `.repo-tools/skills/` — Skill definitions for Claude Code
 - Scheduling via macOS launchd (`~/Library/LaunchAgents/`)
 
