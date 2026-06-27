@@ -12,7 +12,9 @@ inside Hebrew text, as the brand does).
 
 ## Ask the user for these (at invocation)
 
-1. **Guest** — full name + **LinkedIn profile URL**.
+1. **Guest** — full name, **title + company**, and **LinkedIn profile URL**.
+   Weave the title + company into the post for credibility (e.g. "מייסד-שותף ו-CTO
+   של Orion Security"). If the company has a one-line pitch, work it into the angle.
 2. **Topic + the juicy hooks** — the surprising story / "wow" moment, the twist or
    conflict, and **concrete numbers** (downloads, training runs, costs, dates).
    The specifics ARE the clickbait — push for them if the user is vague.
@@ -53,8 +55,9 @@ Read the guest's LinkedIn (WebFetch) to frame them credibly. On **LinkedIn**,
 - Spotify show: https://open.spotify.com/show/54gAppYYCFoKNP2GqL6coF
 - LinkedIn company page id: 110133905
 
-Use the **per-episode** YouTube + Spotify links the user provides for the CTA, not
-these show-level links.
+By **default the CTA uses these podcast page links** (the YouTube channel + Spotify
+show) — that is what Mike points people to. Only swap in a per-episode link if the
+user explicitly provides one.
 
 ## Output
 
