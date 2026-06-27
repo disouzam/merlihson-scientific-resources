@@ -58,9 +58,21 @@ these show-level links.
 
 ## Output
 
-Print all three posts in chat, clearly labeled (**Facebook / X / LinkedIn**),
-each in a copy-paste-ready block, in Hebrew. Do not add hashtags. If the user asks,
-also save them to `/Users/mike_erlihson/personal/explainable_posts/<guest>_<platform>.txt`.
+Save the three posts **in the same folder as the reel**, named after the reel file:
+- `<reel_dir>/<reel_basename>_facebook.txt`
+- `<reel_dir>/<reel_basename>_twitter.txt`
+- `<reel_dir>/<reel_basename>_linkedin.txt`
+
+Hebrew, UTF-8. Also print each post in chat in a copy-paste-ready block, labeled
+**Facebook / X / LinkedIn**. No hashtags.
+
+## Batch mode
+
+The user often hands over **several reels at once**. Process each reel
+independently and save its three posts **beside that reel** (same folder, named
+after the reel). After the batch, give a one-line summary per reel (guest + the
+folder/files written). Print the full posts for the first reel as a sample, and
+the rest on request.
 
 ## Reference example (the "Nimotron / Hebatron" episode — match this register)
 
