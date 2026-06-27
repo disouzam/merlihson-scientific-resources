@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-A curated knowledge base of 602+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
+A curated knowledge base of 612+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
 
 ## Key Architecture
 
@@ -20,8 +20,8 @@ A curated knowledge base of 602+ AI/ML paper reviews (Hebrew primary, English se
 
 ### Review File Conventions
 - Naming: `Review_NNN.md` / `Review_NNN.docx` (zero-padded 3 digits)
-- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (602 files, primary)
-- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (235 files)
+- Hebrew reviews in `mike-paper-reviews-all/split-hebrew-reviews-md/` (612 files, primary)
+- English reviews in `mike-paper-reviews-all/split-english-reviews-md/` (245 files)
 - DOCX sources in `mike-paper-reviews-all/split-reviews-docx/`
 - Reviews contain Hebrew header, English paper title as "Review NNN: Title", paper link (arxiv/doi/etc)
 
@@ -154,3 +154,13 @@ Automations run from **multiple local computers** simultaneously. Every publishi
 cd .repo-tools && python3 -m venv .venv && source .venv/bin/activate
 pip install pyyaml requests beautifulsoup4 python-telegram-bot
 ```
+
+## New Machine Setup
+
+Git hooks are version-controlled in `.repo-tools/hooks/` (not the un-pushed `.git/hooks/`). After cloning on a new machine, activate them once:
+
+```bash
+bash .repo-tools/scripts/install_git_hooks.sh   # sets core.hooksPath → .repo-tools/hooks
+```
+
+This enables the pre-commit hook that runs `update_metadata.py` (regenerates README stats / "Last Updated" badge / metadata on every commit). See the `git-hooks` skill in `.repo-tools/skills/`.

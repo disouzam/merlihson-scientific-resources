@@ -1,0 +1,19 @@
+#!/bin/bash
+# Version-controlled git pre-commit hook.
+# Activated via: git config core.hooksPath .repo-tools/hooks
+#   (run .repo-tools/scripts/install_git_hooks.sh once per machine)
+#
+# Auto-regenerates README stats / "Last Updated" badge / metadata before each
+# commit. Canonical implementation: .repo-tools/scripts/update_metadata.py
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+PY="$REPO_ROOT/.repo-tools/.venv/bin/python3"
+[ -x "$PY" ] || exit 0                       # no venv on this machine yet -> skip, don't block commits
+"$PY" "$REPO_ROOT/.repo-tools/scripts/update_metadata.py" >/dev/null 2>&1 || exit 0   # never block a commit
+cd "$REPO_ROOT" || exit 0
+# re-stage anything update_metadata.py refreshed
+git add README.md CLAUDE.md METADATA_UPDATE_PROCESS.md \
+  "mike-paper-reviews-all/readme.md" "presentations/readme.md" \
+  images/cosmic-neural-header.svg \
+  "mike-paper-reviews-all/reviews_metadata/"*.txt \
+  "mike-paper-reviews-all/reviews_metadata/"*.csv 2>/dev/null || true
+exit 0
