@@ -15,14 +15,31 @@ inside Hebrew text, as the brand does).
 1. **Guest** — full name, **title + company**, and **LinkedIn profile URL**.
    Weave the title + company into the post for credibility (e.g. "מייסד-שותף ו-CTO
    של Orion Security"). If the company has a one-line pitch, work it into the angle.
-2. **Topic + the juicy hooks** — the surprising story / "wow" moment, the twist or
-   conflict, and **concrete numbers** (downloads, training runs, costs, dates).
-   The specifics ARE the clickbait — push for them if the user is vague.
-3. **The reel** — the short clip being promoted (link/file), for context.
-4. **Full-episode links** — YouTube + Spotify URLs (used in the call-to-action).
+2. **Episode topic + name/number** — what the episode is about (e.g. "DLP /
+   מניעת דליפת מידע", episode 158).
+3. **The reel(s)** — the **file path(s)** of the short clip(s) being promoted.
+   Batch is normal (several reels from the same episode → shared guest + links).
+4. **Full-episode links** — *optional*; if omitted, the CTA uses the podcast page
+   links (see Fixed assets).
 
-Read the guest's LinkedIn (WebFetch) to frame them credibly. On **LinkedIn**,
+ALWAYS ask for at least **name, title (+company), and the episode topic/name**.
+Read the guest's LinkedIn (WebFetch) for framing if reachable. On **LinkedIn**,
 @-mention the guest.
+
+## Get the real content — WATCH the reel (don't write from the filename)
+
+Each post must be grounded in what's **actually said** in the reel, not guessed
+from its name. For every reel:
+
+1. Extract audio: `ffmpeg -v error -i <reel>.mp4 -ar 16000 -ac 1 <reel>.wav -y`
+2. Transcribe Hebrew: `faster-whisper`, model `medium`, `language="he"`.
+   (Setup once: `brew install ffmpeg`; `.repo-tools/.venv/bin/pip install faster-whisper`.)
+3. Build each post around the real quotes / specifics / numbers from the transcript.
+   Optionally save the transcript beside the reel as `<reel>_transcript.txt`.
+
+If a reel has **burned-in captions** instead of clear audio, sample frames
+(`ffmpeg -i reel.mp4 -vf fps=1 frame_%02d.png`) and read the text off them.
+Never invent stats or quotes — if the audio is unclear, keep the claim general.
 
 ## Voice & style (match these — drawn from real posts)
 
