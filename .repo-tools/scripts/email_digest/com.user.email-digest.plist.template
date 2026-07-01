@@ -22,14 +22,17 @@
         <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>
     </dict>
 
-    <!-- Run daily at 10:00 AM -->
+    <!-- Daily at 10:00 with hourly retries to 14:00. The scheduler covers all
+         days since the last successful run and skips once today's digest was sent,
+         so retries are safe and self-heal a failed run (e.g. Mac offline at 10:00). -->
     <key>StartCalendarInterval</key>
-    <dict>
-        <key>Hour</key>
-        <integer>10</integer>
-        <key>Minute</key>
-        <integer>0</integer>
-    </dict>
+    <array>
+        <dict><key>Hour</key><integer>10</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>11</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>14</integer><key>Minute</key><integer>0</integer></dict>
+    </array>
 
     <!-- Also run on login/wake -->
     <key>RunAtLoad</key>
