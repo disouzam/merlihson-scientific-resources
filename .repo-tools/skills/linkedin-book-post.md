@@ -66,4 +66,12 @@ That feels closer to how real systems behave. 🤔
    - For PDF input: `cp <source.pdf> /Users/mike_erlihson/personal/linkedin_posts/`
    - Skip if file already exists there
    - For URL input: skip (no local file)
-4. Briefly tell the user the filename — do not paste the full post back unless asked
+4. **Always render the title page (title + authors) as an image** into the same folder,
+   as `post_<N>_<short_name>_title.png` — a visual to attach to the LinkedIn post.
+   - Use PyMuPDF/`fitz` (poppler/pdftoppm is NOT installed; `pip install pymupdf` if missing).
+   - Pick the right page: scan pages 1–6 and render the **first one whose text contains
+     both the title and the author name(s)** — for many books that's page 1, for some
+     (e.g. MIT Press) the half-title is p.1 and the full title+authors page is p.3.
+   - `doc[i].get_pixmap(dpi=150).save(".../post_<N>_<short_name>_title.png")`
+   - For URL input: skip, or grab the cover image from the page if one is available.
+5. Briefly tell the user the filenames (post + title image) — do not paste the full post back unless asked
