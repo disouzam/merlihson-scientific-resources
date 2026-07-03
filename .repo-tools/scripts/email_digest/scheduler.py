@@ -65,6 +65,20 @@ def is_network_error(exc: Exception) -> bool:
     ))
 
 
+def self_update() -> None:
+    """Best-effort git pull so a machine never gets stuck on stale code.
+    email_digest is often the only automation on a given machine, so unlike the
+    review-pipeline scripts it must pull the repo itself. Non-blocking."""
+    try:
+        repo = Path(__file__).resolve().parents[3]  # .../scientific-resources
+        subprocess.run(
+            ["git", "-C", str(repo), "pull", "--rebase", "--autostash", "--quiet"],
+            capture_output=True, timeout=30,
+        )
+    except Exception as e:
+        logger.warning(f"self-update git pull skipped: {e}")
+
+
 def get_last_run_date() -> date | None:
     """Read the last successful run date."""
     if not LAST_RUN_FILE.exists():
@@ -389,6 +403,9 @@ def main() -> int:
     if not wait_for_network(timeout=60):
         logger.warning("Network unavailable — skipping this run; will retry on the next scheduled slot.")
         return 0
+
+    # Pull latest code so this machine can't stay stuck on an old version.
+    self_update()
 
     # Process each date
     all_success = True
