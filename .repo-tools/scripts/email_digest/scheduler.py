@@ -28,28 +28,41 @@ CACHE_DIR = Path.home() / ".config" / "email-digest" / "cache"
 
 
 def wait_for_network(timeout: int = 60) -> bool:
-    """Wait for network after wake from sleep."""
+    """Wait for real connectivity after wake from sleep.
+
+    We check that a hostname we actually need RESOLVES — pinging a raw IP like
+    8.8.8.8 can succeed while DNS is still down right after wake, which is exactly
+    what produced false "network available" followed by DNS/auth failures.
+    """
+    import socket
     logger.info("Checking network connectivity...")
     start_time = time.time()
 
     while time.time() - start_time < timeout:
         try:
-            result = subprocess.run(
-                ["ping", "-c", "1", "-W", "2", "8.8.8.8"],
-                capture_output=True,
-                timeout=5,
-            )
-            if result.returncode == 0:
-                logger.info("Network is available")
-                return True
-        except (subprocess.TimeoutExpired, Exception):
+            socket.setdefaulttimeout(3)
+            socket.gethostbyname("oauth2.googleapis.com")
+            logger.info("Network is available")
+            return True
+        except Exception:
             pass
 
         logger.info("Waiting for network...")
         time.sleep(5)
 
-    logger.warning(f"Network timeout after {timeout}s, proceeding anyway")
+    logger.warning(f"No network (DNS) after {timeout}s")
     return False
+
+
+def is_network_error(exc: Exception) -> bool:
+    """True for transient connectivity/DNS problems (not a real auth failure)."""
+    s = str(exc).lower()
+    return any(k in s for k in (
+        "nameresolution", "failed to resolve", "name or service not known",
+        "nodename nor servname", "temporary failure in name resolution",
+        "getaddrinfo", "max retries exceeded", "connection", "timed out",
+        "network is unreachable",
+    ))
 
 
 def get_last_run_date() -> date | None:
@@ -164,12 +177,18 @@ def run_for_date(target_date: date, settings: Settings, dry_run: bool) -> bool:
             send_error_notification(error_msg, settings)
         return False
     except RuntimeError as e:
+        if is_network_error(e):
+            logger.warning(f"Transient network/DNS issue during Gmail auth (will retry next slot): {e}")
+            return False
         error_msg = f"Gmail auth failed: {e}"
         logger.error(error_msg)
         if not dry_run:
             send_error_notification("Gmail re-authentication needed. Run: cd .repo-tools/scripts && email_digest/venv/bin/python3 email_digest/setup_oauth.py", settings)
         return False
     except Exception as e:
+        if is_network_error(e):
+            logger.warning(f"Transient network issue fetching email (will retry next slot): {e}")
+            return False
         error_msg = f"Gmail fetch failed: {e}"
         logger.error(error_msg)
         if not dry_run:
@@ -347,7 +366,9 @@ def main() -> int:
     # Refresh mode: fetch only new emails since last digest
     if refresh:
         logger.info("Running in refresh mode")
-        wait_for_network(timeout=60)
+        if not wait_for_network(timeout=60):
+            logger.warning("Network unavailable — skipping refresh; will retry later.")
+            return 0
         success = run_refresh(settings, dry_run)
         return 0 if success else 1
 
@@ -363,8 +384,11 @@ def main() -> int:
 
         logger.info(f"Dates to cover: {[str(d) for d in dates_to_cover]}")
 
-    # Wait for network
-    wait_for_network(timeout=60)
+    # Wait for real network (DNS). If it never comes up, skip quietly — the retry
+    # slots (10:00–14:00) and RunAtLoad will catch it; don't spam an error message.
+    if not wait_for_network(timeout=60):
+        logger.warning("Network unavailable — skipping this run; will retry on the next scheduled slot.")
+        return 0
 
     # Process each date
     all_success = True
