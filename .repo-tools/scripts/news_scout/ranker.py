@@ -22,6 +22,7 @@ class RankedItem:
     item: NewsItem
     score: int          # 0-100
     reason: str         # one-line Hebrew rationale for the top picks
+    story: str = ""     # LLM-assigned slug grouping items about the same real-world event
 
 
 RANKER_SYSTEM = """You are a sharp PR strategist picking AI stories for a journalist's morning brief. You score stories on whether they would energize a TV producer, op-ed writer, or social-media editor — not on whether they would "inform" a general viewer. Boring-but-important loses to spicy-but-real every time."""
@@ -51,14 +52,17 @@ SCORE LOWER (or zero) when the story is:
 
 INTERESTING beats IMPORTANT. A vivid third-tier story beats a worthy first-tier story for this digest's purpose.
 
-CRITICAL — ONE ITEM PER STORY: Many candidates cover the SAME real-world event under different headlines (e.g. five separate items about the same executive stepping down, or the same model launch reported by five outlets). For each distinct event, keep ONLY the single strongest version and give it its score; give EVERY other candidate about that same event a score of 0. The final list must never contain two items about the same underlying event.
+GROUP DUPLICATES: Several candidates often report the SAME real-world event under different headlines or outlets (e.g. five items about one executive resigning, or one model launch covered by five outlets). Assign every item a short lowercase-hyphenated `story` slug naming its underlying event (actor + action), so all items about the SAME event share the SAME slug and different events get different slugs.
+- "Same event" = same primary actor + same action/consequence. NOT merely "same company" or "same day": "OpenAI launches GPT-5.6" and "OpenAI's CFO resigns" are DIFFERENT events (different slugs) even on the same day. Different framings of the identical fact — the launch vs. the stock reaction vs. analysis of that launch — are ONE event (same slug).
+- When unsure whether two items are the same event, give them DIFFERENT slugs.
+Score every item on its own merit (source_count boost included) — do NOT zero anything. The system automatically keeps only the single best-scored item per slug, so you never drop or omit an item.
 
-Each item carries a `source_count` field: how many distinct outlets ran this same story. Treat **source_count >= 2 as a strong "real story" signal — add 8-15 points**. Single-source items with no other hooks should be questioned.
+Each item carries a `source_count` field: how many distinct outlets ran this same story. Treat **source_count >= 2 as a strong "real story" signal — add 8-15 points to THAT item's score**. Single-source items with no other hooks should be questioned.
 
-Output ONLY a JSON array of objects, in the SAME ORDER as the input, like:
+Output ONLY a JSON array with ONE object for EVERY input item, in the SAME ORDER as the input — never omit an item. Like:
 [
-  {{"i": 0, "score": 78, "reason_he": "סיבה תמציתית בעברית במשפט אחד"}},
-  {{"i": 1, "score": 25, "reason_he": "..."}},
+  {{"i": 0, "score": 78, "story": "openai-fidji-simo-departure", "reason_he": "סיבה תמציתית בעברית במשפט אחד"}},
+  {{"i": 1, "score": 25, "story": "meta-ai-chip-production", "reason_he": "..."}},
   ...
 ]
 
@@ -120,6 +124,7 @@ def _parse_scores(text: str, n: int) -> List[dict]:
         out.append({
             "i": i,
             "score": int(entry.get("score", 0)),
+            "story": str(entry.get("story", "")).strip().lower(),
             "reason_he": str(entry.get("reason_he", "")).strip(),
         })
     return out
@@ -150,7 +155,7 @@ def rank(
     scores = _parse_scores(text, len(items))
 
     ranked = [
-        RankedItem(item=items[s["i"]], score=s["score"], reason=s["reason_he"])
+        RankedItem(item=items[s["i"]], score=s["score"], reason=s["reason_he"], story=s["story"])
         for s in scores
     ]
     ranked.sort(key=lambda r: r.score, reverse=True)
@@ -158,44 +163,76 @@ def rank(
     # Drop anything below a reasonable floor for general-public relevance
     ranked = [r for r in ranked if r.score >= 40]
 
-    # Backstop diversity filter: never let two items about the SAME story into the
-    # brief, even if the model scored duplicates high (e.g. five headlines about the
-    # same executive stepping down). Greedily keep the highest-scored per story.
+    return _dedupe_by_story(ranked, top_n)
+
+
+def _dedupe_by_story(ranked: List[RankedItem], top_n: int) -> List[RankedItem]:
+    """Keep one item per real-world event, non-destructively (selection, never
+    zeroing). Two layers: (1) the LLM's semantic `story` slug — catches reworded /
+    cross-language / name-variant duplicates; (2) a lexical backstop on titles —
+    catches events the model failed to group. Assumes `ranked` is score-desc."""
     selected: List[RankedItem] = []
+    seen_slugs: set = set()
     for r in ranked:
+        slug = (r.story or "").strip().lower()
+        if slug and slug in seen_slugs:
+            continue  # same event per the model
         if any(_same_story(r.item.title, s.item.title) for s in selected):
-            continue
+            continue  # same event per titles (backstop)
+        if slug:
+            seen_slugs.add(slug)
         selected.append(r)
         if len(selected) >= top_n:
             break
-
     return selected
 
 
-# Words too common to signal "same story" (they appear across unrelated AI items).
+# Tokens too common to signal "same story": grammar words, the big lab/company
+# names (they appear across unrelated AI items), and generic news verbs/nouns that
+# otherwise cause false merges ("Musk sues X" vs "Musk sues Y", "Amazon cuts jobs"
+# vs "IBM cuts jobs"). This backstop is intentionally conservative — the LLM `story`
+# slug is the primary, semantic dedup; missed lexical dups fall to it.
 _STORY_STOP = {
+    # grammar / filler
     "the", "a", "an", "and", "or", "to", "of", "in", "on", "for", "with", "is", "are",
     "as", "its", "it", "after", "from", "by", "new", "says", "say", "said", "amid",
     "over", "into", "that", "this", "at", "he", "she", "his", "her", "will", "has",
     "have", "was", "were", "but", "not", "no", "up", "out", "who", "why", "how", "what",
+    # big labs / companies (too common to be identity on their own)
     "openai", "google", "meta", "microsoft", "apple", "amazon", "nvidia", "anthropic",
     "chatgpt", "tech", "company", "companies", "startup", "report", "launch", "launches",
     "launched", "unveils", "announces", "model", "models", "amp",
+    # generic news verbs / nouns (would false-merge distinct stories)
+    "sues", "sue", "cuts", "cut", "jobs", "job", "goes", "hits", "hit", "takes", "take",
+    "sees", "beats", "tops", "chips", "chip", "ban", "bans", "roles", "role", "deal",
+    "deals", "adds", "gets", "set", "plans", "plan", "eyes",
 }
+
+# Keep alphanumeric identifiers whole (e.g. "gpt-5.6", "gpt-4o", "claude-3.7") instead
+# of shredding them into "gpt","5","6" — that both missed same-version dups and merged
+# unrelated versions ("gpt-5.6" vs "gpt-4.1" both -> "gpt").
+_TOKEN_RE = re.compile(r"[a-z0-9]+(?:[.\-][a-z0-9]+)*")
 
 
 def _distinctive_tokens(title: str) -> set:
-    toks = re.sub(r"[^\w\s]", " ", title.lower()).split()
-    return {t for t in toks if len(t) > 2 and t not in _STORY_STOP}
+    out = set()
+    for t in _TOKEN_RE.findall(title.lower()):
+        if t in _STORY_STOP:
+            continue
+        if not any(c.isalpha() for c in t):
+            continue  # drop pure-number tokens ("14", "000", "5") — kills the 14,000->000 bug
+        if len(t) <= 2 and not any(c.isdigit() for c in t):
+            continue  # drop tiny non-versioned tokens ("no", "ai")
+        out.add(t)
+    return out
 
 
 def _same_story(a: str, b: str) -> bool:
-    """Heuristic: two headlines describe the same event if they share >=2 distinctive
-    tokens (e.g. a person's first+last name), or one's tokens nearly subset the other."""
+    """Two headlines describe the same event if they share >= 2 distinctive tokens
+    (e.g. a person's first+last name). Conservative on purpose: sharing a single
+    token — even a whole model name — is NOT enough (the LLM story slug covers the
+    rest), which avoids false merges like "OpenAI unveils Sora" vs "Sora Ventures"."""
     ta, tb = _distinctive_tokens(a), _distinctive_tokens(b)
     if not ta or not tb:
         return False
-    shared = ta & tb
-    if len(shared) >= 2:
-        return True
-    return len(shared) / min(len(ta), len(tb)) >= 0.6
+    return len(ta & tb) >= 2
