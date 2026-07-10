@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Default working discipline (ALWAYS)
+
+Follow the **minimal-footprint** skill (`.repo-tools/skills/minimal-footprint.md`)
+on every task in this repo, without being asked: pick the smallest model that can
+do the job (state it in one line), write the least code that fully solves the task,
+and keep output tight. Override only with a stated reason.
+
 ## What This Repo Is
 
 A curated knowledge base of 612+ AI/ML paper reviews (Hebrew primary, English secondary), learning materials, and presentations. The repo is primarily a content repository with Python automation tooling for processing, metadata management, and cross-platform publishing (Telegram, Discord, Twitter/X).
