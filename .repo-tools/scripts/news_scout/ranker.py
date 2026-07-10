@@ -51,6 +51,8 @@ SCORE LOWER (or zero) when the story is:
 
 INTERESTING beats IMPORTANT. A vivid third-tier story beats a worthy first-tier story for this digest's purpose.
 
+CRITICAL — ONE ITEM PER STORY: Many candidates cover the SAME real-world event under different headlines (e.g. five separate items about the same executive stepping down, or the same model launch reported by five outlets). For each distinct event, keep ONLY the single strongest version and give it its score; give EVERY other candidate about that same event a score of 0. The final list must never contain two items about the same underlying event.
+
 Each item carries a `source_count` field: how many distinct outlets ran this same story. Treat **source_count >= 2 as a strong "real story" signal — add 8-15 points**. Single-source items with no other hooks should be questioned.
 
 Output ONLY a JSON array of objects, in the SAME ORDER as the input, like:
@@ -156,4 +158,44 @@ def rank(
     # Drop anything below a reasonable floor for general-public relevance
     ranked = [r for r in ranked if r.score >= 40]
 
-    return ranked[:top_n]
+    # Backstop diversity filter: never let two items about the SAME story into the
+    # brief, even if the model scored duplicates high (e.g. five headlines about the
+    # same executive stepping down). Greedily keep the highest-scored per story.
+    selected: List[RankedItem] = []
+    for r in ranked:
+        if any(_same_story(r.item.title, s.item.title) for s in selected):
+            continue
+        selected.append(r)
+        if len(selected) >= top_n:
+            break
+
+    return selected
+
+
+# Words too common to signal "same story" (they appear across unrelated AI items).
+_STORY_STOP = {
+    "the", "a", "an", "and", "or", "to", "of", "in", "on", "for", "with", "is", "are",
+    "as", "its", "it", "after", "from", "by", "new", "says", "say", "said", "amid",
+    "over", "into", "that", "this", "at", "he", "she", "his", "her", "will", "has",
+    "have", "was", "were", "but", "not", "no", "up", "out", "who", "why", "how", "what",
+    "openai", "google", "meta", "microsoft", "apple", "amazon", "nvidia", "anthropic",
+    "chatgpt", "tech", "company", "companies", "startup", "report", "launch", "launches",
+    "launched", "unveils", "announces", "model", "models", "amp",
+}
+
+
+def _distinctive_tokens(title: str) -> set:
+    toks = re.sub(r"[^\w\s]", " ", title.lower()).split()
+    return {t for t in toks if len(t) > 2 and t not in _STORY_STOP}
+
+
+def _same_story(a: str, b: str) -> bool:
+    """Heuristic: two headlines describe the same event if they share >=2 distinctive
+    tokens (e.g. a person's first+last name), or one's tokens nearly subset the other."""
+    ta, tb = _distinctive_tokens(a), _distinctive_tokens(b)
+    if not ta or not tb:
+        return False
+    shared = ta & tb
+    if len(shared) >= 2:
+        return True
+    return len(shared) / min(len(ta), len(tb)) >= 0.6
