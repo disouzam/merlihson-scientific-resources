@@ -77,23 +77,25 @@ def update_cooldown():
 
 
 def wait_for_network(timeout: int = 60) -> bool:
-    """Wait for network after wake from sleep."""
+    """Wait for real connectivity after wake from sleep.
+
+    Checks that a hostname RESOLVES — pinging a raw IP (8.8.8.8) can succeed while
+    DNS is still down right after wake, which caused false "available" reports.
+    """
+    import socket
     logger.info("Checking network connectivity...")
     start_time = time.time()
     while time.time() - start_time < timeout:
         try:
-            result = subprocess.run(
-                ['ping', '-c', '1', '-W', '2', '8.8.8.8'],
-                capture_output=True, timeout=5
-            )
-            if result.returncode == 0:
-                logger.info("✓ Network is available")
-                return True
-        except (subprocess.TimeoutExpired, Exception):
+            socket.setdefaulttimeout(3)
+            socket.gethostbyname("github.com")
+            logger.info("✓ Network is available")
+            return True
+        except Exception:
             pass
         logger.info("Waiting for network...")
         time.sleep(5)
-    logger.warning(f"⚠️  Network timeout after {timeout}s, proceeding anyway")
+    logger.warning(f"⚠️  No network (DNS) after {timeout}s, proceeding anyway")
     return False
 
 
@@ -287,6 +289,60 @@ def run_script(python: str, script: Path, label: str) -> bool:
         return False
 
 
+def _ran_today(last_run_file: Path) -> bool:
+    """True if the agent's last_run.txt already holds today's date."""
+    try:
+        return last_run_file.read_text().strip() == date.today().isoformat()
+    except Exception:
+        return False
+
+
+def run_module(module: str, label: str, extra_args=None, timeout: int = 600) -> bool:
+    """Run an agent as `python -m module` from the scripts dir (packages live there)."""
+    logger.info(f"Running {label}...")
+    try:
+        result = subprocess.run(
+            [VENV_PYTHON, "-m", module, *(extra_args or [])],
+            capture_output=True, text=True, timeout=timeout, cwd=str(SCRIPTS_DIR),
+        )
+        if result.returncode == 0:
+            logger.info(f"{label} completed successfully (rc=0)")
+            return True
+        logger.warning(f"{label} exited rc={result.returncode}: {(result.stderr or '')[:400]}")
+        return False
+    except subprocess.TimeoutExpired:
+        logger.error(f"{label} timed out after {timeout}s")
+        return False
+    except Exception as e:
+        logger.error(f"{label} failed: {e}")
+        return False
+
+
+def catch_up_agents():
+    """Catch up news_scout / paper_recommender if launchd missed them (asleep or
+    offline at their scheduled slots). Each script self-skips if it already ran
+    today; we add the weekday guard here because their code only skips weekends —
+    the day restriction (news_scout Mon/Thu) otherwise lives in the launchd plist.
+    """
+    ns_last = SCRIPTS_DIR / "news_scout" / "last_run.txt"
+    pr_last = SCRIPTS_DIR / "paper_recommender" / "last_run.txt"
+    wd = date.today().weekday()  # Mon=0 .. Sun=6
+
+    # paper_recommender: Mon-Fri
+    if wd < 5 and not _ran_today(pr_last):
+        logger.info("Catch-up: paper_recommender has not run today — running.")
+        run_module("paper_recommender.recommender", "paper_recommender", timeout=600)
+    else:
+        logger.info("Catch-up: paper_recommender already done today or not a weekday.")
+
+    # news_scout: Monday + Thursday only
+    if wd in (0, 3) and not _ran_today(ns_last):
+        logger.info("Catch-up: news_scout has not run today — running.")
+        run_module("news_scout.news_scout", "news_scout", extra_args=["--skip-delay"], timeout=1200)
+    else:
+        logger.info("Catch-up: news_scout already done today or not a Mon/Thu.")
+
+
 def main():
     logger.info("=" * 60)
     logger.info("Wake catch-up script starting")
@@ -306,6 +362,11 @@ def main():
 
     # Push any commits that failed to push in a previous run
     push_unpushed_commits()
+
+    # Catch up the standalone agents (news_scout / paper_recommender) that launchd
+    # may have missed while asleep/offline. Independent of the review inbox, so it
+    # must run before the "no reviews -> return" early exit below.
+    catch_up_agents()
 
     # Find what's in the inbox vs what's already processed
     inbox_nums = find_inbox_review_numbers()
