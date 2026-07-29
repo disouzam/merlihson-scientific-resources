@@ -1,0 +1,68 @@
+# CL Tracker topic taxonomy — the single most important config.
+# Phrases are matched case-insensitively against title + abstract/summary.
+# Weights: each core hit +3, adjacent +1.5, emerging-framing +2 (see scorer.py).
+
+core:
+  - continual learning
+  - catastrophic forgetting
+  - lifelong learning
+  - continual pre-training
+  - continual pretraining
+  - class-incremental
+  - task-incremental
+  - incremental learning
+  - online learning
+  - streaming learning
+  - plasticity-stability
+  - stability-plasticity
+  - loss of plasticity
+  - dormant neurons
+  - effective rank collapse
+  - experience replay
+  - rehearsal
+  - elastic weight consolidation
+  - synaptic intelligence
+  - learning without forgetting
+  - warm-starting
+  - primacy bias
+  - task-free continual
+
+adjacent:
+  - fine-tuning
+  - finetuning
+  - parameter-efficient
+  - peft
+  - lora
+  - distillation
+  - feature geometry
+  - representation collapse
+  - representation learning
+  - superposition
+  - state-space model
+  - mamba
+  - mixture of experts
+  - data mixture
+  - eval contamination
+  - transfer learning
+  - domain adaptation
+  - forgetting
+
+# Early/emerging problem framings — CL-adjacent work that may not use the
+# canonical vocabulary yet. Kept loose on purpose; feeds the `emerging` bucket.
+emerging_framings:
+  - test-time adaptation
+  - test-time training
+  - model editing
+  - knowledge injection
+  - knowledge editing
+  - continual adaptation
+  - non-stationary
+  - nonstationary
+  - keeps learning after deployment
+  - learning after deployment
+  - self-improving
+  - memory consolidation
+  - weight averaging
+  - model merging
+  - adapter merging
+  - plasticity

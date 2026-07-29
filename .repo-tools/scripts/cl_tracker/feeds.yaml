@@ -1,0 +1,111 @@
+# Curated blogs & newsletters (topic-gated RSS/Atom), tiered by CL relevance.
+# tier_weight multiplies an item's topic score. Items that fail the topic gate
+# are dropped regardless of tier. Feeds that 404/redirect are skipped gracefully.
+
+tiers:
+  1: 2.0   # CL-specific / directly relevant
+  2: 1.5   # mechanism / architecture / representations / interp
+  3: 1.2   # fine-tuning / practical training / evals
+  4: 1.0   # curation layers
+  5: 1.0   # lab research blogs (release-triggered)
+
+feeds:
+  # --- Tier 1: CL-specific ---
+  - name: ContinualAI blog
+    url: https://www.continualai.org/feed.xml
+    tier: 1
+  - name: Sebastian Ruder
+    url: https://newsletter.ruder.io/feed
+    tier: 1
+  - name: BAIR blog
+    url: https://bair.berkeley.edu/blog/feed.xml
+    tier: 1
+  - name: Stanford SAIL blog
+    url: https://ai.stanford.edu/blog/feed.xml
+    tier: 1
+  - name: Off the Convex Path
+    url: https://www.offconvex.org/feed.xml
+    tier: 1
+  - name: The Gradient
+    url: https://thegradient.pub/rss/
+    tier: 1
+  - name: Apple ML Research
+    url: https://machinelearning.apple.com/rss.xml
+    tier: 1
+
+  # --- Tier 2: mechanism / representations / interp ---
+  - name: Lil'Log (Lilian Weng)
+    url: https://lilianweng.github.io/index.xml
+    tier: 2
+  - name: Chris Olah
+    url: https://colah.github.io/rss.xml
+    tier: 2
+  - name: Neel Nanda
+    url: https://www.neelnanda.io/blog?format=rss
+    tier: 2
+  - name: Gradient Science (Madry lab)
+    url: https://gradientscience.org/feed.xml
+    tier: 2
+  - name: Jay Alammar
+    url: https://jalammar.github.io/feed.xml
+    tier: 2
+  - name: Maarten Grootendorst
+    url: https://newsletter.maartengrootendorst.com/feed
+    tier: 2
+  - name: Cameron Wolfe — Deep (Learning) Focus
+    url: https://cameronrwolfe.substack.com/feed
+    tier: 2
+  - name: Sebastian Raschka — Ahead of AI
+    url: https://magazine.sebastianraschka.com/feed
+    tier: 2
+
+  # --- Tier 3: fine-tuning / practical training / evals ---
+  - name: Hugging Face blog
+    url: https://huggingface.co/blog/feed.xml
+    tier: 3
+  - name: Answer.AI
+    url: https://www.answer.ai/index.xml
+    tier: 3
+  - name: Chip Huyen
+    url: https://huyenchip.com/feed.xml
+    tier: 3
+  - name: Eugene Yan
+    url: https://eugeneyan.com/rss/
+    tier: 3
+  - name: Hamel Husain
+    url: https://hamel.dev/index.xml
+    tier: 3
+
+  # --- Tier 4: curation layers ---
+  - name: Davis Summarizes Papers
+    url: https://dblalock.substack.com/feed
+    tier: 4
+  - name: Interconnects (Nathan Lambert)
+    url: https://www.interconnects.ai/feed
+    tier: 4
+  - name: Import AI (Jack Clark)
+    url: https://importai.substack.com/feed
+    tier: 4
+  - name: The Batch (DeepLearning.AI)
+    url: https://www.deeplearning.ai/the-batch/feed/
+    tier: 4
+  - name: Simon Willison
+    url: https://simonwillison.net/atom/everything/
+    tier: 4
+
+  # --- Tier 5: lab research blogs ---
+  - name: Google Research blog
+    url: https://research.google/blog/rss/
+    tier: 5
+  - name: DeepMind blog
+    url: https://deepmind.google/blog/rss.xml
+    tier: 5
+  - name: Microsoft Research blog
+    url: https://www.microsoft.com/en-us/research/feed/
+    tier: 5
+  - name: Allen AI (AI2) blog
+    url: https://allenai.org/blog/rss.xml
+    tier: 5
+  - name: NVIDIA technical blog
+    url: https://developer.nvidia.com/blog/feed/
+    tier: 5

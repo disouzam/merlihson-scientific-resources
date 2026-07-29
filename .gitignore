@@ -57,3 +57,4 @@ env/
 # OS generated files
 Thumbs.db
 Desktop.ini
+.repo-tools/scripts/cl_tracker/config.yaml

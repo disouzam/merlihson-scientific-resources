@@ -1,0 +1,19 @@
+# CL Tracker configuration
+# 1. cp config.yaml.template config.yaml
+# 2. Fill in Telegram credentials (config.yaml is gitignored — never commit it)
+
+lookback_hours: 168      # weekly window
+
+caps:                    # max items per digest bucket
+  core: 10
+  emerging: 6
+  viral: 5
+
+telegram:
+  enabled: false
+  bot_token: "YOUR_BOT_TOKEN"
+  channel_id: "YOUR_CHANNEL_ID"
+
+email:                   # Phase 1.5 — wired to email_digest sender
+  enabled: false
+  to: "you@example.com"
