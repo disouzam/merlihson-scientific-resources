@@ -19,7 +19,7 @@ import subprocess
 import logging
 import time
 from pathlib import Path
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 # Paths
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -289,12 +289,29 @@ def run_script(python: str, script: Path, label: str) -> bool:
         return False
 
 
-def _ran_today(last_run_file: Path) -> bool:
-    """True if the agent's last_run.txt already holds today's date."""
+def _missed_scheduled_run(last_run_file: Path, scheduled_weekdays) -> bool:
+    """True if the agent hasn't run since its most recent scheduled slot.
+
+    Finds the most recent date on-or-before today whose weekday is scheduled,
+    and returns True if last_run.txt is missing or predates it. This recovers
+    runs missed while the machine was asleep/off on the scheduled day — the
+    old check only fired when today itself was a scheduled day, so a Thursday
+    miss noticed on Friday (or any later non-scheduled day) was never caught up.
+    """
+    today = date.today()
+    most_recent_slot = None
+    for delta in range(7):  # walk back to the last scheduled weekday
+        d = today - timedelta(days=delta)
+        if d.weekday() in scheduled_weekdays:
+            most_recent_slot = d
+            break
+    if most_recent_slot is None:
+        return False  # no scheduled weekday configured (shouldn't happen)
     try:
-        return last_run_file.read_text().strip() == date.today().isoformat()
+        last_date = date.fromisoformat(last_run_file.read_text().strip())
     except Exception:
-        return False
+        return True  # never ran / unreadable → catch up
+    return last_date < most_recent_slot
 
 
 def run_module(module: str, label: str, extra_args=None, timeout: int = 600) -> bool:
@@ -321,26 +338,26 @@ def run_module(module: str, label: str, extra_args=None, timeout: int = 600) -> 
 def catch_up_agents():
     """Catch up news_scout / paper_recommender if launchd missed them (asleep or
     offline at their scheduled slots). Each script self-skips if it already ran
-    today; we add the weekday guard here because their code only skips weekends —
-    the day restriction (news_scout Mon/Thu) otherwise lives in the launchd plist.
+    today; here we run one whenever it hasn't run since its most recent scheduled
+    slot — so a run missed on a scheduled day is recovered on the next login,
+    even if that login lands on a non-scheduled day.
     """
     ns_last = SCRIPTS_DIR / "news_scout" / "last_run.txt"
     pr_last = SCRIPTS_DIR / "paper_recommender" / "last_run.txt"
-    wd = date.today().weekday()  # Mon=0 .. Sun=6
 
     # paper_recommender: Mon-Fri
-    if wd < 5 and not _ran_today(pr_last):
-        logger.info("Catch-up: paper_recommender has not run today — running.")
+    if _missed_scheduled_run(pr_last, {0, 1, 2, 3, 4}):
+        logger.info("Catch-up: paper_recommender missed its last scheduled run — running.")
         run_module("paper_recommender.recommender", "paper_recommender", timeout=600)
     else:
-        logger.info("Catch-up: paper_recommender already done today or not a weekday.")
+        logger.info("Catch-up: paper_recommender is up to date.")
 
-    # news_scout: Monday + Thursday only
-    if wd in (0, 3) and not _ran_today(ns_last):
-        logger.info("Catch-up: news_scout has not run today — running.")
+    # news_scout: Monday + Thursday
+    if _missed_scheduled_run(ns_last, {0, 3}):
+        logger.info("Catch-up: news_scout missed its last scheduled run — running.")
         run_module("news_scout.news_scout", "news_scout", extra_args=["--skip-delay"], timeout=1200)
     else:
-        logger.info("Catch-up: news_scout already done today or not a Mon/Thu.")
+        logger.info("Catch-up: news_scout is up to date.")
 
 
 def main():

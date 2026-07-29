@@ -25,6 +25,14 @@ The user can say:
 5. **Run missing steps** — Executes scripts for any incomplete steps (in dependency order)
 6. **Cooldown** — Skips if last run was <10 minutes ago
 
+### Standalone Agents Caught Up (before the review pipeline)
+- `paper_recommender` (scheduled Mon–Fri) and `news_scout` (scheduled Mon + Thu).
+- Recovery rule (`_missed_scheduled_run`): runs an agent whenever its `last_run.txt`
+  is older than the **most recent scheduled slot on-or-before today** — so a run
+  missed while the Mac was asleep is recovered on the *next login, any day*, not
+  only when today itself is a scheduled day. (The old check only fired if today
+  was a scheduled weekday, so e.g. a missed Thursday run was never caught up.)
+
 ### Pipeline Steps Checked (in order)
 1. `daily_review_processor.py` — Are there unprocessed DOCX files in ReviewsInbox?
 2. `telegram_uploader.py` — Is the latest review in the Telegram ledger?
