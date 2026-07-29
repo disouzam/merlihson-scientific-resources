@@ -35,7 +35,8 @@ cd .repo-tools/scripts
 
 - **Reddit**: blocks all unauthenticated access (403) — needs an OAuth app to enable.
 - **Semantic Scholar**: unauth quota is tight; retries help but a free API key would fix it.
-- **Email delivery**: config stub exists; wire to `email_digest` sender.
+- **Email delivery**: config stub exists, but `email_digest` only *reads* Gmail (no send
+  machinery exists in the repo) — needs Gmail send-scope OAuth or an SMTP app password first.
 - **X/Twitter**: skipped by decision (research-first); Phase 2.
 - **LLM synthesis + drafter + rigor gate**: Phases 3–4 in the plan.
 - **Scheduling**: `com.user.cl-tracker.plist.template` provided; install like the other jobs
